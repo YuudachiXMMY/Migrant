@@ -438,17 +438,17 @@ screen setting():
             ## 设置速度的三个档
             fixed:
                 if store.Preference("text speed").get_adjustment().value <= 50:
-                    timer 0.1 action Preference("text speed", 1)
-                if store.Preference("text speed").get_adjustment().value > 150:
-                    timer 0.1 action Preference("text speed", 199)
+                    timer 0.2 action Preference("text speed", 1)
+                elif store.Preference("text speed").get_adjustment().value > 150:
+                    timer 0.2 action Preference("text speed", 200)
                 else:
-                    timer 0.1 action Preference("text speed", 100)
-                if store.Preference("auto-forward time").get_adjustment().value <= 50:
-                    timer 0.1 action Preference("auto-forward time", 1)
-                if store.Preference("auto-forward time").get_adjustment().value > 150:
-                    timer 0.1 action Preference("auto-forward time", 199)
+                    timer 0.2 action Preference("text speed", 100)
+                if store.Preference("auto-forward time").get_adjustment().value <= 7.5:
+                    timer 0.2 action Preference("auto-forward time", 0)
+                elif store.Preference("auto-forward time").get_adjustment().value > 22.5:
+                    timer 0.2 action Preference("auto-forward time", 30)
                 else:
-                    timer 0.1 action Preference("auto-forward time", 100)
+                    timer 0.2 action Preference("auto-forward time", 15)
 
         #画面设置
         fixed:
