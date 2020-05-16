@@ -130,7 +130,7 @@ default preferences.afm_time = 15
 ##
 ## 该命令一般不应变更，若要变更，应为有效字符串而不是表达式。
 
-define config.save_directory = "HouNiao-1587435432"
+define config.save_directory = "HouNiao-1589594994"
 
 
 ## 图标 ##########################################################################
