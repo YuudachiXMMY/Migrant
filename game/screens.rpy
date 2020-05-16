@@ -348,25 +348,39 @@ screen main_menu():
     ## 此代码可确保替换掉任何其他菜单屏幕。
     tag menu
 
-    style_prefix "main_menu"
-
-    add gui.main_menu_background
-
     ## 此空框可使标题菜单变暗。
-    frame:
-        pass
+    fixed:
+        add "main_bg"
+        add "main_logo" xalign 0.5 ypos 0.2
 
-    ## “use”语句将其他的屏幕包含进此屏幕。标题屏幕的实际内容在导航屏幕中。
-    use navigation
+        grid 2 1:
+            xalign 0.5 yalign 0.77
+            xspacing 120
+            imagebutton:
+                xalign 0.32
+                auto "start_%s"
+                action Start()
 
-    if gui.show_name:
+            imagebutton:
+                xalign 0.68
+                auto  "load_%s"
+                action ShowMenu("load")
 
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
+        grid 4 1:
+            xalign 0.5 yalign 0.9
+            xspacing 160
+            imagebutton:
+                auto "setting_%s"
+                action Start()
+            imagebutton:
+                auto "extraContent_%s"
+                action Start()
+            imagebutton:
+                auto "staff_%s"
+                action Start()
+            imagebutton:
+                auto "exit_%s"
+                action Start()
 
 
 style main_menu_frame is empty

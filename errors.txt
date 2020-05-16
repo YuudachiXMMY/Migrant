@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 357: u'background' is not a keyword argument or valid child for the grid statement.
+    background None
+              ^
+
+Ren'Py Version: Ren'Py 7.3.5.606
+Fri May 15 19:19:13 2020
