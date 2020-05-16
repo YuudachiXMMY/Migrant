@@ -4,6 +4,8 @@
 
 init offset = -1
 
+default persistent.text_speed = 100
+default persistent.auto_forward = 100
 
 ################################################################################
 ## 样式
@@ -371,7 +373,7 @@ screen main_menu():
             xspacing 160
             imagebutton:
                 auto "setting_%s"
-                action Start()
+                action ShowMenu("setting")
             imagebutton:
                 auto "extraContent_%s"
                 action Start()
@@ -383,34 +385,179 @@ screen main_menu():
                 action Start()
 
 
-style main_menu_frame is empty
-style main_menu_vbox is vbox
-style main_menu_text is gui_text
-style main_menu_title is main_menu_text
-style main_menu_version is main_menu_text
+## 设置屏幕 ######################################################################
+##
+##
 
-style main_menu_frame:
-    xsize 560
-    yfill True
+screen setting():
+    modal True
 
-    background "gui/overlay/main_menu.png"
+    # style_prefix "setting_text"
 
-style main_menu_vbox:
-    xalign 1.0
-    xoffset -40
-    xmaximum 1600
-    yalign 1.0
-    yoffset -40
+    fixed:
+        add "setting_bg"
 
-style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
+        imagebutton:
+            xalign 0.83 yalign 0.21
+            auto "setting_close_%s"
+            action Hide("setting")
 
-style main_menu_title:
-    properties gui.text_properties("title")
+        #文本设置
+        fixed:
+            add "setting_text_title" xalign 0.225 yalign 0.29
 
-style main_menu_version:
-    properties gui.text_properties("version")
+            hbox:
+                style_prefix "text_setting"
+                xalign 0.3 yalign 0.4
+                spacing 80
 
+                vbox:
+                    spacing 50
+                    label _("文字显示速度")
+                    label _("自动播放速度")
+                    label _("快 进 设 定")
+
+                vbox:
+                    yoffset 20
+                    spacing 50
+                    bar value Preference("text speed")
+                    bar value Preference("auto-forward time"):
+                        yoffset 10
+                    hbox:
+                        yoffset 5
+                        spacing 20
+                        imagebutton:
+                            auto "setting_click_%s"
+                            action Preference("skip", "seen")
+                        label _("仅限已读")
+                        imagebutton:
+                            auto "setting_click_%s"
+                            action Preference("skip", "all")
+                        label _("全部")
+
+            ## 设置速度的三个档
+            fixed:
+                if store.Preference("text speed").get_adjustment().value <= 50:
+                    timer 0.1 action Preference("text speed", 1)
+                if store.Preference("text speed").get_adjustment().value > 150:
+                    timer 0.1 action Preference("text speed", 199)
+                else:
+                    timer 0.1 action Preference("text speed", 100)
+                if store.Preference("auto-forward time").get_adjustment().value <= 50:
+                    timer 0.1 action Preference("auto-forward time", 1)
+                if store.Preference("auto-forward time").get_adjustment().value > 150:
+                    timer 0.1 action Preference("auto-forward time", 199)
+                else:
+                    timer 0.1 action Preference("auto-forward time", 100)
+
+        #画面设置
+        fixed:
+            add "setting_graphics_title" xalign 0.565 yalign 0.29
+
+        #音乐设置
+        fixed:
+            add "setting_sound_title" xalign 0.225 yalign 0.57
+
+            hbox:
+                style_prefix "sound_setting"
+                xalign 0.3 yalign 0.7
+                xoffset -20
+                spacing 70
+
+                vbox:
+                    spacing 70
+                    label _("全局音量")
+                    label _("音乐音量")
+
+                vbox:
+                    yoffset 20
+                    spacing 70
+                    bar value Preference("music volume")
+                    bar value Preference("music volume"):
+                        yoffset 10
+
+                vbox:
+                    xoffset -30
+                    spacing 60
+                    hbox:
+                        spacing 10
+                        imagebutton:
+                            auto "setting_click_%s"
+                            action Preference("music mute", "toggle")
+                        label _("静音"):
+                            style_prefix "mute_setting"
+                    hbox:
+                        spacing 10
+                        imagebutton:
+                            auto "setting_click_%s"
+                            action Preference("music mute", "toggle")
+                        label _("静音"):
+                            style_prefix "mute_setting"
+
+            hbox:
+                style_prefix "sound_setting"
+                xalign 0.7 yalign 0.7
+                xoffset -20
+                spacing 70
+
+                vbox:
+                    spacing 70
+                    label _("语音音量")
+                    label _("音效音量")
+
+                vbox:
+                    yoffset 20
+                    spacing 70
+                    bar value Preference("voice volume")
+                    bar value Preference("sound volume"):
+                        yoffset 10
+
+                vbox:
+                    xoffset -30
+                    spacing 60
+                    hbox:
+                        spacing 10
+                        imagebutton:
+                            auto "setting_click_%s"
+                            action Preference("voice mute", "toggle")
+                        label _("静音"):
+                            style_prefix "mute_setting"
+                    hbox:
+                        spacing 10
+                        imagebutton:
+                            auto "setting_click_%s"
+                            action Preference("sound mute", "toggle")
+                        label _("静音"):
+                            style_prefix "mute_setting"
+
+            ## 音量低于5%自动设置为静音
+            fixed:
+                if store.MixerValue("music").get_adjustment().value <= 0.05:
+                    timer 0.01 action Preference("music mute", "enable")
+                if store.MixerValue("voice").get_adjustment().value <= 0.05:
+                    timer 0.01 action Preference("voice mute", "enable")
+                if store.MixerValue("sfx").get_adjustment().value <= 0.05:
+                    timer 0.01 action Preference("sound mute", "enable")
+
+style text_setting_slider:
+    xsize 355 ysize 13
+    base_bar "setting_slider_3_idle"
+    thumb "setting_slider_3_btn_idle"
+
+style text_setting_label_text:
+    font "经典中圆简.ttf"
+    size 26
+    color "#343434"
+
+style sound_setting_slider is text_setting_slider:
+    xsize 201
+    base_bar "setting_slider_2_idle"
+    thumb "setting_slider_2_btn_idle"
+
+style sound_setting_label_text is text_setting_label_text
+
+style mute_setting_label_text is sound_setting_label_text:
+    bold True
 
 ## 游戏菜单屏幕 ######################################################################
 ##
@@ -818,12 +965,13 @@ style check_button is gui_button
 style check_button_text is gui_button_text
 style check_vbox is pref_vbox
 
-style slider_label is pref_label
-style slider_label_text is pref_label_text
-style slider_slider is gui_slider
-style slider_button is gui_button
-style slider_button_text is gui_button_text
-style slider_pref_vbox is pref_vbox
+# style slider_label is pref_label
+# style slider_label_text is pref_label_text
+
+# style slider_slider is gui_slider
+# style slider_button is gui_button
+# style slider_button_text is gui_button_text
+# style slider_pref_vbox is pref_vbox
 
 style mute_all_button is check_button
 style mute_all_button_text is check_button_text
@@ -858,19 +1006,7 @@ style check_button:
 style check_button_text:
     properties gui.button_text_properties("check_button")
 
-style slider_slider:
-    xsize 700
 
-style slider_button:
-    properties gui.button_properties("slider_button")
-    yalign 0.5
-    left_margin 20
-
-style slider_button_text:
-    properties gui.button_text_properties("slider_button")
-
-style slider_vbox:
-    xsize 900
 
 
 ## 历史屏幕 ########################################################################

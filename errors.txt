@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 357: u'background' is not a keyword argument or valid child for the grid statement.
-    background None
-              ^
+File "game/screens.rpy", line 421: u'Preference' is not a keyword argument or valid child for the bar statement.
+    bar value action Preference("text speed")
+                               ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri May 15 19:19:13 2020
+Fri May 15 23:44:11 2020
