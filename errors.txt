@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 421: u'Preference' is not a keyword argument or valid child for the bar statement.
-    bar value action Preference("text speed")
-                               ^
+File "game/script.rpy", line 31: expected statement.
+    continue
+            ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri May 15 23:44:11 2020
+Fri May 22 23:20:40 2020

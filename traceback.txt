@@ -1,35 +1,19 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/screens.rpy", line 392, in prepare_screen
-    screen setting():
-  File "game/screens.rpy", line 392, in prepare
-    screen setting():
-  File "game/screens.rpy", line 397, in prepare
-    fixed:
-  File "game/screens.rpy", line 397, in prepare
-    fixed:
-  File "game/screens.rpy", line 406, in prepare
-    fixed:
-  File "game/screens.rpy", line 406, in prepare
-    fixed:
-  File "game/screens.rpy", line 439, in prepare
-    fixed:
-  File "game/screens.rpy", line 439, in prepare
-    fixed:
-  File "game/screens.rpy", line 448, in prepare
-    if store.Preference("auto-forward time").get_adjustment().value > 22.5:
-  File "game/screens.rpy", line 448, in prepare
-    if store.Preference("auto-forward time").get_adjustment().value > 22.5:
-  File "game/screens.rpy", line 449, in prepare
-    timer 0.01 action Preference("auto-forward time", 29.9)
-  File "game/screens.rpy", line 449, in prepare
-    timer 0.01 action Preference("auto-forward time", 29.9)
-  File "renpy/common/00preferences.rpy", line 501, in Preference
-    rv = get()
-  File "renpy/common/00preferences.rpy", line 499, in get
-    raise Exception("Preference(%r, %r) is unknown." % (name , value))
-Exception: Preference(u'auto-forward time', 29.9) is unknown.
+While running game code:
+  File "renpy/common/00start.rpy", line 212, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 456, in script
+    python hide:
+  File "renpy/common/00start.rpy", line 212, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 456, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 456, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 466, in _execute_python_hide
+    renpy.load("_reload-2")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -38,44 +22,37 @@ Full traceback:
     renpy.main.main()
   File "W:\GamePython\renpy-7.3.2-sdk\renpy\main.py", line 578, in main
     run(restart)
-  File "W:\GamePython\renpy-7.3.2-sdk\renpy\main.py", line 94, in run
-    renpy.display.screen.prepare_screens()
-  File "W:\GamePython\renpy-7.3.2-sdk\renpy\display\screen.py", line 931, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/screens.rpy", line 392, in prepare_screen
-    screen setting():
-  File "game/screens.rpy", line 392, in prepare
-    screen setting():
-  File "game/screens.rpy", line 397, in prepare
-    fixed:
-  File "game/screens.rpy", line 397, in prepare
-    fixed:
-  File "game/screens.rpy", line 406, in prepare
-    fixed:
-  File "game/screens.rpy", line 406, in prepare
-    fixed:
-  File "game/screens.rpy", line 439, in prepare
-    fixed:
-  File "game/screens.rpy", line 439, in prepare
-    fixed:
-  File "game/screens.rpy", line 448, in prepare
-    if store.Preference("auto-forward time").get_adjustment().value > 22.5:
-  File "game/screens.rpy", line 448, in prepare
-    if store.Preference("auto-forward time").get_adjustment().value > 22.5:
-  File "game/screens.rpy", line 449, in prepare
-    timer 0.01 action Preference("auto-forward time", 29.9)
-  File "game/screens.rpy", line 449, in prepare
-    timer 0.01 action Preference("auto-forward time", 29.9)
-  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 2052, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<screen language>", line 449, in <module>
-  File "renpy/common/00preferences.rpy", line 501, in Preference
-    rv = get()
-  File "renpy/common/00preferences.rpy", line 499, in get
-    raise Exception("Preference(%r, %r) is unknown." % (name , value))
-Exception: Preference(u'auto-forward time', 29.9) is unknown.
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\main.py", line 143, in run
+    renpy.execution.run_context(True)
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\execution.py", line 908, in run_context
+    context.run()
+  File "renpy/common/00start.rpy", line 212, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 456, in script
+    python hide:
+  File "renpy/common/00start.rpy", line 212, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 456, in script
+    python hide:
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/00keymap.rpy", line 456, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 466, in _execute_python_hide
+    renpy.load("_reload-2")
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\loadsave.py", line 770, in load
+    log.unfreeze(roots, label="_after_load")
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 1983, in unfreeze
+    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 1815, in rollback
+    self.load_failed()
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 1733, in load_failed
+    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 HouNiao 1.0
-Fri May 15 23:56:21 2020
+Fri May 22 22:57:40 2020
