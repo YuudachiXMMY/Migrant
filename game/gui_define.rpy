@@ -1,3 +1,6 @@
+image bg_cover:
+    "gui/bg_cover.png"
+
 ## 主界面 ######################################################################
 ##
 image main_bg:
@@ -23,6 +26,39 @@ image staff_idle:
 
 image exit_idle:
     "gui/main/退出.png"
+
+## 存档 ######################################################################
+##
+image sl_bg:
+    "gui/sl/bg.png"
+
+image sl_close_idle:
+    "gui/sl/关闭.png"
+
+image sl_page_previous_idle:
+    "gui/sl/翻页-左.png"
+
+image sl_page_next_idle:
+    "gui/sl/翻页-右.png"
+
+image sl_load_btn_idle:
+    "gui/sl/读档-未选择.png"
+
+image sl_save_btn_idle:
+    "gui/sl/存档-未选择.png"
+
+image sl_load_btn_untoggled:
+    "gui/sl/读档-选中.png"
+
+image sl_save_btn_untoggled:
+    "gui/sl/存档-选中.png"
+
+image sl_slot_bg:
+    "gui/sl/挡位底板.png"
+
+image sl_slot_bg_hover:
+    align(0.5, 0.5)
+    "gui/sl/选中.png"
 
 ## 主界面 设置 ######################################################################
 ##
@@ -63,6 +99,12 @@ image setting_slider_3_btn_idle:
 image setting_graphics_title:
     "gui/setting/画面设置title.png"
 
+image setting_graphics_bg:
+    "gui/setting/分辨率框.png"
+
+image setting_graphics_btn_idle:
+    "gui/setting/下拉.png"
+
 ## 音乐设置
 image setting_sound_title:
     "gui/setting/音乐设置title.png"
@@ -75,3 +117,86 @@ image setting_slider_2_idle:
 
 image setting_slider_2_btn_idle:
     "gui/setting/滚轴点.png"
+
+## 制作人员
+image staffs_bg:
+    "gui/staffs/bg.jpg"
+
+image staffs_return_btn_idle:
+    "gui/staffs/return.png"
+
+image staffs_play_btn_idle:
+    "gui/staffs/play.png"
+
+## 对话框 ######################################################################
+##
+image dia_replay_idle:
+    "gui/dialogue/回放.png"
+
+image dia_replay_hover:
+    "gui/dialogue/回放-选中.png"
+
+image dia_qucksave_idle:
+    "gui/dialogue/快速存档.png"
+
+image dia_qucksave_hover:
+    "gui/dialogue/快速存档-选中.png"
+
+## 快速条 ######################################################################
+##
+image quick_bg:
+    "gui/quick/系统条底板.png"
+
+image quick_system_idle:
+    "gui/quick/系统-设置.png"
+
+image quick_system_hover:
+    "gui/quick/系统-设置.png"
+
+image quick_hidedia_idle:
+    "gui/quick/系统条-隐藏常态.png"
+
+image quick_hidedia_hover:
+    "gui/quick/系统条-隐藏选中.png"
+
+image quick_hidedia_selected_idle:
+    "gui/quick/系统条-隐藏常态.png"
+
+image quick_hidedia_selected_hover:
+    "gui/quick/系统条-隐藏选中.png"
+
+image quick_autoplay_idle:
+    "gui/quick/系统-播放-未开启.png"
+
+image quick_autoplay_hover:
+    "gui/quick/系统-播放-开启.png"
+
+image quick_autoplay_selected_idle:
+    "gui/quick/系统-播放-开启.png"
+
+image quick_autoplay_selected_hover:
+    "gui/quick/系统-播放-开启.png"
+
+image quick_skip_idle:
+    "gui/quick/系统条-快进-未开启.png"
+
+image quick_skip_hover:
+    "gui/quick/系统条-快进-开启.png"
+
+image quick_quicksave_idle:
+    "gui/quick/系统条-存档常态.png"
+
+image quick_quicksave_hover:
+    "gui/quick/系统条-存档选中.png"
+
+image quick_quickload_idle:
+    "gui/quick/系统条-读档常态.png"
+
+image quick_quickload_hover:
+    "gui/quick/系统条-读档选中.png"
+
+image quick_mainmenu_idle:
+    "gui/quick/系统条-home常态.png"
+
+image quick_mainmenu_hover:
+    "gui/quick/系统条-home选中.png"

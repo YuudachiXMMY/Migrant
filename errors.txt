@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 421: u'Preference' is not a keyword argument or valid child for the bar statement.
-    bar value action Preference("text speed")
-                               ^
+File "game/screens.rpy", line 697: end of line expected.
+    thumb "setting_slider_3_btn_idle":
+                                     ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri May 15 23:44:11 2020
+Thu Jul 30 17:12:03 2020

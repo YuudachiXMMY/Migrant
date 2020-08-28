@@ -4,8 +4,33 @@
 
 init offset = -1
 
-default persistent.text_speed = 100
-default persistent.auto_forward = 100
+# default persistent.text_speed = 100
+# default persistent.auto_forward = 100
+
+default persistent.setting_resolution = [2560, 1440]
+
+transform main_bg_ani:
+    alpha 0.0
+    linear 3.0 alpha 1.0
+
+transform main_logo_ani:
+    xalign 0.5 ypos 0.2 alpha 0.0
+    pause 3.5
+    linear 3.0 alpha 1.0
+
+define narrator = Character(None,kind=nvl,ctc_pause="ctc_pause_icon",ctc="ctc_icon")
+    
+image ctc_icon:
+    xpos -10 ypos -25 alpha 1.0
+    "gui/继续对话.png"
+    linear 1.5 alpha 0.5
+    pause 0.1
+    linear 1.5 alpha 1.0
+    pause 1
+    repeat
+
+image ctc_pause_icon:
+    "ctc_icon"
 
 ################################################################################
 ## 样式
@@ -26,14 +51,12 @@ style hyperlink_text:
 style gui_text:
     properties gui.text_properties("interface")
 
-
 style button:
     properties gui.button_properties("button")
 
 style button_text is gui_text:
     properties gui.text_properties("button")
     yalign 0.5
-
 
 style label_text is gui_text:
     properties gui.text_properties("label", accent=True)
@@ -109,6 +132,17 @@ screen say(who, what):
 
         text what id "what"
 
+    fixed:
+        imagebutton:
+            xalign 0.875 yalign 0.85
+            auto "dia_qucksave_%s"
+            action ShowMenu("save")
+
+        imagebutton:
+            xalign 0.875 yalign 0.92
+            auto "dia_replay_%s"
+            action ShowMenu('history')
+
 
     ## 如果有侧边图像，会将其显示在文本之上。请不要在手机界面下显示这个，因为没
     ## 有空间。
@@ -150,7 +184,7 @@ style namebox:
 style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
-    yalign 0.5
+    yalign 0.5 yoffset -10
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
@@ -228,6 +262,7 @@ style choice_button is default:
     properties gui.button_properties("choice_button")
 
 style choice_button_text is default:
+    yalign 0.5
     properties gui.button_text_properties("choice_button")
 
 
@@ -242,36 +277,52 @@ screen quick_menu():
 
     if quick_menu:
 
-        hbox:
-            style_prefix "quick"
+        window:
+            xsize 561 ysize 65
+            align(1.0, 1.0)
+            background "quick_bg"
 
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("回退") action Rollback()
-            textbutton _("历史") action ShowMenu('history')
-            textbutton _("快进") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("自动") action Preference("auto-forward", "toggle")
-            textbutton _("保存") action ShowMenu('save')
-            textbutton _("快存") action QuickSave()
-            textbutton _("快读") action QuickLoad()
-            textbutton _("设置") action ShowMenu('preferences')
+            imagebutton:
+                yalign 0.5 xalign 0.03
+                auto "quick_system_%s"
+                action ShowMenu("settings")
+            
+            imagebutton:
+                yalign 0.5 xalign 0.18
+                auto "quick_hidedia_%s"
+                action HideInterface()
+            
+            imagebutton:
+                yalign 0.5 xalign 0.34
+                auto "quick_autoplay_%s"
+                action Preference("auto-forward", "toggle")
+            
+            imagebutton:
+                yalign 0.5 xalign 0.48
+                auto "quick_skip_%s"
+                action Skip() alternate Skip(fast=False, confirm=True)
+            
+            imagebutton:
+                yalign 0.5 xalign 0.63
+                auto "quick_quicksave_%s"
+                action QuickSave(message=u'', newest=True)
+            
+            imagebutton:
+                yalign 0.5 xalign 0.78
+                auto "quick_quickload_%s"
+                action QuickLoad()
+            
+            imagebutton:
+                yalign 0.5 xalign 0.97
+                auto "quick_mainmenu_%s"
+                action MainMenu()
 
 
 ## 此代码确保只要玩家没有明确隐藏界面，就会在游戏中显示“quick_menu”屏幕。
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
-
-style quick_button is default
-style quick_button_text is button_text
-
-style quick_button:
-    properties gui.button_properties("quick_button")
-
-style quick_button_text:
-    properties gui.button_text_properties("quick_button")
+define quick_menu = True
 
 
 ################################################################################
@@ -350,67 +401,114 @@ screen main_menu():
     ## 此代码可确保替换掉任何其他菜单屏幕。
     tag menu
 
-    ## 此空框可使标题菜单变暗。
-    fixed:
-        add "main_bg"
-        add "main_logo" xalign 0.5 ypos 0.2
+    if main_menu:
+        add "main_bg" at main_bg_ani
+        # timer 0.01 action Show("main_ui", Dissolve(2.0))
+        use main_ui
+
+screen main_ui():
+    zorder 1000
+
+    if main_menu:
+
+        add "main_logo" at main_logo_ani
 
         grid 2 1:
             xalign 0.5 yalign 0.77
             xspacing 120
             imagebutton:
                 xalign 0.32
+                at transform:
+                    alpha 0.0
+                    pause 8.6
+                    linear 2.0 alpha 1.0
                 auto "start_%s"
                 action Start()
 
             imagebutton:
                 xalign 0.68
+                at transform:
+                    alpha 0.0
+                    pause 8.8
+                    linear 2.0 alpha 1.0
                 auto  "load_%s"
-                action ShowMenu("load")
+                action Show("load", dissolve)
 
         grid 4 1:
             xalign 0.5 yalign 0.9
             xspacing 160
             imagebutton:
+                at transform:
+                    alpha 0.0
+                    pause 9.0
+                    linear 2.0 alpha 1.0
                 auto "setting_%s"
-                action ShowMenu("setting")
+                action ShowMenu("settings")
             imagebutton:
+                at transform:
+                    alpha 0.0
+                    pause 9.2
+                    linear 2.0 alpha 1.0
                 auto "extraContent_%s"
-                action Start()
+                action NullAction()
             imagebutton:
+                at transform:
+                    alpha 0.0
+                    pause 9.4
+                    linear 2.0 alpha 1.0
                 auto "staff_%s"
-                action Start()
+                action ShowMenu("staffs")
             imagebutton:
+                at transform:
+                    alpha 0.0
+                    pause 9.6
+                    linear 2.0 alpha 1.0
                 auto "exit_%s"
-                action Start()
-
+                action Quit(confirm=not main_menu)
 
 ## 设置屏幕 ######################################################################
 ##
 ##
 
-screen setting():
+screen settings():
+    
     modal True
 
     # style_prefix "setting_text"
 
     fixed:
+        add "bg_cover"
         add "setting_bg"
 
         imagebutton:
             xalign 0.83 yalign 0.21
             auto "setting_close_%s"
-            action Hide("setting")
+            action Hide("settings", dissolve), Return()
 
         #文本设置
         fixed:
             add "setting_text_title" xalign 0.225 yalign 0.29
 
+            vbox:
+                style_prefix "text_setting"
+                xalign 0.375 yalign 0.37
+                spacing 45
+                hbox:
+                    spacing 140
+                    label _("慢")
+                    label _("快")
+                    label _("瞬间")
+
+                hbox:
+                    spacing 140
+                    label _("慢")
+                    label _("快")
+                    label _("瞬间")
+
             hbox:
                 style_prefix "text_setting"
                 xalign 0.3 yalign 0.4
                 spacing 80
-
                 vbox:
                     spacing 50
                     label _("文字显示速度")
@@ -435,28 +533,81 @@ screen setting():
                             action Preference("skip", "all")
                         label _("全部")
 
-            ## 设置速度的三个档
-            fixed:
-                if store.Preference("text speed").get_adjustment().value <= 50:
-                    timer 0.2 action Preference("text speed", 1)
-                elif store.Preference("text speed").get_adjustment().value > 150:
-                    timer 0.2 action Preference("text speed", 200)
-                else:
-                    timer 0.2 action Preference("text speed", 100)
-                if store.Preference("auto-forward time").get_adjustment().value <= 7.5:
-                    timer 0.2 action Preference("auto-forward time", 0)
-                elif store.Preference("auto-forward time").get_adjustment().value > 22.5:
-                    timer 0.2 action Preference("auto-forward time", 30)
-                else:
-                    timer 0.2 action Preference("auto-forward time", 15)
+            # # 设置速度的三个档 禁用
+            # fixed:
+            #     if store.Preference("text speed").get_adjustment().value <= 50:
+            #         timer 0.2 action Preference("text speed", 1)
+            #     elif store.Preference("text speed").get_adjustment().value > 150:
+            #         timer 0.2 action Preference("text speed", 200)
+            #     else:
+            #         timer 0.2 action Preference("text speed", 100)
+            #     if store.Preference("auto-forward time").get_adjustment().value <= 7.5:
+            #         timer 0.2 action Preference("auto-forward time", 0)
+            #     elif store.Preference("auto-forward time").get_adjustment().value > 22.5:
+            #         timer 0.2 action Preference("auto-forward time", 30)
+            #     else:
+            #         timer 0.2 action Preference("auto-forward time", 15)
+            # ################################################################
 
         #画面设置
         fixed:
             add "setting_graphics_title" xalign 0.565 yalign 0.29
 
+            hbox:
+                style_prefix "graphics_setting"
+                xalign 0.62 yalign 0.4
+                spacing 50
+
+                vbox:
+                    spacing 50
+                    label _("分辨率")
+                    label _("全  屏")
+
+                vbox:
+                    spacing 25
+                    frame:
+                        background "setting_graphics_bg"
+                        imagebutton:
+                            xpos 405 yalign 0.5
+                            auto "setting_graphics_btn_%s"
+                            at transform:
+                                yoffset -8
+                            action NullAction()
+
+                    hbox:
+                        spacing 50
+                        hbox:
+                            spacing 10
+                            imagebutton:
+                                auto "setting_click_%s"
+                                action Preference("display", "fullscreen")
+                            label _("是"):
+                                style_prefix "mute_setting"
+                        hbox:
+                            spacing 10
+                            imagebutton:
+                                auto "setting_click_%s"
+                                action Preference("display",  "any window")
+                            label _("否"):
+                                style_prefix "mute_setting"
+
         #音乐设置
         fixed:
             add "setting_sound_title" xalign 0.225 yalign 0.57
+
+            vbox:
+                style_prefix "text_setting"
+                xalign 0.375 yalign 0.37
+                spacing 45
+                hbox:
+                    spacing 140
+                    label _("Min")
+                    label _("Max")
+
+                hbox:
+                    spacing 140
+                    label _("Min")
+                    label _("Max")
 
             hbox:
                 style_prefix "sound_setting"
@@ -538,6 +689,7 @@ screen setting():
                     timer 0.01 action Preference("voice mute", "enable")
                 if store.MixerValue("sfx").get_adjustment().value <= 0.05:
                     timer 0.01 action Preference("sound mute", "enable")
+            ################################################################
 
 style text_setting_slider:
     xsize 355 ysize 13
@@ -558,6 +710,75 @@ style sound_setting_label_text is text_setting_label_text
 
 style mute_setting_label_text is sound_setting_label_text:
     bold True
+
+style graphics_setting is text_setting
+
+style graphics_setting_label_text is text_setting_label_text
+
+
+## 制作人员 ######################################################################
+##
+
+screen staffs():
+
+    tag menu
+
+    style_prefix "staffs"
+
+    add "staffs_bg"
+
+    imagebutton:
+        yalign 0.02
+        auto "staffs_return_btn_%s"
+        action Return()
+
+    imagebutton:
+        xalign 0.85 yalign 0.542
+        auto "staffs_play_btn_%s"
+        action NullAction()
+
+    vbox:
+        xalign 0.565 yalign 0.60
+        spacing 37
+        #监督
+        frame:
+            label _("苍蓝的风")
+        #剧本
+        frame:
+            label _("苍蓝的风")
+        #剧本协力
+        frame:
+            label _("小雨潇潇、木之")
+        #CG
+        frame:
+            label _("九九一木")
+        #立绘
+        frame:
+            label _("九九一木、水树迷")
+        #场景
+        frame:
+            label _("三水猫酱")
+        #音乐
+        frame:
+            label _("麋鹿、灵溪镇的清珏")
+        #配音
+        frame:
+            label _("酒儿")
+        #UI
+        frame:
+            label _("拾九子")
+        #程序
+        frame:
+            label _("芯玫墨韵、远征的苦行僧")
+
+style staffs_label_text:
+    font "经典中圆简.ttf"
+    size 32
+    color "#343434"
+
+style staffs_frame:
+    xalign 0.5
+    background None
 
 ## 游戏菜单屏幕 ######################################################################
 ##
@@ -750,109 +971,67 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("第 {} 页"), auto=_("自动存档"), quick=_("快速存档"))
+    fixed:
 
-    use game_menu(title):
+        if main_menu:
+            add "main_bg"
 
-        fixed:
+        add "bg_cover"
 
-            ## 此代码确保输入控件在任意按钮执行前可以获取“enter”事件。
-            order_reverse True
+        if renpy.get_screen("load"):
+            if not main_menu:
+                imagebutton:
+                    auto "sl_save_btn_%s"
+                    xalign 0.25 yalign 0.09
+                    action Show("save", dissolve)
+            # else:
+            #     add "sl_save_btn_idle" xalign 0.25 yalign 0.09
+            add "sl_bg" align(0.5, 0.5)
+            add "sl_load_btn_untoggled" xalign 0.22 yalign 0.08
+        elif renpy.get_screen("save"):
+            imagebutton:
+                auto "sl_load_btn_%s"
+                xalign 0.22 yalign 0.09
+                action Show("load", dissolve)
+            add "sl_bg" align(0.5, 0.5)
+            add "sl_save_btn_untoggled" xalign 0.25 yalign 0.08
 
-            ## 页面名称，可以通过单击按钮进行编辑。
-            button:
-                style "page_label"
+        imagebutton:
+            xalign 0.47 yalign 0.845
+            auto "sl_page_previous_%s"
+            action FilePagePrevious()
 
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
+        imagebutton:
+            xalign 0.53 yalign 0.845
+            auto "sl_page_next_%s"
+            action FilePageNext(max=10, auto=False, quick=False)
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+        imagebutton:
+            xalign 0.825 yalign 0.15
+            auto "sl_close_%s"
+            action Return()
 
-            ## 存档位网格。
-            grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
+        grid 3 3:
+            style_prefix "slot"
+            align(0.5, 0.5)
+            xspacing 50
+            yspacing 70
 
-                xalign 0.5
-                yalign 0.5
+            for i in range (1, 10):
+                button:
+                    idle_background "sl_slot_bg"
+                    hover_background "sl_slot_bg_hover"
+                    action FileAction(i)
+                    add "sl_slot_bg" align(0.5,0.5)
+                    add FileScreenshot(i) align(0.5,0.5) size(461, 251)
+                    # text FileTime(i, format=_("{#file_time}%Y年%B%d日  %H:%M"), empty=_("")):
+                    #     color "#fff" xalign 0.5 ypos 240 size 30
+                    # text FileSaveName(i)
+                    key "save_delete" action FileDelete(i)
 
-                spacing gui.slot_spacing
-
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
-
-                    $ slot = i + 1
-
-                    button:
-                        action FileAction(slot)
-
-                        has vbox
-
-                        add FileScreenshot(slot) xalign 0.5
-
-                        text FileTime(slot, format=_("{#file_time}%Y-%m-%d %H:%M"), empty=_("空存档位")):
-                            style "slot_time_text"
-
-                        text FileSaveName(slot):
-                            style "slot_name_text"
-
-                        key "save_delete" action FileDelete(slot)
-
-            ## 用于访问其他页面的按钮。
-            hbox:
-                style_prefix "page"
-
-                xalign 0.5
-                yalign 1.0
-
-                spacing gui.page_spacing
-
-                textbutton _("<") action FilePagePrevious()
-
-                if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                ## “range(1, 10)”给出1到9之间的数字。
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
-
-                textbutton _(">") action FilePageNext()
-
-
-style page_label is gui_label
-style page_label_text is gui_label_text
-style page_button is gui_button
-style page_button_text is gui_button_text
-
-style slot_button is gui_button
-style slot_button_text is gui_button_text
-style slot_time_text is slot_button_text
-style slot_name_text is slot_button_text
-
-style page_label:
-    xpadding 100
-    ypadding 6
-
-style page_label_text:
-    text_align 0.5
-    layout "subtitle"
-    hover_color gui.hover_color
-
-style page_button:
-    properties gui.button_properties("page_button")
-
-style page_button_text:
-    properties gui.button_text_properties("page_button")
 
 style slot_button:
-    properties gui.button_properties("slot_button")
-
-style slot_button_text:
-    properties gui.button_text_properties("slot_button")
+    xsize 461 ysize 251
 
 
 ## 设置屏幕 ########################################################################
@@ -1533,7 +1712,6 @@ style nvl_button:
 
 style nvl_button_text:
     properties gui.button_text_properties("nvl_button")
-
 
 
 ################################################################################
