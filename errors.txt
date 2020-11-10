@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 697: end of line expected.
-    thumb "setting_slider_3_btn_idle":
-                                     ^
+File "game/screens.rpy", line 222: u'elif' is not a keyword argument or valid child for the frame statement.
+    elif renpy.get_mouse_pos()[0] > (2560-296):
+        ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Jul 30 17:12:03 2020
+Tue Nov 10 17:26:17 2020

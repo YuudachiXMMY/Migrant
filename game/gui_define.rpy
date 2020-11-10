@@ -27,6 +27,12 @@ image staff_idle:
 image exit_idle:
     "gui/main/退出.png"
 
+image blank_idle:
+    "gui/blank.png"
+
+image blank_hover:
+    "gui/blank.png"
+
 ## 存档 ######################################################################
 ##
 image sl_bg:
@@ -59,6 +65,22 @@ image sl_slot_bg:
 image sl_slot_bg_hover:
     align(0.5, 0.5)
     "gui/sl/选中.png"
+
+image sl_slot_page_background:
+    zoom 0.9
+    "gui/sl/页面底框.png"
+
+## 确认窗口 ######################################################################
+##
+image confirm_bg:
+    align(0.5, 0.5)
+    "gui/confirm/弹窗背板.png"
+
+image confirm_btn_idle:
+    "gui/confirm/按钮底-未选.png"
+
+image confirm_btn_hover:
+    "gui/confirm/按钮底-选择.png"
 
 ## 主界面 设置 ######################################################################
 ##
@@ -127,6 +149,50 @@ image staffs_return_btn_idle:
 
 image staffs_play_btn_idle:
     "gui/staffs/play.png"
+
+## 右键菜单 ######################################################################
+##
+image r_menu_background:
+    "gui/r_menu/右键菜单底板.png"
+
+image r_menu_save_idle:
+    "gui/r_menu/存档_idle.png"
+
+image r_menu_save_hover:
+    "gui/r_menu/存档_hover.png"
+
+image r_menu_load_idle:
+    "gui/r_menu/读档_idle.png"
+
+image r_menu_load_hover:
+    "gui/r_menu/读档_hover.png"
+
+image r_menu_history_idle:
+    "gui/r_menu/文本回放_idle.png"
+
+image r_menu_history_hover:
+    "gui/r_menu/文本回放_hover.png"
+
+image r_menu_setting_idle:
+    "gui/r_menu/设置_idle.png"
+
+image r_menu_setting_hover:
+    "gui/r_menu/设置_hover.png"
+
+image r_menu_mainmenu_idle:
+    "gui/r_menu/返回标题_idle.png"
+
+image r_menu_mainmenu_hover:
+    "gui/r_menu/返回标题_hover.png"
+
+image r_menu_exit_idle:
+    "gui/r_menu/退出游戏_idle.png"
+
+image r_menu_exit_hover:
+    "gui/r_menu/退出游戏_hover.png"
+
+
+
 
 ## 对话框 ######################################################################
 ##

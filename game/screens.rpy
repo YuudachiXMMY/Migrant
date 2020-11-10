@@ -4,6 +4,12 @@
 
 init offset = -1
 
+default first_menu = True
+
+
+################################################################################
+## Main
+################################################################################
 # default persistent.text_speed = 100
 # default persistent.auto_forward = 100
 
@@ -18,8 +24,8 @@ transform main_logo_ani:
     pause 3.5
     linear 3.0 alpha 1.0
 
-define narrator = Character(None,kind=nvl,ctc_pause="ctc_pause_icon",ctc="ctc_icon")
-    
+define config.main_menu_music = 'audio/music/themepiano.ogg'
+
 image ctc_icon:
     xpos -10 ypos -25 alpha 1.0
     "gui/继续对话.png"
@@ -143,7 +149,6 @@ screen say(who, what):
             auto "dia_replay_%s"
             action ShowMenu('history')
 
-
     ## 如果有侧边图像，会将其显示在文本之上。请不要在手机界面下显示这个，因为没
     ## 有空间。
     if not renpy.variant("small"):
@@ -192,6 +197,75 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
+    line_spacing 26
+
+
+## 右键菜单 ########################################################################
+##
+
+screen r_menu():
+    zorder 101
+    modal True
+
+    imagebutton:
+        auto "blank_%s"
+        action Hide("r_menu")
+
+    frame:
+        #TODO
+        # if renpy.get_mouse_pos()[0] > (2560-296) and renpy.get_mouse_pos()[1] > (1440-419):
+        #     xpos (2560-296) ypos (1440-419)
+        # elif renpy.get_mouse_pos()[0] > (2560-296):
+        #     xpos (2560-296) ypos renpy.get_mouse_pos()[1]
+        xpos renpy.get_mouse_pos()[0] ypos renpy.get_mouse_pos()[1]
+
+        if renpy.get_mouse_pos()[0] > (2560-296) and renpy.get_mouse_pos()[1] > (1440-419):
+            xanchor 1.0 yanchor 1.0
+        elif renpy.get_mouse_pos()[0] > (2560-296):
+            xanchor 1.0
+        elif renpy.get_mouse_pos()[1] > (1440-419):
+            yanchor 1.0
+        else:
+            xanchor 0.0 yanchor 0.0
+
+        xysize(296, 419)
+        background "r_menu_background"
+
+        vbox:
+            xalign 0.5 yalign 0.5
+            spacing 2
+
+            #存档
+            imagebutton:
+                auto "r_menu_save_%s"
+                action Hide("r_menu"), ShowMenu("save")
+
+            #读档
+            imagebutton:
+                auto "r_menu_load_%s"
+                action Hide("r_menu"), ShowMenu("load")
+
+            #文本回放
+            imagebutton:
+                auto "r_menu_history_%s"
+                action NullAction()
+
+            #设置
+            imagebutton:
+                auto "r_menu_setting_%s"
+                action NullAction()
+
+            #返回标题
+            imagebutton:
+                auto "r_menu_mainmenu_%s"
+                action NullAction()
+
+            #退出游戏
+            imagebutton:
+                auto "r_menu_exit_%s"
+                action NullAction()
+
+
 
 
 ## 输入屏幕 ########################################################################
@@ -285,37 +359,40 @@ screen quick_menu():
             imagebutton:
                 yalign 0.5 xalign 0.03
                 auto "quick_system_%s"
-                action ShowMenu("settings")
-            
+                action Show("settings", dissolve)
+
             imagebutton:
                 yalign 0.5 xalign 0.18
                 auto "quick_hidedia_%s"
                 action HideInterface()
-            
+
             imagebutton:
                 yalign 0.5 xalign 0.34
                 auto "quick_autoplay_%s"
                 action Preference("auto-forward", "toggle")
-            
+
             imagebutton:
                 yalign 0.5 xalign 0.48
                 auto "quick_skip_%s"
                 action Skip() alternate Skip(fast=False, confirm=True)
-            
+
             imagebutton:
                 yalign 0.5 xalign 0.63
                 auto "quick_quicksave_%s"
                 action QuickSave(message=u'', newest=True)
-            
+
             imagebutton:
                 yalign 0.5 xalign 0.78
                 auto "quick_quickload_%s"
                 action QuickLoad()
-            
+
             imagebutton:
                 yalign 0.5 xalign 0.97
                 auto "quick_mainmenu_%s"
                 action MainMenu()
+
+        key "right_click_menu" action Show("r_menu")
+
 
 
 ## 此代码确保只要玩家没有明确隐藏界面，就会在游戏中显示“quick_menu”屏幕。
@@ -407,71 +484,88 @@ screen main_menu():
         use main_ui
 
 screen main_ui():
-    zorder 1000
+    zorder 1001
 
     if main_menu:
 
-        add "main_logo" at main_logo_ani
+        if first_menu:
+            add "main_logo" at main_logo_ani
+        else:
+            add "main_logo" xalign 0.5 ypos 0.2
 
         grid 2 1:
             xalign 0.5 yalign 0.77
             xspacing 120
             imagebutton:
                 xalign 0.32
-                at transform:
-                    alpha 0.0
-                    pause 8.6
-                    linear 2.0 alpha 1.0
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 8.6
+                        linear 2.0 alpha 1.0
                 auto "start_%s"
-                action Start()
+                action [SetVariable("first_menu", False),
+                        Start()]
 
             imagebutton:
                 xalign 0.68
-                at transform:
-                    alpha 0.0
-                    pause 8.8
-                    linear 2.0 alpha 1.0
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 8.8
+                        linear 2.0 alpha 1.0
                 auto  "load_%s"
-                action Show("load", dissolve)
+                action [SetVariable("first_menu", False),
+                        ShowMenu("load")]
 
         grid 4 1:
             xalign 0.5 yalign 0.9
             xspacing 160
             imagebutton:
-                at transform:
-                    alpha 0.0
-                    pause 9.0
-                    linear 2.0 alpha 1.0
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 9.0
+                        linear 2.0 alpha 1.0
                 auto "setting_%s"
-                action ShowMenu("settings")
+                action [SetVariable("first_menu", False),
+                        Show("settings", dissolve)]
             imagebutton:
-                at transform:
-                    alpha 0.0
-                    pause 9.2
-                    linear 2.0 alpha 1.0
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 9.2
+                        linear 2.0 alpha 1.0
                 auto "extraContent_%s"
-                action NullAction()
+                action [SetVariable("first_menu", False),
+                        NullAction()]
             imagebutton:
-                at transform:
-                    alpha 0.0
-                    pause 9.4
-                    linear 2.0 alpha 1.0
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 9.4
+                        linear 2.0 alpha 1.0
                 auto "staff_%s"
-                action ShowMenu("staffs")
+                action [SetVariable("first_menu", False),
+                        ShowMenu("staffs")]
             imagebutton:
-                at transform:
-                    alpha 0.0
-                    pause 9.6
-                    linear 2.0 alpha 1.0
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 9.6
+                        linear 2.0 alpha 1.0
                 auto "exit_%s"
-                action Quit(confirm=not main_menu)
+                action [SetVariable("first_menu", True),
+                        Quit(confirm=main_menu)]
+                        # Quit(confirm=not main_menu)]
+
 
 ## 设置屏幕 ######################################################################
 ##
 ##
 
 screen settings():
-    
+
     modal True
 
     # style_prefix "setting_text"
@@ -565,6 +659,7 @@ screen settings():
 
                 vbox:
                     spacing 25
+                    yoffset -5
                     frame:
                         background "setting_graphics_bg"
                         imagebutton:
@@ -597,23 +692,23 @@ screen settings():
 
             vbox:
                 style_prefix "text_setting"
-                xalign 0.375 yalign 0.37
+                xalign 0.3825 yalign 0.37
                 spacing 45
                 hbox:
-                    spacing 140
+                    spacing 125
                     label _("Min")
                     label _("Max")
 
                 hbox:
-                    spacing 140
+                    spacing 125
                     label _("Min")
                     label _("Max")
 
             hbox:
                 style_prefix "sound_setting"
-                xalign 0.3 yalign 0.7
+                xalign 0.32 yalign 0.7
                 xoffset -20
-                spacing 70
+                spacing 60
 
                 vbox:
                     spacing 70
@@ -621,8 +716,8 @@ screen settings():
                     label _("音乐音量")
 
                 vbox:
-                    yoffset 20
-                    spacing 70
+                    yoffset 7
+                    spacing 72
                     bar value Preference("music volume")
                     bar value Preference("music volume"):
                         yoffset 10
@@ -647,9 +742,9 @@ screen settings():
 
             hbox:
                 style_prefix "sound_setting"
-                xalign 0.7 yalign 0.7
+                xalign 0.72 yalign 0.7
                 xoffset -20
-                spacing 70
+                spacing 60
 
                 vbox:
                     spacing 70
@@ -657,8 +752,8 @@ screen settings():
                     label _("音效音量")
 
                 vbox:
-                    yoffset 20
-                    spacing 70
+                    yoffset 7
+                    spacing 72
                     bar value Preference("voice volume")
                     bar value Preference("sound volume"):
                         yoffset 10
@@ -684,15 +779,18 @@ screen settings():
             ## 音量低于5%自动设置为静音
             fixed:
                 if store.MixerValue("music").get_adjustment().value <= 0.05:
+                    $store.MixerValue("music").get_adjustment().value = 0
                     timer 0.01 action Preference("music mute", "enable")
                 if store.MixerValue("voice").get_adjustment().value <= 0.05:
+                    $store.MixerValue("voice").get_adjustment().value = 0
                     timer 0.01 action Preference("voice mute", "enable")
                 if store.MixerValue("sfx").get_adjustment().value <= 0.05:
+                    $store.MixerValue("sfx").get_adjustment().value = 0
                     timer 0.01 action Preference("sound mute", "enable")
             ################################################################
 
 style text_setting_slider:
-    xsize 355 ysize 13
+    xsize 355 ysize 19
     base_bar "setting_slider_3_idle"
     thumb "setting_slider_3_btn_idle"
 
@@ -702,7 +800,7 @@ style text_setting_label_text:
     color "#343434"
 
 style sound_setting_slider is text_setting_slider:
-    xsize 201
+    xsize 294
     base_bar "setting_slider_2_idle"
     thumb "setting_slider_2_btn_idle"
 
@@ -983,7 +1081,7 @@ screen file_slots(title):
                 imagebutton:
                     auto "sl_save_btn_%s"
                     xalign 0.25 yalign 0.09
-                    action Show("save", dissolve)
+                    action ShowMenu("save")
             # else:
             #     add "sl_save_btn_idle" xalign 0.25 yalign 0.09
             add "sl_bg" align(0.5, 0.5)
@@ -992,14 +1090,24 @@ screen file_slots(title):
             imagebutton:
                 auto "sl_load_btn_%s"
                 xalign 0.22 yalign 0.09
-                action Show("load", dissolve)
+                action ShowMenu("load")
             add "sl_bg" align(0.5, 0.5)
             add "sl_save_btn_untoggled" xalign 0.25 yalign 0.08
 
         imagebutton:
             xalign 0.47 yalign 0.845
             auto "sl_page_previous_%s"
-            action FilePagePrevious()
+            action FilePagePrevious(auto=False, quick=False)
+
+        add "sl_slot_page_background" xalign 0.5 yalign 0.845 yoffset 5
+        if FilePageName() == "10":
+            text _(FilePageName()):
+                xalign 0.5 yalign 0.845
+                style "sl_page"
+        else:
+            text _(str(0) + FilePageName()):
+                xalign 0.5 yalign 0.845
+                style "sl_page"
 
         imagebutton:
             xalign 0.53 yalign 0.845
@@ -1032,6 +1140,14 @@ screen file_slots(title):
 
 style slot_button:
     xsize 461 ysize 251
+
+style sl_page is text
+
+style sl_page_text:
+    xalign 0.5 yalign 0.845
+    size 42
+    font "站酷高端黑修订版1.13.ttf"
+    color "#15153c"
 
 
 ## 设置屏幕 ########################################################################
@@ -1458,13 +1574,15 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    # add "gui/overlay/confirm.png"
 
     frame:
+        align(0.5, 0.5)
+        background "confirm_bg"
 
         vbox:
-            xalign .5
-            yalign .5
+            xalign 0.5
+            yalign 0.5
             spacing 60
 
             label _(message):
@@ -1473,14 +1591,49 @@ screen confirm(message, yes_action, no_action):
 
             hbox:
                 xalign 0.5
+                # spacing 200
+                spacing 100
+
+                button:
+                    xysize(182, 44)
+                    idle_background "confirm_btn_idle"
+                    hover_background "confirm_btn_hover"
+                    action yes_action
+                    text _("确定"):
+                        style "confirm_yn"
+                        align(0.5, 0.5)
+                # textbutton _("确定"):
+                #     style "confirm_yn"
+                #     action yes_action
+
+                button:
+                    xysize(182, 44)
+                    idle_background "confirm_btn_idle"
+                    hover_background "confirm_btn_hover"
+                    action no_action
+                    text _("取消"):
+                        style "confirm_yn"
+                        align(0.5, 0.5)
+                # textbutton _("取消"):
+                #     style "confirm_yn"
+                #     action no_action
+
+            hbox:
+                xalign 0.5
                 spacing 200
 
-                textbutton _("确定") action yes_action
-                textbutton _("取消") action no_action
 
     ## 右键点击退出并答复“no”（取消）。
     key "game_menu" action no_action
 
+
+style confirm_yn is confirm_prompt
+
+style confirm_yn_text:
+    font "站酷高端黑修订版1.13.ttf"
+    idle_color "#343434"
+    hover_color "#ecb25b"
+    size 40
 
 style confirm_frame is gui_frame
 style confirm_prompt is gui_prompt
@@ -1495,6 +1648,8 @@ style confirm_frame:
     yalign .5
 
 style confirm_prompt_text:
+    size 32
+    font "经典中圆简.ttf" color "#c9c4b6"
     text_align 0.5
     layout "subtitle"
 
