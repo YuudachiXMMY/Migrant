@@ -6,6 +6,8 @@ init offset = -1
 
 default first_menu = True
 
+# define config.auto_voice = "voice/{id}.ogg"
+
 
 ################################################################################
 ## Main
@@ -27,7 +29,7 @@ transform main_logo_ani:
 define config.main_menu_music = 'audio/music/themepiano.ogg'
 
 image ctc_icon:
-    xpos -10 ypos -25 alpha 1.0
+    yalign 0.6 alpha 1.0
     "gui/继续对话.png"
     linear 1.5 alpha 0.5
     pause 0.1
@@ -248,22 +250,22 @@ screen r_menu():
             #文本回放
             imagebutton:
                 auto "r_menu_history_%s"
-                action NullAction()
+                action Hide("r_menu", transition=None), ShowMenu("history")
 
             #设置
             imagebutton:
                 auto "r_menu_setting_%s"
-                action NullAction()
+                action Hide("r_menu"), ShowMenu("settings")
 
             #返回标题
             imagebutton:
                 auto "r_menu_mainmenu_%s"
-                action NullAction()
+                action Hide("r_menu"), MainMenu()
 
             #退出游戏
             imagebutton:
                 auto "r_menu_exit_%s"
-                action NullAction()
+                action Quit(confirm=True)
 
 
 
@@ -379,7 +381,7 @@ screen quick_menu():
             imagebutton:
                 yalign 0.5 xalign 0.63
                 auto "quick_quicksave_%s"
-                action QuickSave(message=u'', newest=True)
+                action QuickSave(message=u'已快速保存', newest=True)
 
             imagebutton:
                 yalign 0.5 xalign 0.78
@@ -391,7 +393,8 @@ screen quick_menu():
                 auto "quick_mainmenu_%s"
                 action MainMenu()
 
-        key "right_click_menu" action Show("r_menu")
+        if not renpy.get_screen("save") or not renpy.get_screen("load"):
+            key "right_click_menu" action Show("r_menu")
 
 
 
@@ -484,7 +487,7 @@ screen main_menu():
         use main_ui
 
 screen main_ui():
-    zorder 1001
+    zorder 101
 
     if main_menu:
 
@@ -1318,13 +1321,16 @@ screen history():
     ## 避免预缓存此屏幕，因为它可能非常大。
     predict False
 
-    use game_menu(_("历史"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    add "black_bg"
+
+    use history_menu(_("历史"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
         style_prefix "history"
 
         for h in _history_list:
 
             window:
+                bottom_margin 50
 
                 ## 此代码可确保如果“history_height”为“None”的话仍可正常显示条
                 ## 目。
@@ -1334,37 +1340,51 @@ screen history():
                 if h.who:
 
                     label h.who:
-                        style "history_name"
                         substitute False
+                        style "history_name"
 
                         ## 若角色颜色已设置，则从“Character”对象中读取颜色到叙述
                         ## 人文本中。
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
+                        # if "color" in h.who_args:
+                        #     text_color h.who_args["color"]
 
                 $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
-                    substitute False
+                if h.who:
+                    text what:
+                        substitute False
+                        font "经典中圆简.ttf"
+                        color "#ffffff"
+                else:
+                    text "{i}" + what + "{/i}":
+                        substitute False
+                        font "经典中圆简.ttf"
+                        color "#a7a7a7"
+
+                if h.voice.filename != None:
+
+                    imagebutton:
+                        xalign 0.93
+                        auto "history_voiceReplay_btn_%s"
+                        action Play("voice", h.voice.filename)
 
         if not _history_list:
             label _("对话历史记录为空。")
 
 
 ## 此代码决定了允许在历史记录屏幕上显示哪些标签。
-
 define gui.history_allow_tags = set()
 
 
 style history_window is empty
 
-style history_name is gui_label
-style history_name_text is gui_label_text
-style history_text is gui_text
+style history_name is empty
+style history_name_text is empty
+style history_text is empty
 
-style history_text is gui_text
+style history_text is empty
 
-style history_label is gui_label
-style history_label_text is gui_label_text
+style history_label is empty
+style history_label_text is empty
 
 style history_window:
     xfill True
@@ -1377,10 +1397,15 @@ style history_name:
     xsize gui.history_name_width
 
 style history_name_text:
+    size 48
+    font "站酷高端黑修订版1.13.ttf"
+    color "#989898"
     min_width gui.history_name_width
     text_align gui.history_name_xalign
 
 style history_text:
+    line_spacing 15
+    size 38
     xpos gui.history_text_xpos
     ypos gui.history_text_ypos
     xanchor gui.history_text_xalign
@@ -1394,6 +1419,71 @@ style history_label:
 
 style history_label_text:
     xalign 0.5
+    size 48
+    font "站酷高端黑修订版1.13.ttf"
+    color "#989898"
+
+
+## 历史菜单屏幕 ######################################################################
+##
+
+screen history_menu(title, scroll=None, yinitial=0.0):
+
+    frame:
+        align(0.5, 0.5)
+        top_padding 220
+        bottom_padding 220
+        left_padding 220
+        right_padding 220
+        background None
+
+        hbox:
+
+            ## 导航部分的预留空间。
+            # frame:
+            #     style "game_menu_navigation_frame"
+
+            frame:
+
+                background None
+
+                if scroll == "viewport":
+
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        vbox:
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial yinitial
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        transclude
+
+                else:
+
+                    transclude
+
+    imagebutton:
+        yalign 0.05
+        auto "history_return_btn_%s"
+        action Return()
 
 
 ## 帮助屏幕 ########################################################################
@@ -1592,7 +1682,7 @@ screen confirm(message, yes_action, no_action):
             hbox:
                 xalign 0.5
                 # spacing 200
-                spacing 100
+                spacing 30
 
                 button:
                     xysize(182, 44)
@@ -1601,6 +1691,8 @@ screen confirm(message, yes_action, no_action):
                     action yes_action
                     text _("确定"):
                         style "confirm_yn"
+                        idle_color "#343434"
+                        hover_color "#ecb25b"
                         align(0.5, 0.5)
                 # textbutton _("确定"):
                 #     style "confirm_yn"
@@ -1613,14 +1705,16 @@ screen confirm(message, yes_action, no_action):
                     action no_action
                     text _("取消"):
                         style "confirm_yn"
+                        idle_color "#343434"
+                        hover_color "#ecb25b"
                         align(0.5, 0.5)
                 # textbutton _("取消"):
                 #     style "confirm_yn"
                 #     action no_action
 
-            hbox:
-                xalign 0.5
-                spacing 200
+            # hbox:
+            #     xalign 0.5
+            #     spacing 200
 
 
     ## 右键点击退出并答复“no”（取消）。
@@ -1649,7 +1743,8 @@ style confirm_frame:
 
 style confirm_prompt_text:
     size 32
-    font "经典中圆简.ttf" color "#c9c4b6"
+    color "#c9c4b6"
+    font "经典中圆简.ttf"
     text_align 0.5
     layout "subtitle"
 
@@ -1668,19 +1763,21 @@ style confirm_button_text:
 
 screen skip_indicator():
 
-    zorder 100
-    style_prefix "skip"
+    pass
 
-    frame:
+    # zorder 100
+    # style_prefix "skip"
 
-        hbox:
-            spacing 12
+    # frame:
 
-            text _("正在快进")
+    #     hbox:
+    #         spacing 12
 
-            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
+    #         text _("正在快进")
+
+    #         text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
+    #         text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
+    #         text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
 
 
 ## 此变换用于一个接一个地闪烁箭头。
@@ -1749,6 +1846,8 @@ style notify_frame:
     padding gui.notify_frame_borders.padding
 
 style notify_text:
+    color "#ffffff"
+    font "经典中圆简.ttf"
     properties gui.text_properties("notify")
 
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 222: u'elif' is not a keyword argument or valid child for the frame statement.
-    elif renpy.get_mouse_pos()[0] > (2560-296):
-        ^
+File "game/script.rpy", line 1057: expected end of line
+    stop music with fade
+               ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Nov 10 17:26:17 2020
+Fri Nov 13 21:27:46 2020

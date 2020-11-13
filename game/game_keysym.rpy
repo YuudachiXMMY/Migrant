@@ -42,13 +42,13 @@ define config.keymap = dict(
     toggle_afm = [ ],
     toggle_fullscreen = [ ],
     game_menu = [ ],
-    hide_windows = [ ],
+    hide_windows = [ 'h' ],
     launch_editor = [ ],
     dump_styles = [ ],
     reload_game = [ 'R' ],
-    inspector = [ ],
-    full_inspector = [ ],
-    developer = [ ],
+    inspector = [ 'I' ],
+    full_inspector = [ 'alt_I' ],
+    developer = [ 'd'],
     quit = [ ],
     iconify = [ ],
     help = [ ],
@@ -68,10 +68,10 @@ define config.keymap = dict(
     dismiss_hard_pause = [ ],
 
     # Focus.
-    focus_left = [ ],
-    focus_right = [ ],
-    focus_up = [ ],
-    focus_down = [ ],
+    focus_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
+    focus_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
+    focus_up = [ 'K_UP', 'repeat_K_UP' ],
+    focus_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
 
     # Button.
     button_ignore = [ 'mousedown_1' ],
@@ -93,14 +93,14 @@ define config.keymap = dict(
     input_paste = [ ],
 
     # Viewport.
-    viewport_leftarrow = [ ],
-    viewport_rightarrow = [ ],
-    viewport_uparrow = [ ],
-    viewport_downarrow = [ ],
-    viewport_wheelup = [ ],
-    viewport_wheeldown = [ ],
-    viewport_drag_start = [ ],
-    viewport_drag_end = [ ],
+    viewport_leftarrow = [ 'K_LEFT', 'repeat_K_LEFT' ],
+    viewport_rightarrow = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
+    viewport_uparrow = [ 'K_UP', 'repeat_K_UP' ],
+    viewport_downarrow = [ 'K_DOWN', 'repeat_K_DOWN' ],
+    viewport_wheelup = [ 'mousedown_4' ],
+    viewport_wheeldown = [ 'mousedown_5' ],
+    viewport_drag_start = [ 'mousedown_1' ],
+    viewport_drag_end = [ 'mouseup_1' ],
 
     # These keys control skipping.
     skip = [ ],
@@ -109,22 +109,22 @@ define config.keymap = dict(
     fast_skip = [ ],
 
     # Bar.
-    bar_activate = [ ],
-    bar_deactivate = [ ],
-    bar_left = [ ],
-    bar_right = [ ],
-    bar_up = [ ],
-    bar_down = [ ],
+    bar_activate = [ 'mousedown_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
+    bar_deactivate = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
+    bar_left = [ 'K_LEFT', 'repeat_K_LEFT' ],
+    bar_right = [ 'K_RIGHT', 'repeat_K_RIGHT' ],
+    bar_up = [ 'K_UP', 'repeat_K_UP' ],
+    bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
 
     # 右键菜单
     right_click_menu= [ "mousedown_3" ],
 
     # Delete a save.
-    save_delete = [ "mousedown_3", "K_DELETE" ],
+    save_delete = [ 'mouseup_3', 'mousedown_3', "K_DELETE" ],
 
     # Draggable.
-    drag_activate = [ ],
-    drag_deactivate = [ ],
+    drag_activate = [ 'mousedown_1' ],
+    drag_deactivate = [ 'mouseup_1' ],
 
     # Debug console.
     console = [ ],
@@ -132,9 +132,9 @@ define config.keymap = dict(
     console_newer = [ 'K_DOWN', 'repeat_K_DOWN'],
 
     # Ignored (kept for backwards compatibility).
-    toggle_music = [ ],
-    viewport_up = [ ],
-    viewport_down = [ ],
+    toggle_music = [ 'm' ],
+    viewport_up = [ 'mousedown_4' ],
+    viewport_down = [ 'mousedown_5' ],
 
     # Profile commands.
     profile_once = [ ],

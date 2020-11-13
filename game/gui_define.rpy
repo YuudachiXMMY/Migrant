@@ -1,6 +1,10 @@
 image bg_cover:
     "gui/bg_cover.png"
 
+image black_bg:
+    alpha 0.7
+    "gui/black.png"
+
 ## 主界面 ######################################################################
 ##
 image main_bg:
@@ -266,3 +270,17 @@ image quick_mainmenu_idle:
 
 image quick_mainmenu_hover:
     "gui/quick/系统条-home选中.png"
+
+## 历史界面 ######################################################################
+##
+image history_return_btn_idle:
+    "gui/history/返回.png"
+
+image history_return_btn_hover:
+    "history_return_btn_idle"
+
+image history_voiceReplay_btn_idle:
+    "gui/history/语音.png"
+
+image history_voiceReplay_hover:
+    "history_voiceReplay_btn_idle"

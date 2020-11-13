@@ -119,11 +119,11 @@ define gui.namebox_tile = False
 
 ## 对话框相对于文本框的位置。可以是相对于文本框从左侧或顶部起的整数像素，或设
 ## 为“0.5”来放置到正中。
-define gui.dialogue_xpos = 0.15
-define gui.dialogue_ypos = 0.2
+define gui.dialogue_xpos = 0.2 #0.15
+define gui.dialogue_ypos = 0.27 #0.2
 
 ## 对话文本的最大宽度（以像素为单位）。
-define gui.dialogue_width = 1675
+define gui.dialogue_width = 1550 #1675
 
 ## 对话文本的水平对齐方式。0.0 为左侧对齐，0.5 为居中显示，而 1.0 为右侧对齐。
 define gui.dialogue_text_xalign = 0.0
@@ -327,7 +327,7 @@ define gui.unscrollable = "hide"
 define config.history_length = 250
 
 ## 历史屏幕条目的高度，或设置为“None”以使高度变量自适应。
-define gui.history_height = 280
+define gui.history_height = None
 
 ## 所指定叙述角色的标签的坐标、宽度和对齐方式。
 define gui.history_name_xpos = 310

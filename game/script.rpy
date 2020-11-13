@@ -2,15 +2,15 @@
 
 # 声明此游戏使用的角色。颜色参数可使角色姓名着色。
 
-define y = Character("叶雨潇", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
-define l = Character("梁芷柔", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
-define z = Character("老师", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
-define a = Character("同学A", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
-define b = Character("同学B", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
-define c = Character("其他同学", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
-define who = Character("？？？", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
-define az = Character("医生", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
-define k = Character("护士", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define y = Character("叶雨潇", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define l = Character("梁芷柔", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define z = Character("老师", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define a = Character("同学A", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define b = Character("同学B", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define c = Character("其他同学", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define who = Character("？？？", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define az = Character("医生", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define k = Character("护士", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define narrator = Character(None, ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 
 # 游戏在此开始。
@@ -24,7 +24,6 @@ label start:
 
     scene cg12a #叶雨潇打电话CG-1|CG12a
     with fade
-
     "漫步河滨，放眼望去，但见河水滔滔，奔流而下，裹挟着泥沙，仿佛要将天地间的一切都染作昏黄。"
     "然而，在这其中，却有一片湿地居于岸边，为这无尽的昏黄，增添了一抹鲜艳的绿色。"
     "数不清的草甸、芦苇，以及槐树、柳树和白杨。"
@@ -65,7 +64,7 @@ label start:
 #高二期末考试后。
 #7月28日。
 
-    play music "audio/music/bgm02.ogg" #夏～澄空～
+    play music "audio/music/bgm02.ogg" fadein 1.5 #夏～澄空～
 
     scene bg b01 #教室
     with fade
@@ -367,7 +366,7 @@ label start:
     a "「哔——]！你他妈故意吧？」"
     b "「故你[哔——]！滚蛋！」"
 
-    play music "audio/music/bgm06.ogg" #悬而未决
+    play music "audio/music/bgm06.ogg" fadein 1.5 #悬而未决
     "不知道因为什么事，前面突然吵起来了。"
     "包括我在内，所有人的视线都向争吵的方向集中而去。"
     "嗯……是两个平时就经常惹事的家伙。"
@@ -436,7 +435,7 @@ label start:
 
     scene bg b01 #教室
     with fade
-    play music "audio/music/bgm02.ogg" #夏～澄空～
+    play music "audio/music/bgm02.ogg" fadein 1.5 #夏～澄空～
     "三言两语劝开了两个人，原本堵塞的过道终于被打通了。"
     "既然如此，也就没必要去翻椅子了。"
     show chara a01a #梁芷柔立绘|夏季校服|普通|正面
@@ -461,7 +460,7 @@ label start:
     stop music
     a "「……傻[哔——]。」"
     y "「！！」"
-    play music "audio/music/bgm06.ogg" #悬而未决
+    play music "audio/music/bgm06.ogg" fadein 1.5 #悬而未决
     "感觉要糟糕。"
     "最怕的就是这种要打没打起来，好不容易给分开了却又扔下场面话的。"
     a "「你等着，回头再和你——唔噗！」"
@@ -997,7 +996,7 @@ label start:
     "……"
     "…………"
 
-    play music "audio/music/bgm02.ogg" #夏～澄空～
+    play music "audio/music/bgm02.ogg" fadein 1.5 #夏～澄空～
     scene bg b03 #病房
     with fade
     az "「……大致就是这样了，有一点脑震荡，问题不算大。」"
@@ -1055,7 +1054,9 @@ label start:
     show chara la09 #梁芷柔立绘|夏季校服|坏笑|近
     with dissolve
 
-    play music "audio/music/bgm08.ogg" #其乐无穷
+    stop music fadeout 1.5
+
+    play music "audio/music/bgm08.ogg" fadein 1.5 #其乐无穷
     y "「……」"
     l "「……」"
     y "「……」"
@@ -1182,7 +1183,7 @@ label start:
     scene cg03a #梁芷柔探病CG-1|看书|CG03a
     with fade
 
-    play music "audio/music/themepiano.ogg" #梦想天空 piano ver.
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
     #树叶沙沙声
     "窗外传来微风轻拂枝叶的「簌簌」的声响，不时有鸟雀飞过，发出一两声鸣叫。"
     "何等安详的午后……之前中午那一段兵荒马乱的经历，就好像是虚幻的一般，已经完全没有感觉了。"
@@ -1232,6 +1233,8 @@ label start:
     "在这个午后。"
     "我第一次……心中涌现出一股微小的冲动。"
     "向前迈步的冲动。"
+
+    stop music fadeout 1.5
     scene bg black #黑屏
     with fade
 
