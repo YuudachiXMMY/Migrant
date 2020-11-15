@@ -5,6 +5,12 @@
 init offset = -1
 
 default first_menu = True
+define config.gl_resize = False
+
+default volume_total
+default volume_music
+default volume_voice
+default volume_sound
 
 # define config.auto_voice = "voice/{id}.ogg"
 
@@ -484,10 +490,10 @@ screen main_menu():
     if main_menu:
         add "main_bg" at main_bg_ani
         # timer 0.01 action Show("main_ui", Dissolve(2.0))
-        use main_ui
+        # use main_ui
 
-screen main_ui():
-    zorder 101
+# screen main_ui():
+#     zorder 101
 
     if main_menu:
 
