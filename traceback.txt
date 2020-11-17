@@ -1,0 +1,91 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+After initialization, but before game start.
+  File "game/screens.rpy", line 576, in prepare_screen
+    screen settings():
+  File "game/screens.rpy", line 576, in prepare
+    screen settings():
+  File "game/screens.rpy", line 582, in prepare
+    fixed:
+  File "game/screens.rpy", line 582, in prepare
+    fixed:
+  File "game/screens.rpy", line 708, in prepare
+    fixed:
+  File "game/screens.rpy", line 708, in prepare
+    fixed:
+  File "game/screens.rpy", line 725, in prepare
+    hbox:
+  File "game/screens.rpy", line 725, in prepare
+    hbox:
+  File "game/screens.rpy", line 746, in prepare
+    vbox:
+  File "game/screens.rpy", line 746, in prepare
+    vbox:
+  File "game/screens.rpy", line 749, in prepare
+    hbox:
+  File "game/screens.rpy", line 749, in prepare
+    hbox:
+  File "game/screens.rpy", line 751, in prepare
+    imagebutton:
+  File "game/screens.rpy", line 751, in prepare
+    imagebutton:
+  File "game/screens.rpy", line 752, in prepare
+    if volume_total > 0.0:
+  File "game/screens.rpy", line 755, in prepare
+    else:
+Exception: config.default_sound_volume is not a known configuration variable.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\bootstrap.py", line 316, in bootstrap
+    renpy.main.main()
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\main.py", line 578, in main
+    run(restart)
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\display\screen.py", line 931, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/screens.rpy", line 576, in prepare_screen
+    screen settings():
+  File "game/screens.rpy", line 576, in prepare
+    screen settings():
+  File "game/screens.rpy", line 582, in prepare
+    fixed:
+  File "game/screens.rpy", line 582, in prepare
+    fixed:
+  File "game/screens.rpy", line 708, in prepare
+    fixed:
+  File "game/screens.rpy", line 708, in prepare
+    fixed:
+  File "game/screens.rpy", line 725, in prepare
+    hbox:
+  File "game/screens.rpy", line 725, in prepare
+    hbox:
+  File "game/screens.rpy", line 746, in prepare
+    vbox:
+  File "game/screens.rpy", line 746, in prepare
+    vbox:
+  File "game/screens.rpy", line 749, in prepare
+    hbox:
+  File "game/screens.rpy", line 749, in prepare
+    hbox:
+  File "game/screens.rpy", line 751, in prepare
+    imagebutton:
+  File "game/screens.rpy", line 751, in prepare
+    imagebutton:
+  File "game/screens.rpy", line 752, in prepare
+    if volume_total > 0.0:
+  File "game/screens.rpy", line 755, in prepare
+    else:
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<screen language>", line 757, in <module>
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\defaultstore.py", line 91, in __getattr__
+    raise Exception('config.%s is not a known configuration variable.' % (name))
+Exception: config.default_sound_volume is not a known configuration variable.
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+Migrant 1.0
+Sun Nov 15 16:10:26 2020
