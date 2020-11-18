@@ -817,16 +817,16 @@ screen settings():
                             style_prefix "mute_setting"
 
             ## 音量低于5%自动设置为静音
-            fixed:
-                if store.MixerValue("music").get_adjustment().value <= 0.05:
-                    $store.MixerValue("music").get_adjustment().value = 0
-                    timer 0.01 action Preference("music mute", "enable")
-                if store.MixerValue("voice").get_adjustment().value <= 0.05:
-                    $store.MixerValue("voice").get_adjustment().value = 0
-                    timer 0.01 action Preference("voice mute", "enable")
-                if store.MixerValue("sfx").get_adjustment().value <= 0.05:
-                    $store.MixerValue("sfx").get_adjustment().value = 0
-                    timer 0.01 action Preference("sound mute", "enable")
+            # fixed:
+            #     if store.MixerValue("music").get_adjustment().value <= 0.05:
+            #         $store.MixerValue("music").get_adjustment().value = 0
+            #         timer 0.01 action Preference("music mute", "enable")
+            #     if store.MixerValue("voice").get_adjustment().value <= 0.05:
+            #         $store.MixerValue("voice").get_adjustment().value = 0
+            #         timer 0.01 action Preference("voice mute", "enable")
+            #     if store.MixerValue("sfx").get_adjustment().value <= 0.05:
+            #         $store.MixerValue("sfx").get_adjustment().value = 0
+            #         timer 0.01 action Preference("sound mute", "enable")
             ################################################################
 
 style text_setting_slider:
