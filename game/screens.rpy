@@ -5,6 +5,12 @@
 init offset = -1
 
 default first_menu = True
+define config.gl_resize = False
+
+default volume_total = 1.0
+default volume_music = config.default_music_volume
+default volume_voice = config.default_voice_volume
+default volume_sound = config.default_sfx_volume
 
 # define config.auto_voice = "voice/{id}.ogg"
 
@@ -39,6 +45,25 @@ image ctc_icon:
 
 image ctc_pause_icon:
     "ctc_icon"
+
+label splashscreen: # before_main_menu:
+
+    show white_bg
+
+    show KID_Fans_Club_logo with Dissolve(2.0):
+        align(0.5, 0.5)
+    pause 2.5
+    hide KID_Fans_Club_logo with Dissolve(2.0)
+
+    pause 2.0
+
+    show RenPy_logo with Dissolve(2.0):
+        align(0.5, 0.5)
+    pause 2.5
+    hide RenPy_logo with Dissolve(2.0)
+
+    pause 2.0
+
 
 ################################################################################
 ## 样式
@@ -147,6 +172,7 @@ screen say(who, what):
             action ShowMenu("save")
 
         imagebutton:
+            keysym "history_menu"
             xalign 0.875 yalign 0.92
             auto "dia_replay_%s"
             action ShowMenu('history')
@@ -268,8 +294,6 @@ screen r_menu():
                 action Quit(confirm=True)
 
 
-
-
 ## 输入屏幕 ########################################################################
 ##
 ## 此屏幕用于显示 renpy.input。“prompt”参数用于传递文本提示。
@@ -351,7 +375,7 @@ screen quick_menu():
     ## 确保该菜单出现在其他屏幕之上，
     zorder 100
 
-    if quick_menu:
+    if quick_menu and renpy.get_screen("say"):
 
         window:
             xsize 561 ysize 65
@@ -429,7 +453,8 @@ screen navigation():
 
         else:
 
-            textbutton _("历史") action ShowMenu("history")
+            textbutton _("历史"):
+                action ShowMenu("history")
 
             textbutton _("保存") action ShowMenu("save")
 
@@ -484,10 +509,10 @@ screen main_menu():
     if main_menu:
         add "main_bg" at main_bg_ani
         # timer 0.01 action Show("main_ui", Dissolve(2.0))
-        use main_ui
+        # use main_ui
 
-screen main_ui():
-    zorder 101
+# screen main_ui():
+#     zorder 101
 
     if main_menu:
 
@@ -541,7 +566,8 @@ screen main_ui():
                         linear 2.0 alpha 1.0
                 auto "extraContent_%s"
                 action [SetVariable("first_menu", False),
-                        NullAction()]
+                        Show("test_notify", message="开发中……\n敬请期待！！")]
+                        # NullAction()]
             imagebutton:
                 if first_menu:
                     at transform:
@@ -550,7 +576,10 @@ screen main_ui():
                         linear 2.0 alpha 1.0
                 auto "staff_%s"
                 action [SetVariable("first_menu", False),
-                        ShowMenu("staffs")]
+                        Show("test_notify", message="开发中……\n敬请期待！！")]
+                        #NullAction()]
+                # action [SetVariable("first_menu", False),
+                #         ShowMenu("staffs")]
             imagebutton:
                 if first_menu:
                     at transform:
@@ -582,13 +611,13 @@ screen settings():
             auto "setting_close_%s"
             action Hide("settings", dissolve), Return()
 
-        #文本设置
+        #显示设置 (文本设置)
         fixed:
-            add "setting_text_title" xalign 0.225 yalign 0.29
+            add "setting_graphics_title" xalign 0.225 yalign 0.29
 
             vbox:
                 style_prefix "text_setting"
-                xalign 0.375 yalign 0.37
+                xalign 0.375 yalign 0.393
                 spacing 45
                 hbox:
                     spacing 140
@@ -602,6 +631,7 @@ screen settings():
                     label _("快")
                     label _("瞬间")
 
+            # 左侧
             hbox:
                 style_prefix "text_setting"
                 xalign 0.3 yalign 0.4
@@ -610,7 +640,6 @@ screen settings():
                     spacing 50
                     label _("文字显示速度")
                     label _("自动播放速度")
-                    label _("快 进 设 定")
 
                 vbox:
                     yoffset 20
@@ -618,19 +647,71 @@ screen settings():
                     bar value Preference("text speed")
                     bar value Preference("auto-forward time"):
                         yoffset 10
-                    hbox:
-                        yoffset 5
-                        spacing 20
-                        imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("skip", "seen")
-                        label _("仅限已读")
-                        imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("skip", "all")
-                        label _("全部")
 
-            # # 设置速度的三个档 禁用
+            # 右侧
+            hbox:
+                style_prefix "text_setting"
+                xalign 0.665 yalign 0.4
+                spacing 80
+
+                vbox:
+                    spacing 50
+                    label _("快 进 设 定")
+                    label _("全 屏 设 定")
+
+                vbox:
+                    hbox:
+                        spacing 35
+                        hbox:
+                            spacing 15
+                            imagebutton:
+                                auto "setting_click_%s"
+                                action Preference("skip", "seen")
+                            text _("仅限已读"):
+                                style_prefix "mute_setting"
+                                if not preferences.skip_unseen:
+                                    bold True
+                                else:
+                                    bold False
+                        hbox:
+                            spacing 15
+                            imagebutton:
+                                auto "setting_click_%s"
+                                action Preference("skip", "all")
+                            text _("全部"):
+                                style_prefix "mute_setting"
+                                if preferences.skip_unseen:
+                                    bold True
+                                else:
+                                    bold False
+                    hbox:
+                        yoffset 35
+                        spacing 115
+                        hbox:
+                            spacing 15
+                            imagebutton:
+                                auto "setting_click_%s"
+                                action Preference("display", "fullscreen")
+                            text _("是"):
+                                style_prefix "mute_setting"
+                                if preferences.fullscreen:
+                                    bold True
+                                else:
+                                    bold False
+                        hbox:
+                            spacing 15
+                            imagebutton:
+                                auto "setting_click_%s"
+                                action Preference("display",  "any window")
+                            text _("否"):
+                                style_prefix "mute_setting"
+                                if not preferences.fullscreen:
+                                    bold True
+                                else:
+                                    bold False
+
+
+            # # 设置速度的三个档(禁用)
             # fixed:
             #     if store.Preference("text speed").get_adjustment().value <= 50:
             #         timer 0.2 action Preference("text speed", 1)
@@ -646,48 +727,57 @@ screen settings():
             #         timer 0.2 action Preference("auto-forward time", 15)
             # ################################################################
 
-        #画面设置
-        fixed:
-            add "setting_graphics_title" xalign 0.565 yalign 0.29
+        #画面设置(改版删除)
+        # fixed:
+        #     add "setting_graphics_title" xalign 0.565 yalign 0.29
 
-            hbox:
-                style_prefix "graphics_setting"
-                xalign 0.62 yalign 0.4
-                spacing 50
+        #     hbox:
+        #         style_prefix "graphics_setting"
+        #         xalign 0.62 yalign 0.4
+        #         spacing 50
 
-                vbox:
-                    spacing 50
-                    label _("分辨率")
-                    label _("全  屏")
+        #         vbox:
+        #             spacing 50
+        #             label _("分辨率")
+        #             label _("全  屏")
 
-                vbox:
-                    spacing 25
-                    yoffset -5
-                    frame:
-                        background "setting_graphics_bg"
-                        imagebutton:
-                            xpos 405 yalign 0.5
-                            auto "setting_graphics_btn_%s"
-                            at transform:
-                                yoffset -8
-                            action NullAction()
+        #         vbox:
+        #             spacing 25
+        #             yoffset -5
+        #             frame:
+        #                 background "setting_graphics_bg"
+        #                 button:
+        #                     xysize(38, 38)
+        #                     xpos 405 yalign 0.5
+        #                     idle_background None
+        #                     hover_background None
+        #                     # idle_background "setting_graphics_btn_idle"
+        #                     # hover_background "setting_graphics_btn_hover"
+        #                     text "2560x1440":
+        #                         font "站酷高端黑修订版1.13.ttf"
+        #                         size 25
+        #                         align(0.5, 0.5)
+        #                         xoffset -220
+        #                     at transform:
+        #                         yoffset -8
+        #                     action NullAction()
 
-                    hbox:
-                        spacing 50
-                        hbox:
-                            spacing 10
-                            imagebutton:
-                                auto "setting_click_%s"
-                                action Preference("display", "fullscreen")
-                            label _("是"):
-                                style_prefix "mute_setting"
-                        hbox:
-                            spacing 10
-                            imagebutton:
-                                auto "setting_click_%s"
-                                action Preference("display",  "any window")
-                            label _("否"):
-                                style_prefix "mute_setting"
+        #             hbox:
+        #                 spacing 50
+        #                 hbox:
+        #                     spacing 10
+        #                     imagebutton:
+        #                         auto "setting_click_%s"
+        #                         action Preference("display", "fullscreen")
+        #                     label _("是"):
+        #                         style_prefix "mute_setting"
+        #                 hbox:
+        #                     spacing 10
+        #                     imagebutton:
+        #                         auto "setting_click_%s"
+        #                         action Preference("display",  "any window")
+        #                     label _("否"):
+        #                         style_prefix "mute_setting"
 
         #音乐设置
         fixed:
@@ -695,21 +785,22 @@ screen settings():
 
             vbox:
                 style_prefix "text_setting"
-                xalign 0.3825 yalign 0.37
-                spacing 45
+                xalign 0.342 yalign 0.677
+                spacing 75
                 hbox:
-                    spacing 125
+                    spacing 230
                     label _("Min")
                     label _("Max")
 
                 hbox:
-                    spacing 125
+                    spacing 230
                     label _("Min")
                     label _("Max")
 
+            # 左侧
             hbox:
                 style_prefix "sound_setting"
-                xalign 0.32 yalign 0.7
+                xalign 0.325 yalign 0.7
                 xoffset -20
                 spacing 60
 
@@ -719,10 +810,13 @@ screen settings():
                     label _("音乐音量")
 
                 vbox:
-                    yoffset 7
+                    yoffset 3
                     spacing 72
-                    bar value Preference("music volume")
-                    bar value Preference("music volume"):
+                    # bar value Preference("music volume")
+                    # bar value Preference("music volume"):
+                    #     yoffset 10
+                    bar value VariableValue("volume_total", 1.0, action=[Preference("music volume", (volume_total*volume_music)), Preference("voice volume", (volume_total*volume_voice)), Preference("sound volume", (volume_total*volume_sound))])
+                    bar value VariableValue("volume_music", 1.0, action=Preference("music volume", volume_total*volume_music)):
                         yoffset 10
 
                 vbox:
@@ -731,18 +825,27 @@ screen settings():
                     hbox:
                         spacing 10
                         imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("music mute", "toggle")
-                        label _("静音"):
+                            if volume_total > 0.0:
+                                auto "setting_click_%s"
+                                action SetVariable("volume_total", 0.0), SetVariable("volume_music", 0.0), SetVariable("volume_voice", 0.0), SetVariable("volume_sound", 0.0), Preference("music mute", "enable"), Preference("voice mute", "enable"), Preference("sound mute", "enable")
+                            else:
+                                auto "setting_toggled_btn_%s"
+                                action SetVariable("volume_total", 1.0), SetVariable("volume_music", config.default_music_volume), SetVariable("volume_voice", config.default_voice_volume), SetVariable("volume_sound", config.default_sfx_volume), Preference("music mute", "disable"), Preference("voice mute", "disable"), Preference("sound mute", "disable")
+                        text _("静音"):
                             style_prefix "mute_setting"
                     hbox:
                         spacing 10
                         imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("music mute", "toggle")
-                        label _("静音"):
+                            if volume_music > 0.0:
+                                auto "setting_click_%s"
+                                action SetVariable("volume_music", 0.0), Preference("music mute", "enable")
+                            else:
+                                auto "setting_toggled_btn_%s"
+                                action SetVariable("volume_music", config.default_music_volume), Preference("music mute", "disable")
+                        text _("静音"):
                             style_prefix "mute_setting"
 
+            # 右侧
             hbox:
                 style_prefix "sound_setting"
                 xalign 0.72 yalign 0.7
@@ -757,8 +860,11 @@ screen settings():
                 vbox:
                     yoffset 7
                     spacing 72
-                    bar value Preference("voice volume")
-                    bar value Preference("sound volume"):
+                    # bar value Preference("voice volume")
+                    # bar value Preference("sound volume"):
+                    #     yoffset 10
+                    bar value VariableValue("volume_voice", 1.0, action=Preference("voice volume", (volume_total*volume_voice)))
+                    bar value VariableValue("volume_sound", 1.0, action=Preference("sound volume", (volume_total*volume_sound))):
                         yoffset 10
 
                 vbox:
@@ -767,32 +873,41 @@ screen settings():
                     hbox:
                         spacing 10
                         imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("voice mute", "toggle")
-                        label _("静音"):
+                            if volume_voice > 0.0:
+                                auto "setting_click_%s"
+                                action SetVariable("volume_voice", 0.0), Preference("voice mute", "enable")
+                            else:
+                                auto "setting_toggled_btn_%s"
+                                action SetVariable("volume_voice", config.default_voice_volume), Preference("voice mute", "disable")
+                        text _("静音"):
                             style_prefix "mute_setting"
                     hbox:
                         spacing 10
                         imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("sound mute", "toggle")
-                        label _("静音"):
+                            if volume_sound > 0.0:
+                                auto "setting_click_%s"
+                                action SetVariable("volume_sound", 0.0), Preference("sound mute", "enable")
+                            else:
+                                auto "setting_toggled_btn_%s"
+                                action SetVariable("volume_sound", config.default_sfx_volume), Preference("sound mute", "disable")
+                        text _("静音"):
                             style_prefix "mute_setting"
 
-            ## 音量低于5%自动设置为静音
-            fixed:
-                if store.MixerValue("music").get_adjustment().value <= 0.05:
-                    $store.MixerValue("music").get_adjustment().value = 0
-                    timer 0.01 action Preference("music mute", "enable")
-                if store.MixerValue("voice").get_adjustment().value <= 0.05:
-                    $store.MixerValue("voice").get_adjustment().value = 0
-                    timer 0.01 action Preference("voice mute", "enable")
-                if store.MixerValue("sfx").get_adjustment().value <= 0.05:
-                    $store.MixerValue("sfx").get_adjustment().value = 0
-                    timer 0.01 action Preference("sound mute", "enable")
+            # ## 音量低于5%自动设置为静音
+            # fixed:
+            #     if store.MixerValue("music").get_adjustment().value <= 0.05:
+            #         $store.MixerValue("music").get_adjustment().value = 0
+            #         timer 0.01 action Preference("music mute", "enable")
+            #     if store.MixerValue("voice").get_adjustment().value <= 0.05:
+            #         $store.MixerValue("voice").get_adjustment().value = 0
+            #         timer 0.01 action Preference("voice mute", "enable")
+            #     if store.MixerValue("sfx").get_adjustment().value <= 0.05:
+            #         $store.MixerValue("sfx").get_adjustment().value = 0
+            #         timer 0.01 action Preference("sound mute", "enable")
             ################################################################
 
 style text_setting_slider:
+    bar_vertical False
     xsize 355 ysize 19
     base_bar "setting_slider_3_idle"
     thumb "setting_slider_3_btn_idle"
@@ -809,12 +924,18 @@ style sound_setting_slider is text_setting_slider:
 
 style sound_setting_label_text is text_setting_label_text
 
-style mute_setting_label_text is sound_setting_label_text:
-    bold True
+style mute_setting_label_text is sound_setting_label_text
+
+style mute_setting_text is mute_setting_label_text
 
 style graphics_setting is text_setting
 
 style graphics_setting_label_text is text_setting_label_text
+
+style sound_setting_bar:
+    xysize(294, 19)
+    base_bar "setting_slider_2_idle"
+    thumb "setting_slider_2_btn_idle"
 
 
 ## 制作人员 ######################################################################
@@ -1137,7 +1258,27 @@ screen file_slots(title):
                     add FileScreenshot(i) align(0.5,0.5) size(461, 251)
                     # text FileTime(i, format=_("{#file_time}%Y年%B%d日  %H:%M"), empty=_("")):
                     #     color "#fff" xalign 0.5 ypos 240 size 30
-                    # text FileSaveName(i)
+                    if FileLoadable(i):
+                        imagebutton:
+                            xalign 1.0
+                            auto "sl_delete_%s"
+                            action FileDelete(i)
+                    else:
+                        # FileSlotName(i, int(FileCurrentPage()))
+                        $ cur_page = FileCurrentPage()
+                        if cur_page == "1":
+                            $ num = i
+                        else:
+                            $ num = i - 1
+                        $ res = str(int(cur_page) - 1) + "%s"%str(num)
+                        text str(res):
+                            align(0.5, 0.5)
+                            style "sl_page"
+                            size 56 bold True
+                        text "NO DATA":
+                            align(0.5, 0.7)
+                            style "sl_page"
+                            size 18 bold True
                     key "save_delete" action FileDelete(i)
 
 
@@ -1835,6 +1976,19 @@ transform notify_appear:
     on hide:
         linear .5 alpha 0.0
 
+screen test_notify(message):
+
+    zorder 200
+    modal True
+
+    frame at notify_appear:
+        align(0.5, 0.5)
+        background "confirm_bg"
+        label "[message!tq]":
+            style "confirm_prompt"
+            xalign 0.5
+
+    timer 2.0 action Hide('test_notify')
 
 style notify_frame is empty
 style notify_text is gui_text

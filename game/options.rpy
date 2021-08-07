@@ -11,7 +11,7 @@
 ##
 ## 带有 _() 的字符串表示其可被翻译。
 
-define config.name = _("Migrant")
+define config.name = _("候鸟 加长试玩内测版")
 
 
 ## 决定上面给出的标题是否显示在主界面屏幕。设置为 False 来隐藏标题。
@@ -21,7 +21,7 @@ define gui.show_name = False
 
 ## 游戏版本号。
 
-define config.version = "1.0"
+define config.version = "Demo0.2"
 
 
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。
@@ -175,6 +175,10 @@ init python:
 
     build.classify('game/**.png', 'archive')
     build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.ogg', 'archive')
+    build.classify('game/**.rpy', 'archive')
+    build.classify('game/**.rpyc', 'archive')
+    build.classify('game/**.ttf', 'archive')
     build.classify('game/**.ogg', 'archive')
 
     ## 匹配为文档模式的文件，将在 Mac 应用的生成中复制，因此它们同时存在于 app
