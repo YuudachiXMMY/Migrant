@@ -198,6 +198,15 @@ image staffs_return_btn_idle:
 image staffs_play_btn_idle:
     "gui/staffs/play.png"
 
+image staffs_play_btn_hover:
+    "staffs_play_btn_idle"
+
+image staffs_replay_btn_idle:
+    "gui/staffs/replay.png"
+
+image staffs_replay_btn_hover:
+    "staffs_replay_btn_idle"
+
 ## 右键菜单 ######################################################################
 ##
 image r_menu_background:
@@ -314,6 +323,48 @@ image quick_mainmenu_idle:
 
 image quick_mainmenu_hover:
     "gui/quick/系统条-home选中.png"
+
+
+## 主界面 设置 ######################################################################
+##
+image gallery_bg:
+    "gui/gallery/bg.jpg"
+
+image gallery_music_play_btn_idle:
+    "gui/gallery/play.png"
+
+image gallery_music_play_btn_hover:
+    "gallery_music_play_btn_idle"
+
+image gallery_return_btn_idle:
+    "gui/gallery/返回.png"
+
+image gallery_return_btn_hover:
+    "gallery_return_btn_idle"
+
+image gallery_page_prev_btn_idle:
+    "gui/gallery/上一页.png"
+
+image gallery_page_prev_btn_hover:
+    "gallery_page_prev_btn_idle"
+
+image gallery_page_next_btn_idle:
+    "gui/gallery/下一页.png"
+
+image gallery_page_next_btn_hover:
+    "gallery_page_next_btn_idle"
+
+image gallery_music_prev_btn_idle:
+    "gui/gallery/上一首.png"
+
+image gallery_music_prev_btn_hover:
+    "gallery_music_prev_btn_idle"
+
+image gallery_music_next_btn_idle:
+    "gui/gallery/下一首.png"
+
+image gallery_music_next_btn_hover:
+    "gallery_music_next_btn_idle"
 
 ## 历史界面 ######################################################################
 ##

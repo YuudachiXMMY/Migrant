@@ -37,13 +37,13 @@ define config.keymap = dict(
 
     # Bindings present almost everywhere, unless explicitly
     # disabled.
-    rollback = [ 'K_PAGEUP', 'repeat_K_PAGEUP', 'K_AC_BACK', 'mousedown_4' ],
+    rollback = [ 'K_PAGEUP', 'repeat_K_PAGEUP', 'K_AC_BACK' ],
     screenshot = [ ],
     toggle_afm = [ ],
     toggle_fullscreen = [ ],
     game_menu = [ ],
-    history_menu = [ 'mousedown_2' ],
-    hide_windows = [ 'K_SPACE' ],
+    history_menu = [ 'mousedown_4' ],
+    hide_windows = [ 'K_ESCAPE', 'mousedown_2' ],
     launch_editor = [ ],
     dump_styles = [ ],
     reload_game = [ 'R' ],
@@ -60,8 +60,12 @@ define config.keymap = dict(
     clipboard_voicing = [ ],
     debug_voicing = [ ],
 
+    # DIY
+    quit_menu = [ 'K_ESCAPE', 'mousedown_3' ],
+    quit_hist = [ 'K_ESCAPE', 'mousedown_3' ],
+
     # Say.
-    rollforward = [ 'mousedown_5', 'K_PAGEDOWN', 'repeat_K_PAGEDOWN' ],
+    rollforward = [ 'mousedown_5', 'K_PAGEDOWN', 'repeat_K_PAGEDOWN', 'K_SPACE' ],
     dismiss = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SELECT' ],
     dismiss_unfocused = [ ],
 
@@ -118,10 +122,10 @@ define config.keymap = dict(
     bar_down = [ 'K_DOWN', 'repeat_K_DOWN' ],
 
     # 右键菜单
-    right_click_menu= [ 'mousedown_3' ],
+    right_click_menu= [ 'mouseup_3' ],
 
     # Delete a save.
-    save_delete = [ 'mouseup_3', 'mousedown_3', 'K_DELETE' ],
+    save_delete = [ 'mousedown_3', 'K_DELETE' ],
 
     # Draggable.
     drag_activate = [ 'mousedown_1' ],
