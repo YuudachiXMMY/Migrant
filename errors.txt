@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1490: expected a keyword argument or end of line.
-    action Show("test_notify", message="已到首页！")]
-                                               ^
+File "game/screens.rpy", line 1450: u'rotate' is not a keyword argument or valid child for the vpgrid statement.
+    rotate 20
+          ^
 
 Ren'Py Version: Ren'Py 7.4.6.1693
-Tue Aug 10 17:17:34 2021
+Thu Aug 12 01:39:01 2021

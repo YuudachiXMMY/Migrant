@@ -4,6 +4,8 @@
 
 init offset = -1
 
+define music_player_time_size = 22
+
 default first_menu = True
 define config.gl_resize = False
 
@@ -22,6 +24,14 @@ define gallery_music_list = {
     "audio/music/bgm06.ogg" : "bgm06",
     "audio/music/bgm08.ogg" : "bgm08"
 }
+
+# Helper
+init python:
+
+    import math
+
+    def floor(num):
+        return int(math.floor(num))
 
 # define config.auto_voice = "voice/{id}.ogg"
 
@@ -1424,6 +1434,59 @@ style about_label_text:
 screen gallery_music_player():
     zorder 300
 
+    vpgrid:
+        cols 1
+        mousewheel False
+        draggable False
+
+        xalign 0.728 yalign 0.815
+        xfill True
+        xsize 279
+
+        style_prefix "gallery_music_player"
+
+        xspacing 10
+
+        at transform:
+            rotate 15
+
+        if renpy.music.is_playing(channel=u'music') and not renpy.music.get_pos("music") is None:
+
+            frame:
+                label _(gallery_music_list[str(renpy.music.get_playing("music"))]):
+                    xalign 0.5
+
+            frame:
+                hbox:
+                    spacing 234
+                    text _(str(floor(renpy.music.get_pos("music")/60))+":"+str(floor(renpy.music.get_pos("music")%60))):
+                        size music_player_time_size
+                    text _(str(floor(renpy.music.get_duration("music")/60))+":"+str(floor(renpy.music.get_duration("music")%60))):
+                        size music_player_time_size
+                        xanchor 1.0
+
+            frame:
+                yoffset -25
+                bar value StaticValue(renpy.music.get_pos("music"), renpy.music.get_duration("music"))
+
+        else:
+            frame:
+                label _("None"):
+                    xalign 0.5
+
+            frame:
+                hbox:
+                    spacing 234
+                    text _(str("0:0")):
+                        size music_player_time_size
+                    text _(str("0:0")):
+                        size music_player_time_size
+                        xanchor 1.0
+
+            frame:
+                yoffset -25
+                bar value StaticValue(0, 1.0)
+
 screen gallery():
 
     add "gallery_bg"
@@ -1431,7 +1494,7 @@ screen gallery():
     imagebutton:
         yalign 0.02
         auto "gallery_return_btn_%s"
-        action [Hide("gallery", dissolve), Return()]
+        action [Hide("gallery_music_player"), Hide("gallery", dissolve), Return()]
 
     # Music Player
     fixed:
@@ -1439,7 +1502,7 @@ screen gallery():
         imagebutton:
             xalign 0.67 yalign 0.9
             auto "gallery_music_play_btn_%s"
-            action mr.TogglePlay()
+            action mr.TogglePlay(), Hide("gallery", dissolve), Show("gallery", dissolve)
             # if renpy.music.get_pause(channel=u'music'):
             #     action renpy.music.set_pause(False, channel=u'music')
             # else:
@@ -1448,26 +1511,15 @@ screen gallery():
         imagebutton:
             xalign 0.72  yalign 0.88
             auto "gallery_music_prev_btn_%s"
-            action mr.Previous()
+            action mr.Previous(), Hide("gallery", dissolve), Show("gallery", dissolve)
 
         imagebutton:
             xalign 0.711  yalign 0.93
             auto "gallery_music_next_btn_%s"
-            action mr.Next()
+            action mr.Next(), Hide("gallery", dissolve), Show("gallery", dissolve)
 
         #Music
-        on "show" action Show("gallery_music_player")
-    vbox:
-        xalign 0.5 yalign 0.5
-        if renpy.music.is_playing(channel=u'music'):
-            text _(gallery_music_list[str(renpy.music.get_playing("music"))])
-            text _(str(renpy.music.get_pos("music")))
-            text _(str(renpy.music.get_duration("music")))
-            timer 0.1 action Hide("gallery"), Show("gallery")
-        else:
-            text _("None")
-            text _(str(0))
-            text _(str(0))
+        timer 0.1 action Show("gallery_music_player"), Hide("gallery"), Show("gallery")
 
     #CG
     fixed:
@@ -1538,7 +1590,20 @@ screen gallery_full_cg(cg):
         idle im.FactorScale(cg, 1)
         action Hide("gallery_full_cg")
 
+style gallery_music_player_label_text:
+    size 32
+    color "#000"
 
+style gallery_music_player_bar:
+    xysize(279, 11)
+    left_bar "music_player_slider_left"
+    right_bar "music_player_slider_right"
+    thumb "music_player_slider_thumb"
+
+style gallery_music_player_frame:
+    background None
+    xfill True
+    xalign 0.5
 
 ## 读取和保存屏幕 #####################################################################
 ##

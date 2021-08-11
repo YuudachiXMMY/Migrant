@@ -366,6 +366,15 @@ image gallery_music_next_btn_idle:
 image gallery_music_next_btn_hover:
     "gallery_music_next_btn_idle"
 
+image music_player_slider_left:
+    "gui/gallery/slider_left.png"
+
+image music_player_slider_right:
+    "gui/gallery/slider_right.png"
+
+image music_player_slider_thumb:
+    "gui/gallery/slider_thumb.png"
+
 ## 历史界面 ######################################################################
 ##
 image history_return_btn_idle:
