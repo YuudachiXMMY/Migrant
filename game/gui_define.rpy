@@ -1,9 +1,14 @@
+init offset = -2
+
 image bg_cover:
     "gui/bg_cover.png"
 
 image black_bg:
     alpha 0.7
     "gui/black.png"
+
+image white_bg:
+    "gui/white.png"
 
 ## 主界面 ######################################################################
 ##
@@ -16,26 +21,54 @@ image main_logo:
 image start_idle:
     "gui/main/开始.png"
 
+image start_hover:
+    "gui/main/开始_2.png"
+
 image load_idle:
     "gui/main/读档.png"
+
+image load_hover:
+    "gui/main/读档_2.png"
 
 image setting_idle:
     "gui/main/设置.png"
 
+image setting_hover:
+    "gui/main/设置_2.png"
+
 image extraContent_idle:
     "gui/main/附加内容.png"
+
+image extraContent_hover:
+    "gui/main/附加内容_2.png"
 
 image staff_idle:
     "gui/main/制作人员.png"
 
+image staff_hover:
+    "gui/main/制作人员_2.png"
+
 image exit_idle:
     "gui/main/退出.png"
+
+image exit_hover:
+    "gui/main/退出_2.png"
 
 image blank_idle:
     "gui/blank.png"
 
 image blank_hover:
     "gui/blank.png"
+
+# 制作组logo
+image KID_Fans_Club_logo:
+    "gui/LOGO-BLUE.png"
+    zoom 0.68
+
+# 引擎logo
+image RenPy_logo:
+    "gui/renpy.png"
+    zoom 3.9168
 
 ## 存档 ######################################################################
 ##
@@ -73,6 +106,14 @@ image sl_slot_bg_hover:
 image sl_slot_page_background:
     zoom 0.9
     "gui/sl/页面底框.png"
+
+image sl_delete_idle:
+    "gui/sl/右键-删除-常态.png"
+
+image sl_delete_hover:
+    "gui/sl/右键-删除-选择.png"
+
+## 存档位数字
 
 ## 确认窗口 ######################################################################
 ##
@@ -124,9 +165,9 @@ image setting_slider_3_idle:
 image setting_slider_3_btn_idle:
     "gui/setting/选中.png"
 
-## 画面设置
+## 显示设置
 image setting_graphics_title:
-    "gui/setting/画面设置title.png"
+    "gui/setting/显示设置title.png"
 
 image setting_graphics_bg:
     "gui/setting/分辨率框.png"
@@ -140,9 +181,6 @@ image setting_graphics_btn_hover:
 ## 音乐设置
 image setting_sound_title:
     "gui/setting/音乐设置title.png"
-
-image setting_text_title:
-    "gui/setting/文本设置title.png"
 
 image setting_slider_2_idle:
     "gui/setting/滚轴-两点.png"
@@ -159,6 +197,15 @@ image staffs_return_btn_idle:
 
 image staffs_play_btn_idle:
     "gui/staffs/play.png"
+
+image staffs_play_btn_hover:
+    "staffs_play_btn_idle"
+
+image staffs_replay_btn_idle:
+    "gui/staffs/replay.png"
+
+image staffs_replay_btn_hover:
+    "staffs_replay_btn_idle"
 
 ## 右键菜单 ######################################################################
 ##
@@ -276,6 +323,57 @@ image quick_mainmenu_idle:
 
 image quick_mainmenu_hover:
     "gui/quick/系统条-home选中.png"
+
+
+## 主界面 设置 ######################################################################
+##
+image gallery_bg:
+    "gui/gallery/bg.jpg"
+
+image gallery_music_play_btn_idle:
+    "gui/gallery/play.png"
+
+image gallery_music_play_btn_hover:
+    "gallery_music_play_btn_idle"
+
+image gallery_return_btn_idle:
+    "gui/gallery/返回.png"
+
+image gallery_return_btn_hover:
+    "gallery_return_btn_idle"
+
+image gallery_page_prev_btn_idle:
+    "gui/gallery/上一页.png"
+
+image gallery_page_prev_btn_hover:
+    "gallery_page_prev_btn_idle"
+
+image gallery_page_next_btn_idle:
+    "gui/gallery/下一页.png"
+
+image gallery_page_next_btn_hover:
+    "gallery_page_next_btn_idle"
+
+image gallery_music_prev_btn_idle:
+    "gui/gallery/上一首.png"
+
+image gallery_music_prev_btn_hover:
+    "gallery_music_prev_btn_idle"
+
+image gallery_music_next_btn_idle:
+    "gui/gallery/下一首.png"
+
+image gallery_music_next_btn_hover:
+    "gallery_music_next_btn_idle"
+
+image music_player_slider_left:
+    "gui/gallery/slider_left.png"
+
+image music_player_slider_right:
+    "gui/gallery/slider_right.png"
+
+image music_player_slider_thumb:
+    "gui/gallery/slider_thumb.png"
 
 ## 历史界面 ######################################################################
 ##
