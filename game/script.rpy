@@ -1,5 +1,37 @@
 ﻿# 游戏的脚本可置于此文件中。
 
+# # Gallery
+# Music
+init python:
+    mr = MusicRoom(fadeout=1.0, loop=True, shuffle=False)
+
+    mr.add("audio/music/themepiano.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm02.ogg")
+    mr.add("audio/music/bgm03.ogg")
+    mr.add("audio/music/bgm06.ogg")
+    mr.add("audio/music/bgm08.ogg")
+
+# CG Flags
+default persistent.cg_1_1_flag = False
+default persistent.cg_1_2_flag = False
+default persistent.cg_1_3_flag = False
+default persistent.cg_1_4_flag = False
+default persistent.cg_1_5_flag = False
+default persistent.cg_1_6_flag = False # Not in script
+
+default persistent.cg_2_1_flag = False
+default persistent.cg_2_2_flag = False
+default persistent.cg_2_3_flag = False
+default persistent.cg_2_4_flag = False
+default persistent.cg_2_6_flag = False
+
+default persistent.cg_3_1_flag = False
+default persistent.cg_3_2_flag = False
+default persistent.cg_3_3_flag = False
+default persistent.cg_3_4_flag = False
+default persistent.cg_3_7_flag = False
+default persistent.cg_3_8_flag = False
+
 # 声明此游戏使用的角色。颜色参数可使角色姓名着色。
 
 default chapter = "00"
@@ -44,6 +76,9 @@ label start:
 #高考结束一年后"
 
     play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+
+    $ persistent.cg_3_7_flag = True
+
     scene cg12a #叶雨潇打电话CG-1|CG12a
     with fade
     "漫步河滨，放眼望去，但见河水滔滔，奔流而下，裹挟着泥沙，仿佛要将天地间的一切都染作昏黄。"
@@ -51,6 +86,8 @@ label start:
     "数不清的草甸、芦苇，以及槐树、柳树和白杨。"
     "在这个夏末秋初的时节，它们用尽全力展现着自己的活力。"
     "随手捡起一片落叶，仰望天空。"
+
+    $ persistent.cg_3_8_flag = True
 
     scene bg b00 #天空
     with fade
@@ -127,6 +164,8 @@ label start:
 
     play music "audio/music/bgm02.ogg" fadein 1.5 #夏～澄空～
 
+    $ persistent.cg_2_2_flag = True
+
     scene bg b01 #教室
     with dissolve
     pause
@@ -167,6 +206,8 @@ label start:
     "放眼教室，呼呼大睡者有之，窃窃私语者有之，左顾右盼者有之，不屑一顾者也有之。"
     "……就是没有认真听班主任讲话的。"
     y "「……」"
+
+    $ persistent.cg_1_2_flag = True
 
     scene bg b00b #烈日
     with fade
@@ -256,6 +297,8 @@ label start:
     "太难熬了……真的有人能在这种环境里坚持下去么？"
     "下意识地环顾四周。"
     y "「……？」"
+
+    $ persistent.cg_1_1_flag = True
 
     scene cg01a #梁芷柔听讲CG-1|标准|CG01a
     with fade
@@ -694,6 +737,9 @@ label start:
     scene bg black #黑屏
     with fade
     pause
+
+    $ persistent.cg_2_1_flag = True
+
     scene cg02a #梁芷柔被压倒CG-1|标准|视角拉近|CG02a
     with fade
     "勉强睁开眼睛，看到了一张惊慌失措的面孔。"
@@ -1043,6 +1089,9 @@ label start:
     "…………"
 
     play sound "audio/sound/ambientnoise03.ogg" fadein 1.5 loop #傍晚环境噪音
+
+    $ persistent.cg_3_2_flag = True
+
     scene bg b03 #病房
     with fade
     y "「……」"
@@ -1073,6 +1122,8 @@ label start:
 
     y "「（……咦！？）」"
     "当我试图将头转向另一侧的时候，看到了一个意想不到的人。"
+
+    $ persistent.cg_3_1_flag = True
 
     scene cg03a #梁芷柔探病CG-1|看书|CG03a
     with fade
@@ -1913,6 +1964,8 @@ label start:
 
     play sound "audio/sound/ambientnoise05.ogg" fadein 1.5 loop #街道蝉鸣噪音
 
+    $ persistent.cg_2_4_flag = True
+
     scene bg b06 #商业街
     with fade
 
@@ -2065,6 +2118,9 @@ label start:
     y "「哎，好。」"
 
     play sound "audio/sound/ambientnoise06.ogg" fadein 2.5 loop #快餐店环境噪音
+
+    $ persistent.cg_1_3_flag  = True
+
     scene cg04a #梁芷柔快餐店学习CG-1|就坐|CG04a
     with fade
     voice "audio/voice/001104.ogg"
@@ -2147,6 +2203,8 @@ label start:
 
     stop sound fadeout 1.5
     play music "audio/music/bgm02.ogg" fadein 1.5 #夏～澄空～
+
+    $ persistent.cg_1_4_flag = True
 
     scene bg b07 #快餐店
     with fade
@@ -2954,6 +3012,9 @@ label start:
     voice "audio/voice/001253.ogg"
     l "「说起来，这公园也修起来了啊？」"
     y "「是啊……」"
+
+    $ persistent.cg_2_6_flag = True
+
     scene bg b05 #湿地公园|夏
     with fade
     "我沿着她的目光望去。"
@@ -4766,6 +4827,9 @@ label start:
     "…………"
 
     play music "audio/music/bgm02.ogg" fadein 1.5 #夏～澄空～
+
+    $ persistent.cg_3_4_flag = True
+
     scene bg b10 #百货商场
     with fade
     y "「……」"
@@ -4915,6 +4979,8 @@ label start:
     hide chara
     with dissolve
     "不过她并没有走过柜台，而是……趴在柜台上看了起来。"
+
+    $ persistent.cg_2_3_flag = True
 
     play music "audio/music/bgm08.ogg" fadein 1.5 #其乐无穷
     scene cg05a #梁芷柔看首饰CG-1|观看|CG05a
@@ -5499,6 +5565,9 @@ label start:
     with hpunch
     "不过——重点是这个吗！？"
     "这样真的没问题吗？这种设定你也能接受？你真那么想看这个电影啊？"
+
+    $ persistent.cg_3_3_flag = True
+
     scene cg06b #梁芷柔看电影CG-2|入座|CG06b
     with dissolve
     "我俩僵硬地坐下。"
@@ -5873,6 +5942,8 @@ label start:
     stop sound fadeout 3.0
     voice "audio/voice/001655.ogg"
     l "「我妈晚上刚回到家，就在我的面前，就那么直挺挺地……倒下了。」"
+
+    $ persistent.cg_1_5_flag = True
 
     scene cg07 #赤印梗|小梁芷柔跪地大哭|草图|CG07
     with fade

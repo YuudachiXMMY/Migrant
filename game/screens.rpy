@@ -14,6 +14,15 @@ default volume_sound = config.default_sfx_volume
 
 default gallery_page_index = 1
 
+# Gallery Music list
+define gallery_music_list = {
+    "audio/music/themepiano.ogg" : "Theme Piano",
+    "audio/music/bgm02.ogg" : "bgm02",
+    "audio/music/bgm03.ogg" : "bgm03",
+    "audio/music/bgm06.ogg" : "bgm06",
+    "audio/music/bgm08.ogg" : "bgm08"
+}
+
 # define config.auto_voice = "voice/{id}.ogg"
 
 
@@ -1412,6 +1421,9 @@ style about_label_text:
 ## Gallery #####################################################################
 ##
 
+screen gallery_music_player():
+    zorder 300
+
 screen gallery():
 
     add "gallery_bg"
@@ -1427,24 +1439,35 @@ screen gallery():
         imagebutton:
             xalign 0.67 yalign 0.9
             auto "gallery_music_play_btn_%s"
-            action NullAction()
+            action mr.TogglePlay()
+            # if renpy.music.get_pause(channel=u'music'):
+            #     action renpy.music.set_pause(False, channel=u'music')
+            # else:
+            #     action renpy.music.set_pause(True, channel=u'music')
 
         imagebutton:
             xalign 0.72  yalign 0.88
             auto "gallery_music_prev_btn_%s"
-            action NullAction()
+            action mr.Previous()
 
         imagebutton:
             xalign 0.711  yalign 0.93
             auto "gallery_music_next_btn_%s"
-            action NullAction()
+            action mr.Next()
 
         #Music
-        vbox:
-            text _(str(renpy.music.get_playing("music")))
+        on "show" action Show("gallery_music_player")
+    vbox:
+        xalign 0.5 yalign 0.5
+        if renpy.music.is_playing(channel=u'music'):
+            text _(gallery_music_list[str(renpy.music.get_playing("music"))])
             text _(str(renpy.music.get_pos("music")))
             text _(str(renpy.music.get_duration("music")))
-
+            timer 0.1 action Hide("gallery"), Show("gallery")
+        else:
+            text _("None")
+            text _(str(0))
+            text _(str(0))
 
     #CG
     fixed:
@@ -1454,50 +1477,68 @@ screen gallery():
             xalign 0.158 yalign 0.042
             idle_background "gui/gallery/cg_small/1.png"
             hover_background "gui/gallery/cg_small/1.png"
-            if renpy.loadable(str("gui/gallery/cg_small/1-"+str(gallery_page_index)+".png")):
+            if eval("persistent.cg_1_"+str(gallery_page_index)+"_flag") and renpy.loadable(str("gui/gallery/cg_small/1-"+str(gallery_page_index)+".png")):
                 add str("gui/gallery/cg_small/1-"+str(gallery_page_index)+".png") xoffset 1 yoffset -4
             else:
                 add "gui/gallery/cg_small/1-none.png" xoffset 1 yoffset -4
             add "gui/gallery/cg_small/1.png" xoffset -6 yoffset -7
-            action NullAction()
+            if eval("persistent.cg_1_"+str(gallery_page_index)+"_flag") and renpy.loadable("gui/gallery/full/1-"+str(gallery_page_index)+".jpg"):
+                action Show("gallery_full_cg", cg = ("gui/gallery/full/1-"+str(gallery_page_index)+".jpg"))
+            else:
+                action NullAction()
 
         button:
             xysize(779, 531)
             xalign 0.18 yalign 0.485
             idle_background "gui/gallery/cg_small/2.png"
             hover_background "gui/gallery/cg_small/2.png"
-            if renpy.loadable(str("gui/gallery/cg_small/2-"+str(gallery_page_index)+".png")):
+            if eval("persistent.cg_2_"+str(gallery_page_index)+"_flag") and renpy.loadable(str("gui/gallery/cg_small/2-"+str(gallery_page_index)+".png")):
                 add str("gui/gallery/cg_small/2-"+str(gallery_page_index)+".png") xoffset 1 yoffset -4
             else:
                 add "gui/gallery/cg_small/2-none.png" xoffset 1 yoffset -4
             add "gui/gallery/cg_small/2.png" xoffset -6 yoffset -7
-            action NullAction()
+            if eval("persistent.cg_2_"+str(gallery_page_index)+"_flag") and renpy.loadable("gui/gallery/full/2-"+str(gallery_page_index)+".jpg"):
+                action Show("gallery_full_cg", cg = ("gui/gallery/full/2-"+str(gallery_page_index)+".jpg"))
+            else:
+                action NullAction()
 
         button:
             xysize(799, 581)
             xalign 0.7 yalign 0.11
             idle_background "gui/gallery/cg_small/3.png"
             hover_background "gui/gallery/cg_small/3.png"
-            if renpy.loadable(str("gui/gallery/cg_small/3-"+str(gallery_page_index)+".png")):
+            if eval("persistent.cg_3_"+str(gallery_page_index)+"_flag") and renpy.loadable(str("gui/gallery/cg_small/3-"+str(gallery_page_index)+".png")):
                 add str("gui/gallery/cg_small/3-"+str(gallery_page_index)+".png") xoffset 1 yoffset -4
             else:
                 add "gui/gallery/cg_small/3-none.png" xoffset 1 yoffset -4
             add "gui/gallery/cg_small/3.png" xoffset -6 yoffset -7
-            action NullAction()
-
+            if eval("persistent.cg_3_"+str(gallery_page_index)+"_flag") and renpy.loadable("gui/gallery/full/3-"+str(gallery_page_index)+".jpg"):
+                action Show("gallery_full_cg", cg = ("gui/gallery/full/3-"+str(gallery_page_index)+".jpg"))
+            else:
+                action NullAction()
 
 
         if gallery_page_index > 1:
             imagebutton:
                 xalign 0.17 yalign 0.73
                 auto "gallery_page_prev_btn_%s"
-                action SetVariable("gallery_page_index", gallery_page_index-1)
+                action SetVariable("gallery_page_index", gallery_page_index-1), Hide("gallery", dissolve), Show("gallery", dissolve)
 
         if gallery_page_index < 9:
             imagebutton:
                 xalign 0.82 yalign 0.52
                 auto "gallery_page_next_btn_%s"
-                action SetVariable("gallery_page_index", gallery_page_index+1)
+                action SetVariable("gallery_page_index", gallery_page_index+1), Hide("gallery", dissolve), Show("gallery", dissolve)
+
+screen gallery_full_cg(cg):
+    zorder 999
+    modal True
+
+    imagebutton:
+        idle im.FactorScale(cg, 1)
+        action Hide("gallery_full_cg")
+
+
 
 ## 读取和保存屏幕 #####################################################################
 ##
