@@ -5,6 +5,12 @@
 init offset = -1
 
 default first_menu = True
+define config.gl_resize = False
+
+default volume_total = 1.0
+default volume_music = config.default_music_volume
+default volume_voice = config.default_voice_volume
+default volume_sound = config.default_sfx_volume
 
 # define config.auto_voice = "voice/{id}.ogg"
 
@@ -484,10 +490,10 @@ screen main_menu():
     if main_menu:
         add "main_bg" at main_bg_ani
         # timer 0.01 action Show("main_ui", Dissolve(2.0))
-        use main_ui
+        # use main_ui
 
-screen main_ui():
-    zorder 101
+# screen main_ui():
+#     zorder 101
 
     if main_menu:
 
@@ -665,9 +671,18 @@ screen settings():
                     yoffset -5
                     frame:
                         background "setting_graphics_bg"
-                        imagebutton:
+                        button:
+                            xysize(38, 38)
                             xpos 405 yalign 0.5
-                            auto "setting_graphics_btn_%s"
+                            idle_background None
+                            hover_background None
+                            # idle_background "setting_graphics_btn_idle"
+                            # hover_background "setting_graphics_btn_hover"
+                            text "2560x1440":
+                                font "站酷高端黑修订版1.13.ttf"
+                                size 25
+                                align(0.5, 0.5)
+                                xoffset -220
                             at transform:
                                 yoffset -8
                             action NullAction()
@@ -719,10 +734,13 @@ screen settings():
                     label _("音乐音量")
 
                 vbox:
-                    yoffset 7
+                    yoffset 3
                     spacing 72
-                    bar value Preference("music volume")
-                    bar value Preference("music volume"):
+                    # bar value Preference("music volume")
+                    # bar value Preference("music volume"):
+                    #     yoffset 10
+                    bar value VariableValue("volume_total", 1.0, action=[Preference("music volume", (volume_total*volume_music)), Preference("voice volume", (volume_total*volume_voice)), Preference("sound volume", (volume_total*volume_sound))])
+                    bar value VariableValue("volume_music", 1.0, action=Preference("music volume", volume_total*volume_music)):
                         yoffset 10
 
                 vbox:
@@ -731,15 +749,23 @@ screen settings():
                     hbox:
                         spacing 10
                         imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("music mute", "toggle")
+                            if volume_total > 0.0:
+                                auto "setting_click_%s"
+                                action SetVariable("volume_total", 0.0), SetVariable("volume_music", 0.0), SetVariable("volume_voice", 0.0), SetVariable("volume_sound", 0.0), Preference("music mute", "enable"), Preference("voice mute", "enable"), Preference("sound mute", "enable")
+                            else:
+                                auto "setting_toggled_btn_%s"
+                                action SetVariable("volume_total", 1.0), SetVariable("volume_music", config.default_music_volume), SetVariable("volume_voice", config.default_voice_volume), SetVariable("volume_sound", config.default_sfx_volume), Preference("music mute", "disable"), Preference("voice mute", "disable"), Preference("sound mute", "disable")
                         label _("静音"):
                             style_prefix "mute_setting"
                     hbox:
                         spacing 10
                         imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("music mute", "toggle")
+                            if volume_music > 0.0:
+                                auto "setting_click_%s"
+                                action SetVariable("volume_music", 0.0), Preference("music mute", "enable")
+                            else:
+                                auto "setting_toggled_btn_%s"
+                                action SetVariable("volume_music", config.default_music_volume), Preference("music mute", "disable")
                         label _("静音"):
                             style_prefix "mute_setting"
 
@@ -757,8 +783,11 @@ screen settings():
                 vbox:
                     yoffset 7
                     spacing 72
-                    bar value Preference("voice volume")
-                    bar value Preference("sound volume"):
+                    # bar value Preference("voice volume")
+                    # bar value Preference("sound volume"):
+                    #     yoffset 10
+                    bar value VariableValue("volume_voice", 1.0, action=Preference("voice volume", (volume_total*volume_voice)))
+                    bar value VariableValue("volume_sound", 1.0, action=Preference("sound volume", (volume_total*volume_sound))):
                         yoffset 10
 
                 vbox:
@@ -767,32 +796,41 @@ screen settings():
                     hbox:
                         spacing 10
                         imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("voice mute", "toggle")
+                            if volume_voice > 0.0:
+                                auto "setting_click_%s"
+                                action SetVariable("volume_voice", 0.0), Preference("voice mute", "enable")
+                            else:
+                                auto "setting_toggled_btn_%s"
+                                action SetVariable("volume_voice", config.default_voice_volume), Preference("voice mute", "disable")
                         label _("静音"):
                             style_prefix "mute_setting"
                     hbox:
                         spacing 10
                         imagebutton:
-                            auto "setting_click_%s"
-                            action Preference("sound mute", "toggle")
+                            if volume_sound > 0.0:
+                                auto "setting_click_%s"
+                                action SetVariable("volume_sound", 0.0), Preference("sound mute", "enable")
+                            else:
+                                auto "setting_toggled_btn_%s"
+                                action SetVariable("volume_sound", config.default_sfx_volume), Preference("sound mute", "disable")
                         label _("静音"):
                             style_prefix "mute_setting"
 
             ## 音量低于5%自动设置为静音
-            fixed:
-                if store.MixerValue("music").get_adjustment().value <= 0.05:
-                    $store.MixerValue("music").get_adjustment().value = 0
-                    timer 0.01 action Preference("music mute", "enable")
-                if store.MixerValue("voice").get_adjustment().value <= 0.05:
-                    $store.MixerValue("voice").get_adjustment().value = 0
-                    timer 0.01 action Preference("voice mute", "enable")
-                if store.MixerValue("sfx").get_adjustment().value <= 0.05:
-                    $store.MixerValue("sfx").get_adjustment().value = 0
-                    timer 0.01 action Preference("sound mute", "enable")
+            # fixed:
+            #     if store.MixerValue("music").get_adjustment().value <= 0.05:
+            #         $store.MixerValue("music").get_adjustment().value = 0
+            #         timer 0.01 action Preference("music mute", "enable")
+            #     if store.MixerValue("voice").get_adjustment().value <= 0.05:
+            #         $store.MixerValue("voice").get_adjustment().value = 0
+            #         timer 0.01 action Preference("voice mute", "enable")
+            #     if store.MixerValue("sfx").get_adjustment().value <= 0.05:
+            #         $store.MixerValue("sfx").get_adjustment().value = 0
+            #         timer 0.01 action Preference("sound mute", "enable")
             ################################################################
 
 style text_setting_slider:
+    bar_vertical False
     xsize 355 ysize 19
     base_bar "setting_slider_3_idle"
     thumb "setting_slider_3_btn_idle"
@@ -815,6 +853,11 @@ style mute_setting_label_text is sound_setting_label_text:
 style graphics_setting is text_setting
 
 style graphics_setting_label_text is text_setting_label_text
+
+style sound_setting_bar:
+    xysize(294, 19)
+    base_bar "setting_slider_2_idle"
+    thumb "setting_slider_2_btn_idle"
 
 
 ## 制作人员 ######################################################################

@@ -1,42 +1,91 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "renpy/common/00start.rpy", line 212, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 456, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 456, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 466, in _execute_python_hide
-    renpy.load("_reload-2")
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+After initialization, but before game start.
+  File "game/screens.rpy", line 576, in prepare_screen
+    screen settings():
+  File "game/screens.rpy", line 576, in prepare
+    screen settings():
+  File "game/screens.rpy", line 582, in prepare
+    fixed:
+  File "game/screens.rpy", line 582, in prepare
+    fixed:
+  File "game/screens.rpy", line 708, in prepare
+    fixed:
+  File "game/screens.rpy", line 708, in prepare
+    fixed:
+  File "game/screens.rpy", line 725, in prepare
+    hbox:
+  File "game/screens.rpy", line 725, in prepare
+    hbox:
+  File "game/screens.rpy", line 746, in prepare
+    vbox:
+  File "game/screens.rpy", line 746, in prepare
+    vbox:
+  File "game/screens.rpy", line 749, in prepare
+    hbox:
+  File "game/screens.rpy", line 749, in prepare
+    hbox:
+  File "game/screens.rpy", line 751, in prepare
+    imagebutton:
+  File "game/screens.rpy", line 751, in prepare
+    imagebutton:
+  File "game/screens.rpy", line 752, in prepare
+    if volume_total > 0.0:
+  File "game/screens.rpy", line 755, in prepare
+    else:
+Exception: config.default_sound_volume is not a known configuration variable.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 212, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 456, in script
-    python hide:
-  File "W:\GamePython\renpy-7.3.2-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "renpy/common/00keymap.rpy", line 456, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 466, in _execute_python_hide
-    renpy.load("_reload-2")
-  File "W:\GamePython\renpy-7.3.2-sdk\renpy\loadsave.py", line 770, in load
-    log.unfreeze(roots, label="_after_load")
-  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 1983, in unfreeze
-    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
-  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 1815, in rollback
-    self.load_failed()
-  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 1733, in load_failed
-    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\bootstrap.py", line 316, in bootstrap
+    renpy.main.main()
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\main.py", line 578, in main
+    run(restart)
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\display\screen.py", line 931, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/screens.rpy", line 576, in prepare_screen
+    screen settings():
+  File "game/screens.rpy", line 576, in prepare
+    screen settings():
+  File "game/screens.rpy", line 582, in prepare
+    fixed:
+  File "game/screens.rpy", line 582, in prepare
+    fixed:
+  File "game/screens.rpy", line 708, in prepare
+    fixed:
+  File "game/screens.rpy", line 708, in prepare
+    fixed:
+  File "game/screens.rpy", line 725, in prepare
+    hbox:
+  File "game/screens.rpy", line 725, in prepare
+    hbox:
+  File "game/screens.rpy", line 746, in prepare
+    vbox:
+  File "game/screens.rpy", line 746, in prepare
+    vbox:
+  File "game/screens.rpy", line 749, in prepare
+    hbox:
+  File "game/screens.rpy", line 749, in prepare
+    hbox:
+  File "game/screens.rpy", line 751, in prepare
+    imagebutton:
+  File "game/screens.rpy", line 751, in prepare
+    imagebutton:
+  File "game/screens.rpy", line 752, in prepare
+    if volume_total > 0.0:
+  File "game/screens.rpy", line 755, in prepare
+    else:
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<screen language>", line 757, in <module>
+  File "W:\GamePython\renpy-7.3.2-sdk\renpy\defaultstore.py", line 91, in __getattr__
+    raise Exception('config.%s is not a known configuration variable.' % (name))
+Exception: config.default_sound_volume is not a known configuration variable.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Migrant 1.0
-Fri Nov 13 21:42:34 2020
+Sun Nov 15 16:10:26 2020

@@ -101,6 +101,9 @@ image setting_click_idle:
         (42, 38),
         (0, 0), "gui/setting/选项框.png")
 
+image setting_toggled_btn_idle:
+    "setting_click_selected_idle"
+
 image setting_click_selected_idle:
     Composite(
         (42, 38),
@@ -130,6 +133,9 @@ image setting_graphics_bg:
 
 image setting_graphics_btn_idle:
     "gui/setting/下拉.png"
+
+image setting_graphics_btn_hover:
+    "setting_graphics_btn_idle"
 
 ## 音乐设置
 image setting_sound_title:
