@@ -75,6 +75,7 @@ label splashscreen: # before_main_menu:
         align(0.5, 0.5)
     pause 2.5
     hide KID_Fans_Club_logo with Dissolve(2.0)
+    pause 0.5
 
     # # Renpy Logo
     # pause 2.0
@@ -316,7 +317,8 @@ screen r_menu():
             #退出游戏
             imagebutton:
                 auto "r_menu_exit_%s"
-                action Quit(confirm=True)
+                action [SetVariable("first_menu", True),
+                        Quit(confirm=main_menu)]
 
 
 ## 输入屏幕 ########################################################################
@@ -507,6 +509,7 @@ screen navigation():
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             textbutton _("退出") action Quit(confirm=not main_menu)
+            # textbutton _("退出") action Quit(confirm=True)
 
 
 style navigation_button is gui_button
@@ -531,102 +534,106 @@ screen main_menu():
     ## 此代码可确保替换掉任何其他菜单屏幕。
     tag menu
 
-    if main_menu:
-        add "main_bg" at main_bg_ani
-        # timer 0.01 action Show("main_ui", Dissolve(2.0))
-        # use main_ui
+    if first_menu:
+        on "show" action Show("main_menu_first_menu_ani")
+    elif main_menu:
 
-# screen main_ui():
-#     zorder 101
 
-    if main_menu:
-
-        if first_menu:
-            add "main_logo" at main_logo_ani
-        else:
-            add "main_logo" xalign 0.5 ypos 0.2
+        add "main_bg"
+        add "main_logo" xalign 0.5 ypos 0.2
 
         grid 2 1:
             xalign 0.5 yalign 0.77
             xspacing 120
             imagebutton:
                 xalign 0.32
-                if first_menu:
-                    at transform:
-                        alpha 0.0
-                        pause 8.6
-                        linear 2.0 alpha 1.0
                 auto "start_%s"
-                action [SetVariable("first_menu", False),
-                        Start()]
+                action Start()
 
             imagebutton:
                 xalign 0.68
-                if first_menu:
-                    at transform:
-                        alpha 0.0
-                        pause 8.8
-                        linear 2.0 alpha 1.0
                 auto  "load_%s"
-                action [SetVariable("first_menu", False),
-                        ShowMenu("load")]
+                action ShowMenu("load")
 
         grid 4 1:
             xalign 0.5 yalign 0.9
             xspacing 160
             imagebutton:
-                if first_menu:
-                    at transform:
-                        alpha 0.0
-                        pause 9.0
-                        linear 2.0 alpha 1.0
                 auto "setting_%s"
-                action [SetVariable("first_menu", False),
-                        Show("settings", dissolve)]
+                action SetVariable("first_menu", False)
             imagebutton:
-                if first_menu:
-                    at transform:
-                        alpha 0.0
-                        pause 9.2
-                        linear 2.0 alpha 1.0
                 auto "extraContent_%s"
-                # action [SetVariable("first_menu", False),
-                #         Show("test_notify", message="开发中……\n敬请期待！！")]
-                #         # NullAction()]
-                action [SetVariable("first_menu", False),
-                        ShowMenu("gallery")]
-            # imagebutton:
-            #     if first_menu:
-            #         at transform:
-            #             alpha 0.0
-            #             pause 9.4
-            #             linear 2.0 alpha 1.0
-            #     auto "staff_%s"
-            #     action [SetVariable("first_menu", False),
-            #             Show("test_notify", message="开发中……\n敬请期待！！")]
-            #             #NullAction()]
-            #     # action [SetVariable("first_menu", False),
-            #     #         ShowMenu("staffs")]
+                action ShowMenu("gallery")
             imagebutton:
-                if first_menu:
-                    at transform:
-                        alpha 0.0
-                        pause 9.4
-                        linear 2.0 alpha 1.0
                 auto "staff_%s"
-                action [SetVariable("first_menu", False),
-                        ShowMenu("staffs")]
+                action ShowMenu("staffs")
             imagebutton:
-                if first_menu:
-                    at transform:
-                        alpha 0.0
-                        pause 9.6
-                        linear 2.0 alpha 1.0
                 auto "exit_%s"
-                action [SetVariable("first_menu", True),
-                        Quit(confirm=main_menu)]
-                        # Quit(confirm=not main_menu)]
+                action Quit(confirm=main_menu)
+                        # Quit(confirm=not main_menu)
 
+
+screen main_menu_first_menu_ani():
+    modal True
+
+    if main_menu:
+
+        timer 9.8 action [SetVariable("first_menu", False),
+                    Hide("main_menu_first_menu_ani"),
+                    Return()]
+        # add "main_bg" at main_bg_ani
+
+        imagebutton:
+            idle "main_bg"
+            at transform:
+                alpha 0.0
+                linear 3.0 alpha 1.0
+            action [SetVariable("first_menu", False),
+                    Hide("main_menu_first_menu_ani"),
+                    Return()]
+
+        add "main_logo" at main_logo_ani
+
+        grid 2 1:
+            xalign 0.5 yalign 0.77
+            xspacing 120
+            add "start_idle":
+                xalign 0.32
+                at transform:
+                    alpha 0.0
+                    pause 8.6
+                    linear 2.0 alpha 1.0
+
+            add "load_idle":
+                xalign 0.68
+                at transform:
+                    alpha 0.0
+                    pause 8.8
+                    linear 2.0 alpha 1.0
+
+        grid 4 1:
+            xalign 0.5 yalign 0.9
+            xspacing 160
+            add "setting_idle":
+                at transform:
+                    alpha 0.0
+                    pause 9.0
+                    linear 2.0 alpha 1.0
+            add "extraContent_idle":
+                at transform:
+                    alpha 0.0
+                    pause 9.2
+                    linear 2.0 alpha 1.0
+            add "staff_idle":
+                at transform:
+                    alpha 0.0
+                    pause 9.4
+                    linear 2.0 alpha 1.0
+            add "exit_idle":
+                at transform:
+                    alpha 0.0
+                    pause 9.6
+                    linear 2.0 alpha 1.0
 
 ## 设置屏幕 ######################################################################
 ##
@@ -1065,9 +1072,13 @@ screen staffs():
         xfill True
 
         frame:
-            label _("策划"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("策划"):
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5
         frame:
             label _("苍蓝的风"):
                 xalign 0.5
@@ -1076,9 +1087,14 @@ screen staffs():
             add "gui/staffs/title_line.png":
                 xalign 0.5
         frame:
-            label _("原案"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("原案"):
+                    xalign 0.5
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5
         frame:
             label _("小雨潇潇"):
                 xalign 0.5
@@ -1087,9 +1103,14 @@ screen staffs():
             add "gui/staffs/title_line.png":
                 xalign 0.5
         frame:
-            label _("剧本组"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("剧本组"):
+                    xalign 0.5
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5
         frame:
             label _("剧本：苍蓝的风"):
                 xalign 0.5
@@ -1104,9 +1125,14 @@ screen staffs():
             add "gui/staffs/title_line.png":
                 xalign 0.5
         frame:
-            label _("美术组"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("美术组"):
+                    xalign 0.5
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5
         frame:
             label _("人设：水树迷"):
                 xalign 0.5
@@ -1133,9 +1159,14 @@ screen staffs():
             add "gui/staffs/title_line.png":
                 xalign 0.5
         frame:
-            label _("配乐组"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("配乐组"):
+                    xalign 0.5
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5
         frame:
             label _("BGM：麋鹿"):
                 xalign 0.5
@@ -1144,9 +1175,14 @@ screen staffs():
             add "gui/staffs/title_line.png":
                 xalign 0.5
         frame:
-            label _("主题曲「梦想天空」"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("主题曲「梦想天空」"):
+                    xalign 0.5
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5 xoffset -15
         frame:
             label _("作曲：C.C."):
                 xalign 0.5
@@ -1167,9 +1203,14 @@ screen staffs():
             add "gui/staffs/title_line.png":
                 xalign 0.5
         frame:
-            label _("配音组"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("配音组"):
+                    xalign 0.5
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5
         frame:
             label _("配音导演：苍蓝的风"):
                 xalign 0.5
@@ -1203,9 +1244,14 @@ screen staffs():
             add "gui/staffs/title_line.png":
                 xalign 0.5
         frame:
-            label _("音效组"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("音效组"):
+                    xalign 0.5
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5
         frame:
             label _("音效导演：苍蓝的风"):
                 xalign 0.5
@@ -1217,9 +1263,14 @@ screen staffs():
             add "gui/staffs/title_line.png":
                 xalign 0.5
         frame:
-            label _("程序组"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("程序组"):
+                    xalign 0.5
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5
         frame:
             label _("程序：芯玫墨韵"):
                 xalign 0.5
@@ -1231,9 +1282,14 @@ screen staffs():
             add "gui/staffs/title_line.png":
                 xalign 0.5
         frame:
-            label _("协力"):
+            hbox:
                 xalign 0.5
-                style_prefix "staffs_title"
+                spacing 10
+                add "staffs_title_block" yalign 0.5
+                label _("协力"):
+                    xalign 0.5
+                    style_prefix "staffs_title"
+                add "staffs_title_block" yalign 0.5
         frame:
             label _("okami2012"):
                 xalign 0.5
@@ -1246,12 +1302,12 @@ style staffs_label is gui_label
 style staffs_title_label is staffs_label
 
 style staffs_title_label_text:
-    font "经典中圆简.ttf"
+    font "SourceHanSansCN-Regular.otf"
     size 30
     color "#ad283b"
 
 style staffs_label_text:
-    font "经典中圆简.ttf"
+    font "SourceHanSansCN-Regular.otf"
     size 28
     color "#473e3a"
 

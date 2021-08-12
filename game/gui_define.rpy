@@ -207,6 +207,9 @@ image staffs_replay_btn_idle:
 image staffs_replay_btn_hover:
     "staffs_replay_btn_idle"
 
+image staffs_title_block:
+    "gui/staffs/title_block.png"
+
 ## 右键菜单 ######################################################################
 ##
 image r_menu_background:

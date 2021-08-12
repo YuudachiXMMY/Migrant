@@ -66,12 +66,12 @@ define config.has_voice = True
 ## 进入或退出游戏菜单。
 
 define config.enter_transition = dissolve
-define config.exit_transition = Dissolve(0.1) #dissolve
+define config.exit_transition = dissolve
 
 
 ## 各个游戏菜单之间的转场。
 
-define config.intra_transition = Dissolve(0.1) #dissolve
+define config.intra_transition = dissolve
 
 
 ## 载入游戏后使用的转场。
