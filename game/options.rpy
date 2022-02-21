@@ -21,12 +21,17 @@ define gui.show_name = False
 
 ## 游戏版本号。
 
+<<<<<<< HEAD
+define config.version = "0.0.1"
+=======
 define config.version = "Demo0.2"
+>>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
 
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。
 
 define gui.about = _p("""
+    候鸟试玩版
 """)
 
 

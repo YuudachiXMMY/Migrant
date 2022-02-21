@@ -4,37 +4,13 @@
 
 init offset = -1
 
-define music_player_time_size = 22
-
 default first_menu = True
-define config.gl_resize = False
+# define config.gl_resize = False
 
 default volume_total = 1.0
 default volume_music = config.default_music_volume
 default volume_voice = config.default_voice_volume
 default volume_sound = config.default_sfx_volume
-<<<<<<< HEAD
-=======
-
-default gallery_page_index = 1
-
-# Gallery Music list
-define gallery_music_list = {
-    "audio/music/themepiano.ogg" : "Theme Piano",
-    "audio/music/bgm02.ogg" : "bgm02",
-    "audio/music/bgm03.ogg" : "bgm03",
-    "audio/music/bgm06.ogg" : "bgm06",
-    "audio/music/bgm08.ogg" : "bgm08"
-}
-
-# Helper
-init python:
-
-    import math
-
-    def floor(num):
-        return int(math.floor(num))
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
 # define config.auto_voice = "voice/{id}.ogg"
 
@@ -78,7 +54,6 @@ label splashscreen: # before_main_menu:
         align(0.5, 0.5)
     pause 2.5
     hide KID_Fans_Club_logo with Dissolve(2.0)
-<<<<<<< HEAD
 
     pause 2.0
 
@@ -88,19 +63,6 @@ label splashscreen: # before_main_menu:
     hide RenPy_logo with Dissolve(2.0)
 
     pause 2.0
-=======
-    pause 0.5
-
-    # # Renpy Logo
-    # pause 2.0
-
-    # show RenPy_logo with Dissolve(2.0):
-    #     align(0.5, 0.5)
-    # pause 2.5
-    # hide RenPy_logo with Dissolve(2.0)
-
-    # pause 2.0
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
 
 ################################################################################
@@ -210,17 +172,10 @@ screen say(who, what):
             action ShowMenu("save")
 
         imagebutton:
-<<<<<<< HEAD
             keysym "history_menu"
-=======
-            # keysym "history_menu"
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
             xalign 0.875 yalign 0.92
             auto "dia_replay_%s"
-            # action ShowMenu('history')
-            action Play("voice", _get_voice_info().filename)
-
-        key "history_menu" action ShowMenu("history")
+            action ShowMenu('history')
 
     ## 如果有侧边图像，会将其显示在文本之上。请不要在手机界面下显示这个，因为没
     ## 有空间。
@@ -336,12 +291,7 @@ screen r_menu():
             #退出游戏
             imagebutton:
                 auto "r_menu_exit_%s"
-<<<<<<< HEAD
                 action Quit(confirm=True)
-=======
-                action [SetVariable("first_menu", True),
-                        Quit(confirm=main_menu)]
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
 
 ## 输入屏幕 ########################################################################
@@ -532,7 +482,6 @@ screen navigation():
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             textbutton _("退出") action Quit(confirm=not main_menu)
-            # textbutton _("退出") action Quit(confirm=True)
 
 
 style navigation_button is gui_button
@@ -557,7 +506,6 @@ screen main_menu():
     ## 此代码可确保替换掉任何其他菜单屏幕。
     tag menu
 
-<<<<<<< HEAD
     if main_menu:
         add "main_bg" at main_bg_ani
         # timer 0.01 action Show("main_ui", Dissolve(2.0))
@@ -565,122 +513,84 @@ screen main_menu():
 
 # screen main_ui():
 #     zorder 101
-=======
-    if first_menu:
-        on "show" action Show("main_menu_first_menu_ani")
-    elif main_menu:
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
+    if main_menu:
 
-        add "main_bg"
-        add "main_logo" xalign 0.5 ypos 0.2
+        if first_menu:
+            add "main_logo" at main_logo_ani
+        else:
+            add "main_logo" xalign 0.5 ypos 0.2
 
         grid 2 1:
             xalign 0.5 yalign 0.77
             xspacing 120
             imagebutton:
                 xalign 0.32
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 8.6
+                        linear 2.0 alpha 1.0
                 auto "start_%s"
-                action Start()
+                action [SetVariable("first_menu", False),
+                        Start()]
 
             imagebutton:
                 xalign 0.68
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 8.8
+                        linear 2.0 alpha 1.0
                 auto  "load_%s"
-                action ShowMenu("load")
+                action [SetVariable("first_menu", False),
+                        ShowMenu("load")]
 
         grid 4 1:
             xalign 0.5 yalign 0.9
             xspacing 160
             imagebutton:
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 9.0
+                        linear 2.0 alpha 1.0
                 auto "setting_%s"
-                action SetVariable("first_menu", False)
+                action [SetVariable("first_menu", False),
+                        Show("settings", dissolve)]
             imagebutton:
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 9.2
+                        linear 2.0 alpha 1.0
                 auto "extraContent_%s"
-<<<<<<< HEAD
                 action [SetVariable("first_menu", False),
                         Show("test_notify", message="开发中……\n敬请期待！！")]
                         # NullAction()]
-=======
-                action ShowMenu("gallery")
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
             imagebutton:
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 9.4
+                        linear 2.0 alpha 1.0
                 auto "staff_%s"
-<<<<<<< HEAD
                 action [SetVariable("first_menu", False),
                         Show("test_notify", message="开发中……\n敬请期待！！")]
                         #NullAction()]
                 # action [SetVariable("first_menu", False),
                 #         ShowMenu("staffs")]
-=======
-                action ShowMenu("staffs")
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
             imagebutton:
+                if first_menu:
+                    at transform:
+                        alpha 0.0
+                        pause 9.6
+                        linear 2.0 alpha 1.0
                 auto "exit_%s"
-                action Quit(confirm=main_menu)
-                        # Quit(confirm=not main_menu)
+                action [SetVariable("first_menu", True),
+                        Quit(confirm=main_menu)]
+                        # Quit(confirm=not main_menu)]
 
-
-screen main_menu_first_menu_ani():
-    modal True
-
-    if main_menu:
-
-        timer 9.8 action [SetVariable("first_menu", False),
-                    Hide("main_menu_first_menu_ani"),
-                    Return()]
-        # add "main_bg" at main_bg_ani
-
-        imagebutton:
-            idle "main_bg"
-            at transform:
-                alpha 0.0
-                linear 3.0 alpha 1.0
-            action [SetVariable("first_menu", False),
-                    Hide("main_menu_first_menu_ani"),
-                    Return()]
-
-        add "main_logo" at main_logo_ani
-
-        grid 2 1:
-            xalign 0.5 yalign 0.77
-            xspacing 120
-            add "start_idle":
-                xalign 0.32
-                at transform:
-                    alpha 0.0
-                    pause 8.6
-                    linear 2.0 alpha 1.0
-
-            add "load_idle":
-                xalign 0.68
-                at transform:
-                    alpha 0.0
-                    pause 8.8
-                    linear 2.0 alpha 1.0
-
-        grid 4 1:
-            xalign 0.5 yalign 0.9
-            xspacing 160
-            add "setting_idle":
-                at transform:
-                    alpha 0.0
-                    pause 9.0
-                    linear 2.0 alpha 1.0
-            add "extraContent_idle":
-                at transform:
-                    alpha 0.0
-                    pause 9.2
-                    linear 2.0 alpha 1.0
-            add "staff_idle":
-                at transform:
-                    alpha 0.0
-                    pause 9.4
-                    linear 2.0 alpha 1.0
-            add "exit_idle":
-                at transform:
-                    alpha 0.0
-                    pause 9.6
-                    linear 2.0 alpha 1.0
 
 ## 设置屏幕 ######################################################################
 ##
@@ -763,7 +673,6 @@ screen settings():
                                     bold True
                                 else:
                                     bold False
-<<<<<<< HEAD
                         hbox:
                             spacing 15
                             imagebutton:
@@ -780,24 +689,6 @@ screen settings():
                         spacing 115
                         hbox:
                             spacing 15
-=======
-                        hbox:
-                            spacing 15
-                            imagebutton:
-                                auto "setting_click_%s"
-                                action Preference("skip", "all")
-                            text _("全部"):
-                                style_prefix "mute_setting"
-                                if preferences.skip_unseen:
-                                    bold True
-                                else:
-                                    bold False
-                    hbox:
-                        yoffset 35
-                        spacing 115
-                        hbox:
-                            spacing 15
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
                             imagebutton:
                                 auto "setting_click_%s"
                                 action Preference("display", "fullscreen")
@@ -894,11 +785,7 @@ screen settings():
 
             vbox:
                 style_prefix "text_setting"
-<<<<<<< HEAD
                 xalign 0.342 yalign 0.677
-=======
-                xalign 0.329 yalign 0.71
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
                 spacing 75
                 hbox:
                     spacing 230
@@ -910,47 +797,27 @@ screen settings():
                     label _("Min")
                     label _("Max")
 
-<<<<<<< HEAD
             # 左侧
             hbox:
                 style_prefix "sound_setting"
                 xalign 0.325 yalign 0.7
-=======
-                hbox:
-                    spacing 230
-                    label _("Min")
-                    label _("Max")
-
-            # 左侧
-            hbox:
-                style_prefix "sound_setting"
-                xalign 0.313 yalign 0.73
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
                 xoffset -20
                 spacing 60
 
                 vbox:
                     spacing 70
+                    label _("全局音量")
                     label _("音乐音量")
-                    label _("语音音量")
-                    label _("效果音量")
 
                 vbox:
                     yoffset 3
                     spacing 72
-<<<<<<< HEAD
                     # bar value Preference("music volume")
                     # bar value Preference("music volume"):
                     #     yoffset 10
                     bar value VariableValue("volume_total", 1.0, action=[Preference("music volume", (volume_total*volume_music)), Preference("voice volume", (volume_total*volume_voice)), Preference("sound volume", (volume_total*volume_sound))])
                     bar value VariableValue("volume_music", 1.0, action=Preference("music volume", volume_total*volume_music)):
-=======
-                    bar value Preference("music volume")
-                    bar value Preference("voice volume"):
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
                         yoffset 10
-                    bar value Preference("sound volume"):
-                        yoffset 20
 
                 vbox:
                     xoffset -30
@@ -958,7 +825,6 @@ screen settings():
                     hbox:
                         spacing 10
                         imagebutton:
-<<<<<<< HEAD
                             if volume_total > 0.0:
                                 auto "setting_click_%s"
                                 action SetVariable("volume_total", 0.0), SetVariable("volume_music", 0.0), SetVariable("volume_voice", 0.0), SetVariable("volume_sound", 0.0), Preference("music mute", "enable"), Preference("voice mute", "enable"), Preference("sound mute", "enable")
@@ -1013,25 +879,11 @@ screen settings():
                             else:
                                 auto "setting_toggled_btn_%s"
                                 action SetVariable("volume_voice", config.default_voice_volume), Preference("voice mute", "disable")
-=======
-                            auto "setting_click_%s"
-                            # auto "setting_toggled_btn_%s"
-                            action Preference("music mute", "toggle")
                         text _("静音"):
                             style_prefix "mute_setting"
                     hbox:
                         spacing 10
                         imagebutton:
-                            auto "setting_click_%s"
-                            # auto "setting_toggled_btn_%s"
-                            action Preference("voice mute", "toggle")
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
-                        text _("静音"):
-                            style_prefix "mute_setting"
-                    hbox:
-                        spacing 10
-                        imagebutton:
-<<<<<<< HEAD
                             if volume_sound > 0.0:
                                 auto "setting_click_%s"
                                 action SetVariable("volume_sound", 0.0), Preference("sound mute", "enable")
@@ -1041,107 +893,6 @@ screen settings():
                         text _("静音"):
                             style_prefix "mute_setting"
 
-=======
-                            auto "setting_click_%s"
-                            # auto "setting_toggled_btn_%s"
-                            action Preference("sound mute", "toggle")
-                        text _("静音"):
-                            style_prefix "mute_setting"
-
-            # 右侧
-            hbox:
-                style_prefix "text_setting"
-                xalign 0.675 yalign 0.7
-                spacing 80
-
-                vbox:
-                    spacing 50
-                    label _("语 音 同 步")
-                    label _(" 语音播放时\n音乐音量降低"):
-                        xoffset -5
-
-                vbox:
-                    hbox:
-                        spacing 35
-                        hbox:
-                            spacing 90
-                            hbox:
-                                spacing 15
-                                imagebutton:
-                                    auto "setting_click_%s"
-                                    action Preference("voice sustain", "enable")
-                                text _("同步"):
-                                    style_prefix "mute_setting"
-                                    if preferences.voice_sustain:
-                                        bold True
-                                    else:
-                                        bold False
-                            hbox:
-                                spacing 15
-                                imagebutton:
-                                    auto "setting_click_%s"
-                                    action Preference("voice sustain", "disable")
-                                text _("不同步"):
-                                    style_prefix "mute_setting"
-                                    if not preferences.voice_sustain:
-                                        bold True
-                                    else:
-                                        bold False
-
-                    hbox:
-                        yoffset 35
-                        spacing 115
-                        hbox:
-                            spacing 15
-                            imagebutton:
-                                auto "setting_click_%s"
-                                action Preference("emphasize audio", "enable")
-                            text _("是"):
-                                style_prefix "mute_setting"
-                                if preferences.voice_sustain:
-                                    bold True
-                                else:
-                                    bold False
-                        hbox:
-                            spacing 15
-                            imagebutton:
-                                auto "setting_click_%s"
-                                action Preference("emphasize audio", "disable")
-                            text _("否"):
-                                style_prefix "mute_setting"
-                                if not preferences.voice_sustain:
-                                    bold True
-                                else:
-                                    bold False
-
-
-                # vbox:
-                #     xoffset -30
-                #     spacing 60
-                #     hbox:
-                #         spacing 10
-                #         imagebutton:
-                #             if volume_voice > 0.0:
-                #                 auto "setting_click_%s"
-                #                 action SetVariable("volume_voice", 0.0), Preference("voice mute", "enable")
-                #             else:
-                #                 auto "setting_toggled_btn_%s"
-                #                 action SetVariable("volume_voice", config.default_voice_volume), Preference("voice mute", "disable")
-                #         text _("静音"):
-                #             style_prefix "mute_setting"
-                #     hbox:
-                #         spacing 10
-                #         imagebutton:
-                #             if volume_sound > 0.0:
-                #                 auto "setting_click_%s"
-                #                 action SetVariable("volume_sound", 0.0), Preference("sound mute", "enable")
-                #             else:
-                #                 auto "setting_toggled_btn_%s"
-                #                 action SetVariable("volume_sound", config.default_sfx_volume), Preference("sound mute", "disable")
-                #         text _("静音"):
-                #             style_prefix "mute_setting"
-
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
             # ## 音量低于5%自动设置为静音
             # fixed:
             #     if store.MixerValue("music").get_adjustment().value <= 0.05:
@@ -1192,7 +943,7 @@ style sound_setting_bar:
 
 screen staffs():
 
-    # tag menu
+    tag menu
 
     style_prefix "staffs"
 
@@ -1201,275 +952,55 @@ screen staffs():
     imagebutton:
         yalign 0.02
         auto "staffs_return_btn_%s"
-        action [Hide("staffs", dissolve), Return()]
+        action Return()
 
     imagebutton:
-        xpos 1780 ypos 681
-        auto "staffs_replay_btn_%s"
-        action Show("test_notify", message="开发中……\n敬请期待！！")
+        xalign 0.85 yalign 0.542
+        auto "staffs_play_btn_%s"
+        action NullAction()
 
-    # imagebutton:
-    #     xalign 0.85 yalign 0.542
-    #     auto "staffs_play_btn_%s"
-    #     action Show("test_notify", message="开发中……\n敬请期待！！")
-
-    vpgrid:
-        cols 1
-        mousewheel True
-        draggable False
-
-        # scrollbars "vertical"
-
-        xalign 0.515
-        yalign 0.6
-        xsize 638 ysize 840
-        xfill True
-
+    vbox:
+        xalign 0.565 yalign 0.60
+        spacing 37
+        #监督
         frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("策划"):
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
+            label _("苍蓝的风")
+        #剧本
         frame:
-            label _("苍蓝的风"):
-                xalign 0.5
-
+            label _("苍蓝的风")
+        #剧本协力
         frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
+            label _("小雨潇潇、木之")
+        #CG
         frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("原案"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
+            label _("九九一木")
+        #立绘
         frame:
-            label _("小雨潇潇"):
-                xalign 0.5
-
+            label _("九九一木、水树迷")
+        #场景
         frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
+            label _("三水猫酱")
+        #音乐
         frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("剧本组"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
+            label _("麋鹿、灵溪镇的清珏")
+        #配音
         frame:
-            label _("剧本：苍蓝的风"):
-                xalign 0.5
+            label _("酒儿")
+        #UI
         frame:
-            label _("剧本协力：小雨潇潇、木之"):
-                xalign 0.5
+            label _("拾九子")
+        #程序
         frame:
-            label _("演出：苍蓝的风"):
-                xalign 0.5
-
-        frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
-        frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("美术组"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
-        frame:
-            label _("人设：水树迷"):
-                xalign 0.5
-        frame:
-            label _("立绘：九九一木"):
-                xalign 0.5
-        frame:
-            label _("CG：九九一木"):
-                xalign 0.5
-        frame:
-            label _("场景设计：三水猫酱"):
-                xalign 0.5
-        frame:
-            label _("场景绘制：aaaaki"):
-                xalign 0.5
-        frame:
-            label _("UI：拾九子"):
-                xalign 0.5
-        frame:
-            label _("题字：风起深渊"):
-                xalign 0.5
-
-        frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
-        frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("配乐组"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
-        frame:
-            label _("BGM：麋鹿"):
-                xalign 0.5
-
-        frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
-        frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("主题曲「梦想天空」"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5 xoffset -15
-        frame:
-            label _("作曲：C.C."):
-                xalign 0.5
-        frame:
-            label _("编曲：麋鹿"):
-                xalign 0.5
-        frame:
-            label _("作词：shin"):
-                xalign 0.5
-        frame:
-            label _("演唱：灵溪镇的清珏"):
-                xalign 0.5
-        frame:
-            label _("混音：一只毒月饼"):
-                xalign 0.5
-
-        frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
-        frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("配音组"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
-        frame:
-            label _("配音导演：苍蓝的风"):
-                xalign 0.5
-        frame:
-            label _("后期：北落师门"):
-                xalign 0.5
-
-        frame:
-            label _("梁芷柔：酒儿"):
-                xalign 0.5
-        frame:
-            label _("书店店员：闲踏梧桐"):
-                xalign 0.5
-        frame:
-            label _("郑老师：瑚琏"):
-                xalign 0.5
-        frame:
-            label _("李金凡：晏绥"):
-                xalign 0.5
-        frame:
-            label _("其他角色：酒儿、瑚琏"):
-                xalign 0.5
-        frame:
-            label _("晏绥、珺璈、灯塔"):
-                xalign 0.5
-        frame:
-            label _("默伶、莫然、十六"):
-                xalign 0.5
-
-        frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
-        frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("音效组"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
-        frame:
-            label _("音效导演：苍蓝的风"):
-                xalign 0.5
-        frame:
-            label _("音效来源：耳聆网、Freesound"):
-                xalign 0.5
-
-        frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
-        frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("程序组"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
-        frame:
-            label _("程序：芯玫墨韵"):
-                xalign 0.5
-        frame:
-            label _("程序协力：百影狮子"):
-                xalign 0.5
-
-        frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
-        frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
-                label _("协力"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
-        frame:
-            label _("okami2012"):
-                xalign 0.5
-        frame:
-            label _("龙之咲制作组"):
-                xalign 0.5
-
-
-style staffs_label is gui_label
-style staffs_title_label is staffs_label
-
-style staffs_title_label_text:
-    font "SourceHanSansCN-Regular.otf"
-    size 30
-    color "#ad283b"
+            label _("芯玫墨韵、远征的苦行僧")
 
 style staffs_label_text:
-    font "SourceHanSansCN-Regular.otf"
-    size 28
-    color "#473e3a"
+    font "经典中圆简.ttf"
+    size 32
+    color "#343434"
 
 style staffs_frame:
-    background None
-    xfill True
     xalign 0.5
-
+    background None
 
 ## 游戏菜单屏幕 ######################################################################
 ##
@@ -1638,183 +1169,6 @@ style about_label_text:
     size gui.label_text_size
 
 
-## Gallery #####################################################################
-##
-
-screen gallery_music_player():
-    zorder 300
-
-    vpgrid:
-        cols 1
-        mousewheel False
-        draggable False
-
-        xalign 0.728 yalign 0.815
-        xfill True
-        xsize 279
-
-        style_prefix "gallery_music_player"
-
-        xspacing 10
-
-        at transform:
-            rotate 15
-
-        if renpy.music.is_playing(channel=u'music') and not renpy.music.get_pos("music") is None:
-
-            frame:
-                label _(gallery_music_list[str(renpy.music.get_playing("music"))]):
-                    xalign 0.5
-
-            frame:
-                hbox:
-                    spacing 234
-                    text _(str(floor(renpy.music.get_pos("music")/60))+":"+str(floor(renpy.music.get_pos("music")%60))):
-                        size music_player_time_size
-                    text _(str(floor(renpy.music.get_duration("music")/60))+":"+str(floor(renpy.music.get_duration("music")%60))):
-                        size music_player_time_size
-                        xanchor 1.0
-
-            frame:
-                yoffset -25
-                bar value StaticValue(renpy.music.get_pos("music"), renpy.music.get_duration("music"))
-
-        else:
-            frame:
-                label _("None"):
-                    xalign 0.5
-
-            frame:
-                hbox:
-                    spacing 234
-                    text _(str("0:0")):
-                        size music_player_time_size
-                    text _(str("0:0")):
-                        size music_player_time_size
-                        xanchor 1.0
-
-            frame:
-                yoffset -25
-                bar value StaticValue(0, 1.0)
-
-screen gallery():
-
-    add "gallery_bg"
-
-    imagebutton:
-        yalign 0.02
-        auto "gallery_return_btn_%s"
-        action [Hide("gallery_music_player"), Hide("gallery", dissolve), Return()]
-
-    # Music Player
-    fixed:
-
-        imagebutton:
-            xalign 0.67 yalign 0.9
-            auto "gallery_music_play_btn_%s"
-            action mr.TogglePlay(), Hide("gallery", dissolve), Show("gallery", dissolve)
-            # if renpy.music.get_pause(channel=u'music'):
-            #     action renpy.music.set_pause(False, channel=u'music')
-            # else:
-            #     action renpy.music.set_pause(True, channel=u'music')
-
-        imagebutton:
-            xalign 0.72  yalign 0.88
-            auto "gallery_music_prev_btn_%s"
-            action mr.Previous(), Hide("gallery", dissolve), Show("gallery", dissolve)
-
-        imagebutton:
-            xalign 0.711  yalign 0.93
-            auto "gallery_music_next_btn_%s"
-            action mr.Next(), Hide("gallery", dissolve), Show("gallery", dissolve)
-
-        #Music
-        timer 0.1 action Show("gallery_music_player"), Hide("gallery"), Show("gallery")
-
-    #CG
-    fixed:
-
-        button:
-            xysize(756, 479)
-            xalign 0.158 yalign 0.042
-            idle_background "gui/gallery/cg_small/1.png"
-            hover_background "gui/gallery/cg_small/1.png"
-            if eval("persistent.cg_1_"+str(gallery_page_index)+"_flag") and renpy.loadable(str("gui/gallery/cg_small/1-"+str(gallery_page_index)+".png")):
-                add str("gui/gallery/cg_small/1-"+str(gallery_page_index)+".png") xoffset 1 yoffset -4
-            else:
-                add "gui/gallery/cg_small/1-none.png" xoffset 1 yoffset -4
-            add "gui/gallery/cg_small/1.png" xoffset -6 yoffset -7
-            if eval("persistent.cg_1_"+str(gallery_page_index)+"_flag") and renpy.loadable("gui/gallery/full/1-"+str(gallery_page_index)+".jpg"):
-                action Show("gallery_full_cg", cg = ("gui/gallery/full/1-"+str(gallery_page_index)+".jpg"))
-            else:
-                action NullAction()
-
-        button:
-            xysize(779, 531)
-            xalign 0.18 yalign 0.485
-            idle_background "gui/gallery/cg_small/2.png"
-            hover_background "gui/gallery/cg_small/2.png"
-            if eval("persistent.cg_2_"+str(gallery_page_index)+"_flag") and renpy.loadable(str("gui/gallery/cg_small/2-"+str(gallery_page_index)+".png")):
-                add str("gui/gallery/cg_small/2-"+str(gallery_page_index)+".png") xoffset 1 yoffset -4
-            else:
-                add "gui/gallery/cg_small/2-none.png" xoffset 1 yoffset -4
-            add "gui/gallery/cg_small/2.png" xoffset -6 yoffset -7
-            if eval("persistent.cg_2_"+str(gallery_page_index)+"_flag") and renpy.loadable("gui/gallery/full/2-"+str(gallery_page_index)+".jpg"):
-                action Show("gallery_full_cg", cg = ("gui/gallery/full/2-"+str(gallery_page_index)+".jpg"))
-            else:
-                action NullAction()
-
-        button:
-            xysize(799, 581)
-            xalign 0.7 yalign 0.11
-            idle_background "gui/gallery/cg_small/3.png"
-            hover_background "gui/gallery/cg_small/3.png"
-            if eval("persistent.cg_3_"+str(gallery_page_index)+"_flag") and renpy.loadable(str("gui/gallery/cg_small/3-"+str(gallery_page_index)+".png")):
-                add str("gui/gallery/cg_small/3-"+str(gallery_page_index)+".png") xoffset 1 yoffset -4
-            else:
-                add "gui/gallery/cg_small/3-none.png" xoffset 1 yoffset -4
-            add "gui/gallery/cg_small/3.png" xoffset -6 yoffset -7
-            if eval("persistent.cg_3_"+str(gallery_page_index)+"_flag") and renpy.loadable("gui/gallery/full/3-"+str(gallery_page_index)+".jpg"):
-                action Show("gallery_full_cg", cg = ("gui/gallery/full/3-"+str(gallery_page_index)+".jpg"))
-            else:
-                action NullAction()
-
-
-        if gallery_page_index > 1:
-            imagebutton:
-                xalign 0.17 yalign 0.73
-                auto "gallery_page_prev_btn_%s"
-                action SetVariable("gallery_page_index", gallery_page_index-1), Hide("gallery", dissolve), Show("gallery", dissolve)
-
-        if gallery_page_index < 9:
-            imagebutton:
-                xalign 0.82 yalign 0.52
-                auto "gallery_page_next_btn_%s"
-                action SetVariable("gallery_page_index", gallery_page_index+1), Hide("gallery", dissolve), Show("gallery", dissolve)
-
-screen gallery_full_cg(cg):
-    zorder 999
-    modal True
-
-    imagebutton:
-        idle im.FactorScale(cg, 1)
-        action Hide("gallery_full_cg")
-
-style gallery_music_player_label_text:
-    size 32
-    color "#000"
-
-style gallery_music_player_bar:
-    xysize(279, 11)
-    left_bar "music_player_slider_left"
-    right_bar "music_player_slider_right"
-    thumb "music_player_slider_thumb"
-
-style gallery_music_player_frame:
-    background None
-    xfill True
-    xalign 0.5
-
 ## 读取和保存屏幕 #####################################################################
 ##
 ## 这些屏幕负责允许玩家保存游戏并将其重新读取。由于它们几乎完全一样，因此它们都
@@ -1825,14 +1179,14 @@ style gallery_music_player_frame:
 
 screen save():
 
-    # tag menu
+    tag menu
 
     use file_slots(_("保存"))
 
 
 screen load():
 
-    # tag menu
+    tag menu
 
     use file_slots(_("读取游戏"))
 
@@ -1851,31 +1205,18 @@ screen file_slots(title):
                 imagebutton:
                     auto "sl_save_btn_%s"
                     xalign 0.25 yalign 0.09
-                    action Hide("load", dissolve), ShowMenu("save")
+                    action ShowMenu("save")
             # else:
             #     add "sl_save_btn_idle" xalign 0.25 yalign 0.09
             add "sl_bg" align(0.5, 0.5)
             add "sl_load_btn_untoggled" xalign 0.22 yalign 0.08
-
-            imagebutton:
-                xalign 0.825 yalign 0.15
-                # keysym 'quit_menu'
-                auto "sl_close_%s"
-                action Hide("load", dissolve), Return()
-
         elif renpy.get_screen("save"):
             imagebutton:
                 auto "sl_load_btn_%s"
                 xalign 0.22 yalign 0.09
-                action Hide("save", dissolve), ShowMenu("load")
+                action ShowMenu("load")
             add "sl_bg" align(0.5, 0.5)
             add "sl_save_btn_untoggled" xalign 0.25 yalign 0.08
-
-            imagebutton:
-                xalign 0.825 yalign 0.15
-                keysym 'quit_menu'
-                auto "sl_close_%s"
-                action Hide("save", dissolve), Return()
 
         imagebutton:
             xalign 0.47 yalign 0.845
@@ -1897,6 +1238,11 @@ screen file_slots(title):
             auto "sl_page_next_%s"
             action FilePageNext(max=10, auto=False, quick=False)
 
+        imagebutton:
+            xalign 0.825 yalign 0.15
+            auto "sl_close_%s"
+            action Return()
+
         grid 3 3:
             style_prefix "slot"
             align(0.5, 0.5)
@@ -1910,10 +1256,8 @@ screen file_slots(title):
                     action FileAction(i)
                     add "sl_slot_bg" align(0.5,0.5)
                     add FileScreenshot(i) align(0.5,0.5) size(461, 251)
-                    add "gui/sl/title_layer.png" align(0.5,1.1)
                     # text FileTime(i, format=_("{#file_time}%Y年%B%d日  %H:%M"), empty=_("")):
                     #     color "#fff" xalign 0.5 ypos 240 size 30
-<<<<<<< HEAD
                     if FileLoadable(i):
                         imagebutton:
                             xalign 1.0
@@ -1936,36 +1280,7 @@ screen file_slots(title):
                             style "sl_page"
                             size 18 bold True
                     key "save_delete" action FileDelete(i)
-=======
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
-                    # text FileSaveName(str(i)+u" 章节"):
-                    #     color "#fff" xalign 0.05 yalign 1.0 size 18
-                    text FileTime(i, format=_(u"{#file_time}%Y/%b/%d %H:%M"), empty=_("")):
-                        color "#fff" xalign 0.05 yalign 1.0 size 18
-                    if FileLoadable(i):
-                        imagebutton:
-                            xalign 1.0
-                            # keysym 'save_delete'
-                            auto "sl_delete_%s"
-                            action FileDelete(i)
-                    else:
-                        # FileSlotName(i, int(FileCurrentPage()))
-                        $ cur_page = FileCurrentPage()
-                        if cur_page == "1":
-                            $ num = i
-                        else:
-                            $ num = i - 1
-                        $ res = str(int(cur_page) - 1) + "%s"%str(num)
-                        text str(res):
-                            align(0.5, 0.5)
-                            style "sl_page"
-                            size 56 bold True
-                        text "NO DATA":
-                            align(0.5, 0.7)
-                            style "sl_page"
-                            size 18 bold True
-                    # key 'save_delete' action FileDelete(i)
 
 style slot_button:
     xsize 461 ysize 251
@@ -2308,7 +1623,6 @@ screen history_menu(title, scroll=None, yinitial=0.0):
 
     imagebutton:
         yalign 0.05
-        keysym "quit_hist"
         auto "history_return_btn_%s"
         action Return()
 

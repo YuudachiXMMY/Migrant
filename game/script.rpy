@@ -62,6 +62,9 @@ label start:
     stop music
     stop sound
 
+<<<<<<< HEAD
+#开篇
+=======
     #取消下面一行代码的注释可以直接进入staff剧情
     # jump staff
 
@@ -78,7 +81,15 @@ label start:
     play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
 
     $ persistent.cg_3_7_flag = True
+>>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
+    scene bg title #致十八岁的我们
+    with dissolve
+    pause 5.0
+
+#高考结束一年后"
+
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
     scene cg12a #叶雨潇打电话CG-1|CG12a
     with fade
     "漫步河滨，放眼望去，但见河水滔滔，奔流而下，裹挟着泥沙，仿佛要将天地间的一切都染作昏黄。"
@@ -179,7 +190,11 @@ label start:
     "也确实有很多学生抵挡不住这份诱惑倒下了，整个教室都充斥着颓废的气息。"
     "……不过，也有例外的。"
     "比如讲台上的班主任，现在就亢奋得很，正在拼命地朝下面喷着口水。"
+<<<<<<< HEAD
+    show chara h01 #老师立绘|夏季|普通
+=======
     show charaz h01 #老师立绘|夏季|普通
+>>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     with dissolve
     voice "audio/voice/010001.ogg"
     z "「……今年！啊，今年咱们县的考生，有42个人考上一本！93个人考上了二本！」"
@@ -187,7 +202,11 @@ label start:
     z "「啊，这是咱们县这么多年以来最好的成绩了！而这些人有百分之七十以上，都是咱们县一中的！」"
     voice "audio/voice/010003.ogg"
     z "「你们也是县一中的学生，明白吗！一中，是县里最好的学校，你们呢，也是县里最优秀的一批学生！」"
+<<<<<<< HEAD
+    show chara h04 #老师立绘|夏季|咆哮
+=======
     show charaz h04 #老师立绘|夏季|咆哮
+>>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     with dissolve
     voice "audio/voice/010004.ogg"
     z "「明年，就该轮到你们去高考了！目标，只能比往年高，不能比往年低！」"
@@ -232,7 +251,11 @@ label start:
     with fade
     "想到这里，目光又转向讲台上仍在兀自嘶吼的班主任。"
 
+<<<<<<< HEAD
+    show chara h04 #老师立绘|夏季|咆哮
+=======
     show charaz h04 #老师立绘|夏季|咆哮
+>>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     with dissolve
     voice "audio/voice/010006.ogg"
     z "「……总而言之，这两个星期的假期不是给你们玩的。记住要复习，明白吗！这学期我们提前学完了高三的课程……」"
@@ -499,10 +522,15 @@ label start:
 
     stop music
     with hpunch
+<<<<<<< HEAD
+    a "「[哔——]！你他妈故意吧？」"
+    b "「故你[哔——]！滚蛋！」"
+=======
     voice "audio/voice/050001.ogg"
     a "「\[哔——\]！你他妈故意吧？」"
     voice "audio/voice/060001.ogg"
     b "「故你\[哔——\]！滚蛋！」"
+>>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
     play music "audio/music/bgm06.ogg" fadein 1.5 #悬而未决
     "不知道因为什么事，前面突然吵起来了。"
@@ -702,8 +730,12 @@ label start:
     "椅子可比拖把沉多了，面积也大得多，抡起来那叫一个虎虎生风。附近的桌面纷纷惨遭蹂躏，无一幸免。"
     voice "audio/voice/060009.ogg"
     b "「去死！」"
+<<<<<<< HEAD
+    a "「妈的！」"
+=======
     voice "audio/voice/060008.ogg"
     a "「\[哔——\]！」"
+>>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     play sound "audio/sound/effect08.ogg" noloop
     with vpunch
     "结果——"
@@ -812,12 +844,53 @@ label start:
     "这好感度，刷得蹭蹭的。"
     "但是……"
     y "「啊……」"
+<<<<<<< HEAD
+
+
+    #### TODO: 演出效果Check #########################
+
+    ## Note:
+    #  1. linear 0.7 zoom 2.0 表示 0.7秒内放大两倍
+    #     如想自行修改可以更改0.7的数值和2.0的数值
+    #     如有问题欢迎来提出
+    #  2. anchor 和 align是修改描点和显示位置，此处
+    #     已修改好以达到面对 中下部分的放大效果
+    #教室
+    scene bg b01:
+        anchor(0.5, 1.0) align(0.5, 1.0)
+        linear 0.7 zoom 2.0
+    #梁芷柔立绘|夏季校服|吃惊
+    show chara a06:
+        anchor(0.5, 1.0) align(0.5, 1.0)
+        linear 0.7 zoom 2.0
+    pause 0.5
+
+    ## Note:
+    #  1. 此处我用了黑屏结尾，如果需要可以直接删除此段以直接
+    #     进入下方的scene bg b01；
+    #  2. 还是请无比保留 pause 0.5以维持演出效果（？）或者
+    #     也可以直接pause，表示等待点击然后继续进行游戏
+    scene bg black
+    with fade
+
+    pause 0.5
+
+    #### End TODO: 结束演出效果Check的更改 #################
+
+
+    #教室
+    scene bg b01
+    #梁芷柔立绘|夏季校服|吃惊
+    show chara a06
+    with fade
+=======
     scene bg b01 #教室
     show chara a06 #梁芷柔立绘|夏季校服|吃惊
     with fade
     scene bg b01 #教室
     show chara a06 #梁芷柔立绘|夏季校服|吃惊
     with fade
+>>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     "突然之间，眩晕感再次变得剧烈。"
     "眼前发黑，视野一片模糊，完全丢失了距离感，也失去了重心。"
     "想要强行支撑住自己，但身体却不听使唤。"
@@ -1089,9 +1162,12 @@ label start:
     "…………"
 
     play sound "audio/sound/ambientnoise03.ogg" fadein 1.5 loop #傍晚环境噪音
+<<<<<<< HEAD
+=======
 
     $ persistent.cg_3_2_flag = True
 
+>>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     scene bg b03 #病房
     with fade
     y "「……」"
