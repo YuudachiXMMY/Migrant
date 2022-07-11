@@ -1,0 +1,30 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 14042: expected statement.
+    nvl "梁芷柔的判断还是相当准确的，一本线和预料的相差无几，我也随即按照计划在志愿上填报了樱华理工大学。"
+       ^
+
+File "game/script.rpy", line 14043: expected statement.
+    nvl "一个月匆匆而过，就在两天前，本科一批的录取工作正式开始了。"
+       ^
+
+File "game/script.rpy", line 14044: expected statement.
+    nvl "我的档案当天即被省招办投到了樱华理工大学。换句话说，顺利通过了理工大的投档线。这姑且算是个好消息……"
+       ^
+
+File "game/script.rpy", line 14046: expected statement.
+    nvl "但接下来就比较让人费解了。"
+       ^
+
+File "game/script.rpy", line 14047: expected statement.
+    nvl "当日下午，我的考生状态从「已经投档」变成了「院校在阅」，本来满心期待第二天就能出来结果，谁知道转眼三天过去了，状态却还是「院校在阅」，一字未改。"
+       ^
+
+File "game/script.rpy", line 14048: expected statement.
+    nvl "也不知道是哪里出了什么问题……"
+       ^
+
+Ren'Py Version: Ren'Py 7.3.5.606
+Wed Jun 29 22:38:16 2022

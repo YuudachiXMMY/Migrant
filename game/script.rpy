@@ -43,6 +43,7 @@ define yl = Character("两个人", color="#ffffff", ctc_pause="ctc_pause_icon", 
 define z = Character("老师", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define a = Character("同学A", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define b = Character("同学B", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define ab = Character("同学A&B", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define c = Character("其他同学", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define e = Character("同学们", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define f = Character("女同学", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
@@ -53,7 +54,13 @@ define k = Character("护士", color="#ffffff", ctc_pause="ctc_pause_icon", ctc=
 define d = Character("店员", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define kfc = Character("服务员", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define bird = Character("候鸟", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define j = Character("李金凡", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define h = Character("工作人员", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define i = Character("保安", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define bird2 = Character("海鸟", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define m = Character("广播", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define narrator = Character(None, ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define nvl_narrator = Character(None, kind=nvl, ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 
 # 游戏在此开始。
 
@@ -62,9 +69,6 @@ label start:
     stop music
     stop sound
 
-<<<<<<< HEAD
-#开篇
-=======
     #取消下面一行代码的注释可以直接进入staff剧情
     # jump staff
 
@@ -81,15 +85,7 @@ label start:
     play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
 
     $ persistent.cg_3_7_flag = True
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
-    scene bg title #致十八岁的我们
-    with dissolve
-    pause 5.0
-
-#高考结束一年后"
-
-    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
     scene cg12a #叶雨潇打电话CG-1|CG12a
     with fade
     "漫步河滨，放眼望去，但见河水滔滔，奔流而下，裹挟着泥沙，仿佛要将天地间的一切都染作昏黄。"
@@ -190,23 +186,15 @@ label start:
     "也确实有很多学生抵挡不住这份诱惑倒下了，整个教室都充斥着颓废的气息。"
     "……不过，也有例外的。"
     "比如讲台上的班主任，现在就亢奋得很，正在拼命地朝下面喷着口水。"
-<<<<<<< HEAD
-    show chara h01 #老师立绘|夏季|普通
-=======
     show charaz h01 #老师立绘|夏季|普通
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     with dissolve
     voice "audio/voice/010001.ogg"
-    z "「……今年！啊，今年咱们县的考生，有42个人考上一本！93个人考上了二本！」"
+    z "「……今年！啊，今年咱们县的考生，有42个人考上一本！有93个人考上了二本！」"
     voice "audio/voice/010002.ogg"
     z "「啊，这是咱们县这么多年以来最好的成绩了！而这些人有百分之七十以上，都是咱们县一中的！」"
     voice "audio/voice/010003.ogg"
     z "「你们也是县一中的学生，明白吗！一中，是县里最好的学校，你们呢，也是县里最优秀的一批学生！」"
-<<<<<<< HEAD
-    show chara h04 #老师立绘|夏季|咆哮
-=======
     show charaz h04 #老师立绘|夏季|咆哮
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     with dissolve
     voice "audio/voice/010004.ogg"
     z "「明年，就该轮到你们去高考了！目标，只能比往年高，不能比往年低！」"
@@ -251,11 +239,7 @@ label start:
     with fade
     "想到这里，目光又转向讲台上仍在兀自嘶吼的班主任。"
 
-<<<<<<< HEAD
-    show chara h04 #老师立绘|夏季|咆哮
-=======
     show charaz h04 #老师立绘|夏季|咆哮
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     with dissolve
     voice "audio/voice/010006.ogg"
     z "「……总而言之，这两个星期的假期不是给你们玩的。记住要复习，明白吗！这学期我们提前学完了高三的课程……」"
@@ -522,15 +506,10 @@ label start:
 
     stop music
     with hpunch
-<<<<<<< HEAD
-    a "「[哔——]！你他妈故意吧？」"
-    b "「故你[哔——]！滚蛋！」"
-=======
     voice "audio/voice/050001.ogg"
     a "「\[哔——\]！你他妈故意吧？」"
     voice "audio/voice/060001.ogg"
     b "「故你\[哔——\]！滚蛋！」"
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
     play music "audio/music/bgm06.ogg" fadein 1.5 #悬而未决
     "不知道因为什么事，前面突然吵起来了。"
@@ -730,12 +709,8 @@ label start:
     "椅子可比拖把沉多了，面积也大得多，抡起来那叫一个虎虎生风。附近的桌面纷纷惨遭蹂躏，无一幸免。"
     voice "audio/voice/060009.ogg"
     b "「去死！」"
-<<<<<<< HEAD
-    a "「妈的！」"
-=======
     voice "audio/voice/060008.ogg"
     a "「\[哔——\]！」"
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     play sound "audio/sound/effect08.ogg" noloop
     with vpunch
     "结果——"
@@ -844,53 +819,12 @@ label start:
     "这好感度，刷得蹭蹭的。"
     "但是……"
     y "「啊……」"
-<<<<<<< HEAD
-
-
-    #### TODO: 演出效果Check #########################
-
-    ## Note:
-    #  1. linear 0.7 zoom 2.0 表示 0.7秒内放大两倍
-    #     如想自行修改可以更改0.7的数值和2.0的数值
-    #     如有问题欢迎来提出
-    #  2. anchor 和 align是修改描点和显示位置，此处
-    #     已修改好以达到面对 中下部分的放大效果
-    #教室
-    scene bg b01:
-        anchor(0.5, 1.0) align(0.5, 1.0)
-        linear 0.7 zoom 2.0
-    #梁芷柔立绘|夏季校服|吃惊
-    show chara a06:
-        anchor(0.5, 1.0) align(0.5, 1.0)
-        linear 0.7 zoom 2.0
-    pause 0.5
-
-    ## Note:
-    #  1. 此处我用了黑屏结尾，如果需要可以直接删除此段以直接
-    #     进入下方的scene bg b01；
-    #  2. 还是请无比保留 pause 0.5以维持演出效果（？）或者
-    #     也可以直接pause，表示等待点击然后继续进行游戏
-    scene bg black
-    with fade
-
-    pause 0.5
-
-    #### End TODO: 结束演出效果Check的更改 #################
-
-
-    #教室
-    scene bg b01
-    #梁芷柔立绘|夏季校服|吃惊
-    show chara a06
-    with fade
-=======
     scene bg b01 #教室
     show chara a06 #梁芷柔立绘|夏季校服|吃惊
     with fade
     scene bg b01 #教室
     show chara a06 #梁芷柔立绘|夏季校服|吃惊
     with fade
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     "突然之间，眩晕感再次变得剧烈。"
     "眼前发黑，视野一片模糊，完全丢失了距离感，也失去了重心。"
     "想要强行支撑住自己，但身体却不听使唤。"
@@ -905,9 +839,9 @@ label start:
     voice "audio/voice/000018.ogg"
     l "「喂！？」"
 
-    #### TODO: 演出效果Check #########################
+    ## TODO: 演出效果Check #############
 
-    ## Note:
+    # Note:
     #  1. linear 0.7 zoom 2.0 表示 0.7秒内放大两倍
     #     如想自行修改可以更改0.7的数值和2.0的数值
     #     如有问题欢迎来提出
@@ -923,7 +857,7 @@ label start:
         linear 0.7 zoom 2.0
     pause 0.5
 
-    ## Note:
+    # Note:
     #  1. 此处我用了黑屏结尾，如果需要可以直接删除此段以直接
     #     进入下方的scene bg b01；
     #  2. 还是请无比保留 pause 0.5以维持演出效果（？）或者
@@ -933,7 +867,7 @@ label start:
 
     pause 0.5
 
-    #### End TODO: 结束演出效果Check的更改 #################
+    ## End TODO: 结束演出效果Check的更改 #########
 
     "身体直直地扑倒，随即摔在一个柔软的怀抱之中。"
     voice "audio/voice/000019.ogg"
@@ -1162,12 +1096,9 @@ label start:
     "…………"
 
     play sound "audio/sound/ambientnoise03.ogg" fadein 1.5 loop #傍晚环境噪音
-<<<<<<< HEAD
-=======
 
     $ persistent.cg_3_2_flag = True
 
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
     scene bg b03 #病房
     with fade
     y "「……」"
@@ -1580,13 +1511,13 @@ label start:
     scene cg03d #梁芷柔探病CG-4|削苹果|CG03d
     with dissolve
     voice "audio/voice/001001.ogg"
-    l "「～～～～」"
+    l "「♩～～～～」"
     y "「……」"
     voice "audio/voice/001002.ogg"
-    l "「～～～～」"
+    l "「♪～～～～」"
     y "「……喂……」"
     voice "audio/voice/001003.ogg"
-    l "「～～～～」"
+    l "「♫～～～～」"
     with hpunch
     y "「……喂！」"
 
@@ -1603,7 +1534,7 @@ label start:
     scene cg03d #梁芷柔探病CG-4|削苹果|CG03d
     with dissolve
     voice "audio/voice/001007.ogg"
-    l "「～～～～」"
+    l "「♬～～～～」"
     y "「……」"
     y "「不是这个问题吧！？」"
     with hpunch
@@ -4064,9 +3995,9 @@ label start:
     show chara c10 #梁芷柔立绘|夏季私服|开心
     with dissolve
     voice "audio/voice/001363.ogg"
-    l "「～～」"
+    l "「♪～～」"
     voice "audio/voice/001364.ogg"
-    l "「～～」"
+    l "「♫～～」"
     y "「嗯？怎么哼上歌了？」"
     voice "audio/voice/001365.ogg"
     l "「嘻嘻，没什么呀，就是想哼哼了。」"
@@ -4107,7 +4038,7 @@ label start:
     voice "audio/voice/001373.ogg"
     l "「不错，继续保持喔！」"
     voice "audio/voice/001374.ogg"
-    l "「～～」"
+    l "「♬～～」"
     y "「……」"
     "正如她所说的那样，经过了一段时间的调整，这两天我总算是稍稍有所起色。"
     "我在强迫自己集中精神……效果还算是马马虎虎，尽管没办法达到自己真正主动的那种效率，但最起码不再是前面那种浑浑噩噩的状态了。"
@@ -6178,8 +6109,7 @@ label start:
     with fade
     "8月，中旬。"
 
-    play sound "audio/sound/ambientnoise05.ogg" fadein 1.5 loop #街道蝉鸣噪音
-
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
     scene bg b01 #教室
     with fade
     "短短15天的假期如白驹过隙般一晃而过，所有升入高三的学生都被强行拉入了名为「备战高考」的超大型国战副本，提前回到了学校。"
@@ -6196,7 +6126,7 @@ label start:
     voice "audio/voice/052001.ogg"
     a "「……今年这暑假可真够短的了。」"
     voice "audio/voice/062001.ogg"
-    b "「是啊，这才几天啊，感觉还没开始就过去了。」"
+    b "「是啊，这才几天啊，感觉没开始就过去了。」"
     voice "audio/voice/052002.ogg"
     a "「真是的……哎，你作业做了么？」"
     voice "audio/voice/062002.ogg"
@@ -6224,10 +6154,10 @@ label start:
     "…………"
     "这就是所谓的「皇上不急太监急」了吧。"
 
+    y "「……」"
     scene bg b02 #城区
     with fade
-    y "「……」"
-    play music "audio/music/bgm02.ogg" fadein 1.5 #夏～澄空～
+    play sound "audio/sound/ambientnoise05.ogg" fadein 1.5 loop #街道蝉鸣噪音
     "望向窗外，可以看到商业街那边的建筑。"
     y "「这帮家伙啊，知足吧……」"
     "他们好歹还踏踏实实地歇了半个月。"
@@ -6239,8 +6169,11 @@ label start:
     "估计全班……不，全年级都算上，几百口人里真正能做到这个份上的，一个巴掌就能数过来。"
     "虽然……"
     "在动机方面，应该和老师期望的有点不一样？"
+    stop sound fadeout 1.5
     "……"
     "…………"
+
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
     scene bg b01 #教室
     with fade
     "将视线挪回教室，向那个身影望去。"
@@ -6251,17 +6184,16 @@ label start:
     "梁芷柔似乎正在和几个女生聊着什么。"
     hide chara
     with dissolve
-    "女生之间似乎永远有说不完的话题，只要想聊，总可以聊得热火朝天，不过是不是真的那么亲热，就谁也说不好了。"
-    "比方说，现在其中的一个女生，就在别的场合抱怨过梁芷柔「装模作样」。"
+    "女生之间似乎永远有说不完的话题，只要想聊，总可以聊得热火朝天。不过是不是真的那么亲热，就谁也说不好了。"
+    "比方说，现在其中的一个女生，就在背地里抱怨过梁芷柔「装模作样」。"
     "梁芷柔应该不会不知道，只是……也应该不会在乎这种事吧。"
     "她太清楚自己的目标了，一路奋进只为到达终点，才不会因为这些破事在半途驻足。"
     y "「……唉。」"
     "……这人和人的差距啊！"
     "这样想想，她愿意顺手捎我一程，也是着实难得了。"
     "虽然如此，我这边却还有一个跟不跟得上的问题……"
-    stop music fadeout 2.5
-
     "至于我那点小心思，就更甭提了。"
+    stop sound fadeout 1.5
 
     scene bg black #黑屏
     with fade
@@ -6273,19 +6205,19 @@ label start:
     show charaz h03 #老师立绘|夏季|皱眉
     with dissolve
     voice "audio/voice/012001.ogg"
-    z "「……去年咱们学校的成绩还不错，考上一本的人数再创新高！啊，但是！这是大学扩招所带来的必然结果，是历史的进程！你们赶上了好时候是不假，但并不是说就不需要个人的奋斗了……」"
+    z "「……去年咱们学校成绩还不错，考上一本的人数再创新高！啊，但是呢！这是大学扩招所带来的必然结果，是历史的进程！你们赶上了好时候是不假，但并不是说就不需要个人的奋斗了……」"
     show charaz h04 #老师立绘|夏季|咆哮
     with dissolve
     voice "audio/voice/012002.ogg"
-    z "「……老师带过很多届高三学生了，啊，什么样的学生我没见过？须知不听老人言吃亏在眼前，你们还年轻！这个时候最重要的目标是提高自己的知识水平，考出好成绩来……」"
+    z "「……老师带过很多届高三学生了，啊，什么样的学生我没见过？须知不听老人言吃亏在眼前，你们还年轻！这个时候呢最重要的目标就是提高自己的知识水平，考出好成绩来……」"
     "新学期第一节课，照例是思想动员。"
     "时隔半月，再次见到老师，发现他似乎也休息得不怎么样，声音一如既往的嘶哑，脸上也依旧是一大片的胡茬。"
     hide charaz
     with dissolve
-    "再看看身边的同学，大概还都沉浸在假期的感觉之中吧，同样是一个个东倒西歪，左耳朵进右耳朵出，懒散得不成样子。"
+    "再看看身边的同学，大概还都沉浸在假期之中没回过神来，同样是一个个东倒西歪，左耳朵进右耳朵出，懒散得不成样子。"
     "除了……"
 
-    play sound "audio/sound/effect10.ogg" fadein 1.5 loop
+    play sound "audio/sound/ambientnoise10.ogg" fadein 1.5 loop #安静学习环境噪音
     scene cg01a #梁芷柔听讲CG-1|标准|CG01a
     with fade
     l "「……」"
@@ -6294,7 +6226,7 @@ label start:
     "到底是怎么磨炼出来的啊……这么坚韧的意志。"
     y "「（说起来……）」"
     "眼前的这一幕，实在是有点似曾相识。"
-    "好像半个月前的时候也是这个样子的……"
+    "好像半个月前的时候，也是这个样子的……"
     y "「（唔，待会儿不会再有椅子飞过来了吧……）」"
     y "「（嗯？）」"
     stop sound fadeout 3.0
@@ -6322,7 +6254,7 @@ label start:
     l "「……」"
     y "「（啊……）」"
     "笑、笑了？"
-    "不知是因为看到了我的窘相还是别的什么的，梁芷柔露出了狡黠的笑容。"
+    "不知是因为看到了我的窘相还是别的什么，梁芷柔露出了狡黠的笑容。"
     y "「……」"
     "总觉得我又被调戏了啊！"
     "不行，不行，这场子必须得找回来！"
@@ -6372,13 +6304,14 @@ label start:
     "…………"
     voice "audio/voice/002003.ogg"
     l "「……喂。」"
+    y "「啊？」"
     scene bg b01 #教室
     with fade
     with fade
-    y "「啊？」"
     "睁开眼睛，看到梁芷柔笑吟吟地站在我的座位旁边。"
     show chara a09 #梁芷柔立绘|夏季校服|坏笑
     with dissolve
+    play music "audio/music/bgm02.ogg" fadein 1.5 #夏～澄空～
     voice "audio/voice/002004.ogg"
     l "「怎么啦，没事吧？」"
     y "「啊……还好吧。」"
@@ -6414,7 +6347,7 @@ label start:
     y "「……」"
     "这也行？"
     "刚才光顾着和梁芷柔较劲了，至于老师在讲台上说了些什么，我真的是一句都没有听进去，完全当成噪音给屏蔽掉了。"
-    "但梁芷柔……居然可以同时一心二用到这个程度吗？这未免非人了吧！？"
+    "但梁芷柔……居然可以一心二用到这个程度吗？这未免非人了吧！？"
     show chara a01b #梁芷柔立绘|夏季校服|普通|侧面
     with dissolve
     voice "audio/voice/002011.ogg"
@@ -6428,7 +6361,7 @@ label start:
     y "「嗯？」"
     y "「……等等。」"
     "从梁芷柔的笑容之中，我突然发现了一丝……狡猾的模样。"
-    "如果换成一个不熟悉她的人来看——就好比半个月以前的我——那是肯定是完全看不出来的。"
+    "如果换成一个不熟悉她的人来看——就好比半个月以前的我——那肯定是完全看不出来的。"
     "但是现在，虽然还吃不太准，不过已经能够多少有所察觉。"
     show chara a13b #梁芷柔立绘|夏季校服|疑惑2
     with dissolve
@@ -6448,7 +6381,7 @@ label start:
     y "「有啊。」"
     "刚才这一堆说辞实在是太过高大上或者说假大空了，根本就是套话嘛。"
     "梁芷柔身为班长，班会上没少说过类似的话，早就可以信手拈来了。"
-    "……虽然，很有可能老师也确实就是讲了这些内容。"
+    "……虽然，很可能老师刚才讲的就是这些内容。"
     show chara a02 #梁芷柔立绘|夏季校服|皱眉
     with dissolve
     voice "audio/voice/002016.ogg"
@@ -6473,8 +6406,8 @@ label start:
     with dissolve
     voice "audio/voice/002020.ogg"
     l "「什么叫『算』嘛！」"
-    "梁芷柔对我敷衍的态度颇为不满的样子，撅起了小嘴。"
-    y "「本来就是嘛，我虽然比不上您老人家，但是比起其他人可能还是要好上不少的吧。」"
+    "梁芷柔似乎对我敷衍的态度颇为不满，撅起了小嘴。"
+    y "「本来就是嘛，我虽然比不上您老人家，但是比起其他人，恐怕还是要好上不少的吧。」"
     show chara a04 #梁芷柔立绘|夏季校服|无奈
     with dissolve
     voice "audio/voice/002021.ogg"
@@ -6507,9 +6440,13 @@ label start:
     with dissolve
     voice "audio/voice/002026.ogg"
     l "「啊……」"
+    stop music fadeout 2.5
     "我们俩安静下来以后，周围的声音就一下子显得大起来了。"
     hide chara
     with dissolve
+
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+
     e "「叽叽喳喳叽叽喳喳……」"
     "不知什么时候，以我的课桌为中心，周围一圈的人都被彻底清空，连我的同桌都不知道跑哪儿去了。"
     "但是人们并没有走远，而是在稍微远一点的位置上散布成一个同心圆的形状。"
@@ -6517,21 +6454,23 @@ label start:
     e "「叽叽喳喳叽叽喳喳……」"
     "交头接耳的声音络绎不绝。"
     y "「……啥情况？」"
-
     show chara a06 #梁芷柔立绘|夏季校服|吃惊
     with dissolve
     voice "audio/voice/002027.ogg"
     l "「这个……」"
-    "……有什么奇怪的吗？"
+    "……我俩有什么奇怪的吗？"
     "我有些疑惑地望向梁芷柔，后者也是一脸的茫然。"
     hide chara
     with dissolve
+    stop sound fadeout 3.0
+
+    play music "audio/music/bgm08.ogg" fadein 1.5 #其乐无穷
     voice "audio/voice/082001.ogg"
     f "「那个……」"
     y "「嗯？」"
     "一个女生……据我所知是个超级八卦的家伙，似乎终于掩盖不了自己的好奇，壮着胆子凑到了我们的旁边。"
     voice "audio/voice/082002.ogg"
-    f "「你们俩……现在是个什么关系？」"
+    f "「你们俩……现在是个什么关系啊？」"
     y "「……啊？」"
     "我呆了一下，有点没搞明白……她在问什么？"
     voice "audio/voice/082003.ogg"
@@ -6539,6 +6478,8 @@ label start:
     voice "audio/voice/082004.ogg"
     f "「是不是因为你奋不顾身舍命相救，所以梁芷柔就……嗯？」"
     "女生挑着眉毛，一幅欲言又止的模样，不过这个暗示倒是很明白了。"
+    show chara a06 #梁芷柔立绘|夏季校服|吃惊
+    with dissolve
     voice "audio/voice/002028.ogg"
     yl "「啊？」"
     voice "audio/voice/082005.ogg"
@@ -6550,50 +6491,72 @@ label start:
     y "「就是！哎哎哎我跟你说啊你不要凭空污人清白……」"
     voice "audio/voice/082006.ogg"
     f "「哎呀～行啦，不要解释了，对吧？我们明白的！」"
+    with hpunch
     voice "audio/voice/002030.ogg"
     yl "「——才不对！！！」"
+    stop music fadeout 3.0
+
     scene bg black #黑屏
     with fade
     "……"
     "…………"
+
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
     scene bg b01 #教室
     with fade
     "一阵兵荒马乱之后，班级里总算是恢复了秩序。"
+    show chara a04 #梁芷柔立绘|夏季校服|无奈
+    with dissolve
     voice "audio/voice/002031.ogg"
     l "「唉……」"
     y "「这帮家伙……真是……」"
     "这帮人其实也就是在瞎起哄罢了，真要说起来，怕是他们自己也不相信我们之间会有些什么的。"
     "说起来，还是因为从前的我确实极少和梁芷柔有什么交流吧……这种变化对我而言是连贯的，但在隔了一个暑假未见的同学们的眼里，那就是突如其来的改变。"
+    show chara a09 #梁芷柔立绘|夏季校服|坏笑
+    with dissolve
     voice "audio/voice/002032.ogg"
     l "「嘻嘻，这可都怪你啊，知道吗？」"
     y "「行。人在座位坐，锅从天上来。不对，椅子从旁边飞过来。」"
+    show chara a03 #梁芷柔立绘|夏季校服|生气
+    with dissolve
     voice "audio/voice/002033.ogg"
     l "「呸，又胡说！是不是还想再挨一次啊？不许再乱说了啊！」"
-    play sound "audio/sound/effect06.ogg" noloop
-    pause
+    play audio "audio/sound/effect06.ogg" noloop
+    stop sound fadeout 3.0
+
+    show chara a06 #梁芷柔立绘|夏季校服|吃惊
+    with dissolve
     voice "audio/voice/002034.ogg"
     l "「啊……」"
     "上课铃响了。"
+    show chara a04 #梁芷柔立绘|夏季校服|无奈
+    with dissolve
     voice "audio/voice/002035.ogg"
     l "「上课的时候不许再乱看了，知道吗！」"
+    hide chara
+    with dissolve
     "悄悄撂下这样一句话，梁芷柔匆匆返回了自己的座位。"
     y "「……」"
     y "「好好好。」"
-    "我轻声向着她的背影，答复道。"
+    "我向着她的背影，轻声答道。"
+
+    play sound "audio/sound/ambientnoise05.ogg" fadein 1.5 loop #街道蝉鸣噪音
     scene bg b02 #城区
     with fade
     "就这样，开学的第一天过去了。"
     "说实话，我虽然和梁芷柔一样，极力否认了我俩之间有什么非同寻常的关系，但……其实在内心之中，还是蛮享受这种感觉的。"
     "毕竟，我和她，相比她和别的同学，的确是有了那么一点「不同」的。"
-    scene bg b00 #天空
+    scene bg b08 #新城区|夏
+    show chara c10 #梁芷柔立绘|夏季私服|开心
+    show memories #回忆滤镜
     with fade
     voice "audio/voice/002036.ogg"
-    l "「～」"
+    l "「♪～」"
     "甚至，仿佛有一种时间还停留在我和她的那个暑假之中的感觉。"
+    stop sound fadeout 3.0
     scene bg black #黑屏
     with fade
     "……"
-    "…………"
     "然而……"
     "没过多久，我就深刻地意识到了——"
     "高三，已经切切实实地，到来了。"
@@ -6605,29 +6568,47 @@ label start:
 
 #开学后一周左右。
 
+    scene bg b02 #城区
+    with fade
+    pause
     scene bg b01 #教室
     with fade
+    "一周的时间倏然而过。"
+    show charaz h03 #老师立绘|夏季|皱眉
+    with dissolve
     voice "audio/voice/012003.ogg"
     z "「……我看到啊，有些同学的心还没有收回来！我知道，你们暑假没放够，但是这是高三！不是其他的时候！对你们来说时间是不够用的……」"
-    "开学已经一周了。"
+    hide charaz
+    with dissolve
     "天气依然燥热。"
     "老师依然聒噪。"
-    "大多数的学生们依然漫不经心。"
-    "然而除此以外，还是有一些东西正在悄然变化。"
+    "大多数学生依然漫不经心。"
+    "然而，终究还是有一些东西，正在悄然之间发生着变化。"
+    show charaz h04 #老师立绘|夏季|咆哮
+    with dissolve
     voice "audio/voice/012004.ogg"
     z "「……不要瞧不起早晚自习！学校、老师、家长都在为你们创造条件，为的就是让你们能放下其他的负担，专心搞好学习……」"
+    hide charaz
+    with dissolve
     "首先是上课的时间和内容。"
-    "上个学期我们已经学完了所有的课程，接下来不会再有新的知识点需要掌握，于是要做的就只剩下复习，复习，再复习。"
+    "上个学期我们已经学完了所有的课程，接下来不会再有新的知识点需要掌握，于是要做的就只剩下复习、复习、再复习。"
     "早自习的时间被提前到7点半，下午则是新加了两节自习。据说这还只是第一阶段，随着时间的推移，还会进一步地提早拉晚。"
     "体育课被压缩到每周一节，勉强维持了一个形式，其他与学习无关的活动更是名存实亡。"
+    show charaz h04 #老师立绘|夏季|咆哮
+    with dissolve
     voice "audio/voice/012005.ogg"
     z "「……现在呀你们不要去想别的，什么都别想！就是专心学习，只有这样呢才对得起你们自己，对得起你们的父母，对得起咱们一中……」"
+    hide charaz
+    with dissolve
     "现在的我们，每天都是同一个流程——听老师串讲，发卷子、测试，然后背一筐作业回家。"
     "……"
     "…………"
     with fade
+    play sound "audio/sound/effect06.ogg" noloop
     "上午的课程结束了。"
+    play music "audio/music/bgm03.ogg" fadein 1.5 #秋～绯月～
     y "「……呼。」"
+    with hpunch
     "啪！"
     "忍不住拍了拍自己的脸颊。"
     y "「不行啊这个。」"
@@ -6643,108 +6624,162 @@ label start:
     y "「……」"
     "本来想要找她问个题的，不过现在看到她这个模样，又退缩了回来。"
     "这种时候……还是别给她添麻烦了吧。"
+    show chara a13b #梁芷柔立绘|夏季校服|疑惑2
+    with dissolve
     voice "audio/voice/002038.ogg"
     l "「……嗯？」"
     y "「啊……」"
     "梁芷柔伸完懒腰，将头转向窗户……也就是我这一侧，恰好看到了我一脸欲言又止的模样。"
+    show chara a13a #梁芷柔立绘|夏季校服|疑惑1
+    with dissolve
     voice "audio/voice/002039.ogg"
     l "「怎么啦？」"
     y "「呃，没什么，没事。」"
+    show chara a09 #梁芷柔立绘|夏季校服|坏笑
+    with dissolve
     voice "audio/voice/002040.ogg"
     l "「嗯？呵……说吧，又哪不明白了？」"
     "虽然不想打扰她了，不过梁芷柔早已看穿了我的想法，反倒是主动问了起来。"
     y "「没事，我自己看吧。」"
+    show chara la03 #梁芷柔立绘|夏季校服|生气|近
+    with dissolve
     voice "audio/voice/002041.ogg"
     l "「少废话，赶紧的！」"
     y "「呃。」"
     "话说到这份上，再犹豫就矫情了。"
     y "「这道题。」"
-#【书本声】
+    show chara la01b #梁芷柔立绘|夏季校服|普通|侧面|近
+    with dissolve
     voice "audio/voice/002042.ogg"
     l "「我看看……」"
     voice "audio/voice/002043.ogg"
-    l "「已知抛物线C，y方等于4x的焦点为F，过点K负1，0的直线l与C相交于AB两点，点A关于x轴的对称点为D……第一证明点F在直线BD上，第二设向量AB等于9分之8，求……」"
+    l "「已知抛物线C，y方等于4x的焦点为F，过点K负1，0的直线I与C相交于AB两点，点A关于x轴的对称点为D……第一证明点F在直线BD上，第二设向量AB等于9分之8，求……」"
     voice "audio/voice/002044.ogg"
-    l "「具体是哪不明白？」"
+    l "「嗯……具体是哪不明白？」"
     y "「哦，是这样的……」"
     "……"
     "…………"
+    with fade
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
     voice "audio/voice/002045.ogg"
     l "「这样就明白了？」"
     y "「明白了。」"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
     voice "audio/voice/002046.ogg"
     l "「还有别的问题吗？」"
     y "「暂时没有了，多谢班长大人仗义出手，拨冗为在下指点迷津。」"
     "我后退一步，半屈着膝，装模作样地向梁芷柔抱了个拳。"
+    show chara la06 #梁芷柔立绘|夏季校服|吃惊|近
+    with dissolve
+    pause 0.1
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
     voice "audio/voice/002047.ogg"
     l "「……」"
+    show chara la10 #梁芷柔立绘|夏季校服|开心|近
+    with dissolve
     voice "audio/voice/002048.ogg"
     l "「嘻嘻！」"
+    show chara la09 #梁芷柔立绘|夏季校服|坏笑|近
+    with dissolve
     voice "audio/voice/002049.ogg"
     l "「知道就好，本班长的时间是很宝贵滴～」"
     y "「是是是，打扰您饭后休息真是罪该万死。」"
+    show chara la10 #梁芷柔立绘|夏季校服|开心|近
+    with dissolve
     voice "audio/voice/002050.ogg"
     l "「哈哈。」"
+    show chara la09 #梁芷柔立绘|夏季校服|坏笑|近
+    with dissolve
     voice "audio/voice/002051.ogg"
     l "「哎，我说，那你明知该死还来找我是为什么啊？问老师去也可以吧。」"
     y "「这您就明知故问了不是？要能找得到老师我哪会来麻烦您呢。」"
     voice "audio/voice/002052.ogg"
     l "「喔，为什么呀，老师都去哪儿啦？」"
     y "「老师都被您霸占了啊。」"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
     voice "audio/voice/002053.ogg"
     l "「嘻嘻……」"
     y "「所以您得对我负责……喂，第二次笑场了啊，还笑个没完，能不能愉快地玩耍了？」"
+    show chara la10 #梁芷柔立绘|夏季校服|开心|近
+    with dissolve
     voice "audio/voice/002054.ogg"
-    l "「哈……谁让你这么贫！以前我怎么没发现你还有这种天赋啊，不说相声可惜了。」"
+    l "「哈……谁让你这么贫啊！以前我怎么没发现你还有这种天赋啊，不说相声可惜了。」"
     y "「这才哪儿到哪儿啊，我一直都是这样的好不好，是你笑点太低了吧？」"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
     voice "audio/voice/002055.ogg"
     l "「成成成，都是我不好行了吧。」"
     y "「呵呵呵……」"
+    show chara la09 #梁芷柔立绘|夏季校服|坏笑|近
+    with dissolve
     voice "audio/voice/002056.ogg"
     l "「你看，你自己也笑场了好不好？还说我……嘻嘻……」"
     "两个人都笑场了，这一幕当然也就玩不下去了。"
     "我俩偶尔会这样开开玩笑，虽然最初的时候颇是引人注目，不过久而久之，同学们也就司空见惯了。"
     "毕竟暑假前的那件事大家都一清二楚，我和梁芷柔关系会变好并不是什么难理解的事。"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
     voice "audio/voice/002057.ogg"
     l "「……呼。」"
+    show chara la01b #梁芷柔立绘|夏季校服|普通|侧面|近
+    with dissolve
     voice "audio/voice/002058.ogg"
     l "「嗯，不闹了，说正经的。」"
     y "「嗯？」"
+    show chara la13b #梁芷柔立绘|夏季校服|疑惑2|近
+    with dissolve
     voice "audio/voice/002059.ogg"
     l "「真没有别的问题啦？你可别死要面子活受罪啊。」"
     y "「真没了。真的，这我蒙你干什么啊！」"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
     voice "audio/voice/002060.ogg"
     l "「嗯～」"
     voice "audio/voice/002061.ogg"
     l "「看来还可以嘛……」"
     y "「嗯？」"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
     voice "audio/voice/002062.ogg"
     l "「……嗯，没事。」"
+    show chara la10 #梁芷柔立绘|夏季校服|开心|近
+    with dissolve
     voice "audio/voice/002063.ogg"
     l "「不错，挺好的，继续努力！」"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
     "……"
     "…………"
+
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
     scene bg b04 #滨河路|夏
     with fade
     "放学后，急匆匆地踏上回家的道路。"
-    "尽管这里的实际时间要比东部地区早1个多小时，但毕竟拖得太晚，到了这个时候，只有西边的天空还残留着最后的一丝余晖。"
-    "饭已经在学校吃过了，不过还是想尽量早点赶回家里，这样做完作业以后还可以看一会儿书，也不至于睡得太晚。"
-#【手机铃声】
+    "虽然放学的时间已经愈发拖晚，但本地的实际时间其实已经接近东六区，这个时候的天还是亮的。"
+    "饭已经在学校吃过了，如果能尽快赶回家里，那么做完作业以后还可以再多看一会儿书，也不至于睡得太晚。"
+
     y "「……嗯？」"
+    voice "audio/sound/effect03.ogg"
     "手机突然响了。"
-    "打开微信一看，是平时经常一起玩的一个班上的哥们。"
+    "打开一看，是班上的一个哥们，平时经常一起玩的。"
     voice "audio/voice/092001.ogg"
     g "「哎，我说，你在哪儿呢！？」"
     "什么情况？还挺着急的……"
     y "「怎么了怎么了？我回家了啊，怎么了？」"
     voice "audio/voice/092002.ogg"
-    g "「我～～\[哔——\]！你那么早回去干吗啊？你到哪了？」"
+    g "「我～～[哔——]！你那么早回去干吗啊？你到哪了？」"
     y "「……我这都过桥了。」"
     voice "audio/voice/092003.ogg"
     g "「完蛋。还说约你一起去网吧五连座吃鸡呢！」"
     y "「那他妈你不早说，再说了吃鸡最多四人联机，你五连座是要干吗？」"
     voice "audio/voice/092004.ogg"
-    g "「谁知道你跑那么快！前天就没找着你，有什么事啊你最近，每天都这么急？」"
+    g "「谁知道你跑那么快啊！前天就没找着你，有什么事啊你最近，每天都这么急？」"
     y "「这不一大堆作业呢吗？」"
     voice "audio/voice/092005.ogg"
     g "「作业急个屁啊！」"
@@ -6753,10 +6788,11 @@ label start:
     g "「看！你！妹！」"
     voice "audio/voice/092007.ogg"
     g "「你是不是最近和梁芷柔在一起的时间太长了？学傻了吧？你再怎么学能学成她那样吗？」"
+    y "「……」"
     "扎心了，偏偏我还不知道该怎么才能反驳回去。"
     "就在我绞尽脑汁措辞的时候，那家伙又发消息过来了。"
     voice "audio/voice/092008.ogg"
-    g "「哎我\[哔——\]，对了你他妈不是想要追她吧？哈哈哈哈哈哈……」"
+    g "「哎我[哔——]，对了你他妈不是想要追她吧？哈哈哈哈哈哈……」"
     voice "audio/voice/092009.ogg"
     g "「我告诉你你他妈没～戏！快点改邪归正陪我们来开黑啊！」"
     "这……"
@@ -6764,28 +6800,33 @@ label start:
     "估计也就是随口胡说了一句，自己都不会相信有这种可能性。"
     "不过……"
     y "「……」"
-    "……前两天的风言风语才刚平静了一点，再被炒起来就麻烦了……吧。"
+    "前两天的风言风语才刚平静了一点……"
+    "这要是再被炒起来，那就真麻烦了……吧。"
     "不管是对老师、同学，还是梁芷柔，都不好交代。"
     y "「……」"
     voice "audio/voice/092010.ogg"
     g "「别废话啊，明天，定死了啊！」"
     y "「……」"
+    stop sound fadeout 3.0
     scene bg black #黑屏
     with fade
     y "「……哦。」"
     "……"
     "…………"
+
+    play sound "audio/sound/ambientnoise03.ogg" fadein 1.5 loop #傍晚环境噪音
     scene bg b04 #滨河路|夏
     with fade
     y "「……」"
-    "心情突然之间变得十分恶劣。"
+    "心情突然变得十分恶劣。"
     "我自认为……我和梁芷柔的关系，比起其他同学和她的关系，是稍有一些不同的。"
     "这让我有了那么一点点的优越感，然而……"
-#【看手机|回忆模式】
+    show memories #回忆滤镜
+    with dissolve
     voice "audio/voice/092008.ogg"
-    g "「哎我\[哔——\]，对了你他妈不是想要追她吧？哈哈哈哈哈哈……」"
-    scene bg b04 #滨河路|夏
-    with fade
+    g "「哎我[哔——]，对了你他妈不是想要追她吧？哈哈哈哈哈哈……」"
+    hide memories
+    with dissolve
     "其实毫无意义。"
     "别说别人了，我自己都不敢认。"
     "真拿出来说，也只会被当成笑话看吧？"
@@ -6803,18 +6844,21 @@ label start:
     with fade
     "仰望天空，可以看到有雁在徘徊。"
     y "「候鸟啊……」"
-    scene bg b05 #湿地公园|夏
-    with fade
-    "不远处的湿地公园里，有工人正在开展清理工作。"
-    "看样子之前洪水的影响已经渐渐消除了，正在进入恢复阶段，能够看到有一些本地的鸟类栖息其中。"
-    scene bg b00 #天空
+    "之前洪水的影响已经渐渐消除了，湿地公园正在逐步恢复，一些栖息于此的鸟类也愈发活跃，开始为之后的长途旅行做起了准备。"
+    scene bg black #黑屏
     with fade
     "即将远行的候鸟，与驻守栖息的留鸟。"
     "它们各自会有怎样的未来呢？"
-    scene bg black #黑屏
+    scene bg b00 #天空
     with fade
+    stop sound fadeout 3.0
     "……"
     "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t07 #转场 滨河路
+    with fade
+    pause
 
 #几天后。
 #9月初。
@@ -6823,12 +6867,14 @@ label start:
     with fade
     "过了几天。"
 
+
+    play music "audio/music/bgm03.ogg" fadein 1.5 #秋～绯月～
     scene bg b01 #教室
     with fade
     "学校依旧枯燥无比。老师们只知道一个劲地给学生加码，搞得我们苦不堪言。尤其是其他两个年级也到了开学的日子，两相对比之下，更是让人难以平衡。"
     "这期间，为了不让自己显得孤立、落人口实，我一定程度地回归到了自己原来的朋友圈子，放学后一起玩了几次。"
     "然而这并不能让我放松心情，反而因为心里面装着事，每次都很不踏实。"
-    "这他妈的……以前是学，学不下去，现在是玩，玩不舒服。简直要人命了。"
+    "这他妈的……以前是学，学不下去；现在是玩，玩不舒服。简直要人命了。"
     y "「……哎！」"
     "感觉自己长吁短叹的时候越来越多了……这样下去会出问题的吧？"
     "下意识地看了看让我整个人都变得不好的始作俑者……"
@@ -6858,61 +6904,101 @@ label start:
     "不过……果然，即便是梁芷柔，在这种时候也不可能再像之前那样游刃有余了啊。"
     voice "audio/voice/002069.ogg"
     l "「哎对了！」"
+    stop music fadeout 2.5
     y "「啊？」"
+    show chara b06 #梁芷柔立绘|冬季校服|吃惊
+    with dissolve
     "刚走了没两步，就听到梁芷柔在后面叫住我。"
     voice "audio/voice/002070.ogg"
     l "「……」"
+    show chara b08a #梁芷柔立绘|冬季校服|担心1
+    with dissolve
     voice "audio/voice/002071.ogg"
     l "「算了。」"
     y "「……？」"
     "什么情况？"
+    show chara b07b #梁芷柔立绘|冬季校服|消沉2
+    with dissolve
     "梁芷柔欲言又止，犹豫反复了一小会儿。"
     l "「……」"
+    show chara b08b #梁芷柔立绘|冬季校服|担心2
+    with dissolve
     voice "audio/voice/002072.ogg"
     l "「嗯……我想说啊……」"
     voice "audio/voice/002073.ogg"
     l "「我觉得你最好还是……再多上点心比较好。」"
     y "「呃……」"
+    show chara b08a #梁芷柔立绘|冬季校服|担心1
+    with dissolve
     voice "audio/voice/002074.ogg"
-    l "「我知道啊，你最近学得比较累。我也累，我明白。但是呢，越是这时候，越是得咬着牙抗过去。」"
+    l "「我知道，你最近学得比较累。我也累，我明白。但是呢，越是这时候，越是得咬着牙抗过去。」"
     "梁芷柔有些担忧地看着我。"
+    show chara b07a #梁芷柔立绘|冬季校服|消沉1
+    with dissolve
     voice "audio/voice/002075.ogg"
     l "「所以啊，网吧还是……尽量少去点吧？」"
     y "「……！」"
+    show chara b06 #梁芷柔立绘|冬季校服|吃惊
+    with dissolve
     voice "audio/voice/002076.ogg"
     l "「我不是要管你啊，但是……」"
+    show chara b05a #梁芷柔立绘|冬季校服|苦笑1
+    with dissolve
     voice "audio/voice/002077.ogg"
     l "「我觉得你还是应该……就是，你要是遇到瓶颈了我可以帮你嘛，你看你这两天都没来找过我。」"
+    show chara b08b #梁芷柔立绘|冬季校服|担心2
+    with dissolve
     voice "audio/voice/002078.ogg"
     l "「这刚刚有了点进步，你要是一放弃那就全完了。」"
+    show chara b08a #梁芷柔立绘|冬季校服|担心1
+    with dissolve
     voice "audio/voice/002079.ogg"
     l "「啊，好不好？」"
     y "「我……」"
     voice "audio/voice/082007.ogg"
     f "「哎，芷柔，走啊，去吃饭？」"
     "这时候，突然有其他的女生过来招呼梁芷柔。"
+    show chara b06 #梁芷柔立绘|冬季校服|吃惊
+    with dissolve
     voice "audio/voice/002080.ogg"
     l "「啊……」"
     voice "audio/voice/002081.ogg"
     l "「好，这就去。」"
+    hide chara
+    with dissolve
     y "「……」"
     voice "audio/voice/082008.ogg"
-    f "「啊……难道说，我当电灯泡啦？」"
-    voice "audio/voice/002082.ogg"
-    l "「才没有！」"
+    f "「啊……难道说，我当了电灯泡啦？」"
     voice "audio/voice/082009.ogg"
     f "「哎哟，那可真是对不起啊……」"
+    show chara sb12a #梁芷柔立绘|冬季校服|羞涩1|远
+    with dissolve
+    voice "audio/voice/002082.ogg"
+    l "「才没有！」"
+    show chara sb04 #梁芷柔立绘|冬季校服|无奈|远
+    with dissolve
     voice "audio/voice/002083.ogg"
-    l "「走走走，去吃饭！八卦不死你……」"
+    l "「走走走，吃饭去！八卦不死你……」"
+    hide chara
+    with dissolve
     "梁芷柔似乎有些羞涩，一把抓住那个女生，连拉带拽地把对方拖走了。"
     "路过我旁边的时候，她稍稍停顿了一下。"
+    show chara lb08a #梁芷柔立绘|冬季校服|担心1|近
+    with dissolve
     voice "audio/voice/002084.ogg"
     l "「……你再想想吧。」"
+    hide chara
+    with dissolve
     "然后，两个女生头也不回地离开了教室。"
+    scene bg black #黑屏
+    with fade
+    pause 1.0
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    scene bg b01 #教室
     with fade
     y "「……」"
     "呆在原地目送她们离开教室，我的内心五味杂陈。"
-    "——梁芷柔一直在关心着我的情况。"
+    "梁芷柔一直在关心着我的情况。"
     "她会为我有所进步感到高兴，也会在我松懈的时候过来劝告。"
     "她是真的对我有所期待……期待我可以考出一个比现在更好的成绩。"
     "然而，当你所期望的，我所能达到的，我真正想要做到的……这一切全都错位的时候。"
@@ -6926,56 +7012,76 @@ label start:
     g "「怎么，被甩啦？」"
     y "「……」"
     voice "audio/voice/092013.ogg"
-    g "「正常！别伤心啦，她嘛！情理之中，呵呵。」"
+    g "「正常！别伤心嘛！她嘛，情理之中，呵呵。」"
     y "「……」"
     y "「呵呵你妹。」"
+    stop sound fadeout 3.0
+    with hpunch
     "有气无力地回了他一句，我用双手抓住这货搭在我身上的胳膊，用力地将他拧得鬼哭狼嚎。"
     scene bg black #黑屏
     with fade
 
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t01 #转场 教室
+    with fade
+    pause
+
 #开学后一个月左右。
 #9月中下旬。
 
-    scene bg b01 #教室
+    scene bg b02 #城区
     with fade
     "高三生活的头一个月，在各种忙碌之中匆匆而过。"
+    play music "audio/music/bgm03.ogg" fadein 1.5 #秋～绯月～
+    scene bg b01 #教室
+    with fade
     "学校开始下狠手了。它就像是一头喜爱玩弄猎物的怪兽，不断地折磨着我们的身体与心灵。"
+    scene bg b01a #教室|夜
+    with dissolve
     "毫无节制可言的拖堂，越来越长的留校自习，永无止境的考试和作业。"
     "每当觉得自己快要适应当前的节奏时，老师们总会将压力再提高一个档次，始终让人疲于奔命。"
-    scene bg b04 #滨河路|夏
+    scene bg b04b #滨河路|夜
     with fade
-    "离开学校的时候，太阳早已经落山了。"
+    "时区已经不再能够阻止天色的改变了。当我们得以离开学校的时候，太阳早就已经落山。"
     "慢慢踱着步子，沿着河边向家走去。"
     "所谓「拖着疲惫的步伐」就是指的这种情况了吧……"
     "不过，其实身体上也没有累到那么严重的程度，更主要的还是精神压力。"
-    scene bg black #黑屏
+    scene bg b01a #教室|夜
     with fade
+    show charaz h03 #老师立绘|夏季|皱眉
+    with dissolve
     voice "audio/voice/012006.ogg"
     z "「……听说你最近老是缠着梁芷柔？」"
     voice "audio/voice/012007.ogg"
     z "「你哪有那么多问题可问的啊？嗯？还找不到我，我现在是忙，以前呢？前面这两年，你说你主动找过我几次啊？」"
+    show charaz h01 #老师立绘|夏季|普通
+    with dissolve
     voice "audio/voice/012008.ogg"
     z "「我可都听说了啊！你小子，对梁芷柔有意思？」"
+    show charaz h04 #老师立绘|夏季|咆哮
+    with dissolve
     voice "audio/voice/012009.ogg"
     z "「哼，我还不知道是没谱的事吗？但这事闹出影响来，你让梁芷柔怎么想啊？我告诉你啊，你给我躲她远点，听见没有！？」"
+    show charaz h01 #老师立绘|夏季|普通
+    with dissolve
     voice "audio/voice/012010.ogg"
-    z "「其实呢，我也不是批评你，毕竟你最近考得确实不错，看得出来你确实在努力，但是啊……」"
+    z "「其实呢，我也不是批评你，毕竟你最近考得确实是不错，看得出来你确实在努力，但是啊……」"
+    show charaz h03 #老师立绘|夏季|皱眉
+    with dissolve
     voice "audio/voice/012011.ogg"
     z "「你得明白，咱们这儿谁掉了链子都不怕，梁芷柔不行。这种事不怕一万，就怕万一……」"
-    "……"
-    "…………"
-    scene bg b04 #滨河路|夏
+    hide charaz
+    with dissolve
+    scene bg b04b #滨河路|夜
     with fade
     "老师们的消息渠道似乎有点滞后，直到现在这事都快没人提了，才后知后觉地过来「预防」。"
     "不过，相比起同学之间的传言，这种来自老师的压力无疑更有实质。"
     "虽然，其实我这段时间已经没怎么再麻烦过梁芷柔了……"
-    scene bg b05 #湿地公园|夏
-    with fade
     y "「……」"
-    "夏末秋初，残暑的余温还没有消散，黄河的岸边还满是盎然的绿色，仿佛时间未曾流逝。"
-    "之前，自卑如我，只敢远远地仰望着梁芷柔的背影，不敢有丝毫逾越。"
-    "如今，我看到了自己的渺小，只能远远地仰望着梁芷柔的背影，无法逾越分毫。"
-    "一切……似乎都没有改变。我只是画了个圆，最终回到了起点。"
+    "夏末秋初，残暑还没有完全消散，余温萦绕之下，给人一种时间还停留在一个月之前的错觉。"
+    "是的，就仿佛……一切都没有改变。我只是画了个圆，最终还是回到了起点。"
+    "之前，我自认卑微，只敢远远地仰望着梁芷柔的背影，不敢逾越分毫。"
+    "如今，我自知渺小，只能远远地仰望着梁芷柔的背影，无法逾越分毫。"
     y "「……」"
     "没办法吧……"
     "一个月的时间，已经足以让人抚平冲动了。"
@@ -6983,31 +7089,47 @@ label start:
     scene bg black #黑屏
     with fade
     "我该认命吗？"
+    "不如就这么……"
+    "……放弃了吧？"
+    stop music fadeout 2.5
+
     "……"
     "…………"
     voice "audio/voice/002085.ogg"
     l "「……咦？」"
-    scene bg b05 #湿地公园|夏
+    scene bg b04b #滨河路|夜
     with fade
-    "意外的，耳边传来了一个熟悉的声音。"
+    "意外地，耳边传来了一个熟悉的声音。"
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    show chara b06 #梁芷柔立绘|冬季校服|吃惊
+    with dissolve
     voice "audio/voice/002086.ogg"
     l "「叶雨潇？」"
     y "「啊？」"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
     voice "audio/voice/002087.ogg"
     l "「真的是你啊？」"
     y "「啊……嗯。」"
     "还真是……说曹操，曹操到。"
     "昏黄的灯光下，梁芷柔独自一人从我迎面的方向走了过来。"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
     voice "audio/voice/002088.ogg"
     l "「你怎么这么慢啊，我都往回走了你才过来。」"
+    show chara b02 #梁芷柔立绘|冬季校服|皱眉
+    with dissolve
     voice "audio/voice/002089.ogg"
     l "「这是又跑哪儿玩去了？」"
+    with hpunch
     y "「没有没有！」"
     "……下意识地先否认了。"
     "由于反应太快，这一嗓子吼得有点大，几乎是嚷出来的。"
     "随后自己才意识到……我确实没有出去玩啊！"
     "这种意识脱节的情况是怎么回事……"
     y "「……我被郑老师摁住了，训了我半天才放出来。」"
+    show chara b06 #梁芷柔立绘|冬季校服|吃惊
+    with dissolve
     voice "audio/voice/002090.ogg"
     l "「嗯？真的吗？你又干什么坏事啦？」"
     y "「真没有，老郑这人你比我熟，捕风捉影的功夫登峰造极啊！」"
@@ -7020,148 +7142,240 @@ label start:
     "应该是……其实我打心底，不想让她失望吧。"
     "只是，弄巧成拙。"
     "……总是这样。"
-#【恢复】
+    scene bg b04b #滨河路|夜
+    with fade
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
     voice "audio/voice/002091.ogg"
     l "「嗯……好吧。真不是去玩了？」"
     y "「你看我这样子，玩得动才怪……我现在就想睡觉。」"
     y "「倒是你啊，怎么跑这边来了，是去书店了？」"
+    show chara b10 #梁芷柔立绘|冬季校服|开心
+    with dissolve
     voice "audio/voice/002092.ogg"
     l "「对呀，新的书到了。」"
     "梁芷柔抬了抬手。"
     "这时我才注意到，她手中还拎着一个包裹。"
     y "「这次买的是什么啊？嗯，黄冈题库？」"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
     voice "audio/voice/002093.ogg"
     l "「哈哈……才不是呢！你再猜猜？」"
     "她扬了扬手里的包裹，并不大，看起来也并不如何沉重。"
     "的确，按照她的做题量，这要是练习题的话大概不够塞牙缝的吧……"
     y "「感觉像是课外读物，不过具体的就没法猜了吧。」"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
     voice "audio/voice/002094.ogg"
     l "「嗯，也算对吧。」"
+    show chara b01b #梁芷柔立绘|冬季校服|普通|侧面
+    with dissolve
     voice "audio/voice/002095.ogg"
-    l "「咳咳，这次呢，买的是《了不起的盖茨比》、《东方快车谋杀案》，还有《枪炮、病菌与钢铁》。」"
+    l "「呵，这次呢，买的是《了不起的盖茨比》、《东方快车谋杀案》，还有《枪炮、病菌与钢铁》。」"
     y "「……的英文版吧？」"
     "我已经从这八竿子打不到一起去的分类中察觉到了真相。"
+    show chara b10 #梁芷柔立绘|冬季校服|开心
+    with dissolve
     voice "audio/voice/002096.ogg"
     l "「嘻嘻。」"
     y "「我的妈呀，学霸的世界真可怕。」"
     "一边说，我一边朝她伸出手。"
+    show chara b13a #梁芷柔立绘|冬季校服|疑惑1
+    with dissolve
     voice "audio/voice/002097.ogg"
     l "「哎？」"
     y "「给我，我帮你拿吧。」"
+    show chara b13b #梁芷柔立绘|冬季校服|疑惑2
+    with dissolve
     voice "audio/voice/002098.ogg"
     l "「干什么啊？」"
     y "「我送你一段。」"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
     voice "audio/voice/002099.ogg"
     l "「不用啦，又不沉。」"
     y "「顺便嘛。」"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
     voice "audio/voice/002100.ogg"
     l "「真不用，别管我了，赶快回家休息吧，你看你都累成这样了……」"
     y "「还是送送你吧，反正也不差这一点了。」"
     voice "audio/voice/002101.ogg"
     l "「嗯……」"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
     voice "audio/voice/002102.ogg"
     l "「呵，好吧！」"
     "梁芷柔略微想了一下，点了点头，将包裹递给我，并肩朝桥的方向走去。"
-    scene bg b04 #滨河路|夏
+    stop sound fadeout 2.0
+    scene bg black #黑屏
     with fade
+    "……"
+    "…………"
+    play music "audio/music/bgm03.ogg" fadein 1.5 #秋～绯月～
+    scene bg b04b #滨河路|夜
+    with fade
+    show chara lb01b #梁芷柔立绘|冬季校服|普通|侧面|近
+    with dissolve
     voice "audio/voice/002103.ogg"
     l "「……还真巧。」"
     y "「嗯？」"
     voice "audio/voice/002104.ogg"
-    l "「嗯，没什么。就是觉得啊，好久没和你一起走这里了。」"
+    l "「嗯，没什么。就是觉得，好久没和你一起走这里了。」"
     y "「啊……」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
     voice "audio/voice/002105.ogg"
     l "「对吧？每天放学那么晚，我还得最后一个走，连去个书店的时间都没有！」"
+    show chara lb02 #梁芷柔立绘|冬季校服|皱眉|近
+    with dissolve
     voice "audio/voice/002106.ogg"
     l "「你看你也给累成这样了……这阵子学校简直是疯了啊！一天到晚的加码，还让不让人活了！」"
     y "「……哈，哈哈。」"
     "听着梁芷柔的抱怨，我忍不住笑了起来。"
     "果然，她还是她。"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
     voice "audio/voice/002107.ogg"
     l "「你笑什么啊？」"
     y "「没想到你也会这样喊累啊？」"
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
     voice "audio/voice/002108.ogg"
     l "「我也是人，当然会累啊！」"
+    show chara lb02 #梁芷柔立绘|冬季校服|皱眉|近
+    with dissolve
     voice "audio/voice/002109.ogg"
     l "「而且我不是一直在跟你说嘛，学习需要讲效率，可你看咱们现在，呵呵。」"
     y "「这也是没办法吧，又不是所有人都能有那个脑子。」"
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
     voice "audio/voice/002110.ogg"
     l "「那也不能全指望题海战术往里填鸭啊……」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
     voice "audio/voice/002111.ogg"
     l "「杜甫说得好，『苟能制侵陵，岂在多杀伤』。」"
+    show chara lb07b #梁芷柔立绘|冬季校服|消沉2|近
+    with dissolve
     voice "audio/voice/002112.ogg"
     l "「哎……」"
     y "「好啦好啦，班长大人您真是辛苦了。」"
     y "「哎，其实我突然想起来，你没必要非得这么晚跑过来一趟啊？跟我说一声我明天早上给你带过去不就行了吗？」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
     voice "audio/voice/002113.ogg"
     l "「我这不是没找到你吗？」"
     "啊……的确，刚下课就被老师抓走了，当时梁芷柔大概在忙别的事，没注意。"
     y "「这个，这是意外吧……你可以给我打电话或者发个消息啊？」"
+    show chara lb07a #梁芷柔立绘|冬季校服|消沉1|近
+    with dissolve
     voice "audio/voice/002114.ogg"
     l "「嗯……还是算了吧。」"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
     voice "audio/voice/002115.ogg"
     l "「毕竟今天过来取，待会儿就可以看了。而且……」"
+    show chara lb08a #梁芷柔立绘|冬季校服|担心1|近
+    with dissolve
     voice "audio/voice/002116.ogg"
     l "「都这么累。」"
     y "「啊……」"
     y "「不，其实没事的，举手之劳。像这种事，以后随时找我就行。」"
+    show chara lb08b #梁芷柔立绘|冬季校服|担心2|近
+    with dissolve
     voice "audio/voice/002117.ogg"
     l "「可是……」"
     y "「而且啊，天这么黑还一个人走，你也不怕出点什么事，心可真够大的。」"
+    show chara lb13a #梁芷柔立绘|冬季校服|疑惑1|近
+    with dissolve
     voice "audio/voice/002118.ogg"
     l "「这能出什么事啊？」"
     y "「怎么不会啊，你看看周围，黑漆漆的。」"
-    "老城区的基础设施相对陈旧，尽管路是重修了，但路灯似乎还沿用着之前的设备，有些已经坏掉了。"
+    "老城区的基础设施相对陈旧，尽管路是重修了，但相当一部分路灯似乎还沿用着之前的设备，有些已经坏掉了。"
     "别说梁芷柔了，就算是住在这里十几年的我，走的时候也要多加小心才行。"
     "虽不见得会遇到什么坏人，但万一没看清路，磕了碰了也是很麻烦的。"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
     voice "audio/voice/002119.ogg"
     l "「哎……好啦，我知道啦！」"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
     voice "audio/voice/002120.ogg"
     l "「嘻嘻。」"
     y "「还笑。你啊，还是趁现在开始多长点心眼吧。」"
     y "「这也就是在咱们县，等以后换个大城市，还指不定怎么样呢！」"
+    show chara lb06 #梁芷柔立绘|冬季校服|吃惊|近
+    with dissolve
     voice "audio/voice/002121.ogg"
     l "「啊……」"
+    show chara lb07a #梁芷柔立绘|冬季校服|消沉1|近
+    with dissolve
     voice "audio/voice/002122.ogg"
     l "「……也是。」"
     l "「……」"
+    show chara lb07b #梁芷柔立绘|冬季校服|消沉2|近
+    with dissolve
     voice "audio/voice/002123.ogg"
     l "「是啊……」"
     "梁芷柔轻轻摇了摇头，苦笑了起来。"
     y "「呃……」"
+    with hpunch
     "不对不对，我才反应过来。"
     "今天脑子简直是一团浆糊，感觉自己现在就是一个傻逼，来回来去说错话。"
     "但是……"
     l "「……」"
     "面对着神色有些黯淡的梁芷柔，我却不知该怎么办，才能将那种疏离感挥散。"
+    stop music fadeout 2.5
     "……"
     "…………"
-    scene bg b06 #商业街
+    scene bg black #黑屏
     with fade
+    "……"
+    "…………"
+    play sound "audio/sound/ambientnoise11.ogg" fadein 1.5 loop #道路车辆环境噪音
+    scene bg b04b #滨河路|夜
+    with fade
+    show chara lb01a #梁芷柔立绘|冬季校服|普通|正面|近
+    with dissolve
     voice "audio/voice/002124.ogg"
     l "「啊，到了。」"
     y "「嗯。」"
-    "熬过了沉默的后半段，我将梁芷柔送到南岸的公交站旁。"
+    "熬过了沉默的后半段，我将梁芷柔送到北岸的公交站旁。"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
     voice "audio/voice/002125.ogg"
     l "「那……今天谢谢你了。」"
     y "「客气什么。」"
     voice "audio/voice/002126.ogg"
     l "「呵呵……你也早点回去吧。」"
     y "「反正都过来了，把你送上车呗。」"
+    show chara lb10 #梁芷柔立绘|冬季校服|开心|近
+    with dissolve
     voice "audio/voice/002127.ogg"
     l "「不用啦，真不用。你看这边这么热闹，出不了事的。」"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
     voice "audio/voice/002128.ogg"
     l "「你也赶快回去好好休息吧。」"
     "这边紧挨着商业区，虽然进入夜晚，但总算还有不少人流，也有一些人在车站等车。"
     y "「嗯？真的没问题啦？」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
     voice "audio/voice/002129.ogg"
     l "「真的啦！」"
     y "「嗯，那你路上小心点。」"
+    show chara lb10 #梁芷柔立绘|冬季校服|开心|近
+    with dissolve
     voice "audio/voice/002130.ogg"
     l "「好～」"
     y "「到家给我发个短信。」"
+    show chara lb06 #梁芷柔立绘|冬季校服|吃惊|近
+    with dissolve
     voice "audio/voice/002131.ogg"
     l "「啊……？」"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
     voice "audio/voice/002132.ogg"
     l "「嗯……好。」"
     y "「那，我走啦。」"
@@ -7169,22 +7383,23 @@ label start:
     l "「嗯～」"
     "梁芷柔微笑着轻轻朝我挥了挥手。"
     "我也扬了一下手，当做告别的招呼，随即快步离开了。"
+    stop sound fadeout 2.0
     scene bg black #黑屏
     with fade
+    play sound "audio/sound/effect19.ogg" fadein 1.5 loop
     "……"
-    scene bg b04 #滨河路|夏
-    with fade
     "…………"
-    scene bg b05 #湿地公园|夏
+    scene bg b04b #滨河路|夜
     with fade
-    "………………"
-    y "「……」"
     y "「……呼！呼！」"
     "我一路奔跑，直到回到了家的附近才慢下来。"
-    "仿佛在逃跑似的。"
     y "「……呼！……」"
+    "仿佛……在逃跑。"
+    stop sound fadeout 2.0
     "……"
     "…………"
+
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
     scene bg black #黑屏
     with fade
     "我知道。"
@@ -7192,58 +7407,9259 @@ label start:
     "我知道前路漫漫，遍布荆棘。"
     "我知道我所谓的「目标」几乎是痴人说梦。"
     "只是……"
-#【居中】
     "只是，我也知道，我其实……还是不甘心。"
-    scene bg b04 #滨河路|夏
+    scene bg b04b #滨河路|夜
     with fade
+    play sound "audio/sound/effect03.ogg" noloop
     "……"
-#【手机短信铃声】
-
+    stop sound
     "掏出手机，看到了梁芷柔发来的短信。"
     voice "audio/voice/002134.ogg"
     l "「『安全到达！^_^』」"
     y "「……」"
     "看完短信，抬头向天。"
-#【天空】
     "虽然因为身处城市，有光源污染而使得许多星星无法看清……"
-    "但即使如此，最为明亮的星星，也依然坚强地闪耀出自己的光芒。"
-#【黑屏|居中】
+    "但即使如此，最为明亮的星星，也依然坚强地绽放出了自己的光芒。"
+    scene bg black #黑屏
+    with fade
     "是的，其实我知道该做什么，该怎么做。"
-#【恢复】
     "我曾以那颗星为指引，向前迈出了第一步，只是……如今却再一次踌躇不前。"
+    scene bg b04b #滨河路|夜
+    with fade
     bird "「啾——」"
     "夜色之中，不远处传来了鸟的鸣叫。"
-    "候鸟的迁徙已经开始了一段时间，如斑头雁这样迁徙时间较早的鸟，甚至已经走得七七八八的了。"
+    "候鸟的迁徙已经开始了一段时间，如斑头雁这样迁徙时间较早的鸟，甚至已经走得七七八八了。"
     "只有少数，因为各种各样的问题耽搁下来。"
-    "如果它们不能及时跟上的话，那么或许就再也走不了了……"
+    "如果它们不能及时跟上的话，或许就再也走不了了……"
     "到了那时，即使强行起飞，也只会迷失方向，成为迷鸟，根本无法到达自己想要前往的目的地。"
-    "而我……又会如何呢？"
+    stop music fadeout 2.5
+    "而我……"
+    "……又该怎么做呢？"
+    "……"
+    "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t07 #转场 滨河路
+    with fade
+    pause
+
+#03.深秋
+
+    $ chapter = "03"
+
+#一个多月后。
+#10月下旬。
+
+    scene bg b02 #城区
+    with fade
+    "10月，下旬。"
+
+    scene bg b01a #教室|夜
+    with fade
+    play sound "audio/sound/effect10.ogg" fadein 0.5 loop #写字声
+    y "「……」"
+    y "「…………」"
+    y "「（……呼。）」"
+    y "「（好，做完了。）」"
+    stop sound fadeout 3.0
+    "我放下手中的笔，轻轻地喘出一口气来。"
+    "抬头看了看班里的情况，奋笔疾书者有之，愁眉苦脸者有之，左顾右盼、游手好闲者亦有之。"
+    y "「……」"
+    "果然如此……"
+    "俗话说得好，人心散了，队伍不好带啊。"
+
+    play music "audio/music/bgm03.ogg" fadein 1.5 #秋～绯月～
+    scene bg b02b #城区|夜
+    with fade
+    "扭过脸，望向窗外。"
+    "天空早已是一片漆黑。"
+    "而商业区和住宅区则闪耀着点点灯火。"
+    y "「（唉……）」"
+    "现在是晚上8点钟。"
+    "如今，即便是有时差，到了这个钟点，太阳也已经彻底下山了。"
+    "然而，我们却需要继续留在学校上晚自习。"
+    "学校之前还在说什么「至少到寒假前不会再延长自习时间了」，到了现在则成了「你们就知足吧，别的地方有的要自习到10点钟呢」之类，毫无信用可言。"
+    "不过，身为学生，当然无力改变什么，也只能无可奈何地接受。"
+    "话虽如此，尽管在校学习的时间确实是增加了，但对于大多数人来说，那个效果嘛……"
+    "呵呵。"
+    scene bg b00c #天空|夜
+    with fade
+    "其实真要说的话，也不是不能理解学校这次朝令夕改的做法。"
+    "毕竟他们也是被突然袭击的受害者。"
+    "就在不久之前，学校得知省里搞出了一个大新闻——"
+    "「省教育厅下发通知，要求全省第一次模拟诊断考试提前到12月初进行。」"
+    "往年的第一次模拟考试一般都是在3月份前后，学校也是按照这个思路安排的教学，结果现在被上级这样横插了一刀下来，心情可想而知。"
+    "不知道省厅到底是出于什么考量才做出的这种决定……不过，对于学校来说，这不重要。"
+    "重要的是，一中作为县里最好的高中，必须在任何时刻都能够保持自己的领先地位。"
+    "可以不再创新高，但绝不能被人超越。"
+    "还按照原来的教学计划的话，复习进度肯定赶不上，尽管竞争对手们也是一样的准备不足，但是显然不能把希望寄托在别人犯错上面。"
+    "于是，自然而然就演变成了眼下的这种状况。"
+    stop music fadeout 2.5
+    play sound "audio/sound/ambientnoise10.ogg" fadein 1.5 loop #安静学习环境噪音
+    scene bg b01a #教室|夜
+    with fade
+    y "「……」"
+    y "「…………」"
+    y "「（……好了。）」"
+    "对照着标准答案，估算着模拟试卷的分数。"
+    y "「（这个分数……）」"
+    "看着估算出来的分数，我微微皱了皱眉。"
+    "成绩……其实不能算糟糕，相比自己以前，还有一定程度的进步。"
+    "但是……"
+    y "「（这样下去……还是不行吧。）」"
+    "轻叹一声，我忍不住抬起头来，向另一侧看去。"
+#追加CG差分
+    scene cg01e #梁芷柔听讲CG-5|做题|CG01e
+    with fade
+    "梁芷柔还在做题。"
+    "就如同在学习会时那样，她的桌子上还是堆放着数量惊人的习题集，她从中挑选出有意义的题目，并将之逐一解决。"
+    y "「（……还是那么专注啊。）」"
+    scene bg b01a #教室|夜
+    with fade
+    "一如既往，梁芷柔在学习的时候总是能够聚精会神。"
+    "而我在这方面就十分欠缺了……"
+    y "「（如果我也能那样的话……）」"
+    with hpunch
+    y "「（不对不对，妈的这就已经是在走神了啊！）」"
+    y "「（看题看题！别想没用的！）」"
     "……"
     "…………"
     scene bg black #黑屏
     with fade
+    play sound "audio/sound/effect06.ogg" noloop #铃声
+    pause 1.0
+    scene bg b01a #教室|夜
+    with fade
+    "晚自习终于结束了。"
+    "学生们陆陆续续地离开教室，我也简单收拾了一下，拎起书包准备回家。"
+    y "「……嗯？」"
+    voice "audio/voice/003001.ogg"
+    l "「嗯～啊～～嗯～～～」"
+    "梁芷柔并没有起身，而是坐在椅子上，闭眼仰头，发出意义不明的呻吟声。"
+    "看起来相当疲惫……"
+    y "「喂。」"
+    voice "audio/voice/003002.ogg"
+    l "「嗯？」"
+    y "「你没事吧？」"
+    voice "audio/voice/003003.ogg"
+    l "「啊……哈哈，还好啦，就是有点累。」"
+    "梁芷柔听出是我的声音，没有睁眼，只是随意地抬了一下胳膊表示打招呼。"
+    voice "audio/voice/003004.ogg"
+    l "「稍微歇一会儿就好了，放心吧。」"
+    y "「真的吗？」"
+    voice "audio/voice/003005.ogg"
+    l "「真的啦！你快回去吧，好好休息啊。」"
+    y "「……你别管我了，先担心担心自己吧，你这样子真的没事吗？」"
+    voice "audio/voice/003006.ogg"
+    l "「哎呀你就别操心了，没事，真的。」"
+    voice "audio/voice/003007.ogg"
+    l "「赶紧的，回家，我待会儿还得负责锁门呢，你们都撤了我也能早点撤。」"
+    "她说得好有道理……我竟无言以对。"
+    y "「那……我走啦。你回家的时候路上小心点。」"
+    voice "audio/voice/003008.ogg"
+    l "「嗯，好的～」"
+    y "「……」"
+    "看她这个样子，我也帮不上什么忙，反而影响她休息，还是别给她添乱了。"
+    voice "audio/voice/003009.ogg"
+    l "「……谢谢。」"
+    y "「……哎？」"
+    "刚要走，却听到梁芷柔轻轻的声音。"
+    "回头看去，她还是保持着之前的姿势闭目养神，只是不再像之前那样一脸的倦意，而是嘴角挂着一丝微笑。"
+    y "「……呵呵。」"
+    y "「明天见。」"
+    "我也压低了声音，轻轻地回应道。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
 
+    play music "audio/music/bgm03.ogg" fadein 1.5 #秋～绯月～
+    scene bg b02b #城区|夜
+    with fade
+    "距离偶遇梁芷柔的那天晚上，已经过去一个月了。"
+    "从那之后，我和梁芷柔的关系有了稍许的回暖，似乎又回到了暑假刚刚结束时的那种状态。"
+    "碰到的时候会打招呼，偶尔聊天，或者我找她问一些题。"
+    "不过，也就仅此而已。"
+    "我还没有想明白自己的路在何方，自然也不敢越雷池一步。"
+    scene bg b04b #滨河路|夜
+    with fade
+    "当然，这一个月，我也不是在原地踏步。"
+    "无论如何，先把学习成绩提高上来一些，总是没有坏处的。最起码，也要先去实现她跟我说的那个“小目标”。"
+    "是以，最近这一个月，我开始尝试着自己给自己加码。"
+    "虽然做不到像梁芷柔那样的程度……但在原来的基础上更进一步，这点心劲我还是有的。"
+    "回忆着平时、以及暑假学习会时梁芷柔学习的模样，我尝试着让自己更加认真、更加努力，更加……像她那样去学习。"
+    "虽然还是做不到那么专心致志，但是至少大多数的时候，都能强迫自己把精力放在学习上了。"
+    "成绩……是有的。"
+    "最近的几次测验，成绩和名次都有所提高，而且还在不断地提高。"
+    "班里原本是梁芷柔一骑绝尘甩开其他人一大块，剩下第二和第三彼此较劲，再往后的几名非常不稳定，完全看各人的状态。"
+    "而现在，我已经固定在四五名左右的位置上了。"
+    "老师对我的评价不错，但在我自己看来，依然……不够。"
+    "就像梁芷柔之前说的那样，我们这里，前几名之间的成绩断档非常大。"
+    "我现在这个成绩，发展下去大概可以考一个不错的二本，或者在本省里挑一个说得过去的一本。只要保持下去，“小目标”应该不是问题。"
+    "然而，想要报考外省的一本，尤其是那些发达城市的一本院校，就相当困难了，更遑论那些知名学府，根本想都不要想。"
+    "当然，在我们这个小县城，别说一本，哪怕只是谁家孩子考了个二本，那也是足以让他们全家欢天喜地了。"
+    "所以，做到这一步，其实已经满足了父母和老师此前对我的期望，想来他们都不会有什么不满意。"
+    "只是……"
+    scene bg b08 #新城区|夏
+    show chara c01a #梁芷柔立绘|夏季私服|普通|正面
+    show memories #回忆滤镜
+    with dissolve
+    voice "audio/voice/001394.ogg"
+    l "「那你有没有想过走出去呢？」"
+    scene bg b04b #滨河路|夜
+    with fade
+    "我，还不满足。"
+    y "「……」"
+    "但我又该怎么办呢？"
+    "现在的我，正在渐渐进入瓶颈。"
+    "最开始的立竿见影，是因为以前的基础问题太多太大。而在弥补了这些之后，再想要解决掉那些更细碎、更困难的缺漏，可不是一件容易的事。"
+    "那需要更大的决心和毅力，一往无前、心无旁骛。"
+    "那不是现在这样一边追赶，一边还在思考追赶意义的我，所能做到的。"
+    "所以……我，该怎么办？"
+    stop music fadeout 2.5
 
+    "……"
+    "…………"
 
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t06 #转场 天空
+    with fade
+    pause
 
+#梁芷柔生日前的最后一个周末。
+#11月上旬。
 
+    scene bg black #黑屏
+    with fade
+    play sound "audio/sound/effect03.ogg" noloop
+    "……"
+    stop sound
+    y "「……哦，好的，好的。」"
+    y "「我知道了，马上就过去，谢谢。」"
 
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    scene bg b04a #滨河路|秋
+    with fade
+    "挂掉电话，迅速收拾出门。"
 
+    play audio "audio/sound/effect04.ogg" noloop
+    y "「……嘿，还挺凉。」"
+    "进入11月份以后，气温开始有了明显的下降。"
+    "像前几天那样最高气温偶尔还能到20度左右的日子是一去不复返了，再过上一两周，更是会降到10度以下。"
+    y "「也是，都是这个时候了……」"
+    "我望向路边的树木。"
+    "霜降过后不久，大多数的草木都逐渐变得枯黄，槐树之类的乔木更是落叶纷纷，清楚地昭示着季节的变迁——"
+    "深秋，到了。"
+    stop sound fadeout 3.0
 
+    scene bg b08a #新城区|秋
+    with fade
+    pause
+    scene bg b09 #书店
+    with fade
+    play sound "audio/sound/ambientnoise07.ogg" fadein 1.5 loop #书店环境噪音
+    play audio "audio/sound/effect11.ogg" noloop
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    voice "audio/voice/023001.ogg"
+    d "「您好！」"
+    y "「你好，我来取书。」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    voice "audio/voice/023002.ogg"
+    d "「啊，是，是我刚才给您打的电话。」"
+    voice "audio/voice/023003.ogg"
+    d "「叶雨潇……是吧？您来得还真快啊。」"
+    y "「呵呵，这不是挨得近嘛，我家就住旁边的。」"
+    show charad g02 #书店店员立绘|惊讶
+    with dissolve
+    voice "audio/voice/023004.ogg"
+    d "「噢。那还真是。」"
+    hide charad
+    with dissolve
+    "店员小姐一边和我闲聊，一边把我订购的书从包裹堆里翻了出来。"
+    stop sound fadeout 2.0
 
+    play music "audio/music/bgm08.ogg" fadein 1.5 #其乐无穷
+    voice "audio/voice/023005.ogg"
+    d "「唉，我看看啊，靠莱克忒……艾斯……艾……乔……什么雷思，和信？of 乔治……噢…威尔？……什么的，原文精装本，对吧？」"
+    y "「对，就是这个。」"
+    "我从被书名折磨得有些抓狂的店员手中接过了《Collected Essays，Journalism and Letters of George Orwell》。"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    voice "audio/voice/023006.ogg"
+    d "「哈哈……我英语不行，你可别笑话我啊。」"
+    y "「不会啦，其实这个我也是买来送人的。」"
+    "虽然我的水平，倒是不至于连标题都念成这个样子，不过也不会去主动碰这种文集类的外文原版书。"
+    "显而易见，这是我打算送给某个人的生日礼物。"
+    "某个将要在11月10日迎来自己18岁生日的、可以拿英文原版当作休闲读物的人。"
+    show charad g04 #书店店员立绘|坏笑
+    with dissolve
+    voice "audio/voice/023007.ogg"
+    d "「哦，这样啊……」"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    voice "audio/voice/023008.ogg"
+    d "「……是打算送给梁芷柔吗？」"
+    with hpunch
+    y "「……」"
+    show charad g04 #书店店员立绘|坏笑
+    with dissolve
+    "扭过头，看到店员小姐正憋着一脸坏笑。"
+    "说来，我第一次和梁芷柔来这里的时候，就是这位店员小姐接待的我们，之后也碰见过不少次，一来二往之下，也算是混了个脸熟，见面能打个招呼。"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    voice "audio/voice/023009.ogg"
+    d "「啊。看来还真是。」"
+    voice "audio/voice/023010.ogg"
+    d "「嘻嘻，怎么样怎么样，你们俩进展得如何了？」"
+    y "「您啊……」"
+    "必须说，她业务能力很强，做事井井有条，待人接物也游刃有余……不过副作用就是太过于健谈，而且还八卦。"
+    y "「什么进展不进展的……您可别瞎说啊，尤其是千万别当着她的面提这事啊！我们俩什么关系都没有的！」"
+    show charad g04 #书店店员立绘|坏笑
+    with dissolve
+    voice "audio/voice/023011.ogg"
+    d "「好好好，我知道我知道，单相思不容易，我不会去给你添乱的啦。」"
+    y "「……」"
+    "看着店员小姐那狡黠的笑容，总感觉这话毫无可信度啊！"
+    "要是因为这位店员小姐熊熊燃烧的八卦之心把我推向万劫不复的深渊的话，我一定会死不瞑目吧。"
+    "有些挠头。"
+    stop music fadeout 2.5
 
+    play sound "audio/sound/ambientnoise07.ogg" fadein 1.5 loop #书店环境噪音
+    show charad g02 #书店店员立绘|惊讶
+    with dissolve
+    voice "audio/voice/023012.ogg"
+    d "「……哎，说起来啊，你们俩不是一起来的吗？」"
+    y "「啊？」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    voice "audio/voice/023013.ogg"
+    d "「她刚还在这儿来着，也就刚走没一会儿，你过来的时候没看见她吗？」"
+    voice "audio/voice/023014.ogg"
+    d "「你们俩也就是前后脚吧？」"
+    y "「没看见啊，什么情况？」"
+    voice "audio/voice/023015.ogg"
+    show charad g02 #书店店员立绘|惊讶
+    with dissolve
+    d "「也许你们俩都光顾着闷头走路，谁都没看见谁吧……」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    voice "audio/voice/023016.ogg"
+    d "「她也是来取书的，上一次到货的时候跟她联系过，不过当时她没有空，今天才来取走的。」"
+    y "「啊……可能是吧。」"
+    show charad g02 #书店店员立绘|惊讶
+    with dissolve
+    voice "audio/voice/023017.ogg"
+    d "「还有啊，我看她脸色可不太好，你知道出了什么事吗？」"
+    y "「咦？不知道啊……」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    voice "audio/voice/023018.ogg"
+    d "「嗯，那也许就是累着了吧，毕竟你们高三嘛。」"
+    y "「嗯……」"
+    "的确……哪怕是梁芷柔，现在也做不到无事一身轻。"
+    "光是我看到她露出疲态的样子就有好几次了……"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    voice "audio/voice/023019.ogg"
+    d "「回头多关心关心人家吧，这种时候不就是该轮到你出场了嘛！」"
+    y "「呃……？」"
+    voice "audio/voice/023020.ogg"
+    d "「呵呵，不好意思啦？」"
+    show charad g04 #书店店员立绘|坏笑
+    with dissolve
+    voice "audio/voice/023021.ogg"
+    d "「我跟你说啊，真没必要想那么多，就是这个时候才要上啊！多好的机会啊！女孩子最脆弱的时候！这时候不上什么时候上啊！」"
+    "店员小姐一脸看热闹的不嫌事大的模样，突然进入了亢奋的说教模式。"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    voice "audio/voice/023022.ogg"
+    d "「女孩子啊，你不主动去追的话，是永远都追不上的。」"
+    voice "audio/voice/023023.ogg"
+    d "「该厚脸皮的时候就得厚起脸皮来！只要人家没表现出厌烦你的意思来，那就是有戏啊，对不对？」"
+    voice "audio/voice/023024.ogg"
+    d "「所以啊，这个时候别犹豫啦！我支持你，啊。」"
+    y "「……」"
+    "话是这么说没错……"
+    y "「…………」"
+    "但我张了张嘴，却不知道该怎么接这个茬。"
+    "最后，也只能苦笑一下。"
+    stop sound fadeout 3.0
 
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
 
+    play sound "audio/sound/effect11.ogg" noloop
+    scene bg b08a #新城区|秋
+    with fade
+    "我离开书店，一边向家的方向走，一边低头想着心事。"
+    y "「……」"
+    y "「……唉。」"
 
+    play music "audio/music/bgm03.ogg" fadein 1.5 #秋～绯月～
+    "说到底，店员小姐的建议虽然有些不太负责，但是大道理是没有错的。"
+    "此前是班里同学之间的胡乱起哄，现在一个几乎是陌生人的店员也来八卦一二，虽然都是捕风捉影的事，但作为当事人的梁芷柔，也不会迟钝到一点感觉都没有。"
+    "不过，她始终都是坦坦荡荡的，反倒是我一直摇摆不定、甚至还曾产生疏离。"
+    "她又不是那种恨不得能包容一切的的傻白甜圣母……既然没有敬而远之，那最起码就是不排斥。"
+    "但……我还是什么也做不了。"
+    scene bg b04a #滨河路|秋
+    with fade
+    "现在的我，根本追赶不上梁芷柔的脚步。"
+    "这已经是我自发努力下能做到的极限了，沿着眼前的形势发展下去，7个月以后，我们就将迎来天各一方的结局。"
+    "而我却还是迟迟没有下定决心。"
+    "甚至，虽然我还在努力，还在给自己鼓劲，但在内心之中……说不定也有些满足了。"
+    "过去十多年一直都随波逐流、得过且过。"
+    "老师和家长？不是自夸，现在的我早就已经超过他们最初的期望了。"
+    "他们最多也就是希望我能考上一个不错的二本来着……「去考大城市的好学校」这种选项，从一开始就根本不存在于他们的意识里。"
+    "别说他们了，哪怕是梁芷柔，其实也只是在聊天的时候提过那么一次。"
+    "而要说到梁芷柔……就算我千辛万苦，真的成功考上了和她相同城市的大学……又怎样？"
+    "这只是一个先决条件而已，未来的事情，谁也说不准。"
+    "我应该为了这个不可捉摸的未来赌上一切，抛弃安稳的现状，背上好高骛远、不切实际的嘲讽，去拼命、去争取那一份可能性吗？"
+    "随着时间的推移，我已经变得越来越难以确定这个问题的答案了。"
+    stop music fadeout 2.5
 
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
 
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    scene bg b05a #湿地公园|秋
+    with fade
+    y "「咦……？」"
+    y "「……走过头了吗。」"
+    "心事重重之下没注意看路，等注意到的时候，已经走到了湿地公园的旁边。"
+    y "「……呼。」"
+    "也罢。"
+    "既然都走到这里了，不如索性进去溜达一圈，权当散散心吧。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b05a #湿地公园|秋
+    with fade
+    "整个夏秋两季，湿地公园都在维护，没有接待游客，而过了11月中旬，又到了闭园的季节，今年都彻底报销了。"
+    "不过这种程度的封闭，自然挡不住土生土长的本地居民……不如说，我进这公园就从来没走过正门。"
+    y "「哇……好惨。」"
+    "夏天时江水泛滥带来的破坏还有一些残留的痕迹，再加上到了深秋，万物萧索，此时的湿地公园显得有些凄凉。"
+    "靠近滨河路一侧的墙体被冲垮，眼下还没有完全修好，栈道也吱吱呀呀的，出现了一些破损。"
+    "人工设施之外，自然环境也未能幸免。"
+    "滩涂上原本有不少芦苇，受灾以后在修整的时候都被铲除了，看上去光秃秃的不怎么协调。而几个季节性的景观湖，除了能看到几只鸭子在游荡以外，也见不到什么好景色。"
+    "不过，反正我也不是来看景的，无所谓了。"
+    with fade
+    "漫步其中，呼吸着带着潮湿泥土气息的空气，感觉似乎稍稍好了一些。"
+    y "「……」"
+    y "「咦？」"
+    "无意之间，目光扫过岸边的时候，我看到了一个熟悉的身影。"
+    y "「那是……」"
+    show chara sd07b #梁芷柔立绘|秋季私服|消沉2|远
+    with dissolve
+    "——是梁芷柔？"
+    "有些意外。"
+    "不会是认错人了吧……"
+    scene bg black #黑屏
+    with fade
+    "揉了揉眼睛。"
+    scene bg b05a #湿地公园|秋
+    show chara sd07b #梁芷柔立绘|秋季私服|消沉2|远
+    with dissolve
+    l "「……」"
+    "……还真是她啊。"
+    "她从书店出来以后，没有直接回家，而是来了这里吗？"
+    y "「……」"
+    "这是什么情况？"
+    stop sound fadeout 3.0
 
+    scene cg08a #梁芷柔河边CG-1|单独远目|CG08a
+    with fade
+    "梁芷柔的神情……看上去似乎有些落寞，又有些迷茫，是我从没见过的表情。"
+    "现在是闭园状态，整个湿地公园空空荡荡的，我一个大活人戳在那里，其实蛮显眼的。然而，梁芷柔此刻却愣愣地不知道在看哪里，并没有注意到我。"
+    "怎么看都不对劲……"
+    scene bg b09 #书店
+    show charad g02 #书店店员立绘|惊讶
+    show memories #回忆滤镜
+    with dissolve
+    voice "audio/voice/023017.ogg"
+    d "「还有啊，我看她脸色可不太好，你知道出了什么事吗？」"
+    scene cg08a #梁芷柔河边CG-1|单独远目|CG08a
+    with fade
+    "脑海中突然回想起店员小姐之前说过的话。"
+    "要不要过去打个招呼呢……"
+    scene bg b09 #书店
+    show charad g03 #书店店员立绘|笑容
+    show memories #回忆滤镜
+    with dissolve
+    voice "audio/voice/023019.ogg"
+    d "「回头多关心关心人家吧，这种时候不就是该轮到你出场了嘛！」"
+    scene bg b05a #湿地公园|秋
+    with fade
+    y "「……」"
+    "好吧，不想那么多了。"
+    "无论如何，先上再说。"
+    with fade
 
+    play sound "audio/sound/ambientnoise01.ogg" fadein 4.5 loop #河边环境噪音
+    show chara d07b #梁芷柔立绘|秋季私服|消沉2
+    with dissolve
+    y "「……哟！」"
+    show chara d06 #梁芷柔立绘|秋季私服|吃惊
+    with dissolve
+    voice "audio/voice/003010.ogg"
+    l "「哎？」"
+    y "「怎么啦？一个人跟这儿想什么哪？」"
+    show chara d08a #梁芷柔立绘|秋季私服|担心1
+    with dissolve
+    voice "audio/voice/003011.ogg"
+    l "「啊……哎？你怎么在这儿？」"
+    y "「这话该我问才对吧？这可是我家门口。」"
+    show chara d06 #梁芷柔立绘|秋季私服|吃惊
+    with dissolve
+    voice "audio/voice/003012.ogg"
+    l "「啊……」"
+    show chara d07b #梁芷柔立绘|秋季私服|消沉2
+    with dissolve
+    voice "audio/voice/003013.ogg"
+    l "「……也对啊。」"
+    "梁芷柔蠢呆呆地点了点头。"
+    "虽然她这模样看着很好玩……不过现在可不是说这种事的时候。"
+    y "「怎么搞的，你这是离家出走了？」"
+    show chara d05a #梁芷柔立绘|秋季私服|苦笑1
+    with dissolve
+    voice "audio/voice/003014.ogg"
+    l "「呵……」"
+    scene cg08b1 #梁芷柔河边CG-2|两人并排|苦笑|CG08b1
+    with fade
+    "梁芷柔只是苦笑了一下，轻轻摇了摇头。"
+    "看来我果然没什么搞活气氛的天赋。既然如此，那就单刀直入吧。"
+    y "「怎么啦，能跟我说说不？」"
+    scene cg08b #梁芷柔河边CG-2|两人并排|CG08b
+    with dissolve
+    voice "audio/voice/003015.ogg"
+    l "「你不懂的。」"
+    y "「你都没说呢，怎么就知道我不懂啦？」"
+    scene cg08b1 #梁芷柔河边CG-2|两人并排|苦笑|CG08b1
+    with dissolve
+    voice "audio/voice/003016.ogg"
+    l "「……」"
+    scene cg08b2 #梁芷柔河边CG-2|两人并排|苦笑|闭眼|CG08b2
+    with dissolve
+    voice "audio/voice/003017.ogg"
+    l "「……你不懂。」"
+    "梁芷柔的声音如呢喃一般，将话又重复了一遍。"
+    scene cg08b1 #梁芷柔河边CG-2|两人并排|苦笑|CG08b1
+    with dissolve
+    y "「……」"
+    l "「……」"
+    scene cg08b #梁芷柔河边CG-2|两人并排|CG08b
+    with dissolve
+    "对话瞬间陷入僵局。"
+    "尴尬的氛围让我一度有些犹豫，想要放弃继续刨根问底，但梁芷柔这过于异常的表现又让我难以无视。"
+    y "「……」"
+    l "「……」"
+    y "「……」"
+    "……不行，还是得问个清楚。"
+    "短短的几秒，已经让我有种百爪挠心的感觉了。要是不问明白，我今天大概是过不好了。"
+    y "「……」"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with dissolve
+    "我将手中的包裹放到脚边，然后与她相隔半米，也不再说话，就默默地看着她的侧脸。"
+    voice "audio/voice/003018.ogg"
+    l "「……」"
+    voice "audio/voice/003019.ogg"
+    l "「……唉。」"
+    "似乎终于在我无声的注视下感受到了压力，梁芷柔没有再继续沉默下去。"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/003020.ogg"
+    l "「叶雨潇。」"
+    y "「嗯？」"
+    voice "audio/voice/003021.ogg"
+    l "「我问你啊……」"
+    voice "audio/voice/003022.ogg"
+    l "「……你知道候鸟吗？」"
+    y "「嗯？」"
+    "我没能在第一时间理解她的话语。"
+    "虽然总算是打破了沉默，但这话题也未免跳脱得太厉害了吧？"
+    "不过，梁芷柔似乎也没指望我会回答，只是仰头望天，自顾自地说了下去。"
+    scene bg b00 #天空
+    with fade
+    voice "audio/voice/003023.ogg"
+    show text open02 at truecenter
+    with dissolve
+    pause
+    scene bg b00a #天空|候鸟
+    with dissolve
+    voice "audio/voice/003024.ogg"
+    show text open03 at truecenter
+    with dissolve
+    pause
+    voice "audio/voice/003025.ogg"
+    show text open04 at truecenter
+    with dissolve
+    pause
+    voice "audio/voice/003026.ogg"
+    show text open05 at truecenter
+    with dissolve
+    pause
 
+    scene bg black #黑屏
+    with fade
+    voice "audio/voice/003027.ogg"
+    show text open06 at truecenter
+    with dissolve
+    pause
+    stop sound fadeout 3.0
 
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with fade
+    with vpunch
+    y "「——！」"
+    play music "audio/music/bgm06.ogg" fadein 1.0 #悬而未决
+    "她的声音轻柔空灵，但却如同一记重锤，狠狠地砸在我的心头。"
+    y "「呃……我……」"
+    "——什么？"
+    "什么情况？"
+    "这话是什么意思？"
+    "是在对我说吗？是在说我吗？"
+    "……"
+    "这是在拒绝我？"
+    "是我想多了？还是说……"
+    "……果然？她……"
+    "她其实……？"
+    "…………"
+    stop music fadeout 2.5
 
+    "心里一下子乱成一锅粥。"
+    "张着嘴，想要说点什么，却根本组织不起语言来。"
 
+    play music "audio/music/bgm07.ogg" fadein 1.5 #哀毁骨立
+    "然而，梁芷柔……似乎并没有注意到我的混乱。"
+    "她的视线虽然朝向我，但目光的焦点却不知飞到了哪里。"
+    l "「……」"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with dissolve
+    voice "audio/voice/003028.ogg"
+    l "「雨潇。」"
+    y "「啊，哎？」"
+    voice "audio/voice/003029.ogg"
+    l "「雨潇，你毕业以后想做什么？」"
+    "……啥？"
+    "「雨潇」？"
+    "这是在叫我吗？"
+    with hpunch
+    "等等，什么鬼？我的姓呢？你不是一直都叫我的全名吗？"
+    "怎么回事？到底是什么情况？才刚刚说出那样的话，怎么突然又……"
+    "冲击一拨接着一拨，我的大脑一片空白，只能下意识地应答——"
+    y "「毕业以后……上大学啊。」"
+    voice "audio/voice/003030.ogg"
+    l "「我的意思是说，上完大学以后呢？离开学校以后。」"
+    y "「呃……」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    voice "audio/voice/003031.ogg"
+    l "「唉。」"
+    "梁芷柔轻轻垂首，叹出一口气，又一次抬头向天，仰望着无垠的青空。"
 
+    scene bg b00a #天空|候鸟
+    with fade
+    voice "audio/voice/003032.ogg"
+    l "「雨潇，你有想过你的未来吗？你有想过……」"
+    voice "audio/voice/003033.ogg"
+    l "「……自己的梦想吗？」"
+    y "「未来……和梦想……」"
+    voice "audio/voice/003034.ogg"
+    l "「我想过。」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with fade
+    voice "audio/voice/003035.ogg"
+    l "「还记得我当初跟你说过，我现在，是为了我自己的梦想在努力吧？」"
+    y "「嗯。」"
+    voice "audio/voice/003036.ogg"
+    l "「当时我没有告诉你我的梦想是什么，因为，其实那是一个特别简单、也特别没意思的理由——」"
+    scene cg08c2 #梁芷柔河边CG-3|两人对视|浅笑|CG08c2
+    with dissolve
+    voice "audio/voice/003037.ogg"
+    l "「我想要去樱华市。」"
+    voice "audio/voice/003038.ogg"
+    l "「我想去樱华市上大学，毕业以后留在樱华工作，最终……真正的，留在那里。」"
+    y "「樱华吗……」"
+    scene bg b12 #樱华市
+    with fade
+    "樱华市……东部沿海省份的大都市，以风景秀丽著称，同时也是江南的金融、文化中心之一。"
+    "那是真真正正的大城市，一个市的经济规模就能超过我们这边全省还有富余。"
+    scene cg08c2 #梁芷柔河边CG-3|两人对视|浅笑|CG08c2
+    with fade
+    voice "audio/voice/003039.ogg"
+    l "「嗯，樱华。」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003040.ogg"
+    l "「是不是觉得我这个人特俗，特现实？我当时没好意思跟你说明，也是因为怕你这么想我。」"
+    y "「……」"
+    voice "audio/voice/003041.ogg"
+    l "「可是，实际上就是这样，就是靠着这样的一个梦想，我才能一路支撑着走到现在。」"
+    scene cg08c2 #梁芷柔河边CG-3|两人对视|浅笑|CG08c2
+    with dissolve
+    voice "audio/voice/003042.ogg"
+    l "「我一直都坚信自己没问题，肯定可以做到，一直都这么跟自己说，给自己鼓劲……」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003043.ogg"
+    l "「但是，最近，我真的是……有点太累了……」"
+    scene cg08c4 #梁芷柔河边CG-3|两人对视|浅笑|含泪|CG08c4
+    with dissolve
+    voice "audio/voice/003044.ogg"
+    l "「雨潇，你说我这么拼命，到底是对……还是错呢？」"
+    "她的声音越来越压抑，到了最后几近哽咽。"
+    y "「哎？哎哎哎！？呃……你你你你别哭啊，这、这到底是……」"
+    "看着梁芷柔泫然欲泣的脆弱模样，我的心脏就好像是被人狠狠地扎了一刀似的，刺痛得不行。"
+    "然而，我甚至连发生了什么事都不知道。"
+
+    scene bg b05a #湿地公园|秋
+    show chara ld07b #梁芷柔立绘|秋季私服|消沉2|近
+    with dissolve
+    "一切都来得太过突然、太过混乱，我的大脑已经彻底死机了，连带着说话都变得结巴起来。"
+    "……不行。"
+    "这样下去不行。必须要做点什么。"
+    "必须，要在现在，立刻，做点什么。"
+    "不，哪怕到了最后我什么问题都解决不了，至少也要做一个合格的倾听者，让她把内心的憋屈倾诉出来吧！"
+    "我深深地吸进一口气，强迫自己冷静下来，用尽量温和、稳重的语气，向她询问。"
+    y "「……到底是怎么了？发生什么事了？」"
+    show chara ld08a #梁芷柔立绘|秋季私服|担心1|近
+    with dissolve
+    l "「……」"
+    y "「方便跟我说说吗？」"
+    show chara ld08b #梁芷柔立绘|秋季私服|担心2|近
+    with dissolve
+    l "「……」"
+    show chara ld07a #梁芷柔立绘|秋季私服|消沉1|近
+    with dissolve
+    voice "audio/voice/003045.ogg"
+    l "「……呼。」"
+    show chara ld05b #梁芷柔立绘|秋季私服|苦笑2|近
+    with dissolve
+    voice "audio/voice/003046.ogg"
+    l "「嗯。」"
+    "梁芷柔朝我露出一个带着歉意的苦笑。"
+    show chara ld05a #梁芷柔立绘|秋季私服|苦笑1|近
+    with dissolve
+    voice "audio/voice/003047.ogg"
+    l "「脑子有点乱，从哪儿说起才好呢……」"
+    y "「没事，慢慢来，想到哪儿说哪儿呗。」"
+    voice "audio/voice/003048.ogg"
+    l "「嗯，还是从头开始说吧，从我想去樱华这事开始。」"
+    "或许是刚才已经稍稍发泄出来了一点吧，她的情绪逐渐平稳了下来。"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with fade
+    voice "audio/voice/003049.ogg"
+    l "「我之前跟你说过，我小学时候的成绩非常糟糕，是到了初中以后才有了很大提高的吧。」"
+    y "「嗯。」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/003050.ogg"
+    l "「我初中这三年，其实也没少努力的，中考的时候考了个全县第一。当时呀，还被二中拿来宣扬了好久，毕竟他们一直被一中这边压着一头嘛，这一回总算是翻了身了。」"
+    scene cg08c2 #梁芷柔河边CG-3|两人对视|浅笑|CG08c2
+    with dissolve
+    voice "audio/voice/003051.ogg"
+    l "「我呢，也高兴了好一阵。说真的，那时候，是挺拿这个当回事的，毕竟之前有过小升初考试的前车之鉴嘛，这一次终于自己争气，打翻身仗了，不用父母操心了，多好。」"
+    voice "audio/voice/003052.ogg"
+    l "「而且啊，我父母也是真的很高兴、很高兴，当天晚上我妈给做了满满一桌子菜，一边吃一边说这个，说到最后我和我妈抱头痛哭，一点也不夸张，真是给高兴坏了。」"
+    voice "audio/voice/003053.ogg"
+    l "「然后呢，我爸就劝我们俩，说多高兴的一件事，你俩哭个啥，来来来，说说怎么庆祝！」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/003054.ogg"
+    l "「接下来话题就转到这边来了，最后一家子商量了半天，决定趁着暑假，他们俩一起把年假给休了，带着我，出去旅行。」"
+    y "「噢……」"
+    scene cg08c2 #梁芷柔河边CG-3|两人对视|浅笑|CG08c2
+    with dissolve
+    voice "audio/voice/003055.ogg"
+    l "「呵，你也猜到了吧，我中考的奖励，就是去樱华，旅游。」"
+
+    scene bg black #黑屏
+    with fade
+    voice "audio/voice/003056.ogg"
+    l "「那是我去过的最远的地方。」"
+    scene bg b02a #城区|秋
+    with fade
+    voice "audio/voice/003057.ogg"
+    l "「小时候嘛，我从来没出过远门，最远的也就是到省城，不过几百里的路。」"
+    voice "audio/voice/003058.ogg"
+    l "「那时候我还一直以为省城就是最漂亮、最棒的地方了，其他的城市，再怎么好也就不过如此了吧？」"
+    voice "audio/voice/003059.ogg"
+    l "「后来岁数大一点，网络也逐渐普及起来了，我知道这个世界上还有很多很繁华的城市。」"
+    voice "audio/voice/003060.ogg"
+    l "「但是，这也只是个『概念』上的理解，实际上如何，我并没有真正见识过。毕竟，隔着显示器，再怎么漂亮的图片，也没有什么真实感。」"
+    scene bg b12 #樱华市
+    with fade
+    voice "audio/voice/003061.ogg"
+    l "「所以，樱华，就是我对大城市的第一个直观的印象。」"
+    voice "audio/voice/003062.ogg"
+    l "「我们没钱自由行，那一次是跟团走的，几乎是被导游当成一群羊在赶，白天晚上连轴转，一个接一个地跑景点。」"
+    voice "audio/voice/003063.ogg"
+    l "「整个过程走马观花似的，就是不停地走、不停地看，很累，说实话也没玩出个什么名堂来，但是我就是很开心，因为我长见识了。」"
+    scene bg b12a #樱华市|夜晚
+    with dissolve
+    voice "audio/voice/003064.ogg"
+    l "「我第一次真切地感受到，一个城市可以这么大、这么高，可以有无数的高楼大厦，无论走到哪里都有灯光，哪怕是深夜也几乎看不到星星。」"
+    scene bg b02a #城区|秋
+    with fade
+    voice "audio/voice/003065.ogg"
+    l "「我终于明白一个真正的大城市，应该是一个什么样子。省城和樱华比起来，就好像拿咱们这儿和省城比一样，根本就没有可比性。」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with fade
+    "说到这里，梁芷柔停顿了一下，自嘲地笑了笑。"
+    y "「所以，你就想要以后去樱华发展么？」"
+    scene cg08c2 #梁芷柔河边CG-3|两人对视|浅笑|CG08c2
+    with dissolve
+    voice "audio/voice/003066.ogg"
+    l "「怎么会呢……当然不是了。」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/003067.ogg"
+    l "「那时候的我，虽然觉得樱华很好，很喜欢那里，但也就是以后还想再去一次，根本没考虑过未来的规划。」"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with dissolve
+    voice "audio/voice/003068.ogg"
+    l "「真正让我下定决心想要去那里发展的，是在一年以后。」"
+
+    scene bg b00a #天空|候鸟
+    with fade
+    voice "audio/voice/003069.ogg"
+    l "「你还记得高一暑假的时候，全国中学生数学竞赛么？」"
+    y "「哎？……啊，你参加的那一次吧，有印象有印象。」"
+    y "「毕竟从咱们学校出来的，杀过复赛到省队去参加全国决赛的，你是第一个人嘛。」"
+    "这事在当时算是搞了个大新闻，其他学生固然惊为天人，老师们也一个个与有荣焉的样子。梁芷柔的学霸之名，正是从那之后才在学校里变得人尽皆知。"
+    scene bg b12 #樱华市
+    with fade
+    voice "audio/voice/003070.ogg"
+    l "「嗯，那次全国决赛的地点，恰好，也是在樱华。所以仅仅时隔一年，我就又去了一回樱华。」"
+    voice "audio/voice/003071.ogg"
+    l "「但是这一次，就不是什么很好的回忆了。」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    voice "audio/voice/003072.ogg"
+    l "「那次比赛，学校那边宣传得是很好听，但是你知道吗？其实真正的结果是，我……或者说咱们省整个队，都是一败涂地，排名几乎垫底，什么成绩也没拿到。」"
+    y "「呃……？」"
+    voice "audio/voice/003073.ogg"
+    l "「这还不算完，那一次比赛实际上是以夏令营的形式举办的，除了考试的那两天以外，后面还有一段时间是在进行学校学生之间的交流互动。」"
+    scene cg08c6 #梁芷柔河边CG-3|男主侧身|苦笑|闭眼|CG08c6
+    with dissolve
+    voice "audio/voice/003074.ogg"
+    l "「真的……从那时候开始，我才算是真真正正地明白了，咱们这里，和那些大城市之间，差距到底有多大。」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    voice "audio/voice/003075.ogg"
+    l "「可能在你看来，我已经算是不错的了，但是跟那些大城市里名校出身的选手比，那根本不是一个级别的。」"
+    voice "audio/voice/003076.ogg"
+    l "「同样是高一，我的知识储备，无论在深度上还是广度上，都差得不是一星半点。」"
+    scene bg b00a #天空|候鸟
+    with fade
+    voice "audio/voice/003077.ogg"
+    l "「那已经不是说光靠努力就能弥补得上的了……因为人家一点也不比我懒，甚至要更拼命。」"
+    voice "audio/voice/003078.ogg"
+    l "「那些选手都很聪明，家庭条件也都不错，父母一辈就受过良好的教育，所以也就更重视这些，他们从小的教育环境就比咱们好得多。」"
+    voice "audio/voice/003079.ogg"
+    l "「拿学校来说，咱们学校总共三位高级教师，已经是学校的宝贝了，但是在那边的一所重点学校，特级教师都有十几位甚至更多，高级教师的资格只是门槛。」"
+    voice "audio/voice/003080.ogg"
+    l "「更不用说硬件设施了……那边早就已经普及电教了，咱们这边还是只能靠黑板。」"
+    scene bg b12 #樱华市
+    with fade
+    voice "audio/voice/003081.ogg"
+    l "「而且除了上学，那边学生的眼界也比咱们更加开阔。」"
+    voice "audio/voice/003082.ogg"
+    l "「他们可以随时随地获取他们想要的信息……在那些大城市，有许许多多的书店，还有图书馆，有浩如烟海的书籍供他们阅览，更不用说还有互联网了。」"
+    voice "audio/voice/003083.ogg"
+    l "「你想想，你第一次玩电脑是在什么时候？反正我是到了初中以后才接触电脑的。但是那些人，他们从小就人手一台电脑，十几年前家里就连通了网络，现在每人都在用智能手机……或者带着平板电脑，大街上到处都是无线WIFI。」"
+    voice "audio/voice/003084.ogg"
+    l "「……甚至于，就连玩，他们都比你会玩。」"
+    scene bg b00a #天空|候鸟
+    with fade
+    voice "audio/voice/003085.ogg"
+    l "「他们之中，几乎是没有那种书呆子型的，每个人都多多少少有一些个人的兴趣爱好，而且玩得还很深。」"
+    voice "audio/voice/003086.ogg"
+    l "「有爱看书、爱画画的、有爱唱歌的，也有爱爬山、爱打球、爱游泳的，哪怕是玩电脑，也有玩到精通，可以自己写程序、制作游戏的。」"
+    voice "audio/voice/003087.ogg"
+    l "「就拿读书来说，我想看的书其实挺多的，但买不起，恨不得节衣缩食才能买下一部分，甚至还有根本不知道该去哪儿买的。但那些人，他们就完全没有这些顾虑。」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003088.ogg"
+    l "「总而言之……你想想，当你看着一个个先天条件和后天条件都比你好，然后还比你更努力的人，在你眼前成群结队地晃悠的时候……你说我有多受打击。」"
+    y "「呃……」"
+    "的确，光是听着就觉得是人间惨剧了。"
+    scene bg b12a #樱华市|夜晚
+    with fade
+    voice "audio/voice/003089.ogg"
+    l "「到了最后，在我意志最消沉的时候，我无意中听到樱华那边负责带领我们的几个老师之间的聊天。」"
+    voice "audio/voice/003090.ogg"
+    l "「有一个在一路上都很照顾我的老师，和别的老师感叹。」"
+    voice "audio/voice/003091.ogg"
+    l "「她说，可惜我不是她班上的孩子，不然一定可以取得更好的成绩的。」"
+    voice "audio/voice/003092.ogg"
+    l "「她还说，我只能等高考了，考到樱华那样的城市里，考到那些名牌重点大学，否则的话，很有可能就此被埋没。」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with fade
+    y "「……」"
+    y "「所以你就……」"
+    voice "audio/voice/003093.ogg"
+    l "「是啊。」"
+    scene cg08c6 #梁芷柔河边CG-3|男主侧身|苦笑|闭眼|CG08c6
+    with dissolve
+    voice "audio/voice/003094.ogg"
+    l "「我是可以做到的，不是吗？」"
+    scene cg08c7 #梁芷柔河边CG-3|两人对视|含泪|CG08c7
+    with dissolve
+    voice "audio/voice/003095.ogg"
+    l "「我已经这么努力了。」"
+    voice "audio/voice/003096.ogg"
+    l "「再多努力一把，让它变得更有价值，何乐而不为呢？」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/003097.ogg"
+    l "「所以，如你所见，从高二开始，我比以前更加认真，更加努力。」"
+    voice "audio/voice/003098.ogg"
+    l "「我竭尽全力，想要保证自己能够在高考中成功。」"
+    y "「……」"
+    "的确……"
+    "听过这些话以后，我总算可以理解一些了。"
+    "她……梁芷柔她为什么要、以及为什么能够如此孜孜不倦地努力用功。"
+    "这个长期以来一直令我困惑的问题，随着视角的转变，终于抓住了一丝头绪。"
+    "然而眼下的我，却没有时间感悟这些。"
+    scene cg08c4 #梁芷柔河边CG-3|两人对视|浅笑|含泪|CG08c4
+    with dissolve
+    voice "audio/voice/003099.ogg"
+    l "「但是……」"
+    voice "audio/voice/003100.ogg"
+    l "「你说……我的选择，真的是对的吗？」"
+    y "「啊……哎、哎？」"
+    "不知为何，本已平静下来的梁芷柔居然说着说着又哽咽起来。"
+    y "「怎么了？为什么这么说？」"
+    voice "audio/voice/003101.ogg"
+    l "「前几天……前几天……」"
+    scene cg08c7 #梁芷柔河边CG-3|两人对视|含泪|CG08c7
+    with dissolve
+    "梁芷柔用力地吸了吸气，然后又长长地吐出来，将哭腔压了回去。"
+    voice "audio/voice/003102.ogg"
+    l "「前几天，周一吧。」"
+    voice "audio/voice/003103.ogg"
+    l "「郑老师专门跟我谈了谈。」"
+    y "「郑明老师？」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/003104.ogg"
+    l "「嗯……他跟我说，这次模拟诊断考试一定要沉住气，考出好成绩，给班上同学做出榜样来。」"
+    y "「哦……然后呢？」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    "梁芷柔轻轻摇摇头。"
+    y "「哎？呃……他好歹是咱们班主任，这么说说也没什么错吧？」"
+    scene cg08c6 #梁芷柔河边CG-3|男主侧身|苦笑|闭眼|CG08c6
+    with dissolve
+    voice "audio/voice/003105.ogg"
+    l "「是啊，是没什么错……」"
+    scene cg08c10 #梁芷柔河边CG-3|两人对视|忧伤|CG08c10
+    with dissolve
+    voice "audio/voice/003106.ogg"
+    l "「然后在周二，我去老师办公室搬卷子的时候，年级主任付老师把我叫到她那边，很关切地问我学习上还有没有什么拿不准的方面，要是有，她可以帮我想办法开小灶。」"
+    voice "audio/voice/003107.ogg"
+    l "「她跟我说，要把这次模拟诊断考试当成真正的高考来对待，绝对不能掉以轻心，只有这样才能真正检验出自己的水平，才能更好地在后面的阶段里弥补漏洞。」"
+    y "「……」"
+    scene cg08c8 #梁芷柔河边CG-3|两人对视|烦躁|CG08c8
+    with dissolve
+    voice "audio/voice/003108.ogg"
+    l "「呵呵……接着，周三，你还记得吗？晚自习的时候，我被老师叫出去了一小会儿。」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/003109.ogg"
+    l "「其实是余校长和教导主任过来了，说是例行巡视到咱们班了，所以就顺便找我聊一聊。」"
+    scene cg08c8 #梁芷柔河边CG-3|两人对视|烦躁|CG08c8
+    with dissolve
+    voice "audio/voice/003110.ogg"
+    l "「余校长……那个扑克脸，特别和蔼、真的是特别和蔼地问我复习得怎么样啦、考试有没有信心啊、压力大不大什么的。」"
+    scene cg08c9 #梁芷柔河边CG-3|两人对视|讽刺|CG08c9
+    with dissolve
+    voice "audio/voice/003111.ogg"
+    l "「呵呵呵……你说我压力大不大？」"
+    y "「呃……」"
+    "从第三者的角度听起来，整个事情似乎多少有些滑稽搞笑，不过换到当事人的角度，恐怕就不那么好玩了。"
+    scene cg08c8 #梁芷柔河边CG-3|两人对视|烦躁|CG08c8
+    with dissolve
+    voice "audio/voice/003112.ogg"
+    l "「真的……我觉得好累。」"
+    voice "audio/voice/003113.ogg"
+    l "「不是因为这次模拟考试……而是我有时候会想，我真的只要考到樱华去，就能更好么？」"
+    y "「怎么说……？」"
+    l "「……」"
+    scene cg08c6 #梁芷柔河边CG-3|男主侧身|苦笑|闭眼|CG08c6
+    with dissolve
+    voice "audio/voice/003114.ogg"
+    l "「你知道吗？那次比赛，樱华那边本地的几个选手，他们那些高中的老师根本就不会去关心这种模拟考试的。」"
+    voice "audio/voice/003115.ogg"
+    l "「甚至于，对于他们来说，高考都不是什么大问题。」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    voice "audio/voice/003116.ogg"
+    l "「呵……因为那些学校，每年连需要参加高考的学生都没有多少。」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003117.ogg"
+    l "「有的学校一个年级几百人，需要高考的只有十几个，其他的，早就保送或者预定出国留学了。」"
+    voice "audio/voice/003118.ogg"
+    l "「哪怕是剩下的这些人，一本率也在95\%以上，除了极个别的特殊学生，全都能考上不错的……对咱们这边的学生来说，是梦寐以求的学校。」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    voice "audio/voice/003119.ogg"
+    l "「你说，我到了那边，真的可以和这些人……去竞争么？」"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with dissolve
+    "梁芷柔说完以后，呆呆地望着河面看了好一会儿。"
+    "片刻之后……又把头转了回来。"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    l "「……」"
+    y "「……」"
+    "她这是……在期待我来说些什么吗？"
+    "说实话，这个问题不是我能回答得了的。"
+    "我从来没有见识过那样的世界，更无法体会到她此时的感受，这个问题根本就超脱了我所能理解的范畴。"
+    "但是……"
+    y "「我觉得，没问题吧。」"
+    voice "audio/voice/003120.ogg"
+    l "「嗯？」"
+    "我至少可以告诉她，我所能看到的她，是怎样的。"
+    y "「我不知道你是不是最近压力太大自己钻了牛角尖，看不清楚自己，开始妄自菲薄了。」"
+    y "「但是，在我看来……」"
+    y "「你就是最厉害的。」"
+    voice "audio/voice/003121.ogg"
+    l "「啊……」"
+    y "「这段时间我没少跟在你身边。我看得到，你是怎么努力的。所以我特别清楚你有多厉害。真的是很厉害。」"
+    y "「可能你的那些个未来的竞争对手也很厉害吧，但你可是在咱们省都能排的上号的学霸，再怎么说凡事也要讲个正态分布吧？你也是最顶尖的那一批啊！」"
+    scene cg08c2 #梁芷柔河边CG-3|两人对视|浅笑|CG08c2
+    with dissolve
+    voice "audio/voice/003122.ogg"
+    l "「呵呵……谢谢你。」"
+    "梁芷柔笑着摇摇头。"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    voice "audio/voice/003123.ogg"
+    l "「但是，真的不是这么简单的。」"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with dissolve
+    voice "audio/voice/003124.ogg"
+    l "「要光说考试，比如高考，我可能确实能比他们不少人考得都好吧……」"
+    y "「那不就……」"
+    scene cg08c6 #梁芷柔河边CG-3|男主侧身|苦笑|闭眼|CG08c6
+    with dissolve
+    voice "audio/voice/003125.ogg"
+    l "「但是呢，高考只是个转折点罢了。或者说，是个起点。」"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with dissolve
+    voice "audio/voice/003126.ogg"
+    l "「真正影响到你未来发展的，打基础的，还是得看大学这个阶段。」"
+    y "「……」"
+
+    scene bg b00a #天空|候鸟
+    with fade
+    voice "audio/voice/003127.ogg"
+    l "「高中以前，学的都是基础知识。说句实话，只要方法对头，肯下功夫，再怎么着也不会差到哪去的。」"
+    voice "audio/voice/003128.ogg"
+    l "「像咱们这样，哪怕没有那么好的教育条件，只要努力，像我，也一样可以考的不错。」"
+    voice "audio/voice/003129.ogg"
+    l "「但是，到了大学以后，再想光靠努力来解决一切问题，就不可能了。」"
+    voice "audio/voice/003130.ogg"
+    l "「那时候，努力所能决定的……只是一个人的下限。」"
+    voice "audio/voice/003131.ogg"
+    l "「它只能决定……你在自己的上下限之间，至少可以爬到一个什么位置。」"
+    y "「……」"
+    voice "audio/voice/003132.ogg"
+    l "「而决定一个人上限的因素，有很多很多。」"
+    voice "audio/voice/003133.ogg"
+    l "「你的天赋、你的教育环境、你的心态，还有各种机遇……」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003134.ogg"
+    l "「呵……别说这些了，等到了大学，我可能连像现在这样去努力都做不到。」"
+    scene cg08c10 #梁芷柔河边CG-3|两人对视|忧伤|CG08c10
+    with dissolve
+    voice "audio/voice/003135.ogg"
+    l "「我家的经济条件不算宽裕。我以前也跟你说过，为了我上大学，我们全家都在节衣缩食。」"
+    y "「嗯。」"
+    voice "audio/voice/003136.ogg"
+    l "「但即便如此，负担学费和基本的生活费，就已经是我家的极限了，我在那边除了住宿和食堂以外，所有的花销，都是额外的。」"
+    voice "audio/voice/003137.ogg"
+    l "「在樱华那样的地方，想要一点钱不花，几乎不现实。我肯定得去打工养活自己。」"
+    y "「奖学金呢？」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003138.ogg"
+    l "「学校的学业奖学金数额没多高的。至于其他类型的奖金，经常是还需要参加各种评选、比赛和社会活动来加分，换算下来，其实和打工没什么区别，风险还更大，很有可能最后都拿不到的。」"
+    scene cg08c10 #梁芷柔河边CG-3|两人对视|忧伤|CG08c10
+    with dissolve
+    voice "audio/voice/003139.ogg"
+    l "「总之，到了那边，我不可能再像现在这样什么都不用想，只要好好学习就成了。」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    voice "audio/voice/003140.ogg"
+    l "「可是……那些大城市出身的学生，他们就没有这么多的顾虑。」"
+    voice "audio/voice/003141.ogg"
+    l "「只要是真的想学，很少会有节外生枝的障碍阻拦他们。」"
+    scene cg08c6 #梁芷柔河边CG-3|男主侧身|苦笑|闭眼|CG08c6
+    with dissolve
+    voice "audio/voice/003142.ogg"
+    l "「要想赶上他们，我就得付出超过现在很多、很多的精力才行……还未必一定能赶得上。」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/003143.ogg"
+    l "「可是，我能不去追吗？我拼命想要往那边考，总不能真等考上了以后，就这么碌碌无为熬个四年，最后只是蹭一张名牌大学的文凭出来吧？」"
+    y "「……」"
+    scene cg08c10 #梁芷柔河边CG-3|两人对视|忧伤|CG08c10
+    with dissolve
+    voice "audio/voice/003144.ogg"
+    l "「不可能，我不甘心的……真的……」"
+    scene cg08c7 #梁芷柔河边CG-3|两人对视|含泪|CG08c7
+    with dissolve
+    voice "audio/voice/003145.ogg"
+    l "「可是，我真的是……真的是……」"
+    voice "audio/voice/003146.ogg"
+    l "「我真的是不知道……不知道我能不能做到……」"
+    "梁芷柔一边说，一边像是想要否定一切似的，不停地摇头叹气。"
+    "我已经记不清这是她今天第几次这样了。"
+    "一直以来，在我眼中的梁芷柔，总是乐观、积极，目标明确，行动果断的。"
+    "然而，现在的她却是如此的脆弱，如此……凄凉。"
+    "这既让我感到心痛，也让我感到……自己的无力。"
+
+    scene bg black #黑屏
+    with fade
+    "我帮不上她，甚至触摸不到她的世界。"
+    "往日的踌躇、怠惰，在这一刻终于全都转化为现实的报应。"
+    "如果，如果我能再多努力一点，再多向她的世界靠拢一点……"
+    "是不是，在这个时候，就可以多支持她一点呢？"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with fade
+    voice "audio/voice/003147.ogg"
+    l "「唉……」"
+    voice "audio/voice/003148.ogg"
+    l "「你说，我是不是就好像那些夏候鸟一样。」"
+    scene bg b00a #天空|候鸟
+    with fade
+    voice "audio/voice/003149.ogg"
+    l "「到了春天，一路向北，费尽千辛万苦到达了目的地，自以为攀上了人生的高峰。」"
+    scene bg b00 #天空
+    with dissolve
+    voice "audio/voice/003150.ogg"
+    l "「殊不知，那座『高峰』，对于冬候鸟而言，却仅仅只是他们旅程的出发点而已。」"
+    y "「……」"
+    voice "audio/voice/003151.ogg"
+    l "「那些冬候鸟所追求的目标，是夏候鸟难以想象的……甚至于，那是一个夏候鸟根本不可能生存的环境。」"
+    voice "audio/voice/003152.ogg"
+    l "「而哪怕是那些不愿意外出闯荡的留鸟，也可以很轻松自在地生活，在那些夏候鸟……我们，需要付出无数努力才能到达的地方。」"
+    voice "audio/voice/003153.ogg"
+    l "「是不是……这样呢？」"
+    scene cg08b #梁芷柔河边CG-2|两人并排|CG08b
+    with fade
+    y "「……」"
+    y "「我觉得，不是。」"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with dissolve
+    y "「我这么比喻不知道对不对。」"
+    y "「但是，如果用候鸟来打比方的话，至少，我真的是觉得，你已经是冬候鸟了。」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/003154.ogg"
+    l "「……嗯？」"
+    y "「要说的话，我才是那只夏候鸟……不，我连夏候鸟可能都算不上，得是夏候鸟那边的留鸟。」"
+    y "「你看，我之前一直都觉得自己学习成绩可以了，在班里算排名靠前的，能考个二本，比起其他那些家伙，算是挺不错的了。」"
+    y "「我这人懒，要没人推着，我可能到现在还都懒得动呢。」"
+    y "「但是，你看我现在，还是动了。」"
+    y "「一本的大学啊……以前我也就是睡觉的时候想想，做个梦，可你看现在，反正我是觉得我继续这么下去应该能考上，没问题，对不对？」"
+    voice "audio/voice/003155.ogg"
+    l "「嗯……」"
+    y "「这都是因为你，是不是？你一直鼓励我，说我能行，给我指出一条路来。」"
+    y "「真的……要不是你，要不是我看着你这么努力，让我也想、也跟着你一起努了一把力，我哪可能有现在这种进步。」"
+    y "「你……是我的目标啊，我都开始往前走了，你又哪能止步不前呢？」"
+    y "「拿出信心来吧，你可是我『姐姐』呢！对不对？」"
+    voice "audio/voice/003156.ogg"
+    l "「啊……」"
+    l "「……」"
+    scene cg08c2 #梁芷柔河边CG-3|两人对视|浅笑|CG08c2
+    with dissolve
+    voice "audio/voice/003157.ogg"
+    l "「呵呵……说的也是呢。」"
+    voice "audio/voice/003158.ogg"
+    l "「谢谢你。真的，跟你这么聊了聊，感觉好多了。」"
+    voice "audio/voice/003159.ogg"
+    l "「呼……」"
+    voice "audio/voice/003160.ogg"
+    l "「……雨潇。」"
+    y "「嗯。」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003161.ogg"
+    l "「谢谢你。」"
+    y "「哎？」"
+    "梁芷柔又一次道了谢。"
+    "只是，刚刚将愁眉舒展开来的她，不知何故，突然又露出了悲伤的表情。"
+    scene cg08c4 #梁芷柔河边CG-3|两人对视|浅笑|含泪|CG08c4
+    with dissolve
+    voice "audio/voice/003162.ogg"
+    l "「谢谢你，在我难过的时候能陪着我……」"
+    voice "audio/voice/003163.ogg"
+    l "「谢谢你在天黑的时候能陪我走夜路，在我遇到危险的时候会上来保护我……」"
+    voice "audio/voice/003164.ogg"
+    l "「一直都支持我，还想方设法给我鼓劲……」"
+    voice "audio/voice/003165.ogg"
+    l "「谢谢你……」"
+    y "「……」"
+    voice "audio/voice/003166.ogg"
+    l "「可是……等过了明年，高三、高考完以后呢？」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003167.ogg"
+    l "「我们就要各奔东西了。」"
+    y "「什——」"
+    voice "audio/voice/003168.ogg"
+    l "「你会去到省城的大学，再努努劲，没准还能考上百薇？」"
+    voice "audio/voice/003169.ogg"
+    l "「对吧。离家也近，周围的同学也多……」"
+    l "「……」"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with dissolve
+    voice "audio/voice/003170.ogg"
+    l "「而樱华……在那边，只有我一个人。」"
+    with hpunch
+    y "「——！」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    voice "audio/voice/003171.ogg"
+    l "「我们隔着几千里地。」"
+    scene cg08c6 #梁芷柔河边CG-3|男主侧身|苦笑|闭眼|CG08c6
+    with dissolve
+    voice "audio/voice/003172.ogg"
+    l "「陌生的城市，陌生的学校，陌生的同学。」"
+    scene cg08c5 #梁芷柔河边CG-3|男主侧身|苦笑|CG08c5
+    with dissolve
+    voice "audio/voice/003173.ogg"
+    l "「无论发生什么事，所有的一切都需要我自己一个人去面对。」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003174.ogg"
+    l "「到了那时候，在我的身边，又还有谁，能像你这样支持我呢？」"
+    y "「这……」"
+    scene cg08c10 #梁芷柔河边CG-3|两人对视|忧伤|CG08c10
+    with dissolve
+    voice "audio/voice/003175.ogg"
+    l "「我不知道……自己有没有那么坚强。」"
+    scene cg08c3 #梁芷柔河边CG-3|两人对视|浅笑|忧伤|CG08c3
+    with dissolve
+    voice "audio/voice/003176.ogg"
+    l "「我不是冬候鸟，我和你一样的。」"
+    voice "audio/voice/003177.ogg"
+    l "「虽然嚷嚷着想要去樱华、留在樱华，但是说到底，我的根始终还在这里啊。」"
+    scene cg08c10 #梁芷柔河边CG-3|两人对视|忧伤|CG08c10
+    with dissolve
+    voice "audio/voice/003178.ogg"
+    l "「我呢，哪怕将来一切顺利，我真的留在了那边，每到逢年过节的，总也要回来的。」"
+    scene bg b00a #天空|候鸟
+    with fade
+    voice "audio/voice/003179.ogg"
+    l "「真的就像候鸟一样。」"
+    voice "audio/voice/003180.ogg"
+    l "「只不过，这只候鸟，落了单，有点孤独。」"
+    scene bg b00 #天空
+    with dissolve
+    l "「……」"
+    voice "audio/voice/003181.ogg"
+    l "「……呼。」"
+    voice "audio/voice/003182.ogg"
+    l "「但是，也没办法，我必须去面对这些。这是代价，而且是我自作自受的。」"
+    "梁芷柔长长地吐出一口气。她似乎终于发泄完了所有积压在内心深处的郁气，接下来再也没有言语，只是怅然地仰望着天空。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    scene bg b04a #滨河路|秋
+    with fade
+    "将梁芷柔送到公交车站以后，我独自一人踏上了回家的路。"
+    y "「……」"
+    y "「…………」"
+    with vpunch
+    "用力地，朝着空气狠狠挥了一下拳头。"
+    y "「妈的！」"
+    with vpunch
+    "我为什么不再多努一把力！"
+    with vpunch
+    "我为什么会觉得自己已经够努力的了！？"
+    with vpunch
+    "我为什么不早点想明白这种事！"
+    scene bg b05a #湿地公园|秋
+    with fade
+    with hpunch
+    y "「我他妈怎么这么没用！」"
+    with hpunch
+    y "「啊啊————————————！」"
+    y "「……呼哧，呼哧。」"
+    with vpunch
+    "——啪！"
+    "我扬起头，用力地拍了拍自己的脸，像是要把自己打醒一样。"
+    scene bg black #黑屏
+    with fade
+    y "「……呼。」"
+    scene bg b00 #天空
+    with fade
+    y "「……」"
+    stop music fadeout 2.5
+    y "「不……」"
+    y "「还没到放弃的时候……」"
+    scene bg black #黑屏
+    with fade
+    y "「还有……7个月呢。」"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t08 #转场 樱华市
+    with fade
+    pause
+
+#04.寒冬
+
+    $ chapter = "04"
+
+#11月下旬。
+
+    scene bg b02c #城区|冬
+    with fade
+    "11月的下旬，秋意渐远，而凛冬将至。"
+
+    scene bg b01 #教室
+    with fade
+    show charaz h04a #老师立绘|冬季|咆哮
+    with dissolve
+    voice "audio/voice/014001.ogg"
+    z "「……你们现在最大的问题就是文盲！文盲知道什么意思吗？还不识字呢怎么能做得对题呀！？所以说，你们必须把词汇表给我背下来！啊？」"
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/014002.ogg"
+    z "「别说什么不会背、不会背的！我告诉你们，这事没什么难的，只要下苦功夫，谁都能背得下来！啊，咱们班上又不是没有这样的例子！你们就不能学学人家？」"
+    show charaz h04a #老师立绘|冬季|咆哮
+    with dissolve
+    voice "audio/voice/014003.ogg"
+    z "「我告诉你们啊，下个星期我检查！啊！那几个一贯考不过去的，你们自己想想后果——别看了，说的就是你！瞎瞅什么呢！？你还笑是不是，回头我把你爸叫过来，看你还笑不笑得出来……」"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    play audio "audio/sound/effect06.ogg" noloop
+    scene bg b01 #教室
+    with fade
+    "…………"
+    "下午的第一节课终于结束了。"
+    play sound "audio/sound/ambientnoise09.ogg" fadein 2.5 loop #人群嘈杂环境噪音
+    "班主任的咆哮与响彻全校的下课铃声混在一起，成为这场暴风骤雨般的洗礼的完美收尾。"
+    "老师前脚才离开讲台，班上已然炸了锅。同学们如同一群被捅了窝的蜜蜂一般，一瞬间就四散开来，教室里充满了喧嚣。"
+    y "「……唉。」"
+    scene bg black #黑屏
+    with fade
+    "我把头拍在课本里，就这么闭着眼睛，含含糊糊地叹了口气，仿佛这样就能够获得短暂的安宁。"
+    "想要长时间保持专注，真的是不容易啊……即便心理上已经有所准备，身体上的疲惫依然是不可避免的。"
+    y "「（吸——）」"
+    y "「——呼！」"
+    scene bg b01 #教室
+    with vpunch
+    "用力地抬起头，将气呼出来的同时，猛地把眼睁开。"
+    y "「（不能松懈……）」"
+    stop sound fadeout 3.0
+    scene bg b00 #天空
+    with fade
+    "距离第一次模拟诊断考试还有不到半个月。"
+    "时间……对我来说，曾经可以肆意挥霍的时间，如今已经变成了弥足珍贵的奢侈品。"
+    scene bg b05a #湿地公园|秋
+    show chara d07a #梁芷柔立绘|秋季私服|消沉1
+    show memories #回忆滤镜
+    with dissolve
+    "与梁芷柔在河边的那次交谈，已经是将近两周以前的事了。"
+    "那天的事，我俩都闭口不再谈起，就好像从未发生过一样。"
+    scene bg black #黑屏
+    with fade
+    "但是，有些东西，已经悄然改变了。"
+    "……"
+    "…………"
+    scene bg b01a #教室|夜
+    with fade
+    play sound "audio/sound/ambientnoise10.ogg" fadein 1.5 loop #安静学习环境噪音
+    "晚自习。"
+    "随着日期的推移，学校的压力也越来越大。"
+    "自习逐渐变成了各科老师的串讲，剩下的时间也被置于监督之下，而不是只凭各人自觉。"
+    "不过，对于现在的我来说，这倒并不是什么坏事。"
+    "大多数人都被堆积如山的作业所支配，不再像以前那样干什么的都有，教室里的秩序可谓是空前良好。"
+    "对真正想要学习的人来说，这样的环境再合适不过了。"
+    y "「……」"
+    y "「……」"
+    y "「…………」"
+    y "「（好，接下来的是……）」"
+    y "「……」"
+    y "「…………」"
+    scene cg01e #梁芷柔听讲CG-5|做题|CG01e
+    with fade
+    "偶尔，我会朝梁芷柔的方向看一看。"
+    l "「……」"
+    "只是，无论何时，看到的总是她聚精会神的模样。"
+    "……她并非超人。她也会疲惫，无论身心。"
+    "只不过，与其他人不一样的是……她早就已经明确了自己的目标，并且会坚定不移地为之前行。"
+    scene bg b01a #教室|夜
+    with fade
+    y "「……」"
+    "在我曾经以为自己已经开始了解、接近了梁芷柔的那段时间里，一直能够感觉到彼此之间有着一层无形但确实存在的屏障。"
+    "那时的我还不明白……还以为那只是由于我和她差距过大而导致的隔阂。"
+    scene bg black #黑屏
+    with fade
+    "但是……此时此刻，我已经非常清楚地认识到，那所谓的「隔阂」，并非仅仅是我们此前「已有」的差距，更是我们时至今日「仍在」不断拉开的距离。"
+    scene bg b01a #教室|夜
+    with fade
+    "现在的我，喜欢梁芷柔。"
+    "而以前的我，是憧憬梁芷柔。"
+    "因为憧憬，所以仰望……但却不了解。"
+    "所以，也只会说出南辕北辙的、苍白无力的话语。"
+    "她追寻的梦想、她付出的努力、她遇到的困惑。"
+    "如果这一切全都未曾体会过，我又怎么可能真正理解得了她呢？"
+    stop sound fadeout 3.0
+    "……"
+    "…………"
+    play audio "audio/sound/effect06.ogg" noloop
+    pause
+    y "「啊……」"
+    "下课铃响了。"
+    y "「……」"
+    y "「呼。」"
+    play sound "audio/sound/ambientnoise09.ogg" fadein 2.5 loop #人群嘈杂环境噪音
+    "我放下笔，合上了卷子。"
+    y "「已经是这个点了啊。」"
+    "时钟指向8点40分，第二节晚自习结束了。"
+    "后面还有最后一节……幸亏我们学校历来都是走读制，没有宿舍，不然老师们恨不得要让我们住在学校。"
+    y "「……」"
+    "坚持……是肯定要坚持下去的。"
+    "要是连这点程度都受不了，那我不如趁早放弃算了。"
+    "不过，在下一节课到来之前，还是尽量休息一下，养精蓄锐吧……"
+    scene bg black #黑屏
+    with fade
+    stop sound fadeout 3.0
+    "……"
+    "…………"
+    voice "audio/voice/004001.ogg"
+    who "「哟。」"
+    "朦胧之中，听到了一个熟悉的声音。"
+    scene bg b01a #教室|夜
+    show memories #回忆滤镜
+    with dissolve
+    y "「啊……啊？啥啊？……」"
+    voice "audio/voice/004002.ogg"
+    who "「嗯～还活着呐？」"
+    y "「哦……我死了。」"
+    scene bg black #黑屏
+    with fade
+    voice "audio/voice/004003.ogg"
+    who "「噗……喂，醒醒！」"
+    y "「嗯……」"
+    voice "audio/voice/004004.ogg"
+    who "「别睡啦！怎么搞的，这么惨……」"
+    y "「嗯……」"
+    voice "audio/voice/004005.ogg"
+    who "「起来啦，上课铃都响了……」"
+    y "「……嗯……没有吧……我怎么没听见……」"
+    y "「……呼噜……」"
+    voice "audio/voice/004006.ogg"
+    who "「……？」"
+    y "「……呼噜……呼噜！」"
+    voice "audio/voice/004007.ogg"
+    who "「哎……」"
+    y "「……呼噜！呼噜！！」"
+    "……"
+    "…………"
+    voice "audio/voice/004008.ogg"
+    who "「喂，喂！」"
+    voice "audio/voice/004009.ogg"
+    who "「醒醒！真上课了！」"
+    y "「……嗯……我没睡……」"
+    y "「……呼噜！」"
+    "……"
+    "…………"
+    voice "audio/voice/004010.ogg"
+    l "「你给我起来！」"
+    play sound "audio/sound/effect20.ogg" noloop
+    scene bg b01a #教室|夜
+    with vpunch
+    y "「哇！」"
+    play music "audio/music/bgm08.ogg" fadein 1.5 #其乐无穷
+    "脑袋被狠狠拍了一巴掌，一下子驱散了所有的睡意。"
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
+    "睁开眼睛，看到梁芷柔正在怒目瞪视着我。"
+    play sound "audio/sound/effect21.ogg" noloop
+    "给她这幅表情伴奏的，是全班同学哄堂大笑的声音。"
+    y "「呃……」"
+    voice "audio/voice/004011.ogg"
+    l "「醒啦？」"
+    y "「醒了……」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
+    voice "audio/voice/004012.ogg"
+    l "「终于肯醒啦？」"
+    y "「呃……呵呵……那个……」"
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
+    voice "audio/voice/004013.ogg"
+    l "「呵什么呵啊，知道我为什么要打你吗？」"
+    y "「啊？」"
+    show chara lb02 #梁芷柔立绘|冬季校服|皱眉|近
+    with dissolve
+    voice "audio/voice/004014.ogg"
+    l "「就算是自习课，你真困了想睡觉也就罢了，求您动静小点成么？」"
+    y "「呃……什么情况？」"
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
+    voice "audio/voice/004015.ogg"
+    l "「你自己睡觉，能不能不要打扰别人？」"
+    y "「……？？？」"
+    "在我茫然不解的时候，旁边有好事的同学跑过来，一脸班长大人的狗腿子的模样，拿出手机，播放了一段录像给我看。"
+    "山寨手机那特有的超大音量响彻教室。"
+    play sound "audio/sound/effect24.ogg" loop
+    y "「……呼噜……呼噜……呼噜！！！！……呼噜……嗯嗯……呼……呼噜！！！！……」"
+    stop sound fadeout 3.0
+
+    y "「……」"
+    l "「……」"
+    y "「呃……我……」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
+    voice "audio/voice/004016.ogg"
+    l "「明白啦？」"
+    y "「明白了……」"
+    "在班长模式的梁芷柔那强大的气场面前，我情不自禁地缩起了脖子。"
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
+    voice "audio/voice/004017.ogg"
+    l "「别再睡了啊！」"
+    y "「是……」"
+    show chara lb09 #梁芷柔立绘|冬季校服|坏笑|近
+    with dissolve
+    voice "audio/voice/004018.ogg"
+    l "「要睡……去一边偷偷睡去！」"
+    y "「呃……」"
+    play sound "audio/sound/effect21.ogg" noloop
+    e "「哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈。」"
+    "伴随着梁芷柔的笑场，全班同学也像是打开了什么阀门一样，又一次发出了惊天动地的哄堂大笑。"
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
+    voice "audio/voice/004019.ogg"
+    l "「安静！安静点，想把老师招来啊！？」"
+    "以及，班长大人慌张的镇压声。"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b04b #滨河路|夜
+    with fade
+    y "「唉………………」"
+    "顶着满天的星星，我一边长吁短叹，一边走在回家的路上。"
+    y "「这么下去不行啊……」"
+    "这种自己给自己加码的高强度学习状态已经维持了一段时间了，出乎我意料的是，身体居然比精神更早一步产生了抗拒。"
+    "其中的一大特征就是变得嗜睡……原本还以为能够靠课间休息时的闭目假寐缓一缓来着，但看今天这情况，恐怕也就是杯水车薪罢了。"
+    "这不是光靠意志力就能解决的问题……看来时间的安排还需要更合理一些才行。"
+    y "「……」"
+    y "「是啊……」"
+    y "「真是……不容易啊……」"
+    "越是到这种时候，这种感觉越是强烈。"
+    "当我开始尝试着像她那样努力的时候……"
+    "我才明白……她究竟付出了多少努力，又曾遇到过怎样的困难。"
+    scene bg b00c #天空|夜
+    with fade
+    "……我终于开始去真正地了解她了。"
+    "如果，我能继续沿着这条路走下去的话，或许会有那么一天，我可以和她拥有共同的语言。"
+    "直到那时，我们，才可以真正地「开始」。"
+    scene bg black #黑屏
+    with fade
+    "就不知，还能不能来得及了……"
+    "……"
+    "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t01 #转场 教室
+    with fade
+    pause
+
+#随后的周末。
+
+    scene bg b02c #城区|冬
+    with fade
+    "……第二天，一个难得的休息日。"
+
+    play sound "audio/sound/effect03.ogg" noloop
+    pause
+    stop sound
+
+    play sound "audio/sound/ambientnoise04.ogg" fadein 1.5 loop #白天环境噪音
+    y "「……喂？」"
+    voice "audio/voice/004020.ogg"
+    l "「早上好啊，你现在方便吗？没打扰你休息吧？」"
+    y "「啊？哦，没有啊，我在看书呢。怎么想起给我打电话来了？」"
+    voice "audio/voice/004021.ogg"
+    l "「嘻嘻，那就好。」"
+    voice "audio/voice/004022.ogg"
+    l "「我嘛，当然是来抓壮丁的咯。」"
+    y "「啊？」"
+    voice "audio/voice/004023.ogg"
+    l "「我在你家楼底下呢，你要是没事的话，来帮个忙呗？」"
+    y "「……哈？」"
+    voice "audio/voice/004024.ogg"
+    l "「可以吗？」"
+    y "「哦……噢，你稍微等一下，我换衣服。」"
+    scene bg black #黑屏
+    with fade
+    stop sound fadeout 3.0
+    "……"
+    "…………"
+
+    play music "audio/music/bgm04.ogg" fadein 1.5 #冬～苍雪～
+    scene bg b04c #滨河路|冬
+    with fade
+    show chara e09 #梁芷柔立绘|冬季私服|坏笑
+    with dissolve
+    voice "audio/voice/004025.ogg"
+    l "「哟，睡神。」"
+    y "「喂！」"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/004026.ogg"
+    l "「哈哈哈。」"
+    y "「……欺负我好玩吗？」"
+    show chara e09 #梁芷柔立绘|冬季私服|坏笑
+    with dissolve
+    voice "audio/voice/004027.ogg"
+    l "「好玩啊！」"
+    y "「……」"
+    show chara e07b #梁芷柔立绘|冬季私服|消沉2
+    with dissolve
+    voice "audio/voice/004028.ogg"
+    l "「咳咳！」"
+    show chara e07a #梁芷柔立绘|冬季私服|消沉1
+    with dissolve
+    voice "audio/voice/004029.ogg"
+    l "「真没打扰你休息吧？虽然是这个点了，但就怕万一嘛……」"
+    y "「我就算是头猪，11点也该起床了」"
+    show chara e13a #梁芷柔立绘|冬季私服|疑惑1
+    with dissolve
+    voice "audio/voice/004030.ogg"
+    l "「噢，那就好。」"
+    y "「所以呢，班长大人您有何指教啊？」"
+    show chara e09 #梁芷柔立绘|冬季私服|坏笑
+    with dissolve
+    voice "audio/voice/004031.ogg"
+    l "「都说了是抓壮丁啊，跟我来呗！」"
+    y "「……啊？」"
+    scene bg b08b #新城区|冬
+    with fade
+    "……"
+    "…………"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/004032.ogg"
+    l "「♪～」"
+    y "「……」"
+    hide chara
+    with dissolve
+    "我亦步亦趋地跟在梁芷柔的身后。"
+    "看这方向，是要去书店吧……所谓的「抓壮丁」应该就是让我帮忙搬书了。"
+    "不过这还真是稀奇，毕竟平时梁芷柔都是尽量避免给别人添麻烦的。"
+    "是因为这次的书太多了？还是有别的什么事……"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/004033.ogg"
+    l "「♫～～」"
+    y "「（从表情上看不出来啊……）」"
+    "梁芷柔心情似乎还算不错，路上一直哼着小曲儿，笑眯眯的。"
+    "一时半会儿想不出有什么可能……算了，还是直接问吧。"
+    y "「我说。」"
+    show chara e13b #梁芷柔立绘|冬季私服|疑惑2
+    with dissolve
+    voice "audio/voice/004034.ogg"
+    l "「嗯？」"
+    y "「咱们这是去书店吧？」"
+    show chara e11 #梁芷柔立绘|冬季私服|微笑
+    with dissolve
+    voice "audio/voice/004035.ogg"
+    l "「是呀。」"
+    y "「你又订了什么啊？」"
+    show chara e09 #梁芷柔立绘|冬季私服|坏笑
+    with dissolve
+    voice "audio/voice/004036.ogg"
+    l "「嘻嘻，你猜？」"
+    y "「五什么三什么的那一摞吗？」"
+    show chara e03 #梁芷柔立绘|冬季私服|生气
+    with dissolve
+    voice "audio/voice/004037.ogg"
+    l "「哎哎哎，我还不至于对做题饥渴到这个份上哎！」"
+    y "「那还能是什么啊……」"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/004038.ogg"
+    l "「都是闲书啦，待会儿你就看到啦！」"
+    y "「……」"
+    y "「很多吗？」"
+    show chara e13b #梁芷柔立绘|冬季私服|疑惑2
+    with dissolve
+    voice "audio/voice/004039.ogg"
+    l "「嗯……不少吧，要不然干嘛抓你来呢？」"
+    y "「要这么说的话，其实你跟店里说一声，我去取了回头给你带过去不就完了。」"
+    show chara e05a #梁芷柔立绘|冬季私服|苦笑1
+    with dissolve
+    voice "audio/voice/004040.ogg"
+    l "「那不合适吧……」"
+    y "「这有啥不合适的，你还跟我客气这个。」"
+    show chara e13a #梁芷柔立绘|冬季私服|疑惑1
+    with dissolve
+    voice "audio/voice/004041.ogg"
+    l "「没有啊，我是在想，带着那么一堆闲书去学校的话会不会太招摇了？」"
+    y "「……呃。」"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/004042.ogg"
+    l "「嘻嘻，开玩笑啦，其实主要还是我等不及了嘛，想要今天就能看到。」"
+    y "「所以说你到底都订了些什么啊……」"
+    show chara e11 #梁芷柔立绘|冬季私服|微笑
+    with dissolve
+    voice "audio/voice/004043.ogg"
+    l "「嗯？就是些小说啊剧本啊什么的……哎呀，马上就要到了，到时候你就知道了，别着急，啊。」"
+    y "「因为我真的很好奇啊。」"
+    show chara e13b #梁芷柔立绘|冬季私服|疑惑2
+    with dissolve
+    voice "audio/voice/004044.ogg"
+    l "「为什么呀？」"
+    y "「您老人家平时不都是订一堆参考书啊习题集啊什么的，然后再捎带几本课外读物嘛。」"
+    show chara e13a #梁芷柔立绘|冬季私服|疑惑1
+    with dissolve
+    voice "audio/voice/004045.ogg"
+    l "「嗯？嗯……好像，是吧。」"
+    y "「所以说，『都是』闲书，还这么急着看，不奇怪吗？」"
+    show chara e05b #梁芷柔立绘|冬季私服|苦笑2
+    with dissolve
+    voice "audio/voice/004046.ogg"
+    l "「嗯……其实要说着急，倒也没急到那个份上。」"
+    y "「哈？」"
+    show chara e11 #梁芷柔立绘|冬季私服|微笑
+    with dissolve
+    voice "audio/voice/004047.ogg"
+    l "「反正一会儿就能看到啦，多一点耐心不好吗？要知道心急吃不了热豆腐的。」"
+    y "「……好好好，你说了算。」"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/004048.ogg"
+    l "「嘻嘻。」"
+    "梁芷柔一脸神神秘秘的，让我有些摸不到头脑。"
+    "不过，以我对她的印象来看，多半是有什么猫腻在里面。"
+    hide chara
+    with dissolve
+    "……算了，反正也快到了。"
+    "就让我看看你葫芦里卖的是什么药吧！"
+    stop music fadeout 2.5
+    "……"
+    "…………"
+
+    scene bg b09 #书店
+    with fade
+    play sound "audio/sound/effect11.ogg" noloop
+    pause 1.5
+
+    play sound "audio/sound/ambientnoise07.ogg" fadein 1.5 loop #书店环境噪音
+    show charad sg04 #书店店员立绘|坏笑|远
+    with dissolve
+    voice "audio/voice/024001.ogg"
+    d "「欢迎……哎哟，你们俩啊！」"
+    "一进门，店员小姐就热情地迎了上来。"
+    show charad g01 at left #书店店员立绘|普通
+    show chara e11 at right #梁芷柔立绘|冬季私服|微笑
+    with dissolve
+    voice "audio/voice/004049.ogg"
+    l "「对啊，抓了壮丁就来了。」"
+    show charad g04 #书店店员立绘|坏笑
+    with dissolve
+    voice "audio/voice/024002.ogg"
+    d "「嚯嚯……」"
+    y "「……」"
+    "店员小姐投来了意味深长的目光。"
+    "……这种时候还是当做没看见吧。"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    voice "audio/voice/024003.ogg"
+    d "「好吧，你的书在这儿，你自己看吧。」"
+    voice "audio/voice/024004.ogg"
+    d "「……我反正是一个字都不会念。」"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/004050.ogg"
+    l "「好～好。」"
+    hide chara
+    hide charad
+    with dissolve
+    y "「……」"
+    "店员小姐的外语水平不怎么样我是知道的，也就是说……"
+    "难道都是外文书？"
+    voice "audio/voice/004051.ogg"
+    l "「嗯……我看看……」"
+    voice "audio/voice/004052.ogg"
+    l "「嗯嗯……嗯……应该是没错。」"
+    y "「你到底买了啥啊？」"
+    "我忍不住探头过去……"
+    show chara le13a #梁芷柔立绘|冬季私服|疑惑1|近
+    with dissolve
+    "呜哇……满眼外文。"
+#寻迹、寄甡
+    y "「《A story of a song》、《Symbiotic Love》……」"
+#忆夏之铃、夏空的蒲公英、回忆忘却之匣
+    y "「《Summer memory of bell》、《Dandelions in the sky》、《Memory Oblivion Box》……」"
+#梦末、Leaflet、枕边少女、我与我行将离去的小友
+    y "「《Dream Ending》、《Leaflet love story》、《MOE Hypnotist》、《The Last Companion》……」"
+    y "「……」"
+    y "「…………」"
+    y "「……你这是买了多少啊！？」"
+    show chara le05a #梁芷柔立绘|冬季私服|苦笑1|近
+    with dissolve
+    voice "audio/voice/004053.ogg"
+    l "「嘻嘻，打折嘛！」"
+    y "「打折……这是把卖书的打死了吧……」"
+    show chara le05a at right #梁芷柔立绘|冬季私服|苦笑1|近
+    show charad lg02 at left #书店店员立绘|惊讶|近
+    with dissolve
+    voice "audio/voice/024005.ogg"
+    d "「哎哎哎，我可还活得好好的！」"
+    "店员小姐和我也算很熟了，一边装作气愤的模样猛拍我的肩膀，一边见缝插针地推销商品。"
+    show chara le13b #梁芷柔立绘|冬季私服|疑惑2|近
+    show charad lg03 #书店店员立绘|笑容|近
+    with dissolve
+    voice "audio/voice/024006.ogg"
+    d "「不过这一批确实是赶上了，都挺便宜的，我按二手价进的，你要是有兴趣也可以看看哦，我这儿有目录。」"
+    y "「呃，谢谢，不用了……」"
+    hide charad
+    show chara le13b at truecenter #梁芷柔立绘|冬季私服|疑惑2|近
+    with dissolve
+    y "「所以咧？这都是些啥书啊？」"
+    show chara le10 #梁芷柔立绘|冬季私服|开心|近
+    with dissolve
+    voice "audio/voice/004054.ogg"
+    l "「都说了是闲书啊，小说啦，剧本啊什么的。」"
+    y "「这全都是英文的？」"
+    show chara le05a #梁芷柔立绘|冬季私服|苦笑1|近
+    with dissolve
+    voice "audio/voice/004055.ogg"
+    l "「嗯，英文的……小说，和剧本。」"
+    y "「……」"
+    "虽然梁芷柔一再强调是闲书……但一般人是不会把纯外文读物当做消遣的吧？"
+    "就算早有心理准备，还是多少被震到了。"
+    show chara le11 #梁芷柔立绘|冬季私服|微笑|近
+    with dissolve
+    voice "audio/voice/004056.ogg"
+    l "「我觉得你也可以试试看喔？要不要我借你两本？」"
+    y "「还是算了吧，我晕英文。」"
+    show chara le10 #梁芷柔立绘|冬季私服|开心|近
+    with dissolve
+    voice "audio/voice/004057.ogg"
+    l "「少来啦，你什么情况我还不知道嘛！」"
+    show chara le11 #梁芷柔立绘|冬季私服|微笑|近
+    with dissolve
+    voice "audio/voice/004058.ogg"
+    l "「放心，其实真没那么难。」"
+    y "「真不必了……我对那玩意有心理阴影……」"
+    show chara le09 #梁芷柔立绘|冬季私服|坏笑|近
+    with dissolve
+    voice "audio/voice/004059.ogg"
+    l "「哎？什么情况啊？来来来，说来听听。」"
+    y "「其实也没啥，就是被某人恶心过，总觉得这个嘛……有点在装逼的感觉吧……」"
+    show chara le13a #梁芷柔立绘|冬季私服|疑惑1|近
+    with dissolve
+    voice "audio/voice/004060.ogg"
+    l "「哎？不是吧？谁啊……等等，不会是我吧？」"
+    y "「不是不是不是不是，当然不是你了。」"
+    y "「是咱们班那个冼望月。」"
+    show chara le13b #梁芷柔立绘|冬季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/004061.ogg"
+    l "「啊，他啊……他怎么你了？」"
+    y "「那家伙的英文不是还不错吗？也不知道是真就觉得自己特有本事，还是怎么想的，反正特能吹。」"
+    y "「他时不时的就爱跟我们念叨，啊，说英文原版的怎么怎么样，这个好那个不好的。」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004062.ogg"
+    l "「啊……」"
+    y "「当时印象特深的是有一次我们一堆人出去喝酒，他喝多了，醉呼呼的，然后在那儿抓着我一个劲地念叨外文原版的事。」"
+    y "「这也就罢了，最关键的是，他喜欢的书，恨不得给捧到天上去，不喜欢的书就说得好像一文不值似的。嗯，当时他推荐的那本书叫什么来着……？」"
+    y "「《Ballade》？好像是吧，反正他张嘴就是这个这个写得怎么怎么不好，《Ballade》里就不会出现这样的问题；那个那个写得怎么怎么不好，《Ballade》里就不会出现这样的问题……」"
+    y "「我估计原作者根本没想过的，他都能给吹爆了。」"
+    show chara le05a #梁芷柔立绘|冬季私服|苦笑1|近
+    with dissolve
+    voice "audio/voice/004063.ogg"
+    l "「呃……哈哈。这就是所谓的一粉顶十黑吧……」"
+    y "「对吧，从那以后我听见外文原版就够了。」"
+    show chara le13b #梁芷柔立绘|冬季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/004064.ogg"
+    l "「嗯？等等，冼望月喝多了？」"
+    y "「呃？」"
+    show chara le02 #梁芷柔立绘|冬季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/004065.ogg"
+    l "「你说你们一堆人？出去喝酒了？什么时候的事啊？啊？都有谁啊？没有喝多了闹事吧？」"
+    y "「……」"
+    l "「……」"
+    "糟糕……不小心说漏嘴了。"
+    y "「呃……嗯……哈哈哈，那个，今天天气真好啊。」"
+    show chara le03 #梁芷柔立绘|冬季私服|生气|近
+    with dissolve
+    voice "audio/voice/004066.ogg"
+    l "「少～说～废～话……给我老实交代！」"
+    with hpunch
+    y "「哇啊！」"
+    stop sound fadeout 3.0
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    scene bg b08b #新城区|冬
+    with fade
+    pause 1.0
+    scene bg b04c #滨河路|冬
+    with fade
+    pause 0.5
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    "从书店出来之后，我们沿原路返回。"
+    show chara se10 #梁芷柔立绘|冬季私服|开心|远
+    with dissolve
+    voice "audio/voice/004067.ogg"
+    l "「♬～」"
+    "梁芷柔迈着轻快的步伐，一边在前面走一边继续哼着她的小曲，拿到书似乎让她心情变得更好了。但这对于我来说就有点……"
+    y "「……」"
+    y "「我说大小姐您慢点走，我这儿拎着一堆书呢。」"
+    show chara se09 #梁芷柔立绘|冬季私服|坏笑|远
+    with dissolve
+    voice "audio/voice/004068.ogg"
+    l "「没事啦，待会儿我请你喝酒好不好，酒神？」"
+    y "「哎哟喂你饶了我吧，那次我可真没喝多少哎！」"
+    show chara se10 #梁芷柔立绘|冬季私服|开心|远
+    with dissolve
+    voice "audio/voice/004069.ogg"
+    l "「嘿嘿。」"
+    "梁芷柔回过身，狡黠地冲我笑笑。"
+    show chara le11 #梁芷柔立绘|冬季私服|微笑|近
+    with dissolve
+    voice "audio/voice/004070.ogg"
+    l "「好啦好啦，不玩你了，来，给我拿一半吧。」"
+    y "「那倒不用，就是稍微走慢点就行了。」"
+    show chara le01b #梁芷柔立绘|冬季私服|普通|侧面|近
+    with dissolve
+    voice "audio/voice/004071.ogg"
+    l "「嗯……好吧。」"
+    "梁芷柔点点头，回到了我的身边，和我并肩而行。"
+    hide chara
+    with dissolve
+    "记得最开始的时候，想帮她搬个书还得我自己抢着上。不过，如今的梁芷柔倒是已经不会再跟我那么客气了。"
+    "这也算是关系变熟的一点体现了吧。"
+    scene bg b04c #滨河路|冬
+    with fade
+    "……"
+    "…………"
+    y "「我说啊。」"
+    show chara le13b #梁芷柔立绘|冬季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/004072.ogg"
+    l "「嗯？」"
+    y "「今天你到底是过来干嘛来了？」"
+    show chara le13a #梁芷柔立绘|冬季私服|疑惑1|近
+    with dissolve
+    voice "audio/voice/004073.ogg"
+    l "「嗯，我啊，就是来取书呀，然后就是……」"
+    show chara le12a #梁芷柔立绘|冬季私服|羞涩1|近
+    with dissolve
+    voice "audio/voice/004074.ogg"
+    l "「嗯，来看看你。」"
+    y "「哎？来看我？我有什么好看的……」"
+    "有些摸不着头脑。虽然想到了梁芷柔应该是找我有什么事，但这个回答却总觉得有点微妙。"
+    show chara le08b #梁芷柔立绘|冬季私服|担心2|近
+    with dissolve
+    voice "audio/voice/004075.ogg"
+    l "「嗯……我问你啊，你今天都干什么了？」"
+    y "「干什么……没干什么啊，睡醒了吃早饭，然后看书，再往后就被你叫出来了……」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004076.ogg"
+    l "「就这些？」"
+    y "「就这些啊，不然还能干什么……」"
+    show chara le05a #梁芷柔立绘|冬季私服|苦笑1|近
+    with dissolve
+    voice "audio/voice/004077.ogg"
+    l "「没想过出去玩玩嘛？或者看看小说，玩会儿电脑什么的。」"
+    y "「哎，哪还有那功夫啊。」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004078.ogg"
+    l "「嗯～～」"
+    show chara le05b #梁芷柔立绘|冬季私服|苦笑2|近
+    with dissolve
+    voice "audio/voice/004079.ogg"
+    l "「这可不好啊，休息日还是得放松放松的。」"
+    y "「哎哟？」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004080.ogg"
+    l "「怎么啦？」"
+    y "「我的妈呀，这还真是……够稀奇的。」"
+    show chara le02 #梁芷柔立绘|冬季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/004081.ogg"
+    l "「我说这话奇怪吗？」"
+    y "「奇怪吧？你自己不就是个现成的反例……」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004082.ogg"
+    l "「谁说的啊，我可是该学习的时候专心学习，该休息的时候就好好休息的。」"
+    voice "audio/voice/004083.ogg"
+    l "「要不然，你以为你手里抱着的是什么？」"
+    y "「英文教材？」"
+    show chara le03 #梁芷柔立绘|冬季私服|生气|近
+    with dissolve
+    voice "audio/voice/004084.ogg"
+    l "「呸！学英语那是顺便的事，按您这位酒神的话说，就是喝完白的，来两瓶啤的漱漱口。」"
+    y "「呃……」"
+    "……我好像还真说过类似的话，而且也是在差不多这样的场景下来着。"
+    show chara le08a #梁芷柔立绘|冬季私服|担心1|近
+    with dissolve
+    voice "audio/voice/004085.ogg"
+    l "「但我不会把自己整天都泡在酒缸里，对不对？那样只能把自己给淹死了。」"
+    y "「……」"
+    show chara le08b #梁芷柔立绘|冬季私服|担心2|近
+    with dissolve
+    voice "audio/voice/004086.ogg"
+    l "「……唉。」"
+    show chara le08a #梁芷柔立绘|冬季私服|担心1|近
+    with dissolve
+    voice "audio/voice/004087.ogg"
+    l "「你呀，最近每天几点睡觉啊？」"
+    y "「啊？」"
+    show chara le03 #梁芷柔立绘|冬季私服|生气|近
+    with dissolve
+    voice "audio/voice/004088.ogg"
+    l "「几点睡？回家以后复习到几点？」"
+    y "「……」"
+    show chara le07b #梁芷柔立绘|冬季私服|消沉2|近
+    with dissolve
+    voice "audio/voice/004089.ogg"
+    l "「你自己没注意吗？你最近……总是特别疲惫。」"
+    "说到这里，梁芷柔已经变得很认真了。"
+    y "「啊……」"
+    "原来如此。"
+    "这也难怪，昨天那个样子，当然会被她注意到。"
+    "不过……这里还是蒙混过去比较好。"
+    y "「我……还好吧。」"
+    show chara le07a #梁芷柔立绘|冬季私服|消沉1|近
+    with dissolve
+    voice "audio/voice/004090.ogg"
+    l "「……还嘴硬。」"
+    y "「这……不是，我……这不就是昨天在上课的时候睡了个觉嘛，打个呼噜而已，不用追到家里来训我吧。」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004091.ogg"
+    l "「……我没有在训你，我也不是在说昨天那一件事。」"
+    show chara le02 #梁芷柔立绘|冬季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/004092.ogg"
+    l "「你最近……一直就有点不太对劲。」"
+    y "「我……怎么了？」"
+    show chara le08b #梁芷柔立绘|冬季私服|担心2|近
+    with dissolve
+    voice "audio/voice/004093.ogg"
+    l "「你突然在特别努力的学习。」"
+    y "「努力学习……不好啊？」"
+    show chara le08a #梁芷柔立绘|冬季私服|担心1|近
+    with dissolve
+    voice "audio/voice/004094.ogg"
+    l "「好是好，可是，你太努力了，努力过头了。」"
+    show chara le02 #梁芷柔立绘|冬季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/004095.ogg"
+    l "「你是以为我看不出来吗？别忘了啊，你遇到的问题都还是我给你解答的呢，我可能什么都没有注意到吗？」"
+    y "「我这不是为了实现那个小目标嘛……这还是你给我定的。」"
+    show chara le07b #梁芷柔立绘|冬季私服|消沉2|近
+    with dissolve
+    voice "audio/voice/004096.ogg"
+    l "「……要真是这样，那倒简单了。」"
+    show chara le02 #梁芷柔立绘|冬季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/004097.ogg"
+    l "「可是，你具体什么想法我不敢说，但肯定不是因为那个小目标。」"
+    "梁芷柔摇了摇头，轻声，但却直截了当地戳穿了我的伪装。"
+    show chara le12a #梁芷柔立绘|冬季私服|羞涩1|近
+    with dissolve
+    voice "audio/voice/004098.ogg"
+    l "「雨潇……」"
+    voice "audio/voice/004099.ogg"
+    l "「你到底是怎么想的？」"
+    y "「……」"
+    voice "audio/voice/004100.ogg"
+    l "「如果……如果是因为上次……」"
+    stop sound fadeout 3.0
+
+    y "「……芷柔。」"
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+    show chara le12b #梁芷柔立绘|冬季私服|羞涩2|近
+    with dissolve
+    voice "audio/voice/004102.ogg"
+    l "「啊！？」"
+    "我突然打断了她的话。"
+    show chara le12a #梁芷柔立绘|冬季私服|羞涩1|近
+    with dissolve
+    "骤然被我直呼其名，梁芷柔似乎吓了一跳，说到一半的话也给惊得吞了回去，狐疑地看着我。"
+    "不过，我在这里打断她，并不是为了否认什么，而是因为……「这件事」，是我自己主动想要做的事情。"
+    "我不再像从前那样，需要被人推着、拖着，才肯挪上一挪。"
+    "所以，有些话，应该、也必须由我自己说出来。"
+    y "「……」"
+    y "「……对不起。」"
+    show chara le12b #梁芷柔立绘|冬季私服|羞涩2|近
+    with dissolve
+    voice "audio/voice/004103.ogg"
+    l "「哎？」"
+    y "「我之前……太天真，好多事想得太简单了，幼稚。」"
+    y "「说到底，我一点都没经历过，也就一直都不理解，现在想想，自己还老是大言不惭的，真的是……哎。」"
+    y "「上次跟你说了半天，结果南辕北辙的，一点意义都没有……抱歉。」"
+    y "「所以……那次，从那之后，有些事我想了想，想明白了。」"
+    y "「我不想再跟以前似的那样了……」"
+    y "「我想……也去试一试。」"
+    show chara le12a #梁芷柔立绘|冬季私服|羞涩1|近
+    with dissolve
+    voice "audio/voice/004104.ogg"
+    l "「嗯……」"
+    y "「呵，过程肯定不会太顺利，也肯定少不了继续麻烦你，不过，我决定了。」"
+    y "「这是我自己做出的决定。虽然不能说跟你没关系吧……但是，这确确实实是我自己的想法，也必须要我自己去找答案。」"
+    y "「所以，这一次，我会拼尽我的全力。」"
+    y "「这一次考试，是我要迈过的第一道坎。把它迈过去，我才能找到自己的方向，才能知道自己未来该往什么地方努力。」"
+    y "「只有到了那个时候，我才能回答你，你刚才的这个问题。」"
+    y "「……所以，你能等一下吗？」"
+    y "「等到，那个时候……」"
+    show chara le12b #梁芷柔立绘|冬季私服|羞涩2|近
+    with dissolve
+    l "「……」"
+    y "「……」"
+    "话说完了，我等待着梁芷柔的答复。"
+    "心里……七上八下的，其实一点也不像表现的那么淡定。"
+    "毕竟，这个时机实在是……不怎么样。"
+    "处心积虑了半天，结果早早的就被当事人一眼戳穿，如果以阴谋家的标准来评判，简直是烂到家了。"
+    "但我也确实没想到梁芷柔会如此敏锐，或者说，她会如此……关注我。"
+    "也不知道是该高兴还是怎样。"
+    l "「……」"
+    show chara le12a #梁芷柔立绘|冬季私服|羞涩1|近
+    with dissolve
+    voice "audio/voice/004105.ogg"
+    l "「…………嗯。」"
+    "梁芷柔欲言又止，犹豫了几次，最后只是轻轻嗯了一声。"
+    "看不出很明显的情绪，但……至少不算坏。"
+
+    show chara le12b #梁芷柔立绘|冬季私服|羞涩2|近
+    with dissolve
+    voice "audio/voice/004106.ogg"
+    l "「你呀……也真是的。」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004107.ogg"
+    l "「咳咳！既然你都说到这个份上了，那我现在也就不多说什么了。」"
+    voice "audio/voice/004108.ogg"
+    l "「……等到这次考完试之后，再一起和你算总账。」"
+    y "「嘿嘿。」"
+    stop music fadeout 3.0
+    show chara le03 #梁芷柔立绘|冬季私服|生气|近
+    with dissolve
+    voice "audio/voice/004109.ogg"
+    l "「但！是！有一点！」"
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    y "「……嗯？」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004110.ogg"
+    l "「你这次的隐瞒不报让我很不爽啊，我要求你立即补偿我。」"
+    y "「这……」"
+    y "「你要怎么补偿啊？」"
+    show chara le01b #梁芷柔立绘|冬季私服|普通|侧面|近
+    with dissolve
+    voice "audio/voice/004111.ogg"
+    l "「第一，继续帮我把书搬到车站去，这次我可不会跟你客气什么了。」"
+    y "「成成成，这不是事儿。本来也是要去的。」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004112.ogg"
+    l "「第二，我要你答应我一件事，现在、立刻、无条件去做。」"
+    y "「啊？」"
+    show chara le03 #梁芷柔立绘|冬季私服|生气|近
+    with dissolve
+    voice "audio/voice/004113.ogg"
+    l "「听见没有？」"
+    y "「……好好好，您说了算，啥都听你的。」"
+    y "「说吧，什么事？」"
+    show chara le11 #梁芷柔立绘|冬季私服|微笑|近
+    with dissolve
+    voice "audio/voice/004114.ogg"
+    l "「求我。」"
+    y "「……」"
+    y "「…………啊？」"
+    show chara le09 #梁芷柔立绘|冬季私服|坏笑|近
+    with dissolve
+    voice "audio/voice/004115.ogg"
+    l "「求我啊。求我告诉你怎么才能更好地安排时间，怎么一边保证休息时间一边挤出时间来学习呀？」"
+    y "「喂！」"
+    show chara le10 #梁芷柔立绘|冬季私服|开心|近
+    with dissolve
+    voice "audio/voice/004116.ogg"
+    l "「嘻嘻。」"
+    "这家伙……自己已经忍不住笑出声来了啊。"
+    "一时无语。"
+    "但……"
+    y "「……呵……呵呵。」"
+    "紧接着，我也忍不住和她一起笑了起来。"
+    y "「唉，我费了多大的劲才把气氛煽起来啊，全毁了。」"
+    show chara le11 #梁芷柔立绘|冬季私服|微笑|近
+    with dissolve
+    voice "audio/voice/004117.ogg"
+    l "「那我不管，你说的啊，少不了要麻烦我的。」"
+    y "「好吧好吧，那怎么着，需要我跪下嘛？」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/004118.ogg"
+    l "「嗯……为了不让你把我的书弄脏，免了吧。」"
+    y "「那还真得谢谢您了啊……」"
+    show chara le10 #梁芷柔立绘|冬季私服|开心|近
+    with dissolve
+    voice "audio/voice/004119.ogg"
+    l "「哪里哪里。赶快的！」"
+    y "「成吧……」"
+    y "「咳！嗯……求您了，善良的班长大人，告诉我安排作息的诀窍吧！求求你！」"
+    show chara le09 #梁芷柔立绘|冬季私服|坏笑|近
+    with dissolve
+    voice "audio/voice/004120.ogg"
+    l "「很好。那我就大发慈悲地告诉你吧！」"
+    y "「……」"
+    y "「呵……」"
+    show chara le13b #梁芷柔立绘|冬季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/004121.ogg"
+    l "「……？」"
+    y "「……谢谢你，真的。谢谢你。」"
+    l "「……」"
+    hide chara
+    with dissolve
+#考虑追加CG
+    "面对我由衷的感激，梁芷柔如同迈着舞步一般，轻巧地转身，留给我一个背影。"
+    voice "audio/voice/004122.ogg"
+    l "「呵……不客气。」"
+    voice "audio/voice/004123.ogg"
+    l "「不过……」"
+    voice "audio/voice/004124.ogg"
+    l "「……不许让我失望啊。」"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t07 #转场 滨河路
+    with fade
+    pause
+
+#12月上旬。
+#第一次模拟诊断考试。
+
+    scene bg b02c #城区|冬
+    with fade
+    pause 1.0
+    scene bg b11 #考场
+    with fade
+    pause 0.5
+    play music "audio/music/bgm04.ogg" fadein 0.5 #冬～苍雪～
+    y "「呼……」"
+    "半个月的时间转瞬即过，第一次模拟诊断考试的日子终于到来了。"
+    "按照规定，这种正式的模拟考试需要变更考场，所以……"
+    y "「怎么样，重回初中母校的感觉？」"
+    show chara lb13a #梁芷柔立绘|冬季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/004125.ogg"
+    l "「嗯……老样子？或者说更破了吧……」"
+    y "「哎哟，这让你以前的老师，还有那些被教育要向你学习、打败一中的后辈们听见了可怎么得了。」"
+    show chara lb02 #梁芷柔立绘|冬季校服|皱眉|近
+    with dissolve
+    voice "audio/voice/004126.ogg"
+    l "「本来就是嘛，再说了，咱们学校不也一样好不到哪去嘛……」"
+    y "「那倒也是。」"
+    hide chara
+    with dissolve
+    "我们这次的考场被安排在了县二中，也就是梁芷柔初中时的学校。"
+    "历经了长年累月的竞争，两所学校之间的仇恨早已不可磨灭，在进门的时候，我没少收到二中老师们充满蔑视的白眼。"
+    show chara lb13b #梁芷柔立绘|冬季校服|疑惑2|近
+    with dissolve
+    "不过，另一个人的待遇就不一样了。"
+    "说起来，梁芷柔当年的同学倒是大半升到了二中，只是这个时候都被发配到其他学校考试去了，反而没几个熟人。"
+    "但同学不在，老师却还是原来的那些，一见到她，全都大惊小怪地围了上来，问长问短，那样子几乎比亲闺女还亲。"
+    "直到进入考场，都还有老师依依不舍地在门口伸头往里看。"
+    y "「倒是没想到，三年过去了，你还是很受欢迎哈。」"
+    show chara lb13a #梁芷柔立绘|冬季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/004127.ogg"
+    l "「嗯……毕竟是我让他们成为『中考状元的老师』嘛，还有职称。」"
+    "哇……真现实。"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
+    voice "audio/voice/004128.ogg"
+    l "「先别说这个，你呢，你怎么样？昨天睡得好不好？」"
+    y "「没问题，放心吧。」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
+    voice "audio/voice/004129.ogg"
+    l "「可别在考场上睡过去啊！」"
+    y "「哎哟不会啦。小的谨遵您老人家的懿旨，休息得可好了。」"
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
+    voice "audio/voice/004130.ogg"
+    l "「很好。」"
+    "梁芷柔装模作样地点点头……"
+    show chara lb10 #梁芷柔立绘|冬季校服|开心|近
+    with dissolve
+    voice "audio/voice/004131.ogg"
+    l "「嘻嘻……」"
+    "然后就扑哧一声笑了出来。"
+    y "「你看看，又笑场了。你行不行啊？」"
+    show chara lb09 #梁芷柔立绘|冬季校服|坏笑|近
+    with dissolve
+    voice "audio/voice/004132.ogg"
+    l "「嗯，呵呵……」"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
+    voice "audio/voice/004133.ogg"
+    l "「加油。」"
+    y "「……」"
+    y "「嗯！」"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    scene bg b11 #考场
+    with fade
+    play sound "audio/sound/effect10.ogg" fadein 0.5 loop #写字声
+    y "「（唔……）」"
+    "第一科考的是语文。"
+    "虽然是理科生，不过我的语文还算可以。"
+    y "「（下列句子中，成语使用不恰当的一项是……）」"
+    y "「（针对我国一些地方炫耀消费……蔚为大观……？什么鬼……就是你了……）」"
+    "感觉题目倒是不算很难。"
+    "不过……越是这种时候越需要集中注意力，避免在阴沟里翻船。"
+    "……"
+    "…………"
+    y "「（填写原文……）」"
+    y "「（于嗟鸠兮？嗯，无食桑葚吧……）」"
+    "……"
+    "…………"
+    y "「（翱至零口北，有畜鸡二十二者……哎哟，《截冠雄鸡志》啊。）」"
+    y "「（前两天刚好看过来着……运气不错啊……）」"
+    "……"
+    "…………"
+    scene bg black #黑屏
+    with fade
+    play sound "audio/sound/effect06.ogg" noloop
+    pause 1.0
+    scene bg b11 #考场
+    with fade
+    "第一场考试结束了。"
+    voice "audio/voice/004134.ogg"
+    l "「嗯～～」"
+    y "「哟，怎么样……我说不是吧？你这是刚睡醒还是怎么的？」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
+    voice "audio/voice/004135.ogg"
+    l "「得了吧你，哪有那么夸张啊，伸了个懒腰而已嘛。」"
+    y "「跟举手投降似的。」"
+    show chara lb09 #梁芷柔立绘|冬季校服|坏笑|近
+    with dissolve
+    voice "audio/voice/004136.ogg"
+    l "「哼！少废话！」"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
+    voice "audio/voice/004137.ogg"
+    l "「考得怎么样？」"
+    y "「嗯，语文嘛，还好吧。而且这次运气不错，不少题以前都见过。」"
+    show chara lb13b #梁芷柔立绘|冬季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/004138.ogg"
+    l "「嗯？是么……」"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
+    voice "audio/voice/004139.ogg"
+    l "「呵呵，我想大概不是运气吧……」"
+    "梁芷柔露出一个意味深长的笑容。"
+    show chara lb10 #梁芷柔立绘|冬季校服|开心|近
+    with dissolve
+    voice "audio/voice/004140.ogg"
+    l "「下午数学也要加油啊。」"
+    y "「那是，这还用说。」"
+    y "「倒是你啊，昨天睡得好不好？可别在考场上睡过去啊！」"
+    show chara lb12a #梁芷柔立绘|冬季校服|羞涩1|近
+    with dissolve
+    voice "audio/voice/004141.ogg"
+    l "「呸呸呸，去去去，你个小心眼。」"
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
+    voice "audio/voice/004142.ogg"
+    l "「而且我没睡觉！」"
+    y "「哈哈……好吧好吧……」"
+    y "「咱俩都加油！」"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b11 #考场
+    with fade
+    play sound "audio/sound/effect10.ogg" fadein 0.5 loop #写字声
+    "……数学。"
+    "理科班重中之重的一门课程。"
+    "尴尬的是，数学是我以往问题最大的一科。"
+    "虽然经过了恶补，但究竟改善到了什么程度，还需要这一次的考试来检验。"
+    y "「……」"
+    y "「（抛物线x方等于4y上的点到其焦点的最短距离为……）」"
+    y "「（焦点坐标P……抛物线点Q……Q到P等于Q到y等于负1……所以是1吗……）」"
+    y "「（已知m，4，n是等差数列，那么根2的m次方乘根2的n次方等于……）」"
+    y "「（16嘛……mn的最大值……还是16嘛……）」"
+    "似乎……数学也比想象中的要容易一些嘛。"
+    "大概是因为有很多题型已经在之前的练习中见识过了吧……至少思路上还是比较清楚的。"
+    y "「（直角梯形ABCD，AD平行于BC，AD垂直于DC，BC等于2AD等于2DC……四边形ABEF是正方形……ABEF沿AB折起……）」"
+    y "「（第一，求证BE1垂直于DC……）」"
+    y "「（唔……）」"
+    y "「（因为ABE1F1为正方形，所以BE垂直于AB……因为ABCD垂直于ABE1F1，ABCD交ABE1F1等于AB……BE属于ABE1F1……）」"
+    "进入了解答大题的阶段。"
+    "有些地方需要多想一想才能动笔，不过总体上答题还算顺畅。"
+    y "「……」"
+    "果然是题目比较简单吗……"
+    y "「……」"
+    "……不对。"
+    stop sound fadeout 0.5
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    show memories #回忆滤镜
+    with dissolve
+    voice "audio/voice/004139.ogg"
+    l "「呵呵，我想大概不是运气吧……」"
+    play sound "audio/sound/effect10.ogg" fadein 0.5 loop #写字声
+    scene bg b11 #考场
+    with fade
+    y "「……」"
+    "是了，原来如此。"
+    "不是题出得简单了，而是我的水平，比我以为的提升得更快了一些。"
+    y "「（是了……）」"
+    "是因为……我前一段时间的努力。"
+    "我前一段时间所付出的努力……是确确实实有效果的。"
+    stop sound fadeout 0.5
+    scene bg b04c #滨河路|冬
+    show chara le12a #梁芷柔立绘|冬季私服|羞涩1|近
+    show memories #回忆滤镜
+    with dissolve
+    voice "audio/voice/004098.ogg"
+    l "「雨潇……」"
+    voice "audio/voice/004099.ogg"
+    l "「你到底是怎么想的？」"
+    play sound "audio/sound/effect10.ogg" fadein 0.5 loop #写字声
+    scene bg b11 #考场
+    with fade
+    "或许，现在的我，已经可以回答那时的问题了。"
+    y "「（尽管我们之间的差距依然巨大……）」"
+    y "「（但是……）」"
+    y "「（我要缩短它……我会缩短它，不断地缩短它……）」"
+    y "「（直到……）」"
+    stop sound fadeout 1.5
+
+    scene bg black #黑屏
+    with fade
+    pause 1.0
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t09 #转场 考场
+    with fade
+    pause
+
+#12月中旬。
+#公布第一次模拟诊断考试成绩。
+
+    scene bg b04c #滨河路|冬
+    with fade
+    "几天后。"
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+
+    y "「呼……」"
+    y "「哎呀，真冷……」"
+    "我呵出一口哈气，搓了搓手。"
+    "进入了12月以后，气温明显下降，每天的最高气温也仅仅止步于冰点附近而已，更不用说太阳初升的现在了。"
+    "不，算上和东部地区的时差，现在其实应该还算是在夜里才对。"
+    "路上看不到多少行人。这个时间段本来也不是上班的高峰，甚至大多数人都还没有起床呢吧。"
+    "备考生就是苦啊……"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b05b #湿地公园|冬
+    with fade
+    y "「……」"
+    "默默地朝着学校的方向前进。"
+    "路过湿地公园的时候，我朝里面看了看。"
+    "现在……这里还只是一片平静的河滩。"
+    "天空中偶尔传来几声鸟鸣，显得有些清冷。"
+    "不过……"
+    y "「……」"
+    y "「待会儿……」"
+    y "「……应该会挺热闹的吧。」"
+    stop sound fadeout 3.0
+    "……"
+    "…………"
+
+    scene bg b01 #教室
+    with fade
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    "早自习。"
+    "往常基本上都很安静的教室，今天却充满了嘈杂的交谈声。"
+    e "「叽叽喳喳叽叽喳喳叽叽喳喳……」"
+    e "「喳喳叽叽喳喳叽叽喳喳叽叽……」"
+    show chara b03 #梁芷柔立绘|冬季校服|生气
+    with dissolve
+    voice "audio/voice/004143.ogg"
+    l "「……咳咳！」"
+#【声音减弱】
+    e "「……」"
+    l "「……」"
+    "在班长大人的瞪视下，一众人等似乎略有收敛，然而……"
+#【声音增大】
+    e "「叽叽喳喳叽叽喳喳叽叽喳喳……」"
+    "很快就故态复发了。"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
+    voice "audio/voice/004144.ogg"
+    l "「唉……」"
+    "果然，就算是梁芷柔，面对这种场面也是无能为力的。毕竟……"
+    "有道是，山雨欲来风满楼。"
+
+    scene bg b01 #教室
+    with fade
+    "……"
+    "…………"
+    "早自习就在一片嘈杂声之中度过了。"
+    "然而，随着正式上课的时间的临近，班里非但没有平静下来，反而变得更加吵闹。"
+    e "「叽叽喳喳叽叽喳喳叽叽喳喳……」"
+    play audio "audio/sound/effect22.ogg" noloop
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/014004.ogg"
+    z "「……嗯？」"
+    stop sound fadeout 3.0
+    e "「……」"
+    "老师到来的一瞬间，就好像什么地方有个静音键被按下去了似的，所有的噪音都突然被终结了。"
+
+    play music "audio/music/bgm06.ogg" fadein 1.5 #悬而未决
+    "整个班里弥漫着一股诡异的气氛。"
+    "所谓……人心惶惶。"
+    show charaz h01a #老师立绘|冬季|普通
+    with dissolve
+    z "「……」"
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/014005.ogg"
+    z "「咳！」"
+    "班主任……也毫不客气，起手式就是一个虎躯一震的大招。"
+    "管不管用姑且不论，但看得出来他不怎么高兴。"
+    "大概有些人要倒霉了吧。"
+    stop music fadeout 2.5
+
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/014006.ogg"
+    z "「废话不多说了啊！这次模拟诊断考试都考成了什么样子，看来你们自己也多少有点底了吧，啊？反正我话说在前头，你们有些人呢，要是觉得这样下去也成，那就继续这么混，啊，一直混到高考也没关系……」"
+    show charaz h04a #老师立绘|冬季|咆哮
+    with dissolve
+    voice "audio/voice/014007.ogg"
+    z "「但是呢，你们要想好好学，那就自己好好想想，想想该怎么做！啊？」"
+    voice "audio/voice/014008.ogg"
+    z "「结果呢？你们倒好啊，你们看看你们都考得是什么呀，啊！再这么下去，一中的脸都给你们丢光了！」"
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/014009.ogg"
+    z "「……我告诉你们啊，这次考试，咱们班不是没有考得好的，进步很多的。但是大多数人，我都不能说满意！你们自己掂量着办，啊！接下来呢，我叫到名字的，上来拿成绩单。」"
+    y "「（……呼。）」"
+    "我轻轻呼出一口气。"
+    "揭开答案的时刻到来了。"
+    "我们第一次模拟诊断考试的成绩，即将公布。"
+    show charaz h01a #老师立绘|冬季|普通
+    with dissolve
+    voice "audio/voice/014010.ogg"
+    z "「梁芷柔。」"
+    hide charaz
+    show chara b01a #梁芷柔立绘|冬季校服|普通|正面
+    with dissolve
+    voice "audio/voice/004145.ogg"
+    l "「到。」"
+    hide chara
+    show charaz h02a #老师立绘|冬季|微笑
+    with dissolve
+    voice "audio/voice/014011.ogg"
+    z "「来。」"
+    "第一个被叫到的人，不出所有人意料，当然是梁芷柔。"
+    "不过班主任一反刚才咆哮的姿态，把音调降低了差不多两个八度，转换成了温柔得几乎不像话的语气。"
+    show charaz h01a #老师立绘|冬季|普通
+    with dissolve
+    voice "audio/voice/014012.ogg"
+    z "「语文118，数学141，英语142，理综260，总分661。」"
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    "听到这个成绩，班里骤然爆出一阵短暂的议论声。"
+    "尽管早就该见怪不怪了，不过在比较正式、重要的考试中拿到这个分数，还是会让人感慨不已。"
+    stop sound fadeout 3.0
+    show charaz h02a #老师立绘|冬季|微笑
+    with dissolve
+    voice "audio/voice/014013.ogg"
+    z "「考得不错，还有上升的空间，啊。时间还有一些，以全省为目标，继续努力。」"
+    hide charaz
+    show chara b01a #梁芷柔立绘|冬季校服|普通|正面
+    with dissolve
+    voice "audio/voice/004146.ogg"
+    l "「好的。」"
+    hide chara
+    show charaz h01a #老师立绘|冬季|普通
+    with dissolve
+    z "「……」"
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/014014.ogg"
+    z "「你们看看啊？咱们班上也不是没有榜样对不对？我也不是说，你们一定要学到人家那个水平，啊，那是难为你们了！但是啊，能追多少是多少啊？」"
+    "这也同样算是见怪不怪了……我们的班主任几乎不会放过任何赞扬梁芷柔的机会。"
+    "同学们纷纷点头称是，不过大多数人就都心不在焉了。"
+    voice "audio/voice/014015.ogg"
+    z "「唉，我跟你们说啊，你们还别听不进去，知道吗！咱们班这次就有一个现成的例子。」"
+    "老师似乎也感受到了班上同学的敷衍，很不满意地打算举个例子来佐证自己的言论。"
+    show charaz h04a #老师立绘|冬季|咆哮
+    with dissolve
+    voice "audio/voice/014016.ogg"
+    z "「叶雨潇！」"
+    with hpunch
+    y "「——！」"
+    play sound "audio/sound/effect23.ogg" loop
+    hide charaz
+    with dissolve
+    "虽然多少已经有了心理准备，但真的被点到名字的时候，还是忍不住紧张了一下。"
+    y "「（冷静，冷静！）」"
+    y "「（吸——）」"
+    stop sound fadeout 3.0
+    y "「……到。」"
+    "我深吸了一口气，站起身来应答。"
+    "伴随着我的起立，班上同学们略显好奇的目光也都纷纷向我集中过来。"
+    scene cg01b4 #梁芷柔听讲CG-2|眼睛向后瞟视|冬装|CG01b4
+    with dissolve
+    l "「……」"
+    "就连梁芷柔也忍不住侧目。"
+    scene bg b01 #教室
+    with fade
+    y "「（那么，接下来……）」"
+    "决定性的时刻到来了。"
+    show charaz h01a #老师立绘|冬季|普通
+    with dissolve
+    voice "audio/voice/014017.ogg"
+    z "「语文114，数学108，英语103，理综215，总分540。」"
+    with vpunch
+    y "「（……呼！）」"
+    "我悄悄地握了一下拳。"
+    l "「……」"
+    play sound "audio/sound/ambientnoise09.ogg" fadein 2.0 loop #人群嘈杂环境噪音
+    e "「——！？」"
+    e "「叽叽喳喳叽叽喳喳叽叽喳喳……」"
+    "在短暂的沉默之后，班上小小地炸了一回锅。"
+    "大多数的人都把目光集中到了我的身上，也有一些人去看其他几个成绩靠前的学生。"
+    "看来这帮家伙是大吃了一惊。毕竟，即便是高考，这也是个稳过一本线的成绩了，"
+    stop sound fadeout 3.0
+    "虽然，对于我……和她来说，只能算是一个完成得不错的「小目标」而已……"
+    show charaz h02a #老师立绘|冬季|微笑
+    with dissolve
+    voice "audio/voice/014018.ogg"
+    z "「来。」"
+    "班主任用仅次于对待梁芷柔的语气招呼我上到讲台边。"
+    show charaz lh01a #老师立绘|冬季|普通|近
+    with dissolve
+    voice "audio/voice/014019.ogg"
+    z "「叶雨潇以前什么情况你们都清楚。人聪明，底子不错，就是呢，不好好学习，啊，白白浪费了这么好的条件。但是呢，人家现在知道努力了，对不对？你们说，这个学期他的成绩提高了多少啊？」"
+    show charaz lh03a #老师立绘|冬季|皱眉|近
+    with dissolve
+    voice "audio/voice/014020.ogg"
+    z "「所以啊，有志者事竟成！只要肯学，就没有不进步的，知不知道啊！来，叶雨潇，你给大家讲讲，这个学期会这么努力，你是怎么想的啊？」"
+    y "「咦？」"
+    show charaz lh02a #老师立绘|冬季|微笑|近
+    with dissolve
+    voice "audio/voice/014021.ogg"
+    z "「咳，别害羞，啊！好事嘛，有什么好害羞的。你呢，就给同学们讲讲，你为什么要努力！」"
+    y "「这……」"
+    "稍微迟疑了一下。"
+    "多年养成的泯然于众的习惯，让我多少还是有些犹豫……不过，算了，管他呢？"
+    "难得有这么好的一个机会，此时不说，更待何时？"
+
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+
+    hide charaz
+    with dissolve
+    "我点了点头，转过身。"
+    "正面迎向班上的同学们。"
+    show chara lb13b #梁芷柔立绘|冬季校服|疑惑2|近
+    with dissolve
+    "以及……她。"
+    l "「……」"
+    y "「……」"
+    "梁芷柔也在看着我。"
+    hide chara
+    with dissolve
+    y "「（吸……）」"
+    "深深吸气。"
+    "虽然班主任阴差阳错地说了句「有什么好害羞的」，不过那是他不知道我想要说什么。不知道再过几秒钟，他会不会暴跳如雷地想要把我活撕了？"
+    "不管了。"
+    y "「呼……」"
+    "我将胸中的郁气尽数吐出。"
+    y "「梁芷柔。」"
+    show chara lb13a #梁芷柔立绘|冬季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/004147.ogg"
+    l "「哎？」"
+    hide chara
+    show charaz lh03a #老师立绘|冬季|皱眉|近
+    with dissolve
+    voice "audio/voice/014022.ogg"
+    z "「啊？」"
+    hide charaz
+    with dissolve
+    e "「……！？」"
+    show chara lb13a #梁芷柔立绘|冬季校服|疑惑1|近
+    with dissolve
+    y "「我要——」"
+    y "「追上你！！！」"
+    show chara lb12a #梁芷柔立绘|冬季校服|羞涩1|近
+    with dissolve
+    pause 0.2
+    show chara lb12b #梁芷柔立绘|冬季校服|羞涩2|近
+    with dissolve
+    l "「——！」"
+    "……"
+    "…………"
+    scene bg b00 #天空
+    with dissolve
+    with vpunch
+    play sound "audio/sound/effect25.ogg" noloop
+    e "「——轰！」"
+    pause 2.0
+    "就这样。"
+    "在那一天，县一中有史以来最大的话题诞生了。"
+    stop music fadeout 1.5
+    scene bg black #黑屏
+    pause 1.0
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t01 #转场 教室
+    with fade
+    pause
+
+#05.早春
+
+    $ chapter = "05"
+
+#1月中旬。
+
+    scene bg b00 #天空
+    with fade
+    play sound "audio/sound/ambientnoise04.ogg" fadein 1.5 loop #白天环境噪音
+    "时光飞逝。"
+    "第一次模拟诊断考试过去一个多月了，如今已经是一月的中旬，期末考试马上就要到了。"
+    "换句话说，再过几天，我就将迎来高中生涯里最后的假期。"
+    scene bg b01 #教室
+    with fade
+    stop sound fadeout 3.0
+    "……"
+    play music "audio/music/bgm04.ogg" fadein 1.5 #冬～苍雪～
+    "…………"
+    y "「唉……」"
+    y "「……啊……」"
+    y "「嗯………………」"
+    "用下巴戳着课本，把自己挂在课桌上，无力地发出意义不明的呻吟声。"
+    "真是累啊……好想睡觉啊……"
+    y "「……」"
+    y "「唉。」"
+    "相比起第一次诊断模拟考试时班上的紧张气氛，期末考试显得波澜不惊。毕竟是学校自己组织的考试，与全省的统考没法比。"
+    "但我并没有松懈的资本。"
+    "之前的「小目标」仅仅只是个开始。当我真正开始直面考验的时候，才理解到自己差了多少东西。"
+    "所以，从一模考试结束以后到现在的这一个月，尽管不会再像之前那样拼命压榨自己，但我依然不敢有丝毫放松。"
+    "我非常清楚，留给我的时间……不多了。"
+    y "「……」"
+    voice "audio/voice/005001.ogg"
+    l "「哟！」"
+    show chara lb10 #梁芷柔立绘|冬季校服|开心|近
+    with dissolve
+    "耳边传来了熟悉的声音。"
+    y "「哎……？」"
+    y "「啊……你啊。」"
+    show chara lb09 #梁芷柔立绘|冬季校服|坏笑|近
+    with dissolve
+    voice "audio/voice/005002.ogg"
+    l "「嗯。怎么啦，无病呻吟哪？」"
+    y "「是啊，累死了。」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
+    voice "audio/voice/005003.ogg"
+    l "「……唉。」"
+    "梁芷柔一脸无可奈的模样。"
+    "大概是我这幅仰着头百无聊赖地瘫在椅子背上的模样，实在是太难看了吧。"
+    show chara lb02 #梁芷柔立绘|冬季校服|皱眉|近
+    with dissolve
+    voice "audio/voice/005004.ogg"
+    l "「行啦行啦，这也没几天了，到时候你就可以解脱啦。」"
+    y "「算了吧，我早就不对寒假报什么期望了，我不信你没安排。」"
+    show chara lb10 #梁芷柔立绘|冬季校服|开心|近
+    with dissolve
+    voice "audio/voice/005005.ogg"
+    l "「哎哟，觉悟不错嘛？」"
+    y "「哀大莫过于心死嘛，当然往好了说，这叫吃得苦中苦。」"
+    show chara lb09 #梁芷柔立绘|冬季校服|坏笑|近
+    with dissolve
+    voice "audio/voice/005006.ogg"
+    l "「所谓『天将降大任于是人也』嘛。别的先不说，至少心态摆正是很重要的。」"
+    y "「谁知道呢。也没准待会儿就飞过来一个椅子，直接把我砸成植物人了。」"
+    play sound "audio/sound/effect20.ogg" noloop
+    with vpunch
+    show chara lb03 #梁芷柔立绘|冬季校服|生气|近
+    with dissolve
+    y "「哎哟。」"
+    "脑门被拍了一巴掌。"
+    voice "audio/voice/005007.ogg"
+    l "「就知道贫。」"
+    show chara lb02 #梁芷柔立绘|冬季校服|皱眉|近
+    with dissolve
+    voice "audio/voice/005008.ogg"
+    l "「要不怎么着，我给你来一下？」"
+    "打完了你才说啊！"
+    y "「……完了，我被你打傻了。」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
+    voice "audio/voice/005009.ogg"
+    l "「去去去，是不是没打够啊？」"
+    y "「嗯，连把椅子都没有。」"
+    show chara lb13b #梁芷柔立绘|冬季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/005010.ogg"
+    l "「哼！」"
+    "梁芷柔恐吓似的挥了挥手，不过终究没有再打下来。"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
+    voice "audio/voice/005011.ogg"
+    l "「你啊，坚持坚持吧。现在你可是咱们班上的希望之星，郑老师可是把你当成标杆来立的。要是你现在掉了链子，那可不是闹着玩的。」"
+    y "「唉……我知道。」"
+    y "「真是的，我努力又不是因为他，这人自己加这么多戏真是麻烦死了……」"
+    show chara lb12a #梁芷柔立绘|冬季校服|羞涩1|近
+    with dissolve
+    voice "audio/voice/005012.ogg"
+    l "「啊……」"
+    show chara lb04 #梁芷柔立绘|冬季校服|无奈|近
+    with dissolve
+    voice "audio/voice/005013.ogg"
+    l "「咳咳！反正啊，这个状态你得调整调整，啊。」"
+    y "「知道啦知道啦……」"
+    y "「……」"
+    pause 1.0
+    with vpunch
+    "从仰望星空的死鱼眼模式切换回正常的坐姿。"
+    y "「哎……」"
+    show chara lb13a #梁芷柔立绘|冬季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/005014.ogg"
+    l "「嗯？怎么了？」"
+    y "「没什么，就是觉得时间过得真是快啊。」"
+    y "「一晃就又要到期末了。」"
+    y "「想想上学期，或者哪怕是一两个月以前呢……都想象不到现在会是这么个样子。」"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
+    voice "audio/voice/005015.ogg"
+    l "「嗯……是啊。」"
+    voice "audio/voice/005016.ogg"
+    l "「想想还真是。」"
+    show chara lb05a #梁芷柔立绘|冬季校服|苦笑1|近
+    with dissolve
+    voice "audio/voice/005017.ogg"
+    l "「时间过得好快啊。」"
+    l "「……」"
+    show chara lb11 #梁芷柔立绘|冬季校服|微笑|近
+    with dissolve
+    voice "audio/voice/005018.ogg"
+    l "「呵……行啦，你加油吧，啊。」"
+    hide chara
+    with dissolve
+    "梁芷柔轻轻朝我挥挥手，回到了自己的座位上。"
+    stop music fadeout 3.0
+    y "「呼……」"
+    y "「……」"
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    "左右看了看，不出意外还是有一些异样的目光。"
+    e "「叽叽喳喳叽叽喳喳……」"
+    stop sound fadeout 3.0
+    "这帮家伙……又开始八卦了吧。"
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+    "不过，也难怪。"
+    "我和梁芷柔最近这段时间确实是有一点「肆无忌惮」。"
+    "以前我们交流时还要注意一下众人的目光，但现在已经变得毫不避讳了，偶尔还会有一点肢体上的接触。"
+    "就算有人议论，也没有丝毫收敛，甚至变本加厉。"
+    "……管他们呢？愿意说就说去吧！"
+    "我们用这种带着些许仪式感的放肆，确认着自己，以及彼此的信念。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    scene bg b00a #天空|候鸟
+    with fade
+    "前路漫漫，一人前行，孤独且艰难。"
+    "那么，便由两个人互相扶持着走下去好了。"
+    stop music fadeout 1.5
+
+    scene bg b04c #滨河路|冬
+    with fade
+    "……"
+    play sound "audio/sound/ambientnoise03.ogg" fadein 1.5 loop #傍晚环境噪音
+    "…………"
+    "因为临近周末，放学的时间难得早了那么一点点。"
+    y "「亲贤臣，远小人，此先汉所以兴隆也；亲小人，远贤臣，此后汉所以倾颓也……」"
+    y "「先帝在时，每与臣论此事，未尝不叹息痛恨于桓、灵也……」"
+    y "「侍中、尚书、长史、参军，此悉贞良死节之臣……」"
+    y "「愿陛下亲之信之，则汉室之隆，可计日而待也……」"
+    y "「臣本布衣，躬耕于南阳……」"
+    y "「苟全性命于乱世……」"
+    bird "「啾——」"
+    y "「啊……」"
+    "一边走一边巩固背诵，不知不觉中，发现已经快要到家了。"
+    scene bg b05b #湿地公园|冬
+    with fade
+    "湿地公园中，传来了候鸟的叫声。"
+    y "「……」"
+    "说起来，这里的修缮也到了尾声。"
+    "去年洪水的痕迹几乎已经看不到了，估计过不了多久就可以重新开业了吧？"
+    "不过，再过一段时间，等到开春以后，栖息在这里的冬候鸟也会飞往北方。"
+    "届时虽然鸟儿会变得更多一些，但就不是现在园子里的这一批了。"
+    "而我，在它们回来之前，就要毕业了。"
+    "当我考上大学以后，必定会离开这里……离开这生活了18年的家乡。"
+    "那时候，想要再次看到眼前的这片景色，就没现在这么简单了。"
+    "虽然……我还不知道自己的未来能够去往何方。"
+    y "「……」"
+    show memories zorder 10 #回忆滤镜
+    with fade
+    "……"
+    "一个月前。"
+    "我在第一次模拟诊断考试之后搞出了那个「大新闻」，旋即被梁芷柔堵在了回家的路上。"
+    show chara b03 #梁芷柔立绘|冬季校服|生气
+    with dissolve
+    voice "audio/voice/005019.ogg"
+    l "「哎你你你你……你没事吧你？」"
+    voice "audio/voice/005020.ogg"
+    l "「你这是要我命啊！」"
+    y "「所以说啊，我这不是在道歉呢么……当时一激动，脑子一抽就说出来了，没想那么多……」"
+    voice "audio/voice/005021.ogg"
+    l "「你是没想那么多！那万一郑老师想多了呢？他往我妈那儿一捅，那可热闹了啊！」"
+    y "「这……他不也没想那么多么……」"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
+    voice "audio/voice/005022.ogg"
+    l "「得亏他是没想那么多！吓死我了！」"
+    y "「是是是，对不起，真的。」"
+    l "「……」"
+    show chara b07b #梁芷柔立绘|冬季校服|消沉2
+    with dissolve
+    voice "audio/voice/005023.ogg"
+    l "「唉。」"
+    show chara b07a #梁芷柔立绘|冬季校服|消沉1
+    with dissolve
+    voice "audio/voice/005024.ogg"
+    l "「幸亏你之后还知道往回找补一下，啊，『我是想要追赶梁芷柔的成绩』，唉……这他都能信……」"
+    y "「那是，你看我后面演得多像啊，结结巴巴的话都说不利索了，不就是一个没有表达清楚嘛，多大点事。」"
+    y "「而且了，你想想，在他们眼里，我跟你『表白』这事得多玄幻啊，一点都不真实。」"
+    y "「『这里怎么可能会有人真的能和那个梁芷柔，啊，那个跟我们这些凡夫俗子完全不是一个世界的梁芷柔，扯上什么关系呢？』」"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
+    l "「……」"
+    y "「总之呢，过程惊心动魄，结果还算圆满。」"
+    show chara b03 #梁芷柔立绘|冬季校服|生气
+    with dissolve
+    voice "audio/voice/005025.ogg"
+    l "「呸！什么圆满啊！你还真好意思说啊……那下次是不是直接圆寂得了！」"
+    y "「呃……」"
+    show chara b02 #梁芷柔立绘|冬季校服|皱眉
+    with dissolve
+    voice "audio/voice/005026.ogg"
+    l "「总之，下次不许再这么胡闹了，知道吗！？」"
+    show chara b03 #梁芷柔立绘|冬季校服|生气
+    with dissolve
+    voice "audio/voice/005027.ogg"
+    l "「……不对！什么下次，没有下次了！嗯……也不是！哎呀真是的……」"
+    show chara b12b #梁芷柔立绘|冬季校服|羞涩2
+    with dissolve
+    voice "audio/voice/005028.ogg"
+    l "「反正，我不答应！」"
+    y "「啊？什么不答应……」"
+    show chara b03 #梁芷柔立绘|冬季校服|生气
+    with dissolve
+    voice "audio/voice/005029.ogg"
+    l "「你说是什么！」"
+    show chara b12a #梁芷柔立绘|冬季校服|羞涩1
+    with dissolve
+    voice "audio/voice/005030.ogg"
+    l "「你你你……追……那个……就是……你自己想去吧！」"
+    y "「呃。」"
+    "非常明白了。"
+    "但是……现在该怎么办才好啊……"
+    "所谓冲动是魔鬼，这是彻底给弄巧成拙了吧……我还有救吗……"
+    l "「……」"
+    y "「……？」"
+    show chara b12b #梁芷柔立绘|冬季校服|羞涩2
+    with dissolve
+    voice "audio/voice/005031.ogg"
+    l "「反正……现在……我不答应。」"
+    y "「哎？」"
+    l "「……」"
+    show chara b12a #梁芷柔立绘|冬季校服|羞涩1
+    with dissolve
+    voice "audio/voice/005032.ogg"
+    l "「如果……如果你真的能做到的话……」"
+    voice "audio/voice/005033.ogg"
+    l "「如果！如果你真的能追上来……呃，也不用和我一样，最起码，可以考到樱华的话……」"
+    voice "audio/voice/005034.ogg"
+    l "「到时候，至少，咱俩还可以有四年的时间在同一个城市里。」"
+    show chara b12b #梁芷柔立绘|冬季校服|羞涩2
+    with dissolve
+    voice "audio/voice/005035.ogg"
+    l "「那样的话……我也……不是不能考虑一下，给你个机会喔？」"
+    show chara b03 #梁芷柔立绘|冬季校服|生气
+    with dissolve
+    voice "audio/voice/005036.ogg"
+    l "「……但是可不一定啊！我只是说可能，明白吗？就算你也考过来了也不一定！」"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
+    voice "audio/voice/005037.ogg"
+    l "「明白了吗……你看着办吧，啊！」"
+    hide chara
+    with dissolve
+    play audio "<from 0 to 3>audio/sound/effect19.ogg" noloop
+    "丢下这句话以后，梁芷柔立刻转身，一溜烟逃了。"
+    y "「呃……」"
+    "……"
+    "…………"
+
+    scene bg b00a #天空|候鸟
+    with fade
+    "……是的。"
+    "她已经十分清楚地回应了我。"
+    "按说这是件挺开心的事，但是……"
+    "一切，都需要有一个前提——"
+    "我得能够赶上她的步伐。至少，也要能够望其项背。"
+    "能做到吗？凭自己现在付出的这些努力……还来得及吗？"
+    "为什么没有更早一些下定决心、更早一些付诸实施呢？那样的话，应该可以把握更大一些吧？"
+
+    scene bg b05b #湿地公园|冬
+    with fade
+    "摇摇头，试图将心中的忐忑抚平，但却徒劳无功。"
+    "虚度光阴的过去与无法把握的未来，如同两块大石，始终压在心头之上。"
+    "必须……要更努力一些才行。"
+    y "「还有不到半年……」"
+    stop sound fadeout 3.0
+    scene bg black #黑屏
+    with fade
+    y "「只剩下……不到半年了。」"
+    "……"
+    "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t06 #转场 天空
+    with fade
+    pause
+
+#1月下旬。
+#期末考试后。
+
+    scene bg b02c #城区|冬
+    with fade
+    "几天之后，期末考试如期而至。"
+    "过程乏善可陈，成绩也完全在预期范围之内，是一个能够体现出我这段日子努力的成果，却又没有什么意外之喜的分数。"
+    "就这样，高三的第一学期即将结束了。"
+
+    scene bg b01 #教室
+    with fade
+    show charaz h01a #老师立绘|冬季|普通
+    with dissolve
+    voice "audio/voice/015001.ogg"
+    z "「……现在的你们，一定要做到分秒必争！接下来，就是最后的冲刺阶段了，在这最后的四个多月里，每一分每一秒，对你们来说都非常得珍贵！……」"
+    voice "audio/voice/015002.ogg"
+    z "「……你们啊，是这个县里面最好的中学、最好的班级里的学生，是你们父母的希望，也是全县的脸面，要争口气呀！……」"
+    hide charaz
+    with dissolve
+    play sound "audio/sound/ambientnoise10.ogg" fadein 1.5 loop #安静学习环境噪音
+    "若是评选每个学期最难熬的时刻，想来放假前的最后一天肯定能够金榜题名。"
+    "老师照例在做着他的思想动员工作。毕竟是老生常谈了，尽管嘶吼得声嘶力竭，教室内却弥漫着一股昏昏沉沉的气息。"
+    "如果不是凛冽的寒风拍打在窗户上呼呼作响——而且还顺着不怎么严实的窗户缝钻进来了——那大概就又会是一场全员入睡的惨剧吧。"
+    "这场面仿佛是半年前那一天的再现，不禁令我想起被飞椅骑脸的惨痛记忆。"
+    "下意识地朝梁芷柔那边看了看。"
+    scene cg01a1 #梁芷柔听讲CG-1|标准|冬装|CG01a1
+    with fade
+    l "「……」"
+    y "「（呜哇……正襟危坐啊。）」"
+    "不愧是好学生的代表，即使是这么无聊的训话，照样看起来一丝不苟。"
+    "嗯……「看起来」。"
+    "以我对她的了解，现在她多半已经开始走神了……"
+    scene cg01b4 #梁芷柔听讲CG-2|眼睛向后瞟视|冬装|CG01b4
+    with dissolve
+    l "「……？」"
+    y "「（啊……）」"
+    "非常迅速地被发现了。"
+    y "「（……嗯？）」"
+    scene cg01b5 #梁芷柔听讲CG-2|笑瞪|冬装|CG01b5
+    with dissolve
+    voice "audio/voice/005038.ogg"
+    l "「……」"
+    y "「（喂喂喂什么意思嘛。）」"
+    y "「（随便看你一眼都能被发现，你这是有多闲啊，还好意思瞪我。）」"
+    y "「（哼哼哼……）」"
+    y "「（既然如此，那就别怪我了。）」"
+    "反瞪回去。"
+    "不仅如此，还挤眉弄眼做了个鬼脸，指了指讲台的方向。"
+    scene cg01d #梁芷柔听讲CG-4|笑喷|CG01d
+    with dissolve
+    voice "audio/voice/005039.ogg"
+    l "「……噗。」"
+    "在我的卖力演出之下，梁芷柔一个没忍住，笑出声来。"
+    "虽然声音不大，也飞快地绷住了脸，但之前那一脸严肃、认真听讲的形象，还是被我成功破坏掉了。"
+    y "「（噢耶，胜利！）」"
+    "我耀武扬威地在课桌底下朝她攥了攥拳。"
+    stop sound fadeout 3.0
+
+    voice "audio/voice/015003.ogg"
+    z "「叶——雨——潇！！！」"
+    y "「啊，到！」"
+    scene bg b01 #教室
+    with fade
+    show charaz h04a #老师立绘|冬季|咆哮
+    with dissolve
+    voice "audio/voice/015004.ogg"
+    z "「干什么呢你！啊？那么大动作，你以为老师是瞎子，看不见啊？啊！？」"
+    y "「不是，我……那个……」"
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/015005.ogg"
+    z "「不是什么不是啊！啊？那你说说，你自己说说，你跟那儿干嘛呢？」"
+    y "「呃……」"
+    voice "audio/voice/015006.ogg"
+    z "「还敢顶嘴了啊……你是不是觉得自己最近成绩不错，就可以翘尾巴了？啊？现在是你放松的时候吗！？」"
+    show charaz h04a #老师立绘|冬季|咆哮
+    with dissolve
+    voice "audio/voice/015007.ogg"
+    z "「要都照你这个样子，稍微有点进步就不知道自己姓什么了，那能行吗？行百里者半九十你知不知道？你现在这个时候放松了，那毁的可是你一辈子！」"
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/015008.ogg"
+    z "「你得知道，这人哪，什么时候开始努力都不算晚！你这才哪到哪啊？现在是停下来的时候吗？啊？」"
+    y "「……」"
+    hide charaz
+    with dissolve
+    "……呜啊啊啊。"
+    "班主任喷起人来可谓永无止境，一旦被他当成目标，那就只剩下等死了。"
+    y "「……」"
+    "不对，怎么就只有我被抓住了呢！"
+    scene cg01b6 #梁芷柔听讲CG-2|笑|冬装|CG01b6
+    with fade
+    "我面带不甘之色，瞥了我的共犯一眼。"
+    l "「……」"
+    "梁芷柔也在瞟着我这一边。"
+    "看到我的眼神，她吐了吐舌头，微微咧嘴以示歉意。"
+    voice "audio/voice/015009.ogg"
+    z "「还乱瞅！啊？看什么哪？你说你看什么哪？啊？你说！」"
+    scene bg b01 #教室
+    show charaz h03a #老师立绘|冬季|皱眉
+    y "「呃……」"
+    y "「没看什么……」"
+    voice "audio/voice/015010.ogg"
+    z "「行了行了行了，你以为我看不见吗？」"
+    voice "audio/voice/015011.ogg"
+    z "「你是不是觉得，我为什么只管你、不管她啊？啊？她还用得着我管吗？她自己就可以管好自己！你行吗？啊？」"
+    show charaz h04a #老师立绘|冬季|咆哮
+    with dissolve
+    voice "audio/voice/015012.ogg"
+    z "「呵，梁芷柔，你能跟人家比么？你是能考上清北了还是能考上樱大了？可你再看看，你现在什么样，她又是什么样啊？」"
+    voice "audio/voice/015013.ogg"
+    z "「你自己说的，要以梁芷柔为目标，对吧？目标定得很好啊，那你得去实现哪？啊？光看她能管用吗？」"
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/015014.ogg"
+    z "「唉……我啊，老师也不求你在成绩上真能追得上她，但你好歹得跟她一样努力吧？啊？」"
+    show charaz h01a #老师立绘|冬季|普通
+    with dissolve
+    voice "audio/voice/015015.ogg"
+    z "「这结果呢？唉……你啊，你也别怨我说你，这有些人哪，我都不愿意说了！」"
+    "班主任一边说一边把嘴炮的火力向周围延伸，开始覆盖到整个班级。"
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/015016.ogg"
+    z "「就你，啊，还有你！还有脸在这儿笑呢？啊？你以为我不知道你们在下面都传些什么话呢，啊！你说说，你们满脑子都想的是什么呀？翻来覆去就那点龌龊想法，除了这个以外就没点别的了？」"
+    show charaz h04a #老师立绘|冬季|咆哮
+    with dissolve
+    voice "audio/voice/015017.ogg"
+    z "「你们还有脸说他？啊？你、你、你，还有你，啊，你们那点破事，真以为没人知道啊？」"
+    show charaz h03a #老师立绘|冬季|皱眉
+    with dissolve
+    voice "audio/voice/015018.ogg"
+    z "「你们要是能考出他们俩的水平……都不用说他们『俩』，说梁芷柔是我为难你们了，就叶雨潇吧，啊！你们能到他那个分数，你们爱怎么折腾怎么折腾，我不管你们。」"
+    show charaz h04a #老师立绘|冬季|咆哮
+    with dissolve
+    voice "audio/voice/015019.ogg"
+    z "「但是要是到不了啊，以后在学校就别给我整这些有的没的，啊，不是时候！知道吗！」"
+    "……"
+    "…………"
+    hide charaz
+    with fade
+    play sound "audio/sound/effect06.ogg" noloop
+    y "「呃…………………………」"
+    "好不容易熬到下课，感觉整个人都不好了。"
+    stop sound fadeout 1.5
+    play music "audio/music/bgm04.ogg" fadein 2.5 #冬～苍雪～
+    show chara b10 #梁芷柔立绘|冬季校服|开心
+    with dissolve
+    voice "audio/voice/005040.ogg"
+    l "「嘿嘿嘿。」"
+    y "「……瞅把你给乐的。」"
+    y "「这人不讲理啊，凭什么光点我。」"
+    show chara b09 #梁芷柔立绘|冬季校服|坏笑
+    with dissolve
+    voice "audio/voice/005041.ogg"
+    l "「因为像我这样的人，他连说都不愿意说了啊。」"
+    y "「啊呸！」"
+    y "「幸灾乐祸好玩吗？」"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
+    voice "audio/voice/005042.ogg"
+    l "「哈哈……不过还是得说，郑老师这是真的很看重你啊？」"
+    y "「得了吧，他更看重你，可就是不说你。」"
+    show chara b01b #梁芷柔立绘|冬季校服|普通|侧面
+    with dissolve
+    voice "audio/voice/005043.ogg"
+    l "「所以说，我那是跳出三界之外，不在五行当中了。」"
+    y "「喂喂喂这话你自己说啊？」"
+    show chara b09 #梁芷柔立绘|冬季校服|坏笑
+    with dissolve
+    voice "audio/voice/005044.ogg"
+    l "「嘿嘿嘿，事实嘛。」"
+    y "「……哎，结果还不是个势利眼，成绩决定一切。」"
+    show chara b01a #梁芷柔立绘|冬季校服|普通|正面
+    with dissolve
+    voice "audio/voice/005045.ogg"
+    l "「好啦好啦，反正呢，你要是不想让他那么絮叨，就继续努力，把成绩再提高点呗？」"
+    y "「唉。」"
+    voice "audio/voice/005046.ogg"
+    l "「所以呢……」"
+    y "「所以？」"
+    show chara b09 #梁芷柔立绘|冬季校服|坏笑
+    with dissolve
+    voice "audio/voice/005047.ogg"
+    l "「来看看你这次期末考试的问题吧。」"
+    "梁芷柔笑嘻嘻地抖了抖手中的几张卷子。"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
+    voice "audio/voice/005048.ogg"
+    l "「虽然这次是学校自主出题，难度有点不太平衡，不过还是可以拿来参考一下的。」"
+    y "「所以……怎么样？」"
+    show chara b01b #梁芷柔立绘|冬季校服|普通|侧面
+    with dissolve
+    voice "audio/voice/005049.ogg"
+    l "「还行吧。」"
+    show chara b01a #梁芷柔立绘|冬季校服|普通|正面
+    with dissolve
+    voice "audio/voice/005050.ogg"
+    l "「半年前那种低级错误基本是不会出现了，基础方面弥补得还算不错，嗯……」"
+    show chara b13a #梁芷柔立绘|冬季校服|疑惑1
+    with dissolve
+    voice "audio/voice/005051.ogg"
+    l "「不过还是得说……看跟什么比吧。」"
+    show chara b01a #梁芷柔立绘|冬季校服|普通|正面
+    with dissolve
+    voice "audio/voice/005052.ogg"
+    l "「如果是『小目标』或者再高一点，比如百薇那样的大学——如果是以这个为目标，可以说是很不错了。」"
+    voice "audio/voice/005053.ogg"
+    l "「照这个样子下去，接下来只要不出大问题，基本上十拿九稳。」"
+    y "「『不过』……？」"
+    show chara b02 #梁芷柔立绘|冬季校服|皱眉
+    with dissolve
+    voice "audio/voice/005054.ogg"
+    l "「嗯。如果……把目标再往上提一提的话，按照现在这个进度，就不好说了。」"
+    show chara b13b #梁芷柔立绘|冬季校服|疑惑2
+    with dissolve
+    voice "audio/voice/005055.ogg"
+    l "「……只能说，有希望。」"
+    y "「嗯……」"
+    show chara b02 #梁芷柔立绘|冬季校服|皱眉
+    with dissolve
+    l "「……」"
+    show chara b08b #梁芷柔立绘|冬季校服|担心2
+    with dissolve
+    voice "audio/voice/005056.ogg"
+    l "「那个……」"
+    y "「看来，必须得更努力了呗！」"
+    show chara b06 #梁芷柔立绘|冬季校服|吃惊
+    with dissolve
+    voice "audio/voice/005057.ogg"
+    l "「啊……」"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
+    voice "audio/voice/005058.ogg"
+    l "「嘻嘻，对呀。」"
+    show chara b10 #梁芷柔立绘|冬季校服|开心
+    with dissolve
+    voice "audio/voice/005059.ogg"
+    l "「加油吧！」"
+    stop music fadeout 2.5
+    hide chara
+    with fade
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    "……"
+    "…………"
+    show chara lb01b #梁芷柔立绘|冬季校服|普通|侧面|近
+    with dissolve
+    voice "audio/voice/005060.ogg"
+    l "「……嗯，大致就是这样了。」"
+    y "「好……」"
+    hide chara
+    with dissolve
+    "在下课之后到大扫除之前的这一段时间里，梁芷柔给我简单讲了讲通过这次考试发现的问题。"
+    "讲完以后，梁芷柔像是在检查是否还有什么欠缺之处似的，随手翻看着我的那几套卷子。"
+    show chara lb13a #梁芷柔立绘|冬季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/005061.ogg"
+    l "「……这里……是这样啊……原来如此……」"
+    show chara lb13b #梁芷柔立绘|冬季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/005062.ogg"
+    l "「……这样的话……那……」"
+    show chara lb02 #梁芷柔立绘|冬季校服|皱眉|近
+    with dissolve
+    voice "audio/voice/005063.ogg"
+    l "「嗯……」"
+    show chara lb13a #梁芷柔立绘|冬季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/005064.ogg"
+    l "「哎，雨潇。」"
+    y "「啊？啊，怎么了？」"
+    hide chara
+    with dissolve
+    "被直呼名字，一下子还有点反应不过来。"
+    "看梁芷柔的模样，似乎是沉浸在思考之中，下意识地这样叫了我。"
+    "……有点开心。"
+    show chara b13b #梁芷柔立绘|冬季校服|疑惑2
+    with dissolve
+    voice "audio/voice/005065.ogg"
+    l "「嗯，是这样的。我刚才想了一下，你现在这个情况呢，基本的东西其实已经准备得差不多了。所以呢，我觉得啊，应该调整一下复习的方向了。」"
+    y "「调整……怎么调整？」"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
+    voice "audio/voice/005066.ogg"
+    l "「对你来说，现在的重点不在于差漏补缺，而是综合强化。」"
+    show chara b01b #梁芷柔立绘|冬季校服|普通|侧面
+    with dissolve
+    voice "audio/voice/005067.ogg"
+    l "「从现在起，你要开始整理自己的所有知识点，把它们融会贯通，形成连贯的网络，另外还要锻炼自己的解题速度和分配时间的能力，学会更好地应对考试。」"
+    show chara b01a #梁芷柔立绘|冬季校服|普通|正面
+    with dissolve
+    voice "audio/voice/005068.ogg"
+    l "「简单来说，就是需要你多做一些综合性的题目，保证你综合运用知识的水平。」"
+    show chara b13a #梁芷柔立绘|冬季校服|疑惑1
+    with dissolve
+    voice "audio/voice/005069.ogg"
+    l "「啊还有，就是一些有针对性的高水平卷子，把它们当成是真正的高考来做，严格在规定的时间里完成，训练你的临场发挥。」"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
+    voice "audio/voice/005070.ogg"
+    l "「这种事情吧，说起来容易，做起来还是挺难的。当然，要是真的能练好，对提高分数也很有效果。考试型选手可是很吃香的！」"
+    y "「哎，应试教育啊！」"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
+    voice "audio/voice/005071.ogg"
+    l "「是呀……」"
+    show chara b09 #梁芷柔立绘|冬季校服|坏笑
+    with dissolve
+    voice "audio/voice/005072.ogg"
+    l "「不过啊，对咱们来说呢，也多亏了这个应试教育，现在还能有高考这个机会呀！咱们可是既得利益者啊。」"
+    y "「也是。」"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
+    voice "audio/voice/005073.ogg"
+    l "「所以啦，没什么可抱怨的。」"
+    show chara b01b #梁芷柔立绘|冬季校服|普通|侧面
+    with dissolve
+    voice "audio/voice/005074.ogg"
+    l "「有这个功夫，还不如赶快抓紧时间，多学一点呢。」"
+    y "「好好好……」"
+    show chara b10 #梁芷柔立绘|冬季校服|开心
+    with dissolve
+    voice "audio/voice/005075.ogg"
+    l "「嗯。没有哭闹，很有觉悟。」"
+    y "「呃……这点思想准备还是有的啦。」"
+    show chara b09 #梁芷柔立绘|冬季校服|坏笑
+    with dissolve
+    voice "audio/voice/005076.ogg"
+    l "「很好，具体的我会给你拉出清单来的，到时候别叫苦喔，嘿嘿嘿。」"
+    y "「……你这笑声听起来怎么有股阴谋的味道啊。」"
+    show chara b10 #梁芷柔立绘|冬季校服|开心
+    with dissolve
+    voice "audio/voice/005077.ogg"
+    l "「嘻嘻，不会啦，你想太多了。那就明天见喽？」"
+    y "「嗯。」"
+    "梁芷柔露出满意的笑容，朝我挥了挥手，回到自己的位子上去收拾东西了。"
+    hide chara
+    with dissolve
+    stop sound fadeout 3.0
+    "……"
+    "…………"
+    scene bg b04c #滨河路|冬
+    with fade
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    y "「……」"
+    y "「呼。」"
+    "从现在起，高中生活的最后一个假期就算是开始了。"
+    "话虽如此，我却与休息无缘。"
+    "从明天开始，我要和梁芷柔在外面碰头，就像暑假时的那样，进行只属于我们俩的学习会。"
+    y "「从明天开始到立春之后……距离年三十也就只剩两天啊。」"
+    y "「……呼。」"
+    "每一天都在争分夺秒，亡羊补牢。"
+    "就不知……是否还未为晚矣了。"
+    stop sound fadeout 3.0
+
+    "……"
+    "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t01 #转场 教室
+    with fade
+    pause
+
+#次日。
+#寒假第一天。
+
+    play sound "audio/sound/ambientnoise04.ogg" fadein 1.5 loop #白天环境噪音
+
+    scene bg b02c #城区|冬
+    with fade
+    "寒假的第一天。"
+    "一如半年之前那样，我在吃过午饭之后，来到百货商场里的快餐店和梁芷柔碰头。"
+    scene bg b06 #商业街
+    with fade
+    pause
+    stop sound fadeout 3.0
+
+    scene bg b07 #快餐店
+    with fade
+    pause
+    scene cg04b5 #梁芷柔快餐店学习CG-2|做题|愁眉苦脸|冬装|CG04b5
+    with fade
+    play sound "audio/sound/effect10.ogg" fadein 0.5 loop #写字声
+    "……"
+    "…………"
+    l "「……」"
+    y "「……」"
+    y "「（嗯……）」"
+    y "「（已知函数fx等于xcosx减sinx，x属于0到二分之派，求证函数fx小于等于0……若a小于x分之sinx小于b对x属于0，二分之派恒成立，求a的最大值与b的最小值……）」"
+    y "「（求a和b的极值其实就是求函数sinx除以x的取值范围嘛，求导试试……）」"
+    y "「（啊，分子这不就是第一问里那个式子吗？看起来思路没错……）」"
+    y "「（求导之后是单调的啊……那a和b就是f0和f二分之派了呗……）」"
+    y "「（……）」"
+    y "「（f0没定义啊！！什么鬼！）」"
+    y "「（嗯？嗯……对了，取极限试试看……）」"
+    "……"
+    "…………"
+    with fade
+    y "「（好了，搞定！）」"
+    y "「（嗯……看看答案……）」"
+    y "「（哈？）」"
+    y "「（这啥啊……一大长串……）」"
+    y "「（我看看……他这是……因为x已经限制大于0了，所以乘上来……然后求导……再然后呢……分情况讨论了啊……）」"
+    y "「（……感觉这个标准答案……好麻烦？）」"
+    y "「（不过这样的话我到底是做对了没有啊……虽然感觉没有错……）」"
+    y "「那个……」"
+    scene cg04b3 #梁芷柔快餐店学习CG-2|做题|冬装|CG04b3
+    with dissolve
+    stop sound fadeout 3.0
+    voice "audio/voice/005078.ogg"
+    l "「嗯？」"
+    y "「有个题稍微有点拿不准，帮我看看？」"
+    voice "audio/voice/005079.ogg"
+    l "「嗯？哪个？」"
+    y "「这个……」"
+    voice "audio/voice/005080.ogg"
+    l "「我看看我看看……」"
+    scene cg04b6 #梁芷柔快餐店学习CG-2|讲题|冬装|CG04b6
+    with dissolve
+    l "「……」"
+    l "「…………」"
+    voice "audio/voice/005081.ogg"
+    l "「……嗯……」"
+    y "「……」"
+    voice "audio/voice/005082.ogg"
+    l "「没问题，你做对了。」"
+    y "「……呼！」"
+    scene cg04b2 #梁芷柔快餐店学习CG-2|讲题|坏笑|冬装|CG04b2
+    with dissolve
+    voice "audio/voice/005083.ogg"
+    l "「嘿嘿，不错嘛，知道用极限了，这个比原答案还要强哦！」"
+    y "「嗯嗯嗯，我觉得也是。」"
+    voice "audio/voice/005084.ogg"
+    l "「嘿，说你胖还就喘上了……其实还有更简单的办法你要不要听一下，嗯？」"
+    y "「啊？」"
+    scene cg04b6 #梁芷柔快餐店学习CG-2|讲题|冬装|CG04b6
+    with dissolve
+    voice "audio/voice/005085.ogg"
+    l "「sinx除以x的话，就是这个点跟原点连线的斜率啊。」"
+    voice "audio/voice/005086.ogg"
+    l "「那其实sinx除以x的范围就是正弦函数曲线上的点跟原点连线的斜率范围，当然是单调减小的嘛，a就是f二分之派了。」"
+    voice "audio/voice/005087.ogg"
+    l "「最大斜率就是原点处的切线，至于斜率……都不用算了，物理学单摆的时候就说x很小的时候sinx约等于x嘛，斜率就是1了！」"
+    y "「……」"
+    scene cg04b2 #梁芷柔快餐店学习CG-2|讲题|坏笑|冬装|CG04b2
+    with dissolve
+    "梁芷柔一脸得意地看着我。"
+    y "「行吧，大写的服。」"
+    voice "audio/voice/005088.ogg"
+    l "「嘿嘿，很好。」"
+    scene cg04b6 #梁芷柔快餐店学习CG-2|讲题|冬装|CG04b6
+    with dissolve
+    voice "audio/voice/005089.ogg"
+    l "「正好了，借着这道题再跟你说一遍——」"
+    voice "audio/voice/005090.ogg"
+    l "「解题思路很重要！」"
+    voice "audio/voice/005091.ogg"
+    l "「你看原来的答案啊，也对，但是呢，方法笨得要死，真到了考试的时候啊，会消耗你大量的时间。」"
+    voice "audio/voice/005092.ogg"
+    l "「所以这个时候对知识点的综合运用……答案的切入点就很重要了。」"
+    y "「嗯……」"
+    voice "audio/voice/005093.ogg"
+    l "「你看啊，比如刚才这道题吧……」"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b07 #快餐店
+    with fade
+    play sound "audio/sound/ambientnoise06.ogg" fadein 1.5 loop #快餐店环境噪音
+    "精神高度集中的状态下，时间总是过得很快。"
+    "一转眼，第一天的学习会就到了末尾。"
+    y "「……呼。」"
+    show chara le13b #梁芷柔立绘|冬季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/005094.ogg"
+    l "「嗯？怎么啦，累了？」"
+    y "「还行吧……」"
+    y "「虽然确实是挺费脑子的。」"
+    show chara le09 #梁芷柔立绘|冬季私服|坏笑|近
+    with dissolve
+    voice "audio/voice/005095.ogg"
+    l "「费脑子呀？呵，这可才是第一天啊。」"
+    show chara le10 #梁芷柔立绘|冬季私服|开心|近
+    with dissolve
+    voice "audio/voice/005096.ogg"
+    l "「后面有的是真正费脑子的地方，做好心理准备吧。」"
+    y "「成吧，我今天回去吃顿好的，十八年后又是一条好汉。」"
+    show chara le09 #梁芷柔立绘|冬季私服|坏笑|近
+    with dissolve
+    voice "audio/voice/005097.ogg"
+    l "「喔，说得跟真的似的。」"
+    show chara le01b #梁芷柔立绘|冬季私服|普通|侧面|近
+    with dissolve
+    voice "audio/voice/005098.ogg"
+    l "「不过啊，说正经，你今天状态还挺不错的。」"
+    show chara le11 #梁芷柔立绘|冬季私服|微笑|近
+    with dissolve
+    voice "audio/voice/005099.ogg"
+    l "「很专注，很好！」"
+    y "「啊，是啊。」"
+    y "「说实话，我自己都没想到。」"
+    "刚开始见面的时候，因为是时隔许久的又一次长时间独处，我还有点心猿意马。"
+    "不过等到真正开始做题的时候，就很快调整角色进入到状态里了。"
+    show chara le13a #梁芷柔立绘|冬季私服|疑惑1|近
+    with dissolve
+    voice "audio/voice/005100.ogg"
+    l "「嗯……比我当初强多了，我刚开始想要好好学习的时候，花了一年的时间才能静下心来呢。」"
+    y "「那是，我又不是12岁的小屁孩了。」"
+    show chara le03 #梁芷柔立绘|冬季私服|生气|近
+    with dissolve
+    voice "audio/voice/005101.ogg"
+    l "「谁……谁是小屁孩啊！？」"
+    y "「哈哈哈，反正不是我。」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/005102.ogg"
+    l "「你还真是蹬鼻子上脸啊……看来还是精力过剩哈？要不要明天再加点？」"
+    y "「来啊，断头饭我都准备吃了，来来来，尽管来！」"
+    show chara le10 #梁芷柔立绘|冬季私服|开心|近
+    with dissolve
+    voice "audio/voice/005103.ogg"
+    l "「嚯，死猪不怕开水烫了是吧？啊？」"
+    hide chara
+    with dissolve
+    pause
+    with vpunch
+    y "「哎哟疼疼疼！别揪耳朵！我服，我服了行吗？别动手！」"
+    "……"
+    "…………"
+    with fade
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    y "「疼死我了，不带你这样的！」"
+    voice "audio/voice/005104.ogg"
+    l "「我不管，谁让你嘲笑我的。」"
+    y "「开个玩笑而已，至于嘛。」"
+    show chara le03 #梁芷柔立绘|冬季私服|生气|近
+    with dissolve
+    voice "audio/voice/005105.ogg"
+    l "「哼！」"
+    y "「……」"
+    y "「呵呵……」"
+    show chara le02 #梁芷柔立绘|冬季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/005106.ogg"
+    l "「你还笑！」"
+    y "「啊，不是，我不是笑这个。」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/005107.ogg"
+    l "「那是在笑什么啊？」"
+    y "「我在想啊，这事就是这么奇妙。」"
+    show chara le13b #梁芷柔立绘|冬季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/005108.ogg"
+    l "「嗯？」"
+    y "「现在我可以和你聊学习聊得这么认真，甚至还挺开心的。」"
+    show chara le13a #梁芷柔立绘|冬季私服|疑惑1|近
+    with dissolve
+    voice "audio/voice/005109.ogg"
+    l "「啊……」"
+    y "「要是以前，我早就该叫苦连天了吧。」"
+    y "「哪儿能想得到还能像现在这样，自己给自己加码的。」"
+    y "「那感觉，就像是突然一下子开窍了吧，砰的一下，突然明白了。」"
+    y "「然后呢，发现，哎呀，自己还有得救，还可以抢救一下，不要放弃治疗。」"
+    y "「哎……真是……」"
+    y "「要是再早一点就好了，那就……」"
+    show chara le01b #梁芷柔立绘|冬季私服|普通|侧面|近
+    with dissolve
+    l "「……」"
+    show chara le11 #梁芷柔立绘|冬季私服|微笑|近
+    with dissolve
+    voice "audio/voice/005110.ogg"
+    l "「现在，也不晚。」"
+    y "「嗯。」"
+    show chara le01b #梁芷柔立绘|冬季私服|普通|侧面|近
+    with dissolve
+    voice "audio/voice/005111.ogg"
+    l "「我可不是在安慰你啊，灌鸡汤什么的……我很认真的。」"
+    voice "audio/voice/005112.ogg"
+    l "「毕竟你现在的目标是去樱华，又不是考樱大。剩下的这点差距啊，只要你能继续保持下去，就肯定没问题！」"
+    show chara le11 #梁芷柔立绘|冬季私服|微笑|近
+    with dissolve
+    voice "audio/voice/005113.ogg"
+    l "「听我的，对自己多一点自信，好不好？」"
+    show chara le01a #梁芷柔立绘|冬季私服|普通|正面|近
+    with dissolve
+    voice "audio/voice/005114.ogg"
+    l "「相信自己。你看，我这么好的眼光都相信你了，你自己还不相信自己吗？」"
+    y "「……」"
+    "「相信自己，相信你，相信你所相信的我。」"
+    "梁芷柔的声音，如同有魔力一般，感染了我。"
+    "我轻轻点了点头。"
+    y "「……谢谢你。」"
+    show chara le11 #梁芷柔立绘|冬季私服|微笑|近
+    with dissolve
+    voice "audio/voice/005115.ogg"
+    l "「嗯！」"
+    "梁芷柔微笑着，如同早春的阳光，温和沁润。"
+    stop sound fadeout 3.0
+
+    "……"
+    "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t03 #转场 快餐店
+    with fade
+    pause
+
+#之后某日。
+#临近春节。
+
+    scene bg b00 #天空
+    with fade
+    play music "audio/music/bgm04.ogg" fadein 1.5 #冬～苍雪～
+
+    "我们的学习会再次开始了。"
+    "在同样的地方，和同样的她，做着同样的事。"
+    "但，心境却已经有所不同。"
+    "说实话，连我自己都没想到，在和梁芷柔独处的时候，居然还能如此地心无旁骛。"
+    "想要拥有未来，首先需要现在的付出——道理简单，却也很难做到。所幸，我终于认识到了这一点。"
+    "怀揣着希望，将全部精力专注于学习，将曾经的浑浑噩噩所荒废的时间一分一秒地抢回来。"
+    "每天都有进步，每天都能弄懂一些以前不明白的东西……每天，都过得很充实。"
+    "就这样，日子一天一天地过去了。"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene cg04b3 #梁芷柔快餐店学习CG-2|做题|冬装|CG04b3
+    with fade
+    play sound "audio/sound/effect10.ogg" fadein 0.5 loop #写字声
+    "腊月廿七。"
+    "今年没有年三十，后天就是除夕了。"
+    "天大地大，过年最大，再怎么说，我们也不可能去压榨这两天的时间。"
+    "而寒假，虽然说是从小年放到元宵，其实最多也就是到初七。再往后，高三的学生就要开始返校了……虽然名为补习，实际上就是开学。"
+    "所以，今天就是我们学习会的最后一天了。"
+    y "「嗯……」"
+    "放下手里刚刚做完的卷子，挠了挠头。"
+    "感觉……有点毛躁。"
+    "今天之后，接下来的这几天大概就是我高考前的最后一次连休了吧……想想后面将要面临的鏖战，这仅存的一周假期就愈发显得珍贵。"
+    "修行不足啊，还是容易被其他事情干扰。什么时候我也能像梁芷柔那样毫无杂念就好了。"
+    "不过，说到梁芷柔……"
+    voice "audio/voice/005116.ogg"
+    l "「嗯……」"
+    scene cg04b5 #梁芷柔快餐店学习CG-2|做题|愁眉苦脸|冬装|CG04b5
+    with dissolve
+    voice "audio/voice/005117.ogg"
+    l "「嗯？」"
+    voice "audio/voice/005118.ogg"
+    l "「……嗯……嗯？？」"
+    "有点出乎意料的是……梁芷柔今天也不大对劲。"
+    "也不知道发生了什么事情，总之从刚才开始就是一脸苦大仇深的模样。"
+    y "「怎么了？」"
+    voice "audio/voice/005119.ogg"
+    l "「嗯……这题……好奇怪……」"
+    y "「啥？」"
+    voice "audio/voice/005120.ogg"
+    l "「没事，我再看看吧……」"
+    y "「哦……」"
+    with fade
+    "……"
+    "…………"
+    l "「……」"
+    "20分钟过去了，期间梁芷柔断断续续地把习题集往后翻了几页，但看题的时候始终是一幅怪异的表情。"
+    stop sound fadeout 3.0
+    with fade
+    "……"
+    "…………"
+    play sound "audio/sound/ambientnoise06.ogg" fadein 1.5 loop #快餐店环境噪音
+    "又过了几分钟。"
+    l "「……」"
+    scene cg04b4 #梁芷柔快餐店学习CG-2|做题|暴怒|冬装|CG04b4
+    with dissolve
+    voice "audio/voice/005121.ogg"
+    l "「嗯～～～受不了了！」"
+    voice "audio/voice/005122.ogg"
+    l "「坑爹呢这是！」"
+    y "「呃……」"
+    voice "audio/voice/005123.ogg"
+    l "「我就说嘛……什么玩意儿……」"
+    voice "audio/voice/005124.ogg"
+    l "「啊啊不行不行不行，这题根本没法做！」"
+    y "「你这到底是怎么了？」"
+    voice "audio/voice/005125.ogg"
+    l "「你看看，这题出的……」"
+    y "「嗯……？」"
+    scene bg b07 #快餐店
+    with fade
+    "从梁芷柔手里接过习题集，一边看一边轻声地念起来。"
+    y "「一个正整数，可以表示为a乘b乘c乘100a加10b加c的和，且a、b、c均为正整数，a大于b大于c，求该正整数取值范围……」"
+    y "「嗯，最小一组解是a3b2c1，也就是6乘以321……1926吧，取值范围是1926到正无限？」"
+    y "「……什么鬼。」"
+    show chara le03 #梁芷柔立绘|冬季私服|生气|近
+    with dissolve
+    voice "audio/voice/005126.ogg"
+    l "「是吧？也不知道这都是从哪儿找的题库，全都特别奇葩。要么是这样的，要么是超纲的，还有的根本就是题出错了。」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/005127.ogg"
+    l "「我这半个小时都在干什么啊……简直是在浪费生命！」"
+    y "「啊，其实不到半个小时。」"
+    y "「你刚开始不对劲的时候我就注意到了……我看看啊，你大概，嗯，大概跟它较了24分钟的劲。」"
+    show chara le02 #梁芷柔立绘|冬季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/005128.ogg"
+    l "「那也是24分钟啊！一天才24个小时，这就等于我今天的每1分钟，都有1秒钟不翼而飞了！」"
+    y "「所以说啊……你干嘛非得跟它较这么大的劲？」"
+    show chara le07b #梁芷柔立绘|冬季私服|消沉2|近
+    with dissolve
+    voice "audio/voice/005129.ogg"
+    l "「因为没别的题可做了呀。」"
+    y "「啊？」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/005130.ogg"
+    l "「手头上就这么一本了。这不是临近春节了嘛，物流都歇了，书店那边也没进货。」"
+    show chara le07a #梁芷柔立绘|冬季私服|消沉1|近
+    with dissolve
+    voice "audio/voice/005131.ogg"
+    l "「原本以为好歹能撑过今天……那不就正好了嘛，结果谁想到是这么个玩意。」"
+    y "「哈哈哈，你这就是玩了一辈子鹰，结果最后被家雀儿啄瞎了眼的那种了。」"
+    show chara le04 #梁芷柔立绘|冬季私服|无奈|近
+    with dissolve
+    voice "audio/voice/005132.ogg"
+    l "「呸呸呸，瞅把你给乐的。别得意的那么早啊，我是没事干了，可你不一样啊，嗯？」"
+    y "「啊～是是是，我知道我知道。」"
+    "举起手晃了晃，表示投降。"
+    "论进度的话，我当然远比不上梁芷柔。在我俩共享卷子的情况下，此刻的我还有的是题可做。"
+    y "「嗯……」"
+    "先把手头的部分告一段落吧……"
+    "看了看手里做到一半的卷子，稍微估算了一下时间。"
+    y "「大概还需要20分钟……」"
+    y "「劳您大驾，多等我一会儿吧。」"
+    show chara le10 #梁芷柔立绘|冬季私服|开心|近
+    with dissolve
+    voice "audio/voice/005133.ogg"
+    l "「嗯！」"
+    "梁芷柔随意地点了点头，拿了本闲书出来读，我则继续和卷子的剩余部分奋斗起来。"
+    stop sound fadeout 3.0
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b07 #快餐店
+    with fade
+    y "「呼……」"
+    play music "audio/music/bgm04.ogg" fadein 1.5 #冬～苍雪～
+
+    "搞定了！"
+    "基本在预想的时间内做完了剩余的部分，看来我的判断力也是有提高的。"
+    show chara e09 #梁芷柔立绘|冬季私服|坏笑
+    with dissolve
+    voice "audio/voice/005134.ogg"
+    l "「嗯？做完啦？」"
+    y "「嗯……嗯？」"
+    "一抬头，发现梁芷柔正笑眯眯地看着我。"
+    y "「什么啊，笑得这么奇怪……」"
+    show chara e11 #梁芷柔立绘|冬季私服|微笑
+    with dissolve
+    voice "audio/voice/005135.ogg"
+    l "「嗯，没什么。」"
+    voice "audio/voice/005136.ogg"
+    l "「就是看看你。毕竟难得有这种我闲着、你忙活的时候嘛。」"
+    y "「呃，行吧……我有什么可看的……」"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/005137.ogg"
+    l "「当然有啦！」"
+    y "「那你看出什么名堂来了？」"
+    show chara e09 #梁芷柔立绘|冬季私服|坏笑
+    with dissolve
+    voice "audio/voice/005138.ogg"
+    l "「嗯，呵呵，你觉得呢？」"
+    y "「啊？」"
+    show chara e11 #梁芷柔立绘|冬季私服|微笑
+    with dissolve
+    voice "audio/voice/005139.ogg"
+    l "「你觉得你刚才做题的时候是什么样子？」"
+    y "「我……我哪知道啊，我又看不见我自己。」"
+    y "「你赶紧的，别卖关子了。说吧，我刚才什么样？」"
+    show chara e09 #梁芷柔立绘|冬季私服|坏笑
+    with dissolve
+    voice "audio/voice/005140.ogg"
+    l "「一个急不可耐，一脸猴急想要出去玩的家伙。」"
+    y "「啊？」"
+    "是这样吗？"
+    "虽然之前确实是有那么一点心浮气躁，但我以为自己大致上还算是沉住气了啊……"
+    "难道我其实已经表现得很明显了？"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/005141.ogg"
+    l "「……嘻嘻。」"
+    y "「嗯？」"
+    show chara e09 #梁芷柔立绘|冬季私服|坏笑
+    with dissolve
+    voice "audio/voice/005142.ogg"
+    l "「骗你的。」"
+    y "「……啊？」"
+    show chara e11 #梁芷柔立绘|冬季私服|微笑
+    with dissolve
+    voice "audio/voice/005143.ogg"
+    l "「其实你很认真的，我看了你半天你都没注意。嘻嘻，难道我刚才诈你那一下，其实猜中啦？」"
+    y "「啊……有点。」"
+    show chara e09 #梁芷柔立绘|冬季私服|坏笑
+    with dissolve
+    voice "audio/voice/005144.ogg"
+    l "「嗯～想去玩？」"
+    y "「是。」"
+    show chara e13b #梁芷柔立绘|冬季私服|疑惑2
+    with dissolve
+    voice "audio/voice/005145.ogg"
+    l "「这样啊……」"
+    show chara e13a #梁芷柔立绘|冬季私服|疑惑1
+    with dissolve
+    voice "audio/voice/005146.ogg"
+    l "「那不如这样吧，你先陪我去个地方？」"
+    y "「哎？」"
+    show chara e13b #梁芷柔立绘|冬季私服|疑惑2
+    with dissolve
+    voice "audio/voice/005147.ogg"
+    l "「有个地方，想去看看。陪我一下呗？」"
+    y "「我没问题。」"
+    "一时间猜不透梁芷柔这葫芦里面卖的什么药，但总之先答应下来就是了。"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/005148.ogg"
+    l "「嘻嘻，那走吧。」"
+    scene bg black #黑屏
+    with fade
+    stop music fadeout 2.5
+
+    "……"
+    "…………"
+    voice "audio/voice/005149.ogg"
+    l "「……到啦！」"
+    scene bg b05b #湿地公园|冬
+    with fade
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+
+    y "「……」"
+    y "「嗯？居然是这儿……」"
+    show chara e13a #梁芷柔立绘|冬季私服|疑惑1
+    with dissolve
+    voice "audio/voice/005150.ogg"
+    l "「嗯？怎么啦？」"
+    y "「你怎么想起来这里了？」"
+    "跟着梁芷柔一路走来，最终的目的地居然是……我家门口的那个湿地公园。"
+    show chara e13b #梁芷柔立绘|冬季私服|疑惑2
+    with dissolve
+    voice "audio/voice/005151.ogg"
+    l "「嗯，不知道为什么，就是想来。」"
+    show chara e13a #梁芷柔立绘|冬季私服|疑惑1
+    with dissolve
+    voice "audio/voice/005152.ogg"
+    l "「硬要说的话……哇，好多鸟！哎，鸭子！好多啊！好可爱！」"
+    hide chara
+    with dissolve
+    "话刚说到一半，梁芷柔的注意力就被旁边的水鸟们吸引走了。"
+    y "「……喂喂喂。」"
+    "好歹你也是土生土长的本地人，在这个城市里住了18年，不要看上去好像第一次见到似的好不好？"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/005153.ogg"
+    l "「啊，那边也有……」"
+    hide chara
+    with dissolve
+    y "「喂，别乱跑！」"
+    "尤其是别一边叫唤一边乱跑……"
+    "就算修缮得已经差不多了，但公园到底还是处于未开放的状态，我们现在算是「非法入侵」，太高调了会惹麻烦的。"
+    show chara e10 #梁芷柔立绘|冬季私服|开心
+    with dissolve
+    voice "audio/voice/005154.ogg"
+    l "「怕什么嘛，掉不下去的！」"
+    y "「我怕的又不是你掉河里！」"
+    y "「我水性不错的，你真掉下去我捞你上来就是了。」"
+    show chara e04 #梁芷柔立绘|冬季私服|无奈
+    with dissolve
+    voice "audio/voice/005155.ogg"
+    l "「……」"
+    "我一边跟上梁芷柔，一边四下观察。好在已经临近过年，这里的工作人员大概也都放假了，并没有发现其他人的踪影。"
+    show chara e01b #梁芷柔立绘|冬季私服|普通|侧面
+    with dissolve
+    voice "audio/voice/005156.ogg"
+    l "「哎，好啦好啦，不乱跑了。」"
+    show chara e11 #梁芷柔立绘|冬季私服|微笑
+    with dissolve
+    voice "audio/voice/005157.ogg"
+    l "「陪我呆一会儿吧。」"
+    y "「噢。」"
+    scene cg08b #梁芷柔河边CG-2|两人并排|CG08b
+    with fade
+    "我们俩找了个地方，并排靠在栏杆边，梁芷柔捋了捋头发，朝河面望去。"
+    "顺着她的目光看过去，视线越过了冬日的芦苇花，落在东逝而去的黄河之上。"
+    voice "audio/voice/005158.ogg"
+    l "「好美啊……」"
+    "处在枯水期的黄河，水很清，也很缓。阳光洒过，波光粼粼。"
+    "浅浅的河面上，有无数的水鸟翩翩起舞。"
+    l "「……」"
+    voice "audio/voice/005159.ogg"
+    l "「好美。」"
+    y "「嗯，是啊。」"
+    "哪怕早已是司空见惯，但眼前的这幅景色依然不禁让人赞叹。"
+    l "「……」"
+    y "「……」"
+    scene cg08c11 #梁芷柔河边CG-3|梁芷柔转身|CG08c11
+    with dissolve
+    voice "audio/voice/005160.ogg"
+    l "「哎。」"
+    y "「嗯？」"
+    scene cg08c1 #梁芷柔河边CG-3|两人对视|CG08c1
+    with dissolve
+    voice "audio/voice/005161.ogg"
+    l "「刚才……」"
+    voice "audio/voice/005162.ogg"
+    l "「你刚才问我为什么要来这里，我说我也不知道。」"
+    voice "audio/voice/005163.ogg"
+    l "「但其实……我只是有点，不知道该怎么说才好。」"
+    scene cg08c #梁芷柔河边CG-3|男主侧身|CG08c
+    with dissolve
+    voice "audio/voice/005164.ogg"
+    l "「我呢，想要多来这里看看，然后……尽可能多记住一点，这里的景色。」"
+    scene cg08b #梁芷柔河边CG-2|两人并排|CG08b
+    with dissolve
+    voice "audio/voice/005165.ogg"
+    l "「我希望把这一切都烙在自己的记忆里，让我可以在未来回想起这里的时候，浮现出来的是一幅鲜活的画面，而不只是一个朦胧的印象。」"
+    l "「……」"
+    voice "audio/voice/005166.ogg"
+    l "「在未来……我们一起回忆这段日子的时候。」"
+    play sound "audio/sound/effect23.ogg" loop
+    y "「——！」"
+    "在听到这话的一瞬间，我的心脏骤然狂跳起来。"
+    stop sound fadeout 3.0
+    "力度之大，都能让我自己直接听到那砰砰的响声。"
+    scene cg08c2 #梁芷柔河边CG-3|两人对视|浅笑|CG08c2
+    with dissolve
+    "我扭过头，想要看看她的模样，却发现她此时也正好转过脸来，恰好与我四目相对。"
+    "她的眼眸映出一片流光，亮晶晶的，令人怦然心动。"
+    "张了张嘴，却说不出话来。"
+    "梁芷柔也没有再说什么，只是微笑着，看着我。"
+    l "「……」"
+    y "「……」"
+    scene cg08d #梁芷柔河边CG-4|两人靠近|CG08d
+    with dissolve
+    "不知不觉中，我们之间的距离，似乎正在逐渐……缩短。"
+    "周围的声音，似乎突然显得清晰起来了。"
+    "……江水的声音，风拂过芦苇的声音，候鸟嬉戏的声音。"
+    "听不到人声。"
+    "外面街道上见不到行人，河对岸此刻也没什么动静。"
+    "那一瞬间，有一种仿佛整个世界就只剩下自己和自己眼前的这个女孩的错觉。"
+    voice "audio/voice/005167.ogg"
+    l "「……呼……」"
+    "看着她红扑扑的脸蛋。"
+    "感受她呼出的白色哈气。"
+    "聆听她略微急促的呼吸声。"
+    scene cg08d1 #梁芷柔河边CG-4|两人靠近|特写|CG08d1
+    with dissolve
+    l "「……」"
+    y "「……」"
+    "我情不自禁地向前探着身子，而她似乎也没有躲避的意思。"
+    "一厘米、两厘米……"
+    "我们之间的距离，越来越近。"
+    l "「……」"
+    scene cg08d2 #梁芷柔河边CG-4|两人靠近|闭眼|CG08d2
+    with dissolve
+    "她轻轻闭上了眼睛。"
+    "微微颤抖的睫毛，描述着她此刻的心情。"
+    y "「……」"
+    scene bg black #黑屏
+    with fade
+    "我深深吸了一口气，也闭上眼。"
+    "然后——"
+    play audio "audio/sound/effect26.ogg" noloop
+    bird "「嘎——！」"
+    scene bg b00a #天空|候鸟
+    with fade
+    bird "「嘎嘎嘎——！」"
+    play audio "audio/sound/effect27.ogg" noloop
+    bird "「扑棱扑棱扑棱扑棱扑棱扑棱扑棱扑棱扑棱——」"
+    "就在我们即将接触的那一瞬间，有一大滩水鸟不知因为什么被惊得四散飞起，闹出了好大的动静。"
+    scene cg08d3 #梁芷柔河边CG-4|两人靠近|吃惊|CG08d3
+    with fade
+    voice "audio/voice/005168.ogg"
+    l "「啊……！」"
+    y "「呃……」"
+    "我们都被吓了一跳，我不自觉地绷紧了身子，梁芷柔也倒吸了一口凉气，睁开了眼睛。"
+    l "「……」"
+    y "「……」"
+    "气氛被破坏了，刚才热血上涌的冲动也飞快地冷静了下来，只剩下彼此近距离的面面相觑。"
+    l "「……」"
+    y "「……」"
+    "有点……尴尬。"
+    "我有些不知所措，倒是梁芷柔，在经过了最初的那一瞬间的惊慌之后，很快淡定了下来。"
+    scene cg08d4 #梁芷柔河边CG-4|两人靠近|微笑|CG08d4
+    with dissolve
+    l "「……」"
+    "……不止如此。她还一副饶有兴致的模样，似乎想看看我接下来会怎么做。"
+    y "「……」"
+    "这是在挑衅吧？这一定是在挑衅吧？你知不知道你这样做会被……"
+    "……算了，我知道，我什么也不敢做的。"
+    voice "audio/voice/005169.ogg"
+    l "「嘻……嘻嘻！」"
+    "看着我的样子，梁芷柔很开心地笑了起来。"
+    scene cg08e #梁芷柔河边CG-4|两人顶牛|CG08e
+    with dissolve
+    "然后，她微微前倾，把她的额头与我的额头贴在了一起。"
+    voice "audio/voice/005170.ogg"
+    l "「有句话说的好。」"
+    voice "audio/voice/005171.ogg"
+    l "「『在看风景的时候，在乎的并不是风景有多美，而是陪在你身边看风景的那个人是谁。』……」"
+    y "「嗯。」"
+    voice "audio/voice/005172.ogg"
+    l "「明年……以后每次过年的时候，你都陪我来这里看风景，好不好？」"
+    y "「……好。」"
+    "我轻轻点了点头。"
+    "我们俩的脑门是顶在一起的，我的动作也带着她的头一起晃动起来。"
+    voice "audio/voice/005173.ogg"
+    l "「嘻嘻。」"
+    "似乎是觉得很好玩，梁芷柔开始用力，和我顶起牛来。"
+    y "「哎哟。」"
+    voice "audio/voice/005174.ogg"
+    l "「哈哈哈。」"
+    "我装作不敌的样子，和她拉锯了两个回合，逗得她又笑了起来。"
+    stop sound fadeout 3.0
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    scene bg b05b #湿地公园|冬
+    with fade
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+    "玩闹了一会儿以后，我们没有继续再粘在一起，只是牵着的手却没有松开。"
+    "时值午后，冬末春初的阳光晒得人暖暖的，丝毫感觉不到寒冷。"
+    "我们就这样肩并肩靠在一起，沐浴着阳光，盯着眼前这片无比熟悉，却仿佛怎么也看不够的景色。"
+    scene bg b00 #天空
+    with fade
+    "胡马依北风，越鸟巢南枝。"
+    "道路阻且长，会面安可知。"
+    "对于将来，现在的我还不敢夸下海口。"
+    "但是，我会在接下来的日子里，继续不断向前追赶。"
+    "直到……真正能够支撑起我们的未来的时候……"
+    stop music fadeout 2.5
+
+    "……"
+    "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t03 #转场 快餐店
+    with fade
+    pause
+
+#大年初五。
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    stop sound
+    play music "audio/music/bgm06.ogg" fadein 1.5 #悬而未决
+
+    "这一天，终于到来了。"
+    "就好像那些或悲观、或阴谋的崩溃论者所说过的那样……"
+    "工厂停工、商店关门、政府停顿……只有警察和武警，每一天都处在高度的紧张之中。"
+    "原本车水马龙的繁华大城市，此时正变得萧条空荡。"
+    "有钱的富人全家奔向海外，没钱的穷人则争相返回老家，所有的长途交通工具全部爆满，人们为了抢到一张车票而拼尽全力。"
+    "而家乡的情况也并未好到哪去：所有人都急切地想要把手中的货币尽量多地换成食物或者其他什么实际的货物，这同样引发了抢购狂潮。"
+    "其间，在某一天晚上，几乎全国的家庭都围绕在电视机前，怀着期盼的心情等待着中央电视台面向全国的播放。"
+    "中央台的播放持续长达四个多小时，人们怀着复杂的心情坚持着将之全部看完，却又异口同声地对其内容进行了大肆抨击。"
+    "当晚，全国大多数城市都陷入了弥漫的硝烟之中。人们成群结队地外出，在各个街道、广场点燃了大量的爆炸物，不时会有人因此受伤，尤其以眼伤者居多。"
+    "还有许多家庭在门口的两侧和上方张贴标语，表达来年的诉求。"
+    "而在激情过后，耗尽了精力的人们开始选择闷在家里休养，终日混吃等死、无所事事，或者带着孩子到亲属的家里，以孩子的名义讨要钱财。"
+    stop music fadeout 2.5
+    "是的，这一切都真实地发生了……"
+    "春节，到了。"
+
+    scene cg09a #梁芷柔逛社火CG-1|冰糖葫芦|CG09a
+    with fade
+    play music "audio/music/bgm05.ogg" fadein 1.5 #恭贺新禧
+    voice "audio/voice/005175.ogg"
+    l "「人好多啊～」"
+    show cg09g1 #梁芷柔逛社火CG-7|表情差分|皱眉|CG09g1
+    with dissolve
+    voice "audio/voice/005176.ogg"
+    l "「哎呀怎么搞的嘛……人怎么这么多啊！挤死了！嗯……」"
+    y "「那你还非要来。」"
+    voice "audio/voice/005177.ogg"
+    l "「肯定要来啊！因为是社火嘛！」"
+    y "「我觉得更像是小商品集散中心外加灵长类野生动物园……」"
+    y "「话说你有那么传统嘛，居然喜欢看这个？」"
+    show cg09g2 #梁芷柔逛社火CG-7|表情差分|无奈|CG09g2
+    with dissolve
+    voice "audio/voice/005178.ogg"
+    l "「其实啊，我也就是来凑个热闹。」"
+    y "「哎……」"
+    voice "audio/voice/005179.ogg"
+    l "「毕竟家里待不下去了嘛，这算是……嗯……跑出来避难吧。」"
+    y "「啥情况，家里怎么啦？」"
+    show cg09g1 #梁芷柔逛社火CG-7|表情差分|皱眉|CG09g1
+    with dissolve
+    voice "audio/voice/005180.ogg"
+    l "「别提了，我这两天没完没了地串门、被串门，累死了！还烦！」"
+    voice "audio/voice/005181.ogg"
+    l "「也不知道我们家怎么有那么多亲戚，七大姑八大姨一个挨一个，没完没了的。」"
+    y "「过年嘛，正常。」"
+    voice "audio/voice/005182.ogg"
+    l "「可问题是他们全都拿我当枪使啊！那什么，『你看看你表姐，今年可是要考到樱大去的啊，你再瞧瞧你，真没出息！』……唉！」"
+    voice "audio/voice/005183.ogg"
+    show cg09g5 #梁芷柔逛社火CG-7|表情差分|生气|CG09g5
+    with dissolve
+    l "「你是不知道，我这两天就是标准的『别人家的孩子』，把我那一帮堂的表的兄弟姐妹都得罪遍了！」"
+    show cg09g2 #梁芷柔逛社火CG-7|表情差分|无奈|CG09g2
+    with dissolve
+    voice "audio/voice/005184.ogg"
+    l "「我还没办法，只能赔笑脸，『啊，谢谢谢谢，不敢当不敢当』……唉，真受不了。」"
+    y "「……原来如此。我说呢，昨天我还琢磨了半天，心说您老人家这是怎么了？」"
+    show cg09g3 #梁芷柔逛社火CG-7|表情差分|疑惑|CG09g3
+    with dissolve
+    voice "audio/voice/005185.ogg"
+    l "「嗯？怎么啦，我约你出来很奇怪吗？」"
+    y "「倒不是奇怪……也不对，你知道吗，你当时那条短信，就跟有配音似的。」"
+    scene bg b02c #城区|冬
+    show memories #回忆滤镜
+    with fade
+    "……"
+    "…………"
+    show chara le03 #梁芷柔立绘|冬季私服|生气|近
+    with dissolve
+    voice "audio/voice/005186.ogg"
+    l "「『明天陪我玩！』」"
+    hide chara
+    with dissolve
+    y "「…………」"
+
+    scene cg09a #梁芷柔逛社火CG-1|冰糖葫芦|CG09a
+    show cg09g3 #梁芷柔逛社火CG-7|表情差分|疑惑|CG09g3
+    with fade
+    voice "audio/voice/005187.ogg"
+    l "「所以呢，你就给我回了一个『啊？』字过来？」"
+    y "「条件反射、条件反射，脑子抽抽了，不知道怎么回事。」"
+    "说实话，那还是我第一次见到梁芷柔用这么明确的命令口吻。"
+    "结果当时我都不知道自己怎么想的，直接回复了一个「啊？」，然后紧接着就接到了第二条短信，内容是集合的时间和地点。"
+    "看样子是根本就没考虑过我这边的想法，在发出上一条短信的时候就紧接着敲下一条了吧。"
+    y "「毕竟你这气场太强大了，我只顾瑟瑟发抖，都忘了给你打个电话问问了。」"
+    show cg09g2 #梁芷柔逛社火CG-7|表情差分|无奈|CG09g2
+    with dissolve
+    voice "audio/voice/005188.ogg"
+    l "「呵，幸亏你是没打电话啊，当时我正在饭桌上被我几个姑姑轮番轰炸呢。」"
+    voice "audio/voice/005189.ogg"
+    l "「你要是打过来了我肯定也不知道该说什么。然后呢，你想象一下吧，当着那一群人的面，接了一个男生的电话……啊，我死定了。」"
+    y "「……」"
+    voice "audio/voice/005190.ogg"
+    l "「哎呀好啦好啦，不说那些啦！今天我要彻底放松，别的什么都不想……啊，有铁板鱿鱼！」"
+    show cg09g4 #梁芷柔逛社火CG-7|表情差分|兴奋|CG09g4
+    with dissolve
+    pause 0.5
+    scene cg09b #梁芷柔逛社火CG-2|消失|CG09b
+    with dissolve
+    "梁芷柔一边吃着冰糖葫芦，一边突然朝旁边的摊位冲去。"
+    y "「喂喂喂，小心点，别扎着！行不行啊，要不要我帮你先拿着？」"
+    voice "audio/voice/005191.ogg"
+    l "「（嚼嚼）……不用！」"
+    y "「啊……」"
+    "梁芷柔娇小的身躯瞬间没入围在摊铺周边的人群之中。"
+    "只能看到她高高举起的、抓着糖葫芦的右手……似乎是想要保护糖葫芦，但又实在没有足够的空间，只能摆出这样的造型来了。"
+    y "「……唉。」"
+    "我挠了挠头，跟在她的身后，杀入汹涌的人潮当中。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene cg09a1 #梁芷柔逛社火CG-1|鱿鱼+冰糖葫芦（半）|CG09a1
+    with fade
+    "护着梁芷柔从人群里杀了出来。"
+    voice "audio/voice/005192.ogg"
+    l "「来，你的那份。」"
+    y "「谢谢啊。」"
+    y "「冰糖葫芦呢？没事吧？」"
+    voice "audio/voice/005193.ogg"
+    l "「活得好好的呢。」"
+    "梁芷柔将吃到一半的糖葫芦给我看。"
+    y "「嗯？怎么少了？让人给挤掉了？」"
+    show cg09g3 #梁芷柔逛社火CG-7|表情差分|疑惑|CG09g3
+    with dissolve
+    voice "audio/voice/005194.ogg"
+    l "「没有啊，吃了。」"
+    y "「哦……啊？」"
+    y "「这种时候你还能吃进东西啊！？」"
+    "刚才看你都快被人给挤得脚离了地了……"
+    voice "audio/voice/005195.ogg"
+    l "「是啊，就这样……」"
+    "梁芷柔给我摆了个杂技里面吞剑的造型。"
+    y "「这也行……」"
+    y "「你就不能等会儿吃吗？多危险啊？」"
+    scene cg09a1 #梁芷柔逛社火CG-1|鱿鱼+冰糖葫芦（半）|CG09a1
+    with fade
+    voice "audio/voice/005196.ogg"
+    l "「嗯……可是想吃了嘛。」"
+    y "「呃……」"
+    y "「那也太危险了啊！万一戳着自己怎么办……」"
+    voice "audio/voice/005197.ogg"
+    l "「啊，好啦好啦知道啦！嘻嘻，赶快吃鱿鱼吧，凉了就不好吃啦！啊呜。」"
+    voice "audio/voice/005198.ogg"
+    l "「嗯嗯……真好吃，好久没吃鱿鱼了……啊，羊肉串！」"
+    show cg09g4 #梁芷柔逛社火CG-7|表情差分|兴奋|CG09g4
+    with dissolve
+    pause 0.5
+    scene cg09b #梁芷柔逛社火CG-2|消失|CG09b
+    with dissolve
+    y "「……」"
+    stop music fadeout 2.5
+    "总感觉……今天……"
+    "应该不会那么容易度过了……"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    scene cg09a2 #梁芷柔逛社火CG-1|人潮|棉花糖+羊肉串（半）|CG09a2
+    with fade
+    play sound "audio/sound/ambientnoise08.ogg" fadein 1.5 loop #商场环境噪音
+
+    y "「呼、呼……」"
+    "所谓「女生都是吃货」的说法，在今天之前，我一直以为只是在说她们的食欲很旺盛。"
+    "然而现在，我终于发现这里面其实还有一个隐藏的buff，一个绝对不下于「女生逛街」的buff。"
+    "那就是……「在为了满足食欲而采取的觅食行动中，体力不减」。"
+    "经过几轮厮杀之后，像我这样的凡夫俗子此刻已经显露出疲态了，可梁芷柔依旧是一副两眼放光、四处寻找猎物的姿态。"
+    show cg09g1 #梁芷柔逛社火CG-7|表情差分|皱眉|CG09g1
+    with dissolve
+    voice "audio/voice/005199.ogg"
+    l "「哎，臭豆腐！嗯，感觉味道有点冲啊，但是又有点想吃……」"
+    show cg09g4 #梁芷柔逛社火CG-7|表情差分|兴奋|CG09g4
+    with dissolve
+    voice "audio/voice/005200.ogg"
+    l "「啊，是灰豆子！好久都没吃过了，嗯……」"
+    show cg09g3 #梁芷柔逛社火CG-7|表情差分|疑惑|CG09g3
+    with dissolve
+    voice "audio/voice/005201.ogg"
+    l "「酿皮……哎呀怎么办啊，这个也好想吃啊……」"
+    y "「……」"
+    "感觉她什么都想吃。"
+    "而且，这一路已经吃了那么多东西了，居然也不见她吃饱。"
+    scene cg09a2 #梁芷柔逛社火CG-1|人潮|棉花糖+羊肉串（半）|CG09a2
+    with dissolve
+    voice "audio/voice/005202.ogg"
+    l "「嘿嘿……嗯？怎么啦？」"
+    "似乎注意到我一直在看着她，梁芷柔扭过头来，发出了疑问。"
+    y "「啊，我只是在想……」"
+    y "「你怎么跟饿了三天没吃饭似的。」"
+    voice "audio/voice/005203.ogg"
+    l "「啊，哈哈……」"
+    voice "audio/voice/005204.ogg"
+    l "「怎么啦，不行吗？」"
+    y "「行行行，您使劲吃好了。」"
+    voice "audio/voice/005205.ogg"
+    l "「哼！」"
+    "梁芷柔先是尴尬地笑了笑，随即又像是恼羞成怒似的板起了脸，狠狠地瞪了我一眼，把头扭向另一侧。"
+    "我笑呵呵地看着她的侧脸，红扑扑的。"
+    y "「我就说嘛，每逢佳节胖三斤啊，全是这么来的。」"
+    show cg09g5 #梁芷柔逛社火CG-7|表情差分|生气|CG09g5
+    with dissolve
+    voice "audio/voice/005206.ogg"
+    l "「你！」"
+    "果然，「胖」这个字大概是全世界年轻女性共同的软肋。"
+    "刚才还一副不要再理我的样子的梁芷柔瞬间就气急败坏地把头转回来了。"
+    voice "audio/voice/005207.ogg"
+    l "「不许说我胖！不许说不许说不许说！你才是胖子呢！」"
+    y "「哈哈哈哈，好吧好吧，不胖不胖……哎哟哎哟哎哟！」"
+    "梁芷柔上来想要捶我一顿，但她双手全都抓着食物的钎子，十分不方便，只能用手背象征性地砸了那么两拳，但又觉得不解气，只好再提起膝盖，顶了我大腿外侧一下子。"
+    "这样的攻击当然连挠痒痒都算不上，不过该有的受伤模样还是需要装出来的。"
+    y "「哎哟哎哟班长大人饶命，小的再也不敢了啊，哈哈哈……您不胖，您真的不胖！」"
+    voice "audio/voice/005208.ogg"
+    l "「我本来也不胖！」"
+    y "「对啊，瘦，特苗条！哎哟，哈哈哈，别踹我了，真的啊。」"
+    "我一边笑着躲闪，一边看向梁芷柔。"
+    "的确，梁芷柔的身材还是蛮不错的。"
+    "即使被冬服包裹，但仍然可以隐约看到她身体的曲线。"
+    voice "audio/voice/005209.ogg"
+    l "「哼！看什么看啊？」"
+    y "「我在想啊，吃了那么多东西，还能这么瘦，你吃的东西都吃到哪里去了……」"
+    "对女生来说，这种怎么吃都吃不胖的体质应该算是梦寐以求的吧。"
+    "我上下打量了一遍梁芷柔，想不出她摄入那些卡路里都去了哪里。"
+    y "「（卡路里啊……会转化成脂肪，堆积在什么地方吧……）」"
+    y "「（脂肪……）」"
+    y "「（脂肪啊……）」"
+    y "「（嗯？脂肪……）」"
+    "在念叨这个词的时候，我的眼神不由自主地把目光的焦点从梁芷柔的脸上往下挪了挪。"
+    "的确，说到脂肪，那倒是还有个地方可以……"
+    show cg09g3 #梁芷柔逛社火CG-7|表情差分|疑惑|CG09g3
+    with dissolve
+    voice "audio/voice/005210.ogg"
+    l "「嗯？……啊，看哪呢你！！！」"
+    with vpunch
+    y "「哎哟！」"
+    scene cg09a3 #梁芷柔逛社火CG-1|棉花糖+羊肉串（半）|捂脸|CG09a3
+    with dissolve
+    "梁芷柔以女生特有的敏感，在一瞬间就察觉了我的视线，然后毫不犹豫地发起了自我防卫。"
+    "看得出她只是想要捂住我的眼睛，不过由于是慌乱之中仓促动手，她实际上是在用攥着羊肉串的那只手……"
+    "直接给了我一拳。"
+    stop sound fadeout 3.0
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    scene cg09a4 #梁芷柔逛社火CG-1|棉花糖|噘嘴|CG09a4
+    with fade
+    play music "audio/music/bgm08.ogg" fadein 1.5 #其乐无穷
+
+    voice "audio/voice/005211.ogg"
+    l "「……哼。」"
+    y "「好啦，都说了是我不好啦。」"
+    voice "audio/voice/005212.ogg"
+    l "「……哼！」"
+    y "「呃……」"
+    l "「……」"
+    y "「……」"
+    voice "audio/voice/005213.ogg"
+    l "「……你眼睛。」"
+    y "「哎？」"
+    voice "audio/voice/005214.ogg"
+    l "「你眼睛有没有事啊？要不要去洗洗？」"
+    y "「呃……啊，还好，没事。」"
+    voice "audio/voice/005215.ogg"
+    l "「真没事？」"
+    y "「真没事……」"
+    "刚才那一拳，力气倒是不大，不过羊肉串糊了我一脸，辣椒直接拍进眼里去了。"
+    "我现在泪流不止，看上去仿佛是在哭着求梁芷柔原谅一样。"
+    voice "audio/voice/005216.ogg"
+    l "「……哼，谁让你瞎瞅的。」"
+    voice "audio/voice/005217.ogg"
+    l "「都是你不好！自找的！」"
+    y "「是啊，都是我不好，刚才我就说了嘛！」"
+    voice "audio/voice/005218.ogg"
+    l "「知道就好！」"
+    voice "audio/voice/005219.ogg"
+    l "「我告诉你啊，下次你要再这样我还得这么打你，知道吗？」"
+    y "「行行行，没问题！见一次打一次，好不好？」"
+    voice "audio/voice/005220.ogg"
+    l "「哼！」"
+    y "「那，接下来吃什么？要不我再去给你重新买一根羊肉串？」"
+    voice "audio/voice/005221.ogg"
+    l "「不吃了！怕胖！」"
+    y "「呃……」"
+    l "「……」"
+    voice "audio/voice/005222.ogg"
+    l "「唉。」"
+    voice "audio/voice/005223.ogg"
+    l "「好啦好啦。我有那么凶嘛？瞧把你给吓的。」"
+    y "「有啊，你看你那模样，跟要活撕了我似的。」"
+    stop music fadeout 2.5
+    voice "audio/voice/005224.ogg"
+    l "「本来就是，自作孽。」"
+    l "「……」"
+    play sound "audio/sound/ambientnoise08.ogg" fadein 5.0 loop #商场环境噪音
+    voice "audio/voice/005225.ogg"
+    l "「……过来。」"
+    y "「嗯？」"
+    scene cg09c #梁芷柔逛社火CG-3|贴近|CG09c
+    with dissolve
+    "梁芷柔突然踮起脚尖，凑到我眼前，仔细地看我的眼睛。"
+    voice "audio/voice/005226.ogg"
+    l "「还红着呢……」"
+    voice "audio/voice/005227.ogg"
+    l "「……疼吗？」"
+    "她轻轻扒着我的眼皮，像模像样地观察起来。"
+    y "「哎哟……？」"
+    voice "audio/voice/005228.ogg"
+    l "「哎别乱动。」"
+    voice "audio/voice/005229.ogg"
+    l "「……嗯……」"
+    "还挺认真的……"
+    "也不知道她这么看能看出什么名堂来……不过她纤细的手指在我脸上滑过的时候，感觉蛮舒服的，就任由她摆布了。"
+    "说来……"
+    "贴得真近啊……"
+    "感觉自己努努嘴就能亲上去了。"
+    y "「……」"
+    "还是算了。"
+    "要是现在刺激到梁芷柔，我的眼珠就该保不住了。"
+    l "「……」"
+    "看了一会儿，大概是觉得没什么毛病，梁芷柔终于放心了。"
+    voice "audio/voice/005230.ogg"
+    l "「呼！」"
+    "最后，她朝我的眼睛轻轻吹了口气，仿佛这样就可以把疼痛吹飞。"
+    voice "audio/voice/005231.ogg"
+    l "「好了！应该是没事了！」"
+    voice "audio/voice/005232.ogg"
+    l "「走啦，去那边看看！」"
+    y "「呵……好。」"
+    stop sound fadeout 3.0
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene cg09a5 #梁芷柔逛社火CG-1|棉花糖|CG09a5
+    with fade
+    play music "audio/music/bgm05.ogg" fadein 1.5 #恭贺新禧
+
+    voice "audio/voice/005233.ogg"
+    l "「哎，你看你看！好可爱啊」"
+    y "「哦，是面人啊……」"
+    voice "audio/voice/005234.ogg"
+    l "「我要过去看看！」"
+    y "「啊……」"
+    scene cg09b #梁芷柔逛社火CG-2|消失|CG09b
+    with dissolve
+    "不等我反应过来，梁芷柔已经风风火火地朝商铺跑过去了。"
+    y "「……」"
+    "我们现在已经走出了餐饮区，附近基本都是卖小玩意儿的。"
+    "不过梁芷柔似乎依然乐此不疲地跑来跑去，兴致丝毫不见减弱。"
+    scene cg09a6 #梁芷柔逛社火CG-1|棉花糖+面人|CG09a6
+    with dissolve
+    voice "audio/voice/005235.ogg"
+    l "「我回来啦！」"
+    "不过片刻，梁芷柔又跑回来了，手里还多了个面人。"
+    y "「嗯。我看看，这啥啊，孙悟空？」"
+    voice "audio/voice/005236.ogg"
+    l "「是呀。」"
+    y "「嚯……你还喜欢这玩意儿啊？」"
+    voice "audio/voice/005237.ogg"
+    l "「怎么啦，不行啊？」"
+    y "「谁也没说不行啊，我这不就是随口问一句嘛……」"
+    voice "audio/voice/005238.ogg"
+    l "「这不是过年嘛，就是得有这东西才像是过年呀！」"
+    y "「也是。」"
+    voice "audio/voice/005239.ogg"
+    l "「啊！」"
+    scene cg09b #梁芷柔逛社火CG-2|消失|CG09b
+    with dissolve
+    "梁芷柔似乎发现了什么，忽然一下子又跑开了。"
+    y "「……」"
+    y "「又怎么了……」"
+    "……"
+    scene cg09a7 #梁芷柔逛社火CG-1|棉花糖+面人+糖人|CG09a7
+    with dissolve
+    voice "audio/voice/005240.ogg"
+    l "「哎呀，快来，快帮我一下，拿不了了！」"
+    "很快，梁芷柔从人群中钻了出来。"
+    y "「嗯？这是……」"
+    "这次梁芷柔手上又多了个糖人。"
+    "不过她之前两只手上就都有东西了，这次大概是接过来的时候攥得不太稳，糖人在她手上晃来晃去，摇摇欲坠。"
+    voice "audio/voice/005241.ogg"
+    l "「快！来！帮！我！拿！一！下！」"
+    y "「哦哦，来了来了。」"
+    "我赶紧上去把她手里占地儿最大的棉花糖接了过来。"
+    scene cg09a8 #梁芷柔逛社火CG-1|面人+糖人|CG09a8
+    with dissolve
+    voice "audio/voice/005242.ogg"
+    l "「嘻嘻……」"
+    y "「还笑……拿不了就别一股脑买这么多东西啊，还都是怕碰的！」"
+    voice "audio/voice/005243.ogg"
+    l "「可是……哎呀不管啦，我就是想买嘛！」"
+    y "「……」"
+    y "「好吧你随便吧……」"
+    voice "audio/voice/005244.ogg"
+    l "「耶！」"
+    y "「先别耶，棉花糖怎么办啊？」"
+    voice "audio/voice/005245.ogg"
+    l "「吃啊。」"
+    "明明刚才还在说因为怕胖不要吃东西了……"
+    y "「行吧，那我给你拿糖人吧。」"
+    voice "audio/voice/005246.ogg"
+    l "「不，我要拿着玩。」"
+    y "「你这……那把面人给我？」"
+    voice "audio/voice/005247.ogg"
+    l "「这个我也要拿着！」"
+    y "「……那你怎么吃棉花糖啊？」"
+    scene cg09a9 #梁芷柔逛社火CG-1|面人+糖人|张嘴|CG09a9
+    with dissolve
+    voice "audio/voice/005248.ogg"
+    l "「啊——」"
+    y "「……」"
+    l "「……」"
+    y "「什、什么意思……」"
+    voice "audio/voice/005249.ogg"
+    l "「啊、啊——」"
+    "梁芷柔用手里的面人指了指我这边的棉花糖，然后又朝着自己张开的嘴里晃了晃。"
+    y "「……喂你啊？」"
+    voice "audio/voice/005250.ogg"
+    l "「啊～～～」"
+    "你是三岁小孩吗！？"
+    y "「……」"
+    "虽然有一大堆想要吐槽的地方，但是话到嘴边，又咽了回去。"
+    "大概……她这几天确实被亲戚们折腾得不轻吧？结果一旦不再需要扮演成熟端庄的好学生，就立刻触底反弹，开始放飞自我了。"
+    y "「……哎，真是，懒死你算了。」"
+    y "「来，小心点啊，别扎着。」"
+    scene cg09a10 #梁芷柔逛社火CG-1|面人+糖人|吃棉花糖|CG09a10
+    with dissolve
+    voice "audio/voice/005251.ogg"
+    l "「唔嗯……嗯嗯……」"
+    voice "audio/voice/005252.ogg"
+    l "「啊……嗯……」"
+    y "「行了行了，先吃两口得了，小心太甜了齁着。」"
+    scene cg09a8 #梁芷柔逛社火CG-1|面人+糖人|CG09a8
+    with dissolve
+    voice "audio/voice/005253.ogg"
+    l "「好～」"
+    y "「好什么好，我说你真的是个吃货啊，嘴里就没停过，就算买这些小玩意儿，都买的是糖人面人，还是吃的！」"
+    voice "audio/voice/005254.ogg"
+    l "「糖人又不能吃！」"
+    y "「但原材料还是吃的东西啊。」"
+    voice "audio/voice/005255.ogg"
+    l "「哼！好吧，真对不起，我是个吃货。」"
+    y "「别啊，吃货好啊，吃货多可爱。」"
+    scene cg09a11 #梁芷柔逛社火CG-1|面人+糖人|羞涩|CG09a11
+    with dissolve
+    voice "audio/voice/005256.ogg"
+    l "「啊……嘻嘻……」"
+    voice "audio/voice/005257.ogg"
+    l "「……哼！」"
+    y "「呵呵，走吧。」"
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    scene cg09a12 #梁芷柔逛社火CG-1|风车+饮料|CG09a12
+    with fade
+    "跟随着梁芷柔在社火里南征北战了一圈之后，我们终于来到了表演传统节目的区域。"
+    "顺便一提，糖人、面人什么的易碎怕碰的玩意儿此时都在我手上小心伺候着，梁芷柔正攥着一个三个轮的大号风车，忽悠忽悠地玩得不亦乐乎。"
+    voice "audio/voice/005258.ogg"
+    l "「啊！快看，是鼓队！」"
+    scene cg09a13 #梁芷柔逛社火CG-1|风车+饮料|太平鼓|CG09a13
+    with dissolve
+    "一支鼓队正在在前面表演。"
+    y "「太平鼓啊……」"
+    "这也是社火的必备节目了。"
+    "至少在我们这儿的地界上，说到社火，就必定会有鼓队。"
+    "虽然我们这里是个穷乡僻壤，不过最基本的传统还是不会丢掉的。"
+    "就像眼前这支鼓队，人数不算多，也都是些业余爱好者，但该有的气势却丝毫不差。"
+    "24个人摆开阵势，单手撑鼓，配合身体的舞动，将鼓甩得上下翻飞，同时徐疾有致地击打鼓面。"
+    "鼓点犹如同滔滔黄河一般，气势汹涌、连绵不绝。"
+    y "「敲得正经不错啊。」"
+    voice "audio/voice/005259.ogg"
+    l "「嗯，是呀。」"
+    "梁芷柔一边点头，一边掏出手机给鼓队拍了张照片。"
+    voice "audio/voice/005260.ogg"
+    l "「不许个愿吗？」"
+    y "「这也能许愿啊？」"
+    voice "audio/voice/005261.ogg"
+    l "「太平鼓嘛，原本就是为了祈祷和平呀、祝愿风调雨顺什么的。」"
+    voice "audio/voice/005262.ogg"
+    l "「所以借着机会，来个个人愿望也没什么问题吧？」"
+    y "「嗯，祈祷和平啊……」"
+    y "「希望今年也不会再有椅子飞过来了！」"
+    voice "audio/voice/005263.ogg"
+    l "「哈哈，又来了！不带你这样的啊，严肃点！」"
+    y "「呵呵，好吧好吧。」"
+    y "「（希望……我能追得上你的步伐吧……）」"
+    voice "audio/voice/005264.ogg"
+    l "「嗯？你说什么？」"
+    y "「啥都没说，真正的愿望都是埋在心里的，说出来就不灵了。」"
+    voice "audio/voice/005265.ogg"
+    l "「哼～好吧。」"
+    "……"
+    "…………"
+    scene cg09a12 #梁芷柔逛社火CG-1|风车+饮料|CG09a12
+    with fade
+    y "「啊，这边是舞狮子啊。」"
+    "从太平鼓阵那边离开之后，没走多远就来到了舞狮子的场地。"
+    scene cg09a14 #梁芷柔逛社火CG-1|风车+饮料|舞狮子|CG09a14
+    with dissolve
+    "场地中，几只「狮子」正在「驯狮人」的引导下争抢绣球。"
+    y "「每次看到这种舞狮的，就觉得好像在看『黄[哔——]鸿』。」"
+    voice "audio/voice/005266.ogg"
+    l "「哈哈，啊，但是黄[哔——]鸿是南方的吧？那边的舞狮好像和咱们这里的不太一样。」"
+    y "「差不多啦，狮王争霸里不是也都凑到一块去了嘛？」"
+    voice "audio/voice/005267.ogg"
+    l "「嗯……」"
+    y "「『傲气傲笑万重浪』～」"
+    "一边唱，我一边模仿场地里的「狮子」，朝梁芷柔张牙舞爪地晃了晃脑袋。"
+    voice "audio/voice/005268.ogg"
+    l "「嘻嘻，傻死了！」"
+    "……"
+    "…………"
+    scene cg09a12 #梁芷柔逛社火CG-1|风车+饮料|CG09a12
+    with fade
+    "又走了没多久，迎面走来一队人马。"
+    voice "audio/voice/005269.ogg"
+    l "「咦，这是……」"
+    scene cg09a15 #梁芷柔逛社火CG-1|风车+饮料|铁芯子|CG09a15
+    with dissolve
+    y "「这个是叫铁芯子吧？」"
+    voice "audio/voice/005270.ogg"
+    l "「嗯……」"
+    "「铁芯子」也是传统项目，类似于杂技，最下面是辆小车，几个人像叠罗汉那样，用铁棍支撑着挑到半空，但却总能保持着平衡。"
+    voice "audio/voice/005271.ogg"
+    l "「噫……不行不行，我看不了这个。」"
+    y "「嗯？怎么啦？」"
+    voice "audio/voice/005272.ogg"
+    l "「瘆的慌。我老觉得他们会掉下来……」"
+    y "「唉？不会吧，人都是绑在上面的，掉不下来吧？」"
+    voice "audio/voice/005273.ogg"
+    l "「反正我看着害怕！」"
+    "也是。这就类似于「吊顶的大风扇会不会突然掉下来」呀、「游乐场的机器会不会把人甩出去」啊之类的，明明都是极特殊情况下才会发生的事，但平时就是会非常担心。"
+    y "「哈哈哈，好吧好吧，胆真小啊你。」"
+    voice "audio/voice/005274.ogg"
+    l "「怎么啦，我就是胆小怎么啦！」"
+    y "「好好好，走，咱们走还不成吗？没事，啊！咱们看其他的去。」"
+    scene bg black #黑屏
+    with fade
+    stop music fadeout 2.5
+
+    "……"
+    "…………"
+    "………………"
+    scene cg09d2 #梁芷柔逛社火CG-4|血社火|CG09d2
+    with fade
+    voice "audio/voice/005275.ogg"
+    l "「——啊啊啊啊啊！！！！！」"
+    scene cg09d1 #梁芷柔逛社火CG-4|抱紧|血社火|CG09d1
+    with vpunch
+    y "「……」"
+    voice "audio/voice/005276.ogg"
+    l "「哇啊……呜呜……」"
+    y "「……」"
+    l "「……」"
+    y "「行啦，没事的……」"
+    voice "audio/voice/005277.ogg"
+    l "「不行！」"
+    voice "audio/voice/005278.ogg"
+    l "「这这这这这这这这这这……」"
+    voice "audio/voice/005279.ogg"
+    l "「这什么呀这是！」"
+    y "「血社火……吧？」"
+
+    play music "audio/music/bgm06.ogg" fadein 1.5 #悬而未决
+    "离开铁芯子的场地没多远，就看到了另一拨人的表演。"
+    "这群演员的卖相一个比一个可怕，什么锄头啊剪子啊，甚至还有板凳，通过化妆技术「插」在脑门上，溅出一脑袋的「血」。"
+    "在发现对方的一瞬间，梁芷柔直接把手里的风车和饮料瓶都扔到不知哪里去了，整个人也如脱兔一般窜到我的背后，一边哆嗦一边死死抱住我的胳膊不肯撒手。"
+    "吓哭了啊这是……"
+    stop music fadeout 2.5
+
+    y "「好啦好啦，没事，这都是化妆化出来的，不是真的啦。别怕啦，没事没事，啊？」"
+    "说老实话，刚刚看到这一堆血瓢的时候，我也是吓了一跳。"
+    "虽然我也是第一次见到真人版，不过以前见到过照片，好歹还不至于被吓得太厉害。"
+    voice "audio/voice/005280.ogg"
+    l "「呜……真、真的吗……」"
+    y "「真的啦，你看这儿旁边这么多人呢。」"
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    l "「……」"
+    "血社火的队伍大概是对这种情况司空见惯了，毫无停顿地继续前进，很快走过去了。"
+    scene cg09d #梁芷柔逛社火CG-4|抱紧|CG09d
+    with dissolve
+    y "「好啦，没事了，他们都走远了。」"
+    voice "audio/voice/005281.ogg"
+    l "「嗯……看不见了？」"
+    y "「看不见了。」"
+    voice "audio/voice/005282.ogg"
+    l "「真的看不见啦？」"
+    y "「真的啦！」"
+    voice "audio/voice/005283.ogg"
+    l "「真的真的吗？」"
+    y "「哎哟你搁这儿套娃哪，我什么时候骗过你啊。」"
+    l "「……」"
+    y "「……」"
+    scene cg09d3 #梁芷柔逛社火CG-4|抱紧|抬头|CG09d3
+    with dissolve
+    "梁芷柔像个小动物一样，小心翼翼地抬起头来，在环顾四周确认了没有危险之后，终于长长地喘出一口气来。"
+    voice "audio/voice/005284.ogg"
+    l "「——吓死我了！」"
+    "虽然人是放松了一点，不过声音还带着哭腔。"
+    y "「哎哟，没事啊，乖，不至于的啊。」"
+    voice "audio/voice/005285.ogg"
+    l "「可是，就是好可怕啊！」"
+    y "「呃，是挺吓人的啦。你不知道血社火吗？」"
+    voice "audio/voice/005286.ogg"
+    l "「听说过，可没见过啊！」"
+    y "「行了，这不就算是见过了吗？没事，啊。」"
+    voice "audio/voice/005287.ogg"
+    l "「才不是没事！我不想看这个！谁去看这么吓人的东西啊！」"
+    y "「好好好，不看不看，咱不看这个，以后都不看，好不好？」"
+    voice "audio/voice/005288.ogg"
+    l "「嗯！」"
+    stop sound fadeout 3.0
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    scene cg09e #梁芷柔逛社火CG-5|抓衣角|CG09e
+    with fade
+    "我们再次转战别处。"
+    "梁芷柔余悸未消，一路上死死地抓着我的衣摆，一副泫然欲泣的模样。"
+    y "「哎，前面这是啥……」"
+    voice "audio/voice/005289.ogg"
+    l "「——！！」"
+    stop sound fadeout 3.0
+
+    scene cg09d #梁芷柔逛社火CG-4|抱紧|CG09d
+    with dissolve
+    y "「……」"
+    l "「……」"
+    y "「…………」"
+    l "「…………」"
+    play music "audio/music/bgm08.ogg" fadein 1.5 #其乐无穷
+    y "「你这是又咋了？」"
+    voice "audio/voice/005290.ogg"
+    l "「这次是什么啊？可怕不可怕啊？」"
+    y "「……放心吧，是跑旱船。」"
+    y "「应该……算是吧。」"
+    voice "audio/voice/005291.ogg"
+    l "「应该……？」"
+    scene cg09d3 #梁芷柔逛社火CG-4|抱紧|抬头|CG09d3
+    with dissolve
+    voice "audio/voice/005292.ogg"
+    l "「……」"
+    scene cg09d4 #梁芷柔逛社火CG-4|抱紧|抬头|跑旱船|CG09d4
+    with dissolve
+    voice "audio/voice/005293.ogg"
+    l "「这是……啥？」"
+    "映入眼帘的，并非是那些传统跑旱船那种画着脸谱妆、穿着花花绿绿的戏服的演员们，而是一帮看上去和我们同龄、穿着各种奇怪服饰的女孩子。"
+    "在我们挤进场边的时候，正有几个身披白色头蓬、带着高毛帽的女孩说说笑笑地往场下走，为首的一个女生喊叫着「Kirov reporting」之类的词组，不时引得同伴们笑成一片。"
+    scene cg09d3 #梁芷柔逛社火CG-4|抱紧|抬头|CG09d3
+    with dissolve
+    l "「……」"
+    y "「……」"
+    voice "audio/voice/005294.ogg"
+    l "「这能算是跑旱船吗……」"
+    y "「在地上跑的船……叫跑旱船也没错吧？」"
+    "我四下看了看，发现旁边立着一块提示牌，上面确实写着「跑旱船」。"
+    y "「嗯？」"
+    "以及，在牌子旁边，似乎还有一行小字。"
+    y "「百薇大学……动漫社？」"
+    voice "audio/voice/005295.ogg"
+    l "「呃……」"
+    y "「这……」"
+    voice "audio/voice/005296.ogg"
+    l "「这『节目』能进社火里演吗？」"
+    y "「不知……道？」"
+    y "「……城里人真会玩。」"
+    stop music fadeout 2.5
+    scene cg09f #梁芷柔逛社火CG-6|牵手|CG09f
+    with dissolve
+    l "「……」"
+    voice "audio/voice/005297.ogg"
+    l "「呵呵……」"
+
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+    "不再担惊受怕的梁芷柔，没有继续死抱着我的胳膊，但也没有完全松开，而是……自然而然地牵起了我的手。"
+    "虽然也渐渐地习以为常了，不过偶尔还是会觉得有点不可思议。"
+    "毕竟……想想看，就在半年前，在电影院里不小心被她抓住手的时候，我还会紧张得像是要死了一样。"
+    voice "audio/voice/005298.ogg"
+    l "「雨潇。」"
+    y "「嗯？」"
+    voice "audio/voice/005299.ogg"
+    l "「谢谢你。」"
+    y "「谢我干什么？」"
+    voice "audio/voice/005300.ogg"
+    l "「我今天玩得特别开心！」"
+    voice "audio/voice/005301.ogg"
+    l "「这是我从小到大，逛社火逛得最开心的一次！」"
+    y "「呵……有那么好吗？」"
+    voice "audio/voice/005302.ogg"
+    l "「有啊。因为……」"
+    voice "audio/voice/005303.ogg"
+    l "「嘻嘻，好啦，反正你知道我特别开心就行了。」"
+    y "「唉？什么跟什么啊，话就说一半。」"
+    voice "audio/voice/005304.ogg"
+    l "「哎呀你就别问了嘛，对女生刨根问底可不好！」"
+    y "「……得。你开心就好。」"
+    voice "audio/voice/005305.ogg"
+    l "「呵，那我们再多玩一会儿好不好？听说晚上会放花，我们看完再回去行吗？」"
+    y "「我没问题，你家里……？」"
+    voice "audio/voice/005306.ogg"
+    l "「我打过招呼了，也不会特别晚的。反正这儿离我们家也挺近的，人又多，出不了事。」"
+    y "「行吧。」"
+    voice "audio/voice/005307.ogg"
+    l "「嗯！我们走吧！」"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene cg09f #梁芷柔逛社火CG-6|牵手|CG09f
+    with fade
+    "在那之后，我们又在社火里逛了好半天。"
+    play sound "audio/sound/ambientnoise08.ogg" fadein 1.5 loop #商场环境噪音
+    y "「呼……」"
+    voice "audio/voice/005308.ogg"
+    l "「哈、哈……」"
+    y "「累了吧？那边有椅子，歇会儿吧。」"
+    voice "audio/voice/005309.ogg"
+    l "「嗯。」"
+    scene cg10a #梁芷柔看烟花CG-1|黄昏|CG10a
+    with fade
+    voice "audio/voice/005310.ogg"
+    l "「哎哟！可算是坐下啦！」"
+    y "「是啊，这一下午可真没少走路，感觉得有一年没这么走过了。」"
+    voice "audio/voice/005311.ogg"
+    l "「我看看……快3万步了哎，咱们都逛了什么啊走这么远？」"
+    y "「谁知道，我一直都是跟着你走的。」"
+    voice "audio/voice/005312.ogg"
+    l "「哈哈，是吗？」"
+    y "「走走也好，反正整天坐在那儿做卷子，都快长椅子上了。」"
+    scene cg10b #梁芷柔看烟花CG-2|伸懒腰|CG10b
+    with dissolve
+    voice "audio/voice/005313.ogg"
+    l "「对……呵……啊。」"
+    voice "audio/voice/005314.ogg"
+    l "「呵……嗯～～～～～！」"
+    "梁芷柔一边打呵欠，一边抻了个大大的懒腰。"
+    y "「哎哟我的天，眼泪都挤出来了。」"
+    y "「形象啊，美女，注意点形象。」"
+    scene cg10a1 #梁芷柔看烟花CG-1|黄昏|噘嘴|CG10a1
+    with fade
+    voice "audio/voice/005315.ogg"
+    l "「去去去，少贫嘴了。呵～欠……」"
+    "看来她真是给累惨了啊，呵欠一个接一个的。"
+    "不过话说回来，论起体力消耗，我其实也好不到哪去……"
+    y "「呵～欠～」"
+    "被梁芷柔的呵欠所传染，我也忍不住来了一个。"
+    scene cg10a #梁芷柔看烟花CG-1|黄昏|CG10a
+    with fade
+    voice "audio/voice/005316.ogg"
+    l "「你还说我呢……半斤八两。」"
+    y "「没办法啊，走路的时候还行，这一停下来感觉就明显了。」"
+    y "「好好歇会儿吧，还得看烟花呢。」"
+    voice "audio/voice/005317.ogg"
+    l "「嗯……还有多久啊？」"
+    y "「怎么也得天全黑了才行吧？我看看啊，估计还得要半个小时吧。」"
+    voice "audio/voice/005318.ogg"
+    l "「哎～好久啊。」"
+    y "「咱俩先坐这儿好好歇会儿吧。你要不要喝点什么？我去买。」"
+    voice "audio/voice/005319.ogg"
+    l "「呵欠～你看着买吧，随便什么都行……」"
+    y "「OK。」"
+    stop sound fadeout 3.0
+    scene cg10b #梁芷柔看烟花CG-2|伸懒腰|CG10b
+    with dissolve
+    voice "audio/voice/005320.ogg"
+    l "「嗯，快点啊。」"
+    y "「好啦知道啦。」"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    y "「抱歉抱歉，人太多了排了半天才……唉？」"
+    y "「啥情况这是……」"
+
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+    scene cg10c #梁芷柔看烟花CG-3|独自睡着|CG10c
+    with fade
+    "几分钟之后，当我拿着饮料回来的时候，发现梁芷柔已经靠在长椅上睡着了。"
+    "她微微地歪着头，乌黑的秀发散在肩上，如同墨色的瀑布一般，煞是好看。"
+    "虽然很想再多看上两眼……但这么下去可不行啊！"
+    scene cg10c1 #梁芷柔看烟花CG-3|梁芷柔睡着|叶雨潇坐下|CG10c1
+    with dissolve
+    y "「喂喂喂，醒醒，别睡了，会着凉的啊！」"
+    voice "audio/voice/005321.ogg"
+    l "「嗯？……雨潇？」"
+    scene cg10c2 #梁芷柔看烟花CG-3|梁芷柔睡着|睁眼|CG10c2
+    with dissolve
+    "梁芷柔迷迷糊糊地睁开眼，抬头看了看我的脸，似乎是在确认我是谁。"
+    y "「嗯，是我。」"
+    voice "audio/voice/005322.ogg"
+    l "「啊，我睡着了？」"
+    y "「是啊，睡得呼呼的，猪一样。」"
+    voice "audio/voice/005323.ogg"
+    l "「哼……你才是猪……呵～欠～」"
+    l "「……」"
+    voice "audio/voice/005324.ogg"
+    l "「ZZZ……」"
+    y "「喂？别又睡过去啊！？」"
+    voice "audio/voice/005325.ogg"
+    l "「没事……我还以为是坏人呢……是你就没事了……」"
+    y "「什么叫是我就没事了啊！？这大冷天的，你这样会感冒的知道不知道啊……」"
+    voice "audio/voice/005326.ogg"
+    l "「嗯～那就抱抱……抱抱就不冷了。」"
+    y "「什么抱……哎！？」"
+    scene cg10c3 #梁芷柔看烟花CG-3|梁芷柔睡着|抱叶雨潇|CG10c3
+    with dissolve
+    "没等我反应，梁芷柔就一头扎了过来，两只胳膊抱住我的脖子，把自己挂在了我的身上。"
+    with hpunch
+    voice "audio/voice/005327.ogg"
+    l "「嗯……好暖和呀……」"
+    y "「喂！？」"
+    voice "audio/voice/005328.ogg"
+    l "「嗯……别动……呼……」"
+    y "「……」"
+    voice "audio/voice/005329.ogg"
+    l "「……呼……呼……」"
+    y "「这……」"
+    voice "audio/voice/005330.ogg"
+    l "「……呼……呼……呼……」"
+    "梁芷柔咽了下口水，微微晃了晃脑袋，丝毫没有想要醒过来的意思。"
+    "而我则根本是一动也不敢动，就这么风中凌乱地僵在原地。"
+    scene cg10c4 #梁芷柔看烟花CG-3|梁芷柔睡着|抱叶雨潇|脸特写|CG10c4
+    with dissolve
+    voice "audio/voice/005331.ogg"
+    l "「……呼……呼……」"
+    y "「……唉。」"
+    "真是个不靠谱的家伙。"
+    y "「你呀你。」"
+    y "「你知不知道这样会让我占便宜的啊？」"
+    "我用几乎是默念的音量，数落着身边的少女。"
+    y "「你这么抱着，我可是挺享受的啊。再这样下去我可就真的不管你感不感冒了啊？」"
+    y "「呵……也不知道最开始的那个生人勿近的女学霸跑哪去了啊？怎么就变成现在这个迷迷糊糊的吃货了呢？」"
+    y "「怎么就变得……让我越来越喜欢你了呢？」"
+    voice "audio/voice/005332.ogg"
+    l "「……嗯……」"
+    y "「嗯？」"
+    "似乎是我扭头看她的动作让她有所感觉，梁芷柔稍微扭动了一下身子，想要再次找到一个舒服的位置。"
+    y "「……」"
+    y "「（不管了！）」"
+    "借着她这次的动静，我的手臂从她后背绕过去，轻轻搂住了她。"
+    scene cg10c5 #梁芷柔看烟花CG-3|梁芷柔睡着|相拥|CG10c5
+    with dissolve
+    y "「（尽量抱暖和一点就好了……吧？）」"
+    y "「……」"
+    voice "audio/voice/005333.ogg"
+    l "「……呼……」"
+    "被我抱进怀里的梁芷柔，一点也不客气地顺势又换了个姿势，像个小猫似的蜷缩成一小团。"
+    y "「……」"
+    "好可爱，怎么看都觉得好可爱，总之就是非常可爱。"
+    y "「……」"
+    "有点……想亲她一下。"
+    voice "audio/voice/005334.ogg"
+    l "「……呼……」"
+    y "「……」"
+    "看这样子，完全就是睡过去了，亲一下应该不会被发现吧。"
+    "不，就算被发现了也没什么事吧？毕竟之前也有过类似的情况……"
+    "……应该是……没事……的吧？"
+    voice "audio/voice/005335.ogg"
+    l "「……呼……」"
+    y "「……」"
+    "不对不对，趁人不备做这种事还是太过分了。再说又不是没有光明正大的机会……"
+    "可是……"
+    "果然还是好想亲一下啊！！"
+    y "「（等等！等等！等等！冷静！要冷静！不能这么干！）」"
+    y "「（对了，赶快转移注意力！只要别想这些乱七八糟的就行了！）」"
+    "强行压抑住躁动的念头，我把视线投向来来往往的路人，希望能分散一下我的关注点。"
+    y "「（哎，今天到处都是成双成对的啊。）」"
+    y "「（也是，谁没事自己一个人来逛社火啊……）」"
+    y "「（啊，哈哈，看到一个单身的！）」"
+    y "「（居然瞪我？瞪我干什么，没见过搂着妹子的吗！哈哈哈哈哈哈！）」"
+    y "「（噢，这一队怎么都是姑娘……哦哦，这是刚才那些『新派旱船』的女生吧，都是百薇大学的……）」"
+    y "「（百薇啊，去年我还完全不敢去想呢……）」"
+    y "「（嗯……）」"
+    y "「……呵……欠……」"
+    scene cg10c6 #梁芷柔看烟花CG-3|两人睡着|相拥|CG10c6
+    with dissolve
+    y "「……」"
+    y "「……呼……」"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene cg10c7 #梁芷柔看烟花CG-3|两人睡着|相拥|夜幕|CG10c7
+    with fade
+    y "「……呼……」"
+    voice "audio/voice/005335.ogg"
+    l "「……呼……」"
+    "……"
+    play audio "audio/sound/effect28.ogg" noloop
+    "「——砰啪！」"
+    scene cg10c8 #梁芷柔看烟花CG-3|两人睁眼|相拥|夜幕|光影绽放|CG10c8
+    with dissolve
+    voice "audio/voice/005336.ogg"
+    l "「——嗯！？」"
+    y "「啊！」"
+    "不知什么时候，一声巨响将我们从睡梦中惊醒。"
+    scene bg b00d #天空|烟花
+    with fade
+    "睁开眼，正好看到一朵烟花灿烂地盛开于夜空之中。"
+    voice "audio/voice/005337.ogg"
+    l "「哎？哎？怎么回事？」"
+    y "「烟花……？」"
+
+    play sound "audio/sound/ambientnoise12.ogg" fadein 1.5 loop #烟花环境噪音
+    "「嗖——」"
+    "「——砰啪！」"
+    "我们还没有反应过来，第二朵烟花也已升空，旋即绽放。"
+    "紧接着，更多的烟花被点燃，爆竹之声不绝于耳。"
+    voice "audio/voice/005338.ogg"
+    l "「哇……」"
+    "一开始，梁芷柔还有点半梦半醒的样子，不过很快，她就被那些五颜六色的花火吸引住了。"
+    scene cg10d #梁芷柔看烟花CG-4|看烟花|光影绽放|CG10d
+    with fade
+    voice "audio/voice/005339.ogg"
+    l "「好漂亮啊！」"
+    y "「嗯，的确……」"
+    "天空中，烟花接二连三不断地绽开，将整片天幕映照得五彩斑斓。"
+    "天色已经黑下来了，烟花的魅力得以完全展现出来。"
+    y "「（话说回来，我也睡过去了？这是睡了多久啊……）」"
+    y "「（我看看……哎哟这得有半个多小时了吧，完蛋了这肯定要病啊……）」"
+    scene cg10d1 #梁芷柔看烟花CG-4|看烟花|光影绽放|举手指天|CG10d1
+    with dissolve
+    voice "audio/voice/005340.ogg"
+    l "「哎哎哎你看你看！」"
+    y "「嗯？」"
+    "我还在担心身体，身边的女生却没想那么多，只顾着欣赏眼前的美景。"
+    voice "audio/voice/005341.ogg"
+    l "「哇！好美啊！」"
+    l "「……」"
+    voice "audio/voice/005342.ogg"
+    l "「嘻嘻……太好了。」"
+    y "「嗯？什么？」"
+    voice "audio/voice/005343.ogg"
+    l "「我说太！好！啦！」"
+    y "「什么太好啦？」"
+    voice "audio/voice/005344.ogg"
+    l "「今天！能和你一起来！我觉得特——别——好！」"
+    "烟花砰砰啪啪的，声音很大，但梁芷柔用更大的声音，在我的耳边清楚地说出了这句话。"
+    y "「我也是！」"
+    voice "audio/voice/005345.ogg"
+    l "「嗯！以后……啊……」"
+    voice "audio/voice/005346.ogg"
+    l "「……阿嚏！」"
+    y "「哎哟，还是给冻着了！」"
+    voice "audio/voice/005347.ogg"
+    l "「嘻嘻，没事！」"
+    "梁芷柔揉了揉自己的鼻子，毫不在意。"
+    "虽然已经睡醒了，不过她似乎没有从我怀里离开的意思，反而靠的更近了。"
+    scene cg10d2 #梁芷柔看烟花CG-4|看烟花|贴脸|光影绽放|CG10d2
+    with dissolve
+    "两个人的脸蛋都是冰冰的，但是，贴在一起却感觉不到寒冷。"
+    voice "audio/voice/005348.ogg"
+    l "「这样就不冷了！」"
+    y "「哈哈，好吧！」"
+    "我也将她抱得更紧了一些。"
+    "「——砰啪！」"
+    voice "audio/voice/005349.ogg"
+    l "「看啊，烟花好漂亮！」"
+    y "「知道啦知道啦，翻来覆去说了这么多遍了，耳朵都起茧子了！」"
+    voice "audio/voice/005350.ogg"
+    l "「哼，我就要说！烟花好漂亮好漂亮好漂……阿嚏！」"
+    y "「哎哟哟哟哟哟哟……鼻涕都要出来了！我给你找找纸巾啊……啊……」"
+    y "「阿嚏！」"
+    voice "audio/voice/005351.ogg"
+    l "「哈哈哈哈！你还说我呢？……阿嚏！」"
+    y "「得……咱俩这下全完蛋。」"
+    voice "audio/voice/005352.ogg"
+    l "「嘻嘻！」"
+    voice "audio/voice/005353.ogg"
+    l "「偶尔放纵一次，有什么不好嘛！」"
+    y "「说的也是啊。」"
+    y "「……那就让烟花……和感冒来得更猛烈一些吧！」"
+    voice "audio/voice/005354.ogg"
+    l "「嘻嘻，傻死了！」"
+    scene bg b00d #天空|烟花
+    with fade
+    "我俩抱在一起，看着漫天绚烂，花开花落。"
+    "「——砰啪！」"
+    "「——砰啪！」"
+    "「嗖——」"
+    "也许，有人喜欢说什么烟花易冷。"
+    "但是，那又怎么样？"
+    "此时、此刻。"
+    "我所怀抱的——"
+    "已是我的整个世界。"
+    stop sound fadeout 3.0
+    "……"
+    "…………"
+
+#2月14日，情人节。
+#开学第一天。
+
+    scene bg black #黑屏
+    with fade
+    "无论是谁，青春的时候都会偶尔放纵。"
+    "这当然没什么不好，只要……肯付出相应代价的话。"
+    play sound "audio/sound/ambientnoise10.ogg" fadein 1.5 loop #安静学习环境噪音
+    scene cg01a1 #梁芷柔听讲CG-1|标准|冬装|CG01a1
+    with fade
+    l "「……」"
+    y "「……」"
+    voice "audio/voice/005355.ogg"
+    l "「咳咳咳。」"
+    y "「……」"
+    l "「……」"
+    y "「咳……咳咳！」"
+    l "「……」"
+    y "「……」"
+    stop sound fadeout 3.0
+    "……"
+    "…………"
+
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    scene bg b01 #教室
+    with fade
+    show chara b07a #梁芷柔立绘|冬季校服|消沉1
+    with dissolve
+    y "「……」"
+    l "「……」"
+    y "「那啥……」"
+    show chara b02 #梁芷柔立绘|冬季校服|皱眉
+    with dissolve
+    voice "audio/voice/005356.ogg"
+    l "「……少说话，嗓子难受。」"
+    y "「……」"
+    l "「……」"
+    y "「噗。」"
+    show chara b09 #梁芷柔立绘|冬季校服|坏笑
+    with dissolve
+    voice "audio/voice/005357.ogg"
+    l "「嘻嘻……咳！」"
+    show chara b07b #梁芷柔立绘|冬季校服|消沉2
+    with dissolve
+    y "「好了不废话了……咳，给你这个。」"
+    "我压低声音，装作随意地将一样东西丢在她桌子上。"
+    show chara b06 #梁芷柔立绘|冬季校服|吃惊
+    with dissolve
+    voice "audio/voice/005358.ogg"
+    l "「……啊，这是……」"
+    y "「刚才上课的时候偷偷做的。」"
+    "丢给她的，是一朵红色的折纸玫瑰花。"
+    "今年的春节来的比较早，结果就是初七开学的第一天，恰好赶上情人节。"
+    "在学校当然不能带真花过来，所以就提前学了折纸的方法，带了张红纸，现场折了一朵出来。"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
+    voice "audio/voice/005359.ogg"
+    l "「嘻嘻……谢谢。」"
+    show chara b10 #梁芷柔立绘|冬季校服|开心
+    with dissolve
+    voice "audio/voice/005360.ogg"
+    l "「那么这个就请你收下咯。」"
+    y "「嗯？」"
+    "梁芷柔也悄悄递给我一个锡纸包着的……指甲盖大小的玩意。"
+    y "「这啥啊……噢噢。」"
+    "拆开包装，里面是一颗巧克力豆。"
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
+    voice "audio/voice/005361.ogg"
+    l "「嗓子不好，不许多吃，意思意思吧。」"
+    y "「呵呵，好。」"
+    "我将巧克力豆扔进嘴里，感受着丝丝的甜意。"
+    hide chara
+    with dissolve
+    stop sound fadeout 3.0
+
+    play music "audio/music/bgm08.ogg" fadein 1.5 #其乐无穷
+    voice "audio/voice/055001.ogg"
+    a "「哎哟，学霸们又在交流经验哪？」"
+    y "「啊？」"
+    voice "audio/voice/065001.ogg"
+    b "「行了你啊，人家是模范夫妻，感冒都一起，你过来添什么乱哪！」"
+    voice "audio/voice/065002.ogg"
+    b "「哦～那个老叶，不打扰你……嗯，那个，『学习』了啊？加油啊！」"
+    y "「什么鬼！……咳咳！欺负我现在说不出话来，你等着……咳咳！」"
+    voice "audio/voice/055002.ogg"
+    a "「行啦行啦，别勉强。年轻人，要适度！」"
+    y "「你给我滚！」"
+    play audio "audio/voice/055003.ogg" noloop
+    play audio "audio/voice/065003.ogg" noloop
+    ab "「哈哈哈哈哈——」"
+    stop music fadeout 2.5
+
+    show chara b04 #梁芷柔立绘|冬季校服|无奈
+    with dissolve
+    "轰走了两个来捣乱的逗比，我和梁芷柔相顾无言。"
+    y "「……别理他们，抽疯呢。」"
+    show chara b11 #梁芷柔立绘|冬季校服|微笑
+    with dissolve
+    voice "audio/voice/005362.ogg"
+    l "「嘻嘻，没事啦。再说……」"
+    y "「嗯？」"
+
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+    show chara lb09 #梁芷柔立绘|冬季校服|坏笑|近
+    with dissolve
+    voice "audio/voice/005363.ogg"
+    l "「他们也不算说错嘛？」"
+    y "「啊……」"
+    show chara b10 #梁芷柔立绘|冬季校服|开心
+    with dissolve
+    voice "audio/voice/005364.ogg"
+    l "「……嘻嘻！好啦，回去吧，该上课了。」"
+    scene bg b00a #天空|候鸟
+    with fade
+    "新的，也是最后的学期开始了。"
+    "我，与她，都斗志满满。"
+    "为了那个目标，我们共同的目标。"
+    "发起了最后的冲刺——"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    pause
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t06 #转场 天空
+    with fade
+    pause
+
+#06.初夏
+
+#4月中旬。
+#二诊考试成绩公布后。
+
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    scene bg b02d #城区|春
+    with fade
+    "四月，草长莺飞。"
+    "黄河告别了自己的枯水期，逐渐高涨的河水为县城洗去了凛冬时的灰白色，进而变为生机盎然的叠翠。"
+    "湿地公园经过一个秋冬的修护保养，修复了当初被水淹没的痕迹，植被也已全部复苏，终于重新对游人开放。"
+    "不过，现在里面还没有多少鸟就是了。"
+    "本地的候鸟早已启程前往遥远的西伯利亚，而南方飞来此处的候鸟还大多尚未抵达。"
+    "此时此刻，翱翔在这片天空之上的，多是从南方途经此地，之后还要继续向北前行的过境鸟。"
+    stop sound fadeout 3.0
+    "……"
+    "…………"
+    scene bg b01 #教室
+    with fade
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    y "「……」"
+    y "「唉。」"
+    "高中的最后一个学期是极端枯燥乏味的。"
+    "每天像是机器人一样精密地保持着两点一线的作息，在学校除了复习就是考试，终日重复不停，乏善可陈。"
+    "好在，比起其他人来，我还算是不那么无聊的。毕竟……"
+    show chara la13b #梁芷柔立绘|夏季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/006001.ogg"
+    l "「嗯？怎么啦？」"
+    "我可以和她在一起。"
+    y "「这个嘛，我在想啊……」"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/006002.ogg"
+    l "「嗯。」"
+    stop sound fadeout 3.0
+
+    play music "audio/music/bgm08.ogg" fadein 1.5 #其乐无穷
+    y "「前两天的体检，这结果不是已经出来了吗？」"
+    voice "audio/voice/006003.ogg"
+    l "「是呀。」"
+    y "「我想看看你的那份报告啊。」"
+    show chara la13b #梁芷柔立绘|夏季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/006004.ogg"
+    l "「哈？你看它干什么？」"
+    y "「我挺好奇的。比如，体重啊，有没有量三围啊……」"
+    with hpunch
+    play sound "audio/sound/effect29.ogg" noloop
+    show chara la03 #梁芷柔立绘|夏季校服|生气|近
+    with dissolve
+    y "「哎哟哟哟哟。」"
+    y "「住手！疼死我了！快住手啊，别人都看着呢！」"
+    voice "audio/voice/006005.ogg"
+    l "「哼！」"
+    y "「噫。哎哟我的耳朵啊……」"
+    voice "audio/voice/006006.ogg"
+    l "「活该，一点正经的都没有！」"
+    y "「哎呀，开个玩笑嘛，干嘛那么认真。」"
+    show chara la04 #梁芷柔立绘|夏季校服|无奈|近
+    with dissolve
+    l "「……」"
+    y "「好吧好吧我错了，我错了还不行吗？」"
+    l "「……」"
+    y "「……我真错了，饶了我吧。」"
+    show chara la03 #梁芷柔立绘|夏季校服|生气|近
+    with dissolve
+    voice "audio/voice/006007.ogg"
+    l "「哼，你啊，你这张嘴！」"
+    "梁芷柔用食指戳着我的脑门，用力地推了一下。"
+    with vpunch
+    play sound "audio/sound/effect30.ogg" noloop
+    y "「哎哟哟。」"
+    stop music fadeout 2.5
+
+    play music "audio/music/bgm01.ogg" fadein 1.5 #春～樱飞～
+    show chara la04 #梁芷柔立绘|夏季校服|无奈|近
+    with dissolve
+    voice "audio/voice/006008.ogg"
+    l "「所以呢，你到底在想什么，啊？」"
+    y "「……」"
+    y "「嗯……怎么说呢。」"
+    y "「我在想……待会儿不就是报考咨询了吗？」"
+    show chara la13b #梁芷柔立绘|夏季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/006009.ogg"
+    l "「嗯。」"
+    y "「我该怎么跟郑老师说，他才不会活撕了我呢？」"
+    show chara la05a #梁芷柔立绘|夏季校服|苦笑1|近
+    with dissolve
+    voice "audio/voice/006010.ogg"
+    l "「这……」"
+    show chara la05b #梁芷柔立绘|夏季校服|苦笑2|近
+    with dissolve
+    voice "audio/voice/006011.ogg"
+    l "「这个嘛……」"
+    y "「唉……」"
+    y "「要是开门见山地说『我要去樱华上大学』，你觉得他是会先啐我一脸呢，还是直接大耳刮子就上来了。」"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/006012.ogg"
+    l "「不至于吧？郑老师哪有那么狠。」"
+    y "「那是对你不狠。对别人……呵呵。」"
+    y "「再说了，你也知道，咱们这地方，别说郑老师了，从校长往下，哪一个不是想重点想疯了的……他们能饶得了我才怪。」"
+    show chara la04 #梁芷柔立绘|夏季校服|无奈|近
+    with dissolve
+    voice "audio/voice/006013.ogg"
+    l "「这倒也是……郑老师他们肯定还是希望你考个重点，起码是211吧。」"
+    y "「也不用什么起码211了，肯定就是百薇。211啊985啊，还有其他的一大堆什么计划，应有尽有，还优待本省的考生，完美。」"
+    voice "audio/voice/006014.ogg"
+    l "「嗯……」"
+    y "「结果呢，我放着百薇不去考，偏要往樱华跑，这个司马昭之心啊，估计是瞒不住了。」"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
+    voice "audio/voice/006015.ogg"
+    l "「呵呵……反正也瞒不住了，那你还担心个什么啊？」"
+    y "「是啊，伸头是一刀，缩头也是一刀，走一步算一步吧。反正最后填志愿的是我，他又不能不让我去考。」"
+    show chara la13b #梁芷柔立绘|夏季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/006016.ogg"
+    l "「哪有那么严重啊……不过，你家里那边怎么办？」"
+    y "「这个倒是问题不大。我你又不是不知道，搁一年前我能考上个二本他们就要狂喜乱舞了，好说。」"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
+    voice "audio/voice/006017.ogg"
+    l "「那就行。」"
+    y "「不过我怕老郑一着急，把这事往你家里捅啊？」"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/006018.ogg"
+    l "「我嘛……也还好吧。」"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
+    voice "audio/voice/006019.ogg"
+    l "「虽然之前确实是比较怕，不过就像你刚才说的，反正都到这个时候了。」"
+    show chara la10 #梁芷柔立绘|夏季校服|开心|近
+    with dissolve
+    voice "audio/voice/006020.ogg"
+    l "「咱们是谁啊，高三考生！谁敢在这个时候主动让咱们不痛快啊？想不想让我好好考了？发挥失常了谁负责啊？县状元还想不想要了？」"
+    y "「哇，养寇自重啊你这个。」"
+    show chara la09 #梁芷柔立绘|夏季校服|坏笑|近
+    with dissolve
+    voice "audio/voice/006021.ogg"
+    l "「嘻嘻，物尽其用嘛。」"
+    "梁芷柔露出狡黠的笑容，我也笑了起来，朝她伸出大拇指，点赞。"
+    "不过，事到这里还不算完。"
+    stop music fadeout 2.5
+
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    y "「然后呢，就是另一个问题了……」"
+    y "「说到底，这个志愿，我该怎么报呢？」"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/006022.ogg"
+    l "「啊……」"
+    "话题转换到这边，我变得有些愁眉苦脸。"
+    "樱华市的高校资源分布很奇葩，由于各种各样的原因，樱华市的优秀大学数量在一线城市里算是比较少的。"
+    "樱华大学的确是在全国都名列前茅的超一流大学，不过除了它以外，樱华市再也没有其他的重点大学了。"
+    "非重点的大学当然还是有的，不过……"
+    y "「理工科的话，也就是樱华理工大学和樱华工业大学了吧。」"
+    show chara la08a #梁芷柔立绘|夏季校服|担心1|近
+    with dissolve
+    voice "audio/voice/006023.ogg"
+    l "「嗯……要说的话当然最好是去理工大学，但它那个分数线……你……」"
+    y "「是啊……」"
+    y "「不算是重点，但愣是比百薇还难考，这上哪儿讲理去。」"
+    show chara la04 #梁芷柔立绘|夏季校服|无奈|近
+    with dissolve
+    voice "audio/voice/006024.ogg"
+    l "「人家再怎么说也是经常参加国家重点项目的大学，不是重点又不代表水平不行。而且毕竟地理位置摆在那里，要这个分数也正常。」"
+    show chara la13b #梁芷柔立绘|夏季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/006025.ogg"
+    l "「你这次二诊……考了572分吧？」"
+    y "「是啊。」"
+    "月初，县里进行了第二次模拟诊断考试，我拿到了一个比较微妙的成绩。"
+    "与一诊相比算是进步不小，也让我荣登全校第二名的宝座，抛开梁芷柔这样的妖孽不谈，已经可以说是登顶了。"
+    "然而这只是矬子里面拔将军罢了，放到全省排名，我还在1500名开外。"
+    "去年百薇大学在省内招了1200人，我这个排名目前算是勉强够到了边，再努一努力的话应该可以做到比较稳妥。"
+    "但外省的大学就不像百薇这么好说话了，能不能更进一步，我是一点把握也没有。"
+    "但偏偏……也不是完全没有希望。"
+    "这就很难受了。"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/006026.ogg"
+    l "「其实我觉得，这次二诊的题还是比较难的。像你这样，基础打得还行，但是高端题拿不准的，被一刀切下来了好多。」"
+    show chara la01a #梁芷柔立绘|夏季校服|普通|正面|近
+    with dissolve
+    voice "audio/voice/006027.ogg"
+    l "「如果高考不这么极端的话，你的分数应该还能再上去一截。」"
+    y "「但别人的分数也一样上去了吧？没意义啊？」"
+    voice "audio/voice/006028.ogg"
+    l "「就算都提高也是有多有少的呀，而且你又不考本省的大学，肯定是有利的。但是……」"
+    show chara la08b #梁芷柔立绘|夏季校服|担心2|近
+    with dissolve
+    voice "audio/voice/006029.ogg"
+    l "「就算是这样，也还是不太稳啊。」"
+    y "「嗯……」"
+    l "「……」"
+    show chara la07b #梁芷柔立绘|夏季校服|消沉2|近
+    with dissolve
+    voice "audio/voice/006030.ogg"
+    l "「稳妥起见的话，要不……考虑一下工业大学？」"
+    y "「工业大学吗……」"
+    y "「……」"
+    y "「稳倒是稳了，可是……」"
+    "的确，樱华工业大学往年基本上只是在省控线往上50分左右，比我现在的成绩都还要低上一点，报考不成问题。"
+    "不过，看这个分数也就知道了，这就是一所很普通的一本大学而已。"
+    "虽然它是省内理工类排名仅次于樱华大学和樱华理工大学的高校，但却不是因为它有多么好，而是因为那里就只有这么几所还说得过去的大学。"
+    "要真是报考理工完全无望，工大倒也可以算是一根救命稻草，然而现在……就只是鸡肋了。"
+    l "「……」"
+    show chara la07a #梁芷柔立绘|夏季校服|消沉1|近
+    with dissolve
+    voice "audio/voice/006031.ogg"
+    l "「最起码……你可以先考过去不是？」"
+    y "「……嗯？」"
+    "愣了一下，下意识地朝梁芷柔看去。"
+    show chara la07b #梁芷柔立绘|夏季校服|消沉2|近
+    with dissolve
+    l "「……」"
+    "梁芷柔抿着嘴，似乎说出这句话让她花费了很大的力气。"
+    y "「……」"
+    "原来如此。"
+    "本来还有点奇怪。连我都不太想考虑的一所学校，怎么还能入得了梁芷柔的眼。"
+    "但现在，看到她这个样子，我就明白了。"
+    show chara la08a #梁芷柔立绘|夏季校服|担心1|近
+    with dissolve
+    voice "audio/voice/006032.ogg"
+    l "「如果只看排名的话啊，在全国确实有点靠后了，不过基本的水平应该还是有的。」"
+    show chara la13b #梁芷柔立绘|夏季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/006033.ogg"
+    l "「而且考那边的话，专业肯定比较好选啊，其实也不见得就比理工大差了。」"
+    show chara la01a #梁芷柔立绘|夏季校服|普通|正面|近
+    with dissolve
+    voice "audio/voice/006034.ogg"
+    l "「我查过了，他们的工科其实也很不错，有几个学科ESI也能排进\1\%呢……」"
+    "说出第一句之后，梁芷柔像是打开了一个闸门，开始不停地继续补充起来。"
+    "大概她思考这事也很久了吧，准备工作……确实是做得很足，也很有道理。"
+    y "「……」"
+    "说实话，完全出乎了我的意料。"
+    "然而，事情当然不是那么简单的。"
+    "师资力量、设施条件、同学圈子，不同学校之间的差异有多么巨大……"
+    "她明明应该比我更清楚才对。"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/006035.ogg"
+    l "「之后还可以考研的嘛，本地区本专业，只是跨个学校的话，没那么难的……」"
+    "她接受了我，哪怕我只能从一个不那么高的起点开始。"
+    "我不觉得她是不再看重这些东西了。"
+    "她这样做……是因为她准备押上自己一生中最美好的一段年华，去等待、去赌我在更远一点的未来可以破茧成蝶。"
+    y "「……」"
+    "虽然如此，我却不能就这么心安理得地接受她的好意。"
+    "倒不如说，经她这样一说，反而让我想明白了自己该做的选择。"
+    y "「芷柔，等一下。」"
+    show chara la13b #梁芷柔立绘|夏季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/006036.ogg"
+    l "「啊……嗯？」"
+    y "「这个问题我之前也想过很多遍，刚才听你说的时候我又认真想了想，终于想明白了。」"
+    y "「我……不打算报工大。」"
+    show chara la06 #梁芷柔立绘|夏季校服|吃惊|近
+    with dissolve
+    voice "audio/voice/006037.ogg"
+    l "「……哎？」"
+    show chara la08a #梁芷柔立绘|夏季校服|担心1|近
+    with dissolve
+    voice "audio/voice/006038.ogg"
+    l "「为什么呀，一点都不考虑吗？」"
+    y "「嗯。」"
+    show chara la08b #梁芷柔立绘|夏季校服|担心2|近
+    with dissolve
+    voice "audio/voice/006039.ogg"
+    l "「可你现在不一定能考得上理工大啊？」"
+    y "「是啊，但也不一定就考不上嘛，总得去试试。」"
+    y "「这不是还有两个月呢么？继续努力就是了，有多少力努多少力，拼到底为止。」"
+    show chara la07b #梁芷柔立绘|夏季校服|消沉2|近
+    with dissolve
+    voice "audio/voice/006040.ogg"
+    l "「但万一……」"
+    y "「我在想……」"
+    y "「只是考过去……就够了吗？」"
+    show chara la06 #梁芷柔立绘|夏季校服|吃惊|近
+    with dissolve
+    l "「……」"
+    y "「先考到樱华去，哪怕只是一所很普通的大学，然后再用多出来的四年时间完成逆袭？」"
+    show chara la08b #梁芷柔立绘|夏季校服|担心2|近
+    with dissolve
+    y "「不是完全没有可能。」"
+    y "「但是，你不觉得，那是比我考理工大更不稳定的一件事吗？」"
+    y "「要真是这么容易就能做到，你干嘛还要拼命往樱大这样的学校考？就是因为它真的不一样啊。」"
+    show chara la07a #梁芷柔立绘|夏季校服|消沉1|近
+    with dissolve
+    y "「……」"
+    y "「虽然我现在是能比较容易地考上工大，但是……我才想起来，这其实不是我的目的。」"
+    y "「我不是简单地为了『去樱华』而去考那边的大学……」"
+    y "「而是为了『追上你』，『和你一起』去樱华。」"
+    show chara la07b #梁芷柔立绘|夏季校服|消沉2|近
+    with dissolve
+    voice "audio/voice/006041.ogg"
+    l "「啊……」"
+    y "「所以，其实对我来说，不用等到高考，我的考试从现在……从半年前，就已经开始了。」"
+    y "「在你突飞猛进的那几年里，我一直无所事事，什么也没做地荒废着。」"
+    y "「如果现在，我不能保持在进步速度上超过你，那我恐怕永远、永远都没办法实现这个目标。」"
+    y "「这半年，我觉得我还是有点机会的。但之后怎么样，其实我还是很没谱。」"
+    y "「因为你要去的是樱大啊……那是全国最顶尖的几所大学了。」"
+    y "「就算我能考到理工大，想要赶上你都非常困难，我又不是什么天赋异禀的天才。」"
+    y "「但这已经是没办法的办法了，毕竟前面我浪费了那么多时间，现在只能尽量抢救抢救。」"
+    y "「可如果我只能去工大那样的学校的话……我知道我自己，根本就不行，做不到的。」"
+    y "「你想想，那种情况下，你能等我多久？就算你能等吧！可要让你那么等，我还不如直接去考百薇算了，好歹也是一流的名校呢。」"
+    y "「所以……我想明白了。理工大就是我的底线。」"
+    y "「如果我现在没有勇气朝它冲刺，退而求其次了，那我这一辈子，就什么都冲不过去了。」"
+    y "「谢谢你……但……」"
+    y "「我还是得去挑战一次。」"
+    show chara la07a #梁芷柔立绘|夏季校服|消沉1|近
+    with dissolve
+    l "「……」"
+    show chara la05a #梁芷柔立绘|夏季校服|苦笑1|近
+    with dissolve
+    voice "audio/voice/006042.ogg"
+    l "「……嗯。」"
+    "梁芷柔欲言又止，最终只是点了点头。"
+    "那神色……该说是担忧呢，还是欣慰呢？也许二者兼有吧？"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
+    voice "audio/voice/006043.ogg"
+    l "「那你……」"
+    voice "audio/voice/096001.ogg"
+    g "「班长！」"
+    show chara la13b #梁芷柔立绘|夏季校服|疑惑2|近
+    with dissolve
+    voice "audio/voice/096002.ogg"
+    g "「郑老师说现在开始咨询，让你组织一下，按学号过去。还有就是说，让班里面别太乱了，教导主任也在呢。」"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/006044.ogg"
+    l "「……哦，好。」"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
+    voice "audio/voice/006045.ogg"
+    l "「那……就先这样。」"
+    y "「嗯，你先忙去吧。」"
+    show chara la01b #梁芷柔立绘|夏季校服|普通|侧面|近
+    with dissolve
+    voice "audio/voice/006046.ogg"
+    l "「嗯。」"
+    l "「……」"
+    show chara la07b #梁芷柔立绘|夏季校服|消沉2|近
+    with dissolve
+    voice "audio/voice/006047.ogg"
+    l "「其实……你说的对。」"
+    show chara la08a #梁芷柔立绘|夏季校服|担心1|近
+    with dissolve
+    voice "audio/voice/006048.ogg"
+    l "「我只是有点害怕……不过，也是。如果这样的坎都迈不过去的话，我怎么能给你那个机会呢？」"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
+    voice "audio/voice/006049.ogg"
+    l "「呵呵……好了！」"
+    show chara la10 #梁芷柔立绘|夏季校服|开心|近
+    with dissolve
+    voice "audio/voice/006050.ogg"
+    l "「不说丧气话了！加油吧，先把郑老师搞定再说！」"
+    y "「喂喂喂，你这还不丧啊……」"
+    show chara la09 #梁芷柔立绘|夏季校服|坏笑|近
+    with dissolve
+    voice "audio/voice/006051.ogg"
+    l "「嘻嘻，早晚的事。我看好你哦！」"
+    y "「……行吧。」"
+    y "「我会活着回来的。」"
+    hide chara
+    with dissolve
+    y "「……」"
+    y "「谢谢你。」"
+    stop sound fadeout 3.0
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    play sound "audio/sound/ambientnoise07.ogg" fadein 1.5 loop #书店环境噪音
+    scene bg b01 #教室
+    with fade
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    z "「……」"
+    z "「…………」"
+    voice "audio/voice/016001.ogg"
+    z "「……嗯……」"
+    voice "audio/voice/016002.ogg"
+    z "「你觉得……」"
+    voice "audio/voice/016003.ogg"
+    z "「我是应该先啐你一脸呢，还是直接给你个大耳刮子啊？」"
+    y "「……这样不好吧，郑老师。」"
+    show charaz lh04 #老师立绘|夏季|咆哮|近
+    with dissolve
+    voice "audio/voice/016004.ogg"
+    z "「要不，我还是活撕了你算了。」"
+    y "「呃……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/016005.ogg"
+    z "「你小子啊，这是毫不掩饰了呀，啊？哼……」"
+    show charaz lh04 #老师立绘|夏季|咆哮|近
+    with dissolve
+    voice "audio/voice/016006.ogg"
+    z "「放着好好的百薇不去报，偏要去樱华理工，啊？什么都不如，还比百薇难考，你怎么那么想得开啊？嗯？」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/016007.ogg"
+    z "「你这倒是说到做到，呵！说追梁芷柔，还真要去追呀？」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/016008.ogg"
+    z "「不是我说你，啊，你这岁数的孩子，有点这样的想法是正常的，啊。但是这个人哪，总得量力而行吧？啊？有点自知之明，知道吗？」"
+    voice "audio/voice/016009.ogg"
+    z "「这丑小鸭变白天鹅，是那么好变的啊？当然了，你比鸭子强，但我说啊，也就是个大鹅的水平，比这天鹅还差得远呢。」"
+    voice "audio/voice/016010.ogg"
+    z "「你就不想想，你这样就真的能追得上人家吗？我知道，你们俩现在关系挺好的，我又不瞎，我不理你们，是因为你们俩之前都管得住自己，但是你现在这个吧，我不管就不行了！」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/016011.ogg"
+    z "「这毕竟……高考啊，是关系你一辈子的事情。」"
+    y "「……」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/016012.ogg"
+    z "「唉……你将来呢，可能会谈很多次的恋爱，甚至结婚了，都可以结了离、离了结。但是高考、大学，这些你的前学历，选完了就是板上钉钉的，改不了啦。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/016013.ogg"
+    z "「我不是说樱华理工不好，那也是2011计划的大学，而且还在樱华，有它的优势。但除了地理位置，其他的说到底，和百薇还是有差距的。」"
+    voice "audio/voice/016014.ogg"
+    z "「我想啊，你将来还是想去大城市发展的对吧？」"
+    voice "audio/voice/016015.ogg"
+    z "「这四年以后啊，你拿着百薇的文凭出去，啊，和你拿着樱华理工的文凭出去，你觉得能一样吗？」"
+    show charaz lh04 #老师立绘|夏季|咆哮|近
+    with dissolve
+    voice "audio/voice/016016.ogg"
+    z "「你要说你不在乎、不指着这个也就罢了，但是可能么？啊？你家是有矿还是怎么的？你不用找工作啦？」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/016017.ogg"
+    z "「你给人递简历的时候，人家第一眼看的就是这个。一个全国排三十，一个六七十名往外，换成你，你怎么选哪？」"
+    y "「……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/016018.ogg"
+    z "「唉……这说到家里啊，还有一个事，你想清楚了没有啊？」"
+    voice "audio/voice/016019.ogg"
+    z "「百薇和樱华，虽然都是省会城市，不过这消费水平可不一样啊。那边物价有多贵，你知道吗？」"
+    voice "audio/voice/016020.ogg"
+    z "「是，那边挣得也多，你以后呢可以留在那边把钱挣回来。但是你毕业以后再去不好吗？就非得在这时候啊？」"
+    voice "audio/voice/016021.ogg"
+    z "「你家什么情况我也知道，供你去是没问题，可也不是随随便便什么压力都没有的吧！」"
+    voice "audio/voice/016022.ogg"
+    z "「你是不是觉得你家里养你18年很容易啊？你知不知道你到那边上学要花多少钱哪？」"
+    show charaz lh04 #老师立绘|夏季|咆哮|近
+    with dissolve
+    voice "audio/voice/016023.ogg"
+    z "「你这不光是自己任性，啊，你花的是你父母的钱，你知道吗？你觉得这么干，合适吗？」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/016024.ogg"
+    z "「就因为一个……啊？」"
+    z "「……」"
+    voice "audio/voice/016025.ogg"
+    z "「唉！」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/016026.ogg"
+    z "「说说吧，你是怎么想的……啊，除了梁芷柔啊，不算她。」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/016027.ogg"
+    z "「我倒是要看看，你还能说出点什么来。要是能说得过去，也行，啊，要是说不过去……哼……」"
+    voice "audio/voice/016028.ogg"
+    z "「……你就等着吧。」"
+    y "「呼。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    "还好。"
+    "班主任毕竟凶名在外，我还真怕他一上来就不问青红皂白地把我给否决掉。"
+    "不过，尽管说了好一通长篇大论，好歹还算是给了我一个机会。"
+    "不得不说，虽然包括我在内的很多人都总觉得郑老师太过严厉，但同时，我们也得承认，他是个相当认真负责的人。"
+    "他说的这些都颇有道理，确实是真的在替我着想。可惜，我也只能辜负他的好意了。"
+    "毕竟，我也有自己的坚持。"
+    stop sound fadeout 3.0
+    y "「……」"
+
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+    "深吸了一口气，在心中组织了一下语言。"
+    y "「郑老师。」"
+    y "「您说的没错，我想去樱华，起因确实是梁芷柔。」"
+    y "「不过，也不只是因为她。」"
+    y "「……」"
+    y "「梁芷柔……是我努力学习的动力，没有她的话，我可能，嗯，我肯定没现在这么努力。」"
+    z "「……」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    "老师瞪了我一眼，不过还是没打断我，用眼神示意我继续说。"
+    y "「不过……其实最开始的时候，我连自己能不能达到一本线都没谱，根本没想那么远的事。」"
+    y "「我就是想稍微接近她一点，能有点共同话题，万一顺便还考了个一本，那当然最好了。」"
+    y "「梁芷柔也是这么给我定的目标，至少到一本线，而最终的目标……其实也就是百薇。」"
+    y "「……」"
+    y "「百薇大学……确实是好，咱们这里也都认这块牌子。」"
+    y "「我要是没记错，在您上大学那会儿，百薇在全国的高校榜里甚至还能排进前十呢吧？」"
+    voice "audio/voice/016029.ogg"
+    z "「嗯。」"
+    y "「可现在，它排在三十名，对吧？」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/016030.ogg"
+    z "「……嗯。」"
+    "老师脸颊微微抽了抽，犹豫了一下，不过还是点头承认了。"
+    y "「二十几年，百薇在全国……掉了二十几名。它的录取分数线甚至比排名掉得还快，都快跌出前一百了。」"
+    y "「我不是瞧不起它，我不会、也没这个资格，但是……」"
+    y "「我有的时候会想，为什么会变成这样？」"
+    y "「网上有人戏称百薇是全国最苦的重点大学，说它流失出去的师资力量都足够再建一所百薇大学了。」"
+    y "「而且，咱们这里的好学生，像梁芷柔这样的，只要有条件、分数够的，也全都优先考虑外省的那些大学。」"
+    y "「就算您劝我去考百薇，那也是为了等到毕业以后……再离开这里，去大城市找工作。」"
+    y "「为什么大家都要往外跑？」"
+    y "「我一开始也想不明白，但是看着梁芷柔，我又觉得我多少明白了一点。」"
+    y "「那些地方，那些像樱华这样的大城市，有……梦想。」"
+    y "「那里有他们的梦想，或者可以实现他们的梦想，甚至那里本身就是他们的梦想。」"
+    z "「……」"
+    y "「……」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    "老师张了张嘴，似乎是想要说些什么，不过最终也没有说出来。"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    y "「老师，我呢，从小到大也没出过几次远门，没什么见识，也谈不上什么像样的梦想。」"
+    y "「一直以来都是循规蹈矩的，老老实实上学、念书，成绩比上不足比下有余，没有不满意，也没多少追求。」"
+    y "「我曾经以为我以后也会是这个样子。考一个还可以的大学，等毕了业，按部就班地找一份差不多的工作，普普通通地过日子。」"
+    y "「将来的路，大概会往什么方向走、走成什么样子，全都能猜个差不多。」"
+    y "「……」"
+    y "「当然，这也没什么不好的。」"
+    y "「但是现在，跟梁芷柔待久了，她让我看到了另外一种可能。」"
+    y "「我发现，我能做到的事，其实要比自己以为的更多。」"
+    y "「我不一定要按照现在的路，一成不变地走下去。」"
+    y "「老师，就像您说的，高考是关系我们一辈子的事。」"
+    y "「所以我才要抓住这个机会，走出去。」"
+    y "「虽然我不知道那会走到什么地方去，能走多远……」"
+    y "「但正是因为这样，我才想去试试看，看看自己……能够做到什么，究竟想做什么，让自己变得更加完整。」"
+    y "「所以，我需要一个更大的舞台。」"
+    y "「百薇……是不够的。」"
+    y "「……」"
+    y "「当然，也许我会碰个头破血流，再灰头土脸地折回来……也许最后发现还不如现在这样。」"
+    y "「但那也得是我去尝试过以后，才能让我死心。」"
+    y "「要是留下来了……我只会变回从前那样。」"
+    y "「就算有些地方发生了一点改变，比如可以考上当初根本不敢想的百薇大学，将来没准也还是会去那些大城市发展……」"
+    y "「但那只是让前途更宽了一点，基本的方向没有变。」"
+    y "「找工作，过日子。可能能找到一份更好的工作，让日子过得更好一点，但也就仅此而已。」"
+    y "「而到了那时候……恐怕我也一辈子都不会再有现在这样的想法了。」"
+    y "「所以……」"
+    y "「……」"
+    y "「这就是我为什么想要跟梁芷柔一起往樱华考的理由。」"
+    y "「老师。」"
+    z "「……」"
+    z "「…………」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/016031.ogg"
+    z "「嗯………………」"
+    "老师的眉头拧成一片扭曲的沟壑，长吁短叹了一阵。"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/016032.ogg"
+    z "「……『梦想』啊。」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/016033.ogg"
+    z "「倒是个好东西。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/016034.ogg"
+    z "「嗯……不过你想没想过啊，梦想这个东西，说到底还是需要现实来支撑的。」"
+    voice "audio/voice/016035.ogg"
+    z "「我就当你能考过去。但你到了那边，能不能找到你这个梦想呢……」"
+    voice "audio/voice/016036.ogg"
+    z "「你是……真的想明白了吗？」"
+    voice "audio/voice/016037.ogg"
+    z "「你年轻，有点闯劲是好事。不过老师作为过来人哪，还是得劝你一句：你这条路，可不好走啊。」"
+    y "「是……我知道。」"
+    y "「老师，谢谢您。」"
+    y "「不过，老师，我还是想去试试。」"
+    stop music fadeout 2.5
+
+    play sound "audio/sound/ambientnoise07.ogg" fadein 1.5 loop #书店环境噪音
+    z "「……」"
+    voice "audio/voice/016038.ogg"
+    z "「唉！」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/016039.ogg"
+    z "「好吧，算你小子过关了。」"
+    y "「哎？啊，谢谢您！」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/016040.ogg"
+    z "「哎！别急啊，着什么急呢，我还没说完呢！」"
+    voice "audio/voice/016041.ogg"
+    z "「这死罪可免，活罪难逃。啊，有两个条件你答应也得答应，不答应也得答应。」"
+    y "「啊？」"
+    voice "audio/voice/016042.ogg"
+    z "「第一，你的第一志愿可以报樱华理工，但是第二志愿你必须给我报百薇。」"
+    voice "audio/voice/016043.ogg"
+    z "「这百薇对本地考生有特殊政策，就算有分数级差，可能也挑不到什么好专业了，但万一第一志愿落榜了，起码你还能有个救啊。」"
+    y "「……」"
+    voice "audio/voice/016044.ogg"
+    z "「第二呢，从现在开始，到临考之前，你每天都得单独补课。」"
+    y "「……啊？」"
+    show charaz lh04 #老师立绘|夏季|咆哮|近
+    with dissolve
+    voice "audio/voice/016045.ogg"
+    z "「啊什么啊？就你现在这样，敢说自己能考上吗？你总不能都指着梁芷柔吧？她自己不复习啦？你当我们这些老师都是死人啊？」"
+    y "「啊……呃……不是……我……」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/016046.ogg"
+    z "「没有什么不是。听到没有啊？我告诉你啊，我会跟各科老师都打好招呼，回头单独给你一份课表，你给我来加课！」"
+    voice "audio/voice/016047.ogg"
+    z "「这虽然说吧，我不太看好你考樱华那边的大学，但你最后要连百薇也上不了……哼，别以为你毕业了，我就拿你没办法！」"
+    y "「呃……好。」"
+    y "「……」"
+    y "「老师……您为什么要……」"
+    show charaz lh04 #老师立绘|夏季|咆哮|近
+    with dissolve
+    voice "audio/voice/016048.ogg"
+    z "「为什么，你说为什么？你他娘的是咱们学校年级第二名好不好？咱们这儿啊，除了梁芷柔就是你了，你跟我说为什么？」"
+    voice "audio/voice/016049.ogg"
+    z "「你要是考砸了，咱们一中的招牌还要不要了？我们的脸还要不要了？啊？」"
+    voice "audio/voice/016050.ogg"
+    z "「还有你自己！啊？不想多考点分啊？不想找你的梦想啦？让你来你就来，听明白没有？」"
+    y "「明白了明白了！」"
+    y "「……」"
+    y "「老师……谢谢您。」"
+    "我站起身，朝郑老师恭恭敬敬地鞠了一躬。"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    "老师「哼」了一声，摆出一副不耐烦的样子朝我挥了挥手。"
+    voice "audio/voice/016051.ogg"
+    z "「哎走走走走走，赶紧的，叫下一个进来。」"
+    y "「是！」"
+    scene bg black #黑屏
+    with fade
+    stop sound fadeout 3.0
+
+    "……"
+    "…………"
+    play sound "audio/sound/ambientnoise09.ogg" fadein 1.5 loop #人群嘈杂环境噪音
+    scene bg b01 #教室
+    with fade
+    show chara la06 #梁芷柔立绘|夏季校服|吃惊|近
+    with dissolve
+    voice "audio/voice/006052.ogg"
+    l "「……咦？」"
+    y "「怎么啦，这么吃惊？」"
+    show chara la13a #梁芷柔立绘|夏季校服|疑惑1|近
+    with dissolve
+    voice "audio/voice/006053.ogg"
+    l "「你居然活着回来了！」"
+    y "「喂！」"
+    show chara la10 #梁芷柔立绘|夏季校服|开心|近
+    with dissolve
+    voice "audio/voice/006054.ogg"
+    l "「哈哈……你到底跟郑老师说了什么啊，这么管用？」"
+    y "「嗯……」"
+    y "「我跟他说啊——」"
+    show chara la11 #梁芷柔立绘|夏季校服|微笑|近
+    with dissolve
+    voice "audio/voice/006055.ogg"
+    l "「嗯。」"
+    y "「『做人如果没有梦想，那跟咸鱼有什么区别』？」"
+    show chara la04 #梁芷柔立绘|夏季校服|无奈|近
+    with dissolve
+    l "「……」"
+    show chara la06 #梁芷柔立绘|夏季校服|吃惊|近
+    with dissolve
+    voice "audio/voice/006056.ogg"
+    l "「哈？」"
+    y "「然后郑老师就感动地放我了一条生路。」"
+    show chara la02 #梁芷柔立绘|夏季校服|皱眉|近
+    with dissolve
+    voice "audio/voice/006057.ogg"
+    l "「哎哎，说正经的哪！」"
+    y "「这还不够正经啊？啊，当然了我也还说了点别的——」"
+    y "「『你是要当一辈子懦夫，还是要当英雄！哪怕只有几分钟』？」"
+    show chara la08b #梁芷柔立绘|夏季校服|担心2|近
+    with dissolve
+    l "「……」"
+    y "「……」"
+    y "「怎么样，帅吧？」"
+    show chara la04 #梁芷柔立绘|夏季校服|无奈|近
+    with dissolve
+    voice "audio/voice/006058.ogg"
+    l "「……我不想理你了。」"
+    y "「喂喂喂别啊！」"
+    show chara la02 #梁芷柔立绘|夏季校服|皱眉|近
+    with dissolve
+    voice "audio/voice/006059.ogg"
+    l "「你这嘴啊，满嘴跑火车。」"
+    y "「呵呵。」"
+    show chara la01a #梁芷柔立绘|夏季校服|普通|正面|近
+    with dissolve
+    y "「其实你还真冤枉我了，不过这只是中心思想和主要内容嘛，具体的当然不是这样了。你听我说啊……」"
+    stop sound fadeout 3.0
+
+    scene bg b00a #天空|候鸟
+    with fade
+    "我即将迎来在这片天空下的最后一场挑战。"
+    "这场挑战，是为了给我的人生开启一片新天地。"
+    "尽管直到此时，我仍然不能完全把握住自己的未来。"
+    "但我已经非常清楚，自己该怎样去做，才不会在未来后悔。"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t01 #转场 教室
+    with fade
+    pause
+
+#6月2日。
+#高考前的假期。
+
+    play music "audio/music/bgm01.ogg" fadein 1.5 #春～樱飞～
+    scene bg b02 #城区|夏
+    with fade
+    "时间匆匆而过，一转眼已是六月。"
+    "初夏为山峦裹上了苍翠欲滴的盛装。"
+    "而我们，也终于迎来了自己高中生涯的最后一天。"
+    scene bg b11 #考场
+    with fade
+    y "「呼……这就算是可以了吧？」"
+    show chara a10 #梁芷柔立绘|夏季校服|开心
+    with dissolve
+    voice "audio/voice/006060.ogg"
+    l "「嗯。辛苦啦。」"
+    y "「还好吧……」"
+    y "「……」"
+    show chara a13b #梁芷柔立绘|夏季校服|疑惑2
+    with dissolve
+    voice "audio/voice/006061.ogg"
+    l "「嗯？怎么了？」"
+    y "「啊，没什么。」"
+    y "「就是觉得教室突然变得这么干净了，有点不习惯。」"
+    show chara a10 #梁芷柔立绘|夏季校服|开心
+    with dissolve
+    voice "audio/voice/006062.ogg"
+    l "「哈哈，毕竟是考场嘛。」"
+    y "「嗯……」"
+    y "「高中……这就算是结束了吧……」"
+    show chara a01b #梁芷柔立绘|夏季校服|普通|侧面
+    with dissolve
+    l "「……」"
+    show chara a11 #梁芷柔立绘|夏季校服|微笑
+    with dissolve
+    voice "audio/voice/006063.ogg"
+    l "「嗯，是啊……」"
+    y "「你说，你觉得自己高中这三年，算是过得怎么样？」"
+    show chara a13a #梁芷柔立绘|夏季校服|疑惑1
+    with dissolve
+    voice "audio/voice/006064.ogg"
+    l "「嗯……挺不好的吧？」"
+    y "「嗯？」"
+    show chara a07b #梁芷柔立绘|夏季校服|消沉2
+    with dissolve
+    voice "audio/voice/006065.ogg"
+    l "「中考从二中考到一中，还以为自己这就算是翻身了，谁知道踌躇满志了不到一年，就又在樱华被人虐得不成人形。」"
+    show chara a07a #梁芷柔立绘|夏季校服|消沉1
+    with dissolve
+    voice "audio/voice/006066.ogg"
+    l "「然后呢，哭着鼻子逃回来头悬梁锥刺股，其他女生都在吃喝玩乐、打扮自己、谈恋爱，只有我每天泡在书海里面挣扎，最后因为压力太大还差点把自己给搞崩溃了……妈呀，我自己都觉得我好惨。」"
+    show chara a10 #梁芷柔立绘|夏季校服|开心
+    with dissolve
+    voice "audio/voice/006067.ogg"
+    l "「哎，说起来，我居然都没有得近视，还真是奇迹了。」"
+    y "「呃，这个嘛……」"
+    show chara a11 #梁芷柔立绘|夏季校服|微笑
+    with dissolve
+    voice "audio/voice/006068.ogg"
+    l "「嘻嘻，不过嘛，最后这一年不一样。」"
+    show chara a09 #梁芷柔立绘|夏季校服|坏笑
+    with dissolve
+    voice "audio/voice/006069.ogg"
+    l "「因为啊，有人陪在我身边，愿意和我一起承受这一切。」"
+    show chara a05a #梁芷柔立绘|夏季校服|苦笑1
+    with dissolve
+    voice "audio/voice/006070.ogg"
+    l "「所以……我想说，谢谢你。」"
+    y "「……」"
+    y "「咳。应该是我谢谢你吧。要不是你，我都不知道自己现在会是个什么样子。」"
+    y "「我这最后一年才真是……不一样了。」"
+    y "「虽然，心里还是有点没谱吧……」"
+    show chara a10 #梁芷柔立绘|夏季校服|开心
+    with dissolve
+    voice "audio/voice/006071.ogg"
+    l "「哎呀你就别瞎紧张、自己吓唬自己了，想想你这最后的一个多月，那么多魔鬼训练难道都是闹着玩的啊？」"
+    y "「啊……别提这个，求你了。」"
+    show chara a11 #梁芷柔立绘|夏季校服|微笑
+    with dissolve
+    voice "audio/voice/006072.ogg"
+    l "「嘻嘻。好啦，知道啦！你也别瞎想了。」"
+    show chara a10 #梁芷柔立绘|夏季校服|开心
+    with dissolve
+    voice "audio/voice/006073.ogg"
+    l "「走吧，回家吧！」"
+    y "「嗯……嗯。」"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    scene bg b04 #滨河路|夏
+    with fade
+    "我们离开了学校。"
+    "高考的时候，我们都不会在本校的考场进行考试。也就是说，自这一刻起，我不会再以「本校学生」的身份踏足一中了。"
+    "在两个月前，我年满18周岁，在法律意义上成为了一名成年人。"
+    "而在今天，我的高中生涯也画上了句号。"
+    stop sound fadeout 3.0
+    "虽然我还年轻，但已经不再只是个孩子了。"
+    "接下来，我会按照自己的选择，朝着外面的世界，迈出步伐。"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t09 #转场 考场
+    with fade
+    pause
+
+#6月7日。
+#高考第一天。
+
+    play sound "audio/sound/ambientnoise04.ogg" fadein 1.5 loop #白天环境噪音
+    scene bg b02 #城区|夏
+    with fade
+    "六月的清晨，阳光早早地洒满了大地。"
+    "吃过早饭，将所有的证件和文具反复检查了几遍之后，我走出了家门。"
+    "时间比计划中的要提前了一点，虽然考场的距离稍远，但依然足以让我优哉游哉地溜达过去。"
+    scene bg b04 #滨河路|夏
+    with fade
+    y "「……呼。」"
+    "呼吸着新鲜的空气，在河边漫步。"
+    "最近一年都紧紧张张的。真到了最后的决战时刻，反倒有种悠闲的感觉，也是十分奇妙了。"
+
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    scene bg b05 #湿地公园|夏
+    with fade
+    "路过湿地公园的时候，站在路边远远地朝里面眺望了一会儿。"
+    bird "「啾啾——」"
+    bird "「嘎——」"
+    "可以听到水鸟嬉戏的声音。"
+    "这个时候，大多数的候鸟都已经结束了迁徙，开始繁衍生息，湿地公园也因此变得十分热闹。"
+    "当然……"
+    scene bg b00a #天空|候鸟
+    with fade
+    "应该，也还有一些候鸟，依然在天空中奋力翱翔吧……"
+    y "「……」"
+    voice "audio/voice/026001.ogg"
+    d "「咦？小叶？」"
+    y "「啊……」"
+    scene bg b05 #湿地公园|夏
+    with fade
+    show charad g02 #书店店员立绘|惊讶
+    with dissolve
+    "回头一看，发现是我和梁芷柔常去的那家小书店的店员小姐。"
+    "这一年来没少见，彼此也算是熟悉了。"
+    y "「吴姐，上班去啊？」"
+    voice "audio/voice/026002.ogg"
+    d "「嗯，你这是？」"
+    y "「去考试。」"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    voice "audio/voice/026003.ogg"
+    d "「哦……啊？考试？噢！对了对了，今天高考啊！」"
+    y "「是啊。」"
+    voice "audio/voice/026004.ogg"
+    d "「哎哟，那可得加油啊！怎么样啊，打算考哪儿呀？」"
+    y "「嗯……樱华那边。」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    voice "audio/voice/026005.ogg"
+    d "「哎……？哦……」"
+    show charad g04 #书店店员立绘|坏笑
+    with dissolve
+    voice "audio/voice/026006.ogg"
+    d "「……嚯嚯，樱华啊。」"
+    voice "audio/voice/026007.ogg"
+    d "「原来如此，原来是樱华啊……」"
+    y "「吴姐……你笑得太诡异了。」"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    voice "audio/voice/026008.ogg"
+    d "「嘻嘻，我怎么诡异啦？不耽误你了，赶快去学校吧。加油喔！」"
+    y "「哦，好！谢谢！」"
+    voice "audio/voice/026009.ogg"
+    d "「不客气！」"
+    show charad g02 #书店店员立绘|惊讶
+    with dissolve
+    voice "audio/voice/026010.ogg"
+    d "「啊，对了。」"
+    y "「嗯？」"
+    show charad g04 #书店店员立绘|坏笑
+    with dissolve
+    voice "audio/voice/026011.ogg"
+    d "「既然这样，那你帮我给小梁也带个好呗！」"
+    y "「呃？」"
+    voice "audio/voice/026012.ogg"
+    d "「嘿嘿，你懂啦！加油噢！我看好你！」"
+    y "「……懂个鬼啊！」"
+    hide charad
+    with dissolve
+    voice "audio/voice/026013.ogg"
+    d "「哎呀，青春真好啊～想当初我高中的时候咋就没这么好的事呢……」"
+    "店员小姐一边恶作剧似的朝我挥手，一边走掉了。"
+    stop sound fadeout 2.0
+    y "「……」"
+
+    scene bg b11 #考场
+    with fade
+    "话虽如此，其实我这两天根本就见不到梁芷柔。"
+    play sound "audio/sound/ambientnoise10.ogg" fadein 1.5 loop #安静学习环境噪音
+    "我们被分到不同的考场，甚至连学校都不是同一个。"
+    y "「呼……」"
+    "将一切都准备妥当，我坐在座位上，观察着其他的考生"
+    "整个考场都没有认识的人，只有少数几个似乎是和我同级、看着稍微有点脸熟的家伙。"
+    "神色……不一而同。"
+    "淡定者有之、紧张者有之、嬉闹者亦有之，甚至还有几个家伙看上去已经生无可恋了。"
+    "而我在他们的眼里又是什么样呢？"
+    play audio "audio/sound/effect06.ogg" noloop
+    y "「啊……」"
+    stop sound fadeout 3.0
+
+    "预备铃响，考试快要开始了。"
+    "学生们纷纷在自己的位置上坐定，监考老师进来宣读完考场规则，然后一众人等开始静静等待正式考试的铃声。"
+    scene bg b11 #考场
+    with fade
+    "决战，开始了。"
+    "上午的科目是语文。"
+    "将姓名和准考证号等一堆基础信息填写完毕以后，我没有急着看卷子，而是先深深地吸了一口气。"
+    y "「（吸——）」"
+    y "「……呼！」"
+    "然后——"
+    play sound "audio/sound/effect10.ogg" fadein 0.5 loop #写字声
+    "审题、动笔。"
+    "积攒了整整一年的力量，在这一刻终于毫无保留地释放出来。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b11 #考场
+    with fade
+    "伴随着着时间的流逝，我的答题卡也逐渐填写得完整起来。"
+    y "「……」"
+    "截至目前，一切都算顺利。"
+    "题目中规中矩，自己的发挥也比较正常。"
+    "前面的题都已经做完，检查过一遍以后也没发现什么问题。"
+    stop sound fadeout 3.0
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+    y "「（……那，接下来就是作文了。）」"
+    "我看了看作文的题目。"
+    y "「……」"
+    "怎么说呢，感觉……倒是很巧。"
+    "「18.阅读下面的材料，根据要求写一篇不少于800字的文章。」"
+    "『候鸟迁移过程艰辛万分，既要克服长途飞行的辛劳，亦要克服大自然严峻的挑战。在大风沙中寻找出正确方向、在冰天雪地中保护自己、在汪洋浩瀚海洋中猎食……』"
+    "『有的候鸟，默默承受着一切，挺着胸与大自然作战到底；而有的候鸟，则停留在沿途的城市里，享受到其中丰富的食物，甚至不再离开，转为留鸟。』"
+    "「请综合材料内容及含义作文，体现你的思考、权衡与选择。」"
+    "「要求选好角度，确定立意，明确文体，自拟标题。不要套作，不得抄袭。」"
+    y "「……」"
+    y "「（候鸟……与留鸟吗？）」"
+    y "「（呵……）」"
+    "我挠了挠脑袋，微微一笑，将答题纸展平。"
+    "轻轻吸了口气，开始写下我的标题——"
+    scene bg b00a #天空|候鸟
+    with fade
+    "『在梦想的天空下』"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    pause 1.0
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t06 #转场 天空
+    with fade
+    pause
+
+#07.终章
+
+#6月22日。
+#高考成绩公布。
+
+    scene bg black #黑屏
+    with fade
+    y "「……咳咳……那我出门啦！」"
+    y "「还有啊，老爸你少抽两根，这家里都快变毒气室了！」"
+    y "「至于对你儿子那么不放心嘛……」"
+    play sound "audio/sound/effect22.ogg" noloop
+    pause 4
+    stop sound
+
+    play music "audio/music/bgm02.ogg" fadein 1.5 #夏～澄空～
+    scene bg b04 #滨河路|夏
+    with fade
+    y "「……哇！」"
+    y "「好晒。」"
+    "进入六月下旬，天气明显变得炎热起来。"
+    "这还没到最难熬的时候……不过也够人一呛了。"
+    scene bg b06 #商业街
+    with fade
+    "……"
+    "…………"
+    "一边躲避阳光的直晒，一边用尽可能快的速度赶往目的地。"
+
+    scene bg b07 #快餐店
+    with fade
+    play sound "audio/sound/effect04.ogg" noloop
+    with hpunch
+    y "「……呼！」"
+
+    "推开快餐店大门的那一刻，扑面而来的冷气令我打了个激灵。"
+    y "「啊……活过来了……」"
+    y "「我看看……」"
+    y "「啊，那儿呢。」"
+    y "「……哟！」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007001.ogg"
+    l "「啊，过来啦？」"
+    y "「嗯。你到了多久了？」"
+    show chara c13b #梁芷柔立绘|夏季私服|疑惑2
+    with dissolve
+    voice "audio/voice/007002.ogg"
+    l "「两三分钟？毕竟我家离这边近一点嘛。」"
+    show chara c02 #梁芷柔立绘|夏季私服|皱眉
+    with dissolve
+    voice "audio/voice/007003.ogg"
+    l "「哎哟，看你出的这一脑门的汗，干嘛跑这么急啊。」"
+    y "「哪用得着跑啊，光晒就能晒死我了。」"
+    show chara lc11 #梁芷柔立绘|夏季私服|微笑|近
+    with dissolve
+    voice "audio/voice/007004.ogg"
+    l "「也是。来，给你。」"
+    y "「噢，谢了。」"
+    "我接过梁芷柔递来的餐巾纸，随便在脸上抹了一把。"
+    show chara lc10 #梁芷柔立绘|夏季私服|开心|近
+    with dissolve
+    voice "audio/voice/007005.ogg"
+    l "「还有这个。」"
+    "这次递过来的是一杯可乐。"
+    y "「哎哟，真周到。」"
+    y "「（吸——）」"
+    with vpunch
+    y "「……嗝！」"
+    show chara lc02 #梁芷柔立绘|夏季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/007006.ogg"
+    l "「哎哟，喝慢点，别再呛着。」"
+    y "「呼……」"
+    y "「啊……这次是真活过来了。」"
+    show chara lc10 #梁芷柔立绘|夏季私服|开心|近
+    with dissolve
+    voice "audio/voice/007007.ogg"
+    l "「嘻嘻。」"
+    show chara lc11 #梁芷柔立绘|夏季私服|微笑|近
+    with dissolve
+    voice "audio/voice/007008.ogg"
+    l "「所以呢？可以公布答案了？」"
+    y "「嗯……」"
+    "是的。"
+    "今天是6月22日，高考成绩公布的日子。"
+    "经过了一上午的忐忑与紧张之后，终于等到分数出来的我，和梁芷柔约好了在这里碰头。"
+    y "「咳咳……那我就……」"
+    show chara lc04 #梁芷柔立绘|夏季私服|无奈|近
+    with dissolve
+    voice "audio/voice/007009.ogg"
+    l "「哎等等，你就不先关心一下我吗？不问问我考得怎么样？」"
+    y "「啊，你……还用问吗？」"
+    show chara lc13b #梁芷柔立绘|夏季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/007010.ogg"
+    l "「那可不一定吧，万一我考砸了呢？」"
+    y "「想都没想过。」"
+    y "「……再说咱们不是做过一次估分了吗，就算估得再不准，能差出多少去啊？」"
+    show chara lc03 #梁芷柔立绘|夏季私服|生气|近
+    with dissolve
+    voice "audio/voice/007011.ogg"
+    l "「万一啦！什么事没个万一啊？」"
+    y "「这……」"
+    y "「瞅你现在这表情，真要考砸了还这样，那不如去报国家戏曲学院或者首都电影学院吧？反正你这么漂亮。」"
+    show chara lc12a #梁芷柔立绘|夏季私服|羞涩1|近
+    with dissolve
+    voice "audio/voice/007012.ogg"
+    l "「哎～真是的，讨厌！」"
+    y "「本来就是嘛。那……你到底考得怎么样啊？」"
+    show chara lc01a #梁芷柔立绘|夏季私服|普通|正面|近
+    with dissolve
+    voice "audio/voice/007013.ogg"
+    l "「嗯……六百……」"
+    show chara lc11 #梁芷柔立绘|夏季私服|微笑|近
+    with dissolve
+    voice "audio/voice/007014.ogg"
+    l "「……七十七。」"
+    y "「嗯～厉害！」"
+    "我模仿东北亚地区某个八零后国家领导人的姿势，故作夸张地鼓了鼓掌。"
+    show chara lc03 #梁芷柔立绘|夏季私服|生气|近
+    with dissolve
+    voice "audio/voice/007015.ogg"
+    l "「哎哎哎哎哎你还能再假点么？」"
+    y "「真的哎，我是真心觉得你很厉害啊，比我不知道高到哪里去了！」"
+    show chara lc04 #梁芷柔立绘|夏季私服|无奈|近
+    with dissolve
+    voice "audio/voice/007016.ogg"
+    l "「嘁。」"
+    y "「本来就是嘛，跟你自己估的就差了2分……你还好意思说我假，你都这样了，还非得要求我担心一下？」"
+    show chara lc02 #梁芷柔立绘|夏季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/007017.ogg"
+    l "「怎么啦不行嘛？哼。」"
+    show chara lc01a #梁芷柔立绘|夏季私服|普通|正面|近
+    with dissolve
+    voice "audio/voice/007018.ogg"
+    l "「……你呢？你多少分？」"
+    y "「我啊……」"
+    "在报出分数之前，我忍不住先深吸了一口气……尽量让自己显得平静一些。"
+    y "「……594分。」"
+    show chara lc06 #梁芷柔立绘|夏季私服|吃惊|近
+    with dissolve
+    voice "audio/voice/007019.ogg"
+    l "「真的啊？」"
+    show chara lc10 #梁芷柔立绘|夏季私服|开心|近
+    with dissolve
+    voice "audio/voice/007020.ogg"
+    l "「这……你够可以的啊！比之前估的还要高一点呢！」"
+    y "「是啊，可能是一些主观题……像是作文什么的，比预想的多拿了点分吧。」"
+    show chara lc11 #梁芷柔立绘|夏季私服|微笑|近
+    with dissolve
+    voice "audio/voice/007021.ogg"
+    l "「嗯！嗯！」"
+    show chara lc10 #梁芷柔立绘|夏季私服|开心|近
+    with dissolve
+    voice "audio/voice/007022.ogg"
+    l "「考得不错，恭喜你。」"
+    y "「……谢谢你！」"
+    "我郑重地向梁芷柔致以谢意。"
+    "虽说大恩不言谢，但这个时候，除了谢谢也不知道还能说什么了。"
+    show chara lc09 #梁芷柔立绘|夏季私服|坏笑|近
+    with dissolve
+    voice "audio/voice/007023.ogg"
+    l "「哎呀，干嘛这么客气嘛。」"
+    show chara lc10 #梁芷柔立绘|夏季私服|开心|近
+    with dissolve
+    voice "audio/voice/007024.ogg"
+    l "「说到底还是你自己努力啊，呵。」"
+    show chara lc09 #梁芷柔立绘|夏季私服|坏笑|近
+    with dissolve
+    voice "audio/voice/007025.ogg"
+    l "「哎，说起来，你这上午都是什么心情啊？紧张不紧张？」"
+    y "「别提了！」"
+    y "「我其实还算好，毕竟试是我自己考的，还算有点底。我爸妈那就不行了，比我急得多，从早上起来就在家里转来转去的，来回来去地看那个表，中午饭都没好好吃。」"
+    y "「不是下午两点钟出成绩吗，一点半的时候他们俩就都聚在电脑前面了，但是那又刷不出来，结果我们一家子就那么大眼瞪小眼地干坐着……我爸跟那儿一根接一根地抽烟，把屋子里熏得跟毒气室似的。」"
+    y "「就那半个小时，我感觉跟过了半个月似的……然后到两点，这不是可以查了嘛，但是教育考试院的网站又出问题了，可能是在那一瞬间被挤爆了吧，反正死活上不去……」"
+    y "「唉，你就想吧。当时那场面啊……太可怕了，我算是知道什么叫皇上不急太监急了。」"
+    show chara lc01b #梁芷柔立绘|夏季私服|普通|侧面|近
+    with dissolve
+    voice "audio/voice/007026.ogg"
+    l "「可怜天下父母心啊……其实都一样，我爸妈也没好到哪去。吃完饭，我爸收拾了一半，也不知道怎么就转到我这边来了，结果厨房那边冰箱门都没关，就一直那么敞着。」"
+    show chara lc10 #梁芷柔立绘|夏季私服|开心|近
+    with dissolve
+    voice "audio/voice/007027.ogg"
+    l "「要是在平时我妈早跟他急了，那会儿就跟没看见一样。直到成绩出来以后，放下了心，才想起来跟我爸算账。」"
+    y "「哎，叔叔阿姨对你还不放心啊？」"
+    show chara lc13b #梁芷柔立绘|夏季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/007028.ogg"
+    l "「太关心了嘛，就容易忍不住瞎想。毕竟是高考嘛，万一状态有个起伏什么的，谁也说不准啊。」"
+    show chara lc13a #梁芷柔立绘|夏季私服|疑惑1|近
+    with dissolve
+    voice "audio/voice/007029.ogg"
+    l "「你别看我自己好像挺有谱的，成绩出来之前，我也一样会胡思乱想，像是『哎呀，这道题是不是应该换一个答法更好啊』什么的。」"
+    y "「那知道成绩以后的心情呢？」"
+    show chara lc13b #梁芷柔立绘|夏季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/007030.ogg"
+    l "「现在，当然是踏实了。不过啊……」"
+    show chara lc08b #梁芷柔立绘|夏季私服|担心2|近
+    with dissolve
+    voice "audio/voice/007031.ogg"
+    l "「直到刚才都还有一点不踏实的。」"
+    y "「嗯？」"
+    show chara lc01a #梁芷柔立绘|夏季私服|普通|正面|近
+    with dissolve
+    voice "audio/voice/007032.ogg"
+    l "「嗯……因为还不知道你的成绩呀！」"
+    show chara lc07a #梁芷柔立绘|夏季私服|消沉1|近
+    with dissolve
+    voice "audio/voice/007033.ogg"
+    l "「虽然感觉你考得应该还不错，但是，万一呢……是吧？」"
+    y "「啊……嗯。」"
+    show chara lc02 #梁芷柔立绘|夏季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/007034.ogg"
+    l "「哼，我才不像某些人似的，那么没心没肺的。」"
+    y "「我这是充分信任你啊！」"
+    show chara lc03 #梁芷柔立绘|夏季私服|生气|近
+    with dissolve
+    voice "audio/voice/007035.ogg"
+    l "「哼！」"
+    y "「呃……」"
+    show chara lc04 #梁芷柔立绘|夏季私服|无奈|近
+    with dissolve
+    voice "audio/voice/007036.ogg"
+    l "「……好啦，说正经的。」"
+    y "「嗯。」"
+    show chara lc01b #梁芷柔立绘|夏季私服|普通|侧面|近
+    with dissolve
+    voice "audio/voice/007037.ogg"
+    l "「现在成绩是出来了，但是一本线估计还得过几个小时才能出……也可能要到明天，所以现在是什么情况其实还不好说。」"
+    voice "audio/voice/007038.ogg"
+    l "「我个人感觉今年的题还是比较简单的，分数虽然高，但是录取线估计也很高。」"
+    y "「嗯……也就是说去年的分数线没什么参考价值了吧？」"
+    voice "audio/voice/007039.ogg"
+    l "「恐怕是。不过嘛，估一个大概的数值还是可以的。」"
+    y "「嗯……」"
+    show chara lc13b #梁芷柔立绘|夏季私服|疑惑2|近
+    with dissolve
+    voice "audio/voice/007040.ogg"
+    l "「料敌从宽，姑且先按照比去年高了15分来计算好了。」"
+    y "「这样啊。」"
+    "我翻了翻去年的大学录取分数线。"
+    y "「嗯……我看看……」"
+    show chara lc13a #梁芷柔立绘|夏季私服|疑惑1|近
+    with dissolve
+    voice "audio/voice/007041.ogg"
+    l "「怎么样？」"
+    y "「应该是……」"
+    y "「……能上线。」"
+    show chara lc10 #梁芷柔立绘|夏季私服|开心|近
+    with dissolve
+    voice "audio/voice/007042.ogg"
+    l "「那就好！」"
+    y "「……呼。」"
+    "梁芷柔喜形于色，兴奋地拍了拍手，我也是长出了一口气。"
+    "之前自己的估分大概是585分左右，不过现在多了将近10分，自然也会更有底气。"
+    "虽然这么推算出来的结论没有那么准确，但大致上还是可以参考的。"
+    y "「总算是……哎，真是，提心吊胆的，这几天。」"
+    show chara lc11 #梁芷柔立绘|夏季私服|微笑|近
+    with dissolve
+    voice "audio/voice/007043.ogg"
+    l "「嘻嘻，那现在呢？」"
+    y "「好多了。」"
+    show chara lc04 #梁芷柔立绘|夏季私服|无奈|近
+    with dissolve
+    voice "audio/voice/007044.ogg"
+    l "「哎～那不还是没好利索嘛！」"
+    y "「毕竟是估出来的分数线啊，具体的还得看明天……而且之后还有专业啊什么的，现在都还说不准。」"
+    y "「不过不管怎么说，算是开了个好头吧。」"
+    show chara lc11 #梁芷柔立绘|夏季私服|微笑|近
+    with dissolve
+    voice "audio/voice/007045.ogg"
+    l "「嗯！」"
+    l "「……」"
+    show chara lc08a #梁芷柔立绘|夏季私服|担心1|近
+    with dissolve
+    voice "audio/voice/007046.ogg"
+    l "「嗯……那个，你……」"
+    y "「怎么了？」"
+    show chara lc06 #梁芷柔立绘|夏季私服|吃惊|近
+    with dissolve
+    voice "audio/voice/007047.ogg"
+    l "「啊，不，没事……」"
+    show chara lc01b #梁芷柔立绘|夏季私服|普通|侧面|近
+    with dissolve
+    voice "audio/voice/007048.ogg"
+    l "「……没事了。」"
+    y "「嗯……？」"
+    show chara lc05a #梁芷柔立绘|夏季私服|苦笑1|近
+    with dissolve
+    voice "audio/voice/007049.ogg"
+    l "「希望，明天来的是个好消息吧！」"
+    y "「……」"
+    y "「嗯……」"
+    y "「是啊……希望是个好消息……」"
+    "虽然梁芷柔并没有说出口，但我知道她想说的是什么。"
+    "我的分数差不多刚好卡在樱华理工的录取线上，可能会被录取，也可能差那么一点被刷掉。"
+    "目标已经确定，能做的也都尽力做到了最好，剩下的就只有听天由命了。"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    "只是……"
+    "如果那个结果不尽人意的话？"
+    scene bg b00 #天空
+    with fade
+    "如果那样，我……该怎么办呢？"
+    "我……和她。我们，又该怎么办呢？"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t03 #转场 快餐店
+    with fade
+    pause
+
+#7月20日。
+#本科一批录取工作开始。
+
+    play sound "audio/sound/ambientnoise05.ogg" fadein 1.5 loop #街道蝉鸣噪音
+    scene bg b02 #城区|夏
+    with fade
+    "七月，烈日炎炎。"
+    "虽然天气热得让人不怎么想动弹，不过，最近这段时间我还是没少出门。"
+    "当然，不只我自己一个人。"
+    stop sound fadeout 3.0
+
+    play music "audio/music/bgm04.ogg" fadein 1.5 #冬～苍雪～
+    scene bg b06 #商业街
+    with fade
+    "我和梁芷柔走遍了这座小城的每一个角落，在这些早就熟悉无比的景色中，烙上属于我们两个人共同的记忆。"
+    show chara c01a #梁芷柔立绘|夏季私服|普通|正面
+    with dissolve
+    l "「……」"
+    voice "audio/voice/007050.ogg"
+    l "「一晃，这一年就过去了啊……」"
+    y "「嗯？」"
+    show chara c13b #梁芷柔立绘|夏季私服|疑惑2
+    with dissolve
+    voice "audio/voice/007051.ogg"
+    l "「去年，差不多就是这两天吧？你救了我一命。」"
+    y "「啊，啊！你说那事啊？」"
+    y "「我记得还得再过两天吧……不过也差不多了。」"
+    y "「这么想想还真是，一年了啊。」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007052.ogg"
+    l "「嗯，呵呵。」"
+    y "「怎么了？」"
+    show chara c01b #梁芷柔立绘|夏季私服|普通|侧面
+    with dissolve
+    voice "audio/voice/007053.ogg"
+    l "「没什么，就是觉得缘分这个东西，真是很奇妙。」"
+    show chara c02 #梁芷柔立绘|夏季私服|皱眉
+    with dissolve
+    voice "audio/voice/007054.ogg"
+    l "「要是没有那一次……也不知道咱们俩现在会是怎么样。」"
+    y "「嗯……」"
+    "反正……肯定不会是现在这个样。"
+    "这么说起来，我还得感谢那个椅子。"
+    show chara c13a #梁芷柔立绘|夏季私服|疑惑1
+    with dissolve
+    voice "audio/voice/007055.ogg"
+    l "「……说起来，你那边怎么样了？」"
+    y "「还是院校在阅，没下文。」"
+    show chara c05a #梁芷柔立绘|夏季私服|苦笑1
+    with dissolve
+    voice "audio/voice/007056.ogg"
+    l "「唉……别想那么多啦，这不才第三天嘛，耐心等吧。」"
+    y "「啧，最烦的就是这鞋啊，只扔下来一只。」"
+    y "「是死是活，好歹给个痛快话啊。唉……」"
+    scene bg b00 #天空
+    with fade
+    nvl show
+    nvl_narrator "梁芷柔的判断还是相当准确的，一本线和预料的相差无几，我也随即按照计划在志愿上填报了樱华理工大学。"
+    nvl_narrator "一个月匆匆而过，就在两天前，本科一批的录取工作正式开始了。"
+    nvl_narrator "我的档案当天即被省招办投到了樱华理工大学。换句话说，顺利通过了理工大的投档线。这姑且算是个好消息……"
+    nvl clear
+    nvl_narrator "但接下来就比较让人费解了。"
+    nvl_narrator "当日下午，我的考生状态从「已经投档」变成了「院校在阅」，本来满心期待第二天就能出来结果，谁知道转眼三天过去了，状态却还是「院校在阅」，一字未改。"
+    nvl_narrator "也不知道是哪里出了什么问题……"
+    nvl clear
+    scene bg b04 #滨河路|夏
+    with fade
+    nvl hide
+    show chara c01b #梁芷柔立绘|夏季私服|普通|侧面
+    with dissolve
+    y "「你呢？你那边怎么样啊？」"
+    show chara c05b #梁芷柔立绘|夏季私服|苦笑2
+    with dissolve
+    voice "audio/voice/007057.ogg"
+    l "「我啊……」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007058.ogg"
+    l "「……预录取。」"
+    "果然……她这边倒还是一如既往的稳。"
+    "不过，虽说早在意料之中，但在听到她亲口说出确定的结果时，还是会情不自禁地为她感到开心。"
+    y "「恭喜了。」"
+    show chara c10 #梁芷柔立绘|夏季私服|开心
+    with dissolve
+    voice "audio/voice/007059.ogg"
+    l "「谢谢。」"
+    y "「说是预录取……其实没什么特别特殊的情况的话，也就是录取了吧？」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007060.ogg"
+    l "「算是吧。」"
+    show chara c13b #梁芷柔立绘|夏季私服|疑惑2
+    with dissolve
+    voice "audio/voice/007061.ogg"
+    l "「其实樱大的人已经来过电话了……和我直接确认过。」"
+    y "「哦？」"
+    show chara c13a #梁芷柔立绘|夏季私服|疑惑1
+    with dissolve
+    voice "audio/voice/007062.ogg"
+    l "「我毕竟也是排进全省前十名里的人嘛，再加上是咱们这个小地方出来的……可能比较有噱头？反正我觉得樱大那边对我还算是挺感兴趣的。」"
+    y "「那他们都跟你说什么了？就光和你确认了一下？」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007063.ogg"
+    l "「还说了点助学金什么的事，条件还不错。」"
+    y "「这么好啊？」"
+    show chara c13a #梁芷柔立绘|夏季私服|疑惑1
+    with dissolve
+    voice "audio/voice/007064.ogg"
+    l "「也算正常吧，毕竟我没往首都考而是主动去的樱华……好像他们几家每年抢生源也抢得挺狠的？」"
+    show chara c01a #梁芷柔立绘|夏季私服|普通|正面
+    with dissolve
+    voice "audio/voice/007065.ogg"
+    l "「当然相应的，我也需要配合他们做一些宣传方面的活动，上个新闻什么的。」"
+    y "「嗯？类似于……『十二年寒窗苦读，美女学霸终于圆了樱华梦』这样的？」"
+    show chara c10 #梁芷柔立绘|夏季私服|开心
+    with dissolve
+    voice "audio/voice/007066.ogg"
+    l "「哈哈哈……差不多吧。」"
+    show chara c01b #梁芷柔立绘|夏季私服|普通|侧面
+    with dissolve
+    voice "audio/voice/007067.ogg"
+    l "「再有就是，我好像还是咱们县第一个考上樱大的人，那边想要用我的形象，推广他们的西部扶贫助学项目。」"
+    y "「哎，形象代言人啊？」"
+    show chara c05b #梁芷柔立绘|夏季私服|苦笑2
+    with dissolve
+    voice "audio/voice/007068.ogg"
+    l "「没那么夸张，有好多人呢。我也就是提供一张照片，然后在他们的宣传片和海报里面蹭个镜头罢了。」"
+    y "「那也已经很厉害了啊，真的。」"
+    show chara c05a #梁芷柔立绘|夏季私服|苦笑1
+    with dissolve
+    voice "audio/voice/007069.ogg"
+    l "「毕竟只是个虚名，还不知道俩月以后，咱们得累成什么样呢。」"
+    show chara c01a #梁芷柔立绘|夏季私服|普通|正面
+    with dissolve
+    voice "audio/voice/007070.ogg"
+    l "「一方面是能不能跟得上学习进度，另一方面还有个能不能融入环境的问题。」"
+    y "「这个嘛……感觉我倒是需要担心一下，但你不至于吧？」"
+    show chara c04 #梁芷柔立绘|夏季私服|无奈
+    with dissolve
+    voice "audio/voice/007071.ogg"
+    l "「当然至于了，最起码也不能无视吧……」"
+    y "「呃？」"
+    y "「你学习就不用说了，这年头人际关系这么看脸，这不应该是你的优势吗？」"
+    show chara c12b #梁芷柔立绘|夏季私服|羞涩2
+    with dissolve
+    voice "audio/voice/007072.ogg"
+    l "「去你的……不是，就算按你这么说，这也是把双刃剑啊！」"
+    show chara c02 #梁芷柔立绘|夏季私服|皱眉
+    with dissolve
+    voice "audio/voice/007073.ogg"
+    l "「你是不知道女生之间有多少麻烦事……我已经做好了四人寝室建五个群的心理准备了。」"
+    y "「这么可怕的吗？」"
+    show chara c04 #梁芷柔立绘|夏季私服|无奈
+    with dissolve
+    voice "audio/voice/007074.ogg"
+    l "「你以为呢？而且不只是宿舍，其他的圈子也是一样啊……尤其又是在樱华这样的大城市，很多地方都需要开销的。」"
+    show chara c07a #梁芷柔立绘|夏季私服|消沉1
+    with dissolve
+    voice "audio/voice/007075.ogg"
+    l "「没办法，穷啊！」"
+    show chara c07b #梁芷柔立绘|夏季私服|消沉2
+    with dissolve
+    voice "audio/voice/007076.ogg"
+    l "「学费啊住宿费啊什么的倒还好说，有助学金奖学金，实在不行还有国家助学贷款什么的，但这些都是用来做基本保障的，其他的问题还是得自己解决。」"
+    y "「呃……」"
+    scene bg b08 #新城区|夏
+    with fade
+    show chara c01a #梁芷柔立绘|夏季私服|普通|正面
+    with dissolve
+    voice "audio/voice/007077.ogg"
+    l "「说到这个，你想过到了那边以后打什么工了吗？」"
+    y "「打工？啊，还没想好。」"
+    y "「我觉得我还是优先考虑一下能不能跟得上学习进度的问题吧……」"
+    y "「你呢？你打算干什么去？」"
+    show chara c13b #梁芷柔立绘|夏季私服|疑惑2
+    with dissolve
+    voice "audio/voice/007078.ogg"
+    l "「嗯，家教吧？」"
+    y "「家教……？」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007079.ogg"
+    l "「对啊，先做一年，专门挑那边的应届高考生，给他们补课。」"
+    y "「应届高考生吗？」"
+    show chara c13a #梁芷柔立绘|夏季私服|疑惑1
+    with dissolve
+    voice "audio/voice/007080.ogg"
+    l "「对啊，怎么啦？」"
+    y "「没，我还以为是去教初中生呢……」"
+    show chara c13b #梁芷柔立绘|夏季私服|疑惑2
+    with dissolve
+    voice "audio/voice/007081.ogg"
+    l "「初中生啊，那也不是不行。不过就有点浪费了。」"
+    y "「浪费？」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007082.ogg"
+    l "「对啊。你是不是觉得初中的知识点更容易一点？但你别忘了，咱们现在最大的优势是什么啊？」"
+    y "「哦……我明白了。」"
+    show chara c10 #梁芷柔立绘|夏季私服|开心
+    with dissolve
+    voice "audio/voice/007083.ogg"
+    l "「对吧？刚高考完！高考阶段的所有知识点、所有注意事项，咱们全都是最清楚不过的了！」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007084.ogg"
+    l "「而且能从教育条件这么落后的地方考过去，就已经证明了咱们的学习方法一定是最有效的。」"
+    y "「这倒是。」"
+    show chara c09 #梁芷柔立绘|夏季私服|坏笑
+    with dissolve
+    voice "audio/voice/007085.ogg"
+    l "「更何况啊……」"
+    y "「嗯？」"
+    show chara c10 #梁芷柔立绘|夏季私服|开心
+    with dissolve
+    voice "audio/voice/007086.ogg"
+    l "「我本来就有当家教的经验啊！别忘了，我这一年可是天天拿你练手的。」"
+    y "「这……还真是。」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007087.ogg"
+    l "「对吧？所以我就决定是它了！」"
+    y "「嗯嗯。」"
+    y "「……嗯？」"
+    show chara c13a #梁芷柔立绘|夏季私服|疑惑1
+    with dissolve
+    voice "audio/voice/007088.ogg"
+    l "「怎么了？」"
+    y "「你教应届高考生的话，那不也就比咱们小一岁吗？」"
+    show chara c01a #梁芷柔立绘|夏季私服|普通|正面
+    with dissolve
+    voice "audio/voice/007089.ogg"
+    l "「嗯，那当然啊。」"
+    y "「这个没问题吗？」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007090.ogg"
+    l "「嗯。其实同龄人之间可能有的时候会更容易交流吧？本来补课就是用的课余时间，这样可能还不会让他们有那么强烈的抵触感……」"
+    show chara c09 #梁芷柔立绘|夏季私服|坏笑
+    with dissolve
+    voice "audio/voice/007091.ogg"
+    l "「啊……呵呵，我明白了。」"
+    y "「嗯？」"
+    show chara c10 #梁芷柔立绘|夏季私服|开心
+    with dissolve
+    voice "audio/voice/007092.ogg"
+    l "「放～心～啦！我会专门挑女生来教的，不用那么紧张！」"
+    y "「喂喂喂喂喂，我可没这么说啊！我不是这意思！」"
+    show chara c09 #梁芷柔立绘|夏季私服|坏笑
+    with dissolve
+    voice "audio/voice/007093.ogg"
+    l "「嘻嘻，那怎么着？我随便来咯？」"
+    y "「……」"
+    y "「还是女生吧。」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007094.ogg"
+    l "「嘻嘻，不过其实本来也没什么事啦！就像你之前那样，但凡是个想要认真学习的，才不会有那么多乱七八糟的心思在那儿呢。」"
+    y "「嗯。」"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    play sound "audio/sound/effect11.ogg" noloop
+    "……"
+    "…………"
+
+    scene bg b04 #滨河路|夏
+    with fade
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    y "「……呼。」"
+    show chara c08a #梁芷柔立绘|夏季私服|担心1
+    with dissolve
+    voice "audio/voice/007095.ogg"
+    l "「沉不沉？」"
+    y "「没事。」"
+    y "「一想到自己现在抱的不再是习题集，就觉得浑身都是劲，完全不在话下。」"
+    show chara c04 #梁芷柔立绘|夏季私服|无奈
+    with dissolve
+    voice "audio/voice/007096.ogg"
+    l "「哼，就知道臭贫。」"
+    y "「说起来，你这么多书，以后怎么办啊？带到樱华去吗？」"
+    show chara c08b #梁芷柔立绘|夏季私服|担心2
+    with dissolve
+    voice "audio/voice/007097.ogg"
+    l "「那肯定是不行的吧，宿舍里哪有地方搁啊……大概是只能放在老家了。」"
+    y "「也是。」"
+    y "「不过那干嘛还要买实体的书呢？下载电子版的不好吗？」"
+    show chara c08a #梁芷柔立绘|夏季私服|担心1
+    with dissolve
+    voice "audio/voice/007098.ogg"
+    l "「嗯……我还是喜欢摸着纸的感觉，可能是这么多年习惯了吧，反正用手机看东西，总有点看不下去。」"
+    show chara c07b #梁芷柔立绘|夏季私服|消沉2
+    with dissolve
+    voice "audio/voice/007099.ogg"
+    l "「不过，之后恐怕只能勉强自己改一改了，毕竟条件有限嘛。」"
+    y "「……学霸的烦恼啊。」"
+    show chara c02 #梁芷柔立绘|夏季私服|皱眉
+    with dissolve
+    voice "audio/voice/007100.ogg"
+    l "「咳！别笑我了，说的好像事不关己似的。这种麻烦事以后也少不了的，你又能比我好多少啊？」"
+    y "「这倒是。」"
+    "的确，我也是要离开家的人，在这个方面上，我们俩的处境是相同的。"
+    show chara c04 #梁芷柔立绘|夏季私服|无奈
+    with dissolve
+    voice "audio/voice/007101.ogg"
+    l "「还有啊……这就又说回刚才那个话题了，虽然学习确实是很重要的，不过大学毕竟不是高三了，也不是光靠努力学习就能解决一切问题的。」"
+    show chara c01b #梁芷柔立绘|夏季私服|普通|侧面
+    with dissolve
+    voice "audio/voice/007102.ogg"
+    l "「闷头学到自闭可能会比跟不上进度的问题还要大，没准孤独到抑郁，反过来再影响成绩，恶性循环，谁都救不了。」"
+    show chara c13b #梁芷柔立绘|夏季私服|疑惑2
+    with dissolve
+    voice "audio/voice/007103.ogg"
+    l "「我觉得还是得去打打工，有一些社交活动什么的。最好能提前做一些打算。」"
+    y "「……」"
+    y "「我明白你的意思。我也不是不想，但是……」"
+    y "「现在这个样子，总觉得自己好像悬在半空一样，踏不下心来。」"
+    y "「让我再缓两天吧……」"
+    y "「……最起码，等录取的事情定下来再说。」"
+    show chara c01a #梁芷柔立绘|夏季私服|普通|正面
+    with dissolve
+    l "「……」"
+    show chara c07a #梁芷柔立绘|夏季私服|消沉1
+    with dissolve
+    voice "audio/voice/007104.ogg"
+    l "「嗯，也是。」"
+    show chara c07b #梁芷柔立绘|夏季私服|消沉2
+    with dissolve
+    voice "audio/voice/007105.ogg"
+    l "「……也是。」"
+    show chara c05a #梁芷柔立绘|夏季私服|苦笑1
+    with dissolve
+    voice "audio/voice/007106.ogg"
+    l "「都到这时候了，就别胡思乱想了。」"
+    show chara c11 #梁芷柔立绘|夏季私服|微笑
+    with dissolve
+    voice "audio/voice/007107.ogg"
+    l "「相信自己，好吗？」"
+    y "「……」"
+    y "「嗯。没事，咱们走吧。」"
+    show chara c10 #梁芷柔立绘|夏季私服|开心
+    with dissolve
+    voice "audio/voice/007108.ogg"
+    l "「……嗯。」"
+    stop sound fadeout 3.0
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t04 #转场 书店
+    with fade
+    pause
+
+#7月22日。
+#第一志愿落榜。
+
+    scene bg black #黑屏
+    with fade
+    nvl show
+    with dissolve
+    nvl_narrator "说是要「相信自己」，但实际上，真能做到的人，往往也不需要被别人这样劝解了。"
+    nvl_narrator "我就这样又继续煎熬了两天，直到——"
+    play music "audio/music/bgm06.ogg" fadein 1.5 #悬而未决
+    nvl_narrator "那个悬而未决的「第二只鞋子」，终于落了地。"
+    nvl clear
+    nvl hide
+    with dissolve
+    y "「……」"
+    with vpunch
+    y "「我……[哔——]！」"
+    nvl show
+    with dissolve
+    nvl_narrator "不知是不是之前提心吊胆得太久了？"
+    nvl_narrator "真到了这一刻，我其实……反而表露不出太多的情绪来了。"
+    nvl_narrator "纵有千言万语，最后也只是骂出来一句话而已。"
+    nvl clear
+    nvl hide
+    with dissolve
+    stop music fadeout 2.5
+
+    y "「……我出去透透气。」"
+    play sound "audio/sound/effect22.ogg" noloop
+
+    scene bg b02 #城区|夏
+    with fade
+    pause
+    scene bg b04 #滨河路|夏
+    with fade
+    pause
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    scene bg b05 #湿地公园|夏
+    with fade
+    y "「唉……」"
+    "漫无目的地溜达了一会儿之后，我进到了湿地公园里面。"
+    "木然地坐在岸边，望着波光粼粼的水面发呆。"
+    y "「……」"
+    y "「……」"
+    stop sound fadeout 3.0
+    play music "audio/music/bgm07.ogg" fadein 1.5 #哀毁骨立
+    y "「你妈的，为什么啊……」"
+    y "「就差那么2分……什么地方凑不出这2分啊！」"
+    y "「关键这分还是被专业级差给砍下去的……这不玩我呢么？」"
+    nvl show
+    with dissolve
+    nvl_narrator "我的第一志愿……落榜了。"
+    nvl_narrator "直到好久以后，我才弄明白了这次落榜的原因。"
+    nvl_narrator "樱华理工大学的最低录取分数线是586分，按理说分数是足够了，但……我在专业的选择上出了问题。"
+    nvl clear
+    nvl_narrator "因为试卷难度变化和大小年等一系列原因，我报的前两个专业的录取线虚高，根本就考不上。"
+    nvl_narrator "而后面的两个专业……虽然录取线较低，但却因为要扣减专业级差的分数，也全都没有兜住。"
+    nvl_narrator "作为樱华仅有的几所好学校之一，理工大的生源非常充足，结果就是我连专业调剂的机会都没有，直接出局。"
+    nvl clear
+    nvl hide
+    with dissolve
+    y "「……」"
+    with hpunch
+    y "「[哔——]他妈的！」"
+    nvl show
+    nvl_narrator "最害怕的事情，还是发生了。"
+    nvl_narrator "明明早就想到过可能会有这种情况。"
+    nvl_narrator "明明早就做过不知多少次的心理准备。"
+    nvl_narrator "但真到面对的时候，还是完全没办法去坦然接受。"
+    nvl clear
+    nvl hide
+    y "「……」"
+    play sound "audio/sound/effect31.ogg" noloop
+    with vpunch
+    y "「…………」"
+    y "「…………他妈的……」"
+    nvl show
+    with dissolve
+    nvl_narrator "现在的心情，其实也不是那种「天都塌下来了」的感觉，没有那么夸张。"
+    nvl_narrator "就是迷茫，搞不清状况。"
+    nvl_narrator "我知道今年的高考题比较容易，我知道分数线可能会被拉高，我知道自己的分数不是绝对稳妥……但我也觉得自己真的算是考得不错了，这么久的努力不是白费功夫，应该还是有不小的希望的……"
+    nvl clear
+    nvl_narrator "在这种患得患失之间徘徊的我，在面对结果的这一刻，一下子就乱套了。"
+    nvl_narrator "甚至不由自主地开始胡思乱想起来——"
+    nvl clear
+    nvl_narrator "其实是分数算错了？"
+    nvl_narrator "也可能教育考试院的网站被人黑了？"
+    nvl_narrator "如果我能黑掉高校的录取系统的话？"
+    nvl_narrator "说不定我可以时光倒流，穿越到一年以前去？"
+    nvl clear
+    nvl_narrator "……"
+    nvl_narrator "…………"
+    nvl_narrator "……………………"
+    nvl clear
+    nvl_narrator "可能人到了非常失望的时候，思维都会变得混乱。"
+    nvl_narrator "想到最后，我都已经不知道自己在想什么了，也就索性什么都不去想。"
+    nvl_narrator "只是坐在原地，发呆。"
+    nvl clear
+    scene bg black #黑屏
+    with fade
+    nvl_narrator "……"
+    nvl_narrator "…………"
+    nvl_narrator "直到，有一个声音将我拽回现实——"
+    nvl clear
+    nvl hide
+    with dissolve
+    voice "audio/voice/007109.ogg"
+    l "「……雨潇？」"
+    scene bg b05 #湿地公园|夏
+    with fade
+    show chara c06 #梁芷柔立绘|夏季私服|吃惊
+    with dissolve
+    y "「……」"
+    y "「芷柔……」"
+    show chara lc08a #梁芷柔立绘|夏季私服|担心1|近
+    with dissolve
+    voice "audio/voice/007110.ogg"
+    l "「我总算找到你了！」"
+    show chara lc03 #梁芷柔立绘|夏季私服|生气|近
+    with dissolve
+    voice "audio/voice/007111.ogg"
+    l "「我给你打了10个电话你都不接，到你家里一问，叔叔阿姨也都不知道你具体在哪儿……」"
+    show chara lc08b #梁芷柔立绘|夏季私服|担心2|近
+    with dissolve
+    voice "audio/voice/007112.ogg"
+    l "「呼……吓死我了！我还以为你出什么事了呢……」"
+    y "「……」"
+    l "「……」"
+    show chara lc07a #梁芷柔立绘|夏季私服|消沉1|近
+    with dissolve
+    voice "audio/voice/007113.ogg"
+    l "「你……你还好吧？」"
+    y "「……」"
+    y "「我没事……没你想的那么夸张。」"
+    y "「就是觉得……好窝囊啊……」"
+    y "「太他妈窝囊了。」"
+    show chara lc07b #梁芷柔立绘|夏季私服|消沉2|近
+    with dissolve
+    l "「……」"
+    show chara lc07a #梁芷柔立绘|夏季私服|消沉1|近
+    with dissolve
+    voice "audio/voice/007114.ogg"
+    l "「到底是……怎么搞的？」"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b05 #湿地公园|夏
+    with fade
+    show chara lc07b #梁芷柔立绘|夏季私服|消沉2|近
+    with dissolve
+    y "「就是这样了。」"
+    show chara lc07a #梁芷柔立绘|夏季私服|消沉1|近
+    with dissolve
+    voice "audio/voice/007115.ogg"
+    l "「这……」"
+    show chara lc02 #梁芷柔立绘|夏季私服|皱眉|近
+    with dissolve
+    voice "audio/voice/007116.ogg"
+    l "「怎么会……」"
+    show chara lc08a #梁芷柔立绘|夏季私服|担心1|近
+    with dissolve
+    "梁芷柔的表情来回变幻了好几次，有迷茫、有紧张、也有纠结，最终糅合成痛苦。"
+    show chara lc08b #梁芷柔立绘|夏季私服|担心2|近
+    with dissolve
+    y "「……」"
+    y "「对不起。」"
+    y "「我……没有考上樱华。」"
+    "我低下头，不太敢直面梁芷柔的视线。"
+    "此前的种种约定，在这一刻都已经化为泡影。"
+    show chara lc08a #梁芷柔立绘|夏季私服|担心1|近
+    with dissolve
+    voice "audio/voice/007117.ogg"
+    l "「怎么会这样……那这怎么办呢……」"
+    "梁芷柔的声音已经带上了哭腔。"
+    y "「我……」"
+    "是啊，现在……接下来该怎么办？"
+    scene bg black #黑屏
+    with fade
+    nvl show
+    with dissolve
+    nvl_narrator "我不知道。"
+    nvl_narrator "是就这样承认自己失败了，然后就此分道扬镳吗？"
+    nvl_narrator "——不甘心。"
+    nvl clear
+    nvl_narrator "可是不甘心又能怎么办呢？"
+    nvl_narrator "高考的结果让我们天各一方，空间上的距离让一切言语都变得苍白无力。"
+    nvl_narrator "除了放弃，还有什么别的路可走吗？"
+    nvl clear
+    nvl_narrator "——不要。"
+    nvl_narrator "——我这半年多是因为什么才坚持下来的？"
+    with vpunch
+    nvl_narrator "——现在放弃，岂不是全都变成了笑话？"
+    nvl clear
+    nvl_narrator "可是……现在这个结果不已经是个笑话了吗？"
+    with vpunch
+    nvl_narrator "——我不管！"
+    nvl_narrator "那到底该怎么办？"
+    with vpunch
+    nvl_narrator "——不知道！不知道！！不知道！！！"
+    nvl clear
+    nvl_narrator "……"
+    nvl_narrator "…………"
+    nvl_narrator "………………"
+    nvl clear
+    scene bg b05 #湿地公园|夏
+    with fade
+    nvl hide
+    show chara lc07b #梁芷柔立绘|夏季私服|消沉2|近
+    with dissolve
+    "偌大的湿地公园，却是静悄悄的，就连水鸟都销声匿迹，不知所踪了。"
+    "在接下来的一段时间里，我们谁都没有再说一句话，就只是各自默默地想着心事。"
+    "许久之后。"
+    "彻底放弃思考的我，一言不发地离开了湿地公园，依赖着自己的本能，摇摇晃晃地朝家的方向挪去。"
+    scene bg b04 #滨河路|夏
+    with fade
+    show chara lc07b #梁芷柔立绘|夏季私服|消沉2|近
+    with dissolve
+    "而梁芷柔，也就这么一路默默地跟在我的身后，一直跟到了我家楼下。"
+    y "「……」"
+    l "「……」"
+    "我在楼门前站定，面向她，张嘴想说点什么，却依旧是怎么也发不出声音，于是最终也只能闭嘴不谈。"
+    "梁芷柔也没有说话，就只是咬着自己的嘴唇，仿佛这一个动作就已经耗尽了她所有的力气。"
+    "……"
+    "…………"
+    with fade
+    show chara lc07a #梁芷柔立绘|夏季私服|消沉1|近
+    with dissolve
+    "最后。"
+    "红肿着眼睛的梁芷柔抛下一句「我先回去了」，离开了。"
+    hide chara
+    with dissolve
+    y "「……」"
+    scene bg b00 #天空
+    with fade
+    "我们暂时逃避了问题。"
+    "我需要一些时间来整理思路，而梁芷柔，看起来也同样没有做好现在就直面这个问题的准备。"
+    stop music fadeout 2.5
+
+    "然而，无论如何，我们最终都需要作出决定。"
+    "在这个夏天……结束之前。"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t06 #转场 天空
+    with fade
+    pause
+
+#7月30日。
+#收到百薇大学录取通知书。
+
+    scene bg b02 #城区|夏
+    with fade
+    "过了几天。"
+    play sound "audio/sound/ambientnoise05.ogg" fadein 1.5 loop #街道蝉鸣噪音
+    scene bg b06 #商业街
+    with fade
+    y "「……」"
+    "从邮局出来，我站在路边，有些不自然地看着手中的信封。"
+    "之前因为闷在屋里塞着耳机与世隔绝，没有听到敲门和电话，结果挂号信被退到本地邮局，我只好自己来取一趟。"
+    y "「哎……」"
+    play audio "audio/sound/effect32.ogg" noloop
+    "打开厚厚的信封，检查里面的内容物——"
+    nvl show
+    with dissolve
+    nvl_narrator "大红色的录取通知书。"
+    nvl_narrator "蓝色的邮储银行校友卡和用户指南。"
+    nvl_narrator "像素字体设计的新生入学须知。"
+    nvl_narrator "国家的高校学生资助政策简介和大学自己的资助、贷款体系介绍手册。"
+    nvl_narrator "大学新生应征入伍宣传单。"
+    nvl_narrator "学校的专题特刊杂志。"
+    nvl clear
+    nvl hide
+    with dissolve
+    "……"
+    "…………"
+    "林林总总的一大堆文件材料。"
+    y "「……」"
+    "我打开录取通知书，仔细地看了看。"
+    "在录取通知书的最上端，校徽的旁边，清晰地印着「教育部直属国家重点综合性大学」、「国家『211工程』、『985工程』重点建设高校」的字样。"
+    "这两行字足以令这座县城里99.9\%的考生羡慕不已，即便是大人们，看到了也是要交口称赞一番的。"
+    "我的父母这两天和亲戚朋友打电话的时候仿佛都变成了复读机，翻来覆去就只有一套「惋惜」的说辞——"
+    "『哎呀，别提了，小孩子志愿没报好，第一志愿都没考上，只能去读百薇了！』"
+    "一点都不考虑儿子的心情，真是亲爹亲妈啊。"
+    "我这几天的情绪……在他们看来或许更像是小孩没能达成心愿在闹别扭吧？"
+    y "「……唉，不过也难怪。」"
+    "父母当初能由着我的性子往樱华报名，这已经是非常支持我了。"
+    "没准我第一志愿落榜了他们还更高兴……毕竟百薇的资质好，纸面上排名也高，关键是离家还很近，简直完美。"
+    "别说他们了，哪怕是刚才给我拿信的那位邮政员工，在看到信封上寄件方那「百薇大学」四个字之后，再看我的眼神也都变了。"
+    with fade
+    "我将各种文件小心地收回了信封里面。"
+    "其实，收到了这封信以后，我就已经可以算是百薇大学的学生了。"
+    "只是……"
+    nvl show
+    with dissolve
+    nvl_narrator "直到现在，我都还不肯接受现实。"
+    nvl clear
+    nvl_narrator "其实也确实还有别的路可选。"
+    nvl_narrator "就算接到了录取通知，也可以不去学校报道。"
+    nvl_narrator "只要复读就可以了。"
+    nvl_narrator "复读一年成功考上心仪院校的学生比比皆是，如果不愿意承认自己的高考失败，那么这就是最简单直接的办法。"
+    nvl clear
+    nvl_narrator "但是，面临抉择的时候，我却……犹豫了。"
+    nvl_narrator "俗话说光看贼吃肉不见贼挨打，复读成功的人固然不少，但其实再次失败的也一样到处都是，甚至更多。"
+    nvl_narrator "而且，复读的过程相当漫长又饱受旁人议论，一旦中途心态崩了，多半连原来的水准都保持不住。"
+    nvl_narrator "万一再失败了……"
+    nvl clear
+    nvl hide
+    with dissolve
+    y "「……」"
+    "不敢想了。"
+    "摇了摇头，努力让自己不再去这么想。"
+    "只是……"
+    y "「……」"
+    "我再次看了看手中的信封。"
+    "前几天我可以不去想，靠逃避问题来麻痹自己。"
+    "但是现在——在拿到了这些东西以后——我知道，自己已经没有躲藏的余地了。"
+    "我……需要做出决定。"
+    y "「……」"
+    y "「…………」"
+    voice "audio/voice/017001.ogg"
+    who "「哎？叶雨潇？」"
+    y "「啊？」"
+    show charaz h01 #老师立绘|夏季|普通
+    with dissolve
+    "突然被一个熟悉的声音叫了名字，回头一看，居然是班主任老师。"
+    show charaz h02 #老师立绘|夏季|微笑
+    with dissolve
+    voice "audio/voice/017002.ogg"
+    z "「哟，还真是你小子啊，干吗呢你这是？」"
+    y "「郑老师？您怎么在这儿啊？」"
+    show charaz h01 #老师立绘|夏季|普通
+    with dissolve
+    voice "audio/voice/017003.ogg"
+    z "「那要不然呢？」"
+    y "「去年这会儿……啊，对哦，这会儿也该放假了。」"
+    voice "audio/voice/017004.ogg"
+    z "「什么叫该放假了……我早就放假了呀！」"
+    y "「哎？」"
+    show charaz h03 #老师立绘|夏季|皱眉
+    with dissolve
+    voice "audio/voice/017005.ogg"
+    z "「哎你这琢磨什么哪？我带完你们这届，就要翻回头去带高一了，现在学生都还没有呢，你还不让我放个假啊？」"
+    y "「呃……」"
+    show charaz h01 #老师立绘|夏季|普通
+    with dissolve
+    voice "audio/voice/017006.ogg"
+    z "「所以……你这到底是在发什么呆哪？大太阳底下晒着，也不知道找个阴凉的地方躲躲？」"
+    y "「啊，没什么，没事。就是走神了。」"
+    z "「……」"
+    "老师用怀疑的目光看着我，最后将视线停留在了我的手上。"
+    "显然，作为一中的老师，对于百薇的录取通知书并不会太陌生。"
+    show charaz h02 #老师立绘|夏季|微笑
+    with dissolve
+    voice "audio/voice/017007.ogg"
+    z "「呵，是这么回事啊？」"
+    voice "audio/voice/017008.ogg"
+    z "「还在纠结呢？」"
+    y "「……」"
+    y "「是。」"
+    show charaz h03 #老师立绘|夏季|皱眉
+    with dissolve
+    voice "audio/voice/017009.ogg"
+    z "「你呀……我该怎么说你好啊？」"
+    show charaz h01 #老师立绘|夏季|普通
+    with dissolve
+    voice "audio/voice/017010.ogg"
+    z "「你现在，还有别的事吗？」"
+    y "「哎？啊，没有……」"
+    voice "audio/voice/017011.ogg"
+    z "「那……咱俩聊聊？」"
+    y "「啊？」"
+    show charaz h02 #老师立绘|夏季|微笑
+    with dissolve
+    voice "audio/voice/017012.ogg"
+    z "「放心，你都已经毕业了，我才懒得训你呢。啊，『我也不责备你，小叶雨潇，你自己一定够难受的了。』」"
+    y "「喂喂喂，您是英语老师啊，不是法语老师。」"
+    voice "audio/voice/017013.ogg"
+    z "「嘿，不管是什么语的老师，总归比你岁数要大，这人生经验也要丰富一些，聊一聊没坏处。啊，怎么样啊？」"
+    y "「……好。」"
+    stop sound fadeout 3.0
+    "我没有拒绝老师的好意，实际上，我觉得自己现在也确实需要这样聊一聊。"
+
+    scene bg b07 #快餐店
+    with fade
+    play audio "audio/sound/effect04.ogg" noloop
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    "我跟着老师进到了旁边的快餐店。"
+    play sound "audio/sound/ambientnoise06.ogg" fadein 1.5 loop #快餐店环境噪音
+    "这里依然没什么人气，我们随便找了个位子坐下。"
+    voice "audio/voice/017014.ogg"
+    z "「好了，说说吧，你现在具体是什么地方想不通啊？」"
+    y "「那个……」"
+    y "「……呃……就是……」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017015.ogg"
+    z "「怎么了，这么不痛快呀？」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017016.ogg"
+    z "「我替你说了吧——你还没死心，对不对？」"
+    y "「……嗯。」"
+    show charaz lh04 #老师立绘|夏季|咆哮|近
+    with dissolve
+    voice "audio/voice/017017.ogg"
+    z "「唉！真想一巴掌扇死你。真是，得亏你不是我孩子。」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017018.ogg"
+    z "「你啊，就是算盘打得太好了，但又不去认真想想，万一这事情不按自己想的来，又该怎么办哪？」"
+    voice "audio/voice/017019.ogg"
+    z "「唉……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017020.ogg"
+    z "「你不死心，那好，那我问你，你想怎么办？」"
+    y "「我……」"
+    voice "audio/voice/017021.ogg"
+    z "「你又能怎么办，啊？都这时候了，你还不想接受的话，那只能去复读了。你想复读吗？」"
+    voice "audio/voice/017022.ogg"
+    z "「放弃百薇，冒着影响自己一辈子的风险，再去搏这么一次？你愿意吗？」"
+    y "「……」"
+    y "「我……不知道。」"
+    y "「就是不知道，所以才……纠结着呢。」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017023.ogg"
+    z "「是吧？但其实你知道，你复读成功的几率不低的，最起码不会比你这次高考的风险更大。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017024.ogg"
+    z "「只不过反过来说呢，失败的几率也一样差不多。」"
+    voice "audio/voice/017025.ogg"
+    z "「所以上回你冲上去了，但这回，你就犹豫了。」"
+    y "「……」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017026.ogg"
+    z "「对吧？你也知道了，这有些事情啊，不是光想得好就能行的。」"
+    voice "audio/voice/017027.ogg"
+    z "「其实现实就是这样，啊，吃一堑长一智。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017028.ogg"
+    z "「你赌了一把，失败了，所以就知道求稳的重要性了。」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017029.ogg"
+    z "「但是……」"
+    voice "audio/voice/017030.ogg"
+    z "「其实求稳不是目的，那是为了实现目的而选择的一种途径。」"
+    voice "audio/voice/017031.ogg"
+    z "「有必要的时候该赌也得去赌，只要利益足够大，或者风险足够低，那就可以去赌。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017032.ogg"
+    z "「你当初就是这么做的，你给自己画了一个足够漂亮的大饼。」"
+    voice "audio/voice/017033.ogg"
+    z "「我当时之所以会同意啊，就是因为我觉得你小子还是有点想法的，而且也不是没有机会，值得一试。」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017034.ogg"
+    z "「不过呢，现在再看看……啧，我觉得当初有点高估你了。」"
+    voice "audio/voice/017035.ogg"
+    z "「你想实现的目的到底是什么，我觉得你根本没有真正地想清楚。」"
+    y "「我……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017036.ogg"
+    z "「对于你来说，『樱华』，自始至终都是一个抽象的概念，就跟乌托邦一样。」"
+    voice "audio/voice/017037.ogg"
+    z "「你不知道那边是什么样子，你也不知道樱华和百薇真正的区别在哪，更没有想好你过去了到底做什么、怎么做。」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017038.ogg"
+    z "「本来，这也不是什么大问题。你这个岁数嘛，不清楚这些再正常不过了。」"
+    voice "audio/voice/017039.ogg"
+    z "「而且，你当初说的那些话也不算错，毕竟那边跟咱们这里确实是不一样。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017040.ogg"
+    z "「如果你能考过去，有的是时间让你寻找答案。但问题是呢——」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017041.ogg"
+    z "「你没考过去。」"
+    voice "audio/voice/017042.ogg"
+    z "「你没考过去呢，那你就没有这个答案，你的『目的』就还是虚的。」"
+    voice "audio/voice/017043.ogg"
+    z "「现在，你其实自己也已经意识到了。所以呢，再要你为了这么一个虚幻的目的，去拿自己的未来赌……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017044.ogg"
+    z "「你就不敢了。」"
+    y "「……」"
+    "老师说得没有错。"
+    "虽然报考樱华并不是我一时冲动的选择，然而有些事……当这样的结果摆在我面前的时候……"
+    "我失去了一往无前的勇气。"
+    "即便还在不甘心地挣扎，但内心深处，其实已经开始不由自主地退缩了。"
+    "这也是这些天，最让我感到自我厌恶的一点。"
+    voice "audio/voice/017045.ogg"
+    z "「……唉。」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017046.ogg"
+    z "「其实要说起来，你已经做得挺不错了。」"
+    voice "audio/voice/017047.ogg"
+    z "「最后这一年提了一百多分，这一般人可做不到啊。啊，你别看梁芷柔考那么厉害，她也是花了好几年，从初中就开始努力，才慢慢累积成现在这个水平的。」"
+    voice "audio/voice/017048.ogg"
+    z "「你要是能早点的话……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017049.ogg"
+    z "「唉……」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017050.ogg"
+    z "「嗐，现在说这个也没什么意义了。」"
+    voice "audio/voice/017051.ogg"
+    z "「不过呢，大器晚成的人有的是，啊，只要你是真的认真了，那什么时候开始努力都不算晚。」"
+    y "「…………嗯。」"
+    y "「谢谢您。」"
+    y "「您说的没错，问题在我自己身上……只是……」"
+    y "「到了最后，我还是没追上梁芷柔的步伐。还是有点……不甘心。」"
+    z "「……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017052.ogg"
+    z "「哎呀……梁芷柔啊……」"
+    voice "audio/voice/017053.ogg"
+    z "「既然提到了她，我也就索性再多说两句。」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017054.ogg"
+    z "「咱俩当初聊这个问题的时候，我就跟你说过了，你往樱华报可以，但是你得给我一个除了她以外的理由出来。」"
+    voice "audio/voice/017055.ogg"
+    z "「为什么呢？嘿，我也不怕得罪你，因为感情这个东西啊，不是那么可靠的。」"
+    voice "audio/voice/017056.ogg"
+    z "「要只有这么一个理由，那万一后来你俩没成，又该怎么办啊？」"
+    voice "audio/voice/017057.ogg"
+    z "「就拿你现在来说吧，你要是因为对她不死心，去复读了，啊，哪怕你一次就成功，那也要多花一年的时间，是不是？」"
+    voice "audio/voice/017058.ogg"
+    z "「万一这期间出点什么事，就、就是那个……啊，你明白吧？那样的话你怎么办啊？你是接着考，还是不考了？」"
+    y "「……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017059.ogg"
+    z "「而且啊，这又得说回刚才那个问题去了。」"
+    voice "audio/voice/017060.ogg"
+    z "「咱们有什么说什么，在『去樱华』这个问题上，你跟梁芷柔的情况完全是不一样的。」"
+    voice "audio/voice/017061.ogg"
+    z "「去樱华呢，除了樱大本身好之外，对个人发展最大的好处是什么啊？机会多，对不对？」"
+    voice "audio/voice/017062.ogg"
+    z "「啊，这梁芷柔去樱华，那是因为以她现在的水平，能有机会获得一个足够的发展空间，不至于撞上天花板。」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017063.ogg"
+    z "「但是你呢？樱华理工大学当然也不错，但是呢，你无论是去樱华还是百薇，现在的主要问题，是你根本还够不到那个天花板呢。啊，给你那么大的空间，其实不像梁芷柔用处那么大。」"
+    voice "audio/voice/017064.ogg"
+    z "「当然啦，你之后呢可能还会像前面一年这样的进步，但真到了那时候，可能理工大又反过来成为你的天花板了。」"
+    voice "audio/voice/017065.ogg"
+    z "「你想去樱华呀，这些都是问题，不是只有『因为梁芷柔去了樱华』这么一个理由就可以的。」"
+    voice "audio/voice/017066.ogg"
+    z "「反过来说呢，如果你现在，支撑自己去樱华的理由就只剩下梁芷柔这一条了……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017067.ogg"
+    z "「那我劝你放弃。」"
+    "老师摊了摊手，下了结论。"
+    y "「但……」"
+    "虽然下意识地想要反驳，但张了张口，却发现自己无话可说。"
+    "我现在……已经没有任何夸下海口的资本了。"
+    y "「……我明白了。」"
+    y "「您让我再想想。」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    z "「……」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017068.ogg"
+    z "「我啊，我的意思呢，其实不是说不想让你去樱华，啊，是不能让你这么不给自己留退路。」"
+    voice "audio/voice/017069.ogg"
+    z "「就好像之前，我也没不让你去报名，对不对？但那个时候呢，是因为你还有第二志愿可以兜一下。」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017070.ogg"
+    z "「那现在呢？你现在脑子一热，冲上去了，要再出点儿什么差错啊，那可真就是影响你一辈子的事儿了。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017071.ogg"
+    z "「有梦想是好事，但是，你也不能不考虑现实，对吧？」"
+    voice "audio/voice/017072.ogg"
+    z "「大家都年轻过，谁都有过梦想。不止你有啊，我也有。」"
+    voice "audio/voice/017073.ogg"
+    z "「区别在于，你现在是年轻。而我呢，是年轻过。」"
+    voice "audio/voice/017074.ogg"
+    z "「明白吗？有梦想，但到了最后，这梦想不一定就是能实现的。」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017075.ogg"
+    z "「你啊，就跟你自己说的一样，再好好想想吧，啊！」"
+    y "「……是。」"
+    y "「……」"
+    y "「老师，能再多问您一句吗？」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017076.ogg"
+    z "「嗯？你说。」"
+    y "「您……以前的梦想，是什么？」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017077.ogg"
+    z "「呵……我啊。」"
+    voice "audio/voice/017078.ogg"
+    z "「你要是想拿我当参考，那你恐怕是打错算盘了。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017079.ogg"
+    z "「我毕竟是70后。我们那会儿的想法，跟你们现在可不一样啊。」"
+    z "「……」"
+    stop sound fadeout 3.0
+
+    voice "audio/voice/017080.ogg"
+    z "「嗯，这么说吧。」"
+
+    play music "audio/music/themepiano.ogg" fadein 1.5 #梦想天空 piano ver.
+
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017081.ogg"
+    z "「我那会儿啊，想去大山里当老师。」"
+    y "「哎？」"
+    voice "audio/voice/017082.ogg"
+    z "「不奇怪呀。你要知道，我本来是农村人。我小的时候，那上学的条件……嗐，别提了。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017083.ogg"
+    z "「我的启蒙老师呢，是个老知青，上山下乡的时候来的。八十年代以后啊也没回老家，就在我们那边扎了根，一直在镇里的小学教书，前两年刚退下来。」"
+    voice "audio/voice/017084.ogg"
+    z "「他这个人吧，教书也谈不上多好，脾气还暴。那会儿啊，天天打我。你别看我以前老是吼你们啊，那要跟我老师一比，那真是差得远去了。」"
+    voice "audio/voice/017085.ogg"
+    z "「但是呢，那个时候要是没有他啊，那周围几个村里的孩子，那就真是……现在都得是文盲。」"
+    voice "audio/voice/017086.ogg"
+    z "「唉，你现在听着可能都没感觉……不过说真的，义务教育可是从1986年才开始的，而且当时只是出了这么个规定，根本没有条件落实。得是到了你们这一代，反正咱们这地方，才算差不多真正能做到这一点。」"
+    voice "audio/voice/017087.ogg"
+    z "「哎……反正呢，我因为我的老师，有幸读完了小学，然后因为成绩还可以，老师又专门上我家苦口婆心地劝我父母，让我继续读初中。」"
+    voice "audio/voice/017088.ogg"
+    z "「所以我小的时候啊，最大的愿望，就是能变成像我老师这样的人，到一个没有其他老师愿意去的地方，去教书，教下一个我。」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017089.ogg"
+    z "「所以初中毕业的时候，我报了省城的中师，啊就是中等师范学校，现在已经没有了。总之呢，我上完中专，就报名参加了支教，然后去了南边一个省。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017090.ogg"
+    z "「我在那儿呆了七年。」"
+    voice "audio/voice/017091.ogg"
+    z "「你知道吗？我之前以为我家那村里就是最穷的穷乡僻壤了，但等我到了我支教的地方……嘿，我的妈呀，你都想象不到那是个什么地方啊。」"
+    voice "audio/voice/017092.ogg"
+    z "「那真的就是一座山，就只有山，没有别的啊。那所谓的村，就是山里面找了一块平整一点的地方，搭了点土房出来。」"
+    voice "audio/voice/017093.ogg"
+    z "「但就是这么个地方，依然有人在，也就有小孩，小孩还想要上学，想学知识。」"
+    z "「……」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017094.ogg"
+    z "「所以啊，我一想起你们一天到晚就知道混日子，我就来气！」"
+    y "「……呃。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017095.ogg"
+    z "「……唉。」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017096.ogg"
+    z "「反正呢，我在那个地方教了七年的书。一边教书呢，一边自学，那会儿先考大专嘛，大专考完了又续本。」"
+    voice "audio/voice/017097.ogg"
+    z "「我呢，一开始真的是想……在大山里面，教上一辈子书。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017098.ogg"
+    z "「但是理想是理想，现实是现实啊。」"
+    voice "audio/voice/017099.ogg"
+    z "「九十年代末那个时候，这各种政策啊是天天改来改去，一点谱都没有。唉，就好像说我支教啊，本来是能解决农转非的，当时传说要取消，还有编制和工龄，也都是说什么的都有，反正啊就是乱成了一锅粥。」"
+    voice "audio/voice/017100.ogg"
+    z "「那阵子，家里老是催我赶快回去，到县城去上班。这好歹是个铁饭碗嘛，待遇靠得住，也有面子，否则万一政策变了，不管我了，那我就完蛋了。」"
+    voice "audio/voice/017101.ogg"
+    z "「还有一个关键的，是我……差不多也到岁数了，呵，他们想让我赶紧找个对象。那山里上哪儿找去啊，也没有人会愿意跟我一起去山里，就只能是回家这边来。」"
+    voice "audio/voice/017102.ogg"
+    z "「反正吧，就这么个意思，每次都催，只要我一回家就催。」"
+    voice "audio/voice/017103.ogg"
+    z "「我一开始呢，是不想回来的，想坚持一下自己当初的理想。但是时间一久，还是能感觉出来，真的是很难做到啊。」"
+    voice "audio/voice/017104.ogg"
+    z "「尤其是每次回家，这边就算发展得慢，每年还是会变不少样啊，但是再回到山里……」"
+    voice "audio/voice/017105.ogg"
+    z "「那山，永远还是那个山。」"
+    voice "audio/voice/017106.ogg"
+    z "「我其实呢……我挺舍不得那些孩子的，真的。但到了最后两年，我也真的是已经……已经坚持不下去了。好在啊，最后总算是没当逃兵，熬到一个同样愿意来山里支教的人，这么才把我给替回来了。」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017107.ogg"
+    z "「这个，就是关于『我的梦想』的故事。」"
+    y "「……」"
+    voice "audio/voice/017108.ogg"
+    z "「呵，是不是觉得没法聊了？」"
+    y "「……也不是，就是有点震撼。我都没想到老师您是个这么伟大的人。」"
+    voice "audio/voice/017109.ogg"
+    z "「嗐，伟大个屁啊。你师爷可以说是伟大，我啊，就是个普通人。」"
+    y "「但您还是去了七年啊。」"
+    y "「……」"
+    y "「老师，那……您说我对樱华没有实际概念，可您当时，也不知道山里的情况吧？怎么还是去了？」"
+    voice "audio/voice/017110.ogg"
+    z "「因为我知道自己要去做什么。呵，我呀，是把困难想得太简单啦。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017111.ogg"
+    z "「而你呢，又不一样。你呀，根本不知道会有什么样的困难。」"
+    y "「……」"
+    voice "audio/voice/017112.ogg"
+    z "「所以说，在这一点上，梁芷柔是做得最好的。」"
+    voice "audio/voice/017113.ogg"
+    z "「她知道自己要面对什么，然后迎难而上。结果怎么样不好说，但最起码，她的准备是最充分的。」"
+    voice "audio/voice/017114.ogg"
+    z "「你呢？」"
+    y "「……是。我明白了。」"
+    y "「那，老师，最后的问题。」"
+    y "「您后悔去那七年吗？如果……您就像现在这样，已经知道有那些困难了，您还会去吗？」"
+    z "「……」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017115.ogg"
+    z "「呵，你小子，在这儿等着我呢？」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017116.ogg"
+    z "「嗯，怎么说呢……」"
+    voice "audio/voice/017117.ogg"
+    z "「人哪，都是会成长的。以前的自己和现在的自己，去看同一件事，角度肯定会不一样。」"
+    voice "audio/voice/017118.ogg"
+    z "「有些人老是喜欢说什么……啊，『我们都活成了自己最讨厌的样子』……什么的。」"
+    voice "audio/voice/017119.ogg"
+    z "「呵。不过反过来说，让现在的你再翻回头看看以前的自己，那一样觉得好不到哪去。」"
+    voice "audio/voice/017120.ogg"
+    z "「年轻、单纯，有的时候啊，甚至有点幼稚。」"
+    show charaz lh03 #老师立绘|夏季|皱眉|近
+    with dissolve
+    voice "audio/voice/017121.ogg"
+    z "「我啊，现在的我，可能会觉得以前的自己就是个笨怂，眼界太窄，啥都不知道。」"
+    voice "audio/voice/017122.ogg"
+    z "「不知道那地方有多苦，不知道自己差点丢掉了什么，也不知道自己不是那块料，根本坚持不到最后。」"
+    show charaz lh01 #老师立绘|夏季|普通|近
+    with dissolve
+    voice "audio/voice/017123.ogg"
+    z "「哎。但是吧……」"
+    voice "audio/voice/017124.ogg"
+    z "「等骂完了，你要问我去不去？」"
+    z "「……」"
+    show charaz lh02 #老师立绘|夏季|微笑|近
+    with dissolve
+    voice "audio/voice/017125.ogg"
+    z "「能去的话，我还是会去吧。」"
+    stop music fadeout 2.5
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
+    scene bg b04 #滨河路|夏
+    with fade
+    y "「……」"
+    y "「…………」"
+    nvl show
+    with dissolve
+    nvl_narrator "回家的这一路上，我一直在思考老师的话。"
+    nvl_narrator "老师和我，在选择目标的时候，都在追随榜样。"
+    nvl_narrator "老师追随的是他的老师，而我，则是梁芷柔。"
+    nvl clear
+    nvl_narrator "只不过，我的目标说是「和梁芷柔一起去樱华」，其实是「『和梁芷柔』一起去樱华」。"
+    nvl_narrator "对我来说，去哪里，其实并不是那么重要。如果梁芷柔报考的学校在其他城市，结果也是一样的。"
+    nvl_narrator "这也导致……在第一志愿落榜的那一刻，我就已经失去了目标，也迷失了方向。"
+    nvl clear
+    nvl_narrator "然而，现在问题搞清楚了，答案却还没有找到。"
+    nvl_narrator "我甚至不知道该怎么去寻找。"
+    nvl_narrator "没有头绪，时间也所剩无几，这眼瞅着就要到8月份了啊……"
+    with vpunch
+    nvl clear
+    nvl hide
+    with dissolve
+    who "「哎哟！」"
+    y "「啊！」"
+    "光顾着想事情，没注意看路，结果不小心撞到人了。"
+    y "「抱歉抱歉……哎？吴姐？」"
+    show charad lg02 #书店店员立绘|惊讶|近
+    with dissolve
+    d "「啊，小叶？是你啊。」"
+    d "「你这是怎么啦，路这么宽都能撞上我。」"
+    y "「是，对不起。」"
+    show charad lg03 #书店店员立绘|笑容|近
+    with dissolve
+    d "「哎呀我又没有在怨你，干嘛这么一本正经的呀。」"
+    show charad lg01 #书店店员立绘|普通|近
+    with dissolve
+    d "「哎哎哎，说起来这阵子都没见到你，还没问呢，你考得怎么样啊？」"
+    show charad lg04 #书店店员立绘|坏笑|近
+    with dissolve
+    d "「我记得这两天看新闻说，大学都已经开始录取了？怎么样怎么样，是不是下个月开始你就可以和梁芷柔双宿双飞去啦？」"
+    y "「啊，呃……」"
+    "所谓哪壶不开提哪壶。"
+    "店员小姐显然是没有什么恶意的，倒不如说，她对我还蛮有信心的。"
+    "结果……就显得更加扎心了。"
+    show charad lg02 #书店店员立绘|惊讶|近
+    with dissolve
+    d "「嗯？你……这是，怎么了？」"
+    y "「……」"
+    d "「啊……不是吧？这……」"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b04 #滨河路|夏
+    with fade
+    show charad g02 #书店店员立绘|惊讶
+    with dissolve
+    "我把情况简单地向店员小姐说明了一下。"
+    y "「……就是这样了。」"
+    y "「我真的是……不知道该怎么办了，一点方向都没有。」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    d "「嗯……」"
+    "店员小姐罕见地认真了起来，皱着眉头沉吟了一阵。"
+    d "「我也不好说你该怎么做，毕竟每个人的情况都不一样。」"
+    d "「不过，你说你不知道樱华值不值得你拿一切去再赌一次……那我问你一个问题。」"
+    d "「你觉得樱华是一个什么样的地方？」"
+    y "「什么样的……」"
+    "这问题可谓相当笼统，我一时间有点犹豫，不知道该怎么回答。"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    d "「你就说个大概的感觉？比如，高楼大厦？灯火通明？」"
+    y "「我……」"
+    y "「我不知道。」"
+    y "「我的老师，说我对樱华没有概念。」"
+    y "「他也没说错，我确实是没什么概念。」"
+    y "「我从来都没有去过樱华——也不用说樱华了，自打我能记事开始，我就没有出过远门……没有去过任何一个大城市。」"
+    y "「所以这个问题……我真的是回答不上来。真要是能回答，我也不用再这么犹豫了。」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    d "「对吧，所以说啊……」"
+    d "「……」"
+    d "「我跟你说一下我眼中的樱华吧。」"
+    y "「哎？」"
+    "店员小姐的话令我有些意外，然而她却没有理会我的惊讶，自顾自地说了下去。"
+    scene bg b12 #樱华市
+    with fade
+    d  "「在我看来，樱华是一个冷漠的地方。」"
+    d  "「为什么说冷漠呢，就是……你看，一个地方，人来人往的，有很多人在，但是没有人会关心你。」"
+    scene bg b12a #樱华市|夜晚
+    with dissolve
+    d  "「不管你在大庭广众之下，是开怀大笑，还是号啕痛哭，旁人最多看你一眼就走过去了。连三秒钟都没有，就过去了。」"
+    d  "「你有一肚子的话想和别人说，周围都是人，但你就是找不到人。」"
+    d  "「没人有那个闲工夫，陪你笑，听你哭。」"
+    scene bg b04 #滨河路|夏
+    with fade
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    "店员小姐不知在想着什么事情，声音有些飘忽。"
+    "那感觉……仿佛我就是她话中那些「周围的人」，近在咫尺，却无关。"
+    d "「但是……那也是个自由的地方。」"
+    d "「规矩清清楚楚，只要你不惹事，想干什么都行，没有人限制你，能限制你的只有你自己。」"
+    d "「你正经做事情也好，三天打鱼两天晒网也罢，就算是把自己的头发染成一片蓝一片粉的，也没人会对你大惊小怪。」"
+    show charad g04 #书店店员立绘|坏笑
+    with dissolve
+    "店员小姐指了指自己的脑袋，终于又找回了平时常见的那种笑容。"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    d "「只要你自己能承担结果，就行。」"
+    y "「吴姐，您……」"
+    d "「呵……对。」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    d "「我15岁那年，读完了初中，勉强算是把义务教育完成了。然后呢，一边做着一夜暴富的白日梦，一边随便选了个大城市，就那么闭着眼睛闷头冲过去了。」"
+    d "「……呵。」"
+    scene bg b12a #樱华市|夜晚
+    with fade
+    d "「樱华啊，当时我出了火车站，只看了一眼，我就明白了，这就是我想要去的地方。」"
+    d "「我当时就在心里发誓，我要赌上一切，留下来。」"
+    d "「对，就这一眼，让我在那边拼死拼活，拼了好几年。」"
+    scene bg b12 #樱华市
+    with dissolve
+    d "「那段日子呀……每天起早贪黑的，干上十几个小时，什么破活烂活都能丢给我，没一天不加班的，还成天挨骂。」"
+    scene bg b12a #樱华市|夜晚
+    with dissolve
+    d "「你要说机会，也不是没有，其实还挺多的，但是一个都没有抓住。」"
+    scene bg b12 #樱华市
+    with dissolve
+    d "「毕竟……我一个初中生，懂什么呀？想学，也学不出个名堂……就没有人会好好教你。」"
+    scene bg b12a #樱华市|夜晚
+    with dissolve
+    d "「就这么一天一天地熬，也没个头，熬到最后，终于熬不下去了，呵……」"
+    scene bg b04 #滨河路|夏
+    with fade
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    d "「我就灰头土脸地滚回老家来了。」"
+    y "「……」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    d "「听着惨吧？是不是感觉……浪费了这么多年，不值？」"
+    y "「是……有点。」"
+    show charad g04 #书店店员立绘|坏笑
+    with dissolve
+    d "「呵，可是，惨的可不只是我一个人啊，比我还惨的也多的是呢。但到头来，大家还是前赴后继地往那去。」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    d "「樱华……那些大城市，就是这样。好，是真的好，总能吸引人去；但苦，也是真的苦，很多人到了最后都是竹篮打水，一场空。」"
+    d "「那些付出的代价，值与不值，对每个人来说，感觉都不一样，没有一套绝对的标准。」"
+    d "「你不亲自去体会一下，永远不会知道，那是值，还是不值。」"
+    y "「……」"
+    d "「小叶……现在是你自己想出去看看，对吧？」"
+    d "「不单是因为梁芷柔，你自己也在这么想，是不是？」"
+    y "「……是。」"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    d "「所以你为什么不真的去一趟呢？」"
+    y "「唉？」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    d "「我当年看了那一眼，就让我拼到了最后，一直拼到一点本钱都没有了，才不得不放弃。」"
+    d "「你呢……我不知道你现在这个情况，这样有没有用，毕竟咱俩的本钱差得有点远……」"
+    "店员小姐看着我手中的录取通知书，轻轻努了努嘴。"
+    d "「何况你现在也去不了几天，可能就跟蜻蜓点水似的，帮不到你多少。」"
+    show charad g03 #书店店员立绘|笑容
+    with dissolve
+    d "「但是，哪怕是走马观花呢，总比你留在这里闭门造车强。最起码……」"
+    d "「你可以不靠听别人说，不靠自己瞎猜，亲眼去看一看。」"
+    d "「看一看你可能的选择……以及梁芷柔的梦想。」"
+    show charad g01 #书店店员立绘|普通
+    with dissolve
+    d "「不是吗？」"
+    stop sound fadeout 3.0
+
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t08 #转场 樱华市
+    with fade
+    pause
+
+#8月5日。
+#樱华市。
+
+    scene bg black #黑屏
+    with fade
+    voice "audio/voice/147001.ogg"
+    m "「旅客朋友，大家好！一路旅行辛苦了！我们的旅行生活已接近尾声，这趟列车由百薇站开出，经过了28小时49分钟的旅行，就要到达终点站樱华站了。」"
+    voice "audio/voice/147002.ogg"
+    m "「在您即要走下这趟列车与我们分别的时候，我代表列车全体工作人员感谢您对我们工作的支持与协助。同时，也希望下次旅行再乘坐我们这趟列车，愿我们再相逢！」"
+    scene bg b12a #樱华市|夜晚
+    with fade
+    play music "audio/music/bgm03.ogg" fadein 1.5 #秋～绯月～
+    nvl show
+    nvl_narrator "顺着人群涌动的方向，走出火车站。"
+    nvl_narrator "晚上7点，樱华的天空已经有些暗下来了。"
+    nvl_narrator "如果是在老家，距离太阳下山应该还有些时候……然而，此刻的我，已经向东跨越了整整一个时区。"
+    nvl clear
+    scene bg b02 #城区|夏
+    show memories #回忆滤镜
+    with fade
+    nvl hide
+    y "「……」"
+    y "「爸，妈，我想跟你们说件事。」"
+    y "「我想去一次樱华。」"
+    scene bg b12a #樱华市|夜晚
+    with fade
+    y "「……」"
+    nvl show
+    with dissolve
+    nvl_narrator "在硬座上颠簸了将近2500公里以后，我终于来到了樱华，来到了这座让梁芷柔魂萦梦绕、于我却知之甚少的巨大都市。"
+    nvl_narrator "坐在公交车上的我，靠着车窗，默默地望着外面的繁华世界。"
+    nvl_narrator "五光十色的霓虹灯不断在眼前闪现，然后在看清之前就一晃而过，最后留在眼中的只是一道道的残影。"
+    nvl_narrator "这许许多多的光影，为无数高楼大厦包裹上了一层金光闪闪的外衣，将因为天色黯淡而被黑暗笼罩的它们重新点亮。"
+    nvl clear
+    nvl_narrator "然后，迎来人潮。"
+    nvl_narrator "在这个老家已该逐渐寂静下来的时刻，对樱华来说，才只是夜生活开始的前奏。"
+    nvl_narrator "高节奏高强度工作了一整天的人们，此时终于结束了手头的工作，开始拖着疲惫的身体向家……或者其他的什么地方移动，去享受自己短暂的闲暇时光。"
+    nvl clear
+    nvl_narrator "望不尽的灯红酒绿、数不完的纸醉金迷。"
+    nvl_narrator "华灯初上，夜未央。"
+    nvl clear
+    nvl_narrator "虽然，这一切都与我毫无关系。"
+    nvl_narrator "我只有从父母那里讨要来的、并不充裕的一点旅费，需要精打细算到每一分。"
+    nvl_narrator "我还不属于这座城市，也不知道以后会不会属于这里。"
+    nvl_narrator "这些繁华，与现在的我，无关。"
+    nvl clear
+    nvl_narrator "此时此刻，我正从位于城市边缘的火车站往市中心方向前进。"
+    nvl_narrator "而在沿途，那些真正在这座城市中生活的人，却大多是走在与我相反的方向，从市中心往房价便宜的新城区涌动。"
+    nvl_narrator "就这样，我用与这座城市格格不入的节奏，一路逆行着闯了进去。"
+    nvl clear
+    scene bg black #黑屏
+    with fade
+    nvl hide
+    y "「……呼。」"
+    with vpunch
+    "一进到房间里，我就直挺挺地扑到在床上，一动也不想动了。"
+    "无论再怎么年轻力壮，经历了这么长时间的硬座摧残，都注定会让人筋疲力尽、无以为继。"
+    y "「……」"
+    scene bg b12a #樱华市|夜晚
+    with fade
+    "勉强翻了个身，抬头仰望着天花板。"
+    "窗外依旧灯火辉煌，余光穿透窗帘，在这间半地下室的地板上投出淡淡的亮斑，倒是颇有李白《静思夜》的感觉。"
+    "只不过由于多了防盗护栏的影子，或许看上去倒更像是监狱。"
+    "老城区的青年旅馆还算便宜，再往前因为靠近一些著名的景区，所以成本会直线拉高。好在这里的交通还算方便，不用担心之后的出行。"
+    "晚饭也已经在路上顺便吃过了……无论再怎么奢华的城市，总归还是能够找到物美价廉的食物的。"
+    scene bg black #黑屏
+    with fade
+    y "「……」"
+    y "「…………」"
+    scene bg b12a #樱华市|夜晚
+    with fade
+    "只是……明明已经累得不行了，但却偏偏没法很快睡着，大脑还在坚持不懈地进行着各种胡思乱想。"
+    "果然……还是紧张啊。"
+    "虽然人总算是到了樱华，然而最终结果如何，就完全不得而知了。"
+    y "「……呼。」"
+    scene bg black #黑屏
+    with fade
+    "闭上眼睛，强行压下内心的忐忑。"
+    "睡吧，养足精神，用最好的状态迎接明天的到来。"
+    "抛弃一切借口，也不要再逃避。"
+    "去寻找真正的，「我」的答案。"
+    stop music fadeout 2.0
+
+    "……"
+    "…………"
+
+    play sound "audio/sound/transition.ogg" noloop
+    scene trans t08 #转场 樱华市
+    with fade
+    pause
+
+#8月6日。"
+#前往樱华大学。"
+
+    play sound "audio/sound/ambientnoise04.ogg" fadein 1.5 loop #白天环境噪音
+
+    scene bg b12 #樱华市
+    with fade
+    "第二天一早，迎着初升的太阳，我离开旅馆，坐上公交车，向着今天的目的地前进。"
+    "路况还算良好，虽然能够明显感觉到街面上的车流在很短的时间内大幅增多了，但由于赶在早高峰之前就出发了，好歹在遇到堵车之前离开了市中心。"
+    "……"
+    "…………"
+    with fade
+    y "「喔……」"
+    "离开市中心没多远，公交车途径了一处著名的风景区——一处湖泊。"
+    "如同紫禁城之于首都一样，眼前的湖泊可以称得上是樱华市的名片。"
+    "清晨的湖面上铺着薄薄的雾气，仿佛戴了一层面纱，有着难以形容的朦胧美感。"
+    "这幅以前只在电视和图片中看到过的景色，此时此刻，近在眼前。"
+    "只可惜，现在的我，无暇在这里多做停留。"
+    "乘坐公交车继续前行，从湖的北岸向西拐了个弯，又开了一段距离，我终于来到了自己今天的目的地。"
+    scene bg b13 #大学校门
+    with fade
+    y "「……」"
+    "樱华大学。"
+    "国内顶尖，世界百强的高等学府。"
+    "让梁芷柔魂牵梦萦，如今已经如愿考入的大学。"
+    "一个对我而言，依然还只是可望而不可及的地方。"
+    "我想到这里来，亲眼看一看。"
+    with fade
+    "……"
+    "…………"
+    "下了公交车之后，沿着护校河从北往南行进，没过多远就来到了樱大的东大门。"
+    "门口的小广场上伫立着一棵巨大的雪松，相比之下，在它身后的大门本身反倒不是那么显眼了。"
+    "然而，当我走到门前的时候，却迅速地感受到了后者的深沉与厚重。"
+    "不同于更为常见的烫金色字，樱华大学的校名直接浮刻在石质的校门上方，而在它背后的远方，一座高大的青山隐约可见。"
+    "二者浑然一体，仿佛跨过门后，便会是另一方天地。"
+    scene bg b14 #大学校区
+    with fade
+    "我从旁边的侧门进入了校区。"
+    "门卫只会对车辆的出入进行登记，对行人没什么限制，所以只从物理层面上来说，进入樱大倒是很简单。"
+    "不过，进到校区也只是第一步，后面我是一点把握也没有。"
+    "毕竟我并非这里的学生，若是里面的管理很严格的话，很多地方大概是进不去的。"
+    "但现在想这些也没什么用处，只能是走一步算一步了。"
+    "……"
+    "…………"
+    with fade
+    "由于还在放暑假，校园里的人并没有多少。"
+    "一边绕过正门后面的一小块草坪，我一边打量着周围的建筑。"
+    "樱华大学有好几个校区，主校区是其中最老的一个，也因为这样，建筑颇有些年代感。"
+    "楼房多为四五层的矮楼，以白色为底，在窗台之下间杂着些许砖红色，并不气派，但却敦厚稳重。"
+    "对我来说，这种有些苏联式的建筑甚至还别有一番熟悉感，毕竟老家旧城区里同样风格的楼房可谓数量众多。"
+    "不过……"
+    y "「噢噢……」"
+    "老家的楼房门口可不会挂着「理学部」、「电子显微镜中心」这样的牌子。"
+    y "「说起来……」"
+    y "「梁芷柔专业报的是应用数学吧？」"
+    "也就是说她以后少不了要路过我现在站的这个位置吧……"
+    y "「……」"
+    "感觉……有些五味杂陈。"
+    with fade
+    "……"
+    "…………"
+    "沿着主路继续向前，到达了一片草地的广场。"
+    "在广场靠东一侧矗立着一根国旗杆，而在大概100米之外的西侧，则是主席雕像。"
+    "广场上看不到多少学生模样的人，倒是有不少家长带着孩子在玩耍，还有一些锻炼身体的老人。"
+    "而在广场的两侧，繁茂的樟树排列成行，为人们撑起了阴凉。"
+    "沿着侧边的道路继续行走，我找到了旁边楼房的大门。"
+    "尽管楼房本身并不多么宏伟，但作为门脸的正门还是经过了一番改造的，中式仿古风格的造型，门上挂着「第一教学楼」的牌匾。"
+    "只不过，虽然大门敞开，但内里却是……"
+    "黑着灯。"
+    y "「……」"
+    "有些麻烦。"
+    "毕竟是暑假，蹭课之类，果然还是不太可能的。"
+    "看来，要想有点什么近距离的感受，只能是另辟蹊径了。"
+    with fade
+    "……"
+    "…………"
+    "又向前走了一段距离。"
+    "附近建筑的色彩相较刚才颠倒了一下，变成了砖红色为底、白色为辅。"
+    "除此以外，还出现了一座十分显眼的建筑——"
+    "图书馆。"
+    "相比一路过来那些沿途的教学楼，图书馆尽管也是老楼，但却更加高大，楼宽约有百米，高度也超过了七层，在门口还树着樱大老校长的雕塑。"
+    y "「……」"
+    "或许这里……也可以作为参考的吧。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b14 #大学校区
+    with fade
+    "虽然此时图书馆刚刚开馆不久，再加上是假期当中，偌大的场馆中并没有几个人，但图书馆的管理员并没有因此偷懒，而是尽职尽责地守在自己的岗位上。"
+    "问过管理员之后，我才明白自己又把问题想简单了。"
+    "尽管樱大的图书馆可以有限度地对外开放，但前提是要办理一大堆的手续，像我这样直愣愣地闯进来的校外人员，肯定是不能进到藏书室的。"
+    "不过自习室倒是可以自由出入。"
+    "犹豫了一下，我还是进去看了看。"
+    "人数不多，不过每个人倒是都很专注。"
+    "有的人在抱着某种大部头的书仔细研究。"
+    "有的人拿出纸笔，对照着专业书籍写写画画。"
+    "有的人在默念某种外语，偶尔会不小心念出声来，发觉以后又赶紧压下嗓子。"
+    "不过，会在这个时候到自习室来的人，原本也不太可能是来瞎逛的吧。"
+    "相比之下，两手空空的我就显得十分另类了。"
+    y "「（……还是离开吧。）」"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b14 #大学校区
+    with fade
+    "当我走出图书馆的时候，时间已经从清晨进入到上午，校园内的人也渐渐多了起来。"
+    y "「接下来怎么办……」"
+    "继续这样像无头苍蝇一样乱撞显然是不行的，但眼下也实在是没有什么头绪。"
+    "总不成在路上直接抓一个学生来求助吧……"
+    y "「……」"
+    "真到了走投无路的时候，恐怕也就只能这么办了。"
+    "希望，到时候能遇到一个好人吧……"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b14 #大学校区
+    with fade
+    "一边乱想，一边继续漫步向前。"
+    "从图书馆向南拐了个弯，各种建筑的风格开始变得不再统一，名称也逐渐变得晦涩难懂起来。"
+    "「信电系」、「高分子系」、「机械设计研究所」……"
+    "有的还能理解，有的就需要靠望文生义去猜，还有一些就只能是「虽然不明白你在说什么，但觉得似乎很厉害的样子」了。"
+    "而且这些名称似乎也和建筑本身的好坏无关。"
+    "我就见到有两栋楼，哪怕放在老家都算得上是十分破旧的那种，门口却挂着「省级电池新材料与应用技术研究重点实验室」、「生物质化工教育部重点实验室」之类看上去颇为吓人的牌子。"
+    with fade
+    "……"
+    "…………"
+    "就这样一路走下来，在又路过一座不知什么实验楼的时候，我突然眼前一亮——"
+    "一大群看起来和我岁数差不多，穿得也是五花八门看不出规律的学生模样的人，正在往里蜂拥而入。"
+    y "「（有机可乘？）」"
+    "我紧跑了两步，偷偷混入人群之中。"
+    "从刚才开始，我就想要进到这些楼里去参观一下。"
+    "无奈看起来似乎并没有机会……要么就是像教学楼那样空无一人，要不就是门口戳着一个虎视眈眈的保安。"
+    "不过这里嘛……"
+    "虽然这里的门口也有保安，甚至连大门也需要刷卡解禁，但这么多人乱糟糟地往里涌，保安非但没空仔细甄别，反而还需要帮着扶住自动门。"
+    scene bg b15 #实验楼
+    with fade
+    y "「（潜入成功！）」"
+    "顺利地随大流进到了楼里。"
+    "这帮学生彼此之间似乎也不熟悉，并没有人对我的加入产生疑问。"
+    "接下来只要找个机会脱离队伍，就可以自由行动了……"
+    voice "audio/voice/137001.ogg"
+    who "「好的，来帮忙的同学，我点一下名，叫到名字的跟着负责人走。」"
+    y "「……咦？」"
+    "我皱起了眉头，发现事情似乎并不单纯。"
+    "一位看上去像是管理人员之类的中年男子，在学生们全都进来以后，开始照着几张名单点名。"
+    "每点几个人，就有一个看起来二三十岁的人将他们领走，向着楼上走去。"
+    y "「（糟糕，完蛋了！）」"
+    "我说这个地方的管理怎么看起来这么松呢！其实是有人在等啊！"
+    "这一大票人大约是被拉来帮忙的低年级学生吧？"
+    y "「（这可怎么办……）」"
+    "被念到的名字越来越多，留下的人越来越少。我心里越来越急，却毫无办法，只能故作镇定地戳在原地。"
+    "……"
+    "…………"
+    with fade
+    "终于，名单念完了。"
+    "所有学生都分配完毕，每一个负责人都领着自己的队伍离开了。"
+    h "「……」"
+    y "「……」"
+    i "「……」"
+    "重归平静的一楼大厅，剩下三个人大眼瞪小眼地互相看。"
+    "这就……很尴尬了。"
+    "即使楼内的空调开得很足，我脑门上的汗水依然哗哗地往下淌。"
+    y "「呃……我……」"
+    "组织了半天语言，也不知道该怎么解释才好。"
+    "把心一横……反正大不了就是被轰出去吧，他们总不能吃了我？"
+    y "「……嗯……那个……」"
+    voice "audio/voice/037001.ogg"
+    who "「哎哟，老杨，给我的志愿者呢？」"
+    "突然之间，旁边传来了一个既陌生、又在某个方面有些熟悉的声音。"
+    y "「……咦？」"
+    "我顺着声音望过去，一个看上去文绉绉的三十岁左右的男子，正三步并作两步地从旁边的走廊往这边跑。"
+    voice "audio/voice/137002.ogg"
+    h "「老李啊？哎，你要过人？」"
+    voice "audio/voice/037002.ogg"
+    who "「要过啊。」"
+    voice "audio/voice/137003.ogg"
+    h "「那怎么没把名单给我啊？你什么时候要的？」"
+    voice "audio/voice/037003.ogg"
+    who "「早的事了，是他吗？」"
+    voice "audio/voice/137004.ogg"
+    h "「咳，没给我名单我哪知道啊？那你要人，你刚才怎么不过来啊？」"
+    voice "audio/voice/037004.ogg"
+    who "「嗐，我这不是现在过来了吗？刚才准备东西呢。」"
+    "青年打了个岔，把自己的过失含糊过去，随即转向我这边。"
+    voice "audio/voice/037005.ogg"
+    who "「你是来做行为识别采样的吧？我是李金凡。」"
+    voice "audio/voice/037006.ogg"
+    j "「来来来，跟我上四楼。」"
+    "……这位不知该算是大哥还是大叔的男子，一边说，一边一把抓住我的胳膊，开始把我往楼上拖。"
+    "看来是迫不及待地想把我这个「壮丁」给抓牢了。"
+    "这倒是救了我一把……虽然是饮鸩止渴。"
+    "毕竟我连接下来需要做什么都不知道，说不定一上楼就会露馅。"
+    "不过这里还是将错就错吧，最起码，要比现在就被保安和工作人员拿下，还是要强上那么一点的……吧？"
+    scene bg b15a #实验楼|二层
+    with fade
+    "我跟着这位自称「李金凡」的男子上了楼。"
+    "一边爬楼梯，他还一边很热情地寒暄着。"
+    voice "audio/voice/037007.ogg"
+    j "「哎呀，这个时候想要找个志愿者过来真是不容易！还好你来了，要不然这事还真是不好办。」"
+    voice "audio/voice/037008.ogg"
+    j "「发了论坛，布告栏也贴了，就是找不到人，这最后跟辅导员说，他们才说试试看，不过之前都得提前一段时间说，所以也没准。」"
+    voice "audio/voice/037009.ogg"
+    j "「但是实验又急，哎，真是！啊，这拿我老家的话说就叫做……『人倒霉，鬼吹灯，放屁都砸脚后跟』。」"
+    voice "audio/voice/037010.ogg"
+    j "「这结果呢，没想到他们效率还挺高，昨天说的，今天你就到了。」"
+    y "「……」"
+    "这个话题还是不要正面回应的好。"
+    "不过，我仔细地听过他的话音之后，还是决定说点什么……做个尝试。"
+    y "「现在很不好找人吗？」"
+    voice "audio/voice/037011.ogg"
+    j "「是啊……嗯？」"
+    "男子露出疑惑的目光。"
+    voice "audio/voice/037012.ogg"
+    j "「你是……」"
+    "我冲他笑笑。"
+    voice "audio/voice/037013.ogg"
+    j "「嗐，老乡啊！」"
+    "——果然。"
+    "他刚才说那句「家乡话」的时候，我一下子就听出来了——"
+    "那正好是我家附近那一带的口音。"
+    "我平时虽然都在说普通话，但老家的土话也并非不会说，稍微故意带上一些乡音，立刻就被他听出来了。"
+    voice "audio/voice/037014.ogg"
+    j "「哈哈，没想到没想到，居然这么巧。」"
+    voice "audio/voice/037015.ogg"
+    j "「哎呀，在这里能遇到一个老乡不容易啊！」"
+    voice "audio/voice/037016.ogg"
+    j "「这儿倒是也有一些同省的同学，不过大多是从百薇那边过来的。」"
+    voice "audio/voice/037017.ogg"
+    j "「像咱俩挨得这么近的，还真的是少……」"
+    "能够在这里遇到老乡，男子似乎相当惊喜，话匣子也一下子打开了。"
+    with fade
+    "一边走，一边聊。"
+    "尽管从进门到现在的时间还很短，但拜这位师兄十分话痨所赐，我已经对他有了一个大概的了解。"
+    "李金凡在八年前考到樱华，从本科读起，目前正在读博。"
+    "他并不是我们县的人，家在邻县，不过是在靠近我们县这一侧的交界处，离得不远。"
+    "他是他们那个县里第一个考到樱大的人，当时还上了新闻——不过那时候我还在上小学，倒是没什么记忆。"
+    with fade
+    "聊天的同时，我顺便观察着沿途大大小小的房间。"
+    "「智能交通系统实验室」、「数据采集与监视控制系统实验室」、「机器人实验室」……"
+    "和之前看楼名的感觉差不多，基本只能是望文生义去瞎猜用途。"
+    "隔着门窗，能看到其中已经有一些人在忙碌了。"
+    "这就是……樱华的学生的日常吗？"
+    with fade
+    voice "audio/voice/037018.ogg"
+    j "「……好了，就是这里。」"
+    y "「啊……」"
+    "李金凡的实验室并不偏僻，很快就到了。"
+    y "「『智能监控实验室』？」"
+    voice "audio/voice/037019.ogg"
+    j "「嗯，严格说，这应该算是计算机的课题，不过现在啊，涉及到这个方向的系挺多的，咱们也做。」"
+    voice "audio/voice/037020.ogg"
+    j "「来来来，快进来。」"
+    scene bg b16 #实验室
+    with fade
+    "进到屋里。"
+    "实验室内已经布置出一块空场，铺着绿色的地毯和幕布，还有一圈灯和几个不同角度的摄像头。"
+    voice "audio/voice/037021.ogg"
+    j "「今天别人都不在，就咱俩。」"
+    voice "audio/voice/037022.ogg"
+    j "「咱们呢，闲话少说，先做实验。做完实验我请你吃饭啊，虽然只是食堂。」"
+    "一进到实验室，这位李师兄似乎就换了个人，变得有些狂热起来。"
+    "也顾不上客套了，三言两语之后，便迫不及待地把我拖到空场中，然后又开始摆弄起周围的灯光。"
+    "剩下我手足无措地杵在中间，不敢动弹。"
+    y "「……那、那个。」"
+    voice "audio/voice/037023.ogg"
+    j "「嗯？」"
+    y "「我待会儿要做什么啊？」"
+    voice "audio/voice/037024.ogg"
+    j "「哎？辅导员没跟你说吗？」"
+    voice "audio/voice/037025.ogg"
+    j "「哦，也是，可能时间太急没跟你仔细说吧。」"
+    y "「呃……嗯……」"
+    voice "audio/voice/037026.ogg"
+    j "「这次找你过来，主要是我们做的特定要求下的行为识别系统，需要采集一些针对性的实验数据。」"
+    voice "audio/voice/037027.ogg"
+    j "「不过你也不用紧张，很简单的，不需要什么专业能力，会动就行。」"
+    voice "audio/voice/037028.ogg"
+    j "「待会儿啊，按照我给你的指示做就行了。」"
+    y "「噢噢。」"
+    voice "audio/voice/037029.ogg"
+    j "「……好，我们准备，开始了啊！」"
+    scene bg b16a #实验室|打光
+    with fade
+    "实验开始了。"
+    "在他的指示下，我开始摆出各种造型，又或者在空场里走来走去。"
+    "李师兄本人则是时而操作电脑，时而调整灯光，偶尔还来掰一掰我的胳膊腿什么的，调整姿势。"
+    "实验似乎很顺利地进行下去了。"
+    "虽然只是被当做道具摆弄，不过这一切依然让我感到十分新奇。"
+    "除此以外，还有一点。"
+    "在这位李师兄的脸上，我看到了与梁芷柔如出一辙的……坚定和专注。"
+    "那是已经明确了自己的目标，并一心为之奋斗的人所特有的神情。"
+    j "「……」"
+    voice "audio/voice/037030.ogg"
+    j "「嗯……这一块……应该……」"
+    voice "audio/voice/037031.ogg"
+    j "「……嗯？」"
+    "李师兄的手机突然响了。"
+    "正巧赶在思索问题的时候，他似乎有些不耐烦，不过看了一眼来电人姓名，还是拧出一个笑脸来接通了电话。"
+    voice "audio/voice/037032.ogg"
+    j "「哎呀，刘老师啊，谢谢你给我们找人来……」"
+    voice "audio/voice/037033.ogg"
+    j "「……啊？」"
+    voice "audio/voice/037034.ogg"
+    j "「什么意思？约的人来不了了？时间太紧张？」"
+    voice "audio/voice/037035.ogg"
+    j "「……没事没事没事，我这边这一个先做着，你也再帮帮忙，想想办法……」"
+    voice "audio/voice/037036.ogg"
+    j "「什么？」"
+    voice "audio/voice/037037.ogg"
+    j "「……就是说，你那边今天没派人过来？」"
+    voice "audio/voice/037038.ogg"
+    j "「不对啊，我这边有人过来了呀？现在正在做着呢。」"
+    j "「……」"
+    voice "audio/voice/037039.ogg"
+    j "「是吗？」"
+    voice "audio/voice/037040.ogg"
+    j "「那好吧，我这边确认一下再说吧。」"
+    j "「……」"
+    j "「…………」"
+    "李金凡把手机从耳边拿开，看着屏幕思考了几秒钟，按下了挂断。"
+    "随即，又转过头来，用奇怪的表情看向我。"
+    j "「……」"
+    y "「……」"
+    "这就……又很尴尬了。"
+    voice "audio/voice/037041.ogg"
+    j "「呃，那个……」"
+    y "「抱歉！实在对不起！」"
+    voice "audio/voice/037042.ogg"
+    j "「啊……」"
+    y "「那个，我其实……不是志愿者。」"
+    "在被问到之前，我抢先直截了当地承认自己的身份并道歉。"
+    "李师兄问到一半的话被咽了回去。"
+    "不过，看他的神色，感觉倒没觉得是在生气，更像是有些疑惑。"
+    "在经过了几秒钟的尴尬沉默之后，李师兄再次开口。"
+    voice "audio/voice/037043.ogg"
+    j "「……那你来这里干什么？」"
+    y "「我今天……只是想来樱华大学看看。」"
+    voice "audio/voice/037044.ogg"
+    j "「看看？」"
+    y "「我不是樱大的学生，我今年……刚高考完，还不是大学生。」"
+    voice "audio/voice/037045.ogg"
+    j "「哦……这样啊。」"
+    voice "audio/voice/037046.ogg"
+    j "「哎，那你既然大老远的跑到这里来……也就是说，你报了这里？」"
+    y "「呃……」"
+    voice "audio/voice/037047.ogg"
+    j "「哈哈哈，那也没什么大区别嘛！虽然你现在还不是师弟，但那不就下个月的事情嘛，这有什么大不了的？」"
+    voice "audio/voice/037048.ogg"
+    j "「没关系没关系，哎呀，倒是我不好意思，还这么使唤你半天。」"
+    "李师兄一边笑一边拍了拍我的肩膀，似乎并不介意我偷偷溜进来这事。"
+    "惟其如此，更让我觉得不好意思。"
+    y "「那个……不，其实……我本来是想要往樱华这里报，但是……差了几分，没考上。」"
+    "有些心虚地解释了一句。"
+    "我偷换了樱华的概念。我说的樱华是指樱华市，而李师兄大概只会理解成樱华大学吧。"
+    j "「……」"
+    voice "audio/voice/037049.ogg"
+    j "「这样啊。」"
+    "李师兄也一下子沉默了下来，不过很快，他又继续开口。"
+    voice "audio/voice/037050.ogg"
+    j "「好吧，其实一下子我也不知道该说什么好。不过，我想我能理解你的心情。」"
+    voice "audio/voice/037051.ogg"
+    j "「那你是……还想再考一次吗？」"
+    y "「是，有点想。」"
+    y "「不过，我也还有点……没太想明白，所以现在很迷茫，才想要来这里亲眼看一看。」"
+    voice "audio/voice/037052.ogg"
+    j "「嗯……什么地方没想明白呢？」"
+    y "「如果是您，您觉得放弃现有的结果，放弃百薇大学的录取通知书，复读去赌一个重新来过的机会，值得吗？」"
+    j "「……」"
+    voice "audio/voice/037053.ogg"
+    j "「为什么不值呢？」"
+    y "「这……」"
+    voice "audio/voice/037054.ogg"
+    j "「啊，我不是因为已经在这里读书了所以自吹自擂啊，也没有诋毁百薇的意思。」"
+    voice "audio/voice/037055.ogg"
+    j "「但是，如果你有这个实力，有这份毅力，又确实想要往这边考的话，为什么会觉得可能不值呢？」"
+    y "「……」"
+    "一时没好意思说出真相的恶果迅速显现出来了，李师兄的思路似乎被我带偏，跑到另外一个角度去了。"
+    "不过，虽然前提变了，但问题的核心还是同样成立的。"
+    y "「我……没搞清楚自己的目的。」"
+    y "「我是追随着别人的步伐往樱华报的名，结果失败了。」"
+    y "「我的成绩其实没那么好，也就是矬子里拔出来的将军，走到现在这一步已经是竭尽全力了……按说也可以满足了。」"
+    y "「这里和百薇，它们都是很优秀的大学，或许樱华这边的条件会更好一些，但是对我来说，它们都已经足够好了。」"
+    y "「但我还是觉得……不甘心。」"
+    y "「可要说为什么不甘心，我也说不清楚。」"
+    y "「仔细想想，我发现我自己其实很多事情根本就没弄明白……」"
+    y "「我甚至都搞不清楚如果我真的考到了这里，我能做什么、该怎么做、能不能做到……为什么要这么做。」"
+    y "「樱华和百薇的区别究竟在哪？对我来说又有什么不一样？」"
+    y "「我究竟是……只是因为看到了一个榜样，所以想跟着去做，还是说我本来就应该这么做？」"
+    y "「我挺迷茫的。」"
+    y "「我是应该再去考一次？还是就这么认了？」"
+    y "「我不知道，所以就来了，想……亲眼看看。」"
+    voice "audio/voice/037056.ogg"
+    j "「……原来如此。」"
+    "李师兄点点头，一把搂住我的肩膀，把我拉到了椅子旁边。"
+    "很难相信看上去很瘦弱的他能有这么大的力气。"
+    voice "audio/voice/037057.ogg"
+    j "「来，坐。」"
+    "他强行把我按在座椅上，随后自己也坐到了我的旁边。"
+    voice "audio/voice/037058.ogg"
+    j "「我大概明白是什么情况了。」"
+    voice "audio/voice/037059.ogg"
+    j "「既然今天咱们碰巧这么撞上了，又都是老乡，是个缘分，那我呢，也就斗胆说说我的想法。」"
+    voice "audio/voice/037060.ogg"
+    j "「按说咱们两个认识的时间还短，有些话我现在说啊，可能有点……交浅言深。要是待会儿哪儿说得过了，说得不合适，你也别往心里去。」"
+    y "「哪有……您要是能跟我说一说这些，我是求之不得的。」"
+    voice "audio/voice/037061.ogg"
+    j "「好吧。但首先需要说的是啊，这个问题，别人的答案始终是别人的，代替不了你自己，不管别人是什么情况，你都只能参考，最后还是得自己做出决断。」"
+    voice "audio/voice/037062.ogg"
+    j "「每个人的价值观都不一样，因人而异，看你追求什么了。」"
+    voice "audio/voice/037063.ogg"
+    j "「不过对我来说，我还是刚才那个意思，为什么不呢？」"
+    y "「……」"
+    voice "audio/voice/037064.ogg"
+    j "「你要说大学和大学之间的区别……嗯，怎么说呢？」"
+    voice "audio/voice/037065.ogg"
+    j "「有，也没有。」"
+    voice "audio/voice/037066.ogg"
+    j "「说有吧，区别是确确实实存在的。」"
+    voice "audio/voice/037067.ogg"
+    j "「硬件方面咱们就不提了啊，光说软件，不同大学的师资力量、学习氛围、同学层次，还有诸如一些前沿信息的传递速度、交换留学的机会，包括高校之间的合作项目等等，那这些都是大相径庭的。」"
+    voice "audio/voice/037068.ogg"
+    j "「这些东西啊，如果展开了说，一点都不夸张，我能跟你说上一整天。」"
+    voice "audio/voice/037069.ogg"
+    j "「但是呢，也不是所有的方面都是这样。」"
+    voice "audio/voice/037070.ogg"
+    j "「呃……你说啊，同学都是好学生，其实上课的时候他一样会有人逃课，会找朋友帮忙点名签到，临到考试前才临时抱佛脚也是经常的事。而老师呢，虽然的确有很多都是大牛，但是也不见得给你好好教啊！是吧？」"
+    voice "audio/voice/037071.ogg"
+    j "「所以这些问题说到最后，归根结底，还是要看你自己的态度，看你够不够努力，会不会争取机会。」"
+    voice "audio/voice/037072.ogg"
+    j "「无论你最后去了哪所大学，其实都一样。」"
+    voice "audio/voice/037073.ogg"
+    j "「不过我觉得，对于你刚才的问题来说，这些都不是重点。」"
+    voice "audio/voice/037074.ogg"
+    j "「重点是……嗯，怎么说好呢？」"
+    voice "audio/voice/037075.ogg"
+    j "「大学的区别，是在你读完大学之后，至少是在本科之后，才能慢慢地感觉出来的。」"
+    voice "audio/voice/037076.ogg"
+    j "「你现在这种迷茫真的是……再正常不过了。别说你，就算是我前两年，也没有现在这么深的感受。」"
+    voice "audio/voice/037077.ogg"
+    j "「不过确实，等你从大学里出来以后，开始走向社会的时候，你就会发现，不同学校毕业的学生，那种气质上的差别。」"
+    y "「『气质』吗……」"
+    voice "audio/voice/037078.ogg"
+    j "「嗯，气质。」"
+    voice "audio/voice/037079.ogg"
+    j "「就拿樱华来说吧，我们的毕业生，就普遍的比较『坚韧』和『自信』。」"
+    voice "audio/voice/037080.ogg"
+    j "「换句话说，就是自己能够激励自己，能够持续不断地保持前进的动力。」"
+    voice "audio/voice/037081.ogg"
+    j "「在做事情的时候，我们会下意识地觉得，『人无我有、人有我优』，别人做不到，我们未必就做不到；别人能做到，我们肯定可以做得更好。」"
+    voice "audio/voice/037082.ogg"
+    j "「因为这是一种多年养成的、自然而然的习惯，我们不会随便地怀疑自己，也不会轻易地放弃。」"
+    voice "audio/voice/037083.ogg"
+    j "「这种态度是很重要的，因为在很多的时候，能不能成功就差了这么一点态度。」"
+    voice "audio/voice/037084.ogg"
+    j "「同样的知识水平，打顺风仗的时候可能都差不多。但是当遇到挫折、遇到不顺利的时候，那点心态上的差距立刻就体现出来了。」"
+    voice "audio/voice/037085.ogg"
+    j "「这也是为什么名校的毕业生会更受职场欢迎。」"
+    voice "audio/voice/037086.ogg"
+    j "「因为毕竟，这个世界上恐怕没有多少事是可以轻轻松松、一帆风顺地做成的，你说对吧？」"
+    voice "audio/voice/037087.ogg"
+    j "「然后呢，具体到你现在这个情况。」"
+    voice "audio/voice/037088.ogg"
+    j "「我问你，你觉得我刚才说的这种『气质』，是怎么养成的？」"
+    y "「这个……是因为身边的氛围吗？」"
+    y "「因为同学都很优秀，所以也会鞭策自己……这样？」"
+    voice "audio/voice/037089.ogg"
+    j "「这算是一方面吧。」"
+    voice "audio/voice/037090.ogg"
+    j "「但是我的理解……这只是一种催化，是加成，而不是根本。」"
+    voice "audio/voice/037091.ogg"
+    j "「根本在于，来到这里的人，从一开始，就是带着这种气质的。」"
+    y "「一开……始？」"
+    voice "audio/voice/037092.ogg"
+    j "「对，一开始。」"
+    voice "audio/voice/037093.ogg"
+    j "「因为高考，就是这么一种选拔机制。」"
+    voice "audio/voice/037094.ogg"
+    j "「你看高考每年都有分数线，但这个分数线其实它不是一个绝对值，它是相对的。」"
+    voice "audio/voice/037095.ogg"
+    j "「这个学校报的人多了，分数线就拉高，人少了呢，就会变低。怎么变化要看名额数量，而不是定死了一个分数。」"
+    voice "audio/voice/037096.ogg"
+    j "「所以说，虽然学习是自己的事，但考试，本质上还是和别人在竞争。」"
+    voice "audio/voice/037097.ogg"
+    j "「而竞争，显然就是坚韧和自信的人更有优势。」"
+    voice "audio/voice/037098.ogg"
+    j "「所谓物以类聚、人以群分，其实不是樱华这样的学校更能培养这种气质，而是有这种气质的人，最后都考上了樱华。」"
+    y "「……」"
+    voice "audio/voice/037099.ogg"
+    j "「这也是我想跟你说的第一个重点。」"
+    voice "audio/voice/037100.ogg"
+    j "「我想说的是啊，不管你最终决定是复读还是去百薇，你都需要去尽快地培养这种气质。」"
+    voice "audio/voice/037101.ogg"
+    j "「你说之前是跟着其他人的步伐走下来的，这很好，榜样的力量是无穷的嘛！身边有这么一个人是很幸运的事，他们就是所谓的自发光体，照亮自己、指引别人。」"
+    voice "audio/voice/037102.ogg"
+    j "「但是现在，就剩你一个人了。你可能不知道目的地在哪儿、有多远、还有没有机会；你也不知道自己还有多少体力，够不够走得到那里，甚至是够不够从半道折回来。」"
+    voice "audio/voice/037103.ogg"
+    j "「你越走，就越累，心里也越没谱，然后就越想放弃。」"
+    voice "audio/voice/037104.ogg"
+    j "「这是人之常情，可能大多数人都是这样。」"
+    voice "audio/voice/037105.ogg"
+    j "「但是，我认为，你可以换一个角度来看待自己。」"
+    voice "audio/voice/037106.ogg"
+    j "「你……真的觉得自己就是那个『大多数人』里面的一员吗？」"
+    voice "audio/voice/037107.ogg"
+    j "「你可能自己没意识到这一点啊，尤其是你身边还有个特别厉害的人，可能所有人的注意力都被那个人给吸引了。」"
+    voice "audio/voice/037108.ogg"
+    j "「但是你想想，你敢往樱华报，甚至非一志愿都能达到百薇的分数线……」"
+    voice "audio/voice/037109.ogg"
+    j "「你还能算是普通的考生吗？」"
+    voice "audio/voice/037110.ogg"
+    j "「咱们都清楚老家是个什么情况……别说老家了，就算是全国的考生里面，你这个档次，也已经不是一般人了。」"
+    voice "audio/voice/037111.ogg"
+    j "「所以你为什么会觉得自己不够优秀呢？就像我刚才说的，考试，本质上是竞争，是和别人去比。」"
+    voice "audio/voice/037112.ogg"
+    j "「你已经很优秀了，为什么不能多一点点自信心呢？为什么不能相信自己可以继续坚持下去呢？」"
+    voice "audio/voice/037113.ogg"
+    j "「『自发光体』，别人做得，你为什么就做不得？」"
+    voice "audio/voice/037114.ogg"
+    j "「确实，接下来可能不会再有人继续去照亮你前行的道路了，但你可以自己给自己点上一盏灯啊！不是吗？」"
+    voice "audio/voice/037115.ogg"
+    j "「就像我刚才说的，我们这类人，优势就在于能拼、能熬，目标明确，想到就做、不懂就问、不对就改，而不是先去担心『我能不能做到』？『我投入了这么多会不会打水漂』？」"
+    voice "audio/voice/037116.ogg"
+    j "「但如果你也能做到这些呢？」"
+    voice "audio/voice/037117.ogg"
+    j "「那样的话，你现在的这些问题，还会是问题吗？」"
+    y "「……」"
+    y "「嗯……」"
+    voice "audio/voice/037118.ogg"
+    j "「行，那这碗鸡汤啊，我就算是给你灌完了。」"
+    y "「呵。」"
+    voice "audio/voice/037119.ogg"
+    j "「这些话，你可能一时半会消化不完。不过心态这个东西，本来也不是一朝一夕就能扭转得过来的。」"
+    voice "audio/voice/037120.ogg"
+    j "「但是，这种事，能趁早就一定要趁早，越早调整过来越好。」"
+    voice "audio/voice/037121.ogg"
+    j "「剩下的，你回头再细想吧，这个问题啊，咱们就先说到这里。」"
+    voice "audio/voice/037122.ogg"
+    j "「接下来，我再跟你说一些更现实一点的问题。」"
+    voice "audio/voice/037123.ogg"
+    j "「我为什么推荐你尽量往樱华考。」"
+    voice "audio/voice/037124.ogg"
+    j "「其实你要说大学的水平，百薇并不差，就算现在落魄了一点，那也得是和『top5』这类学校去比。」"
+    voice "audio/voice/037125.ogg"
+    j "「当然了，说是『top5』，其实全算下来可能有十多所吧。」"
+    voice "audio/voice/037126.ogg"
+    j "「但总而言之啊，人家也是国内一流的大学，有些专业依然是国内顶尖的，其实比排名靠前的那些大学都更好。」"
+    voice "audio/voice/037127.ogg"
+    j "「但是，我依然建议你，有机会的话，尽量来樱华。」"
+    voice "audio/voice/037128.ogg"
+    j "「为什么呢？因为这不单是大学的问题，它更是百薇和樱华两座城市之间的差距问题。」"
+    voice "audio/voice/037129.ogg"
+    j "「有人可能会觉得这种说法比较嫌贫爱富，不过这就是确实存在的现实啊——」"
+    voice "audio/voice/037130.ogg"
+    j "「在樱华，你所能见到的新鲜事物，远比你在百薇要多，要早。」"
+    voice "audio/voice/037131.ogg"
+    j "「这一点很重要，非常重要。」"
+    voice "audio/voice/037132.ogg"
+    j "「我可以说，眼界的重要性，远远超出你之前的想象。」"
+    y "「『眼界』……」"
+    voice "audio/voice/037133.ogg"
+    j "「你觉得人类文明之所以可以不断地进步，依靠的是什么？」"
+    y "「啊？」"
+    voice "audio/voice/037134.ogg"
+    j "「是『归纳』和『演绎』。」"
+    voice "audio/voice/037135.ogg"
+    j "「人类通过在实践中的积累和总结，抽象出某一类事物的共同特征，再以此为基础，推导出新情况下的结论。」"
+    voice "audio/voice/037136.ogg"
+    j "「可以说，整个人类就是在不断地重复着『归纳』和『演绎』，才成就了今天的文明。」"
+    voice "audio/voice/037137.ogg"
+    j "「而『归纳』，就是这里面最重要的第一步。」"
+    voice "audio/voice/037138.ogg"
+    j "「你看啊，咱们今天做的这个智能监控的采样，就是在收集你的各种姿态，然后通过深度学习来进行归纳，进而追求在未来的应用场景里，可以正确判断任何一个陌生人的行为类型。」"
+    voice "audio/voice/037139.ogg"
+    j "「当然了，机器学习，无论是什么算法，都是依靠海量的数据样本来提高正确率，而人类的大脑就不用那么多的样本，效率要高很多。」"
+    voice "audio/voice/037140.ogg"
+    j "「但就算效率再高，也没有高到不需要样本的地步。」"
+    voice "audio/voice/037141.ogg"
+    j "「而眼界，或者说是见识，就是人所需要的『样本』。」"
+    voice "audio/voice/037142.ogg"
+    j "「它的开阔与否，决定了你思考问题时的范围。」"
+    voice "audio/voice/037143.ogg"
+    j "「嗯……我还是打个比方吧。」"
+    voice "audio/voice/037144.ogg"
+    j "「你比如说啊，咱们以前会觉得老家的那种生活是天经地义的，就是那种安安稳稳的、慢悠悠的，也感觉不出什么不好，过得很满足。」"
+    voice "audio/voice/037145.ogg"
+    j "「但当你来到樱华，就会发现这里和老家完全不是一个样子。」"
+    voice "audio/voice/037146.ogg"
+    j "「你会看到很多人做更大的事情，挣更多的钱，过更多彩的生活。」"
+    voice "audio/voice/037147.ogg"
+    j "「要是再去一趟首都呢？或者说，有机会出个国，你肯定还会有更多不一样的体验。」"
+    voice "audio/voice/037148.ogg"
+    j "「而有了这些经历以后，你就会明白：这个世界是多元的，不是只有一种模式。」"
+    voice "audio/voice/037149.ogg"
+    j "「到那个时候，你再去看其他的城市、其他的国家，视角就不会再受到局限了，可以看得更广，理解得更深。」"
+    voice "audio/voice/037150.ogg"
+    j "「当你打破了自己的固有思维，思路就会更加地开阔，会发现更多的可能性，更具有创造性。」"
+    voice "audio/voice/037151.ogg"
+    j "「所谓一生二，二生三，三生万物。」"
+    voice "audio/voice/037152.ogg"
+    j "「对吧？这种创造力的高低，将会决定你这个人的上限。」"
+    voice "audio/voice/037153.ogg"
+    j "「而你越早走出这一步，提升的空间就越大。」"
+    voice "audio/voice/037154.ogg"
+    j "「所以，虽然说你四年以后，等本科毕业了再来读研也未尝不可，但是如果条件允许的话，我还是觉得你早点来会更好一些。」"
+    j "「……」"
+    voice "audio/voice/037155.ogg"
+    j "「当然，还有一点。」"
+    voice "audio/voice/037156.ogg"
+    j "「那就是谁都不知道……你最终能不能达到这个上限，什么时候才能达到这个上限。」"
+    voice "audio/voice/037157.ogg"
+    j "「有的人一出道就走上巅峰，而大器晚成的人也多得是。」"
+    voice "audio/voice/037158.ogg"
+    j "「但是，无论是哪一种，他们有一个共同的特点，那就是都提前做好了准备，才能在机遇来的时候，去伸手抓住它。」"
+    voice "audio/voice/037159.ogg"
+    j "「这里面，『准备』和『机遇』，缺一不可。」"
+    voice "audio/voice/037160.ogg"
+    j "「所以说为什么大家都喜欢往大城市跑呢？」"
+    voice "audio/voice/037161.ogg"
+    j "「因为大城市，比方说，樱华，它恰好就是这么一个地方——既能让你做好充分的准备，又能给你提供足够的机遇。」"
+    voice "audio/voice/037162.ogg"
+    j "「而相比之下，百薇毕竟地处西北，这方面无论如何是不如樱华的。」"
+    voice "audio/voice/037163.ogg"
+    j "「我这么说，你能明白吗？」"
+    y "「……嗯。」"
+    voice "audio/voice/037164.ogg"
+    j "「你还有什么疑问吗？」"
+    y "「……」"
+    y "「有。」"
+    voice "audio/voice/037165.ogg"
+    j "「嗯？你说。」"
+    y "「师兄你……当初是为了什么来樱华的呢？」"
+    voice "audio/voice/037166.ogg"
+    j "「嗯……我啊。」"
+    voice "audio/voice/037167.ogg"
+    j "「怎么说呢，我这个人啊，从小就喜欢琢磨东西。小的时候，大人问你长大了想干什么，我永远说是科学家。」"
+    voice "audio/voice/037168.ogg"
+    j "「这一般的孩子，岁数大一点了可能就把小的时候说的这些都给忘光了，但我就比较奇葩，从小说到大，一直都没断过这个念头。」"
+    voice "audio/voice/037169.ogg"
+    j "「好在我的成绩一直也还不错，别的不敢说，起码在咱们那儿，算是矬子里拔将军了。」"
+    voice "audio/voice/037170.ogg"
+    j "「就这么着，我考到了这儿。」"
+    voice "audio/voice/037171.ogg"
+    j "「你要说那么多大学，为什么我偏偏要选樱华？」"
+    voice "audio/voice/037172.ogg"
+    j "「哎，你别看我现在跟你说了这么多啊，好像我有多深思熟虑似的。」"
+    voice "audio/voice/037173.ogg"
+    j "「其实我当初根本没想那么多，哪有什么为什么啊，我就是报了一个我自己觉得能考上的最好的学校。」"
+    voice "audio/voice/037174.ogg"
+    j "「呵呵。不过也很庆幸，自己当时的选择没有错。」"
+    voice "audio/voice/037175.ogg"
+    j "「樱华是一个足够广阔的舞台，它能够承载各种各样的人和各种各样的梦想。」"
+    voice "audio/voice/037176.ogg"
+    j "「虽然，自己现在还是和小时候想象的那种『科学家』不太一样的吧……」"
+    voice "audio/voice/037177.ogg"
+    j "「不过我还是可以说，自己走到了这条路上，正在实现自己儿时的梦想。」"
+    y "「……嗯。」"
+    voice "audio/voice/037178.ogg"
+    j "「当然啦，这条路也不是那么好走的。」"
+    voice "audio/voice/037179.ogg"
+    j "「樱华的机会多，但是竞争也就更激烈，你想啊，千军万马挤独木桥，最后能不能成功，能不能在这里站稳脚跟，都不好说。」"
+    voice "audio/voice/037180.ogg"
+    j "「但是我提前来了，就多一分准备，多一分优势，也多一分希望。」"
+    y "「这样啊……」"
+    y "「师兄你也是打算在未来一直留在樱华的吗？」"
+    voice "audio/voice/037181.ogg"
+    j "「嗯……当然啊。」"
+    voice "audio/voice/037182.ogg"
+    j "「有条件的话，当然要留下来。」"
+    voice "audio/voice/037183.ogg"
+    j "「就像我刚才说的，大城市的优势，始终是小地方，尤其是偏远地区所无法比拟的。」"
+    voice "audio/voice/037184.ogg"
+    j "「既然已经走到了这里，那当然是要尽可能地跟上队伍，不能又被甩回去。」"
+    voice "audio/voice/037185.ogg"
+    j "「当然这也很难啊……一个外来者想在这样的大城市扎下根来，那可是需要很多资源的。」"
+    voice "audio/voice/037186.ogg"
+    j "「包括时间，包括金钱。」"
+    voice "audio/voice/037187.ogg"
+    j "「唉，别的不说了啊，你看我要想留在樱华，房子就先是个大问题。」"
+    y "「呃……」"
+    voice "audio/voice/037188.ogg"
+    j "「当然这倒不单是我自己的问题啊，就算是樱华本地人，你让他们再多买一套房，那也是很困难的。」"
+    y "「哪怕是您这样的博士？」"
+    voice "audio/voice/037189.ogg"
+    j "「对啊。」"
+    voice "audio/voice/037190.ogg"
+    j "「博士也只是个学历，又不能直接变现。」"
+    j "「……」"
+    voice "audio/voice/037191.ogg"
+    j "「现实啊，是很残酷的。」"
+    voice "audio/voice/037192.ogg"
+    j "「上一个好的大学，并不是说你就成功了。」"
+    voice "audio/voice/037193.ogg"
+    j "「就像我刚才说过的那样，你最终能不能达到自己的上限？」"
+    voice "audio/voice/037194.ogg"
+    j "「除了年少成名、大器晚成这两种情况之外，一辈子籍籍无名，始终怀才不遇的人，那也是多得数不清的。」"
+    voice "audio/voice/037195.ogg"
+    j "「上大学本身并不是阶层的跨越，它只是支撑你去追求成功的一个基础。」"
+    voice "audio/voice/037196.ogg"
+    j "「很多时候，其实就只是让你能够找到一份比较体面的工作而已。甚至这几年大学扩招之后，大学生的含金量变低，有些专业连工作都不好找了。」"
+    voice "audio/voice/037197.ogg"
+    j "「所以到了最后，绕了一圈还是回到了刚才的那个问题。」"
+    voice "audio/voice/037198.ogg"
+    j "「选拔机制，人和人的竞争。」"
+    voice "audio/voice/037199.ogg"
+    j "「同样的基本条件，你比别人强在哪里？」"
+    voice "audio/voice/037200.ogg"
+    j "「你又怎么保障这个『强』能落在实处？」"
+    voice "audio/voice/037201.ogg"
+    j "「你早晚要面对这些问题的。所以啊，早做准备。」"
+    y "「……嗯。」"
+    y "「那，师兄，我能问您最后一个问题吗？」"
+    voice "audio/voice/037202.ogg"
+    j "「嗯？」"
+    y "「这里的竞争这么激烈，您……就一点没考虑过放弃吗？」"
+    voice "audio/voice/037203.ogg"
+    j "「这个嘛……」"
+    voice "audio/voice/037204.ogg"
+    j "「怎么说呢，心情低落的时候肯定有，胡思乱想的时候也不少，但是等那股劲过去，等我回到正轨来以后……」"
+    voice "audio/voice/037205.ogg"
+    j "「没有。」"
+    y "「为什么？」"
+    j "「……」"
+    voice "audio/voice/037206.ogg"
+    j "「逆水行舟嘛，当然很不容易啊。」"
+    voice "audio/voice/037207.ogg"
+    j "「来到樱华，和其他先天条件比我们好很多的人竞争，真的是很难。」"
+    voice "audio/voice/037208.ogg"
+    j "「这个世界上永远不缺少天才和努力的人，甚至努力的天才也很多。」"
+    voice "audio/voice/037209.ogg"
+    j "「越是这样的大城市，这样的人就越多，马太效应嘛。」"
+    voice "audio/voice/037210.ogg"
+    j "「不过虽然很难，但大学……已经是我们这些从小地方出来的人，所能拥有的最好的、也是最公平的起点了。」"
+    voice "audio/voice/037211.ogg"
+    j "「前面的十八年，我们的起点就是自己的父母，这是先天条件。」"
+    voice "audio/voice/037212.ogg"
+    j "「但是高考，咱们国家的高考，是你人生中第一次、可能也是最后一次可以让你无视阶层差异的机会。」"
+    voice "audio/voice/037213.ogg"
+    j "「在这场考试里，只要你足够好，那无论你的竞争对手有什么背景，他最多就是给自己另辟蹊径，新开一条路出来自己走，但他不会强行抢你的路。」"
+    voice "audio/voice/037214.ogg"
+    j "「这样的机会，为什么不好好把握住呢？」"
+    j "「……」"
+    voice "audio/voice/037215.ogg"
+    j "「而且，还有一点。」"
+    voice "audio/voice/037216.ogg"
+    j "「我们的起点是父母，而我们呢，早晚也会为人父母。」"
+    voice "audio/voice/037217.ogg"
+    j "「虽然说，所谓条条大路通罗马，但有的人需要拼死拼活，而有的人一出生就在『罗马』。」"
+    voice "audio/voice/037218.ogg"
+    j "「现在，我们拼死拼活，到了『罗马』。」"
+    voice "audio/voice/037219.ogg"
+    j "「那我为什么不努力留下，好让我的下一代……」"
+    voice "audio/voice/037220.ogg"
+    j "「也一出生，就在『罗马』呢？」"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b14 #大学校区
+    with fade
+    "李师兄给我讲了很多。"
+    "而在谈完这些话之后，他倒反而有些不知所措起来，似乎觉得刚才强拖着我来帮忙，不甚合适。"
+    "不过，在我的强烈要求之下，我们还是继续完成了后续的一系列实验。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b14 #大学校区
+    with fade
+    "中午，完成了实验的我们，在樱大的食堂吃了一顿风味十足的便饭。"
+    "有别于西北地区的牛肉面，这里的葱油拌面给我留下了深刻的印象。"
+    with fade
+    "随后，李师兄带着我在校区里到处参观。有了他的指引，的确是比自己一个人没头苍蝇一般乱转要有效率得多了。"
+    "一路上，我们又聊了很多。"
+    "聊大学，聊樱华，聊家乡……"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b13a #大学校门|傍晚
+    with fade
+    "傍晚，李师兄送我出了学校。"
+    "告别之后，我向车站的方向前行。"
+    "偶然回头看了一眼，发现留在原地的李师兄，正张开双臂，迎接从另一个方向朝他走去的一位年轻女性。"
+    "两人开心地相拥，随后牵着手，朝着与我不同的方向走远了。"
+    "那……是他的恋人吧？"
+    "他们之间，又会有怎样的故事呢……"
+    "我笑了笑，轻轻摇摇头，转身离去。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b12 #樱华市
+    with fade
+    "第三天，也是我在樱华市停留的最后一天。"
+    "这一天，我去了海边。"
+    scene bg b17 #海边
+    with fade
+    "这是我人生中第一次面对真实的大海。"
+    "从小在黄河边上生活的我，自诩对水并不陌生，也曾以滚滚东去的黄河自傲。"
+    "惊涛澎湃，万丈狂澜，我曾以为黄河已经足以担得起一切对「水」的形容。"
+    "然而，当我站在大海的脚边时，我才发现，那真的……不一样。"
+    "尽管，眼前的海是那么的平静，但我依然明白，她的体量、她所蕴藏的力量，都远远不是任何江河所能企及的。"
+    scene bg black #黑屏
+    with fade
+    "【居中字幕】"
+    "——君不见，黄河之水天上来，奔流到海不复回！"
+    scene bg b17 #海边
+    with fade
+    "大海，无边无垠、烟波浩渺。"
+    "而在海天之上，有成群的海鸟，正在自由地翱翔。"
+    bird2 "「啾——」"
+    scene bg b17 #海边
+    with fade
+    "偶尔，会有几只降落到我的附近，也得以让我更加清楚地看到它们的细节。"
+    y "「……」"
+    y "「果然……是不一样的啊。」"
+    "海边的鸟，与我所见惯的那些水鸟和林鸟都截然不同。"
+    "为了适应海边的生活，它们的进化方向与其他鸟类有着相当巨大的区别。"
+    "而这样的进化，也让它们的迁徙，成为普通候鸟难以想象的长途跋涉。"
+    "听说，有许多的海鸟，在迁徙的时候，需要跨过大洋、跨过赤道，从北半球飞到南半球去越冬。"
+    "其中的佼佼者，甚至会从北极飞到南极，一生往返其间，永无止境地追逐着夏天。"
+    with fade
+    y "「……」"
+    "算起来，再过一个月左右，候鸟就该开始南迁了。"
+    "冬、夏候鸟可能会在同一个地点交汇的时刻，一年中仅有两次。不知道那个时候，这里会是一个怎样的场面。"
+    "但……我等不到候鸟归来的季节了。"
+    "明天，我就会离开这里，返回家乡。"
+    "而在那时候，会在这里看到这些的，是梁芷柔。"
+    "一个月以后的我们，或许还会在同一个时间，朝着同一个方向，目送那些迁徙的候鸟离去。"
+    "只是，那时的我们，眼中的风景必然已经不同了。"
+    "……"
+    "…………"
+    "*【梁芷柔河边CG3|两人并排坐|CG08c】"
+
+    voice "audio/voice/00000a.ogg"
+    show text open01 at truecenter
+    with dissolve
+    pause
+    voice "audio/voice/00000b.ogg"
+    show text open02 at truecenter
+    with dissolve
+    pause
+    voice "audio/voice/00000c.ogg"
+    show text open03 at truecenter
+    with dissolve
+    pause
+    voice "audio/voice/00000d.ogg"
+    show text open04 at truecenter
+    with dissolve
+    pause
+    voice "audio/voice/00000e.ogg"
+    show text open05 at truecenter
+    with dissolve
+    pause
+
+    scene bg black #黑屏
+    with fade
+    y "「……」"
+    "我闭上眼睛，扪心自问。"
+    "如果我这一次退缩了。"
+    "那么，在未来，我真的还能鼓起勇气再次前行吗？"
+    "等到大学毕业以后？"
+    "那个时候的我，就一定能够来到这里吗？"
+    "我还会不会想要来这里？"
+    "会不会找一个新的借口，再一次，轻易地说服自己留下……以及放弃？"
+    scene bg b17 #海边
+    with fade
+    bird2 "「啾——」"
+    "睁开眼睛，看到身边落下了一只海鸟。"
+    y "「咦……」"
+    "是个没见过的品种。"
+    "不是附近常见的那种海鸟，数量也只有这一只。"
+    y "「你是怎么搞的呀？你的同伴呢？」"
+    bird2 "「啾——」"
+    "小巧的海鸟鸣叫着回应我的问询。"
+    "大概是因为我坐着没有动，小鸟似乎并没有太过警觉。"
+    "一人一鸟就这样对视了片刻。"
+    bird2 "「啾——」"
+    "初步判断眼前的灵长类动物没什么威胁，鸟儿开始蹦蹦跳跳地在附近觅起食来。"
+    y "「……」"
+    "我继续盯着这只与众不同的海鸟。"
+    "不是这里的夏候鸟，也不怎么怕人……是留鸟吗？"
+    y "「不对……」"
+    "数量不对，留鸟通常成群结队生活。"
+    "那样的话……"
+    y "「是迷鸟，或者……」"
+    y "「……是春天的时候，没来得及往北飞的冬候鸟？」"
+    scene bg b00 #天空
+    with fade
+    "偶尔会有这种情况发生。"
+    "因为天气恶劣等因素，在迁徙过程中偏离了航线，飞到了陌生地区的候鸟。"
+    "或者因为各种原因没能进行迁徙，迫不得已停在原地成为留鸟的。"
+    scene bg b17 #海边
+    with fade
+    "曾经，这样的鸟儿往往会因为捕食环境的变化而无法继续生存。"
+    "不过，如今这个时代，人类城市中的迷鸟想要获得食物并不困难。"
+    "只要气候不过于苛刻，它们还是有相当的几率可以活下来的。"
+    y "「小家伙，你以后打算怎么办啊？」"
+    y "「如果你熬过了这个冬天，到了明年，你是会重新走上迁徙的旅途呢，还是就这样继续留在这个衣食无忧的地方呢？」"
+    "……"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    bird2 "「啾——」"
+    scene bg b00a #天空|候鸟"
+    with fade
+    "海鸟没有理会我的喃喃自语，它像是突然厌倦了在我这样的人的身边，一声长鸣之后，舞动双翼冲向了天空。"
+    "孑然一身，却无所畏惧，一往无前地飞向远方。"
+    scene bg b17 #海边
+    with fade
+    "我目送着海鸟的离去。"
+    "鸟儿不会给我答案，我只能，也必须自己做出回答。"
+    "但其实，当我开始不断重复着向自己提出这个问题的时候，内心里那个答案就早已是注定的了。"
+    "那个答案，我曾为之迷茫，也曾感到忐忑，乃至未敢直面。"
+    "而现在，我已经不可以、也没必要再继续犹豫和拖延下去了。"
+    "心中的期望、未来的道路、利弊的权衡，一切都已经清清楚楚地摆在了眼前。"
+    "此时此刻，终于到了我必须做出决定的时候了。"
+    "*【梁芷柔探病CG-1|看书|CG03a】【回忆模式】"
+    "*【梁芷柔快餐店学习CG-2|讲题|CG04b1】【回忆模式】"
+    "*【梁芷柔看首饰CG-1|观看|星星眼|CG05a1】【回忆模式】"
+    "*【梁芷柔河边CG3|两人并排坐|对视|浅笑|含泪|CG08c4】【回忆模式】"
+    "*【梁芷柔看烟花CG-5|背影|CG10e】【回忆模式】"
+    "……"
+    "…………"
+    y "「……呵呵。」"
+    "直面本心的这一刻，反而没有想象中的那么艰难。"
+    "我甚至忍不住笑了起来。"
+    "嘲笑我自己……庸人自扰。"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b12 #樱华市
+    with fade
+    "返乡的火车缓缓地驶离了樱华。"
+    "随着时间的推移，窗外的景色不断变换。"
+    "从秀美的江南水乡，变为坦荡的中原大地，再到厚重的黄土高坡。"
+    scene bg b02 #城区|夏
+    with fade
+    "在快要回到家的时候，我收到了梁芷柔发来的短信。"
+    "「我想和你好好地谈一谈。」"
+    "或许是为了避免尴尬，她并没有直接拨打过来。"
+    "不过，即便如此，我也感到很开心。"
+    "——至少，我还有机会弥补和修正我的过错。"
+    "我飞快地发出了回复，很简单的一个字——"
+    scene bg black #黑屏
+    with fade
+    "「好」"
+    "……"
+    "…………"
+
+#8月22日。"
+#梁芷柔前往樱华。"
+
+    scene bg b18 #火车站
+    with fade
+    l "「……」"
+    voice "audio/voice/007118.ogg"
+    l "「……哎！」"
+    voice "audio/voice/007119.ogg"
+    l "「这边这边！」"
+    y "「哟！」"
+    voice "audio/voice/007120.ogg"
+    l "「哟什么哟啊，说了不让你来送了，还非来。」"
+    y "「哎，这么重要的日子，我还是来吧。」"
+    voice "audio/voice/007121.ogg"
+    l "「多麻烦啊，你还得专门跑到省城来……而且，亏你还能进得了站台？我爸妈都没进来。」"
+    y "「这个嘛，我买了张最近一站的车票。」"
+    voice "audio/voice/007122.ogg"
+    l "「唉……你啊，让我说你什么好。」"
+    voice "audio/voice/007123.ogg"
+    l "「聪明劲全都用在奇怪的地方了。」"
+    "面对大言不惭的我，梁芷柔一幅又好气又好笑的样子。"
+    scene bg b00a #天空|候鸟"
+    with fade
+    "一晃时间到了八月下旬，今天是梁芷柔出发前往樱华市的日子。"
+    "距离开学其实还有一个礼拜左右的时间，不过因为要配合樱华大学做宣传，梁芷柔的行程要略微提前几天。"
+    scene bg b18 #火车站
+    with fade
+    y "「怎么样，要不要我帮忙放行李？」"
+    voice "audio/voice/007124.ogg"
+    l "「算了吧！总共也没多少东西，一个箱子就够了，我自己没问题的。」"
+    y "「这么少啊，女生出门一般不都喜欢大包小包一大堆的吗？」"
+    voice "audio/voice/007125.ogg"
+    l "「毕竟……不是只去一天两天啊。不可能什么都从这边准备。」"
+    y "「……也是。」"
+    y "「那，你……自己保重。」"
+    voice "audio/voice/007126.ogg"
+    l "「嗯。」"
+    y "「车还有多久开？」"
+    voice "audio/voice/007127.ogg"
+    l "「马上了，就这几分钟。」"
+    y "「嗯……那你就上车吧。」"
+    voice "audio/voice/007128.ogg"
+    l "「哎？嘻嘻……我还以为你既然买了票，会索性送我一站地呢，结果不是啊？」"
+    y "「我倒是想，可惜这一站就要开一个多小时，返程的车还要等到下午，那样的话我今天就回不去县里了。」"
+    voice "audio/voice/007129.ogg"
+    l "「所以说啦，你这么大费周章地跑过来就是为了见这么一面啊，何苦呢？」"
+    y "「是啊……」"
+    y "「……」"
+    l "「……」"
+    voice "audio/voice/007130.ogg"
+    l "「干……干嘛啦，这么盯着看。」"
+    y "「就是想要来看看你啊……」"
+    y "「毕竟，接下来这一年，恐怕都再见不到你了。」"
+    voice "audio/voice/007131.ogg"
+    l "「啊……」"
+    voice "audio/voice/007132.ogg"
+    l "「……嗯。」"
+    "梁芷柔有些黯然地点点头。"
+    "……"
+    "…………"
+    scene bg b05 #湿地公园|夏
+    show memories #回忆滤镜"
+    with fade
+    "回到县城以后，我和梁芷柔长谈了一次。"
+    "看得出，梁芷柔是抱着几乎绝望的心态过来的。"
+    "毕竟，在这之前的这么长时间里，我一直都处于杳无音信的状态，任谁都会觉得我是已经自暴自弃了。"
+    "不过这一次，我开门见山的一句话，就堵住了梁芷柔之后的所有话语。"
+    y "「我准备复读。」"
+    l "「——！」"
+    y "「我不是在逞强，也不是一时的冲动。」"
+    y "「这两天，我去了一趟樱华。」"
+    y "「也去了樱华大学。」"
+    y "「我见到了一些人，也亲身体会过了一些事情。」"
+    y "「我认认真真地考虑过了。」"
+    y "「我会再次以樱华为目标，而且不只是去到樱华这个地方，我要追求更高的目标。」"
+    y "「如果，我是说如果，顺利的话……」"
+    y "「一年以后……」"
+    y "「你愿意再给我一次机会吗？」"
+    y "「给这样的我一个机会……与你一起，追逐同一个梦想？」"
+    scene bg b18 #火车站
+    with fade
+    y "「呵呵……」"
+    voice "audio/voice/007133.ogg"
+    l "「喂喂，想什么哪？笑得贼兮兮的。」"
+    y "「呵……没什么。来，你也笑一笑嘛。」"
+    voice "audio/voice/007134.ogg"
+    l "「嗯？为什么啊？」"
+    y "「你还是笑起来最漂亮了，笑一个好不好？」"
+    y "「我想记住你最漂亮的样子。」"
+    voice "audio/voice/007135.ogg"
+    l "「啊……」"
+    l "「……」"
+    voice "audio/voice/007136.ogg"
+    l "「哼！不要！」"
+    y "「哎？为什么啊……」"
+    voice "audio/voice/007137.ogg"
+    l "「你说让我笑我就笑啊？你现在可还不是我的男朋友呢，我干嘛要听你的？」"
+    y "「我还不是啊？」"
+    voice "audio/voice/007138.ogg"
+    l "「当然不是啦！我说的可是『给你一个机会』！」"
+    scene bg b05 #湿地公园|夏
+    show memories #回忆滤镜"
+    with fade
+    voice "audio/voice/007139.ogg"
+    l "「男生啊……有的时候真是，喜欢瞎钻牛角尖。」"
+    voice "audio/voice/007140.ogg"
+    l "「这还需要问吗？」"
+    voice "audio/voice/007141.ogg"
+    l "「在你真正做出决定的那一刻，我的答案也就已经确定了呀。」"
+    voice "audio/voice/007142.ogg"
+    l "「……你说，我要是高考发挥失常了，你觉得我会怎么做？你会因为我落榜而因此看不上我了吗？」"
+    y "「这……」"
+    voice "audio/voice/007143.ogg"
+    l "「就是这样……就是这么简单的道理。」"
+    voice "audio/voice/007144.ogg"
+    l "「嗳，雨潇。」"
+    voice "audio/voice/007145.ogg"
+    l "「你抬头。」"
+    y "「嗯？」"
+    scene bg b00a #天空|候鸟"
+    show memories #回忆滤镜"
+    with fade
+    voice "audio/voice/007146.ogg"
+    l "「看，有候鸟。」"
+    y "「……嗯。」"
+    scene bg b05 #湿地公园|夏
+    show memories #回忆滤镜"
+    with fade
+    voice "audio/voice/007147.ogg"
+    l "「候鸟……夏候鸟和冬候鸟……」"
+    voice "audio/voice/007148.ogg"
+    l "「它们生活在同一片天空下，只是时间不同，难以相聚。」"
+    l "「……」"
+    voice "audio/voice/007149.ogg"
+    l "「我呢，曾经以为自己可能只是一只夏候鸟。」"
+    voice "audio/voice/007150.ogg"
+    l "「而你，也曾经……甚至现在还在觉得自己可能只是一只夏候鸟。」"
+    voice "audio/voice/007151.ogg"
+    l "「虽然我们的确是从夏候鸟的起点去出发，但是……」"
+    voice "audio/voice/007152.ogg"
+    l "「只有自己，才能决定自己究竟是什么。」"
+    voice "audio/voice/007153.ogg"
+    l "「你知道吗？除了夏候鸟和冬候鸟以外，这世界上还有一类候鸟。」"
+    voice "audio/voice/007154.ogg"
+    l "「它们可以和冬候鸟在一起繁殖，再去和夏候鸟一起过冬。」"
+    voice "audio/voice/007155.ogg"
+    l "「它们是……过境鸟。」"
+    l "「……」"
+    voice "audio/voice/007156.ogg"
+    l "「我已经决定好，不只做一只夏候鸟，而是让自己成为过境鸟。」"
+    voice "audio/voice/007157.ogg"
+    l "「而你呢？」"
+    voice "audio/voice/007158.ogg"
+    l "「你相信自己是和我一样的过境鸟吗？」"
+    y "「我……」"
+    voice "audio/voice/007159.ogg"
+    l "「我相信喔！」"
+    voice "audio/voice/007160.ogg"
+    l "「我，相信你。」"
+    scene bg black #黑屏
+    with fade
+    "……"
+    "…………"
+    scene bg b18 #火车站
+    with fade
+    y "「哎呀，求求你了，听我的，笑一笑，好不好？」"
+    voice "audio/voice/007161.ogg"
+    l "「不好！」"
+    y "「那你说，我怎么做才能让你笑一个？」"
+    voice "audio/voice/007162.ogg"
+    l "「怎么都不能。如果现在就给你甜头的话，会让你怠惰的。」"
+    voice "audio/voice/007163.ogg"
+    l "「所以要放到一年以后。等到明年的这个时候，我们在樱华再讨论这个话题吧！」"
+    voice "audio/voice/007164.ogg"
+    l "「就像我们约好的那样，好不好？」"
+    y "「啊……」"
+    y "「……嗯。」"
+    y "「是啊，约好的。」"
+    "对着梁芷柔饱含期待的目光，我一边点头回应，一边却又感到稍许黯淡。"
+    y "「一年，以及……」"
+    y "「……就只等我『一』年。」"
+    l "「——」"
+    "是的。"
+    "我在向她提出请求的同时，也为自己的这个请求加上了一个限制。"
+    scene bg b05 #湿地公园|夏
+    show memories #回忆滤镜"
+    with fade
+    y "「请你等我一年，但……」"
+    y "「如果……我这一次还是失败了……」"
+    y "「那就，请你忘掉我吧。」"
+    "……"
+    "…………"
+    scene bg b18 #火车站
+    with fade
+    "这是我必须要做的一个决断。"
+    "既是为了她，也是为了我自己。"
+    "一方面，我不可能去让她年复一年地等我。"
+    "这不光是我脸皮够不够厚的问题。毕竟，从实际角度来说，这本来也不可能做得到。"
+    "而另一方面，则是我给自己的一个鞭策——"
+    "一年之后，不成功、便成仁。"
+    l "「……」"
+    voice "audio/voice/007165.ogg"
+    l "「你怎么又说这种话！？」"
+    y "「因为……」"
+    voice "audio/voice/007166.ogg"
+    l "「我不管，反正你不许再说这个了！」"
+    y "「呃……」"
+    "不过，这句话貌似是把梁芷柔刺激得不轻。"
+    "在河边的时候，就差点情绪失控，当时还用力捶了我一顿。"
+    "虽然已经过去几天了，看她这意思，是又要爆炸啊……"
+    y "「可是……」"
+    voice "audio/voice/007167.ogg"
+    l "「没有可是！你一定能做到，我相信你！所以！」"
+    y "「是，我知道，可是凡事都有意外，就好像我这次高考一样……」"
+    voice "audio/voice/007168.ogg"
+    l "「你还说！是不是又想让我打你一顿啊？」"
+    y "「那个，不是，我……」"
+    "原本还想要再解释两句，结果看到梁芷柔的巴掌都抬起来了。"
+    "——这是真的要打啊？"
+    scene bg black #黑屏
+    with fade
+    "下意识地闭上了眼睛。"
+    "梁芷柔的手掌印在了我的脸颊上。然而，却不是预想之中的痛感。"
+    "而是，温柔地……轻轻抚住。"
+    "紧接着，她的另一只手也到了，两只绵软的小手扶住了我的双颊。"
+    "在我诧异地睁开眼睛之前，嘴唇……已经传来了温软的触感。"
+    "【梦想天空主题曲】"
+    "*【梁芷柔火车站CG-1|接吻|头部拉进|CG11a1】"
+    l "「……」"
+    y "「……」"
+    "大脑一片空白。"
+    "*【梁芷柔火车站CG-1|接吻|CG11a】"
+    "一时间，根本没法理解眼前发生的事情。"
+    voice "audio/voice/007169.ogg"
+    l "「……嘤。」"
+    "*【梁芷柔火车站CG-2|分开|CG11b】"
+    y "「……」"
+    l "「……」"
+    y "「……你，你这是……」"
+    "*【梁芷柔火车站CG-3|后退|CG11c】"
+    voice "audio/voice/007170.ogg"
+    l "「这样就可以了。」"
+    y "「什……」"
+    voice "audio/voice/007171.ogg"
+    l "「我给你下了一个诅咒。」"
+    voice "audio/voice/007172.ogg"
+    l "「就像你说的那样，一年以后，如果你没有来樱华找我的话，我会想办法忘掉你。」"
+    voice "audio/voice/007173.ogg"
+    l "「我会忘掉有关你的一切，努力学习、努力工作、努力生活，努力过好属于我的每一天。」"
+    voice "audio/voice/007174.ogg"
+    l "「我说到做到。」"
+    y "「……」"
+    voice "audio/voice/007175.ogg"
+    l "「但是，留在这里的你，会被这个诅咒缠住，永远都没办法忘掉我。」"
+    voice "audio/voice/007176.ogg"
+    l "「哪怕是到了很多年以后，也会让你偶尔回想起来，想着『如果当年自己可以更努力一点……』什么的。」"
+    voice "audio/voice/007177.ogg"
+    l "「……让你后悔一辈子。」"
+    voice "audio/voice/007178.ogg"
+    l "「所以。」"
+    voice "audio/voice/007179.ogg"
+    l "「不想变成这个样子的话，你就不可以失败。」"
+    voice "audio/voice/007180.ogg"
+    l "「你一定能追上我，你一定要追上我……一定会追上我的。」"
+    voice "audio/voice/147003.ogg"
+    m "「本次列车即将离开百薇东站，请您再次检查自己的车票是否与本次列车相符，带小孩的旅客，请照看好孩子，注意安全。列车就要开车了。」"
+    y "「……」"
+    l "「……」"
+    voice "audio/voice/007181.ogg"
+    l "「我……在那里……」"
+    voice "audio/voice/007182.ogg"
+    "「等着你。」"
+    "【ED】"
+
+#尾声
+
+    scene cg12a #叶雨潇打电话CG-1|CG12a"
+    with fade
+    "漫步河滨，放眼望去，但见河水滔滔，奔流而下，裹挟着泥沙，仿佛要将天地间的一切都染作昏黄。"
+    "然而，在这其中，却有一片湿地居于岸边，为这无尽的昏黄，增添了一抹鲜艳的绿色。"
+    "数不清的草甸、芦苇，以及槐树、柳树和白杨。"
+    "在这个夏末秋初的时节，它们用尽全力展现着自己的活力。"
+    "随手捡起一片落叶，仰望天空。"
+
+    scene bg b00 #天空
+    with fade
+
+    "湛蓝的青空，如洗的白云。"
+    "卷着些许潮湿味道的空气。"
+    "江浪声，风声，草木枝叶的哗哗声。"
+
+    scene cg12a2 #叶雨潇打电话CG-1|手机|CG12a2
+    with fade
+    "掏出手机，打开通讯录。"
+    scene cg12a3 #叶雨潇打电话CG-1|手机|通讯录|CG12a3
+    with dissolve
+    "在许许多多的人名中，翻出其中的一条。"
+    scene cg12a4 #叶雨潇打电话CG-1|手机|通讯录|梁芷柔|CG12a4
+    with dissolve
+    "「梁芷柔」"
+    "我凝视着这个名字，片刻。"
+    "然后——"
+    "【按键音】"
+    "【拨号音】"
+    "电话：「嘟——嘟——嘟——」"
+    "【接通音】"
+    "电话：「…………」"
+    voice "audio/voice/007183.ogg"
+    "电话：「……喂？」"
+    y "「是我——」"
+    y "「我来了。」"
+
+    scene cg12a1 #叶雨潇打电话CG-1|候鸟|CG12a1
+    with dissolve
+    "忽然，有一声嘶鸣，自天空响彻四野。"
+    "我抬起头，看到有一道白影，从眼前一晃而过，朝着正南的方向，义无反顾地飞去。"
+    "那是一只候鸟。"
 
 
     return

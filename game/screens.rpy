@@ -13,8 +13,6 @@ default volume_total = 1.0
 default volume_music = config.default_music_volume
 default volume_voice = config.default_voice_volume
 default volume_sound = config.default_sfx_volume
-<<<<<<< HEAD
-=======
 
 default gallery_page_index = 1
 
@@ -34,7 +32,6 @@ init python:
 
     def floor(num):
         return int(math.floor(num))
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
 # define config.auto_voice = "voice/{id}.ogg"
 
@@ -78,17 +75,6 @@ label splashscreen: # before_main_menu:
         align(0.5, 0.5)
     pause 2.5
     hide KID_Fans_Club_logo with Dissolve(2.0)
-<<<<<<< HEAD
-
-    pause 2.0
-
-    show RenPy_logo with Dissolve(2.0):
-        align(0.5, 0.5)
-    pause 2.5
-    hide RenPy_logo with Dissolve(2.0)
-
-    pause 2.0
-=======
     pause 0.5
 
     # # Renpy Logo
@@ -100,7 +86,6 @@ label splashscreen: # before_main_menu:
     # hide RenPy_logo with Dissolve(2.0)
 
     # pause 2.0
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
 
 ################################################################################
@@ -210,11 +195,7 @@ screen say(who, what):
             action ShowMenu("save")
 
         imagebutton:
-<<<<<<< HEAD
-            keysym "history_menu"
-=======
             # keysym "history_menu"
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
             xalign 0.875 yalign 0.92
             auto "dia_replay_%s"
             # action ShowMenu('history')
@@ -336,12 +317,8 @@ screen r_menu():
             #退出游戏
             imagebutton:
                 auto "r_menu_exit_%s"
-<<<<<<< HEAD
-                action Quit(confirm=True)
-=======
                 action [SetVariable("first_menu", True),
                         Quit(confirm=main_menu)]
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
 
 ## 输入屏幕 ########################################################################
@@ -557,19 +534,9 @@ screen main_menu():
     ## 此代码可确保替换掉任何其他菜单屏幕。
     tag menu
 
-<<<<<<< HEAD
-    if main_menu:
-        add "main_bg" at main_bg_ani
-        # timer 0.01 action Show("main_ui", Dissolve(2.0))
-        # use main_ui
-
-# screen main_ui():
-#     zorder 101
-=======
     if first_menu:
         on "show" action Show("main_menu_first_menu_ani")
     elif main_menu:
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
 
         add "main_bg"
@@ -596,24 +563,10 @@ screen main_menu():
                 action SetVariable("first_menu", False)
             imagebutton:
                 auto "extraContent_%s"
-<<<<<<< HEAD
-                action [SetVariable("first_menu", False),
-                        Show("test_notify", message="开发中……\n敬请期待！！")]
-                        # NullAction()]
-=======
                 action ShowMenu("gallery")
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
             imagebutton:
                 auto "staff_%s"
-<<<<<<< HEAD
-                action [SetVariable("first_menu", False),
-                        Show("test_notify", message="开发中……\n敬请期待！！")]
-                        #NullAction()]
-                # action [SetVariable("first_menu", False),
-                #         ShowMenu("staffs")]
-=======
                 action ShowMenu("staffs")
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
             imagebutton:
                 auto "exit_%s"
                 action Quit(confirm=main_menu)
@@ -763,7 +716,6 @@ screen settings():
                                     bold True
                                 else:
                                     bold False
-<<<<<<< HEAD
                         hbox:
                             spacing 15
                             imagebutton:
@@ -780,24 +732,6 @@ screen settings():
                         spacing 115
                         hbox:
                             spacing 15
-=======
-                        hbox:
-                            spacing 15
-                            imagebutton:
-                                auto "setting_click_%s"
-                                action Preference("skip", "all")
-                            text _("全部"):
-                                style_prefix "mute_setting"
-                                if preferences.skip_unseen:
-                                    bold True
-                                else:
-                                    bold False
-                    hbox:
-                        yoffset 35
-                        spacing 115
-                        hbox:
-                            spacing 15
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
                             imagebutton:
                                 auto "setting_click_%s"
                                 action Preference("display", "fullscreen")
@@ -894,11 +828,7 @@ screen settings():
 
             vbox:
                 style_prefix "text_setting"
-<<<<<<< HEAD
-                xalign 0.342 yalign 0.677
-=======
                 xalign 0.329 yalign 0.71
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
                 spacing 75
                 hbox:
                     spacing 230
@@ -910,12 +840,6 @@ screen settings():
                     label _("Min")
                     label _("Max")
 
-<<<<<<< HEAD
-            # 左侧
-            hbox:
-                style_prefix "sound_setting"
-                xalign 0.325 yalign 0.7
-=======
                 hbox:
                     spacing 230
                     label _("Min")
@@ -925,7 +849,6 @@ screen settings():
             hbox:
                 style_prefix "sound_setting"
                 xalign 0.313 yalign 0.73
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
                 xoffset -20
                 spacing 60
 
@@ -938,16 +861,8 @@ screen settings():
                 vbox:
                     yoffset 3
                     spacing 72
-<<<<<<< HEAD
-                    # bar value Preference("music volume")
-                    # bar value Preference("music volume"):
-                    #     yoffset 10
-                    bar value VariableValue("volume_total", 1.0, action=[Preference("music volume", (volume_total*volume_music)), Preference("voice volume", (volume_total*volume_voice)), Preference("sound volume", (volume_total*volume_sound))])
-                    bar value VariableValue("volume_music", 1.0, action=Preference("music volume", volume_total*volume_music)):
-=======
                     bar value Preference("music volume")
                     bar value Preference("voice volume"):
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
                         yoffset 10
                     bar value Preference("sound volume"):
                         yoffset 20
@@ -958,62 +873,6 @@ screen settings():
                     hbox:
                         spacing 10
                         imagebutton:
-<<<<<<< HEAD
-                            if volume_total > 0.0:
-                                auto "setting_click_%s"
-                                action SetVariable("volume_total", 0.0), SetVariable("volume_music", 0.0), SetVariable("volume_voice", 0.0), SetVariable("volume_sound", 0.0), Preference("music mute", "enable"), Preference("voice mute", "enable"), Preference("sound mute", "enable")
-                            else:
-                                auto "setting_toggled_btn_%s"
-                                action SetVariable("volume_total", 1.0), SetVariable("volume_music", config.default_music_volume), SetVariable("volume_voice", config.default_voice_volume), SetVariable("volume_sound", config.default_sfx_volume), Preference("music mute", "disable"), Preference("voice mute", "disable"), Preference("sound mute", "disable")
-                        text _("静音"):
-                            style_prefix "mute_setting"
-                    hbox:
-                        spacing 10
-                        imagebutton:
-                            if volume_music > 0.0:
-                                auto "setting_click_%s"
-                                action SetVariable("volume_music", 0.0), Preference("music mute", "enable")
-                            else:
-                                auto "setting_toggled_btn_%s"
-                                action SetVariable("volume_music", config.default_music_volume), Preference("music mute", "disable")
-                        text _("静音"):
-                            style_prefix "mute_setting"
-
-            # 右侧
-            hbox:
-                style_prefix "sound_setting"
-                xalign 0.72 yalign 0.7
-                xoffset -20
-                spacing 60
-
-                vbox:
-                    spacing 70
-                    label _("语音音量")
-                    label _("音效音量")
-
-                vbox:
-                    yoffset 7
-                    spacing 72
-                    # bar value Preference("voice volume")
-                    # bar value Preference("sound volume"):
-                    #     yoffset 10
-                    bar value VariableValue("volume_voice", 1.0, action=Preference("voice volume", (volume_total*volume_voice)))
-                    bar value VariableValue("volume_sound", 1.0, action=Preference("sound volume", (volume_total*volume_sound))):
-                        yoffset 10
-
-                vbox:
-                    xoffset -30
-                    spacing 60
-                    hbox:
-                        spacing 10
-                        imagebutton:
-                            if volume_voice > 0.0:
-                                auto "setting_click_%s"
-                                action SetVariable("volume_voice", 0.0), Preference("voice mute", "enable")
-                            else:
-                                auto "setting_toggled_btn_%s"
-                                action SetVariable("volume_voice", config.default_voice_volume), Preference("voice mute", "disable")
-=======
                             auto "setting_click_%s"
                             # auto "setting_toggled_btn_%s"
                             action Preference("music mute", "toggle")
@@ -1025,23 +884,11 @@ screen settings():
                             auto "setting_click_%s"
                             # auto "setting_toggled_btn_%s"
                             action Preference("voice mute", "toggle")
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
                         text _("静音"):
                             style_prefix "mute_setting"
                     hbox:
                         spacing 10
                         imagebutton:
-<<<<<<< HEAD
-                            if volume_sound > 0.0:
-                                auto "setting_click_%s"
-                                action SetVariable("volume_sound", 0.0), Preference("sound mute", "enable")
-                            else:
-                                auto "setting_toggled_btn_%s"
-                                action SetVariable("volume_sound", config.default_sfx_volume), Preference("sound mute", "disable")
-                        text _("静音"):
-                            style_prefix "mute_setting"
-
-=======
                             auto "setting_click_%s"
                             # auto "setting_toggled_btn_%s"
                             action Preference("sound mute", "toggle")
@@ -1141,7 +988,6 @@ screen settings():
                 #         text _("静音"):
                 #             style_prefix "mute_setting"
 
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
             # ## 音量低于5%自动设置为静音
             # fixed:
             #     if store.MixerValue("music").get_adjustment().value <= 0.05:
@@ -1913,31 +1759,6 @@ screen file_slots(title):
                     add "gui/sl/title_layer.png" align(0.5,1.1)
                     # text FileTime(i, format=_("{#file_time}%Y年%B%d日  %H:%M"), empty=_("")):
                     #     color "#fff" xalign 0.5 ypos 240 size 30
-<<<<<<< HEAD
-                    if FileLoadable(i):
-                        imagebutton:
-                            xalign 1.0
-                            auto "sl_delete_%s"
-                            action FileDelete(i)
-                    else:
-                        # FileSlotName(i, int(FileCurrentPage()))
-                        $ cur_page = FileCurrentPage()
-                        if cur_page == "1":
-                            $ num = i
-                        else:
-                            $ num = i - 1
-                        $ res = str(int(cur_page) - 1) + "%s"%str(num)
-                        text str(res):
-                            align(0.5, 0.5)
-                            style "sl_page"
-                            size 56 bold True
-                        text "NO DATA":
-                            align(0.5, 0.7)
-                            style "sl_page"
-                            size 18 bold True
-                    key "save_delete" action FileDelete(i)
-=======
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
 
                     # text FileSaveName(str(i)+u" 章节"):
                     #     color "#fff" xalign 0.05 yalign 1.0 size 18

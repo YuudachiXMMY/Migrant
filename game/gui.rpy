@@ -53,7 +53,7 @@ define gui.interface_text_color = '#343434'
 ## 字体和字体大小 #####################################################################
 
 ## 用于游戏内文本的字体。
-define gui.text_font = "经典中圆简.ttf"
+define gui.text_font = "SourceHanSansCN-Regular.otf"
 
 ## 用于角色名称的字体。
 define gui.name_text_font = "站酷高端黑修订版1.13.ttf"
@@ -452,6 +452,3 @@ init python:
 
         gui.nvl_button_width = 2480
         gui.nvl_button_xpos = 40
-
-
-
