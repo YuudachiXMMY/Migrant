@@ -1,22 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 14347, in script
-    narrator_nvl "虽然说要「相信自己」，但实际上真正能做到的人，往往都不需要被别人这么说。"
-Exception: Sayer 'narrator_nvl' is not defined.
+After initialization, but before game start.
+  File "game/screens.rpy", line 1039, in prepare_screen
+    screen staffs():
+  File "game/screens.rpy", line 1039, in prepare
+    screen staffs():
+  File "game/screens.rpy", line 1301, in prepare
+    fixed:
+  File "game/screens.rpy", line 1301, in prepare
+    fixed:
+  File "game/screens.rpy", line 1302, in prepare
+    add str(vbar value)
+SyntaxError: invalid syntax (screens.rpy, line 1302)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 14347, in script
-    narrator_nvl "虽然说要「相信自己」，但实际上真正能做到的人，往往都不需要被别人这么说。"
-  File "K:\Ren'py环境\renpy-7.3.5-sdk\renpy\ast.py", line 678, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "K:\Ren'py环境\renpy-7.3.5-sdk\renpy\ast.py", line 576, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
-Exception: Sayer 'narrator_nvl' is not defined.
+  File "renpy/bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 660, in main
+    run(restart)
+  File "renpy/main.py", line 95, in run
+    renpy.display.screen.prepare_screens()
+  File "renpy/display/screen.py", line 976, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/screens.rpy", line 1039, in prepare_screen
+    screen staffs():
+  File "game/screens.rpy", line 1039, in prepare
+    screen staffs():
+  File "game/screens.rpy", line 1301, in prepare
+    fixed:
+  File "game/screens.rpy", line 1301, in prepare
+    fixed:
+  File "game/screens.rpy", line 1302, in prepare
+    add str(vbar value)
+  File "renpy/py2analysis.py", line 714, in ast_eval
+    return self.ast_eval_literal(expr)[0]
+  File "renpy/py2analysis.py", line 696, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "renpy/python.py", line 1027, in py_compile
+    raise e
+SyntaxError: invalid syntax (screens.rpy, line 1302)
 
-Windows-8-6.2.9200
-Ren'Py 7.3.5.606
-候鸟 加长试玩内测版 Demo0.2
-Thu Jun 30 19:14:53 2022
+Windows-10-10.0.19041 AMD64
+Ren'Py 7.5.3.22090809
+候鸟 完整试玩（CG仍缺失3张、BGM有6首免费素材等替换，但演出基本修完的）内测版 v0.4 Demo0.4
+Wed Nov 30 22:55:02 2022

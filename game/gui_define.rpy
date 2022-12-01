@@ -165,6 +165,18 @@ image setting_slider_3_idle:
 image setting_slider_3_btn_idle:
     "gui/setting/选中.png"
 
+image gui_uparrow_flash:
+    "gui/setting/选中.png"
+    linear 2.0 alpha 0.5
+    linear 2.0 alpha 1.0
+    repeat
+
+image gui_downarrow_flash:
+    "gui/setting/选中_down.png"
+    linear 2.0 alpha 0.5
+    linear 2.0 alpha 1.0
+    repeat
+
 ## 显示设置
 image setting_graphics_title:
     "gui/setting/显示设置title.png"

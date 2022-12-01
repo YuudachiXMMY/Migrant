@@ -11,6 +11,10 @@ init python:
     mr.add("audio/music/bgm06.ogg")
     mr.add("audio/music/bgm08.ogg")
 
+# 游戏通关次数
+# 在"我抬起头....义无反顾地飞去。" "那是一只候鸟。" 后+1
+default persistent.game_clear_times = 0
+
 # CG Flags
 default persistent.cg_1_1_flag = False
 default persistent.cg_1_2_flag = False
@@ -17241,6 +17245,8 @@ label start:
     "忽然，有一声嘶鸣，自天空响彻四野。"
     "我抬起头，看到有一道白影，从眼前一晃而过，朝着正南的方向，义无反顾地飞去。"
     "那是一只候鸟。"
+
+    $ persistent.game_clear_times += 1
 
     scene bg black #黑屏
     with fade

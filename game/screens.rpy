@@ -199,7 +199,7 @@ screen say(who, what):
             xalign 0.875 yalign 0.92
             auto "dia_replay_%s"
             # action ShowMenu('history')
-            action Play("voice", _get_voice_info().filename)
+            action ShowMenu("history") # Play("voice", _get_voice_info().filename)
 
         key "history_menu" action ShowMenu("history")
 
@@ -560,7 +560,7 @@ screen main_menu():
             xspacing 160
             imagebutton:
                 auto "setting_%s"
-                action SetVariable("first_menu", False)
+                action ShowMenu("settings") #SetVariable("first_menu", False)
             imagebutton:
                 auto "extraContent_%s"
                 action ShowMenu("gallery")
@@ -1037,6 +1037,7 @@ style sound_setting_bar:
 ##
 
 screen staffs():
+    modal True
 
     # tag menu
 
@@ -1047,12 +1048,13 @@ screen staffs():
     imagebutton:
         yalign 0.02
         auto "staffs_return_btn_%s"
+        keysym "quit_menu"
         action [Hide("staffs", dissolve), Return()]
 
     imagebutton:
         xpos 1780 ypos 681
         auto "staffs_replay_btn_%s"
-        action Show("test_notify", message="开发中……\n敬请期待！！")
+        action Show("test_notify", message="请在完成游戏正篇后观看") #message="开发中……\n敬请期待！！")
 
     # imagebutton:
     #     xalign 0.85 yalign 0.542
@@ -1297,6 +1299,9 @@ screen staffs():
             label _("龙之咲制作组"):
                 xalign 0.5
 
+    fixed:
+        add "gui_uparrow_flash" pos(0.505, 0.2425)
+        add "gui_downarrow_flash" pos(0.505, 0.835)
 
 style staffs_label is gui_label
 style staffs_title_label is staffs_label
@@ -1544,12 +1549,14 @@ screen gallery_music_player():
                 bar value StaticValue(0, 1.0)
 
 screen gallery():
+    modal True
 
     add "gallery_bg"
 
     imagebutton:
         yalign 0.02
         auto "gallery_return_btn_%s"
+        keysym "quit_menu"
         action [Hide("gallery_music_player"), Hide("gallery", dissolve), Return()]
 
     # Music Player
@@ -1558,7 +1565,7 @@ screen gallery():
         imagebutton:
             xalign 0.67 yalign 0.9
             auto "gallery_music_play_btn_%s"
-            action mr.TogglePlay(), Hide("gallery", dissolve), Show("gallery", dissolve)
+            action mr.TogglePause(), Hide("gallery", dissolve), Show("gallery", dissolve)
             # if renpy.music.get_pause(channel=u'music'):
             #     action renpy.music.set_pause(False, channel=u'music')
             # else:
@@ -1670,6 +1677,7 @@ style gallery_music_player_frame:
 ## www.renpy.org/doc/html/screen_special.html#load
 
 screen save():
+    modal True
 
     # tag menu
 
@@ -1677,6 +1685,7 @@ screen save():
 
 
 screen load():
+    modal True
 
     # tag menu
 
@@ -1723,25 +1732,48 @@ screen file_slots(title):
                 auto "sl_close_%s"
                 action Hide("save", dissolve), Return()
 
-        imagebutton:
-            xalign 0.47 yalign 0.845
-            auto "sl_page_previous_%s"
-            action FilePagePrevious(auto=False, quick=False)
+        # Number
+        fixed:
+            vbox:
+                align (0.882, 0.75)
+                spacing 15
+                for i in range(1, 6):
+                    if FilePageName() == str(i):
+                        button:
+                            xysize (128, 96)
+                            idle_background "gui/sl/num/selected.png"
+                            hover_background "gui/sl/num/selected.png"
+                            add "gui/sl/num/"+str(i)+".png" align(.5, .5)
+                            action NullAction()
+                    else:
+                        button:
+                            xysize (98, 86)
+                            idle_background "gui/sl/num/non_selected.png"
+                            hover_background "gui/sl/num/non_selected.png"
+                            add "gui/sl/num/"+str(i)+"_1.png" align(.5, .5)
+                            action FilePage(str(i))
 
-        add "sl_slot_page_background" xalign 0.5 yalign 0.845 yoffset 5
-        if FilePageName() == "10":
-            text _(FilePageName()):
-                xalign 0.5 yalign 0.845
-                style "sl_page"
-        else:
-            text _(str(0) + FilePageName()):
-                xalign 0.5 yalign 0.845
-                style "sl_page"
+        # Past
+        # fixed:
+        #     imagebutton:
+        #         xalign 0.47 yalign 0.845
+        #         auto "sl_page_previous_%s"
+        #         action FilePagePrevious(auto=False, quick=False)
 
-        imagebutton:
-            xalign 0.53 yalign 0.845
-            auto "sl_page_next_%s"
-            action FilePageNext(max=10, auto=False, quick=False)
+        #     add "sl_slot_page_background" xalign 0.5 yalign 0.845 yoffset 5
+        #     if FilePageName() == "10":
+        #         text _(FilePageName()):
+        #             xalign 0.5 yalign 0.845
+        #             style "sl_page"
+        #     else:
+        #         text _(str(0) + FilePageName()):
+        #             xalign 0.5 yalign 0.845
+        #             style "sl_page"
+
+        #     imagebutton:
+        #         xalign 0.53 yalign 0.845
+        #         auto "sl_page_next_%s"
+        #         action FilePageNext(max=10, auto=False, quick=False)
 
         grid 3 3:
             style_prefix "slot"
@@ -1772,12 +1804,8 @@ screen file_slots(title):
                             action FileDelete(i)
                     else:
                         # FileSlotName(i, int(FileCurrentPage()))
-                        $ cur_page = FileCurrentPage()
-                        if cur_page == "1":
-                            $ num = i
-                        else:
-                            $ num = i - 1
-                        $ res = str(int(cur_page) - 1) + "%s"%str(num)
+                        $ cur_page = int(FileCurrentPage())
+                        $ res = str(cur_page*9-(9-i))
                         text str(res):
                             align(0.5, 0.5)
                             style "sl_page"

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 4004: expected statement.
-    nvl clea
-       ^
+File "game/screens.rpy", line 1739: u'size' is not a keyword argument or valid child for the button statement.
+    size (128, 96)
+        ^
 
-Ren'Py Version: Ren'Py 7.3.5.606
-Sat Oct 15 14:27:19 2022
+Ren'Py Version: Ren'Py 7.5.3.22090809
+Wed Nov 30 23:15:03 2022
