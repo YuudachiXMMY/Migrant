@@ -20,21 +20,17 @@ default persistent.cg_1_1_flag = False
 default persistent.cg_1_2_flag = False
 default persistent.cg_1_3_flag = False
 default persistent.cg_1_4_flag = False
-default persistent.cg_1_5_flag = False
-default persistent.cg_1_6_flag = False # Not in script
 
 default persistent.cg_2_1_flag = False
 default persistent.cg_2_2_flag = False
 default persistent.cg_2_3_flag = False
 default persistent.cg_2_4_flag = False
-default persistent.cg_2_6_flag = False
 
 default persistent.cg_3_1_flag = False
 default persistent.cg_3_2_flag = False
 default persistent.cg_3_3_flag = False
 default persistent.cg_3_4_flag = False
-default persistent.cg_3_7_flag = False
-default persistent.cg_3_8_flag = False
+
 
 # 声明此游戏使用的角色。颜色参数可使角色姓名着色。
 
@@ -92,8 +88,6 @@ label start:
 
     play sound "audio/sound/ambientnoise01.ogg" fadein 1.5 loop #河边环境噪音
 
-    $ persistent.cg_3_7_flag = True
-
     scene cg12a #叶雨潇打电话CG-1|CG12a
     with fade
     "漫步河滨，放眼望去，但见河水滔滔，奔流而下，裹挟着泥沙，仿佛要将天地间的一切都染作昏黄。"
@@ -101,8 +95,6 @@ label start:
     "数不清的草甸、芦苇，以及槐树、柳树和白杨。"
     "在这个夏末秋初的时节，它们用尽全力展现着自己的活力。"
     "随手捡起一片落叶，仰望天空。"
-
-    $ persistent.cg_3_8_flag = True
 
     scene bg b00 #天空
     with fade
@@ -3133,8 +3125,6 @@ label start:
     stop music fadeout 3.0
     y "「是啊……」"
 
-    $ persistent.cg_2_6_flag = True
-
     play music "audio/music/bgm11.ogg" fadein 1.5 #风轻云淡
 
     scene bg b05 #湿地公园|夏
@@ -6053,8 +6043,6 @@ label start:
     l "「我一开始还不怎么懂事，虽然知道是自己错了，给家里添了麻烦，但就是死咬着不想承认，还在闹。结果在我12岁生日的那一天……」"
     voice "audio/voice/001655.ogg"
     l "「我妈晚上刚回到家，就在我的面前，就那么直挺挺地……倒下了。」"
-
-    $ persistent.cg_1_5_flag = True
 
     scene cg07 #赤印梗|小梁芷柔跪地大哭|草图|CG07
     with fade

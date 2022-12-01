@@ -1639,7 +1639,7 @@ screen gallery():
                 auto "gallery_page_prev_btn_%s"
                 action SetVariable("gallery_page_index", gallery_page_index-1), Hide("gallery", dissolve), Show("gallery", dissolve)
 
-        if gallery_page_index < 9:
+        if gallery_page_index < 4:
             imagebutton:
                 xalign 0.82 yalign 0.52
                 auto "gallery_page_next_btn_%s"
