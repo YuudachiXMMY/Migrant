@@ -11,7 +11,7 @@
 ##
 ## 带有 _() 的字符串表示其可被翻译。
 
-define config.name = _("候鸟 加长试玩内测版")
+define config.name = _("候鸟 完整试玩（CG仍缺失3张、BGM有6首免费素材等替换，但演出基本修完的）内测版 v0.4")
 
 
 ## 决定上面给出的标题是否显示在主界面屏幕。设置为 False 来隐藏标题。
@@ -21,17 +21,12 @@ define gui.show_name = False
 
 ## 游戏版本号。
 
-<<<<<<< HEAD
-define config.version = "0.0.1"
-=======
-define config.version = "Demo0.2"
->>>>>>> b9f7f07370a7075f5e7d253ad805edc56018b202
+define config.version = "Demo0.4"
 
 
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。
 
 define gui.about = _p("""
-    候鸟试玩版
 """)
 
 

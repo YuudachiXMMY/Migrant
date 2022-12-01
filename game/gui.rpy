@@ -53,7 +53,7 @@ define gui.interface_text_color = '#343434'
 ## 字体和字体大小 #####################################################################
 
 ## 用于游戏内文本的字体。
-define gui.text_font = "经典中圆简.ttf"
+define gui.text_font = "SourceHanSansCN-Regular.otf"#经典中圆简.ttf"
 
 ## 用于角色名称的字体。
 define gui.name_text_font = "站酷高端黑修订版1.13.ttf"
@@ -355,7 +355,7 @@ define gui.nvl_list_length = 6
 
 ## The height of an NVL-mode entry. Set this to None to have the entries
 ## dynamically adjust height.
-define gui.nvl_height = 230
+define gui.nvl_height = None
 
 ## The spacing between NVL-mode entries when gui.nvl_height is None, and between
 ## NVL-mode entries and an NVL-mode menu.
@@ -368,16 +368,16 @@ define gui.nvl_name_width = 300
 define gui.nvl_name_xalign = 1.0
 
 ## 对话文本的坐标、宽度和对齐方式。
-define gui.nvl_text_xpos = 900
+define gui.nvl_text_xpos = 530
 define gui.nvl_text_ypos = 16
-define gui.nvl_text_width = 1180
+define gui.nvl_text_width = 1560
 define gui.nvl_text_xalign = 0.0
 
 ## The position, width, and alignment of nvl_thought text (the text said by the
 ## nvl_narrator character.)
-define gui.nvl_thought_xpos = 480
-define gui.nvl_thought_ypos = 0
-define gui.nvl_thought_width = 1560
+define gui.nvl_thought_xpos = gui.nvl_text_xpos
+define gui.nvl_thought_ypos = gui.nvl_text_ypos
+define gui.nvl_thought_width = gui.nvl_text_width
 define gui.nvl_thought_xalign = 0.0
 
 ## The position of nvl menu_buttons.
@@ -452,6 +452,3 @@ init python:
 
         gui.nvl_button_width = 2480
         gui.nvl_button_xpos = 40
-
-
-
