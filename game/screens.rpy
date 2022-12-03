@@ -68,6 +68,12 @@ image ctc_pause_icon:
     "ctc_icon"
 
 label splashscreen: # before_main_menu:
+    $ config.keymap = keymap_release
+    $ renpy.clear_keymap_cache()
+    $ renpy.run(Preference("auto-forward", "disable"))
+    $ _dismiss_pause = True
+    $ _skipping = True
+    $ _rollback = True
 
     show white_bg
 
@@ -422,6 +428,7 @@ screen quick_menu():
             imagebutton:
                 yalign 0.5 xalign 0.34
                 auto "quick_autoplay_%s"
+                keysym "auto_dialogue"
                 action Preference("auto-forward", "toggle")
 
             imagebutton:
@@ -652,6 +659,7 @@ screen settings():
         imagebutton:
             xalign 0.83 yalign 0.21
             auto "setting_close_%s"
+            keysym "quit_menu"
             action Hide("settings", dissolve), Return()
 
         #显示设置 (文本设置)
@@ -1299,9 +1307,9 @@ screen staffs():
             label _("龙之咲制作组"):
                 xalign 0.5
 
-    fixed:
-        add "gui_uparrow_flash" pos(0.505, 0.2425)
-        add "gui_downarrow_flash" pos(0.505, 0.835)
+    # fixed:
+    #     add "gui_uparrow_flash" pos(0.505, 0.2425)
+    #     add "gui_downarrow_flash" pos(0.505, 0.835)
 
 style staffs_label is gui_label
 style staffs_title_label is staffs_label
@@ -1794,7 +1802,7 @@ screen file_slots(title):
 
                     # text FileSaveName(str(i)+u" 章节"):
                     #     color "#fff" xalign 0.05 yalign 1.0 size 18
-                    text FileTime(i, format=_(u"{#file_time}%Y/%b/%d %H:%M"), empty=_("")):
+                    text (FileTime(i, format=_(u"{#file_time}%Y/%b/%d %H:%M"), empty=_(""))).replace("月",""):
                         color "#fff" xalign 0.05 yalign 1.0 size 18
                     if FileLoadable(i):
                         imagebutton:

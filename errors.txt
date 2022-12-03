@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1739: u'size' is not a keyword argument or valid child for the button statement.
-    size (128, 96)
-        ^
+File "game/screens.rpy", line 73: expected statement.
+    timer 0.1 action Preference("auto-forward", "disable")
+           ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Nov 30 23:15:03 2022
+Fri Dec  2 22:15:24 2022

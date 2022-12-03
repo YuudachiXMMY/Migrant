@@ -6855,7 +6855,7 @@ label start:
     "什么情况？还挺着急的……"
     y "「怎么了怎么了？我回家了啊，怎么了？」"
     voice "audio/voice/092002.ogg"
-    g "「我～～[哔——]！你那么早回去干吗啊？你到哪了？」"
+    g "「我～～\[哔——\]！你那么早回去干吗啊？你到哪了？」"
     y "「……我这都过桥了。」"
     voice "audio/voice/092003.ogg"
     g "「完蛋。还说约你一起去网吧五连座吃鸡呢！」"
@@ -6874,7 +6874,7 @@ label start:
     "扎心了，偏偏我还不知道该怎么才能反驳回去。"
     "就在我绞尽脑汁措辞的时候，那家伙又发消息过来了。"
     voice "audio/voice/092008.ogg"
-    g "「哎我[哔——]，对了你他妈不是想要追她吧？哈哈哈哈哈哈……」"
+    g "「哎我\[哔——\]，对了你他妈不是想要追她吧？哈哈哈哈哈哈……」"
     voice "audio/voice/092009.ogg"
     g "「我告诉你你他妈没～戏！快点改邪归正陪我们来开黑啊！」"
     "这……"
@@ -6905,7 +6905,7 @@ label start:
     show memories #回忆滤镜
     with dissolve
     voice "audio/voice/092008.ogg"
-    g "「哎我[哔——]，对了你他妈不是想要追她吧？哈哈哈哈哈哈……」"
+    g "「哎我\[哔——\]，对了你他妈不是想要追她吧？哈哈哈哈哈哈……」"
     hide memories
     with dissolve
     "其实毫无意义。"
@@ -12104,9 +12104,9 @@ label start:
     scene cg09a14 #梁芷柔逛社火CG-1|风车+饮料|舞狮子|CG09a14
     with dissolve
     "场地中，几只「狮子」正在「驯狮人」的引导下争抢绣球。"
-    y "「每次看到这种舞狮的，就觉得好像在看『黄[哔——]鸿』。」"
+    y "「每次看到这种舞狮的，就觉得好像在看『黄\[哔——\]鸿』。」"
     voice "audio/voice/005266.ogg"
-    l "「哈哈，啊，但是黄[哔——]鸿是南方的吧？那边的舞狮好像和咱们这里的不太一样。」"
+    l "「哈哈，啊，但是黄\[哔——\]鸿是南方的吧？那边的舞狮好像和咱们这里的不太一样。」"
     y "「差不多啦，狮王争霸里不是也都凑到一块去了嘛？」"
     voice "audio/voice/005267.ogg"
     l "「嗯……」"
@@ -14387,7 +14387,7 @@ label start:
     "那个悬而未决的「第二只鞋子」，终于落了地。"
     y "「……」"
     with vpunch
-    y "「我……[哔——]！」"
+    y "「我……\[哔——\]！」"
     stop music fadeout 2.5
 
     y "「……我出去透透气。」"
@@ -16931,12 +16931,20 @@ label start:
     voice "audio/voice/007137.ogg"
     l "「你说让我笑我就笑啊？你现在可还不是我的男朋友呢，我干嘛要听你的？」"
     y "「我还不是啊？」"
+
     show chara f03 #梁芷柔立绘|夏季私服|生气
     with dissolve
     voice "audio/voice/007138.ogg"
     l "「当然不是啦！我说的可是『给你一个机会』！」"
     stop music fadeout 2.5
 
+    # TODO
+    $ config.keymap = keymap_end
+    $ renpy.clear_keymap_cache()
+    $ renpy.run(Preference("auto-forward", "enable"))
+    $ _dismiss_pause = False
+    $ _skipping = False
+    $ _rollback = False
     scene bg black #黑屏
     with fade
     pause 1.0
@@ -17183,10 +17191,16 @@ label start:
     show text 7-02 at truecenter
     with dissolve
     stop music fadeout 2.5
-    pause
+    pause 0.5 # pause
     scene bg black #黑屏
     with fade
     pause 5.0
+    $ config.keymap = keymap_release
+    $ renpy.clear_keymap_cache()
+    $ renpy.run(Preference("auto-forward", "disable"))
+    $ _dismiss_pause = True
+    $ _skipping = True
+    $ _rollback = True
 
 #尾声
 
