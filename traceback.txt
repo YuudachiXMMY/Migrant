@@ -1,26 +1,84 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 16947, in script
-    $ renpy.action(Preference("auto-forward", "enable"))
-  File "game/script.rpy", line 16947, in <module>
-    $ renpy.action(Preference("auto-forward", "enable"))
-AttributeError: 'module' object has no attribute 'action'
+  File "renpy/common/00gamemenu.rpy", line 170, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 170, in <module>
+    $ ui.interact()
+  File "game/screens.rpy", line 663, in execute
+    screen settings(r_menu=False):
+  File "game/screens.rpy", line 663, in execute
+    screen settings(r_menu=False):
+  File "game/screens.rpy", line 669, in execute
+    fixed:
+  File "game/screens.rpy", line 683, in execute
+    fixed:
+  File "game/screens.rpy", line 704, in execute
+    hbox:
+  File "game/screens.rpy", line 713, in execute
+    vbox:
+  File "game/screens.rpy", line 717, in execute
+    bar value VariableValue(Preference("auto-forward time"), range=(10,0), max_is_zero=True, step=-1):#Preference("auto-forward time"):
+  File "renpy/common/00barvalues.rpy", line 283, in get_adjustment
+    value = getattr(self.object, self.field)
+TypeError: getattr(): attribute name must be string
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 16947, in script
-    $ renpy.action(Preference("auto-forward", "enable"))
+  File "renpy/common/00gamemenu.rpy", line 170, in script
+    $ ui.interact()
   File "renpy/ast.py", line 1131, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 1061, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 16947, in <module>
-    $ renpy.action(Preference("auto-forward", "enable"))
-AttributeError: 'module' object has no attribute 'action'
+  File "renpy/common/00gamemenu.rpy", line 170, in <module>
+    $ ui.interact()
+  File "renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "renpy/display/core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 451, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 462, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 663, in execute
+    screen settings(r_menu=False):
+  File "game/screens.rpy", line 663, in execute
+    screen settings(r_menu=False):
+  File "game/screens.rpy", line 669, in execute
+    fixed:
+  File "game/screens.rpy", line 683, in execute
+    fixed:
+  File "game/screens.rpy", line 704, in execute
+    hbox:
+  File "game/screens.rpy", line 713, in execute
+    vbox:
+  File "game/screens.rpy", line 717, in execute
+    bar value VariableValue(Preference("auto-forward time"), range=(10,0), max_is_zero=True, step=-1):#Preference("auto-forward time"):
+  File "renpy/sl2/sldisplayables.py", line 261, in sl2bar
+    return renpy.display.behavior.Bar(range, value, width, height, vertical=False, **properties)
+  File "renpy/display/behavior.py", line 1955, in __init__
+    adjustment = value.get_adjustment()
+  File "renpy/common/00barvalues.rpy", line 283, in get_adjustment
+    value = getattr(self.object, self.field)
+TypeError: getattr(): attribute name must be string
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 7.5.3.22090809
 候鸟 完整试玩（CG仍缺失3张、BGM有6首免费素材等替换，但演出基本修完的）内测版 v0.4 Demo0.4
-Fri Dec  2 21:37:06 2022
+Mon Dec  5 02:31:20 2022

@@ -6,10 +6,22 @@ init python:
     mr = MusicRoom(fadeout=1.0, loop=True, shuffle=False)
 
     mr.add("audio/music/themepiano.ogg", always_unlocked=True)
-    mr.add("audio/music/bgm02.ogg")
-    mr.add("audio/music/bgm03.ogg")
-    mr.add("audio/music/bgm06.ogg")
-    mr.add("audio/music/bgm08.ogg")
+    mr.add("audio/music/theme.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm01.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm02.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm03.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm04.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm05.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm06.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm07.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm08.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm09.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm10.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm11.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm12.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm13.ogg", always_unlocked=True)
+    # mr.add("audio/music/bgm14.ogg", always_unlocked=True)
+    mr.add("audio/music/bgm15.ogg", always_unlocked=True)
 
 # 游戏通关次数
 # 在"我抬起头....义无反顾地飞去。" "那是一只候鸟。" 后+1
@@ -17195,7 +17207,10 @@ label start:
     scene bg black #黑屏
     with fade
     pause 5.0
-    $ config.keymap = keymap_release
+    if not debug:
+        $ config.keymap = keymap_release
+    else:
+        $ config.keymap = keymap_debug
     $ renpy.clear_keymap_cache()
     $ renpy.run(Preference("auto-forward", "disable"))
     $ _dismiss_pause = True

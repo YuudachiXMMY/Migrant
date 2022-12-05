@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 73: expected statement.
-    timer 0.1 action Preference("auto-forward", "disable")
-           ^
+File "game/screens.rpy", line 717: u'rotate' is not a keyword argument or valid child for the bar statement.
+    rotate 15 yoffset 10
+          ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Fri Dec  2 22:15:24 2022
+Mon Dec  5 02:22:54 2022

@@ -280,7 +280,7 @@ define keymap_debug = dict(
     toggle_afm = [ ],
     toggle_fullscreen = [ ],
     game_menu = [ ],
-    history_menu = [ 'mousedown_4' ],
+    history_menu = [ ],
     hide_windows = [ 'K_ESCAPE', 'mousedown_2' ],
     launch_editor = [ ],
     dump_styles = [ ],
@@ -389,4 +389,8 @@ define keymap_debug = dict(
 
 
 # Keymap in use
-define config.keymap = keymap_release # keymap_debug
+define config.keymap =  keymap_release #keymap_debug
+if config.keymap == keymap_release:
+    define debug = False # True为debug模式 启用调试快捷键。False为发布模式
+else:
+    define debug = True

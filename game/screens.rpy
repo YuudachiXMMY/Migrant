@@ -19,10 +19,21 @@ default gallery_page_index = 1
 # Gallery Music list
 define gallery_music_list = {
     "audio/music/themepiano.ogg" : "Theme Piano",
+    "audio/music/theme.ogg" : "Theme",
+    "audio/music/bgm01.ogg" : "bgm01",
     "audio/music/bgm02.ogg" : "bgm02",
     "audio/music/bgm03.ogg" : "bgm03",
+    "audio/music/bgm04.ogg" : "bgm04",
+    "audio/music/bgm05.ogg" : "bgm05",
     "audio/music/bgm06.ogg" : "bgm06",
-    "audio/music/bgm08.ogg" : "bgm08"
+    "audio/music/bgm07.ogg" : "bgm07",
+    "audio/music/bgm08.ogg" : "bgm08",
+    "audio/music/bgm09.ogg" : "bgm09",
+    "audio/music/bgm10.ogg" : "bgm10",
+    "audio/music/bgm11.ogg" : "bgm11",
+    "audio/music/bgm12.ogg" : "bgm12",
+    "audio/music/bgm13.ogg" : "bgm13",
+    "audio/music/bgm15.ogg" : "bgm15"
 }
 
 # Helper
@@ -68,7 +79,10 @@ image ctc_pause_icon:
     "ctc_icon"
 
 label splashscreen: # before_main_menu:
-    $ config.keymap = keymap_release
+    if not debug:
+        $ config.keymap = keymap_release
+    else:
+        $ config.keymap = keymap_debug
     $ renpy.clear_keymap_cache()
     $ renpy.run(Preference("auto-forward", "disable"))
     $ _dismiss_pause = True
@@ -313,7 +327,7 @@ screen r_menu():
             #设置
             imagebutton:
                 auto "r_menu_setting_%s"
-                action Hide("r_menu"), ShowMenu("settings")
+                action Hide("r_menu"), ShowMenu("settings", r_menu=True)
 
             #返回标题
             imagebutton:
@@ -646,7 +660,7 @@ screen main_menu_first_menu_ani():
 ##
 ##
 
-screen settings():
+screen settings(r_menu=False):
 
     modal True
 
@@ -660,7 +674,10 @@ screen settings():
             xalign 0.83 yalign 0.21
             auto "setting_close_%s"
             keysym "quit_menu"
-            action Hide("settings", dissolve), Return()
+            if r_menu:
+                action Hide("settings", dissolve), Return()
+            else:
+                action Hide("settings", dissolve)
 
         #显示设置 (文本设置)
         fixed:
@@ -678,9 +695,11 @@ screen settings():
 
                 hbox:
                     spacing 140
-                    label _("慢")
-                    label _("快")
                     label _("瞬间")
+                    label _("快"):
+                        xoffset -25
+                    label _("慢"):
+                        xoffset -20
 
             # 左侧
             hbox:
@@ -1565,7 +1584,7 @@ screen gallery():
         yalign 0.02
         auto "gallery_return_btn_%s"
         keysym "quit_menu"
-        action [Hide("gallery_music_player"), Hide("gallery", dissolve), Return()]
+        action [Play('music', 'audio/music/themepiano.ogg'), Hide("gallery_music_player"), Hide("gallery", dissolve), Return()]
 
     # Music Player
     fixed:
