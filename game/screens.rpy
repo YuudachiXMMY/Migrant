@@ -422,7 +422,7 @@ screen quick_menu():
     ## 确保该菜单出现在其他屏幕之上，
     zorder 100
 
-    if quick_menu and renpy.get_screen("say"):
+    if quick_menu and renpy.get_screen("say") and config.keymap != keymap_end:
 
         window:
             xsize 561 ysize 65
@@ -695,11 +695,9 @@ screen settings(r_menu=False):
 
                 hbox:
                     spacing 140
+                    label _("慢")
+                    label _("快")
                     label _("瞬间")
-                    label _("快"):
-                        xoffset -25
-                    label _("慢"):
-                        xoffset -20
 
             # 左侧
             hbox:
@@ -715,7 +713,7 @@ screen settings(r_menu=False):
                     yoffset 20
                     spacing 50
                     bar value Preference("text speed")
-                    bar value Preference("auto-forward time"):
+                    bar value Preference("auto-forward time") bar_invert True:
                         yoffset 10
 
             # 右侧
@@ -957,10 +955,10 @@ screen settings(r_menu=False):
                                     action Preference("voice sustain", "disable")
                                 text _("不同步"):
                                     style_prefix "mute_setting"
-                                    if not preferences.voice_sustain:
-                                        bold True
-                                    else:
+                                    if preferences.voice_sustain:
                                         bold False
+                                    else:
+                                        bold True
 
                     hbox:
                         yoffset 35
@@ -972,7 +970,7 @@ screen settings(r_menu=False):
                                 action Preference("emphasize audio", "enable")
                             text _("是"):
                                 style_prefix "mute_setting"
-                                if preferences.voice_sustain:
+                                if preferences.emphasize_audio:
                                     bold True
                                 else:
                                     bold False
@@ -983,10 +981,10 @@ screen settings(r_menu=False):
                                 action Preference("emphasize audio", "disable")
                             text _("否"):
                                 style_prefix "mute_setting"
-                                if not preferences.voice_sustain:
-                                    bold True
-                                else:
+                                if preferences.emphasize_audio:
                                     bold False
+                                else:
+                                    bold True
 
 
                 # vbox:
@@ -2605,7 +2603,7 @@ screen nvl(dialogue, items=None):
                 style "nvl_button"
 
     add SideImage() xalign 0.0 yalign 1.0
-
+    key "history_menu" action ShowMenu("history")
 
 screen nvl_dialogue(dialogue):
 

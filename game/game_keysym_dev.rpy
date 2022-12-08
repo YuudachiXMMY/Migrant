@@ -67,11 +67,11 @@ define keymap_release = dict(
     # DIY
     quit_menu = [ 'K_ESCAPE', 'mousedown_3' ],
     quit_hist = [ 'K_ESCAPE', 'mousedown_3' ],
-    auto_dialogue = [ 'K_LALT', 'K_RALT' ],
+    auto_dialogue = [ ],
 
     # Say.
     rollforward = [ 'mousedown_5', 'K_RETURN', 'repeat_K_RETURN' ],
-    dismiss = [ 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SPACE', 'K_KP_SPACE' ],
+    dismiss = [ 'mousedown_5', 'mouseup_1', 'K_RETURN', 'K_KP_ENTER', 'K_SPACE', 'K_KP_SPACE' ],
     dismiss_unfocused = [ ],
 
     # Pause.
@@ -301,7 +301,7 @@ define keymap_debug = dict(
     # DIY
     quit_menu = [ 'K_ESCAPE', 'mousedown_3' ],
     quit_hist = [ 'K_ESCAPE', 'mousedown_3' ],
-    auto_dialogue = [ 'K_LALT', 'K_RALT' ],
+    auto_dialogue = [ ],
 
     # Say.
     rollforward = [ 'mousedown_5', 'K_PAGEDOWN', 'repeat_K_PAGEDOWN' ],

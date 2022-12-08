@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 717: u'rotate' is not a keyword argument or valid child for the bar statement.
-    rotate 15 yoffset 10
-          ^
+File "game/screens.rpy", line 2582: The has statement may not be given after a child has been supplied.
+    has vbox:
+       ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Mon Dec  5 02:22:54 2022
+Wed Dec  7 23:31:53 2022
