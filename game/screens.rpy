@@ -18,22 +18,22 @@ default gallery_page_index = 1
 
 # Gallery Music list
 define gallery_music_list = {
-    "audio/music/themepiano.ogg" : "Theme Piano",
-    "audio/music/theme.ogg" : "Theme",
-    "audio/music/bgm01.ogg" : "bgm01",
-    "audio/music/bgm02.ogg" : "bgm02",
-    "audio/music/bgm03.ogg" : "bgm03",
-    "audio/music/bgm04.ogg" : "bgm04",
-    "audio/music/bgm05.ogg" : "bgm05",
-    "audio/music/bgm06.ogg" : "bgm06",
-    "audio/music/bgm07.ogg" : "bgm07",
-    "audio/music/bgm08.ogg" : "bgm08",
-    "audio/music/bgm09.ogg" : "bgm09",
-    "audio/music/bgm10.ogg" : "bgm10",
-    "audio/music/bgm11.ogg" : "bgm11",
-    "audio/music/bgm12.ogg" : "bgm12",
-    "audio/music/bgm13.ogg" : "bgm13",
-    "audio/music/bgm15.ogg" : "bgm15"
+    "audio/music/themepiano.ogg" : "梦想天空 piano ver.",
+    "audio/music/theme.ogg" : "梦想天空",
+    "audio/music/bgm01.ogg" : "春～樱飞～",
+    "audio/music/bgm02.ogg" : "夏～澄空～",
+    "audio/music/bgm03.ogg" : "秋～月幕～",
+    "audio/music/bgm04.ogg" : "冬～苍雪～",
+    "audio/music/bgm05.ogg" : "恭贺新禧",
+    "audio/music/bgm06.ogg" : "悬而未决",
+    "audio/music/bgm07.ogg" : "哀毁骨立",
+    "audio/music/bgm08.ogg" : "其乐无穷",
+    "audio/music/bgm09.ogg" : "梁芷柔～theme ver.",
+    "audio/music/bgm10.ogg" : "梁芷柔～allegro vivace ver.",
+    "audio/music/bgm11.ogg" : "风轻云淡",
+    "audio/music/bgm12.ogg" : "快马加鞭",
+    "audio/music/bgm13.ogg" : "With Memories",
+    "audio/music/bgm15.ogg" : "樱华大学"
 }
 
 # Helper
@@ -942,7 +942,7 @@ screen settings(r_menu=False):
                                 spacing 15
                                 imagebutton:
                                     auto "setting_click_%s"
-                                    action Preference("voice sustain", "enable")
+                                    action Preference("voice sustain", "disable")
                                 text _("同步"):
                                     style_prefix "mute_setting"
                                     if preferences.voice_sustain:
@@ -953,7 +953,7 @@ screen settings(r_menu=False):
                                 spacing 15
                                 imagebutton:
                                     auto "setting_click_%s"
-                                    action Preference("voice sustain", "disable")
+                                    action Preference("voice sustain", "enable")
                                 text _("不同步"):
                                     style_prefix "mute_setting"
                                     if preferences.voice_sustain:
@@ -1618,13 +1618,13 @@ screen gallery():
             xalign 0.158 yalign 0.042
             idle_background "gui/gallery/cg_small/1.png"
             hover_background "gui/gallery/cg_small/1.png"
-            if eval("persistent.cg_1_"+str(gallery_page_index)+"_flag") and renpy.loadable(str("gui/gallery/cg_small/1-"+str(gallery_page_index)+".png")):
+            if eval("persistent.cg_1_"+str(gallery_page_index)+"_1_flag") and renpy.loadable(str("gui/gallery/cg_small/1-"+str(gallery_page_index)+".png")):
                 add str("gui/gallery/cg_small/1-"+str(gallery_page_index)+".png") xoffset 1 yoffset -4
             else:
                 add "gui/gallery/cg_small/1-none.png" xoffset 1 yoffset -4
             add "gui/gallery/cg_small/1.png" xoffset -6 yoffset -7
-            if eval("persistent.cg_1_"+str(gallery_page_index)+"_flag") and renpy.loadable("gui/gallery/full/1-"+str(gallery_page_index)+".jpg"):
-                action Show("gallery_full_cg", cg = ("gui/gallery/full/1-"+str(gallery_page_index)+".jpg"))
+            if eval("persistent.cg_1_"+str(gallery_page_index)+"_1_flag") and renpy.loadable("gui/gallery/full/cg1-"+str(gallery_page_index)+"_1.jpg"):
+                action Show("gallery_full_cg", cg = ("cg1-"+str(gallery_page_index)+"_"))
             else:
                 action NullAction()
 
@@ -1633,13 +1633,13 @@ screen gallery():
             xalign 0.18 yalign 0.485
             idle_background "gui/gallery/cg_small/2.png"
             hover_background "gui/gallery/cg_small/2.png"
-            if eval("persistent.cg_2_"+str(gallery_page_index)+"_flag") and renpy.loadable(str("gui/gallery/cg_small/2-"+str(gallery_page_index)+".png")):
+            if eval("persistent.cg_2_"+str(gallery_page_index)+"_1_flag") and renpy.loadable(str("gui/gallery/cg_small/2-"+str(gallery_page_index)+".png")):
                 add str("gui/gallery/cg_small/2-"+str(gallery_page_index)+".png") xoffset 1 yoffset -4
             else:
                 add "gui/gallery/cg_small/2-none.png" xoffset 1 yoffset -4
             add "gui/gallery/cg_small/2.png" xoffset -6 yoffset -7
-            if eval("persistent.cg_2_"+str(gallery_page_index)+"_flag") and renpy.loadable("gui/gallery/full/2-"+str(gallery_page_index)+".jpg"):
-                action Show("gallery_full_cg", cg = ("gui/gallery/full/2-"+str(gallery_page_index)+".jpg"))
+            if eval("persistent.cg_2_"+str(gallery_page_index)+"_1_flag") and renpy.loadable("gui/gallery/full/cg2-"+str(gallery_page_index)+"_1.jpg"):
+                action Show("gallery_full_cg", cg = ("cg2-"+str(gallery_page_index)+"_"))
             else:
                 action NullAction()
 
@@ -1648,13 +1648,13 @@ screen gallery():
             xalign 0.7 yalign 0.11
             idle_background "gui/gallery/cg_small/3.png"
             hover_background "gui/gallery/cg_small/3.png"
-            if eval("persistent.cg_3_"+str(gallery_page_index)+"_flag") and renpy.loadable(str("gui/gallery/cg_small/3-"+str(gallery_page_index)+".png")):
+            if eval("persistent.cg_3_"+str(gallery_page_index)+"_1_flag") and renpy.loadable(str("gui/gallery/cg_small/3-"+str(gallery_page_index)+".png")):
                 add str("gui/gallery/cg_small/3-"+str(gallery_page_index)+".png") xoffset 1 yoffset -4
             else:
                 add "gui/gallery/cg_small/3-none.png" xoffset 1 yoffset -4
             add "gui/gallery/cg_small/3.png" xoffset -6 yoffset -7
-            if eval("persistent.cg_3_"+str(gallery_page_index)+"_flag") and renpy.loadable("gui/gallery/full/3-"+str(gallery_page_index)+".jpg"):
-                action Show("gallery_full_cg", cg = ("gui/gallery/full/3-"+str(gallery_page_index)+".jpg"))
+            if eval("persistent.cg_3_"+str(gallery_page_index)+"_1_flag") and renpy.loadable("gui/gallery/full/cg3-"+str(gallery_page_index)+"_1.jpg"):
+                action Show("gallery_full_cg", cg = ("cg3-"+str(gallery_page_index)+"_"))
             else:
                 action NullAction()
 
@@ -1671,13 +1671,21 @@ screen gallery():
                 auto "gallery_page_next_btn_%s"
                 action SetVariable("gallery_page_index", gallery_page_index+1), Hide("gallery", dissolve), Show("gallery", dissolve)
 
-screen gallery_full_cg(cg):
+screen gallery_full_cg(cg, num = 1):
     zorder 999
     modal True
 
     imagebutton:
-        idle im.FactorScale(cg, 1)
-        action Hide("gallery_full_cg")
+        idle im.FactorScale("gui/gallery/full/"+cg+str(num)+".jpg", 1)
+        if renpy.loadable("gui/gallery/full/"+cg+str(num+1)+".jpg") and eval(str("persistent."+cg.replace("cg","cg_")+str(num+1)+"_flag").replace('-',"_")):
+            action Show("gallery_full_cg", cg=cg, num=num+1)
+        else:
+            action Show("gallery_full_cg", cg=cg, num=1)
+
+    # text str(eval(str("persistent."+cg.replace("cg","cg_")+str(num)+"_flag").replace('-',"_")))
+    # text str("persistent."+cg.replace("cg","cg_")+str(num)+"_flag").replace('-',"_") ypos 0.1
+
+    key "quit_menu" action Hide("gallery_full_cg")
 
 style gallery_music_player_label_text:
     size 32
