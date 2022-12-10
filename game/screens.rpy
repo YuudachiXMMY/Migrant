@@ -208,20 +208,21 @@ screen say(who, what):
 
         text what id "what"
 
-    fixed:
-        imagebutton:
-            xalign 0.875 yalign 0.85
-            auto "dia_qucksave_%s"
-            action ShowMenu("save")
+    if config.keymap != keymap_end:
+        fixed:
+            imagebutton:
+                xalign 0.875 yalign 0.85
+                auto "dia_qucksave_%s"
+                action ShowMenu("save")
 
-        imagebutton:
-            # keysym "history_menu"
-            xalign 0.875 yalign 0.92
-            auto "dia_replay_%s"
-            # action ShowMenu('history')
-            action ShowMenu("history") # Play("voice", _get_voice_info().filename)
+            imagebutton:
+                # keysym "history_menu"
+                xalign 0.875 yalign 0.92
+                auto "dia_replay_%s"
+                # action ShowMenu('history')
+                action ShowMenu("history") # Play("voice", _get_voice_info().filename)
 
-        key "history_menu" action ShowMenu("history")
+            key "history_menu" action ShowMenu("history")
 
     ## 如果有侧边图像，会将其显示在文本之上。请不要在手机界面下显示这个，因为没
     ## 有空间。
