@@ -1,84 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00gamemenu.rpy", line 170, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 170, in <module>
-    $ ui.interact()
-  File "game/screens.rpy", line 663, in execute
-    screen settings(r_menu=False):
-  File "game/screens.rpy", line 663, in execute
-    screen settings(r_menu=False):
-  File "game/screens.rpy", line 669, in execute
-    fixed:
-  File "game/screens.rpy", line 683, in execute
-    fixed:
-  File "game/screens.rpy", line 704, in execute
-    hbox:
-  File "game/screens.rpy", line 713, in execute
-    vbox:
-  File "game/screens.rpy", line 717, in execute
-    bar value VariableValue(Preference("auto-forward time"), range=(10,0), max_is_zero=True, step=-1):#Preference("auto-forward time"):
-  File "renpy/common/00barvalues.rpy", line 283, in get_adjustment
-    value = getattr(self.object, self.field)
-TypeError: getattr(): attribute name must be string
+  File "renpy/common/00start.rpy", line 212, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 504, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 504, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 514, in _execute_python_hide
+    renpy.load("_reload-2")
+ImportError: No module named revertable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 170, in script
-    $ ui.interact()
-  File "renpy/ast.py", line 1131, in execute
+  File "renpy/common/00start.rpy", line 212, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 504, in script
+    python hide:
+  File "/Applications/renpy-7.4.10-sdk/renpy/ast.py", line 928, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 1061, in py_exec_bytecode
+  File "/Applications/renpy-7.4.10-sdk/renpy/python.py", line 2245, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 170, in <module>
-    $ ui.interact()
-  File "renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "renpy/display/core.py", line 3810, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 451, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3810, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 462, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 663, in execute
-    screen settings(r_menu=False):
-  File "game/screens.rpy", line 663, in execute
-    screen settings(r_menu=False):
-  File "game/screens.rpy", line 669, in execute
-    fixed:
-  File "game/screens.rpy", line 683, in execute
-    fixed:
-  File "game/screens.rpy", line 704, in execute
-    hbox:
-  File "game/screens.rpy", line 713, in execute
-    vbox:
-  File "game/screens.rpy", line 717, in execute
-    bar value VariableValue(Preference("auto-forward time"), range=(10,0), max_is_zero=True, step=-1):#Preference("auto-forward time"):
-  File "renpy/sl2/sldisplayables.py", line 261, in sl2bar
-    return renpy.display.behavior.Bar(range, value, width, height, vertical=False, **properties)
-  File "renpy/display/behavior.py", line 1955, in __init__
-    adjustment = value.get_adjustment()
-  File "renpy/common/00barvalues.rpy", line 283, in get_adjustment
-    value = getattr(self.object, self.field)
-TypeError: getattr(): attribute name must be string
+  File "renpy/common/00keymap.rpy", line 504, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 514, in _execute_python_hide
+    renpy.load("_reload-2")
+  File "/Applications/renpy-7.4.10-sdk/renpy/loadsave.py", line 770, in load
+    roots, log = loads(location.load(filename))
+  File "/Applications/renpy-7.4.10-sdk/renpy/loadsave.py", line 63, in loads
+    return cPickle.loads(s)
+ImportError: No module named revertable
 
-Windows-10-10.0.19041 AMD64
-Ren'Py 7.5.3.22090809
+Darwin-21.6.0-x86_64-i386-64bit
+Ren'Py 7.4.11.2266
 候鸟 完整试玩（CG仍缺失3张、BGM有6首免费素材等替换，但演出基本修完的）内测版 v0.4 Demo0.4
-Mon Dec  5 02:31:20 2022
+Sat Dec 24 15:53:19 2022

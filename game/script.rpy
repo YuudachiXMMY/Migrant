@@ -29,10 +29,10 @@ default persistent.game_clear_times = 0
 
 # CG Flags
 #CG01|听讲
-default persistent.cg_1_1_1_flag = False
-default persistent.cg_1_1_2_flag = False
+default persistent.cg_1_1_1_flag = True
+default persistent.cg_1_1_2_flag = True
 default persistent.cg_1_1_3_flag = False
-default persistent.cg_1_1_4_flag = False
+default persistent.cg_1_1_4_flag = True
 default persistent.cg_1_1_5_flag = False
 default persistent.cg_1_1_6_flag = False
 default persistent.cg_1_1_7_flag = False

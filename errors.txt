@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 2582: The has statement may not be given after a child has been supplied.
-    has vbox:
-       ^
+File "game/screens.rpy", line 1881: is not terminated with a newline. (Check strings and parenthesis.)
+            if renpy.loadable("gui/gallery/full/"+cg+str(num+1)+".jpg") and eval(str("persistent."+cg.replace("cg","cg_")+str(num+1)+"_flag":
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Dec  7 23:31:53 2022
+Sat Dec 10 01:11:40 2022

@@ -1671,16 +1671,21 @@ screen gallery():
                 auto "gallery_page_next_btn_%s"
                 action SetVariable("gallery_page_index", gallery_page_index+1), Hide("gallery", dissolve), Show("gallery", dissolve)
 
-screen gallery_full_cg(cg, num = 1):
+screen gallery_full_cg(cg, num = 1, locked = False):
     zorder 999
     modal True
 
     imagebutton:
-        idle im.FactorScale("gui/gallery/full/"+cg+str(num)+".jpg", 1)
+        if locked:
+            idle im.FactorScale("gui/gallery/full/lock.jpg", 1)
+        else:
+            idle im.FactorScale("gui/gallery/full/"+cg+str(num)+".jpg", 1)
         if renpy.loadable("gui/gallery/full/"+cg+str(num+1)+".jpg") and eval(str("persistent."+cg.replace("cg","cg_")+str(num+1)+"_flag").replace('-',"_")):
             action Show("gallery_full_cg", cg=cg, num=num+1)
-        else:
+        elif not renpy.loadable("gui/gallery/full/"+cg+str(num+1)+".jpg") and eval(str("persistent."+cg.replace("cg","cg_")+str(1)+"_flag").replace('-',"_")):
             action Show("gallery_full_cg", cg=cg, num=1)
+        else:
+            action Show("gallery_full_cg", cg=cg, num=num+1, locked=True)
 
     # text str(eval(str("persistent."+cg.replace("cg","cg_")+str(num)+"_flag").replace('-',"_")))
     # text str("persistent."+cg.replace("cg","cg_")+str(num)+"_flag").replace('-',"_") ypos 0.1
