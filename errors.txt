@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1881: is not terminated with a newline. (Check strings and parenthesis.)
-            if renpy.loadable("gui/gallery/full/"+cg+str(num+1)+".jpg") and eval(str("persistent."+cg.replace("cg","cg_")+str(num+1)+"_flag":
+File "game/script_staff.rpy", line 149: expected menuitem
+    jump choice
+    ^
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Sat Dec 10 01:11:40 2022
+Mon Dec 26 21:30:43 2022

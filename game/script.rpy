@@ -29,10 +29,10 @@ default persistent.game_clear_times = 0
 
 # CG Flags
 #CG01|听讲
-default persistent.cg_1_1_1_flag = True
-default persistent.cg_1_1_2_flag = True
+default persistent.cg_1_1_1_flag = False
+default persistent.cg_1_1_2_flag = False
 default persistent.cg_1_1_3_flag = False
-default persistent.cg_1_1_4_flag = True
+default persistent.cg_1_1_4_flag = False
 default persistent.cg_1_1_5_flag = False
 default persistent.cg_1_1_6_flag = False
 default persistent.cg_1_1_7_flag = False
@@ -140,7 +140,6 @@ default persistent.cg_2_3_30_flag = False
 default persistent.cg_2_3_31_flag = False
 default persistent.cg_2_3_32_flag = False
 default persistent.cg_2_3_33_flag = False
-default persistent.cg_2_3_34_flag = False
 
 #CG09|逛社火
 default persistent.cg_3_3_1_flag = False
@@ -269,7 +268,7 @@ label start:
     stop sound
 
     #取消下面一行代码的注释可以直接进入staff剧情
-    # jump staff
+    jump staff
 
 #开篇
 
@@ -283,6 +282,7 @@ label start:
 
     play sound "audio/sound/ambientnoise01.ogg" fadein 5.0 loop #河边环境噪音
 
+    $ persistent.cg_3_4_1_flag = True
     scene cg12a #叶雨潇打电话CG-1|CG12a
     with fade
     "漫步河滨，放眼望去，但见河水滔滔，奔流而下，裹挟着泥沙，仿佛要将天地间的一切都染作昏黄。"
@@ -299,6 +299,7 @@ label start:
     "江浪声，风声，草木枝叶的哗哗声。"
     "忽然，有一声嘶鸣，自天空响彻四野。"
 
+    $ persistent.cg_3_4_2_flag = True
     scene cg12a1 #叶雨潇打电话CG-1|候鸟|CG12a1
     with fade
     "我抬起头，看到有一道白影，从眼前一晃而过，朝着正南的方向，义无反顾地飞去。"
@@ -345,13 +346,16 @@ label start:
     pause
 
     play sound "audio/sound/ambientnoise01.ogg" fadein 5.0 loop #河边环境噪音
+    $ persistent.cg_3_4_3_flag = True
     scene cg12a2 #叶雨潇打电话CG-1|手机|CG12a2
     with fade
     "掏出手机，打开通讯录。"
 
+    $ persistent.cg_3_4_4_flag = True
     scene cg12a3 #叶雨潇打电话CG-1|手机|通讯录|CG12a3
     with dissolve
     "在许许多多的人名中，翻出其中看起来似乎再普通不过的一条。"
+    $ persistent.cg_3_4_5_flag = True
     scene cg12a4 #叶雨潇打电话CG-1|手机|通讯录|梁芷柔|CG12a4
     with dissolve
     "「梁芷柔」"
@@ -523,6 +527,7 @@ label start:
     ##需追加BGM：梁芷柔印象曲
     play music "audio/music/bgm09.ogg" fadein 5.0 #梁芷柔印象曲
 
+    $ persistent.cg_1_1_1_flag = True
     scene cg01a #梁芷柔听讲CG-1|标准|CG01a
     with fade
     "忽然发现，在一排排东倒西歪的身影中，还真就有一个另类存在。"
@@ -604,6 +609,7 @@ label start:
 
     play music "audio/music/bgm08.ogg" fadein 5.0 #其乐无穷
 
+    $ persistent.cg_1_1_10_flag = True
     scene cg01c #梁芷柔听讲CG-3|衣服半透|CG01c
     with fade
     "我发现，梁芷柔其实也没少出汗。"
@@ -612,6 +618,7 @@ label start:
     with hpunch
     y "「（噢、噢噢……！）」"
 
+    $ persistent.cg_1_1_11_flag = True
     scene cg01c1 #梁芷柔听讲CG-3|衣服半透|视角拉近|CG01c1
     with fade
     "湿漉漉的校服紧紧趴在梁芷柔的肌肤上。"
@@ -629,6 +636,7 @@ label start:
     "作为一只偷窥天鹅的癞蛤蟆，我不禁觉得这种酷暑下的场面若是能再多延续一阵，也未尝不可。"
     y "「（能多看一秒是一秒嘛……嗯？）」"
 
+    $ persistent.cg_1_1_12_flag = True
     scene cg01c2 #梁芷柔听讲CG-3|眼睛向后瞟视|衣服半透|CG01c2
     with fade
     "她瞟了我一眼。"
@@ -1005,6 +1013,7 @@ label start:
 
     play sound "audio/sound/ambientnoise09.ogg" fadein 5.0 loop #人群嘈杂环境噪音
 
+    $ persistent.cg_2_1_1_flag = True
     scene cg02a #梁芷柔被压倒CG-1|标准|视角拉近|CG02a
     with fadeslow
     "勉强睁开眼睛，看到了一张惊慌失措的面孔。"
@@ -1020,6 +1029,7 @@ label start:
     "深吸一口气。"
     "松开左手、右臂用力地撑起身体，让自己离她的距离稍微远了一些。"
 
+    $ persistent.cg_2_1_2_flag = True
     scene cg02a1 #梁芷柔被压倒CG-1|标准|CG02a1
     with vpunch
     y "「噫……！」"
@@ -1029,6 +1039,7 @@ label start:
     "头脑一阵发昏。"
     "原本因为甫遭重击，还没有立即体现出来的疼痛感，全都伴随着这个动作回到了我的身上。"
 
+    $ persistent.cg_2_1_3_flag = True
     scene cg02b #梁芷柔被压倒CG-2|半起身|视角拉远|CG02b
     with fade
     nvl show
@@ -1047,18 +1058,16 @@ label start:
     "我扭过头，凶神恶煞地瞪着那两个始作俑者。"
     a "「……」"
     b "「……」"
-    stop sound fadeout 5.0
-
     "不知是被我吓到了，还是也在心生悔意，总之这一眼的效果相当的好，那两个人都默不作声地低下了头。"
     "看起来，战争结束了。"
     "交战双方损害轻微，无辜百姓伤亡惨重。"
     "真是岂有此理……"
     "这个时候，一只温软的小手拉住了我的左臂。"
+    stop sound fadeout 5.0
     voice "audio/voice/000011.ogg"
     l "「你……你还好吗？」"
 
-    play music "audio/music/bgm09.ogg" fadein 5.0 #梁芷柔印象曲
-
+    $ persistent.cg_2_1_4_flag = True
     scene cg02b1 #梁芷柔被压倒CG-1|标准|担心|CG02b1
     with fade
     "低下头，与梁芷柔的目光相交。"
@@ -1103,7 +1112,6 @@ label start:
     "头脑突然变得好沉，眼前的场景也开始旋转起来。"
     voice "audio/voice/000018.ogg"
     l "「喂！？」"
-    stop music fadeout 2.5
 
     ## TODO: 演出效果Check #############
 
@@ -1383,6 +1391,7 @@ label start:
     y "「嗯…{cps=2}……咦{/cps}！？」"
     "当我试图将头转向另一侧的时候，看到了一个意想不到的人。"
 
+    $ persistent.cg_3_1_1_flag = True
     scene cg03a #梁芷柔探病CG-1|看书|CG03a
     with fade
     l "「……」"
@@ -1405,7 +1414,7 @@ label start:
     with fade
     "梁芷柔正在专心致志地看着书，并没有注意到我的视线。"
     "这份注意力真是相当厉害了。"
-    "从小到大，「全神贯注」、「专心致志」的口号连听带喊了不知多少遍，但实话实说，我从未想到过一个人居然真的可以如此心无旁骛。"
+    "从小到大，「全神贯注」「专心致志」的口号连听带喊了不知多少遍，但实话实说，我从未想到过一个人居然真的可以如此心无旁骛。"
     "说起来，虽然以前在学校的时候也经常能够见到她认真学习的样子，但是现在和那些时候的感觉完全不同。"
     "或许是因为之前我还在昏睡，她身处独自一人的环境吧？此时此刻的梁芷柔，全部的精力都集中在了自己手中的书本上。"
     "除了偶尔翻页以外，几乎没有别的动作。甚至于在很多时候，如果不是她还在眨眼，瞳孔也在随着视线微微移动，我都会以为眼前的少女只是一个人偶。"
@@ -1430,6 +1439,7 @@ label start:
     play sound "audio/sound/effect04.ogg" noloop
     "忽然，一股突如其来的夏风，毫无征兆地挑开了窗帘。"
 
+    $ persistent.cg_3_1_2_flag = True
     scene cg03b #梁芷柔探病CG-2|起风|CG03b
     with fade
     voice "audio/voice/000027.ogg"
@@ -1449,6 +1459,7 @@ label start:
     voice "audio/voice/000028.ogg"
     l "「……咦？」"
     play sound "audio/sound/ambientnoise03.ogg" fadein 5.0 loop #傍晚环境噪音
+    $ persistent.cg_3_1_3_flag = True
     scene cg03c #梁芷柔探病CG-3|对视|CG03c
     with fade
     y "「哎？……呃。」"
@@ -1458,6 +1469,7 @@ label start:
     l "「……」"
     "以及，相顾无言。"
 
+    $ persistent.cg_3_1_4_flag = True
     scene cg03c1 #梁芷柔探病CG-3|对视|惊讶|CG03c1
     with dissolve
     y "「啊……哈哈。」"
@@ -1468,6 +1480,7 @@ label start:
     l "「你醒了！？」"
 
     play sound "audio/sound/effect05.ogg" noloop
+    $ persistent.cg_3_1_10_flag = True
     scene cg03e #梁芷柔探病CG-5|靠近|CG03e
     with vpunch
     "不过，梁芷柔似乎对此并不关心。她反应过来以后，直接一下子扑到我的床边。"
@@ -1711,6 +1724,7 @@ label start:
     y "「……」"
     l "「……」"
     y "「……」"
+    $ persistent.cg_3_1_5_flag = True
     scene cg03c2 #梁芷柔探病CG-3|对视|普通|CG03c2
     with dissolve
     voice "audio/voice/000065.ogg"
@@ -1720,6 +1734,7 @@ label start:
     y "「就是觉得，感觉你好像和以前不太一样。」"
     voice "audio/voice/000066.ogg"
     l "「嗯……？」"
+    $ persistent.cg_3_1_6_flag = True
     scene cg03c3 #梁芷柔探病CG-3|对视|微笑|CG03c3
     with dissolve
     voice "audio/voice/000067.ogg"
@@ -1781,6 +1796,7 @@ label start:
 
     play sound "audio/sound/ambientnoise04.ogg" fadein 5.0 loop #白天环境噪音
 
+    $ persistent.cg_3_1_7_flag = True
     scene cg03d #梁芷柔探病CG-4|削苹果|CG03d
     with dissolve
     voice "audio/voice/001001.ogg"
@@ -1794,6 +1810,7 @@ label start:
     with hpunch
     y "「……喂！」"
 
+    $ persistent.cg_3_1_9_flag = True
     scene cg03d2 #梁芷柔探病CG-4|削苹果|对视|微笑|CG03d2
     with dissolve
     voice "audio/voice/001004.ogg"
@@ -1830,6 +1847,7 @@ label start:
 
     play audio "audio/sound/effect09.ogg" noloop
 
+    $ persistent.cg_3_1_11_flag = True
     scene cg03f #梁芷柔探病CG-6|递苹果|CG03f
     with dissolve
     y "「……」"
@@ -1838,6 +1856,7 @@ label start:
 
     play audio "audio/sound/effect09.ogg" noloop
 
+    $ persistent.cg_3_1_8_flag = True
     scene cg03d1 #梁芷柔探病CG-4|削苹果|对视|CG03d1
     with dissolve
     voice "audio/voice/001012.ogg"
@@ -2422,6 +2441,7 @@ label start:
 
     play sound "audio/sound/ambientnoise06.ogg" fadein 5.0 loop #快餐店环境噪音
 
+    $ persistent.cg_1_2_1_flag = True
     scene cg04a #梁芷柔快餐店学习CG-1|就坐|CG04a
     with fade
     voice "audio/voice/001104.ogg"
@@ -2429,6 +2449,7 @@ label start:
     y "「不……」"
     y "「我只是觉得，为什么暑假这么短呢？」"
     y "「明明才刚刚开始，感觉就好像已经过去一半了一样……为什么要提前半个月开学啊！？高一那帮崽子们现在玩得好欢啊，再想想去年，呜……」"
+    $ persistent.cg_1_2_2_flag = True
     scene cg04a1 #梁芷柔快餐店学习CG-1|就坐|微笑|CG04a1
     with dissolve
     voice "audio/voice/001105.ogg"
@@ -2446,6 +2467,7 @@ label start:
     l "「好啦，干正事干正事。」"
     "梁芷柔从自己的书包里拿出了…{cps=2}…一{/cps}大摞习题集。"
     y "「呜哇。」"
+    $ persistent.cg_1_2_3_flag = True
     scene cg04a2 #梁芷柔快餐店学习CG-1|就坐|皱眉|CG04a2
     with dissolve
     voice "audio/voice/001109.ogg"
@@ -2484,6 +2506,7 @@ label start:
     l "「但是你现在的情况嘛……嗯，我问你，暑假作业你做……嗯，你看过了么？」"
     y "「呃……」"
     y "「大概翻了翻，还没仔细看。」"
+    $ persistent.cg_1_2_4_flag = True
     scene cg04a3 #梁芷柔快餐店学习CG-1|就坐|无奈|CG04a3
     with dissolve
     voice "audio/voice/001119.ogg"
@@ -2515,6 +2538,7 @@ label start:
     "在暑假刚开始就做作业这种事，有生以来还真是头一遭。"
     "感觉…{cps=2}…不{/cps}习惯啊。"
     "我下意识地去抬头看了看桌子对面的梁芷柔。"
+    $ persistent.cg_1_2_5_flag = True
     scene cg04b #梁芷柔快餐店学习CG-2|做题|CG04b
     with fade
     y "「（呜哇。）」"
@@ -2631,6 +2655,7 @@ label start:
     "……{p}…………"
 
     play sound "audio/sound/ambientnoise06.ogg" fadein 5.0 loop #快餐店环境噪音
+    $ persistent.cg_1_2_12_flag = True
     scene cg04c #梁芷柔快餐店学习CG-3|饮料|CG04c
     with fade
     y "「来，给你。」"
@@ -2910,6 +2935,7 @@ label start:
     voice "audio/voice/001188.ogg"
     l "「……好啦。」"
     "梁芷柔边看边用铅笔在我的作业上轻轻地打着标记，最后将检查过的作业递还给我。"
+    $ persistent.cg_1_2_6_flag = True
     scene cg04b1 #梁芷柔快餐店学习CG-2|讲题|CG04b1
     with dissolve
     voice "audio/voice/001189.ogg"
@@ -3570,7 +3596,7 @@ label start:
     voice "audio/voice/001278.ogg"
     l "「嗯，没错。」"
     y "「嗯…{cps=2}…嗯{/cps}？」"
-    "习惯了一大堆「高考」、「试题」之类的字眼，在听到最后几本书的名字时，我有那么一瞬间没有反应过来。"
+    "习惯了一大堆「高考」「试题」之类的字眼，在听到最后几本书的名字时，我有那么一瞬间没有反应过来。"
     stop sound fadeout 3.0
     "而等我明白过来的时候，则忍不住惊讶地叫出声来。"
 
@@ -4576,6 +4602,7 @@ label start:
     "然后，到了「某日」……"
 
     play sound "audio/sound/ambientnoise06.ogg" fadein 5.0 loop #快餐店环境噪音
+    $ persistent.cg_1_2_16_flag = True
     scene cg04d #梁芷柔快餐店学习CG-4|看书|CG04d
     with fade
     y "「……」"
@@ -4594,6 +4621,7 @@ label start:
     voice "audio/voice/001411.ogg"
     l "「那你干嘛总是用很奇怪的眼神盯着我看。」"
     y "「因为你居然在看安\[哔——\]宝贝的书啊！」"
+    $ persistent.cg_1_2_17_flag = True
     scene cg04d1 #梁芷柔快餐店学习CG-4|看书|青筋暴起|CG04d1
     with dissolve
     voice "audio/voice/001412.ogg"
@@ -4786,6 +4814,7 @@ label start:
     "……{p}…………"
 
     play sound "audio/sound/ambientnoise06.ogg" fadein 5.0 loop #快餐店环境噪音
+    $ persistent.cg_1_2_13_flag = True
     scene cg04c1 #梁芷柔快餐店学习CG-3|做题|饮料|CG04c1
     with fade
     "休息过后，照例的学习时间。"
@@ -4867,6 +4896,7 @@ label start:
     with vpunch
     y "「噗！！」"
     "含在嘴里的一大口饮料，混着我的口水，如同一口老血般，呈喷雾状洒满整张桌子。"
+    $ persistent.cg_1_2_14_flag = True
     scene cg04c2 #梁芷柔快餐店学习CG-3|做题|饮料|吃惊|CG04c2
     voice "audio/voice/001444.ogg"
     with hpunch
@@ -4876,6 +4906,7 @@ label start:
     with vpunch
     play sound "audio/sound/effect14.ogg" noloop
     "——哗啦。"
+    $ persistent.cg_1_2_15_flag = True
     scene cg04c3 #梁芷柔快餐店学习CG-3|做题|饮料倒|CG04c3
     "然后，将放在一边的饮料杯……打翻了。"
     "……{p}…………"
@@ -5261,7 +5292,7 @@ label start:
     with dissolve
     l "「……」"
     y "「……这啥咧？」"
-    "柜台的前面，立着一面大幅的海报，上面以扎眼的字体和特效填满了「开业酬宾」、「跳楼甩卖」、「吐血打折」、「抽奖必中」之类夸张的文字。"
+    "柜台的前面，立着一面大幅的海报，上面以扎眼的字体和特效填满了「开业酬宾」「跳楼甩卖」「吐血打折」「抽奖必中」之类夸张的文字。"
     y "「……话说这里是一楼吧，你在这里跳楼真是一点威慑力都没有啊。」"
     "总而言之，就是这么个只要看一眼就会让人很想要吐槽的海报。"
     "实际上，这个广告的效果也非常存疑。"
@@ -5286,6 +5317,7 @@ label start:
     "不过她并没有越过柜台，而是…{cps=2}…趴{/cps}在上面看了起来。"
 
     play music "audio/music/bgm08.ogg" fadein 5.0 #其乐无穷
+    $ persistent.cg_2_2_1_flag = True
     scene cg05a #梁芷柔看首饰CG-1|观看|CG05a
     with fade
     y "「……」"
@@ -5299,6 +5331,7 @@ label start:
     "看来是了……她貌似完全没有注意到自己在做什么……"
     "不过，能够在商家们多维度的洗脑下坚持这么久，已经算是了不起了。"
     y "「……」"
+    $ persistent.cg_2_2_2_flag = True
     scene cg05a1 #梁芷柔看首饰CG-1|观看|星星眼|CG05a1
     with dissolve
     "话说回来，这样的梁芷柔倒是第一次见到，也算是大饱眼福了。"
@@ -5309,6 +5342,7 @@ label start:
     y "「……有那么想要吗？」"
     "我也凑了上去。"
     l "「……」"
+    $ persistent.cg_2_2_3_flag = True
     scene cg05a2 #梁芷柔看首饰CG-1|观看|放大|CG05a2
     with dissolve
     "顺着梁芷柔的视线看去，是一个小挂坠。"
@@ -5323,11 +5357,13 @@ label start:
     "抬头再看看梁芷柔，这位似乎正在以极大的毅力来抵抗诱惑。"
     y "「……」"
     y "「咳。」"
+    $ persistent.cg_2_2_5_flag = True
     scene cg05b1 #梁芷柔看首饰CG-2|对视|惊讶|CG05b1
     with hpunch
     voice "audio/voice/001520.ogg"
     l "「……啊？」"
     y "「怎么样，喜欢哪个？」"
+    $ persistent.cg_2_2_6_flag = True
     scene cg05b2 #梁芷柔看首饰CG-2|对视|尴尬|CG05b2
     with dissolve
     voice "audio/voice/001521.ogg"
@@ -5357,6 +5393,7 @@ label start:
     voice "audio/voice/001527.ogg"
     l "「你啊……」"
     y "「怎么啦？不喜欢？」"
+    $ persistent.cg_2_2_4_flag = True
     scene cg05b #梁芷柔看首饰CG-2|对视|CG05b
     with dissolve
     "梁芷柔轻轻摇摇头。"
@@ -5368,6 +5405,7 @@ label start:
     scene bg black #黑屏
     with fade
     "……{p}…………"
+    $ persistent.cg_2_2_7_flag = True
     scene cg05c #梁芷柔看首饰CG-3|试戴|CG05c
     with fade
     "虽然一脸被我气得哭笑不得的样子，不过梁芷柔还是接过了挂坠，随即戴上，开始对着台面上的镜子看来看去。"
@@ -5379,10 +5417,12 @@ label start:
     "挂坠虽然简单，倒也大方，搭配起来的效果居然还不错。"
     "当然，也可能是人漂亮了戴什么都好看吧……"
     y "「就是它了。服务员，开票吧。」"
+    $ persistent.cg_2_2_8_flag = True
     scene cg05c0 #梁芷柔看首饰CG-3|试戴|惊讶|CG05c0
     with vpunch
     voice "audio/voice/001530.ogg"
     l "「哎！？哎！！！？」"
+    $ persistent.cg_2_2_9_flag = True
     scene cg05c1 #梁芷柔看首饰CG-3|试戴|惊讶|对视|CG05c1
     with dissolve
     voice "audio/voice/001531.ogg"
@@ -5833,6 +5873,7 @@ label start:
     y "「啥啊这是！」"
 
     play music "audio/music/bgm08.ogg" fadein 5.0 #其乐无穷
+    $ persistent.cg_3_2_1_flag = True
     scene cg06a #梁芷柔看电影CG-1|空位|CG06a
     with fade
     "居然……是个双人卡座。"
@@ -5862,6 +5903,7 @@ label start:
     "不过——重点是这个吗！？"
     "这样真的没问题吗？这种设定你也能接受？你真那么想看这个电影啊？"
 
+    $ persistent.cg_3_2_2_flag = True
     scene cg06b #梁芷柔看电影CG-2|入座|CG06b
     with dissolve
     "我俩僵硬地坐下。"
@@ -5873,6 +5915,7 @@ label start:
     "虽然想要找个话题聊两句，缓解一下气氛，但是脑子里一团浆糊，也不知该说些什么才好。"
     y "「……」"
     y "「啊，对了。」"
+    $ persistent.cg_3_2_3_flag = True
     scene cg06b1 #梁芷柔看电影CG-2|爆米花|CG06b1
     with dissolve
     "我把爆米花递给梁芷柔。"
@@ -5912,10 +5955,12 @@ label start:
     "当然，拜此所赐，刚才的尴尬气氛也有所缓解。"
     "……{p}…………"
     play sound "audio/sound/effect18.ogg" noloop
+    $ persistent.cg_3_2_4_flag = True
     scene cg06b2 #梁芷柔看电影CG-2|关灯|CG06b2
     with fade
     y "「啊。」"
     "关灯了。"
+    $ persistent.cg_3_2_5_flag = True
     scene cg06b3 #梁芷柔看电影CG-2|开幕|CG06b3
     with dissolve
     "荧幕也亮了起来，开始播放广告。"
@@ -5932,6 +5977,7 @@ label start:
     play sound "audio/sound/effect16.ogg" fadein 5.0 noloop
     l "「……」"
     "梁芷柔看得很专心，表情也随着剧情的进展不断变化。"
+    $ persistent.cg_3_2_6_flag = True
     scene cg06b4 #梁芷柔看电影CG-2|放松|CG06b4
     with dissolve
     "刚开始紧绷的身体也渐渐放松下来了。"
@@ -5946,11 +5992,13 @@ label start:
     "过了一会儿，电影里出现了一个海啸的场景，女主角要被海水卷走了。"
     voice "audio/voice/001612.ogg"
     l "「啊！」"
+    $ persistent.cg_3_2_7_flag = True
     scene cg06c #梁芷柔看电影CG-3|紧张|CG06c
     with dissolve
     "入戏颇深的梁芷柔吃了一惊，轻声低呼了出来。"
     y "「（哈哈，还真会被这样的场面吓到啊，女生还真是……）」"
     y "「（咦？）」"
+    $ persistent.cg_3_2_8_flag = True
     scene cg06c1 #梁芷柔看电影CG-3|紧张|抓手|CG06c1
     with vpunch
     "手！我的手！"
@@ -5963,6 +6011,7 @@ label start:
     "很快，女主角就被卷入了大海。"
     voice "audio/voice/001613.ogg"
     l "「……啊。」"
+    $ persistent.cg_3_2_9_flag = True
     scene cg06d #梁芷柔看电影CG-4|捂嘴|CG06d
     with dissolve
     "梁芷柔用手捂住嘴，尽量压住自己的声音。"
@@ -6239,6 +6288,7 @@ label start:
     voice "audio/voice/001655.ogg"
     l "「我妈晚上刚回到家，就在我的面前，就那么直挺挺地……倒下了。」"
 
+    $ persistent.cg_1_3_1_flag = True
     scene cg07 #赤印梗|小梁芷柔跪地大哭|草图|CG07
     with fade
     voice "audio/voice/001658.ogg"
@@ -6514,6 +6564,7 @@ label start:
     y "「（嗯？）」"
     stop sound fadeout 5.0
 
+    $ persistent.cg_1_1_3_flag = True
     scene cg01b #梁芷柔听讲CG-2|眼睛向后瞟视|CG01b
     with dissolve
     l "「……」"
@@ -6522,6 +6573,7 @@ label start:
 
     play music "audio/music/bgm08.ogg" fadein 5.0 #其乐无穷
     l "「……」"
+    $ persistent.cg_1_1_4_flag = True
     scene cg01b1 #梁芷柔听讲CG-2|瞪眼|CG01b1
     with dissolve
     l "「……」"
@@ -6531,6 +6583,7 @@ label start:
     y "「（好啦好啦，知道啦……）」"
     "我不好意思地讪笑了一下，挠了挠脸，刚想要把视线别开……"
     y "「（……咦？）」"
+    $ persistent.cg_1_1_5_flag = True
     scene cg01b2 #梁芷柔听讲CG-2|笑|CG01b2
     with dissolve
     voice "audio/voice/002002.ogg"
@@ -6553,6 +6606,7 @@ label start:
     l "「……」"
     y "「（啊……又被瞪了。）」"
     y "「（嗯？）」"
+    $ persistent.cg_1_1_6_flag = True
     scene cg01b3 #梁芷柔听讲CG-2|笑瞪|CG01b3
     with dissolve
     "不过，这次梁芷柔没坚持住，刚瞪了一眼，自己就先笑场了。"
@@ -6885,7 +6939,7 @@ label start:
     with fade
     play sound "audio/sound/effect06.ogg" noloop
     "上午的课程结束了。"
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～绯月～
+    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
     y "「……呼。」"
     with hpunch
     "啪！"
@@ -7143,7 +7197,7 @@ label start:
     "过了几天。"
 
 
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～绯月～
+    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
     scene bg b01 #教室
     with fade
     "学校依旧枯燥无比。老师们只知道一个劲地给学生加码，搞得我们苦不堪言。尤其是其他两个年级也到了开学的日子，两相对比之下，更是让人难以平衡。"
@@ -7308,7 +7362,7 @@ label start:
     scene bg b02 #城区
     with fade
     "高三生活的头一个月，在各种忙碌之中匆匆而过。"
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～绯月～
+    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
     scene bg b01 #教室
     with fade
     "学校开始下狠手了。它就像是一头喜爱玩弄猎物的怪兽，不断地折磨着我们的身体与心灵。"
@@ -7486,7 +7540,7 @@ label start:
     scene bg black #黑屏
     with fade
     "……{p}…………"
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～绯月～
+    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
     scene bg b04b #滨河路|夜
     with fade
     show chara lb01b #梁芷柔立绘|冬季校服|普通|侧面|近
@@ -7737,7 +7791,7 @@ label start:
     "果然如此……"
     "俗话说得好，人心散了，队伍不好带啊。"
 
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～绯月～
+    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
     scene bg b02b #城区|夜
     with fade
     "扭过脸，望向窗外。"
@@ -7848,7 +7902,7 @@ label start:
     with fade
     "……{p}…………"
 
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～绯月～
+    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
     scene bg b02b #城区|夜
     with fade
     "距离偶遇梁芷柔的那天晚上，已经过去一个月了。"
@@ -8072,7 +8126,7 @@ label start:
     y "「……」"
     y "「……唉。」"
 
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～绯月～
+    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
     "说到底，店员小姐的建议虽然有些不太负责，但是大道理是没有错的。"
     "此前是班里同学之间的胡乱起哄，现在一个几乎是陌生人的店员也来八卦一二，虽然都是捕风捉影的事，但作为当事人的梁芷柔，也不会迟钝到一点感觉都没有。"
     "不过，她始终都是坦坦荡荡的，反倒是我一直摇摆不定、甚至还曾产生疏离。"
@@ -8144,6 +8198,7 @@ label start:
     "这是什么情况？"
     stop sound fadeout 5.0
 
+    $ persistent.cg_2_3_1_flag = True
     scene cg08a #梁芷柔河边CG-1|单独远目|CG08a
     with fade
     "梁芷柔的神情……看上去似乎有些落寞，又有些迷茫，是我从没见过的表情。"
@@ -8201,11 +8256,13 @@ label start:
     with dissolve
     voice "audio/voice/003014.ogg"
     l "「呵……」"
+    $ persistent.cg_2_3_7_flag = True
     scene cg08c #梁芷柔河边CG-3|转头|秋装|苦笑|CG08c
     with fade
     "梁芷柔只是苦笑了一下，轻轻摇了摇头。"
     "看来我果然没什么搞活气氛的天赋。{p}既然如此，那就单刀直入吧。"
     y "「怎么啦，能跟我说说不？」"
+    $ persistent.cg_2_3_8_flag = True
     scene cg08c1 #梁芷柔河边CG-3|转头|秋装|落寞|CG08c1
     with dissolve
     voice "audio/voice/003015.ogg"
@@ -8215,6 +8272,7 @@ label start:
     with dissolve
     voice "audio/voice/003016.ogg"
     l "「……」"
+    $ persistent.cg_2_3_9_flag = True
     scene cg08c2 #梁芷柔河边CG-3|转头|秋装|苦笑|闭眼|CG08c2
     with dissolve
     voice "audio/voice/003017.ogg"
@@ -8235,6 +8293,7 @@ label start:
     "我将手中的包裹放到脚边，然后与她相隔半米，也不再说话，就默默地看着她的侧脸。"
     voice "audio/voice/003018.ogg"
     l "「……」"
+    $ persistent.cg_2_3_2_flag = True
     scene cg08a1 #梁芷柔河边CG-1|远目|秋装|落寞|闭眼|CG08a1
     with dissolve
     voice "audio/voice/003019.ogg"
@@ -8305,16 +8364,19 @@ label start:
     "张着嘴，想要说点什么，却根本组织不起语言来。"
 
     play music "audio/music/bgm07.ogg" fadein 5.0 #哀毁骨立
+    $ persistent.cg_2_3_13_flag = True
     scene cg08c6 #梁芷柔河边CG-3|转头|秋装|失焦|CG08c6
     with dissolve
     "然而，梁芷柔……似乎并没有注意到我的混乱。"
     "她的视线虽然朝向我，但目光的焦点却不知飞到了哪里。"
     l "「……」"
+    $ persistent.cg_2_3_10_flag = True
     scene cg08c3 #梁芷柔河边CG-3|转头|秋装|落寞|闭眼|CG08c3
     with dissolve
     voice "audio/voice/003028.ogg"
     l "「雨潇。」"
     y "「啊，哎？」"
+    $ persistent.cg_2_3_14_flag = True
     scene cg08c7 #梁芷柔河边CG-3|转头|秋装|忧伤|CG08c7
     with dissolve
     voice "audio/voice/003029.ogg"
@@ -8347,6 +8409,7 @@ label start:
     y "「未来……和梦想……」"
     voice "audio/voice/003034.ogg"
     l "「我想过。」"
+    $ persistent.cg_2_3_15_flag = True
     scene cg08c8 #梁芷柔河边CG-3|转头|秋装|忧伤|犹豫|CG08c8
     with fade
     voice "audio/voice/003035.ogg"
@@ -8354,6 +8417,7 @@ label start:
     y "「嗯。」"
     voice "audio/voice/003036.ogg"
     l "「当时我没有告诉你我的梦想是什么，因为，其实那是一个特别简单、也特别没意思的理由——」"
+    $ persistent.cg_2_3_16_flag = True
     scene cg08c9 #梁芷柔河边CG-3|转头|秋装|忧伤|浅笑|CG08c9
     with dissolve
     voice "audio/voice/003037.ogg"
@@ -8386,6 +8450,7 @@ label start:
     with dissolve
     voice "audio/voice/003043.ogg"
     l "「但是，最近，我真的是……有点太累了……」"
+    $ persistent.cg_2_3_20_flag = True
     scene cg08c13 #梁芷柔河边CG-3|转头|秋装|忧伤|含泪|CG08c13
     with dissolve
     voice "audio/voice/003044.ogg"
@@ -8496,6 +8561,7 @@ label start:
     with dissolve
     voice "audio/voice/003067.ogg"
     l "「那时候的我，虽然觉得樱华很好，很喜欢那里，但也就是以后还想再去一次，根本没考虑过未来的规划。」"
+    $ persistent.cg_2_3_11_flag = True
     scene cg08c4 #梁芷柔河边CG-3|转头|秋装|面无表情|CG08c4
     with dissolve
     voice "audio/voice/003068.ogg"
@@ -8521,6 +8587,7 @@ label start:
     y "「呃……？」"
     voice "audio/voice/003073.ogg"
     l "「这还不算完，那一次比赛实际上是以夏令营的形式举办的，除了考试的那两天以外，后面还有一段时间是在进行学校学生之间的交流互动。」"
+    $ persistent.cg_2_3_3_flag = True
     scene cg08a2 #梁芷柔河边CG-1|远目|秋装|苦笑|CG08a2
     with dissolve
     voice "audio/voice/003074.ogg"
@@ -8582,12 +8649,14 @@ label start:
     with dissolve
     voice "audio/voice/003094.ogg"
     l "「我是可以做到的，不是吗？」"
+    $ persistent.cg_2_3_17_flag = True
     scene cg08c10 #梁芷柔河边CG-3|转头|秋装|忧伤|浅笑|含泪|CG08c10
     with dissolve
     voice "audio/voice/003095.ogg"
     l "「我已经这么努力了。」"
     voice "audio/voice/003096.ogg"
     l "「再多努力一把，让它变得更有价值，何乐而不为呢？」"
+    $ persistent.cg_2_3_21_flag = True
     scene cg08c14 #梁芷柔河边CG-3|转头|秋装|坚定|CG08c14
     with dissolve
     voice "audio/voice/003097.ogg"
@@ -8614,6 +8683,7 @@ label start:
     scene cg08c7 #梁芷柔河边CG-3|转头|秋装|忧伤|CG08c7
     with dissolve
     "梁芷柔用力地吸了吸气，然后又长长地吐出来，将哭腔压了回去。"
+    $ persistent.cg_2_3_12_flag = True
     scene cg08c5 #梁芷柔河边CG-3|转头|秋装|犹豫|CG08c5
     with dissolve
     voice "audio/voice/003102.ogg"
@@ -8628,6 +8698,7 @@ label start:
     with dissolve
     "梁芷柔轻轻摇摇头。"
     y "「哎？呃……他好歹是咱们班主任，这么说说也没什么错吧？」"
+    $ persistent.cg_2_3_22_flag = True
     scene cg08c15 #梁芷柔河边CG-3|转头|秋装|讽刺|CG08c15
     with dissolve
     voice "audio/voice/003105.ogg"
@@ -8683,6 +8754,7 @@ label start:
     l "「有的学校一个年级几百人，需要高考的只有十几个，其他的，早就保送或者预定出国留学了。」"
     voice "audio/voice/003118.ogg"
     l "「哪怕是剩下的这些人，一本率也在95\%以上，除了极个别的特殊学生，全都能考上不错的……对咱们这边的学生来说，是梦寐以求的学校。」"
+    $ persistent.cg_2_3_4_flag = True
     scene cg08a3 #梁芷柔河边CG-1|远目|秋装|垂目|CG08a3
     with dissolve
     voice "audio/voice/003119.ogg"
@@ -8698,6 +8770,7 @@ label start:
     "我从来没有见识过那样的世界，更无法体会到她此时的感受，这个问题根本就超脱了我所能理解的范畴。"
     "但是……"
     y "「我觉得，没问题吧。」"
+    $ persistent.cg_2_3_23_flag = True
     scene cg08c16 #梁芷柔河边CG-3|转头|秋装|吃惊|CG08c16
     with dissolve
     voice "audio/voice/003120.ogg"
@@ -8710,6 +8783,7 @@ label start:
     l "「啊……」"
     y "「这段时间我没少跟在你身边。我看得到，你是怎么努力的。所以我特别清楚你有多厉害。真的是很厉害。」"
     y "「可能你的那些个未来的竞争对手也很厉害吧，但你可是在咱们省都能排的上号的学霸，再怎么说凡事也要讲个正态分布吧？你也是最顶尖的那一批啊！」"
+    $ persistent.cg_2_3_18_flag = True
     scene cg08c11 #梁芷柔河边CG-3|转头|秋装|微笑|CG08c11
     with dissolve
     voice "audio/voice/003122.ogg"
@@ -8863,6 +8937,7 @@ label start:
     with dissolve
     voice "audio/voice/003157.ogg"
     l "「呵呵……说的也是呢。」"
+    $ persistent.cg_2_3_19_flag = True
     scene cg08c12 #梁芷柔河边CG-3|转头|秋装|淡然|CG08c12
     with dissolve
     voice "audio/voice/003158.ogg"
@@ -8928,6 +9003,7 @@ label start:
     with dissolve
     voice "audio/voice/003175.ogg"
     l "「我不知道……自己有没有那么坚强。」"
+    $ persistent.cg_2_3_24_flag = True
     scene cg08c17 #梁芷柔河边CG-3|转头|秋装|强颜欢笑|CG08c17
     with dissolve
     voice "audio/voice/003176.ogg"
@@ -10327,6 +10403,7 @@ label start:
     y "「……到。」"
     "我深吸了一口气，站起身来应答。"
     "伴随着我的起立，班上同学们略显好奇的目光也都纷纷向我集中过来。"
+    $ persistent.cg_1_1_7_flag = True
     scene cg01b4 #梁芷柔听讲CG-2|眼睛向后瞟视|冬装|CG01b4
     with dissolve
     l "「……」"
@@ -10773,6 +10850,7 @@ label start:
     "如果不是凛冽的寒风拍打在窗户上呼呼作响——而且还顺着不怎么严实的窗户缝钻进来了——那大概就又会是一场全员入睡的惨剧吧。"
     "这场面仿佛是半年前那一天的再现，不禁令我想起被飞椅骑脸的惨痛记忆。"
     "下意识地朝梁芷柔那边看了看。"
+    $ persistent.cg_1_1_2_flag = True
     scene cg01a1 #梁芷柔听讲CG-1|标准|冬装|CG01a1
     with fade
     l "「……」"
@@ -10786,6 +10864,7 @@ label start:
     y "「（啊……）」"
     "非常迅速地被发现了。"
     y "「（……嗯？）」"
+    $ persistent.cg_1_1_8_flag = True
     scene cg01b5 #梁芷柔听讲CG-2|笑瞪|冬装|CG01b5
     with dissolve
     voice "audio/voice/005038.ogg"
@@ -10796,6 +10875,7 @@ label start:
     y "「（既然如此，那就别怪我了。）」"
     "反瞪回去。"
     "不仅如此，还挤眉弄眼做了个鬼脸，指了指讲台的方向。"
+    $ persistent.cg_1_1_13_flag = True
     scene cg01d #梁芷柔听讲CG-4|笑喷|CG01d
     with dissolve
     voice "audio/voice/005039.ogg"
@@ -10838,6 +10918,7 @@ label start:
     "班主任喷起人来可谓永无止境，一旦被他当成目标，那就只剩下等死了。"
     y "「……」"
     "不对，怎么就只有我被抓住了呢！"
+    $ persistent.cg_1_1_9_flag = True
     scene cg01b6 #梁芷柔听讲CG-2|笑|冬装|CG01b6
     with fade
     "我面带不甘之色，瞥了我的共犯一眼。"
@@ -11124,6 +11205,7 @@ label start:
     scene bg b07 #快餐店
     with fade
     pause
+    $ persistent.cg_1_2_10_flag = True
     scene cg04b5 #梁芷柔快餐店学习CG-2|做题|愁眉苦脸|冬装|CG04b5
     with fade
     play sound "audio/sound/effect10.ogg" fadein 0.5 loop #写字声
@@ -11148,6 +11230,7 @@ label start:
     y "「（……感觉这个标准答案……好麻烦？）」"
     y "「（不过这样的话我到底是做对了没有啊……虽然感觉没有错……）」"
     y "「那个……」"
+    $ persistent.cg_1_2_8_flag = True
     scene cg04b3 #梁芷柔快餐店学习CG-2|做题|冬装|CG04b3
     with dissolve
     stop sound fadeout 5.0
@@ -11159,6 +11242,7 @@ label start:
     y "「这个……」"
     voice "audio/voice/005080.ogg"
     l "「我看看我看看……」"
+    $ persistent.cg_1_2_11_flag = True
     scene cg04b6 #梁芷柔快餐店学习CG-2|讲题|冬装|CG04b6
     with dissolve
     l "「……」"
@@ -11169,6 +11253,7 @@ label start:
     voice "audio/voice/005082.ogg"
     l "「没问题，你做对了。」"
     y "「……呼！」"
+    $ persistent.cg_1_2_7_flag = True
     scene cg04b2 #梁芷柔快餐店学习CG-2|讲题|坏笑|冬装|CG04b2
     with dissolve
     voice "audio/voice/005083.ogg"
@@ -11409,6 +11494,7 @@ label start:
     play sound "audio/sound/ambientnoise06.ogg" fadein 5.0 loop #快餐店环境噪音
     "又过了几分钟。"
     l "「……」"
+    $ persistent.cg_1_2_9_flag = True
     scene cg04b4 #梁芷柔快餐店学习CG-2|做题|暴怒|冬装|CG04b4
     with dissolve
     voice "audio/voice/005121.ogg"
@@ -11626,6 +11712,7 @@ label start:
     voice "audio/voice/005157.ogg"
     l "「陪我呆一会儿吧。」"
     y "「噢。」"
+    $ persistent.cg_2_3_5_flag = True
     scene cg08b #梁芷柔河边CG-2|远目|冬装|远目|CG08b
     with fade
     "我们俩找了个地方，并排靠在栏杆边，梁芷柔捋了捋头发，朝河面望去。"
@@ -11641,11 +11728,13 @@ label start:
     "哪怕早已是司空见惯，但眼前的这幅景色依然不禁让人赞叹。"
     l "「……」"
     y "「……」"
+    $ persistent.cg_2_3_25_flag = True
     scene cg08d #梁芷柔河边CG-4|转头|冬装|微笑|CG08d
     with dissolve
     voice "audio/voice/005160.ogg"
     l "「哎。」"
     y "「嗯？」"
+    $ persistent.cg_2_3_26_flag = True
     scene cg08d1 #梁芷柔河边CG-4|转头|冬装|羞涩|CG08d1
     with dissolve
     voice "audio/voice/005161.ogg"
@@ -11654,6 +11743,7 @@ label start:
     l "「你刚才问我为什么要来这里，我说我也不知道。」"
     voice "audio/voice/005163.ogg"
     l "「但其实……我只是有点，不知道该怎么说才好。」"
+    $ persistent.cg_2_3_6_flag = True
     scene cg08b1 #梁芷柔河边CG-2|远目|冬装|远目|微笑|CG08b1
     with dissolve
     voice "audio/voice/005164.ogg"
@@ -11671,6 +11761,7 @@ label start:
     "在听到这话的一瞬间，我的心脏骤然狂跳起来。"
     stop sound fadeout 5.0
     "力度之大，都能让我自己直接听到那砰砰的响声。"
+    $ persistent.cg_2_3_27_flag = True
     scene cg08d2 #梁芷柔河边CG-4|转头|冬装|微笑|脸红|CG08d2
     with fade
     "我扭过头，想要看看她的模样，却发现她此时也正好转过脸来，恰好与我四目相对。"
@@ -11679,6 +11770,7 @@ label start:
     "梁芷柔也没有再说什么，只是微笑着，看着我。"
     l "「……」"
     y "「……」"
+    $ persistent.cg_2_3_28_flag = True
     scene cg08d3 #梁芷柔河边CG-4|转头|冬装|微笑|脸红|特写|CG08d3
     with dissolve
     "不知不觉中，我们之间的距离，似乎正在逐渐…{cps=2}…缩{/cps}短。"
@@ -11691,6 +11783,7 @@ label start:
     "看着她红扑扑的脸蛋。"
     "感受她呼出的白色哈气。"
     "聆听她略微急促的呼吸声。"
+    $ persistent.cg_2_3_29_flag = True
     scene cg08d4 #梁芷柔河边CG-4|转头|冬装|脸红|CG08d4
     with dissolve
     l "「……」"
@@ -11700,6 +11793,7 @@ label start:
     "一厘米、两厘米……"
     "我们之间的距离，越来越近。"
     l "「……」"
+    $ persistent.cg_2_3_30_flag = True
     scene cg08d5 #梁芷柔河边CG-4|转头|冬装|脸红|闭眼|CG08d5
     with dissolve
     "她轻轻闭上了眼睛。"
@@ -11718,6 +11812,7 @@ label start:
     play audio "audio/sound/effect27.ogg" noloop
     bird "「扑棱扑棱扑棱扑棱扑棱扑棱扑棱扑棱扑棱——」"
     "就在我们即将接触的那一瞬间，有一大滩水鸟不知因为什么被惊得四散飞起，闹出了好大的动静。"
+    $ persistent.cg_2_3_31_flag = True
     scene cg08d6 #梁芷柔河边CG-4|转头|冬装|吃惊|CG08d6
     with fade
     voice "audio/voice/005168.ogg"
@@ -11742,6 +11837,7 @@ label start:
     l "「嘻……嘻嘻！」"
     "看着我的样子，梁芷柔很开心地笑了起来。"
     play music "audio/music/themepiano.ogg" fadein 5.0 #梦想天空 piano ver.
+    $ persistent.cg_2_3_32_flag = True
     scene cg08e #梁芷柔河边CG-5|顶脑门|笑|CG08e
     with dissolve
     "然后，她微微前倾，把她的额头与我的额头贴在了一起。"
@@ -11750,6 +11846,7 @@ label start:
     voice "audio/voice/005171.ogg"
     l "「『在看风景的时候，在乎的并不是风景有多美，而是陪在你身边看风景的那个人是谁。』……」"
     y "「嗯。」"
+    $ persistent.cg_2_3_33_flag = True
     scene cg08e1 #梁芷柔河边CG-5|顶脑门|微笑|CG08e1
     with dissolve
     voice "audio/voice/005172.ogg"
@@ -11812,27 +11909,32 @@ label start:
     "是的，这一切都真实地发生了……"
     "春节，到了。"
 
+    $ persistent.cg_3_3_5_flag = True
     scene cg09aj5 #梁芷柔逛社火CG-1|冰糖葫芦|兴奋|CG09aj5
     with fade
     play music "audio/music/bgm05.ogg" fadein 5.0 #恭贺新禧
     voice "audio/voice/005175.ogg"
     l "「人好多啊～」"
+    $ persistent.cg_3_3_8_flag = True
     scene cg09aj8 #梁芷柔逛社火CG-1|冰糖葫芦|噘嘴|CG09aj8
     with dissolve
     voice "audio/voice/005176.ogg"
     l "「哎呀怎么搞的嘛……人怎么这么多啊！挤死了！嗯……」"
     y "「那你还非要来。」"
+    $ persistent.cg_3_3_1_flag = True
     scene cg09aj1 #梁芷柔逛社火CG-1|冰糖葫芦|基础|CG09aj1
     with dissolve
     voice "audio/voice/005177.ogg"
     l "「肯定要来啊！因为是社火嘛！」"
     y "「我觉得更像是小商品集散中心外加灵长类野生动物园……」"
     y "「话说你有那么传统嘛，居然喜欢看这个？」"
+    $ persistent.cg_3_3_3_flag = True
     scene cg09aj3 #梁芷柔逛社火CG-1|冰糖葫芦|无奈|CG09aj3
     with dissolve
     voice "audio/voice/005178.ogg"
     l "「其实啊，我也就是来凑个热闹。」"
     y "「哎……」"
+    $ persistent.cg_3_3_2_flag = True
     scene cg09aj2 #梁芷柔逛社火CG-1|冰糖葫芦|皱眉|CG09aj2
     with dissolve
     voice "audio/voice/005179.ogg"
@@ -11850,6 +11952,7 @@ label start:
     voice "audio/voice/005182.ogg"
     l "「可问题是他们全都拿我当枪使啊！那什么，『你看看你表姐，今年可是要考到樱大去的啊，你再瞧瞧你，真没出息！』……唉！」"
     voice "audio/voice/005183.ogg"
+    $ persistent.cg_3_3_6_flag = True
     scene cg09aj6 #梁芷柔逛社火CG-1|冰糖葫芦|生气|CG09aj6
     with dissolve
     l "「你是不知道，我这两天就是标准的『别人家的孩子』，把我那一帮堂的表的兄弟姐妹都得罪遍了！」"
@@ -11858,6 +11961,7 @@ label start:
     voice "audio/voice/005184.ogg"
     l "「我还没办法，只能赔笑脸，『啊，谢谢谢谢，不敢当不敢当』……唉，真受不了。」"
     y "「……原来如此。我说呢，昨天我还琢磨了半天，心说您老人家这是怎么了？」"
+    $ persistent.cg_3_3_4_flag = True
     scene cg09aj4 #梁芷柔逛社火CG-1|冰糖葫芦|疑惑|CG09aj4
     with dissolve
     voice "audio/voice/005185.ogg"
@@ -11893,6 +11997,7 @@ label start:
     voice "audio/voice/005189.ogg"
     l "「你要是打过来了我肯定也不知道该说什么。然后呢，你想象一下吧，当着那一群人的面，接了一个男生的电话……啊，我死定了。」"
     y "「……」"
+    $ persistent.cg_3_3_7_flag = True
     scene cg09aj7 #梁芷柔逛社火CG-1|冰糖葫芦|开心|CG09aj7
     with dissolve
     voice "audio/voice/005190.ogg"
@@ -11900,6 +12005,7 @@ label start:
     scene cg09aj5 #梁芷柔逛社火CG-1|冰糖葫芦|兴奋|CG09aj5
     with dissolve
     pause 0.5
+    $ persistent.cg_3_3_56_flag = True
     scene cg09i #梁芷柔逛社火CG-9|人物消失|CG09i
     with dissolve
     "梁芷柔一边吃着冰糖葫芦，一边突然朝旁边的摊位冲去。"
@@ -11914,6 +12020,7 @@ label start:
     scene bg black #黑屏
     with fade
     "……{p}…………"
+    $ persistent.cg_3_3_44_flag = True
     scene cg09bj5 #梁芷柔逛社火CG-2|鱿鱼+冰糖葫芦（半）|兴奋|CG09bj5
     with fade
     "护着梁芷柔从人群里杀了出来。"
@@ -11925,6 +12032,7 @@ label start:
     l "「活得好好的呢。」"
     "梁芷柔将吃到一半的糖葫芦给我看。"
     y "「嗯？怎么少了？让人给挤掉了？」"
+    $ persistent.cg_3_3_43_flag = True
     scene cg09bj4 #梁芷柔逛社火CG-2|鱿鱼+冰糖葫芦（半）|疑惑|CG09bj4
     with dissolve
     voice "audio/voice/005194.ogg"
@@ -11934,21 +12042,25 @@ label start:
     "刚才看你都快被人给挤得脚离了地了……"
     voice "audio/voice/005195.ogg"
     l "「是啊，就这样……」"
+    $ persistent.cg_3_3_46_flag = True
     scene cg09bj8 #梁芷柔逛社火CG-2|鱿鱼+冰糖葫芦（半）|噘嘴|CG09bj8
     with dissolve
     "梁芷柔给我摆了个杂技里面吞剑的造型。"
     y "「这也行……」"
     y "「你就不能等会儿吃吗？多危险啊？」"
+    $ persistent.cg_3_3_47_flag = True
     scene cg09bj9 #梁芷柔逛社火CG-2|鱿鱼+冰糖葫芦（半）|羞涩|CG09bj9
     with dissolve
     voice "audio/voice/005196.ogg"
     l "「嗯……可是想吃了嘛。」"
     y "「呃……」"
     y "「那也太危险了啊！万一戳着自己怎么办……」"
+    $ persistent.cg_3_3_45_flag = True
     scene cg09bj7 #梁芷柔逛社火CG-2|鱿鱼+冰糖葫芦（半）|开心|CG09bj7
     with dissolve
     voice "audio/voice/005197.ogg"
     l "「啊，好啦好啦知道啦！嘻嘻，赶快吃鱿鱼吧，凉了就不好吃啦！啊呜。」"
+    $ persistent.cg_3_3_42_flag = True
     scene cg09bj1 #梁芷柔逛社火CG-2|鱿鱼+冰糖葫芦（半）|基础|CG09bj1
     with dissolve
     voice "audio/voice/005198.ogg"
@@ -11966,6 +12078,7 @@ label start:
     with fade
     "……{p}…………"
 
+    $ persistent.cg_3_3_17_flag = True
     scene cg09b1j1 #梁芷柔逛社火CG-2|棉花糖+羊肉串（半）|基础|CG09b1j1
     with fade
     play sound "audio/sound/ambientnoise08.ogg" fadein 5.0 loop #商场环境噪音
@@ -11975,16 +12088,19 @@ label start:
     "然而现在，我终于发现这里面其实还有一个隐藏的buff，一个绝对不下于「女生逛街」的buff。"
     "那就是……「在为了满足食欲而采取的觅食行动中，体力不减」。"
     "经过几轮厮杀之后，像我这样的凡夫俗子此刻已经显露出疲态了，可梁芷柔依旧是一副两眼放光、四处寻找猎物的姿态。"
+    $ persistent.cg_3_3_18_flag = True
     scene cg09b1j2 #梁芷柔逛社火CG-2|棉花糖+羊肉串（半）|皱眉|CG09b1j2
     with fade
     pause 0.5
     voice "audio/voice/005199.ogg"
     l "「哎，臭豆腐！嗯，感觉味道有点冲啊，但是又有点想吃……」"
+    $ persistent.cg_3_3_20_flag = True
     scene cg09b1j5 #梁芷柔逛社火CG-2|棉花糖+羊肉串（半）|兴奋|CG09b1j5
     with fade
     pause 0.5
     voice "audio/voice/005200.ogg"
     l "「啊，是灰豆子！好久都没吃过了，嗯……」"
+    $ persistent.cg_3_3_19_flag = True
     scene cg09b1j4 #梁芷柔逛社火CG-2|棉花糖+羊肉串（半）|疑惑|CG09b1j4
     with fade
     pause 0.5
@@ -11995,6 +12111,7 @@ label start:
     y "「……」"
     "感觉她什么都想吃。"
     "而且，这一路已经吃了那么多东西了，居然也不见她吃饱。"
+    $ persistent.cg_3_3_22_flag = True
     scene cg09b1j7 #梁芷柔逛社火CG-2|棉花糖+羊肉串（半）|开心|CG09b1j7
     with fade
     voice "audio/voice/005202.ogg"
@@ -12004,6 +12121,7 @@ label start:
     "似乎注意到我一直在看着她，梁芷柔扭过头来，发出了疑问。"
     y "「啊，我只是在想……」"
     y "「你怎么跟饿了三天没吃饭似的。」"
+    $ persistent.cg_3_3_24_flag = True
     scene cg09b1j9 #梁芷柔逛社火CG-2|棉花糖+羊肉串（半）|羞涩|CG09b1j9
     with dissolve
     voice "audio/voice/005203.ogg"
@@ -12013,11 +12131,13 @@ label start:
     voice "audio/voice/005204.ogg"
     l "「怎么啦，不行吗？」"
     y "「行行行，您使劲吃好了。」"
+    $ persistent.cg_3_3_23_flag = True
     scene cg09b1j8 #梁芷柔逛社火CG-2|棉花糖+羊肉串（半）|噘嘴|CG09b1j8
     with dissolve
     voice "audio/voice/005205.ogg"
     l "「哼！」"
     y "「我就说嘛，每逢佳节胖三斤啊，全是这么来的。」"
+    $ persistent.cg_3_3_21_flag = True
     scene cg09b1j6 #梁芷柔逛社火CG-2|棉花糖+羊肉串（半）|生气|CG09b1j6
     with dissolve
     voice "audio/voice/005206.ogg"
@@ -12049,6 +12169,7 @@ label start:
     y "「（脂肪啊……）」"
     y "「（嗯？脂肪……）」"
     "在念叨这个词的时候，我的眼神不由自主地把目光的焦点从梁芷柔的脸上往下挪了挪。"
+    $ persistent.cg_3_3_16_flag = True
     scene cg09b1 #梁芷柔逛社火CG-2|棉花糖+羊肉串（半）|放大|CG09b1
     with dissolve
     "的确，说到脂肪，那倒是还有个地方可以……"
@@ -12065,6 +12186,7 @@ label start:
 
     "……{p}…………"
 
+    $ persistent.cg_3_3_15_flag = True
     scene cg09a1j8 #梁芷柔逛社火CG-1|棉花糖|噘嘴|CG09a1j8
     with fade
     play music "audio/music/bgm08.ogg" fadein 5.0 #其乐无穷
@@ -12080,6 +12202,7 @@ label start:
     voice "audio/voice/005213.ogg"
     l "「……你眼睛。」"
     y "「哎？」"
+    $ persistent.cg_3_3_9_flag = True
     scene cg09a1j2 #梁芷柔逛社火CG-1|棉花糖|皱眉|CG09a1j2
     with dissolve
     voice "audio/voice/005214.ogg"
@@ -12101,6 +12224,7 @@ label start:
     y "「是啊，都是我不好，刚才我就说了嘛！」"
     voice "audio/voice/005218.ogg"
     l "「知道就好！」"
+    $ persistent.cg_3_3_13_flag = True
     scene cg09a1j6 #梁芷柔逛社火CG-1|棉花糖|生气|CG09a1j6
     with dissolve
     voice "audio/voice/005219.ogg"
@@ -12117,6 +12241,7 @@ label start:
     l "「不吃了！怕胖！」"
     y "「呃……」"
     l "「……」"
+    $ persistent.cg_3_3_10_flag = True
     scene cg09a1j3 #梁芷柔逛社火CG-1|棉花糖|无奈|CG09a1j3
     with dissolve
     voice "audio/voice/005222.ogg"
@@ -12131,11 +12256,13 @@ label start:
     l "「本来就是，自作孽。」"
     l "「……」"
     play sound "audio/sound/ambientnoise08.ogg" fadein 5.0 loop #商场环境噪音
+    $ persistent.cg_3_3_11_flag = True
     scene cg09a1j4 #梁芷柔逛社火CG-1|棉花糖|疑惑|CG09a1j4
     with dissolve
     voice "audio/voice/005225.ogg"
     l "「……过来。」"
     y "「嗯？」"
+    $ persistent.cg_3_3_48_flag = True
     scene cg09c #梁芷柔逛社火CG-3|检查眼睛|CG09c
     with dissolve
     "梁芷柔突然踮起脚尖，凑到我眼前，仔细地看我的眼睛。"
@@ -12152,6 +12279,7 @@ label start:
     "还挺认真的……"
     "也不知道她这么看能看出什么名堂来……不过她纤细的手指在我脸上滑过的时候，感觉蛮舒服的，就任由她摆布了。"
     "说来……"
+    $ persistent.cg_3_3_49_flag = True
     scene cg09c1 #梁芷柔逛社火CG-3|检查眼睛|近|CG09c1
     with dissolve
     "贴得真近啊……"
@@ -12168,6 +12296,7 @@ label start:
     with dissolve
     voice "audio/voice/005231.ogg"
     l "「好了！应该是没事了！」"
+    $ persistent.cg_3_3_14_flag = True
     scene cg09a1j7 #梁芷柔逛社火CG-1|棉花糖|开心|CG09a1j7
     with dissolve
     voice "audio/voice/005232.ogg"
@@ -12178,6 +12307,7 @@ label start:
     scene bg black #黑屏
     with fade
     "……{p}…………"
+    $ persistent.cg_3_3_12_flag = True
     scene cg09a1j5 #梁芷柔逛社火CG-1|棉花糖|兴奋|CG09a1j5
     with fade
     play music "audio/music/bgm05.ogg" fadein 5.0 #恭贺新禧
@@ -12194,6 +12324,7 @@ label start:
     y "「……」"
     "我们现在已经走出了餐饮区，附近基本都是卖小玩意儿的。"
     "不过梁芷柔似乎依然乐此不疲地跑来跑去，兴致丝毫不见减弱。"
+    $ persistent.cg_3_3_26_flag = True
     scene cg09b2j5 #梁芷柔逛社火CG-2|棉花糖+面人|兴奋|CG09b2j5
     with dissolve
     voice "audio/voice/005235.ogg"
@@ -12203,11 +12334,13 @@ label start:
     voice "audio/voice/005236.ogg"
     l "「是呀。」"
     y "「嚯……你还喜欢这玩意儿啊？」"
+    $ persistent.cg_3_3_25_flag = True
     scene cg09b2j2 #梁芷柔逛社火CG-2|棉花糖+面人|皱眉|CG09b2j2
     with dissolve
     voice "audio/voice/005237.ogg"
     l "「怎么啦，不行啊？」"
     y "「谁也没说不行啊，我这不就是随口问一句嘛……」"
+    $ persistent.cg_3_3_27_flag = True
     scene cg09b2j7 #梁芷柔逛社火CG-2|棉花糖+面人|开心|CG09b2j7
     with dissolve
     voice "audio/voice/005238.ogg"
@@ -12224,6 +12357,7 @@ label start:
     y "「……」"
     y "「又怎么了……」"
     "……"
+    $ persistent.cg_3_3_29_flag = True
     scene cg09b3j5 #梁芷柔逛社火CG-2|棉花糖+面人+糖人|兴奋|CG09b3j5
     with dissolve
     voice "audio/voice/005240.ogg"
@@ -12232,6 +12366,7 @@ label start:
     y "「嗯？这是……」"
     "这次梁芷柔手上又多了个糖人。"
     "不过她之前两只手上就都有东西了，这次大概是接过来的时候攥得不太稳，糖人在她手上晃来晃去，摇摇欲坠。"
+    $ persistent.cg_3_3_28_flag = True
     scene cg09b3j2 #梁芷柔逛社火CG-2|棉花糖+面人+糖人|皱眉|CG09b3j2
     with dissolve
     voice "audio/voice/005241.ogg"
@@ -12239,28 +12374,33 @@ label start:
     with hpunch
     y "「哦哦，来了来了。」"
     "我赶紧上去把她手里占地儿最大的棉花糖接了过来。"
+    $ persistent.cg_3_3_33_flag = True
     scene cg09b4j7 #梁芷柔逛社火CG-2|面人+糖人|开心|CG09b4j7
     with dissolve
     voice "audio/voice/005242.ogg"
     l "「嘻嘻……」"
     y "「还笑……拿不了就别一股脑买这么多东西啊，还都是怕碰的！」"
+    $ persistent.cg_3_3_34_flag = True
     scene cg09b4j8 #梁芷柔逛社火CG-2|面人+糖人|噘嘴|CG09b4j8
     with dissolve
     voice "audio/voice/005243.ogg"
     l "「可是……哎呀不管啦，我就是想买嘛！」"
     y "「……」"
     y "「好吧你随便吧……」"
+    $ persistent.cg_3_3_32_flag = True
     scene cg09b4j5 #梁芷柔逛社火CG-2|面人+糖人|兴奋|CG09b4j5
     with dissolve
     voice "audio/voice/005244.ogg"
     l "「耶！」"
     y "「先别耶，棉花糖怎么办啊？」"
+    $ persistent.cg_3_3_31_flag = True
     scene cg09b4j4 #梁芷柔逛社火CG-2|面人+糖人|疑惑|CG09b4j4
     with dissolve
     voice "audio/voice/005245.ogg"
     l "「吃啊。」"
     "明明刚才还在说因为怕胖不要吃东西了……"
     y "「行吧，那我给你拿糖人吧。」"
+    $ persistent.cg_3_3_30_flag = True
     scene cg09b4j2 #梁芷柔逛社火CG-2|面人+糖人|皱眉|CG09b4j2
     with dissolve
     voice "audio/voice/005246.ogg"
@@ -12271,6 +12411,7 @@ label start:
     voice "audio/voice/005247.ogg"
     l "「这个我也要拿着！」"
     y "「……那你怎么吃棉花糖啊？」"
+    $ persistent.cg_3_3_50_flag = True
     scene cg09d #梁芷柔逛社火CG-1|面人+糖人|投喂食物|CG09d
     with dissolve
     voice "audio/voice/005248.ogg"
@@ -12310,6 +12451,7 @@ label start:
     voice "audio/voice/005255.ogg"
     l "「哼！好吧，真对不起，我是个吃货。」"
     y "「别啊，吃货好啊，吃货多可爱。」"
+    $ persistent.cg_3_3_35_flag = True
     scene cg09b4j9 #梁芷柔逛社火CG-2|面人+糖人|羞涩|CG09b4j9
     with dissolve
     voice "audio/voice/005256.ogg"
@@ -12324,6 +12466,7 @@ label start:
     with fade
     "……{p}…………"
 
+    $ persistent.cg_3_3_39_flag = True
     scene cg09b5j5 #梁芷柔逛社火CG-2|风车+饮料|兴奋|CG09b5j5
     with fade
     "跟随着梁芷柔在社火里南征北战了一圈之后，我们终于来到了表演传统节目的区域。"
@@ -12341,6 +12484,7 @@ label start:
     "24个人摆开阵势，单手撑鼓，配合身体的舞动，将鼓甩得上下翻飞，同时徐疾有致地击打鼓面。"
     "鼓点犹如同滔滔黄河一般，气势汹涌、连绵不绝。"
     y "「敲得正经不错啊。」"
+    $ persistent.cg_3_3_40_flag = True
     scene cg09b5j7 #梁芷柔逛社火CG-2|风车+饮料|开心|CG09b5j7
     hide sd01
     with dissolve
@@ -12362,11 +12506,13 @@ label start:
     l "「哈哈，又来了！不带你这样的啊，严肃点！」"
     y "「呵呵，好吧好吧。」"
     y "「（希望……我能追得上你的步伐吧……）」"
+    $ persistent.cg_3_3_38_flag = True
     scene cg09b5j4 #梁芷柔逛社火CG-2|风车+饮料|疑惑|CG09b5j4
     with dissolve
     voice "audio/voice/005264.ogg"
     l "「嗯？你说什么？」"
     y "「啥都没说，真正的愿望都是埋在心里的，说出来就不灵了。」"
+    $ persistent.cg_3_3_41_flag = True
     scene cg09b5j8 #梁芷柔逛社火CG-2|风车+饮料|噘嘴|CG09b5j8
     with dissolve
     voice "audio/voice/005265.ogg"
@@ -12408,6 +12554,7 @@ label start:
     "「铁芯子」也是传统项目，类似于杂技，最下面是辆小车，几个人像叠罗汉那样，用铁棍支撑着挑到半空，但却总能保持着平衡。"
     voice "audio/voice/005271.ogg"
     l "「噫……不行不行，我看不了这个。」"
+    $ persistent.cg_3_3_36_flag = True
     scene cg09b5j2 #梁芷柔逛社火CG-2|风车+饮料|皱眉|CG09b5j2
     hide sd02
     with dissolve
@@ -12415,6 +12562,7 @@ label start:
     voice "audio/voice/005272.ogg"
     l "「瘆的慌。我老觉得他们会掉下来……」"
     y "「唉？不会吧，人都是绑在上面的，掉不下来吧？」"
+    $ persistent.cg_3_3_37_flag = True
     scene cg09b5j3 #梁芷柔逛社火CG-2|风车+饮料|无奈|CG09b5j3
     with dissolve
     voice "audio/voice/005273.ogg"
@@ -12434,6 +12582,7 @@ label start:
     with vpunch
     voice "audio/voice/005275.ogg"
     l "「——啊啊啊啊啊！！！！！」"
+    $ persistent.cg_3_3_51_flag = True
     scene cg09e #梁芷柔逛社火CG-5|藏在身后|CG09e
     with fade
     pause 1.0
@@ -12481,11 +12630,13 @@ label start:
     voice "audio/voice/005283.ogg"
     l "「真的真的吗？」"
     y "「哎哟你搁这儿套娃哪，我什么时候骗过你啊。」"
+    $ persistent.cg_3_3_52_flag = True
     scene cg09f1 #梁芷柔逛社火CG-5|藏在身后|露头|CG09f1
     with dissolve
     l "「……」"
     y "「……」"
     "梁芷柔像个小动物一样，小心翼翼地抬起头来，在环顾四周确认了没有危险之后，终于长长地喘出一口气来。"
+    $ persistent.cg_3_3_54_flag = True
     scene cg09g #梁芷柔逛社火CG-6|抓衣角|CG09g
     with dissolve
     voice "audio/voice/005284.ogg"
@@ -12538,6 +12689,7 @@ label start:
     with dissolve
     voice "audio/voice/005292.ogg"
     l "「……」"
+    $ persistent.cg_3_3_53_flag = True
     scene cg09fj1 #梁芷柔逛社火CG-5|藏在身后|露头|疑惑|CG09fj1
     with dissolve
     voice "audio/voice/005293.ogg"
@@ -12570,6 +12722,7 @@ label start:
     l "「呵呵……」"
 
     play music "audio/music/themepiano.ogg" fadein 5.0 #梦想天空 piano ver.
+    $ persistent.cg_3_3_55_flag = True
     scene cg09h #梁芷柔逛社火CG-6|牵手|CG09h
     with dissolve
     "不再担惊受怕的梁芷柔，没有继续死抱着我的胳膊，但也没有完全松开，而是……自然而然地牵起了我的手。"
@@ -12617,6 +12770,7 @@ label start:
     y "「累了吧？那边有椅子，歇会儿吧。」"
     voice "audio/voice/005309.ogg"
     l "「嗯。」"
+    $ persistent.cg_1_4_1_flag = True
     scene cg10a1 #梁芷柔看烟花CG|黄昏|两人|CG10a1
     with fade
     voice "audio/voice/005310.ogg"
@@ -12656,6 +12810,7 @@ label start:
     y "「OK。」"
     stop sound fadeout 5.0
 
+    $ persistent.cg_1_4_2_flag = True
     scene cg10a2 #梁芷柔看烟花CG|黄昏|梁芷柔单人|CG10a2
     with dissolve
     voice "audio/voice/005320.ogg"
@@ -12669,10 +12824,12 @@ label start:
     y "「啥情况这是……」"
 
     play music "audio/music/themepiano.ogg" fadein 5.0 #梦想天空 piano ver.
+    $ persistent.cg_1_4_3_flag = True
     scene cg10a3 #梁芷柔看烟花CG|黄昏|梁芷柔睡着|CG10a3
     with fade
     "几分钟之后，当我拿着饮料回来的时候，发现梁芷柔已经靠在长椅上睡着了。"
 
+    $ persistent.cg_1_4_4_flag = True
     scene cg10a4 #梁芷柔看烟花CG-2|黄昏|两人|梁芷柔睡着|CG10a4
     with dissolve
     y "「喂喂喂，醒醒，别睡了，会着凉的啊！」"
@@ -12690,6 +12847,7 @@ label start:
     l "「哼……你才是猪……呵～欠～」"
     l "「……」"
 
+    $ persistent.cg_1_4_5_flag = True
     scene cg10a5 #梁芷柔看烟花CG|黄昏|靠在肩上|CG10a5
     with dissolve
     voice "audio/voice/005324.ogg"
@@ -12703,6 +12861,7 @@ label start:
     l "「嗯～那就抱抱……抱抱就不冷了。」"
     y "「什么抱……哎！？」"
 
+    $ persistent.cg_1_4_6_flag = True
     scene cg10a6 #梁芷柔看烟花CG|黄昏|抱住|CG10a6
     with dissolve
     "没等我反应，梁芷柔就一头扎了过来，两只胳膊抱住我的脖子，把自己挂在了我的身上。"
@@ -12738,6 +12897,7 @@ label start:
     y "「（不管了！）」"
     "借着她这次的动静，我的手臂从她后背绕过去，轻轻搂住了她。"
 
+    $ persistent.cg_1_4_7_flag = True
     scene cg10a7 #梁芷柔看烟花CG|黄昏|相拥|CG10a7
     with dissolve
     y "「（尽量抱暖和一点就好了……吧？）」"
@@ -12773,6 +12933,7 @@ label start:
     y "「（嗯……）」"
     y "「……呵……欠……」"
 
+    $ persistent.cg_1_4_8_flag = True
     scene cg10a8 #梁芷柔看烟花CG|黄昏|相拥|两人睡着|CG10a8
     with dissolve
     y "「……」"
@@ -12788,6 +12949,7 @@ label start:
     "……"
     play audio "audio/sound/effect28.ogg" noloop
     "「——砰啪！」"
+    $ persistent.cg_1_4_9_flag = True
     scene cg10a9 #梁芷柔看烟花CG|夜晚|相拥|烟花|CG10a9
     with fade
     voice "audio/voice/005336.ogg"
@@ -12809,6 +12971,7 @@ label start:
     voice "audio/voice/005338.ogg"
     l "「哇……」"
     "一开始，梁芷柔还有点半梦半醒的样子，不过很快，她就被那些五颜六色的花火吸引住了。"
+    $ persistent.cg_1_4_10_flag = True
     scene cg10a10 #梁芷柔看烟花CG|夜晚|相拥|惊醒|CG10a10
     with fade
     voice "audio/voice/005339.ogg"
@@ -12818,6 +12981,7 @@ label start:
     "天色已经黑下来了，烟花的魅力得以完全展现出来。"
     y "「（话说回来，我也睡过去了？这是睡了多久啊……）」"
     y "「（我看看……哎哟这得有半个多小时了吧，完蛋了这肯定要病啊……）」"
+    $ persistent.cg_1_4_11_flag = True
     scene cg10a11 #梁芷柔看烟花CG|夜晚|相拥|指天|CG10a11
     with dissolve
     voice "audio/voice/005340.ogg"
@@ -12846,6 +13010,7 @@ label start:
     l "「嘻嘻，没事！」"
     "梁芷柔揉了揉自己的鼻子，毫不在意。"
     "虽然已经睡醒了，不过她似乎没有从我怀里离开的意思，反而靠的更近了。"
+    $ persistent.cg_1_4_12_flag = True
     scene cg10a12 #梁芷柔看烟花CG|夜晚|相拥|贴脸|CG10a12
     with dissolve
     "两个人的脸蛋都是冰冰的，但是，贴在一起却感觉不到寒冷。"
@@ -14919,7 +15084,7 @@ label start:
     "林林总总的一大堆文件材料。"
     y "「……」"
     "我打开录取通知书，仔细地看了看。"
-    "在录取通知书的最上端，校徽的旁边，清晰地印着「教育部直属国家重点综合性大学」、「国家『211工程』、『985工程』重点建设高校」的字样。"
+    "在录取通知书的最上端，校徽的旁边，清晰地印着「教育部直属国家重点综合性大学」「国家『211工程』、『985工程』重点建设高校」的字样。"
     "这两行字足以令这座县城里99.9\%的考生羡慕不已，即便是大人们，看到了也是要交口称赞一番的。"
     "我的父母这两天和亲戚朋友打电话的时候仿佛都变成了复读机，翻来覆去就只有一套「惋惜」的说辞——"
     "『哎呀，别提了，小孩子志愿没报好，第一志愿都没考上，只能去读百薇了！』"
@@ -15651,7 +15816,7 @@ label start:
     scene bg b12a #樱华市|夜晚
     with fade
 #最终需再确认一次BGM
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～绯月～
+    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
     nvl show
     nvl_narrator "顺着人群涌动的方向，走出火车站。"
     nvl_narrator "晚上7点，樱华的天空已经有些暗下来了。"
@@ -15768,7 +15933,7 @@ label start:
     nvl hide
     with dissolve
     y "「噢噢……」"
-    "老家的楼房门口可不会挂着「理学部」、「电子显微镜中心」这样的牌子。"
+    "老家的楼房门口可不会挂着「理学部」「电子显微镜中心」这样的牌子。"
     y "「说起来……」"
     y "「梁芷柔专业报的是应用数学吧？」"
     "也就是说她以后少不了要路过我现在站的这个位置吧……"
@@ -15854,10 +16019,10 @@ label start:
     "……{p}…………"
     "一边乱想，一边继续漫步向前。"
     "从图书馆向南拐了个弯，各种建筑的风格开始变得不再统一，名称也逐渐变得晦涩难懂起来。"
-    "「信电系」、「高分子系」、「机械设计研究所」……"
+    "「信电系」「高分子系」「机械设计研究所」……"
     "有的还能理解，有的就需要靠望文生义去猜，还有一些就只能是「虽然不明白你在说什么，但觉得似乎很厉害的样子」了。"
     "而且这些名称似乎也和建筑本身的好坏无关。"
-    "有两栋楼，哪怕放在老家都算得上是十分破旧的那种，门口却挂着「省级电池新材料与应用技术研究重点实验室」、「生物质化工教育部重点实验室」之类看上去颇为吓人的牌子。"
+    "有两栋楼，哪怕放在老家都算得上是十分破旧的那种，门口却挂着「省级电池新材料与应用技术研究重点实验室」「生物质化工教育部重点实验室」之类看上去颇为吓人的牌子。"
     "……{p}…………"
     stop sound fadeout 5.0
     "就这样一路走下来，在又路过一座不知什么实验楼的时候，我突然眼前一亮——"
@@ -16014,7 +16179,7 @@ label start:
     "他并不是我们县的人，家在邻县，不过是在靠近我们县这一侧的交界处，离得不远。"
     "他是他们那个县里第一个考到樱大的人，当时还上了新闻——不过那时候我还在上小学，倒是没什么记忆。"
     "聊天的同时，我顺便观察着沿途大大小小的房间。"
-    "「智能交通系统实验室」、「数据采集与监视控制系统实验室」、「机器人实验室」……"
+    "「智能交通系统实验室」「数据采集与监视控制系统实验室」「机器人实验室」……"
     "和之前看楼名的感觉差不多，基本只能是望文生义去瞎猜用途。"
     "隔着门窗，能看到其中已经有一些人在忙碌了。"
     "这就是……樱华的学生的日常吗？"
@@ -17435,6 +17600,7 @@ label start:
     "{cps=20}而是，温柔地……轻轻抚住。{/cps}"
     #play music "<from 0 to 114>audio/music/theme.ogg" fadein 5 fadeout 5 noloop #梦想天空 人声 ver.
     play music [ "audio/music/theme.ogg", "audio/music/themepiano.ogg" ] fadein 5 fadeout 5 noloop #梦想天空 人声 ver.
+    $ persistent.cg_2_4_1_flag = True
     scene cg11 #火车站吻别CG|CG11
     with fade
     l "{cps=20}「……」{/cps}"
@@ -17503,12 +17669,16 @@ label start:
     #play music "<from 113 to 150>audio/music/theme.ogg" fadein 5 fadeout 5 noloop #梦想天空 人声 ver.
     show staff:
         yalign -0.07
-        linear 120 yalign 1.07
-    pause 120.0
+        linear 175 yalign 1.07
+    pause 175.0
+    scene bg ed #候鸟LOGO、版权
+    with fadehold
     stop music fadeout 5
     pause 10.0
+    scene bg black #黑屏
+    with fadehold
 
-    $ config.keymap = keymap_debug # keymap_debug|keymap_release
+    $ config.keymap = keymap_release # keymap_debug|keymap_release
     $ renpy.clear_keymap_cache()
     $ renpy.run(Preference("auto-forward", "disable"))
     $ _dismiss_pause = True

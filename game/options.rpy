@@ -11,7 +11,7 @@
 ##
 ## 带有 _() 的字符串表示其可被翻译。
 
-define config.name = _("候鸟 完整试玩（CG仍缺失3张、BGM有6首免费素材等替换，但演出基本修完的）内测版 v0.4")
+define config.name = _("候鸟 完整试玩内测版 v0.51（1张CG、2首BGM、部分音效素材待替换，制作访谈演出及成就配置未完成）")
 
 
 ## 决定上面给出的标题是否显示在主界面屏幕。设置为 False 来隐藏标题。
@@ -21,7 +21,7 @@ define gui.show_name = False
 
 ## 游戏版本号。
 
-define config.version = "Demo0.4"
+define config.version = "Demo0.51"
 
 
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。

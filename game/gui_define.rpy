@@ -63,12 +63,12 @@ image blank_hover:
 # 制作组logo
 image KID_Fans_Club_logo:
     "gui/LOGO-BLUE.png"
-    zoom 0.68
+    zoom 0.5
 
-# 引擎logo
-image RenPy_logo:
-    "gui/renpy.png"
-    zoom 3.9168
+# 发行商logo
+image SW_logo:
+    "gui/SW_pink.png"
+    zoom 0.58
 
 ## 存档 ######################################################################
 ##

@@ -389,7 +389,7 @@ define keymap_debug = dict(
 
 
 # Keymap in use
-define config.keymap =  keymap_release #keymap_debug
+define config.keymap = keymap_debug #keymap_debug|keymap_release
 if config.keymap == keymap_release:
     define debug = False # True为debug模式 启用调试快捷键。False为发布模式
 else:

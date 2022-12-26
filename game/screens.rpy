@@ -97,6 +97,15 @@ label splashscreen: # before_main_menu:
     hide KID_Fans_Club_logo with Dissolve(2.0)
     pause 0.5
 
+    show SW_logo with Dissolve(2.0):
+        align(0.5, 0.5)
+    pause 2.5
+    hide SW_logo with Dissolve(2.0)
+    pause 0.5
+
+    scene bg black with Dissolve(0.5)
+    pause 0.5
+
     # # Renpy Logo
     # pause 2.0
 
@@ -946,9 +955,9 @@ screen settings(r_menu=False):
                                 text _("同步"):
                                     style_prefix "mute_setting"
                                     if preferences.voice_sustain:
-                                        bold True
-                                    else:
                                         bold False
+                                    else:
+                                        bold True
                             hbox:
                                 spacing 15
                                 imagebutton:
@@ -957,9 +966,9 @@ screen settings(r_menu=False):
                                 text _("不同步"):
                                     style_prefix "mute_setting"
                                     if preferences.voice_sustain:
-                                        bold False
-                                    else:
                                         bold True
+                                    else:
+                                        bold False
 
                     hbox:
                         yoffset 35
@@ -1143,10 +1152,13 @@ screen staffs():
             label _("剧本：苍蓝的风"):
                 xalign 0.5
         frame:
-            label _("剧本协力：小雨潇潇、木之"):
+            label _("剧本协力：小雨潇潇、木之、Deuterium"):
                 xalign 0.5
         frame:
             label _("演出：苍蓝的风"):
+                xalign 0.5
+        frame:
+            label _("演出协力：鱆、Deuterium"):
                 xalign 0.5
 
         frame:
@@ -1162,7 +1174,7 @@ screen staffs():
                     style_prefix "staffs_title"
                 add "staffs_title_block" yalign 0.5
         frame:
-            label _("人设：水树迷"):
+            label _("角色设计：水树迷"):
                 xalign 0.5
         frame:
             label _("立绘：九九一木"):
@@ -1171,13 +1183,22 @@ screen staffs():
             label _("CG：九九一木"):
                 xalign 0.5
         frame:
-            label _("场景设计：三水猫酱"):
+            label _("SD：Alchemy"):
+                xalign 0.5
+        frame:
+            label _("场景设计：三水猫酱、aaaaki"):
                 xalign 0.5
         frame:
             label _("场景绘制：aaaaki"):
                 xalign 0.5
         frame:
             label _("UI：拾九子"):
+                xalign 0.5
+        frame:
+            label _("转场：拾九子、三水猫酱"):
+                xalign 0.5
+        frame:
+            label _("平面美术：拾九子"):
                 xalign 0.5
         frame:
             label _("题字：风起深渊"):
@@ -1191,12 +1212,18 @@ screen staffs():
                 xalign 0.5
                 spacing 10
                 add "staffs_title_block" yalign 0.5
-                label _("配乐组"):
+                label _("声乐组"):
                     xalign 0.5
                     style_prefix "staffs_title"
                 add "staffs_title_block" yalign 0.5
         frame:
-            label _("BGM：麋鹿"):
+            label _("BGM：麋鹿、RAiNSE雨观"):
+                xalign 0.5
+        frame:
+            label _("音效：Freesound、耳聆网"):
+                xalign 0.5
+        frame:
+            label _("効果音ラボ、小森平的免费下载音效"):
                 xalign 0.5
 
         frame:
@@ -1212,13 +1239,13 @@ screen staffs():
                     style_prefix "staffs_title"
                 add "staffs_title_block" yalign 0.5 xoffset -15
         frame:
+            label _("作词：shin"):
+                xalign 0.5
+        frame:
             label _("作曲：C.C."):
                 xalign 0.5
         frame:
             label _("编曲：麋鹿"):
-                xalign 0.5
-        frame:
-            label _("作词：shin"):
                 xalign 0.5
         frame:
             label _("演唱：灵溪镇的清珏"):
@@ -1243,7 +1270,7 @@ screen staffs():
             label _("配音导演：苍蓝的风"):
                 xalign 0.5
         frame:
-            label _("后期：北落师门"):
+            label _("后期：苍术"):
                 xalign 0.5
 
         frame:
@@ -1276,25 +1303,6 @@ screen staffs():
                 xalign 0.5
                 spacing 10
                 add "staffs_title_block" yalign 0.5
-                label _("音效组"):
-                    xalign 0.5
-                    style_prefix "staffs_title"
-                add "staffs_title_block" yalign 0.5
-        frame:
-            label _("音效导演：苍蓝的风"):
-                xalign 0.5
-        frame:
-            label _("音效来源：耳聆网、Freesound"):
-                xalign 0.5
-
-        frame:
-            add "gui/staffs/title_line.png":
-                xalign 0.5
-        frame:
-            hbox:
-                xalign 0.5
-                spacing 10
-                add "staffs_title_block" yalign 0.5
                 label _("程序组"):
                     xalign 0.5
                     style_prefix "staffs_title"
@@ -1303,7 +1311,7 @@ screen staffs():
             label _("程序：芯玫墨韵"):
                 xalign 0.5
         frame:
-            label _("程序协力：百影狮子"):
+            label _("程序协力：百影虱子"):
                 xalign 0.5
 
         frame:
