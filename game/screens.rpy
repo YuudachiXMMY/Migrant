@@ -1089,7 +1089,10 @@ screen staffs():
     imagebutton:
         xpos 1780 ypos 681
         auto "staffs_replay_btn_%s"
-        action Show("test_notify", message="请在完成游戏正篇后观看") #message="开发中……\n敬请期待！！")
+        if persistent.game_clear_times <1:
+            action Show("test_notify", message="请在完成游戏正篇后观看") #message="开发中……\n敬请期待！！")
+        else:
+            action Jump("staff")
 
     # imagebutton:
     #     xalign 0.85 yalign 0.542
@@ -2041,7 +2044,7 @@ screen history():
     tag menu
 
     ## 避免预缓存此屏幕，因为它可能非常大。
-    predict False
+    predict True
 
     add "black_bg"
 
@@ -2668,7 +2671,7 @@ style nvl_window:
 style nvl_entry:
     xfill True
     ysize gui.nvl_height
-    ypos 362
+    ypos 370
 
 style nvl_label:
     xpos gui.nvl_name_xpos
@@ -2693,9 +2696,9 @@ style nvl_dialogue:
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
     font "SourceHanSansCN-Regular.otf" #经典中圆简.ttf
-    size 42
+    size 40
     color "#e0edff"
-    outlines [ (absolute(3), "#000", absolute(0), absolute(0)) ]
+    outlines [ (absolute(2), "#000", absolute(0), absolute(0)) ]
 
 style nvl_thought:
     xpos gui.nvl_thought_xpos
@@ -2707,9 +2710,9 @@ style nvl_thought:
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
     font "SourceHanSansCN-Regular.otf" #经典中圆简.ttf
-    size 42
+    size 40
     color "#e0edff"
-    outlines [ (absolute(3), "#000", absolute(0), absolute(0)) ]
+    outlines [ (absolute(2), "#000", absolute(0), absolute(0)) ]
 
 
 style nvl_button:
