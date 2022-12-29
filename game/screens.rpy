@@ -2696,7 +2696,7 @@ style nvl_dialogue:
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
     font "SourceHanSansCN-Regular.otf" #经典中圆简.ttf
-    size 41
+    size 40
     color "#e0edff"
     outlines [ (absolute(2), "#000", absolute(0), absolute(0)) ]
 
@@ -2710,7 +2710,7 @@ style nvl_thought:
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
     font "SourceHanSansCN-Regular.otf" #经典中圆简.ttf
-    size 41
+    size 40
     color "#e0edff"
     outlines [ (absolute(2), "#000", absolute(0), absolute(0)) ]
 
