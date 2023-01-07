@@ -33,6 +33,7 @@ define gallery_music_list = {
     "audio/music/bgm11.ogg" : "风轻云淡",
     "audio/music/bgm12.ogg" : "快马加鞭",
     "audio/music/bgm13.ogg" : "With Memories",
+    "audio/music/bgm14.ogg" : "针锋相对",
     "audio/music/bgm15.ogg" : "樱华大学"
 }
 
@@ -96,10 +97,7 @@ image ctc_pause_icon:
     "ctc_icon"
 
 label splashscreen: # before_main_menu:
-    if not debug:
-        $ config.keymap = keymap_release
-    else:
-        $ config.keymap = keymap_debug
+    $ config.keymap = keymap_release
     $ renpy.clear_keymap_cache()
     $ renpy.run(Preference("auto-forward", "disable"))
     $ _dismiss_pause = True

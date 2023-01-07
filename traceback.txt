@@ -1,42 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 215, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 517, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 517, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 528, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+  File "renpy/common/00start.rpy", line 240, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/screens.rpy", line 100, in script
+    if not debug:
+  File "game/screens.rpy", line 100, in <module>
+    if not debug:
+NameError: name 'debug' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 215, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 517, in script
-    python hide:
-  File "renpy/ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00keymap.rpy", line 517, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 528, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-  File "renpy/loadsave.py", line 769, in load
-    log.unfreeze(roots, label="_after_load")
-  File "renpy/rollback.py", line 1078, in unfreeze
-    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
-  File "renpy/rollback.py", line 889, in rollback
-    self.load_failed()
-  File "renpy/rollback.py", line 807, in load_failed
-    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+  File "renpy/common/00start.rpy", line 240, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/screens.rpy", line 100, in script
+    if not debug:
+  File "renpy/ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "renpy/python.py", line 1092, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 1085, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/screens.rpy", line 100, in <module>
+    if not debug:
+NameError: name 'debug' is not defined
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 7.5.3.22090809
-候鸟 完整试玩内测版 v0.51（1张CG、2首BGM、部分音效素材待替换，制作访谈演出及成就配置未完成） Demo0.51
-Tue Jan  3 19:16:02 2023
+候鸟 准正式版 0.99
+Fri Jan  6 21:22:04 2023

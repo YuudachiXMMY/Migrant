@@ -11,7 +11,7 @@
 ##
 ## 带有 _() 的字符串表示其可被翻译。
 
-define config.name = _("候鸟 完整试玩内测版 v0.51（1张CG、2首BGM、部分音效素材待替换，制作访谈演出及成就配置未完成）")
+define config.name = _("候鸟 准正式版")
 
 
 ## 决定上面给出的标题是否显示在主界面屏幕。设置为 False 来隐藏标题。
@@ -21,7 +21,7 @@ define gui.show_name = False
 
 ## 游戏版本号。
 
-define config.version = "Demo0.51"
+define config.version = "0.99"
 
 
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。
@@ -130,7 +130,7 @@ default preferences.afm_time = 15
 ##
 ## 该命令一般不应变更，若要变更，应为有效字符串而不是表达式。
 
-define config.save_directory = "Migrant-1589594994"
+define config.save_directory = "Migrant"
 
 
 ## 图标 ##########################################################################
@@ -175,13 +175,15 @@ init python:
 
     build.archive("pic", "all")
     build.archive("sound", "all")
+    build.archive("script", "all")
 
     build.classify('game/**.png', 'pic')
     build.classify('game/**.jpg', 'pic')
     build.classify('game/**.ogg', 'sound')
-    build.classify('game/**.rpy', 'archive')
-    build.classify('game/**.rpyc', 'archive')
-    build.classify('game/**.ttf', 'archive')
+    build.classify('game/**.rpy', 'script')
+    build.classify('game/**.rpyc', 'script')
+    build.classify('game/**.ttf', 'script')
+    build.classify('game/**.ini', 'script')
 
     ## 匹配为文档模式的文件，将在 Mac 应用的生成中复制，因此它们同时存在于 app
     ## 和 zip 文件中。

@@ -20,7 +20,7 @@ init python:
     mr.add("audio/music/bgm11.ogg")
     mr.add("audio/music/bgm12.ogg")
     mr.add("audio/music/bgm13.ogg")
-    # mr.add("audio/music/bgm14.ogg")
+    mr.add("audio/music/bgm14.ogg")
     mr.add("audio/music/bgm15.ogg")
 
 # 游戏通关次数
@@ -268,7 +268,7 @@ label start:
     stop sound
 
     #取消下面一行代码的注释可以直接进入staff剧情
-    jump staff
+    # jump staff
 
 #开篇
 
@@ -855,10 +855,9 @@ label start:
     voice "audio/voice/050005.ogg"
     a "「……傻\[哔——\]。」"
     y "「！！」"
-
-    #play music "audio/music/bgm06.ogg" fadein 5.0 #悬而未决
-
     "感觉要糟糕。"
+
+    play music "audio/music/bgm14.ogg" fadein 5.0 #针锋相对
     "最怕的就是这种要打没打起来，好不容易给分开了却又扔下场面话的。"
     voice "audio/voice/050006.ogg"
     a "「你等着，回头再和你——唔噗！」"
@@ -971,7 +970,7 @@ label start:
     play sound "audio/sound/effect35.ogg" noloop
     "椅子划出了一道夸张的弧线，飞向了——"
 
-    #stop music fadeout 1.0
+    stop music fadeout 1.0
 
     "我们。"
 
@@ -1782,6 +1781,11 @@ label start:
     scene trans t01 #转场 教室
     with fade
     pause
+
+$ achievement.Sync()
+$ persistent.chpt_0_clear = True
+if not achievement.has('CHPT_0_CLEAR'):
+    $ achievement.grant('CHPT_0_CLEAR')
 
 #01.盛夏篇
 
@@ -4877,8 +4881,8 @@ label start:
     y "「……」"
     l "「……」"
     y "「……」"
-    play music "audio/music/bgm06.ogg" fadein 5.0 #悬而未决
     "梁芷柔的笔头突然停住了，皱了皱眉。"
+    play music "audio/music/bgm06.ogg" fadein 5.0 #悬而未决
     with hpunch
     y "「——！！」"
     "糟、糟糕……玩脱了！"
@@ -6433,6 +6437,11 @@ label start:
     with fade
     pause
 
+$ achievement.Sync()
+$ persistent.chpt_1_clear = True
+if not achievement.has('CHPT_1_CLEAR'):
+    $ achievement.grant('CHPT_1_CLEAR')
+
 #02.初秋篇
 
     $ chapter = "02"
@@ -7362,7 +7371,7 @@ label start:
     scene bg b02 #城区
     with fade
     "高三生活的头一个月，在各种忙碌之中匆匆而过。"
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
+    play sound "audio/sound/effect10.ogg" loop
     scene bg b01 #教室
     with fade
     "学校开始下狠手了。它就像是一头喜爱玩弄猎物的怪兽，不断地折磨着我们的身体与心灵。"
@@ -7370,6 +7379,9 @@ label start:
     with dissolve
     "毫无节制可言的拖堂，越来越长的留校自习，永无止境的考试和作业。"
     "每当觉得自己快要适应当前的节奏时，老师们总会将压力再提高一个档次，始终让人疲于奔命。"
+    stop sound fadeout 5.0
+
+    play music "audio/music/bgm13.ogg" fadein 5.0 #With Memories
     scene bg b04b #滨河路|夜
     with fade
     "时区已经不再能够阻止天色的改变了。当我们得以离开学校的时候，太阳早就已经落山。"
@@ -7540,7 +7552,7 @@ label start:
     scene bg black #黑屏
     with fade
     "……{p}…………"
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
+    play music "audio/music/bgm11.ogg" fadein 5.0 #风轻云淡
     scene bg b04b #滨河路|夜
     with fade
     show chara lb01b #梁芷柔立绘|冬季校服|普通|侧面|近
@@ -7766,6 +7778,11 @@ label start:
     with fade
     pause
 
+$ achievement.Sync()
+$ persistent.chpt_2_clear = True
+if not achievement.has('CHPT_2_CLEAR'):
+    $ achievement.grant('CHPT_2_CLEAR')
+
 #03.深秋
 
     $ chapter = "03"
@@ -7808,7 +7825,7 @@ label start:
     nvl_narrator "话虽如此，尽管在校学习的时间确实是增加了，但对于大多数人来说，那个效果嘛……"
     nvl_narrator "呵呵。"
     nvl clear
-    show bg b00c2 #天空|夜|下弦月
+    show bg b00c1 #天空|夜|上弦月
     with dissolve
     nvl_narrator "其实真要说的话，也不是不能理解学校这次朝令夕改的做法。"
     nvl_narrator "毕竟他们也是被突然袭击的受害者。"
@@ -7902,7 +7919,7 @@ label start:
     with fade
     "……{p}…………"
 
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
+    play music "audio/music/bgm13.ogg" fadein 5.0 #With Memories
     scene bg b02b #城区|夜
     with fade
     "距离偶遇梁芷柔的那天晚上，已经过去一个月了。"
@@ -9077,6 +9094,11 @@ label start:
     with fade
     pause
 
+$ achievement.Sync()
+$ persistent.chpt_3_clear = True
+if not achievement.has('CHPT_3_CLEAR'):
+    $ achievement.grant('CHPT_3_CLEAR')
+
 #04.寒冬
 
     $ chapter = "04"
@@ -9331,7 +9353,7 @@ label start:
     "越是到这种时候，这种感觉越是强烈。"
     "当我开始尝试着像她那样努力的时候……"
     "我才明白……她究竟付出了多少努力，又曾遇到过怎样的困难。"
-    show bg b00c2 #天空|夜|下弦月
+    show bg b00c #天空|夜|满月
     with fade
     "……我终于开始去真正地了解她了。"
     "如果，我能继续沿着这条路走下去的话，或许会有那么一天，我可以和她拥有共同的语言。"
@@ -10512,6 +10534,11 @@ label start:
     scene trans t01 #转场 教室
     with fade
     pause
+
+$ achievement.Sync()
+$ persistent.chpt_4_clear = True
+if not achievement.has('CHPT_4_CLEAR'):
+    $ achievement.grant('CHPT_4_CLEAR')
 
 #05.早春
 
@@ -13187,6 +13214,11 @@ label start:
     with fade
     pause
 
+$ achievement.Sync()
+$ persistent.chpt_5_clear = True
+if not achievement.has('CHPT_5_CLEAR'):
+    $ achievement.grant('CHPT_5_CLEAR')
+
 #06.初夏
 
     $ chapter = "06"
@@ -14171,6 +14203,11 @@ label start:
     scene trans t06 #转场 天空
     with fade
     pause
+
+$ achievement.Sync()
+$ persistent.chpt_6_clear = True
+if not achievement.has('CHPT_6_CLEAR'):
+    $ achievement.grant('CHPT_6_CLEAR')
 
 #07.终章
 
@@ -15816,7 +15853,7 @@ label start:
     scene bg b12a #樱华市|夜晚
     with fade
 #最终需再确认一次BGM
-    play music "audio/music/bgm03.ogg" fadein 5.0 #秋～月幕～
+    play music "audio/music/bgm13.ogg" fadein 5.0 #With Memories
     nvl show
     nvl_narrator "顺着人群涌动的方向，走出火车站。"
     nvl_narrator "晚上7点，樱华的天空已经有些暗下来了。"
@@ -17139,7 +17176,7 @@ label start:
     y "「小家伙，你以后打算怎么办啊？」"
     y "「如果你熬过了这个冬天，到了明年，你是会重新走上迁徙的旅途呢，还是就这样继续留在这个衣食无忧的地方呢？」"
     bird2 "「……」"
-    play audio "audio/sound/effect33.ogg" noloop
+    play audio "<from 0 to 3>audio/sound/effect33.ogg" noloop
     bird2 "「啾——」"
     scene bg b00a #天空|候鸟"
     with fade
@@ -17541,7 +17578,6 @@ label start:
     y "「请你等我一年，但……」"
     y "「如果……我这一次还是失败了……」"
     y "「那就，请你忘掉我吧。」"
-label test:
     show chara c06 #梁芷柔立绘|夏季私服|吃惊
     with dissolve
     pause 0.5
@@ -17596,6 +17632,7 @@ label test:
     $ renpy.run(Preference("auto-forward", "enable"))
     $ renpy.run(Preference("auto-forward time", 16))
     $ _dismiss_pause = False
+    $ _skipping = False
     $ _rollback = False
 
     scene bg black #黑屏
@@ -17673,15 +17710,15 @@ label test:
     with fade
     #play music "<from 113 to 150>audio/music/theme.ogg" fadein 5 fadeout 5 noloop #梦想天空 人声 ver.
     show staff:
-        yalign -0.07
-        linear 175 yalign 1.07
+        yalign -0.06
+        linear 175 yalign 1.06
     pause 175.0
     scene bg ed #候鸟LOGO、版权
-    with fadehold
+    with fadeslow
     stop music fadeout 5
     pause 10.0
     scene bg black #黑屏
-    with fadehold
+    with fadeslow #fadehold
 
     $ config.keymap = keymap_release # keymap_debug|keymap_release
     $ renpy.clear_keymap_cache()
@@ -17689,6 +17726,8 @@ label test:
     $ _dismiss_pause = True
     $ _skipping = True
     $ _rollback = True
+    $config.keymap['skip'].append('K_LCTRL')
+    $config.keymap['skip'].append('K_RCTRL')
 
 #尾声
 
@@ -17736,10 +17775,21 @@ label test:
     "我抬起头，看到有一道白影，从眼前一晃而过，朝着正南的方向，义无反顾地飞去。"
     "那是一只候鸟。"
 
-    $ persistent.game_clear_times += 1
-
     scene bg black #黑屏
     with fade
+    pause 2.0
+    show fin at right #fin
+    with fadeslow
+    pause 5.0
+    scene bg black #黑屏
+    with fadeslow
     pause 3.0
+
+$ achievement.Sync()
+$ persistent.chpt_7_clear = True
+if not achievement.has('CHPT_7_CLEAR'):
+    $ achievement.grant('CHPT_7_CLEAR')
+
+    $ persistent.game_clear_times += 1
 
     return
