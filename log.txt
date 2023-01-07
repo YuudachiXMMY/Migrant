@@ -1,35 +1,36 @@
-Fri Jan  6 22:31:37 2023
+Sat Jan  7 00:43:49 2023
 Windows-10-10.0.19041
 Ren'Py 7.5.3.22090809
  
 
-Bootstrap to the start of init.init took 0.09s
+Bootstrap to the start of init.init took 0.08s
 Early init took 0.00s
-Loader init took 0.05s
-Loading error handling took 0.16s
-Loading script took 5.59s
-Loading save slot metadata. took 0.03s
+Loader init took 0.58s
+Loading error handling took 1.44s
+Loading script took 4.76s
+Loading save slot metadata. took 0.04s
 Loading persistent took 0.00s
-Faled to initialize steam: WindowsError(126, '')
-Running init code took 0.22s
+Faled to initialize steam: Exception(u'Init returned false.',)
+ - Init at game/gui.rpy:10 took 0.64107 s.
+Running init code took 1.07s
 Loading analysis data took 0.00s
-Analyze and compile ATL took 0.02s
+Analyze and compile ATL took 0.03s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\USER-PC\\AppData\\Roaming/RenPy/backups\\MigrantTest\xa3\xa820230105\xa3\xa9':
-Dump and make backups. took 0.10s
+Backing up script files to 'C:\\Users\\93464\\AppData\\Roaming/RenPy/backups\\MigrantTest\xa3\xa820230105\xa3\xa9':
+Dump and make backups. took 0.12s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.08s
+Initial gc. took 0.10s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.23s
+Creating interface object took 0.49s
 Cleaning stores took 0.00s
-Init translation took 0.10s
+Init translation took 0.13s
 Build styles took 0.01s
 Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.05s
-Prepare screens took 0.19s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.08s
+Analyze screens took 0.06s
+Save screen analysis took 0.06s
+Prepare screens took 0.26s
+Save pyanalysis. took 0.07s
+Save bytecode. took 0.11s

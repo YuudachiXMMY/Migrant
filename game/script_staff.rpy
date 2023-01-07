@@ -6,10 +6,10 @@ define temp = Character("叶雨潇", color="#ffffff", ctc_pause="ctc_pause_icon"
 
 label staff:
 
-$ achievement.Sync()
-$ persistent.chpt_staff_clear = True
-if not achievement.has('CHPT_STAFF_CLEAR'):
-    $ achievement.grant('CHPT_STAFF_CLEAR')
+    $ achievement.Sync()
+    $ persistent.chpt_staff_clear = True
+    if not achievement.has('CHPT_STAFF_CLEAR'):
+        $ achievement.grant('CHPT_STAFF_CLEAR')
 
     # scene bg migrant #候鸟封面|调色
     scene bg migrant_old #候鸟封面|未调色
@@ -27,7 +27,9 @@ if not achievement.has('CHPT_STAFF_CLEAR'):
     nvl_narrator "访谈的部分主要分为三块：第一部分由本作的主催「苍蓝的风」来向大家介绍「候鸟」制作幕后的故事，当然，也包括他挖坑多年的心路历程与最终完坑的感想；第二部分由原案「小雨潇潇」向大家介绍这个故事最初的创作经历；最后一部分则是由本作女主角的配音演员「酒儿」来给大家讲述她对角色的理解与认识，谈一谈是如何给梁芷柔这个角色注入灵魂的。"
     nvl clear
 
-label choice:
+    jump l_choice
+
+label l_choice:
 
     # scene bg migrant #候鸟封面|调色
     scene bg migrant_old #候鸟封面|未调色
@@ -35,19 +37,19 @@ label choice:
     nvl hide
     "现在，您可以通过我们在正篇中根本没有启用（笑）的选项功能，来选择您感兴趣的访谈内容："
 
-menu:
+    menu:
 
-    "主催「苍蓝的风」":
-        jump blovewind
+        "主催「苍蓝的风」":
+            jump blovewind
 
-    "原案「小雨潇潇」":
-        jump rain
+        "原案「小雨潇潇」":
+            jump rain
 
-    "配音演员「酒儿」":
-        jump jiuer
+        "配音演员「酒儿」":
+            jump jiuer
 
-    "退出访谈":
-        jump end
+        "退出访谈":
+            return
 
 label blovewind:
 
@@ -141,19 +143,19 @@ label blovewind:
     nvl hide
     "主催「苍蓝的风」的访谈到此就结束了。接下来，您可以选择其他感兴趣的访谈内容："
 
-menu:
+    menu:
 
-    "主催「苍蓝的风」":
-        jump blovewind
+        "主催「苍蓝的风」":
+            jump blovewind
 
-    "原案「小雨潇潇」":
-        jump rain
+        "原案「小雨潇潇」":
+            jump rain
 
-    "配音演员「酒儿」":
-        jump jiuer
+        "配音演员「酒儿」":
+            jump jiuer
 
-    "退出访谈":
-        jump end
+        "退出访谈":
+            return
 
 label rain:
 
@@ -192,19 +194,19 @@ label rain:
     nvl hide
     "原案「小雨潇潇」的访谈到此就结束了。接下来，您可以选择其他感兴趣的访谈内容："
 
-menu:
+    menu:
 
-    "主催「苍蓝的风」":
-        jump blovewind
+        "主催「苍蓝的风」":
+            jump blovewind
 
-    "原案「小雨潇潇」":
-        jump rain
+        "原案「小雨潇潇」":
+            jump rain
 
-    "配音演员「酒儿」":
-        jump jiuer
+        "配音演员「酒儿」":
+            jump jiuer
 
-    "退出访谈":
-        jump end
+        "退出访谈":
+            return
 
 label jiuer:
 
@@ -228,20 +230,16 @@ label jiuer:
     nvl hide
     "配音演员「酒儿」的访谈到此就结束了。接下来，您可以选择其他感兴趣的访谈内容："
 
-menu:
+    menu:
 
-    "主催「苍蓝的风」":
-        jump blovewind
+        "主催「苍蓝的风」":
+            jump blovewind
 
-    "原案「小雨潇潇」":
-        jump rain
+        "原案「小雨潇潇」":
+            jump rain
 
-    "配音演员「酒儿」":
-        jump jiuer
+        "配音演员「酒儿」":
+            jump jiuer
 
-    "退出访谈":
-        jump end
-
-label end:
-
-    return
+        "退出访谈":
+            return

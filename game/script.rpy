@@ -1782,10 +1782,9 @@ label start:
     with fade
     pause
 
-$ achievement.Sync()
-$ persistent.chpt_0_clear = True
-if not achievement.has('CHPT_0_CLEAR'):
+    $ persistent.chpt_0_clear = True
     $ achievement.grant('CHPT_0_CLEAR')
+    $ achievement.sync()
 
 #01.盛夏篇
 
@@ -6437,10 +6436,9 @@ if not achievement.has('CHPT_0_CLEAR'):
     with fade
     pause
 
-$ achievement.Sync()
-$ persistent.chpt_1_clear = True
-if not achievement.has('CHPT_1_CLEAR'):
+    $ persistent.chpt_1_clear = True
     $ achievement.grant('CHPT_1_CLEAR')
+    $ achievement.sync()
 
 #02.初秋篇
 
@@ -7778,10 +7776,9 @@ if not achievement.has('CHPT_1_CLEAR'):
     with fade
     pause
 
-$ achievement.Sync()
-$ persistent.chpt_2_clear = True
-if not achievement.has('CHPT_2_CLEAR'):
+    $ persistent.chpt_2_clear = True
     $ achievement.grant('CHPT_2_CLEAR')
+    $ achievement.sync()
 
 #03.深秋
 
@@ -9094,10 +9091,9 @@ if not achievement.has('CHPT_2_CLEAR'):
     with fade
     pause
 
-$ achievement.Sync()
-$ persistent.chpt_3_clear = True
-if not achievement.has('CHPT_3_CLEAR'):
+    $ persistent.chpt_3_clear = True
     $ achievement.grant('CHPT_3_CLEAR')
+    $ achievement.sync()
 
 #04.寒冬
 
@@ -10535,10 +10531,9 @@ if not achievement.has('CHPT_3_CLEAR'):
     with fade
     pause
 
-$ achievement.Sync()
-$ persistent.chpt_4_clear = True
-if not achievement.has('CHPT_4_CLEAR'):
+    $ persistent.chpt_4_clear = True
     $ achievement.grant('CHPT_4_CLEAR')
+    $ achievement.sync()
 
 #05.早春
 
@@ -13214,10 +13209,9 @@ if not achievement.has('CHPT_4_CLEAR'):
     with fade
     pause
 
-$ achievement.Sync()
-$ persistent.chpt_5_clear = True
-if not achievement.has('CHPT_5_CLEAR'):
+    $ persistent.chpt_5_clear = True
     $ achievement.grant('CHPT_5_CLEAR')
+    $ achievement.sync()
 
 #06.初夏
 
@@ -14204,17 +14198,16 @@ if not achievement.has('CHPT_5_CLEAR'):
     with fade
     pause
 
-$ achievement.Sync()
-$ persistent.chpt_6_clear = True
-if not achievement.has('CHPT_6_CLEAR'):
+    $ persistent.chpt_6_clear = True
     $ achievement.grant('CHPT_6_CLEAR')
+    $ achievement.sync()
 
-#07.终章
+    #07.终章
 
     $ chapter = "07"
 
-#6月22日。
-#高考成绩公布。
+    #6月22日。
+    #高考成绩公布。
 
     scene bg black #黑屏
     with fade
@@ -14526,8 +14519,8 @@ if not achievement.has('CHPT_6_CLEAR'):
     with fade
     pause
 
-#7月20日。
-#本科一批录取工作开始。
+    #7月20日。
+    #本科一批录取工作开始。
 
     play sound "audio/sound/ambientnoise05.ogg" fadein 5.0 loop #街道蝉鸣噪音
     scene bg b02 #城区|夏
@@ -14879,8 +14872,8 @@ if not achievement.has('CHPT_6_CLEAR'):
     with fade
     pause
 
-#7月22日。
-#第一志愿落榜。
+    #7月22日。
+    #第一志愿落榜。
 
     scene bg black #黑屏
     with fade
@@ -15096,8 +15089,8 @@ if not achievement.has('CHPT_6_CLEAR'):
     with fade
     pause
 
-#7月30日。
-#收到百薇大学录取通知书。
+    #7月30日。
+    #收到百薇大学录取通知书。
 
     scene bg b02 #城区|夏
     with fade
@@ -15841,8 +15834,8 @@ if not achievement.has('CHPT_6_CLEAR'):
     with fade
     pause
 
-#8月5日。
-#樱华市。
+    #8月5日。
+    #樱华市。
 
     scene bg black #黑屏
     with fade
@@ -15920,8 +15913,8 @@ if not achievement.has('CHPT_6_CLEAR'):
     with fade
     pause
 
-#8月6日。"
-#前往樱华大学。"
+    #8月6日。"
+    #前往樱华大学。"
 
     play sound "audio/sound/ambientnoise04.ogg" fadein 5.0 loop #白天环境噪音
 
@@ -17290,8 +17283,8 @@ if not achievement.has('CHPT_6_CLEAR'):
     with fade
     pause
 
-#8月22日。"
-#梁芷柔前往樱华。"
+    #8月22日。"
+    #梁芷柔前往樱华。"
 
     scene bg b18 #火车站
     with fade
@@ -17729,7 +17722,7 @@ if not achievement.has('CHPT_6_CLEAR'):
     $config.keymap['skip'].append('K_LCTRL')
     $config.keymap['skip'].append('K_RCTRL')
 
-#尾声
+    #尾声
 
     play sound "audio/sound/ambientnoise01.ogg" fadein 5.0 loop #河边环境噪音
 
@@ -17785,10 +17778,9 @@ if not achievement.has('CHPT_6_CLEAR'):
     with fadeslow
     pause 3.0
 
-$ achievement.Sync()
-$ persistent.chpt_7_clear = True
-if not achievement.has('CHPT_7_CLEAR'):
+    $ persistent.chpt_7_clear = True
     $ achievement.grant('CHPT_7_CLEAR')
+    $ achievement.sync()
 
     $ persistent.game_clear_times += 1
 

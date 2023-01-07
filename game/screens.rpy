@@ -44,15 +44,15 @@ define achievement.steam_position = "bottom right"
 # $ persistent.chpt_0_clear = True
 # if not achievement.has('CHPT_0_CLEAR'):
 #     $ achievement.grant('CHPT_0_CLEAR')
-define persistent.chpt_0_clear = False # 序章 CHPT_0_CLEAR
-define persistent.chpt_1_clear = False # CHPT_1_CLEAR
-define persistent.chpt_2_clear = False # CHPT_2_CLEAR
-define persistent.chpt_3_clear = False # CHPT_3_CLEAR
-define persistent.chpt_4_clear = False # CHPT_4_CLEAR
-define persistent.chpt_5_clear = False # CHPT_5_CLEAR
-define persistent.chpt_6_clear = False # CHPT_6_CLEAR
-define persistent.chpt_7_clear = False # 终章 CHPT_7_CLEAR
-define persistent.chpt_staff_clear = False # 制作访谈 CHPT_STAFF_CLEAR
+default persistent.chpt_0_clear = False # 序章 CHPT_0_CLEAR
+default persistent.chpt_1_clear = False # CHPT_1_CLEAR
+default persistent.chpt_2_clear = False # CHPT_2_CLEAR
+default persistent.chpt_3_clear = False # CHPT_3_CLEAR
+default persistent.chpt_4_clear = False # CHPT_4_CLEAR
+default persistent.chpt_5_clear = False # CHPT_5_CLEAR
+default persistent.chpt_6_clear = False # CHPT_6_CLEAR
+default persistent.chpt_7_clear = False # 终章 CHPT_7_CLEAR
+default persistent.chpt_staff_clear = False # 制作访谈 CHPT_STAFF_CLEAR
 
 # Helper
 init python:
@@ -120,57 +120,6 @@ label splashscreen: # before_main_menu:
 
     scene bg black with Dissolve(0.5)
     pause 0.5
-
-    ############################################################################
-    # Steam成就系统
-    ############################################################################
-    $ achievement.Sync()
-    # 序章 成就
-    $ achievement.register('CHPT_0_CLEAR', steam='NEW_ACHIEVEMENT_2_0')
-    if not achievement.has('CHPT_0_CLEAR') and persistent.chpt_0_clear:
-        $ achievement.grant('CHPT_0_CLEAR')
-
-    # 第1章 成就
-    $ achievement.register('CHPT_1_CLEAR', steam='NEW_ACHIEVEMENT_2_1')
-    if not achievement.has('CHPT_1_CLEAR') and persistent.chpt_1_clear:
-        $ achievement.grant('CHPT_1_CLEAR')
-
-    # 第2章 成就
-    $ achievement.register('CHPT_2_CLEAR', steam='NEW_ACHIEVEMENT_2_2')
-    if not achievement.has('CHPT_2_CLEAR') and persistent.chpt_2_clear:
-        $ achievement.grant('CHPT_2_CLEAR')
-
-    # 第3章 成就
-    $ achievement.register('CHPT_3_CLEAR', steam='NEW_ACHIEVEMENT_2_3')
-    if not achievement.has('CHPT_3_CLEAR') and persistent.chpt_3_clear:
-        $ achievement.grant('CHPT_3_CLEAR')
-
-    # 第4章 成就
-    $ achievement.register('CHPT_4_CLEAR', steam='NEW_ACHIEVEMENT_2_4')
-    if not achievement.has('CHPT_4_CLEAR') and persistent.chpt_4_clear:
-        $ achievement.grant('CHPT_4_CLEAR')
-
-    # 第5章 成就
-    $ achievement.register('CHPT_5_CLEAR', steam='NEW_ACHIEVEMENT_2_5')
-    if not achievement.has('CHPT_5_CLEAR') and persistent.chpt_5_clear:
-        $ achievement.grant('CHPT_5_CLEAR')
-
-    # 第6章 成就
-    $ achievement.register('CHPT_6_CLEAR', steam='NEW_ACHIEVEMENT_2_6')
-    if not achievement.has('CHPT_6_CLEAR') and persistent.chpt_6_clear:
-        $ achievement.grant('CHPT_6_CLEAR')
-
-    # 第7章终章 成就
-    $ achievement.register('CHPT_7_CLEAR', steam='NEW_ACHIEVEMENT_2_7')
-    if not achievement.has('CHPT_7_CLEAR') and persistent.chpt_7_clear:
-        $ achievement.grant('CHPT_7_CLEAR')
-
-    # 制作访谈 成就
-    $ achievement.register('CHPT_STAFF_CLEAR', steam='NEW_ACHIEVEMENT_2_8')
-    if not achievement.has('CHPT_STAFF_CLEAR') and persistent.chpt_staff_clear:
-        $ achievement.grant('CHPT_STAFF_CLEAR')
-
-    ############################################################################
 
     # # Renpy Logo
     # pause 2.0
@@ -631,11 +580,86 @@ screen main_menu():
     ## 此代码可确保替换掉任何其他菜单屏幕。
     tag menu
 
+    ############################################################################
+    # Steam成就系统
+    ############################################################################
+    fixed:
+        $ achievement.register('CHPT_0_CLEAR', steam='NEW_ACHIEVEMENT_2_0')
+        $ achievement.register('CHPT_1_CLEAR', steam='NEW_ACHIEVEMENT_2_1')
+        $ achievement.register('CHPT_2_CLEAR', steam='NEW_ACHIEVEMENT_2_2')
+        $ achievement.register('CHPT_3_CLEAR', steam='NEW_ACHIEVEMENT_2_3')
+        $ achievement.register('CHPT_4_CLEAR', steam='NEW_ACHIEVEMENT_2_4')
+        $ achievement.register('CHPT_5_CLEAR', steam='NEW_ACHIEVEMENT_2_5')
+        $ achievement.register('CHPT_6_CLEAR', steam='NEW_ACHIEVEMENT_2_6')
+        $ achievement.register('CHPT_7_CLEAR', steam='NEW_ACHIEVEMENT_2_7')
+        $ achievement.register('CHPT_STAFF_CLEAR', steam='NEW_ACHIEVEMENT_2_8')
+        $ achievement.sync()
+
+    # fixed:
+    #     # # Clear All
+    #     # $ achievement.clear('CHPT_0_CLEAR')
+    #     # $ achievement.clear('CHPT_1_CLEAR')
+    #     # $ achievement.clear('CHPT_2_CLEAR')
+    #     # $ achievement.clear('CHPT_3_CLEAR')
+    #     # $ achievement.clear('CHPT_4_CLEAR')
+    #     # $ achievement.clear('CHPT_5_CLEAR')
+    #     # $ achievement.clear('CHPT_6_CLEAR')
+    #     # $ achievement.clear('CHPT_7_CLEAR')
+    #     # $ achievement.clear('CHPT_STAFF_CLEAR')
+    #     # $ achievement.sync()
+
+    #     $ achievement.Sync()
+    #     # 序章 成就
+    #     $ achievement.register('CHPT_0_CLEAR', steam='NEW_ACHIEVEMENT_2_0')
+    #     if not achievement.has('CHPT_0_CLEAR') and persistent.chpt_0_clear:
+    #         $ achievement.grant('CHPT_0_CLEAR')
+
+    #     # 第1章 成就
+    #     $ achievement.register('CHPT_1_CLEAR', steam='NEW_ACHIEVEMENT_2_1')
+    #     if not achievement.has('CHPT_1_CLEAR') and persistent.chpt_1_clear:
+    #         $ achievement.grant('CHPT_1_CLEAR')
+
+    #     # 第2章 成就
+    #     $ achievement.register('CHPT_2_CLEAR', steam='NEW_ACHIEVEMENT_2_2')
+    #     if not achievement.has('CHPT_2_CLEAR') and persistent.chpt_2_clear:
+    #         $ achievement.grant('CHPT_2_CLEAR')
+
+    #     # 第3章 成就
+    #     $ achievement.register('CHPT_3_CLEAR', steam='NEW_ACHIEVEMENT_2_3')
+    #     if not achievement.has('CHPT_3_CLEAR') and persistent.chpt_3_clear:
+    #         $ achievement.grant('CHPT_3_CLEAR')
+
+    #     # 第4章 成就
+    #     $ achievement.register('CHPT_4_CLEAR', steam='NEW_ACHIEVEMENT_2_4')
+    #     if not achievement.has('CHPT_4_CLEAR') and persistent.chpt_4_clear:
+    #         $ achievement.grant('CHPT_4_CLEAR')
+
+    #     # 第5章 成就
+    #     $ achievement.register('CHPT_5_CLEAR', steam='NEW_ACHIEVEMENT_2_5')
+    #     if not achievement.has('CHPT_5_CLEAR') and persistent.chpt_5_clear:
+    #         $ achievement.grant('CHPT_5_CLEAR')
+
+    #     # 第6章 成就
+    #     $ achievement.register('CHPT_6_CLEAR', steam='NEW_ACHIEVEMENT_2_6')
+    #     if not achievement.has('CHPT_6_CLEAR') and persistent.chpt_6_clear:
+    #         $ achievement.grant('CHPT_6_CLEAR')
+
+    #     # 第7章终章 成就
+    #     $ achievement.register('CHPT_7_CLEAR', steam='NEW_ACHIEVEMENT_2_7')
+    #     if not achievement.has('CHPT_7_CLEAR') and persistent.chpt_7_clear:
+    #         $ achievement.grant('CHPT_7_CLEAR')
+
+    #     # 制作访谈 成就
+    #     $ achievement.register('CHPT_STAFF_CLEAR', steam='NEW_ACHIEVEMENT_2_8')
+    #     if not achievement.has('CHPT_STAFF_CLEAR') and persistent.chpt_staff_clear:
+    #         $ achievement.grant('CHPT_STAFF_CLEAR')
+
+    ############################################################################
+
     if first_menu:
         on "show" action Show("main_menu_first_menu_ani")
+
     elif main_menu:
-
-
         add "main_bg"
         add "main_logo" xalign 0.5 ypos 0.2
 
