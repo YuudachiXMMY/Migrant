@@ -428,6 +428,7 @@ init python:
         gui.navigation_spacing = 40
         gui.pref_button_spacing = 20
 
+        config.history_length = 40 # 文本回放列表长度
         gui.history_height = 380
         gui.history_text_width = 1380
 

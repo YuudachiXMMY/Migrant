@@ -17541,6 +17541,7 @@ label start:
     y "「请你等我一年，但……」"
     y "「如果……我这一次还是失败了……」"
     y "「那就，请你忘掉我吧。」"
+label test:
     show chara c06 #梁芷柔立绘|夏季私服|吃惊
     with dissolve
     pause 0.5
@@ -17582,6 +17583,11 @@ label start:
     l "「你还说！是不是又想让我打你一顿啊？」"
     y "「那个，不是，我……」"
     "原本还想要再解释两句，结果看到梁芷柔的巴掌都抬起来了。"
+    $ _skipping = False
+    if 'K_LCTRL' in config.keymap['skip']:
+        $config.keymap['skip'].remove('K_LCTRL')
+    if 'K_RCTRL' in config.keymap['skip']:
+        $config.keymap['skip'].remove('K_RCTRL')
     "——这是真的要打啊？"
 
     # TODO
@@ -17590,7 +17596,6 @@ label start:
     $ renpy.run(Preference("auto-forward", "enable"))
     $ renpy.run(Preference("auto-forward time", 16))
     $ _dismiss_pause = False
-    $ _skipping = False
     $ _rollback = False
 
     scene bg black #黑屏

@@ -1,47 +1,35 @@
-Wed Dec 28 19:54:41 2022
-Darwin-21.6.0-x86_64-i386-64bit
-Ren'Py 7.5.0.22062402
+Thu Jan  5 19:15:06 2023
+Windows-10-10.0.19041
+Ren'Py 7.5.3.22090809
  
 
-Bootstrap to the start of init.init took 1.08s
-Early init took 0.04s
-Loader init took 0.44s
-Loading error handling took 0.20s
-Loading script took 6.45s
-Loading save slot metadata. took 0.15s
+Bootstrap to the start of init.init took 0.08s
+Early init took 0.00s
+Loader init took 0.43s
+Loading error handling took 0.15s
+Loading script took 4.65s
+Loading save slot metadata. took 0.05s
 Loading persistent took 0.00s
-Faled to initialize steam: OSError("dlopen(/Applications/renpy-7.5.0-sdk/lib/py2-mac-x86_64/libsteam_api.dylib, 0x0006): tried: '/Applications/renpy-7.5.0-sdk/lib/py2-mac-x86_64/libsteam_api.dylib' (no such file)",)
-Running init code took 1.13s
-Loading analysis data took 0.30s
-Analyze and compile ATL took 0.14s
+Faled to initialize steam: Exception(u'Init returned false.',)
+Running init code took 0.47s
+Loading analysis data took 0.00s
+Analyze and compile ATL took 0.02s
 Index archives took 0.00s
-Backing up script files to '/Users/xmmy/Library/RenPy/backups/MigrantTest\xef\xbc\x8820221226\xef\xbc\x89':
-Dump and make backups. took 0.63s
+Backing up script files to 'C:\\Users\\93464\\AppData\\Roaming/RenPy/backups\\MigrantTest\xa3\xa820221226\xa3\xa9':
+Dump and make backups. took 0.11s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.25s
+Initial gc. took 0.07s
 DPI scale factor: 1.000000
-Creating interface object took 0.00s
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.36s
 Cleaning stores took 0.00s
-Init translation took 1.18s
-Build styles took 0.05s
+Init translation took 0.10s
+Build styles took 0.01s
 Load screen analysis took 0.00s
-Analyze screens took 0.72s
-Save screen analysis took 1.22s
-Prepare screens took 1.79s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.57s
-Running _start took 0.04s
-Performance test:
-Interface start took 0.70s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1280, 800)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'Intel Inc.'
-Renderer: 'Intel(R) HD Graphics 515'
-Version: '2.1 INTEL-18.8.5'
-Display Info: None
-Screen sizes: virtual=(2560, 1440) physical=(1178, 663) drawable=(2356, 1326)
-Maximum texture size: 4096x4096
+Analyze screens took 0.04s
+Save screen analysis took 0.05s
+Prepare screens took 0.21s
+Save pyanalysis. took 0.06s
+Save bytecode. took 0.09s

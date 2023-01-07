@@ -173,13 +173,15 @@ init python:
 
     ## 若要打包文件，需将其列为“archive”。
 
-    build.classify('game/**.png', 'archive')
-    build.classify('game/**.jpg', 'archive')
-    build.classify('game/**.ogg', 'archive')
+    build.archive("pic", "all")
+    build.archive("sound", "all")
+
+    build.classify('game/**.png', 'pic')
+    build.classify('game/**.jpg', 'pic')
+    build.classify('game/**.ogg', 'sound')
     build.classify('game/**.rpy', 'archive')
     build.classify('game/**.rpyc', 'archive')
     build.classify('game/**.ttf', 'archive')
-    build.classify('game/**.ogg', 'archive')
 
     ## 匹配为文档模式的文件，将在 Mac 应用的生成中复制，因此它们同时存在于 app
     ## 和 zip 文件中。
