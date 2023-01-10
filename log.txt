@@ -1,36 +1,49 @@
-Sat Jan  7 00:43:49 2023
+Mon Jan  9 19:21:06 2023
 Windows-10-10.0.19041
 Ren'Py 7.5.3.22090809
  
 
-Bootstrap to the start of init.init took 0.08s
-Early init took 0.00s
-Loader init took 0.58s
-Loading error handling took 1.44s
-Loading script took 4.76s
-Loading save slot metadata. took 0.04s
+Bootstrap to the start of init.init took 0.13s
+Early init took 0.01s
+Loader init took 0.62s
+Loading error handling took 0.03s
+Loading script took 4.39s
+Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Faled to initialize steam: Exception(u'Init returned false.',)
- - Init at game/gui.rpy:10 took 0.64107 s.
-Running init code took 1.07s
-Loading analysis data took 0.00s
-Analyze and compile ATL took 0.03s
+Running init code took 0.27s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\93464\\AppData\\Roaming/RenPy/backups\\MigrantTest\xa3\xa820230105\xa3\xa9':
-Dump and make backups. took 0.12s
+Dump and make backups. took 0.09s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.10s
+Initial gc. took 0.06s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.49s
+Creating interface object took 0.31s
 Cleaning stores took 0.00s
-Init translation took 0.13s
+Init translation took 0.09s
 Build styles took 0.01s
 Load screen analysis took 0.00s
-Analyze screens took 0.06s
-Save screen analysis took 0.06s
-Prepare screens took 0.26s
-Save pyanalysis. took 0.07s
-Save bytecode. took 0.11s
+Analyze screens took 0.01s
+Save screen analysis took 0.04s
+Prepare screens took 0.07s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.07s
+Running _start took 0.02s
+Performance test:
+Interface start took 0.61s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1060 with Max-Q Design/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 528.02'
+Display Info: None
+Screen sizes: virtual=(2560, 1440) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096

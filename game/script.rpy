@@ -270,7 +270,7 @@ label start:
     #取消下面一行代码的注释可以直接进入staff剧情
     # jump staff
 
-#开篇
+    #开篇
 
     $ chapter = "00"
 
@@ -278,7 +278,7 @@ label start:
     with dissolve
     pause 5.0
 
-#高考结束一年后"
+    #高考结束一年后"
 
     play sound "audio/sound/ambientnoise01.ogg" fadein 5.0 loop #河边环境噪音
 
@@ -364,7 +364,7 @@ label start:
 
     stop sound fadeout 1.0
 
-#序幕
+    #序幕
 
     scene bg black #黑屏
     with fade
@@ -376,9 +376,9 @@ label start:
     with fade
     pause 1.5
 
-#两年前。
-#高二期末考试后。
-#7月28日。
+    #两年前。
+    #高二期末考试后。
+    #7月28日。
 
     play music "audio/music/bgm02.ogg" fadein 5.0 #夏～澄空～
 
@@ -1786,12 +1786,12 @@ label start:
     $ achievement.grant('CHPT_0_CLEAR')
     $ achievement.sync()
 
-#01.盛夏篇
+    #01.盛夏篇
 
     $ chapter = "01"
 
-#次日。
-#7月29日。
+    #次日。
+    #7月29日。
 
     scene bg black #黑屏
     with fade
@@ -2281,8 +2281,8 @@ label start:
     with fade
     pause
 
-#两天后。
-#7月31日。
+    #两天后。
+    #7月31日。
 
     play sound "audio/sound/ambientnoise05.ogg" fadein 5.0 loop #街道蝉鸣噪音
 
@@ -2883,8 +2883,8 @@ label start:
     with fade
     pause
 
-#两天后。
-#8月2日。
+    #两天后。
+    #8月2日。
 
     scene bg b02 #城区
     with fade
@@ -4170,7 +4170,7 @@ label start:
     with fade
     pause
 
-#之后。
+    #之后。
 
     scene bg b02 #城区
     with fade
@@ -4261,7 +4261,7 @@ label start:
     "但至少，我不能让她白费苦心。"
     "……{p}…………"
 
-#又过了两天。
+    #又过了两天。
 
     scene bg b02 #城区
     with fade
@@ -4596,8 +4596,8 @@ label start:
     with fade
     pause
 
-#七夕。
-#8月9日。
+    #七夕。
+    #8月9日。
 
     scene bg b02 #城区
     with fade
@@ -6115,8 +6115,8 @@ label start:
     with fade
     pause
 
-#暑假的最后一天。
-#8月15日。
+    #暑假的最后一天。
+    #8月15日。
 
     scene bg b02 #城区
     with fade
@@ -6440,12 +6440,12 @@ label start:
     $ achievement.grant('CHPT_1_CLEAR')
     $ achievement.sync()
 
-#02.初秋篇
+    #02.初秋篇
 
     $ chapter = "02"
 
-#开学。
-#8月16日。
+    #开学。
+    #8月16日。
 
     scene bg b02 #城区
     with fade
@@ -6906,8 +6906,7 @@ label start:
     scene trans t01 #转场 教室
     with fade
     pause
-
-#开学后一周左右。
+    #开学后一周左右。
 
     scene bg b02 #城区
     with fade
@@ -7196,8 +7195,8 @@ label start:
     with fade
     pause
 
-#几天后。
-#9月初。
+    #几天后。
+    #9月初。
 
     scene bg b02 #城区
     with fade
@@ -7363,8 +7362,8 @@ label start:
     with fade
     pause
 
-#开学后一个月左右。
-#9月中下旬。
+    #开学后一个月左右。
+    #9月中下旬。
 
     scene bg b02 #城区
     with fade
@@ -7780,12 +7779,12 @@ label start:
     $ achievement.grant('CHPT_2_CLEAR')
     $ achievement.sync()
 
-#03.深秋
+    #03.深秋
 
     $ chapter = "03"
 
-#一个多月后。
-#10月下旬。
+    #一个多月后。
+    #10月下旬。
 
     scene bg b02 #城区
     with fade
@@ -7853,7 +7852,7 @@ label start:
     "但是……"
     y "「（这样下去……还是不行吧。）」"
     "轻叹一声，我忍不住抬起头来，向另一侧看去。"
-#追加CG差分
+    #追加CG差分
     #scene cg01e #梁芷柔听讲CG-5|做题|CG01e
     #with fade
     "梁芷柔还在做题。"
@@ -7968,8 +7967,8 @@ label start:
     with fade
     pause
 
-#梁芷柔生日前的最后一个周末。
-#11月上旬。
+    #梁芷柔生日前的最后一个周末。
+    #11月上旬。
 
     scene bg black #黑屏
     with fade
@@ -9095,11 +9094,11 @@ label start:
     $ achievement.grant('CHPT_3_CLEAR')
     $ achievement.sync()
 
-#04.寒冬
+    #04.寒冬
 
     $ chapter = "04"
 
-#11月下旬。
+    #11月下旬。
 
     scene bg b02c #城区|冬
     with fade
@@ -9366,7 +9365,7 @@ label start:
     with fade
     pause
 
-#随后的周末。
+    #随后的周末。
 
     scene bg b02c #城区|冬
     with fade
@@ -9588,11 +9587,11 @@ label start:
     show chara le13a #梁芷柔立绘|冬季私服|疑惑1|近
     with dissolve
     "呜哇……满眼外文。"
-#寻迹、寄甡
+    #寻迹、寄甡
     y "「《A story of a song》《Symbiotic Love》……」"
-#忆夏之铃、夏空的蒲公英、回忆忘却之匣
+    #忆夏之铃、夏空的蒲公英、回忆忘却之匣
     y "「《Summer memory of bell》《Dandelions in the sky》《Memory Oblivion Box》……」"
-#梦末、Leaflet、彷徨之街、我与我行将离去的小友
+    #梦末、Leaflet、彷徨之街、我与我行将离去的小友
     y "「《Dream Ending》《Leaflet love story》《The Street of Adrift》《The Last Companion》……」"
     y "「……」"
     y "「…………」"
@@ -10027,7 +10026,7 @@ label start:
     l "「……」"
     hide chara
     with dissolve
-#考虑追加CG
+    #考虑追加CG
     "面对我由衷的感激，梁芷柔如同迈着舞步一般，轻巧地转身，留给我一个背影。"
     voice "audio/voice/004122.ogg"
     l "「呵……不客气。」"
@@ -10041,8 +10040,8 @@ label start:
     with fade
     pause
 
-#12月上旬。
-#第一次模拟诊断考试。
+    #12月上旬。
+    #第一次模拟诊断考试。
 
     scene bg b02c #城区|冬
     with fade
@@ -10254,8 +10253,8 @@ label start:
     with fade
     pause
 
-#12月中旬。
-#公布第一次模拟诊断考试成绩。
+    #12月中旬。
+    #公布第一次模拟诊断考试成绩。
 
     scene bg b04c #滨河路|冬
     with fade
@@ -10297,11 +10296,11 @@ label start:
     with dissolve
     voice "audio/voice/004143.ogg"
     l "「……咳咳！」"
-#【声音减弱】
+    #【声音减弱】
     e "「……」"
     l "「……」"
     "在班长大人的瞪视下，一众人等似乎略有收敛，然而……"
-#【声音增大】
+    #【声音增大】
     e "「叽叽喳喳叽叽喳喳叽叽喳喳……」"
     "很快就故态复发了。"
     show chara b04 #梁芷柔立绘|冬季校服|无奈
@@ -10535,11 +10534,11 @@ label start:
     $ achievement.grant('CHPT_4_CLEAR')
     $ achievement.sync()
 
-#05.早春
+    #05.早春
 
     $ chapter = "05"
 
-#1月中旬。
+    #1月中旬。
 
     scene bg b00 #天空
     with fade
@@ -10847,8 +10846,8 @@ label start:
     with fade
     pause
 
-#1月下旬。
-#期末考试后。
+    #1月下旬。
+    #期末考试后。
 
     scene bg b02c #城区|冬
     with fade
@@ -11210,8 +11209,8 @@ label start:
     with fade
     pause
 
-#次日。
-#寒假第一天。
+    #次日。
+    #寒假第一天。
 
     play sound "audio/sound/ambientnoise04.ogg" fadein 5.0 loop #白天环境噪音
 
@@ -11456,8 +11455,8 @@ label start:
     with fade
     pause
 
-#之后某日。
-#临近春节。
+    #之后某日。
+    #临近春节。
 
     scene bg b00 #天空
     with fade
@@ -11908,7 +11907,7 @@ label start:
     with fade
     pause
 
-#大年初五。
+    #大年初五。
 
     scene bg black #黑屏
     with fade
@@ -12541,7 +12540,7 @@ label start:
     l "「哼～好吧。」"
     "……{p}…………"
 
-#舞狮子缺素材，放弃
+    #舞狮子缺素材，放弃
     #scene cg09a12 #梁芷柔逛社火CG-1|风车+饮料|CG09a12
     #with fade
     #y "「啊，这边是舞狮子啊。」"
@@ -13080,8 +13079,8 @@ label start:
     with fade
     pause
 
-#2月14日，情人节。
-#开学第一天。
+    #2月14日，情人节。
+    #开学第一天。
 
     scene bg black #黑屏
     with fade
@@ -13213,12 +13212,12 @@ label start:
     $ achievement.grant('CHPT_5_CLEAR')
     $ achievement.sync()
 
-#06.初夏
+    #06.初夏
 
     $ chapter = "06"
 
-#4月中旬。
-#二诊考试成绩公布后。
+    #4月中旬。
+    #二诊考试成绩公布后。
 
     play sound "audio/sound/ambientnoise01.ogg" fadein 5.0 loop #河边环境噪音
     scene bg b02d #城区|春
@@ -13934,8 +13933,8 @@ label start:
     with fade
     pause
 
-#6月2日。
-#高考前的假期。
+    #6月2日。
+    #高考前的假期。
 
     play music "audio/music/bgm01.ogg" fadein 5.0 #春～樱飞～
     scene bg b02 #城区|夏
@@ -14042,8 +14041,8 @@ label start:
     with fade
     pause
 
-#6月7日。
-#高考第一天。
+    #6月7日。
+    #高考第一天。
 
     play sound "audio/sound/ambientnoise04.ogg" fadein 5.0 loop #白天环境噪音
     scene bg b02 #城区|夏
@@ -15845,7 +15844,7 @@ label start:
     m "「在您即要走下这趟列车与我们分别的时候，我代表列车全体工作人员感谢您对我们工作的支持与协助。同时，也希望下次旅行再乘坐我们这趟列车，愿我们再相逢！」"
     scene bg b12a #樱华市|夜晚
     with fade
-#最终需再确认一次BGM
+    #最终需再确认一次BGM
     play music "audio/music/bgm13.ogg" fadein 5.0 #With Memories
     nvl show
     nvl_narrator "顺着人群涌动的方向，走出火车站。"

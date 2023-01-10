@@ -2053,8 +2053,7 @@ style check_button_text:
 ## 存在“_history_list”中的对话历史记录。
 ##
 ## https://www.renpy.org/doc/html/history.html
-default history_list = _history_list[-50:] if len(_history_list) > 50 else _history_list
-
+# define config.history_length = 50 # 文本回放列表长度
 screen history():
 
     tag menu
@@ -2063,6 +2062,7 @@ screen history():
     # predict True
 
     add "black_bg"
+    default history_list = _history_list[-50:] if len(_history_list) > 50 else _history_list
 
     use history_menu(_("历史"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
