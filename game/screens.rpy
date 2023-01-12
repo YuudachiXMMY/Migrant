@@ -738,6 +738,7 @@ screen main_menu_first_menu_ani():
 
 screen settings(r_menu=False):
 
+    zorder 102
     modal True
 
     # style_prefix "setting_text"
@@ -853,75 +854,6 @@ screen settings(r_menu=False):
                                     bold True
                                 else:
                                     bold False
-
-
-            # # 设置速度的三个档(禁用)
-            # fixed:
-            #     if store.Preference("text speed").get_adjustment().value <= 50:
-            #         timer 0.2 action Preference("text speed", 1)
-            #     elif store.Preference("text speed").get_adjustment().value > 150:
-            #         timer 0.2 action Preference("text speed", 200)
-            #     else:
-            #         timer 0.2 action Preference("text speed", 100)
-            #     if store.Preference("auto-forward time").get_adjustment().value <= 7.5:
-            #         timer 0.2 action Preference("auto-forward time", 0)
-            #     elif store.Preference("auto-forward time").get_adjustment().value > 22.5:
-            #         timer 0.2 action Preference("auto-forward time", 30)
-            #     else:
-            #         timer 0.2 action Preference("auto-forward time", 15)
-            # ################################################################
-
-        #画面设置(改版删除)
-        # fixed:
-        #     add "setting_graphics_title" xalign 0.565 yalign 0.29
-
-        #     hbox:
-        #         style_prefix "graphics_setting"
-        #         xalign 0.62 yalign 0.4
-        #         spacing 50
-
-        #         vbox:
-        #             spacing 50
-        #             label _("分辨率")
-        #             label _("全  屏")
-
-        #         vbox:
-        #             spacing 25
-        #             yoffset -5
-        #             frame:
-        #                 background "setting_graphics_bg"
-        #                 button:
-        #                     xysize(38, 38)
-        #                     xpos 405 yalign 0.5
-        #                     idle_background None
-        #                     hover_background None
-        #                     # idle_background "setting_graphics_btn_idle"
-        #                     # hover_background "setting_graphics_btn_hover"
-        #                     text "2560x1440":
-        #                         font "站酷高端黑修订版1.13.ttf"
-        #                         size 25
-        #                         align(0.5, 0.5)
-        #                         xoffset -220
-        #                     at transform:
-        #                         yoffset -8
-        #                     action NullAction()
-
-        #             hbox:
-        #                 spacing 50
-        #                 hbox:
-        #                     spacing 10
-        #                     imagebutton:
-        #                         auto "setting_click_%s"
-        #                         action Preference("display", "fullscreen")
-        #                     label _("是"):
-        #                         style_prefix "mute_setting"
-        #                 hbox:
-        #                     spacing 10
-        #                     imagebutton:
-        #                         auto "setting_click_%s"
-        #                         action Preference("display",  "any window")
-        #                     label _("否"):
-        #                         style_prefix "mute_setting"
 
         #音乐设置
         fixed:
@@ -1061,46 +993,6 @@ screen settings(r_menu=False):
                                     bold False
                                 else:
                                     bold True
-
-
-                # vbox:
-                #     xoffset -30
-                #     spacing 60
-                #     hbox:
-                #         spacing 10
-                #         imagebutton:
-                #             if volume_voice > 0.0:
-                #                 auto "setting_click_%s"
-                #                 action SetVariable("volume_voice", 0.0), Preference("voice mute", "enable")
-                #             else:
-                #                 auto "setting_toggled_btn_%s"
-                #                 action SetVariable("volume_voice", config.default_voice_volume), Preference("voice mute", "disable")
-                #         text _("静音"):
-                #             style_prefix "mute_setting"
-                #     hbox:
-                #         spacing 10
-                #         imagebutton:
-                #             if volume_sound > 0.0:
-                #                 auto "setting_click_%s"
-                #                 action SetVariable("volume_sound", 0.0), Preference("sound mute", "enable")
-                #             else:
-                #                 auto "setting_toggled_btn_%s"
-                #                 action SetVariable("volume_sound", config.default_sfx_volume), Preference("sound mute", "disable")
-                #         text _("静音"):
-                #             style_prefix "mute_setting"
-
-            # ## 音量低于5%自动设置为静音
-            # fixed:
-            #     if store.MixerValue("music").get_adjustment().value <= 0.05:
-            #         $store.MixerValue("music").get_adjustment().value = 0
-            #         timer 0.01 action Preference("music mute", "enable")
-            #     if store.MixerValue("voice").get_adjustment().value <= 0.05:
-            #         $store.MixerValue("voice").get_adjustment().value = 0
-            #         timer 0.01 action Preference("voice mute", "enable")
-            #     if store.MixerValue("sfx").get_adjustment().value <= 0.05:
-            #         $store.MixerValue("sfx").get_adjustment().value = 0
-            #         timer 0.01 action Preference("sound mute", "enable")
-            ################################################################
 
 style text_setting_slider:
     bar_vertical False
@@ -2274,7 +2166,7 @@ screen history_menu(title, scroll=None, yinitial=0.0):
 
     imagebutton:
         yalign 0.05
-        keysym "quit_hist"
+        keysym "quit_menu"
         auto "history_return_btn_%s"
         action Return()
 

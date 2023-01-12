@@ -67,7 +67,6 @@ define keymap_release = dict(
 
     # DIY
     quit_menu = [ 'K_ESCAPE', 'mousedown_3' ],
-    quit_hist = [ 'K_ESCAPE', 'mousedown_3' ],
     auto_dialogue = [ ],
 
     # Say.
