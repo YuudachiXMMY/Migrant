@@ -6,11 +6,10 @@ define temp = Character("叶雨潇", color="#ffffff", ctc_pause="ctc_pause_icon"
 
 label staff:
 
-    $ achievement.Sync()
     $ persistent.chpt_staff_clear = True
-    if not achievement.has('CHPT_STAFF_CLEAR'):
-        $ achievement.grant('CHPT_STAFF_CLEAR')
-
+    $ achievement.grant('CHPT_STAFF_CLEAR')
+    $ achievement.sync()
+    
     # scene bg migrant #候鸟封面|调色
     scene bg migrant_old #候鸟封面|未调色
     with fade

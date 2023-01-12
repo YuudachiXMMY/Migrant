@@ -253,6 +253,7 @@ define h = Character("工作人员", color="#ffffff", ctc_pause="ctc_pause_icon"
 define i = Character("保安", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define bird2 = Character("海鸟", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define m = Character("广播", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
+define phone = Character("电话", color="#ffffff", ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define narrator = Character(None, ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 define nvl_narrator = Character(None, kind=nvl, ctc_pause="ctc_pause_icon", ctc="ctc_icon")
 
@@ -9615,7 +9616,7 @@ label start:
     d "「不过这一批确实是赶上了，都挺便宜的，我按二手价进的！你要是有兴趣也可以看看哦，我这儿有目录。」"
     y "「呃，谢谢，不用了……」"
     hide charad
-    show chara le13b at truecenter #梁芷柔立绘|冬季私服|疑惑2|近
+    show chara le13b at center #梁芷柔立绘|冬季私服|疑惑2|近
     with dissolve
     y "「所以咧？这都是些啥书啊？」"
     show chara le10 #梁芷柔立绘|冬季私服|开心|近
@@ -12386,7 +12387,7 @@ label start:
     "很快，梁芷柔从人群中钻了出来。"
     y "「嗯？这是……」"
     "这次梁芷柔手上又多了个糖人。"
-    "不过她之前两只手上就都有东西了，这次大概是接过来的时候攥得不太稳，糖人在她手上晃来晃去，摇摇欲坠。"
+    "不过她之前两只手上就都有东西了，这次大概是接过来的时候攥得不太稳，之前买的面人在她手上晃来晃去，摇摇欲坠。"
     $ persistent.cg_3_3_28_flag = True
     scene cg09b3j2 #梁芷柔逛社火CG-2|棉花糖+面人+糖人|皱眉|CG09b3j2
     with dissolve
@@ -17197,7 +17198,7 @@ label start:
     with dissolve
     voice "audio/voice/017071.ogg"
     z "「有梦想是好事，但是，你也不能不考虑现实，对吧？」"
-    scene bg b05 #湿地公园|夏
+    scene bg b04 #滨河路|夏
     show charad lg01 #书店店员立绘|普通|近
     show memories #回忆滤镜
     with dissolve
@@ -17220,7 +17221,7 @@ label start:
     with dissolve
     voice "audio/voice/017125.ogg"
     z "「能去的话，我还是会去吧。」"
-    scene bg b05 #湿地公园|夏
+    scene bg b04 #滨河路|夏
     show charad g01 #书店店员立绘|普通
     show memories #回忆滤镜
     with dissolve
@@ -17757,7 +17758,7 @@ label start:
     stop sound
 
     voice "audio/voice/007183.ogg"
-    "电话：「……喂？」"
+    phone "「……喂？」"
     y "「是我——」"
     y "「我来了。」"
 

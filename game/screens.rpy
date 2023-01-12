@@ -580,6 +580,57 @@ screen main_menu():
     ## 此代码可确保替换掉任何其他菜单屏幕。
     tag menu
 
+    ############################################################################
+    # Steam成就系统
+    ############################################################################
+    $ achievement.Sync()
+    # 序章 成就
+    $ achievement.register('CHPT_0_CLEAR', steam='NEW_ACHIEVEMENT_2_0')
+    if not achievement.has('CHPT_0_CLEAR') and persistent.chpt_0_clear:
+        $ achievement.grant('CHPT_0_CLEAR')
+
+    # 第1章 成就
+    $ achievement.register('CHPT_1_CLEAR', steam='NEW_ACHIEVEMENT_2_1')
+    if not achievement.has('CHPT_1_CLEAR') and persistent.chpt_1_clear:
+        $ achievement.grant('CHPT_1_CLEAR')
+
+    # 第2章 成就
+    $ achievement.register('CHPT_2_CLEAR', steam='NEW_ACHIEVEMENT_2_2')
+    if not achievement.has('CHPT_2_CLEAR') and persistent.chpt_2_clear:
+        $ achievement.grant('CHPT_2_CLEAR')
+
+    # 第3章 成就
+    $ achievement.register('CHPT_3_CLEAR', steam='NEW_ACHIEVEMENT_2_3')
+    if not achievement.has('CHPT_3_CLEAR') and persistent.chpt_3_clear:
+        $ achievement.grant('CHPT_3_CLEAR')
+
+    # 第4章 成就
+    $ achievement.register('CHPT_4_CLEAR', steam='NEW_ACHIEVEMENT_2_4')
+    if not achievement.has('CHPT_4_CLEAR') and persistent.chpt_4_clear:
+        $ achievement.grant('CHPT_4_CLEAR')
+
+    # 第5章 成就
+    $ achievement.register('CHPT_5_CLEAR', steam='NEW_ACHIEVEMENT_2_5')
+    if not achievement.has('CHPT_5_CLEAR') and persistent.chpt_5_clear:
+        $ achievement.grant('CHPT_5_CLEAR')
+
+    # 第6章 成就
+    $ achievement.register('CHPT_6_CLEAR', steam='NEW_ACHIEVEMENT_2_6')
+    if not achievement.has('CHPT_6_CLEAR') and persistent.chpt_6_clear:
+        $ achievement.grant('CHPT_6_CLEAR')
+
+    # 第7章终章 成就
+    $ achievement.register('CHPT_7_CLEAR', steam='NEW_ACHIEVEMENT_2_7')
+    if not achievement.has('CHPT_7_CLEAR') and persistent.chpt_7_clear:
+        $ achievement.grant('CHPT_7_CLEAR')
+
+    # 制作访谈 成就
+    $ achievement.register('CHPT_STAFF_CLEAR', steam='NEW_ACHIEVEMENT_2_8')
+    if not achievement.has('CHPT_STAFF_CLEAR') and persistent.chpt_staff_clear:
+        $ achievement.grant('CHPT_STAFF_CLEAR')
+
+    ############################################################################
+
     if first_menu:
         on "show" action Show("main_menu_first_menu_ani")
     elif main_menu:
